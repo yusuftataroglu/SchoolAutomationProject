@@ -9,6 +9,6 @@ namespace SchoolAutomationProject.Application.Repositories.CommonRepositories
         bool Remove(T entity);
         Task<bool> RemoveByIdAsync(string id);
         bool Update(T entity);
-        Task<int> SaveChangesAsync();
+        Task SaveChangesAsync();
     }
 }
