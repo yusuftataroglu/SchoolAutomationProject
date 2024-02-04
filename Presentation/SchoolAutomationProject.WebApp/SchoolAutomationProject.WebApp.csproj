@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\SchoolAutomationProject.Infrastructure\SchoolAutomationProject.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\SchoolAutomationProject.Persistence\SchoolAutomationProject.Persistence.csproj" />
+  </ItemGroup>
+
 </Project>
