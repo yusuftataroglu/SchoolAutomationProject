@@ -40,7 +40,7 @@ namespace SchoolAutomationProject.Persistence.Repositories.CommonRepositories
 
         public async Task<bool> RemoveByIdAsync(string id)
         {
-            T data = await Table.FirstOrDefaultAsync(data => data.Id == id);
+            T data = await Table.FirstOrDefaultAsync(data => data.Id.ToString() == id);
             return Remove(data);
         }
 

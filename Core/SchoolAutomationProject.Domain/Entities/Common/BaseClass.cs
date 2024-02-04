@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SchoolAutomationProject.Domain.Entities.Common
+﻿namespace SchoolAutomationProject.Domain.Entities.Common
 {
     public abstract class BaseClass
     {
         public BaseClass()
         {
             CreatedDate = DateTime.UtcNow;
-            UpdatedDate = DateTime.UtcNow;
+            CreatedComputerName = Environment.MachineName;
         }
-        public string Id { get; set; }
+        public Guid Id { get; set; }
         public DateTime CreatedDate { get; set; }
-        public DateTime UpdatedDate { get; set; }
+        public string CreatedComputerName { get; set; }
+        public string CreatedIpAddress { get; set; }
+        public DateTime? UpdatedDate { get; set; }//todo güncellendiğinde değiştirilecek.(ChangeTracker)
+        public string? UpdatedComputerName { get; set; }
+        public string? UpdatedIpAddress { get; set; }
     }
 }
