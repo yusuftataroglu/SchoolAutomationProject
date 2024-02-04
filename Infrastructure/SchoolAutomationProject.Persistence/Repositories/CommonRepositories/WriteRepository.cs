@@ -44,13 +44,13 @@ namespace SchoolAutomationProject.Persistence.Repositories.CommonRepositories
             return Remove(data);
         }
 
-        public bool UpdateAsync(T entity)
+        public bool Update(T entity)
         {
             EntityEntry<T> entityEntry = Table.Update(entity);
             return entityEntry.State == EntityState.Modified;
         }
-        public Task<int> SaveChanges()
-        => _context.SaveChangesAsync();
+        public async Task<int> SaveChangesAsync()
+        => await _context.SaveChangesAsync();
 
     }
 }
