@@ -12,19 +12,20 @@ namespace SchoolAutomationProject.Domain.Entities
     public class Student : BaseClass
     {
         public string RegistrationNumber { get; set; } // Okul No
-        public Guid ClassId { get; set; } //todo Sınıf Id'si  Class oluşturulacak!
-        public string Branch { get; set; } // Şube
         public string FirstName { get; set; } // Öğrenci Ad
         public string LastName { get; set; } // Öğrenci Soyad
         public Gender Gender { get; set; } //Cinsiyet
-        public AttendanceStatus AttendanceStatus { get; set; }
         public string GraduatedSchool { get; set; } // Bitirdiği Okul
         public double GPA { get; set; } // Not Ortalaması
-        public string City { get; set; } // İl
+        public AttendanceStatus AttendanceStatus { get; set; }
 
         //Student-Parent ilişkisi
         public virtual Parent Parent { get; set; }
         public Guid ParentId { get; set; }
+
+        //Student-Class ilişkisi
+        public Guid ClassroomId { get; set; } //todo Sınıf Id'si  Classroom oluşturulacak!
+
 
 
     }
