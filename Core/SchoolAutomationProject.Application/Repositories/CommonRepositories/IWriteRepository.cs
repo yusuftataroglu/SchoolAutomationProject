@@ -8,7 +8,7 @@ namespace SchoolAutomationProject.Application.Repositories.CommonRepositories
         Task AddRangeAsync(List<T> entities);
         bool Remove(T entity);
         Task<bool> RemoveByIdAsync(string id);
-        bool UpdateAsync(T entity);
-        Task<int> SaveChanges();
+        bool Update(T entity);
+        Task<int> SaveChangesAsync();
     }
 }
