@@ -3,11 +3,6 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using SchoolAutomationProject.Application.Repositories.CommonRepositories;
 using SchoolAutomationProject.Domain.Entities.Common;
 using SchoolAutomationProject.Persistence.Contexts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchoolAutomationProject.Persistence.Repositories.CommonRepositories
 {
@@ -40,7 +35,7 @@ namespace SchoolAutomationProject.Persistence.Repositories.CommonRepositories
 
         public async Task<bool> RemoveByIdAsync(string id)
         {
-            T data = await Table.FirstOrDefaultAsync(data => data.Id.ToString() == id);
+            T data = await Table.FirstOrDefaultAsync(data => data.Id == Guid.Parse(id));
             return Remove(data);
         }
 
@@ -49,7 +44,7 @@ namespace SchoolAutomationProject.Persistence.Repositories.CommonRepositories
             EntityEntry<T> entityEntry = Table.Update(entity);
             return entityEntry.State == EntityState.Modified;
         }
-        public async Task<int> SaveChangesAsync()
+        public async Task SaveChangesAsync()
         => await _context.SaveChangesAsync();
 
     }

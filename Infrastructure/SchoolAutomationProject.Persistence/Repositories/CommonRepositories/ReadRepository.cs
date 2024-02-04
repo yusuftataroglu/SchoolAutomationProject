@@ -2,13 +2,7 @@
 using SchoolAutomationProject.Application.Repositories.CommonRepositories;
 using SchoolAutomationProject.Domain.Entities.Common;
 using SchoolAutomationProject.Persistence.Contexts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchoolAutomationProject.Persistence.Repositories.CommonRepositories
 {
@@ -26,7 +20,7 @@ namespace SchoolAutomationProject.Persistence.Repositories.CommonRepositories
             => Table; //DbSet IQueryable'ı implement ediyor. O yüzden DbSet döndürebiliyoruz.
 
         public async Task<T> GetById(string id)
-            => await Table.FirstOrDefaultAsync(entity => entity.Id.ToString() == id);
+            => await Table.FirstOrDefaultAsync(entity => entity.Id == Guid.Parse(id));
 
         public IQueryable<T> GetWhere(Expression<Func<T, bool>> predicate)
             => Table.Where(predicate);
