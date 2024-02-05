@@ -1,11 +1,5 @@
 ﻿using SchoolAutomationProject.Domain.Entities.Common;
 using SchoolAutomationProject.Domain.Entities.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchoolAutomationProject.Domain.Entities
 {
@@ -24,7 +18,16 @@ namespace SchoolAutomationProject.Domain.Entities
         public Guid ParentId { get; set; }
 
         //Student-Class ilişkisi
+        public virtual Classroom Classroom { get; set; }
         public Guid ClassroomId { get; set; } //todo Sınıf Id'si  Classroom oluşturulacak!
+
+        //Student-Teacher ilişkisi
+        public virtual ICollection<Teacher> Teachers{ get; set; }
+
+        //Student-Achievement ilişkisi
+        public virtual Achievement Achievement { get; set; }
+
+
 
 
 

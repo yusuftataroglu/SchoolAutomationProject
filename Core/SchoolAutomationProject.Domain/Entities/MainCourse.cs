@@ -4,12 +4,12 @@ namespace SchoolAutomationProject.Domain.Entities
 {
     public class MainCourse:BaseClass
     {
-        public Guid Id { get; set; }
-        public string Name { get; set; } //todo Bu property'ler SubCourse'da olabilir emin değilim.
-        public int WeeklyHour { get; set; }
-        public int Position { get; set; }
+        public string Name { get; set; } 
 
         //MainCourse - SubCourse ilişkisi
         public virtual ICollection<SubCourse> SubCourses { get; set; }
+
+        //MainCourse-Teacher ilişkisi
+        public virtual ICollection<Teacher> Teachers{ get; set; }
     }
 }
