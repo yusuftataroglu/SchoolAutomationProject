@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SchoolAutomationProject.Domain.Entities.UniqueTables;
+using SchoolAutomationProject.Persistence.Configurations.CrossTableConfigurations;
 
 namespace SchoolAutomationProject.Persistence.Contexts
 {
@@ -32,6 +33,14 @@ namespace SchoolAutomationProject.Persistence.Contexts
             {
                 optionsBuilder.UseSqlServer("server=YUSUF-PC\\SQLEXPRESS;database=SchoolTest;Trusted_Connection=True;TrustServerCertificate=True;");
             }
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new ClassroomMainCourseConfiguration());
+            modelBuilder.ApplyConfiguration(new ClassroomTeacherConfiguration());
+            modelBuilder.ApplyConfiguration(new ParentStudentConfiguration());
+            modelBuilder.ApplyConfiguration(new StudentTeacherConfiguration());
         }
     }
 }

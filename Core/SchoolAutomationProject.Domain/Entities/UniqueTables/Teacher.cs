@@ -1,4 +1,5 @@
 ﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
+using SchoolAutomationProject.Domain.Entities.CrossTables;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,10 +20,11 @@ namespace SchoolAutomationProject.Domain.Entities.UniqueTables
         public Guid MainCourseId { get; set; }
 
         //Teacher-Classroom ilişkisi
-        public virtual ICollection<Classroom> Classrooms { get; set; }
+        public virtual ICollection<ClassroomTeacher> ClassroomTeachers { get; set; }
 
         //Teacher-Student ilişkisi
-        public virtual ICollection<Student> Students { get; set; }
+        public virtual ICollection<StudentTeacher> StudentTeachers { get; set; }
+
 
     }
 }

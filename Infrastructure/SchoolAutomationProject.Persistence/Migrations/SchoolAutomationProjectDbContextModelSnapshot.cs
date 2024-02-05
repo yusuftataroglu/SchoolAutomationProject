@@ -22,34 +22,64 @@ namespace SchoolAutomationProject.Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ClassroomTeacher", b =>
+            modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.CrossTables.ClassroomMainCourse", b =>
                 {
-                    b.Property<Guid>("ClassroomsId")
+                    b.Property<Guid>("ClassroomId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("TeachersId")
+                    b.Property<Guid>("MainCourseId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("ClassroomsId", "TeachersId");
+                    b.HasKey("ClassroomId", "MainCourseId");
 
-                    b.HasIndex("TeachersId");
+                    b.HasIndex("MainCourseId");
+
+                    b.ToTable("ClassroomMainCourse");
+                });
+
+            modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.CrossTables.ClassroomTeacher", b =>
+                {
+                    b.Property<Guid>("ClassroomId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("TeacherId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ClassroomId", "TeacherId");
+
+                    b.HasIndex("TeacherId");
 
                     b.ToTable("ClassroomTeacher");
                 });
 
-            modelBuilder.Entity("ParentStudent", b =>
+            modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.CrossTables.ParentStudent", b =>
                 {
                     b.Property<Guid>("ParentId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("StudentsId")
+                    b.Property<Guid>("StudentId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("ParentId", "StudentsId");
+                    b.HasKey("ParentId", "StudentId");
 
-                    b.HasIndex("StudentsId");
+                    b.HasIndex("StudentId");
 
                     b.ToTable("ParentStudent");
+                });
+
+            modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.CrossTables.StudentTeacher", b =>
+                {
+                    b.Property<Guid>("StudentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("TeacherId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("StudentId", "TeacherId");
+
+                    b.HasIndex("TeacherId");
+
+                    b.ToTable("StudentTeacher");
                 });
 
             modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.UniqueTables.Achievement", b =>
@@ -240,9 +270,6 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("ClassroomId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("CreatedComputerName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -268,8 +295,6 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ClassroomId");
 
                     b.ToTable("MainCourses");
                 });
@@ -534,49 +559,80 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     b.ToTable("Teachers");
                 });
 
-            modelBuilder.Entity("StudentTeacher", b =>
+            modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.CrossTables.ClassroomMainCourse", b =>
                 {
-                    b.Property<Guid>("StudentsId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("TeachersId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("StudentsId", "TeachersId");
-
-                    b.HasIndex("TeachersId");
-
-                    b.ToTable("StudentTeacher");
-                });
-
-            modelBuilder.Entity("ClassroomTeacher", b =>
-                {
-                    b.HasOne("SchoolAutomationProject.Domain.Entities.UniqueTables.Classroom", null)
-                        .WithMany()
-                        .HasForeignKey("ClassroomsId")
+                    b.HasOne("SchoolAutomationProject.Domain.Entities.UniqueTables.Classroom", "Classroom")
+                        .WithMany("ClassroomMainCourses")
+                        .HasForeignKey("ClassroomId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SchoolAutomationProject.Domain.Entities.UniqueTables.Teacher", null)
-                        .WithMany()
-                        .HasForeignKey("TeachersId")
+                    b.HasOne("SchoolAutomationProject.Domain.Entities.UniqueTables.MainCourse", "MainCourse")
+                        .WithMany("ClassroomMainCourses")
+                        .HasForeignKey("MainCourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Classroom");
+
+                    b.Navigation("MainCourse");
                 });
 
-            modelBuilder.Entity("ParentStudent", b =>
+            modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.CrossTables.ClassroomTeacher", b =>
                 {
-                    b.HasOne("SchoolAutomationProject.Domain.Entities.UniqueTables.Parent", null)
-                        .WithMany()
+                    b.HasOne("SchoolAutomationProject.Domain.Entities.UniqueTables.Classroom", "Classroom")
+                        .WithMany("ClassroomTeachers")
+                        .HasForeignKey("ClassroomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SchoolAutomationProject.Domain.Entities.UniqueTables.Teacher", "Teacher")
+                        .WithMany("ClassroomTeachers")
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Classroom");
+
+                    b.Navigation("Teacher");
+                });
+
+            modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.CrossTables.ParentStudent", b =>
+                {
+                    b.HasOne("SchoolAutomationProject.Domain.Entities.UniqueTables.Parent", "Parent")
+                        .WithMany("ParentStudents")
                         .HasForeignKey("ParentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SchoolAutomationProject.Domain.Entities.UniqueTables.Student", null)
-                        .WithMany()
-                        .HasForeignKey("StudentsId")
+                    b.HasOne("SchoolAutomationProject.Domain.Entities.UniqueTables.Student", "Student")
+                        .WithMany("ParentStudents")
+                        .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Parent");
+
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.CrossTables.StudentTeacher", b =>
+                {
+                    b.HasOne("SchoolAutomationProject.Domain.Entities.UniqueTables.Student", "Student")
+                        .WithMany("StudentTeachers")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SchoolAutomationProject.Domain.Entities.UniqueTables.Teacher", "Teacher")
+                        .WithMany("StudentTeachers")
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Student");
+
+                    b.Navigation("Teacher");
                 });
 
             modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.UniqueTables.Achievement", b =>
@@ -636,13 +692,6 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     b.Navigation("SubCourse");
                 });
 
-            modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.UniqueTables.MainCourse", b =>
-                {
-                    b.HasOne("SchoolAutomationProject.Domain.Entities.UniqueTables.Classroom", null)
-                        .WithMany("MainCourses")
-                        .HasForeignKey("ClassroomId");
-                });
-
             modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.UniqueTables.Student", b =>
                 {
                     b.HasOne("SchoolAutomationProject.Domain.Entities.UniqueTables.Classroom", "Classroom")
@@ -676,33 +725,27 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     b.Navigation("MainCourse");
                 });
 
-            modelBuilder.Entity("StudentTeacher", b =>
-                {
-                    b.HasOne("SchoolAutomationProject.Domain.Entities.UniqueTables.Student", null)
-                        .WithMany()
-                        .HasForeignKey("StudentsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SchoolAutomationProject.Domain.Entities.UniqueTables.Teacher", null)
-                        .WithMany()
-                        .HasForeignKey("TeachersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.UniqueTables.Classroom", b =>
                 {
-                    b.Navigation("MainCourses");
+                    b.Navigation("ClassroomMainCourses");
+
+                    b.Navigation("ClassroomTeachers");
 
                     b.Navigation("Students");
                 });
 
             modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.UniqueTables.MainCourse", b =>
                 {
+                    b.Navigation("ClassroomMainCourses");
+
                     b.Navigation("SubCourses");
 
                     b.Navigation("Teachers");
+                });
+
+            modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.UniqueTables.Parent", b =>
+                {
+                    b.Navigation("ParentStudents");
                 });
 
             modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.UniqueTables.Semester", b =>
@@ -717,11 +760,22 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     b.Navigation("Attendances");
 
                     b.Navigation("Grades");
+
+                    b.Navigation("ParentStudents");
+
+                    b.Navigation("StudentTeachers");
                 });
 
             modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.UniqueTables.SubCourse", b =>
                 {
                     b.Navigation("Grades");
+                });
+
+            modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.UniqueTables.Teacher", b =>
+                {
+                    b.Navigation("ClassroomTeachers");
+
+                    b.Navigation("StudentTeachers");
                 });
 #pragma warning restore 612, 618
         }

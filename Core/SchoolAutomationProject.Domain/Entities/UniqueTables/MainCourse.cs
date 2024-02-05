@@ -1,4 +1,5 @@
 ﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
+using SchoolAutomationProject.Domain.Entities.CrossTables;
 
 namespace SchoolAutomationProject.Domain.Entities.UniqueTables
 {
@@ -11,5 +12,9 @@ namespace SchoolAutomationProject.Domain.Entities.UniqueTables
 
         //MainCourse-Teacher ilişkisi
         public virtual ICollection<Teacher> Teachers { get; set; }
+
+        //MainCourse - Classroom ilişkisi
+        public virtual ICollection<ClassroomMainCourse> ClassroomMainCourses { get; set; }
+
     }
 }
