@@ -25,7 +25,7 @@ namespace SchoolAutomationProject.Domain.Entities.UniqueTables
         public virtual ICollection<Teacher> Teachers { get; set; }
 
         //Student-Achievement ilişkisi
-        public virtual Achievement Achievement { get; set; }
+        public virtual ICollection<Achievement> Achievement { get; set; }
 
         //Student-Grade ilişkisi
         public ICollection<Grade> Grades { get; set; }

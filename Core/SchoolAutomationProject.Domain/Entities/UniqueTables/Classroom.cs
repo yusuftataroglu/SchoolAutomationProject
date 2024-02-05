@@ -7,6 +7,7 @@ namespace SchoolAutomationProject.Domain.Entities.UniqueTables
     {
         public string Grade { get; set; } // Sınıf (1, 2, ...)
         public Section Section { get; set; } // Şube (A, B, C, ...)
+        public byte Capacity { get; set; } // Kapasite
 
         // Derslik - Ders ilişkisi
         public virtual ICollection<MainCourse> MainCourses { get; set; }
