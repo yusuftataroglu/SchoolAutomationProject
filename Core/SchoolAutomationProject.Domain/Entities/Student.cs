@@ -14,8 +14,7 @@ namespace SchoolAutomationProject.Domain.Entities
         public AttendanceStatus AttendanceStatus { get; set; }
 
         //Student-Parent ilişkisi
-        public virtual Parent Parent { get; set; }
-        public Guid ParentId { get; set; }
+        public virtual ICollection<Parent> Parent { get; set; }
 
         //Student-Class ilişkisi
         public virtual Classroom Classroom { get; set; }
