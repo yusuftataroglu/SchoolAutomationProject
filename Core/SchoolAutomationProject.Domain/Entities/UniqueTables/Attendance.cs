@@ -1,9 +1,9 @@
-﻿using SchoolAutomationProject.Domain.Entities.Common;
+﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
 using SchoolAutomationProject.Domain.Entities.Enums;
 
-namespace SchoolAutomationProject.Domain.Entities
+namespace SchoolAutomationProject.Domain.Entities.UniqueTables
 {
-    public class Attendance:BaseClass
+    public class Attendance : BaseClass
     {
         public DateTime AttendanceDate { get; set; } // Devamsızlık tarihi
         public AttendanceStatus AttendanceStatus { get; set; }

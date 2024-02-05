@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SchoolAutomationProject.Application.Repositories.CommonRepositories;
-using SchoolAutomationProject.Domain.Entities.Common;
+using SchoolAutomationProject.Domain.Entities.CommonTables;
 using SchoolAutomationProject.Persistence.Contexts;
 using System.Linq.Expressions;
 

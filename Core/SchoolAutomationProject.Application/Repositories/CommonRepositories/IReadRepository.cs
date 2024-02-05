@@ -1,4 +1,4 @@
-﻿using SchoolAutomationProject.Domain.Entities.Common;
+﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
 using System.Linq.Expressions;
 
 namespace SchoolAutomationProject.Application.Repositories.CommonRepositories

@@ -1,8 +1,8 @@
-﻿using SchoolAutomationProject.Domain.Entities.Common;
+﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
 
-namespace SchoolAutomationProject.Domain.Entities
+namespace SchoolAutomationProject.Domain.Entities.UniqueTables
 {
-    public class SubCourse:BaseClass
+    public class SubCourse : BaseClass
     {
         public string Code { get; set; }
         public int WeeklyHour { get; set; }//todo Bu property'ler MainCourse'da olabilir emin değilim.

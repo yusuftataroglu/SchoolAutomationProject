@@ -1,13 +1,13 @@
-﻿using SchoolAutomationProject.Domain.Entities.Common;
+﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolAutomationProject.Domain.Entities
+namespace SchoolAutomationProject.Domain.Entities.UniqueTables
 {
-    public class Teacher:BaseClass
+    public class Teacher : BaseClass
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -19,7 +19,7 @@ namespace SchoolAutomationProject.Domain.Entities
         public Guid MainCourseId { get; set; }
 
         //Teacher-Classroom ilişkisi
-        public virtual ICollection<Classroom> Classrooms{ get; set; }
+        public virtual ICollection<Classroom> Classrooms { get; set; }
 
         //Teacher-Student ilişkisi
         public virtual ICollection<Student> Students { get; set; }

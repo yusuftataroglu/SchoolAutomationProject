@@ -1,4 +1,4 @@
-﻿namespace SchoolAutomationProject.Domain.Entities.Common
+﻿namespace SchoolAutomationProject.Domain.Entities.CommonTables
 {
     public abstract class BaseClass
     {

@@ -1,7 +1,7 @@
-﻿using SchoolAutomationProject.Domain.Entities.Common;
+﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
 using SchoolAutomationProject.Domain.Entities.Enums;
 
-namespace SchoolAutomationProject.Domain.Entities
+namespace SchoolAutomationProject.Domain.Entities.UniqueTables
 {
     public class Classroom : BaseClass
     {

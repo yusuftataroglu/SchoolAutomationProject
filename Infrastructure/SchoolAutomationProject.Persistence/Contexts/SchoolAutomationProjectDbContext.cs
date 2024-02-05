@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SchoolAutomationProject.Domain.Entities;
+using SchoolAutomationProject.Domain.Entities.UniqueTables;
 
 namespace SchoolAutomationProject.Persistence.Contexts
 {

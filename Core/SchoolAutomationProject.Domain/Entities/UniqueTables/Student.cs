@@ -1,7 +1,7 @@
-﻿using SchoolAutomationProject.Domain.Entities.Common;
+﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
 using SchoolAutomationProject.Domain.Entities.Enums;
 
-namespace SchoolAutomationProject.Domain.Entities
+namespace SchoolAutomationProject.Domain.Entities.UniqueTables
 {
     public class Student : BaseClass
     {
@@ -12,6 +12,7 @@ namespace SchoolAutomationProject.Domain.Entities
         public string GraduatedSchool { get; set; } // Bitirdiği Okul
         public double GPA { get; set; } // Not Ortalaması
         public int TotalAbsenceCount { get; set; } // Devamsızlık sayısı
+        public bool IsPreRegistered { get; set; } // Ön kayıt durumus
 
         //Student-Parent ilişkisi
         public virtual ICollection<Parent> Parent { get; set; }
@@ -21,7 +22,7 @@ namespace SchoolAutomationProject.Domain.Entities
         public Guid ClassroomId { get; set; } //todo Sınıf Id'si  Classroom oluşturulacak!
 
         //Student-Teacher ilişkisi
-        public virtual ICollection<Teacher> Teachers{ get; set; }
+        public virtual ICollection<Teacher> Teachers { get; set; }
 
         //Student-Achievement ilişkisi
         public virtual Achievement Achievement { get; set; }

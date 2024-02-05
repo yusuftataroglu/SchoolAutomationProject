@@ -1,13 +1,13 @@
-﻿using SchoolAutomationProject.Domain.Entities.Common;
+﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolAutomationProject.Domain.Entities
+namespace SchoolAutomationProject.Domain.Entities.UniqueTables
 {
-    public class Grade:BaseClass
+    public class Grade : BaseClass
     {
         public double Score { get; set; } // Öğrencinin aldığı not
         public byte ExamNumber { get; set; } // O dersin kaçıncı sınavı
