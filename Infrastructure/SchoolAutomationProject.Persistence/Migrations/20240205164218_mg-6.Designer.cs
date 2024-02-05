@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SchoolAutomationProject.Persistence.Contexts;
 
@@ -11,9 +12,11 @@ using SchoolAutomationProject.Persistence.Contexts;
 namespace SchoolAutomationProject.Persistence.Migrations
 {
     [DbContext(typeof(SchoolAutomationProjectDbContext))]
-    partial class SchoolAutomationProjectDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240205164218_mg-6")]
+    partial class mg6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -593,7 +596,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
             modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.Attendance", b =>
                 {
                     b.HasOne("SchoolAutomationProject.Domain.Entities.Student", "Student")
-                        .WithMany("Attendances")
+                        .WithMany()
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -706,8 +709,6 @@ namespace SchoolAutomationProject.Persistence.Migrations
                 {
                     b.Navigation("Achievement")
                         .IsRequired();
-
-                    b.Navigation("Attendances");
 
                     b.Navigation("Grades");
                 });

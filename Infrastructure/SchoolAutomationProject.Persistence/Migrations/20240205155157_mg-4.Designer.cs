@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SchoolAutomationProject.Persistence.Contexts;
 
@@ -11,9 +12,11 @@ using SchoolAutomationProject.Persistence.Contexts;
 namespace SchoolAutomationProject.Persistence.Migrations
 {
     [DbContext(typeof(SchoolAutomationProjectDbContext))]
-    partial class SchoolAutomationProjectDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240205155157_mg-4")]
+    partial class mg4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -98,53 +101,6 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("Achievements");
-                });
-
-            modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.Attendance", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("AttendanceDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("AttendanceStatus")
-                        .HasColumnType("int");
-
-                    b.Property<string>("CreatedComputerName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedIpAddress")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("StudentId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("SubCourseId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("UpdatedComputerName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedIpAddress")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("StudentId");
-
-                    b.HasIndex("SubCourseId");
-
-                    b.ToTable("Attendances");
                 });
 
             modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.Classroom", b =>
@@ -377,6 +333,9 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int>("AttendanceStatus")
+                        .HasColumnType("int");
+
                     b.Property<Guid>("ClassroomId")
                         .HasColumnType("uniqueidentifier");
 
@@ -590,25 +549,6 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.Attendance", b =>
-                {
-                    b.HasOne("SchoolAutomationProject.Domain.Entities.Student", "Student")
-                        .WithMany("Attendances")
-                        .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SchoolAutomationProject.Domain.Entities.SubCourse", "SubCourse")
-                        .WithMany()
-                        .HasForeignKey("SubCourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Student");
-
-                    b.Navigation("SubCourse");
-                });
-
             modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.Grade", b =>
                 {
                     b.HasOne("SchoolAutomationProject.Domain.Entities.Student", "Student")
@@ -706,8 +646,6 @@ namespace SchoolAutomationProject.Persistence.Migrations
                 {
                     b.Navigation("Achievement")
                         .IsRequired();
-
-                    b.Navigation("Attendances");
 
                     b.Navigation("Grades");
                 });

@@ -11,7 +11,7 @@ namespace SchoolAutomationProject.Domain.Entities
         public Gender Gender { get; set; } //Cinsiyet
         public string GraduatedSchool { get; set; } // Bitirdiği Okul
         public double GPA { get; set; } // Not Ortalaması
-        public AttendanceStatus AttendanceStatus { get; set; }
+        public int TotalAbsenceCount { get; set; } // Devamsızlık sayısı
 
         //Student-Parent ilişkisi
         public virtual ICollection<Parent> Parent { get; set; }
@@ -26,9 +26,10 @@ namespace SchoolAutomationProject.Domain.Entities
         //Student-Achievement ilişkisi
         public virtual Achievement Achievement { get; set; }
 
+        //Student-Grade ilişkisi
+        public ICollection<Grade> Grades { get; set; }
 
-
-
-
+        //Student-Attendance ilişkisi
+        public ICollection<Attendance> Attendances { get; set; }
     }
 }

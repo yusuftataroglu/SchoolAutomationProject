@@ -7,11 +7,14 @@ namespace SchoolAutomationProject.Persistence.Contexts
     {
         public DbSet<Classroom> Classrooms { get; set; }
         public DbSet<MainCourse> MainCourses { get; set; }
-        public DbSet<Parent> Parents { get; set; }
-        public DbSet<Semester> Seasons { get; set; }
-        public DbSet<Student> Students { get; set; }
         public DbSet<SubCourse> SubCourses { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Parent> Parents { get; set; }
+        public DbSet<Semester> Semesters { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Achievement> Achievements { get; set; }
+        public DbSet<Grade> Grades { get; set; }
+        public DbSet<Attendance> Attendances { get; set; }
 
         public SchoolAutomationProjectDbContext()
         {

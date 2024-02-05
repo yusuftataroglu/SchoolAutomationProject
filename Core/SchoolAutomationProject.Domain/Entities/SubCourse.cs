@@ -8,9 +8,12 @@ namespace SchoolAutomationProject.Domain.Entities
         public int WeeklyHour { get; set; }//todo Bu property'ler MainCourse'da olabilir emin değilim.
         public int Position { get; set; }
 
-        //MainCourse - SubCourse ilişkisi
+        //SubCourse - MainCourse ilişkisi
         public virtual MainCourse MainCourse { get; set; }
         public Guid MainCourseId { get; set; }
+
+        //SubCourse - Grade ilişkisi
+        public virtual ICollection<Grade> Grades { get; set; }
 
     }
 }
