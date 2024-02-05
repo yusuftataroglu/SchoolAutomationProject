@@ -6,17 +6,14 @@ namespace SchoolAutomationProject.Domain.Entities.UniqueTables
 {
     public class Student : BaseClass
     {
-        public Student()
-        {
-            TotalAbsenceCount = 0;
-        }
+        
         public string RegistrationNumber { get; set; } // Okul No
         public string FirstName { get; set; } // Öğrenci Ad
         public string LastName { get; set; } // Öğrenci Soyad
         public Gender Gender { get; set; } //Cinsiyet
         public string GraduatedSchool { get; set; } // Bitirdiği Okul
         public double GPA { get; set; } // Mezun olduğu okulun not ortalaması
-        public int TotalAbsenceCount { get; set; } // Devamsızlık sayısı
+        public short? TotalAbsenceCount { get; set; } // Devamsızlık sayısı
         public bool IsPreRegistered { get; set; } // Ön kayıt durumu
 
         //Student-Parent ilişkisi

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SchoolAutomationProject.Domain.Entities.UniqueTables;
 using SchoolAutomationProject.Persistence.Configurations.CrossTableConfigurations;
+using SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigurations;
 
 namespace SchoolAutomationProject.Persistence.Contexts
 {
@@ -41,6 +42,16 @@ namespace SchoolAutomationProject.Persistence.Contexts
             modelBuilder.ApplyConfiguration(new ClassroomTeacherConfiguration());
             modelBuilder.ApplyConfiguration(new ParentStudentConfiguration());
             modelBuilder.ApplyConfiguration(new StudentTeacherConfiguration());
+            modelBuilder.ApplyConfiguration(new AchievementConfiguration());
+            modelBuilder.ApplyConfiguration(new AttendanceConfiguration());
+            modelBuilder.ApplyConfiguration(new ClassroomConfiguration());
+            modelBuilder.ApplyConfiguration(new GradeConfiguration());
+            modelBuilder.ApplyConfiguration(new MainCourseConfiguration());
+            modelBuilder.ApplyConfiguration(new ParentConfiguration());
+            modelBuilder.ApplyConfiguration(new SemesterConfiguration());
+            modelBuilder.ApplyConfiguration(new StudentConfiguration());
+            modelBuilder.ApplyConfiguration(new SubCourseConfiguration());
+            modelBuilder.ApplyConfiguration(new TeacherConfiguration());
         }
     }
 }

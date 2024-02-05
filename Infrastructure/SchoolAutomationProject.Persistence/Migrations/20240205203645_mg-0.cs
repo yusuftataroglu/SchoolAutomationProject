@@ -16,15 +16,15 @@ namespace SchoolAutomationProject.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Grade = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Grade = table.Column<string>(type: "nvarchar(2)", maxLength: 2, nullable: false),
                     Section = table.Column<int>(type: "int", nullable: false),
                     Capacity = table.Column<byte>(type: "tinyint", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    CreatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UpdatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -36,13 +36,13 @@ namespace SchoolAutomationProject.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    CreatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UpdatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -54,19 +54,19 @@ namespace SchoolAutomationProject.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MobilePhone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    WorkPhone = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    District = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    MobilePhone = table.Column<string>(type: "nchar(11)", fixedLength: true, maxLength: 11, nullable: false),
+                    WorkPhone = table.Column<string>(type: "nchar(11)", fixedLength: true, maxLength: 11, nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    District = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    City = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    CreatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UpdatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -78,15 +78,15 @@ namespace SchoolAutomationProject.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    CreatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UpdatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -98,21 +98,21 @@ namespace SchoolAutomationProject.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    RegistrationNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RegistrationNumber = table.Column<string>(type: "nvarchar(9)", maxLength: 9, nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Gender = table.Column<int>(type: "int", nullable: false),
-                    GraduatedSchool = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    GraduatedSchool = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     GPA = table.Column<double>(type: "float", nullable: false),
-                    TotalAbsenceCount = table.Column<int>(type: "int", nullable: false),
+                    TotalAbsenceCount = table.Column<short>(type: "smallint", nullable: true),
                     IsPreRegistered = table.Column<bool>(type: "bit", nullable: false),
                     ClassroomId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    CreatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UpdatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -154,16 +154,16 @@ namespace SchoolAutomationProject.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Code = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Code = table.Column<string>(type: "nvarchar(9)", maxLength: 9, nullable: false),
                     WeeklyHour = table.Column<int>(type: "int", nullable: false),
                     Position = table.Column<int>(type: "int", nullable: false),
                     MainCourseId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    CreatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UpdatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -181,17 +181,17 @@ namespace SchoolAutomationProject.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Role = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Department = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Role = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Department = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     MainCourseId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    CreatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UpdatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -210,15 +210,15 @@ namespace SchoolAutomationProject.Persistence.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Type = table.Column<int>(type: "int", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
                     StudentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     SeasonId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    CreatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UpdatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -271,11 +271,11 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     StudentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     SubCourseId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    CreatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UpdatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -304,11 +304,11 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     StudentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     SubCourseId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    CreatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UpdatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true)
                 },
                 constraints: table =>
                 {

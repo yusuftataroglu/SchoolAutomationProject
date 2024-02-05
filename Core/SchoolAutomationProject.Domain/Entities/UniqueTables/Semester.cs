@@ -9,7 +9,6 @@ namespace SchoolAutomationProject.Domain.Entities.UniqueTables
 {
     public class Semester : BaseClass
     {
-        public Guid Id { get; set; } // Season Id'si
         public string Name { get; set; } // Örneğin "2022-2023 Spring Season"
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
