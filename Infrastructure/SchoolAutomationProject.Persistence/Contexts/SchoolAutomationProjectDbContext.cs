@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using SchoolAutomationProject.Domain.Entities.UniqueTables;
 using SchoolAutomationProject.Persistence.Configurations.CrossTableConfigurations;
 using SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigurations;
+using System.Threading.Channels;
 
 namespace SchoolAutomationProject.Persistence.Contexts
 {
@@ -27,9 +29,27 @@ namespace SchoolAutomationProject.Persistence.Contexts
         {
 
         }
+        //todo ChangeTracker eklenebilir!
 
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            var entityEntry = ChangeTracker.Entries();
+            foreach (var item in entityEntry)
+            {
+                if (item.State == EntityState.Added)
+                {
+                    Console.WriteLine("Eklendi!!!!!!!");
+                }
+                else
+                {
+                    Console.WriteLine("Eklenemedi!!!!!");
+                }
+            }
+            return base.SaveChangesAsync(cancellationToken);
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer("server=YUSUF-PC\\SQLEXPRESS;database=SchoolTest;Trusted_Connection=True;TrustServerCertificate=True;");

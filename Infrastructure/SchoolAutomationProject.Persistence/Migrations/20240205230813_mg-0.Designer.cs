@@ -12,7 +12,7 @@ using SchoolAutomationProject.Persistence.Contexts;
 namespace SchoolAutomationProject.Persistence.Migrations
 {
     [DbContext(typeof(SchoolAutomationProjectDbContext))]
-    [Migration("20240205203645_mg-0")]
+    [Migration("20240205230813_mg-0")]
     partial class mg0
     {
         /// <inheritdoc />
@@ -479,6 +479,9 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
+
+                    b.Property<bool?>("IsContinuing")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsPreRegistered")
                         .HasColumnType("bit");

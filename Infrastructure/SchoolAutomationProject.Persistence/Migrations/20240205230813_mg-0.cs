@@ -105,6 +105,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     GraduatedSchool = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     GPA = table.Column<double>(type: "float", nullable: false),
                     TotalAbsenceCount = table.Column<short>(type: "smallint", nullable: true),
+                    IsContinuing = table.Column<bool>(type: "bit", nullable: true),
                     IsPreRegistered = table.Column<bool>(type: "bit", nullable: false),
                     ClassroomId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),

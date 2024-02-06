@@ -477,6 +477,9 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
+                    b.Property<bool?>("IsContinuing")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsPreRegistered")
                         .HasColumnType("bit");
 

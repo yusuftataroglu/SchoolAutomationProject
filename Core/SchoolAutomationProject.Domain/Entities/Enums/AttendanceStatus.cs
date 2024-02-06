@@ -5,8 +5,6 @@
         Mevcut,
         Yok,
         İzinli,
-        Görevli,
-        Sevk,
-        Mezun
+        Görevli
     }
 }
