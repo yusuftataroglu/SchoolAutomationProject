@@ -2,7 +2,7 @@
 
 namespace SchoolAutomationProject.Application.Repositories.CommonRepositories
 {
-    public interface IStudentWriteRepository : IWriteRepository<Student>    
+    public interface IStudentWriteRepository : IWriteRepository<Student>
     {
     }
 }

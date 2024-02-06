@@ -2,7 +2,6 @@ using SchoolAutomationProject.Persistence.Contexts;
 using SchoolAutomationProject.Persistence.IoCContainer;
 
 var builder = WebApplication.CreateBuilder(args);
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddService();

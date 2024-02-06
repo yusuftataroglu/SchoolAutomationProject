@@ -27,7 +27,7 @@ namespace SchoolAutomationProject.Domain.Entities.UniqueTables
 
         //Student-Class ilişkisi
         public virtual Classroom Classroom { get; set; }
-        public Guid ClassroomId { get; set; } //todo Sınıf Id'si  Classroom oluşturulacak!
+        public Guid? ClassroomId { get; set; } //Ön kayıt aşamasında girilmesine gerek yok.
 
         //Student-Teacher ilişkisi
         public virtual ICollection<StudentTeacher> StudentTeachers { get; set; }

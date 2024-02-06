@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Protocols;
 using SchoolAutomationProject.Application.Repositories.CommonRepositories;
 using SchoolAutomationProject.Application.Repositories.StudentRepositories;
 using SchoolAutomationProject.Persistence.Contexts;
@@ -16,7 +18,14 @@ namespace SchoolAutomationProject.Persistence.IoCContainer
     {
         public static void AddService(this IServiceCollection services)
         {
-            services.AddDbContext<SchoolAutomationProjectDbContext>(x => x.UseSqlServer("server=YUSUF-PC\\SQLEXPRESS;database=SchoolTest;Trusted_Connection=True;TrustServerCertificate=True;"));
+            //Web App'e ulaşmak için Microsoft.Extensions.Configuration kütüphanesini ekledik.
+            ConfigurationManager configurationManager = new();
+            configurationManager.SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../../Presentation/SchoolAutomationProject.WebApp"));
+            configurationManager.AddJsonFile("appsettings.json");
+            string connectionString = configurationManager.GetConnectionString("DefaultConnection");
+
+
+            services.AddDbContext<SchoolAutomationProjectDbContext>(x => x.UseSqlServer(connectionString));
             services.AddScoped<IStudentReadRepository, StudentReadRepository>();
             services.AddScoped<IStudentWriteRepository, StudentWriteRepository>();
         }
