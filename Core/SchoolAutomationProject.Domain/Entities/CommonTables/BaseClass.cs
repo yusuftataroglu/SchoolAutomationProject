@@ -2,12 +2,6 @@
 {
     public abstract class BaseClass
     {
-        public BaseClass()
-        {
-            CreatedDate = DateTime.UtcNow;
-            CreatedComputerName = Environment.MachineName;
-            //todo created ip address eklenecek
-        }
         public Guid Id { get; set; }
         public DateTime CreatedDate { get; set; }
         public string CreatedComputerName { get; set; }
