@@ -24,7 +24,11 @@ namespace SchoolAutomationProject.Persistence.Repositories.CommonRepositories
 
         public async Task AddRangeAsync(List<T> entities)
         {
-            await Table.AddRangeAsync(entities);
+            foreach (var entity in entities)
+            {
+                await AddAsync(entity);
+               await SaveChangesAsync();
+            }
         }
 
         public bool Remove(T entity)
@@ -35,7 +39,7 @@ namespace SchoolAutomationProject.Persistence.Repositories.CommonRepositories
 
         public async Task<bool> RemoveByIdAsync(string id)
         {
-            T data = await Table.FindAsync(id);
+            T data = await Table.FindAsync(Guid.Parse(id));
             return Remove(data);
         }
 

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SchoolAutomationProject.Application.Repositories.CommonRepositories;
 using SchoolAutomationProject.Application.Repositories.StudentRepositories;
+using SchoolAutomationProject.Domain.Entities.Enums;
 using SchoolAutomationProject.Domain.Entities.UniqueTables;
 using SchoolAutomationProject.WebApp.Models;
 using System.Diagnostics;
@@ -23,22 +24,30 @@ namespace SchoolAutomationProject.WebApp.Controllers
         public async Task<IActionResult> Index()
         {
 
-            Student student = new Student
-                
+            List<Student> studentlist = new List<Student>
             {
-                Id=Guid.Parse("81085A72-F93F-4235-E19F-08DC26A9C785"),
+                new Student{
+                Id = Guid.NewGuid(),
                 FirstName = "Yusuf",
                 LastName = "Tataroğlu",
-                Gender = Domain.Entities.Enums.Gender.Erkek,
+                Gender = Gender.Erkek,
                 GraduatedSchool = "Dr. Nuri Bayar İ.Ö.O.",
                 GPA = 99.2,
                 IsPreRegistered = true,
-                CreatedIpAddress = "127.0.0.1",
-                ClassroomId = Guid.Parse("e2f05c32-2874-42b2-9561-cf50d147417c")
-            
+                CreatedIpAddress = "127.0.0.1"
+            },
+              new Student{
+                Id = Guid.NewGuid(),
+                FirstName = "Yağmur",
+                LastName = "Yaman",
+                Gender = Gender.Erkek,
+                GraduatedSchool = "Dr. Nuri Bayar İ.Ö.O.",
+                GPA = 77.5,
+                IsPreRegistered = true,
+                CreatedIpAddress = "127.0.0.1"
+            }
             };
-            var result = _studentWriteRepository.Update(student);
-            await _studentWriteRepository.SaveChangesAsync();
+            await _studentWriteRepository.AddRangeAsync(studentlist);
             return View();
         }
 

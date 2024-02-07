@@ -1,11 +1,11 @@
-﻿using SchoolAutomationProject.Application.Repositories.StudentRepositories;
+﻿using SchoolAutomationProject.Application.Repositories.AchievementRepositories;
 using SchoolAutomationProject.Domain.Entities.UniqueTables;
 using SchoolAutomationProject.Persistence.Contexts;
 using SchoolAutomationProject.Persistence.Repositories.CommonRepositories;
 
-namespace SchoolAutomationProject.Persistence.Repositories.StudentRepositories
+namespace SchoolAutomationProject.Persistence.Repositories.AchievementRepositories
 {
-    public class AchievementReadRepository : ReadRepository<Student>, IStudentReadRepository
+    public class AchievementReadRepository : ReadRepository<Achievement>, IAchievementReadRepository
     {
         public AchievementReadRepository(SchoolAutomationProjectDbContext context) : base(context)
         {

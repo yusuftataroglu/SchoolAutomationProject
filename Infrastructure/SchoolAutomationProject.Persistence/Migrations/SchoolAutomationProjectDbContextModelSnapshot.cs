@@ -231,6 +231,43 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     b.ToTable("Classrooms");
                 });
 
+            modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.UniqueTables.DiscontinuedStudent", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedComputerName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedIpAddress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("StudentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UpdatedComputerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedIpAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StudentId")
+                        .IsUnique();
+
+                    b.ToTable("DiscontinuedStudents");
+                });
+
             modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.UniqueTables.Grade", b =>
                 {
                     b.Property<Guid>("Id")
@@ -445,8 +482,11 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ClassroomId")
+                    b.Property<Guid?>("ClassroomId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<int?>("ContinuationStatus")
+                        .HasColumnType("int");
 
                     b.Property<string>("CreatedComputerName")
                         .IsRequired()
@@ -476,9 +516,6 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
-
-                    b.Property<bool?>("IsContinuing")
-                        .HasColumnType("bit");
 
                     b.Property<bool>("IsPreRegistered")
                         .HasColumnType("bit");
@@ -738,6 +775,17 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     b.Navigation("SubCourse");
                 });
 
+            modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.UniqueTables.DiscontinuedStudent", b =>
+                {
+                    b.HasOne("SchoolAutomationProject.Domain.Entities.UniqueTables.Student", "Student")
+                        .WithOne("DiscontinuedStudent")
+                        .HasForeignKey("SchoolAutomationProject.Domain.Entities.UniqueTables.DiscontinuedStudent", "StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Student");
+                });
+
             modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.UniqueTables.Grade", b =>
                 {
                     b.HasOne("SchoolAutomationProject.Domain.Entities.UniqueTables.Student", "Student")
@@ -761,9 +809,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                 {
                     b.HasOne("SchoolAutomationProject.Domain.Entities.UniqueTables.Classroom", "Classroom")
                         .WithMany("Students")
-                        .HasForeignKey("ClassroomId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ClassroomId");
 
                     b.Navigation("Classroom");
                 });
@@ -823,6 +869,9 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     b.Navigation("Achievement");
 
                     b.Navigation("Attendances");
+
+                    b.Navigation("DiscontinuedStudent")
+                        .IsRequired();
 
                     b.Navigation("Grades");
 

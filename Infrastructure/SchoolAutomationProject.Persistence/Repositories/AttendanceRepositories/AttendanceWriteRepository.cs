@@ -1,11 +1,11 @@
-﻿using SchoolAutomationProject.Application.Repositories.CommonRepositories;
+﻿using SchoolAutomationProject.Application.Repositories.AttendanceRepositories;
 using SchoolAutomationProject.Domain.Entities.UniqueTables;
 using SchoolAutomationProject.Persistence.Contexts;
 using SchoolAutomationProject.Persistence.Repositories.CommonRepositories;
 
-namespace SchoolAutomationProject.Persistence.Repositories.StudentRepositories
+namespace SchoolAutomationProject.Persistence.Repositories.AttendanceRepositories
 {
-    public class AttendanceWriteRepository : WriteRepository<Student>, IStudentWriteRepository
+    public class AttendanceWriteRepository : WriteRepository<Attendance>, IAttendanceWriteRepository
     {
         public AttendanceWriteRepository(SchoolAutomationProjectDbContext context) : base(context)
         {

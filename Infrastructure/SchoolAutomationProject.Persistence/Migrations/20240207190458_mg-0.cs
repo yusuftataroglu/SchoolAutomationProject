@@ -104,10 +104,10 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     Gender = table.Column<int>(type: "int", nullable: false),
                     GraduatedSchool = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     GPA = table.Column<double>(type: "float", nullable: false),
-                    TotalAbsenceCount = table.Column<short>(type: "smallint", nullable: true),
-                    IsContinuing = table.Column<bool>(type: "bit", nullable: true),
                     IsPreRegistered = table.Column<bool>(type: "bit", nullable: false),
-                    ClassroomId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    TotalAbsenceCount = table.Column<short>(type: "smallint", nullable: true),
+                    ContinuationStatus = table.Column<int>(type: "int", nullable: true),
+                    ClassroomId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     CreatedIpAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
@@ -122,8 +122,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         name: "FK_Students_Classrooms_ClassroomId",
                         column: x => x.ClassroomId,
                         principalTable: "Classrooms",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -232,6 +231,30 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Achievements_Students_StudentId",
+                        column: x => x.StudentId,
+                        principalTable: "Students",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DiscontinuedStudents",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    StudentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdatedComputerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UpdatedIpAddress = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DiscontinuedStudents", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_DiscontinuedStudents_Students_StudentId",
                         column: x => x.StudentId,
                         principalTable: "Students",
                         principalColumn: "Id",
@@ -407,6 +430,12 @@ namespace SchoolAutomationProject.Persistence.Migrations
                 column: "TeacherId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_DiscontinuedStudents_StudentId",
+                table: "DiscontinuedStudents",
+                column: "StudentId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Grades_StudentId",
                 table: "Grades",
                 column: "StudentId");
@@ -456,6 +485,9 @@ namespace SchoolAutomationProject.Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "ClassroomTeacher");
+
+            migrationBuilder.DropTable(
+                name: "DiscontinuedStudents");
 
             migrationBuilder.DropTable(
                 name: "Grades");
