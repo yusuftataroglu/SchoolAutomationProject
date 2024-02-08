@@ -19,7 +19,7 @@ namespace SchoolAutomationProject.Persistence.Repositories.CommonRepositories
         public IQueryable<T> GetAll()
             => Table; //DbSet IQueryable'ı implement ediyor. O yüzden DbSet döndürebiliyoruz.
 
-        public async Task<T> GetById(string id)
+        public async Task<T> GetByIdAsync(string id)
             => await Table.FindAsync(Guid.Parse(id));
 
         public IQueryable<T> GetWhere(Expression<Func<T, bool>> predicate)

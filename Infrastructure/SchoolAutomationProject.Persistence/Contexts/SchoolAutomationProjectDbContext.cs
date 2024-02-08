@@ -1,14 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using SchoolAutomationProject.Application.Repositories.CommonRepositories;
-using SchoolAutomationProject.Application.Repositories.StudentRepositories;
 using SchoolAutomationProject.Domain.Entities.CommonTables;
 using SchoolAutomationProject.Domain.Entities.UniqueTables;
 using SchoolAutomationProject.Persistence.Configurations.CrossTableConfigurations;
 using SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigurations;
-using SchoolAutomationProject.Persistence.Repositories.CommonRepositories;
-using SchoolAutomationProject.Persistence.Repositories.StudentRepositories;
-using System.Threading.Channels;
+using SchoolAutomationProject.Persistence.Helpers;
 
 namespace SchoolAutomationProject.Persistence.Contexts
 {
@@ -35,7 +31,6 @@ namespace SchoolAutomationProject.Persistence.Contexts
         public SchoolAutomationProjectDbContext(DbContextOptions options) : base(options)
         {
         }
-        //todo ChangeTracker eklenebilir!
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
@@ -51,11 +46,15 @@ namespace SchoolAutomationProject.Persistence.Contexts
                     case EntityState.Deleted:
                         break;
                     case EntityState.Modified:
+                        item.Entity.UpdatedDate = DateTime.UtcNow;
+                        item.Entity.UpdatedComputerName = Environment.MachineName;
+                        item.Entity.UpdatedIpAddress = IpAddressHelper.GetIpAddress();
                         break;
                     case EntityState.Added:
                         item.Entity.CreatedDate = DateTime.UtcNow;
                         item.Entity.CreatedComputerName = Environment.MachineName;
-                        item.Entity.CreatedIpAddress = System.Net.Sockets.AddressFamily.InterNetwork.ToString();//todo güncellenecek.
+                        item.Entity.CreatedIpAddress = IpAddressHelper.GetIpAddress();
+
                         if (item.Entity is Student)
                         {
                             Student student = (Student)item.Entity;
@@ -79,10 +78,10 @@ namespace SchoolAutomationProject.Persistence.Contexts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            //if (!optionsBuilder.IsConfigured)
-            //{
-            //    optionsBuilder.UseSqlServer("server=YUSUF-PC\\SQLEXPRESS;database=SchoolTest;Trusted_Connection=True;TrustServerCertificate=True;");
-            //}
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(ConnectionStringHelper.GetConnectionString());
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -101,6 +100,7 @@ namespace SchoolAutomationProject.Persistence.Contexts
             modelBuilder.ApplyConfiguration(new StudentConfiguration());
             modelBuilder.ApplyConfiguration(new SubCourseConfiguration());
             modelBuilder.ApplyConfiguration(new TeacherConfiguration());
+            modelBuilder.ApplyConfiguration(new DiscontinuedStudentConfiguration());
         }
     }
 }

@@ -47,7 +47,10 @@ namespace SchoolAutomationProject.WebApp.Controllers
                 CreatedIpAddress = "127.0.0.1"
             }
             };
-            await _studentWriteRepository.AddRangeAsync(studentlist);
+            var student =await  _studentReadRepository.GetByIdAsync("BE1994D1-0035-4E7F-8526-787FF0840838");
+            student.FirstName = "ecem";
+            await _studentWriteRepository.SaveChangesAsync();
+            //await _studentWriteRepository.AddRangeAsync(studentlist);
             return View();
         }
 

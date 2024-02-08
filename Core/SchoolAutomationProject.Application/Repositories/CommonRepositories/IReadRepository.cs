@@ -7,6 +7,6 @@ namespace SchoolAutomationProject.Application.Repositories.CommonRepositories
     {
         IQueryable<T> GetAll();
         IQueryable<T> GetWhere(Expression<Func<T,bool>> predicate);//todo expression kaldırılıp denenecek.
-        Task<T> GetById(string id);
+        Task<T> GetByIdAsync(string id);
     }
 }
