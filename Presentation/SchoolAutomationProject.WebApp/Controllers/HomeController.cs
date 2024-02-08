@@ -24,34 +24,31 @@ namespace SchoolAutomationProject.WebApp.Controllers
         public async Task<IActionResult> Index()
         {
 
-            List<Student> studentlist = new List<Student>
-            {
-                new Student{
-                Id = Guid.NewGuid(),
-                FirstName = "Yusuf",
-                LastName = "Tataroğlu",
-                Gender = Gender.Erkek,
-                GraduatedSchool = "Dr. Nuri Bayar İ.Ö.O.",
-                GPA = 99.2,
-                IsPreRegistered = true,
-                CreatedIpAddress = "127.0.0.1"
-            },
-              new Student{
-                Id = Guid.NewGuid(),
-                FirstName = "Yağmur",
-                LastName = "Yaman",
-                Gender = Gender.Erkek,
-                GraduatedSchool = "Dr. Nuri Bayar İ.Ö.O.",
-                GPA = 77.5,
-                IsPreRegistered = true,
-                CreatedIpAddress = "127.0.0.1"
-            }
-            };
-            var student =await  _studentReadRepository.GetByIdAsync("BE1994D1-0035-4E7F-8526-787FF0840838");
-            student.FirstName = "ecem";
-            await _studentWriteRepository.SaveChangesAsync();
+            //List<Student> studentlist = new List<Student>
+            //{
+            //    new Student{
+            //    Id = Guid.NewGuid(),
+            //    FirstName = "Yusuf",
+            //    LastName = "Tataroğlu",
+            //    Gender = Gender.Erkek,
+            //    GraduatedSchool = "Dr. Nuri Bayar İ.Ö.O.",
+            //    GPA = 99.2,
+            //    IsPreRegistered = true,
+            //},
+            //  new Student{
+            //    Id = Guid.NewGuid(),
+            //    FirstName = "Yağmur",
+            //    LastName = "Yaman",
+            //    Gender = Gender.Kız,
+            //    GraduatedSchool = "Dr. Nuri Bayar İ.Ö.O.",
+            //    GPA = 77.5,
+            //    IsPreRegistered = true,
+            //}
+            //};
             //await _studentWriteRepository.AddRangeAsync(studentlist);
-            return View();
+            
+            var studentList = _studentReadRepository.GetAll().ToList();
+            return View(studentList);
         }
 
         public IActionResult Privacy()

@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using SchoolAutomationProject.Domain.Entities.CommonTables;
+using SchoolAutomationProject.Domain.Entities.Enums;
 using SchoolAutomationProject.Domain.Entities.UniqueTables;
 using SchoolAutomationProject.Persistence.Configurations.CrossTableConfigurations;
 using SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigurations;
@@ -32,7 +34,7 @@ namespace SchoolAutomationProject.Persistence.Contexts
         {
         }
 
-        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             var entityEntry = ChangeTracker.Entries<BaseClass>();
             foreach (var item in entityEntry)
@@ -49,11 +51,26 @@ namespace SchoolAutomationProject.Persistence.Contexts
                         item.Entity.UpdatedDate = DateTime.UtcNow;
                         item.Entity.UpdatedComputerName = Environment.MachineName;
                         item.Entity.UpdatedIpAddress = IpAddressHelper.GetIpAddress();
+                        if (item.Entity is Student)
+                        {
+                            var student = item.Entity as Student;
+                            var originalValue = item.OriginalValues["ContinuationStatus"].ToString();
+                            var currentValue = item.CurrentValues["ContinuationStatus"].ToString();
+                            if (originalValue!=currentValue)
+                            {
+                                //todo denenecek.
+                                if (currentValue == ContinuationStatus.Mezun.ToString() || currentValue == ContinuationStatus.Sevk.ToString())
+                                {
+                                    await DiscontinuedStudents.AddAsync(new DiscontinuedStudent { StudentId = student.Id, CreatedComputerName="yusuf-pc", CreatedDate=DateTime.UtcNow,CreatedIpAddress="123.1.3.1"}); //todo otomatik atanacak.
+                                }
+                            }
+                            
+                        }
                         break;
                     case EntityState.Added:
                         item.Entity.CreatedDate = DateTime.UtcNow;
                         item.Entity.CreatedComputerName = Environment.MachineName;
-                        item.Entity.CreatedIpAddress = IpAddressHelper.GetIpAddress();
+                        item.Entity.CreatedIpAddress = IpAddressHelper.GetIpAddress(); //todo async olabilir
 
                         if (item.Entity is Student)
                         {
@@ -73,7 +90,7 @@ namespace SchoolAutomationProject.Persistence.Contexts
                         break;
                 }
             }
-            return base.SaveChangesAsync(cancellationToken);
+            return await base.SaveChangesAsync(cancellationToken);
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

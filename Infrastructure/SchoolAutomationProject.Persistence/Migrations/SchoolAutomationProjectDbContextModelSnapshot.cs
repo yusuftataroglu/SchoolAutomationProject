@@ -553,6 +553,188 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     b.HasIndex("ClassroomId");
 
                     b.ToTable("Students");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("09491450-00cd-4d6f-9025-f7e44bf25fc6"),
+                            ContinuationStatus = 1,
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6196),
+                            CreatedIpAddress = "192.168.1.1",
+                            FirstName = "Fatma",
+                            GPA = 88.200000000000003,
+                            Gender = 0,
+                            GraduatedSchool = "Cumhuriyet İlkokulu",
+                            IsPreRegistered = false,
+                            LastName = "Yıldırım",
+                            RegistrationNumber = "100-24"
+                        },
+                        new
+                        {
+                            Id = new Guid("fe825e65-ec62-4016-b881-6841f25dc2c9"),
+                            ContinuationStatus = 1,
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6238),
+                            CreatedIpAddress = "192.168.1.2",
+                            FirstName = "Mustafa",
+                            GPA = 95.0,
+                            Gender = 1,
+                            GraduatedSchool = "Şehit Hasan Ortaokulu",
+                            IsPreRegistered = true,
+                            LastName = "Şahin",
+                            RegistrationNumber = "101-24"
+                        },
+                        new
+                        {
+                            Id = new Guid("f32d8d9c-d26f-4df3-bc69-4558374f1c2d"),
+                            ContinuationStatus = 1,
+                            CreatedComputerName = "Computer3",
+                            CreatedDate = new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6241),
+                            CreatedIpAddress = "192.168.1.3",
+                            FirstName = "Zeynep",
+                            GPA = 82.700000000000003,
+                            Gender = 0,
+                            GraduatedSchool = "Atatürk İlkokulu",
+                            IsPreRegistered = false,
+                            LastName = "Güler",
+                            RegistrationNumber = "102-24"
+                        },
+                        new
+                        {
+                            Id = new Guid("2cbee62d-05b7-4864-b160-f555fcf5f1c3"),
+                            ContinuationStatus = 1,
+                            CreatedComputerName = "Computer4",
+                            CreatedDate = new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6243),
+                            CreatedIpAddress = "192.168.1.4",
+                            FirstName = "Ayşe",
+                            GPA = 91.5,
+                            Gender = 0,
+                            GraduatedSchool = "Mehmet Akif İlkokulu",
+                            IsPreRegistered = true,
+                            LastName = "Kaya",
+                            RegistrationNumber = "103-24"
+                        },
+                        new
+                        {
+                            Id = new Guid("1aa6ce29-ca43-4a18-ae79-59db39423062"),
+                            ContinuationStatus = 1,
+                            CreatedComputerName = "Computer5",
+                            CreatedDate = new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6254),
+                            CreatedIpAddress = "192.168.1.5",
+                            FirstName = "Ahmet",
+                            GPA = 79.799999999999997,
+                            Gender = 1,
+                            GraduatedSchool = "Ali Rıza Ortaokulu",
+                            IsPreRegistered = false,
+                            LastName = "Arslan",
+                            RegistrationNumber = "104-24"
+                        },
+                        new
+                        {
+                            Id = new Guid("d2613d5d-acd0-4b3b-a639-76694b52461e"),
+                            ContinuationStatus = 1,
+                            CreatedComputerName = "Computer6",
+                            CreatedDate = new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6257),
+                            CreatedIpAddress = "192.168.1.6",
+                            FirstName = "Emine",
+                            GPA = 87.299999999999997,
+                            Gender = 0,
+                            GraduatedSchool = "Hacı Ahmet İlkokulu",
+                            IsPreRegistered = true,
+                            LastName = "Yılmaz",
+                            RegistrationNumber = "105-24"
+                        },
+                        new
+                        {
+                            Id = new Guid("71917f1d-edd0-40b5-9d83-f8f1e469e406"),
+                            ContinuationStatus = 1,
+                            CreatedComputerName = "Computer7",
+                            CreatedDate = new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6260),
+                            CreatedIpAddress = "192.168.1.7",
+                            FirstName = "Mehmet",
+                            GPA = 83.599999999999994,
+                            Gender = 1,
+                            GraduatedSchool = "Mustafa Kemal Ortaokulu",
+                            IsPreRegistered = false,
+                            LastName = "Kurt",
+                            RegistrationNumber = "106-24"
+                        },
+                        new
+                        {
+                            Id = new Guid("248599da-7c4f-4f65-a014-01b097baf61f"),
+                            ContinuationStatus = 1,
+                            CreatedComputerName = "Computer8",
+                            CreatedDate = new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6274),
+                            CreatedIpAddress = "192.168.1.8",
+                            FirstName = "Fatih",
+                            GPA = 94.200000000000003,
+                            Gender = 1,
+                            GraduatedSchool = "Cumhuriyet İlkokulu",
+                            IsPreRegistered = true,
+                            LastName = "Sarı",
+                            RegistrationNumber = "107-24"
+                        },
+                        new
+                        {
+                            Id = new Guid("9a1a5c1f-1ff8-41c3-a480-6c68da0c979b"),
+                            ContinuationStatus = 1,
+                            CreatedComputerName = "Computer9",
+                            CreatedDate = new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6278),
+                            CreatedIpAddress = "192.168.1.9",
+                            FirstName = "Elif",
+                            GPA = 78.900000000000006,
+                            Gender = 0,
+                            GraduatedSchool = "Fatih Sultan Mehmet Ortaokulu",
+                            IsPreRegistered = false,
+                            LastName = "Demir",
+                            RegistrationNumber = "108-24"
+                        },
+                        new
+                        {
+                            Id = new Guid("a3057de0-c633-4ae8-9d53-b9c8ea3e5461"),
+                            ContinuationStatus = 1,
+                            CreatedComputerName = "Computer10",
+                            CreatedDate = new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6283),
+                            CreatedIpAddress = "192.168.1.10",
+                            FirstName = "Ali",
+                            GPA = 88.700000000000003,
+                            Gender = 1,
+                            GraduatedSchool = "İsmet İnönü İlkokulu",
+                            IsPreRegistered = true,
+                            LastName = "Özdemir",
+                            RegistrationNumber = "109-24"
+                        },
+                        new
+                        {
+                            Id = new Guid("83ea4c1c-57a5-445e-a87d-665b9116d259"),
+                            ContinuationStatus = 1,
+                            CreatedComputerName = "Computer11",
+                            CreatedDate = new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6290),
+                            CreatedIpAddress = "192.168.1.11",
+                            FirstName = "Sema",
+                            GPA = 85.400000000000006,
+                            Gender = 0,
+                            GraduatedSchool = "Necmettin Erbakan Ortaokulu",
+                            IsPreRegistered = false,
+                            LastName = "Tekin",
+                            RegistrationNumber = "110-24"
+                        },
+                        new
+                        {
+                            Id = new Guid("1ed224a6-e449-4349-8213-30154b320f78"),
+                            ContinuationStatus = 1,
+                            CreatedComputerName = "Computer12",
+                            CreatedDate = new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6292),
+                            CreatedIpAddress = "192.168.1.12",
+                            FirstName = "Can",
+                            GPA = 92.099999999999994,
+                            Gender = 1,
+                            GraduatedSchool = "Abdullah Gül İlkokulu",
+                            IsPreRegistered = true,
+                            LastName = "Aydın",
+                            RegistrationNumber = "111-24"
+                        });
                 });
 
             modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.UniqueTables.SubCourse", b =>

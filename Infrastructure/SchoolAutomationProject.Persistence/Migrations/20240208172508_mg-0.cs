@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace SchoolAutomationProject.Persistence.Migrations
 {
     /// <inheritdoc />
@@ -397,6 +399,25 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         principalTable: "Teachers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Students",
+                columns: new[] { "Id", "ClassroomId", "ContinuationStatus", "CreatedComputerName", "CreatedDate", "CreatedIpAddress", "FirstName", "GPA", "Gender", "GraduatedSchool", "IsPreRegistered", "LastName", "RegistrationNumber", "TotalAbsenceCount", "UpdatedComputerName", "UpdatedDate", "UpdatedIpAddress" },
+                values: new object[,]
+                {
+                    { new Guid("09491450-00cd-4d6f-9025-f7e44bf25fc6"), null, 1, "Computer1", new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6196), "192.168.1.1", "Fatma", 88.200000000000003, 0, "Cumhuriyet İlkokulu", false, "Yıldırım", "100-24", null, null, null, null },
+                    { new Guid("1aa6ce29-ca43-4a18-ae79-59db39423062"), null, 1, "Computer5", new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6254), "192.168.1.5", "Ahmet", 79.799999999999997, 1, "Ali Rıza Ortaokulu", false, "Arslan", "104-24", null, null, null, null },
+                    { new Guid("1ed224a6-e449-4349-8213-30154b320f78"), null, 1, "Computer12", new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6292), "192.168.1.12", "Can", 92.099999999999994, 1, "Abdullah Gül İlkokulu", true, "Aydın", "111-24", null, null, null, null },
+                    { new Guid("248599da-7c4f-4f65-a014-01b097baf61f"), null, 1, "Computer8", new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6274), "192.168.1.8", "Fatih", 94.200000000000003, 1, "Cumhuriyet İlkokulu", true, "Sarı", "107-24", null, null, null, null },
+                    { new Guid("2cbee62d-05b7-4864-b160-f555fcf5f1c3"), null, 1, "Computer4", new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6243), "192.168.1.4", "Ayşe", 91.5, 0, "Mehmet Akif İlkokulu", true, "Kaya", "103-24", null, null, null, null },
+                    { new Guid("71917f1d-edd0-40b5-9d83-f8f1e469e406"), null, 1, "Computer7", new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6260), "192.168.1.7", "Mehmet", 83.599999999999994, 1, "Mustafa Kemal Ortaokulu", false, "Kurt", "106-24", null, null, null, null },
+                    { new Guid("83ea4c1c-57a5-445e-a87d-665b9116d259"), null, 1, "Computer11", new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6290), "192.168.1.11", "Sema", 85.400000000000006, 0, "Necmettin Erbakan Ortaokulu", false, "Tekin", "110-24", null, null, null, null },
+                    { new Guid("9a1a5c1f-1ff8-41c3-a480-6c68da0c979b"), null, 1, "Computer9", new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6278), "192.168.1.9", "Elif", 78.900000000000006, 0, "Fatih Sultan Mehmet Ortaokulu", false, "Demir", "108-24", null, null, null, null },
+                    { new Guid("a3057de0-c633-4ae8-9d53-b9c8ea3e5461"), null, 1, "Computer10", new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6283), "192.168.1.10", "Ali", 88.700000000000003, 1, "İsmet İnönü İlkokulu", true, "Özdemir", "109-24", null, null, null, null },
+                    { new Guid("d2613d5d-acd0-4b3b-a639-76694b52461e"), null, 1, "Computer6", new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6257), "192.168.1.6", "Emine", 87.299999999999997, 0, "Hacı Ahmet İlkokulu", true, "Yılmaz", "105-24", null, null, null, null },
+                    { new Guid("f32d8d9c-d26f-4df3-bc69-4558374f1c2d"), null, 1, "Computer3", new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6241), "192.168.1.3", "Zeynep", 82.700000000000003, 0, "Atatürk İlkokulu", false, "Güler", "102-24", null, null, null, null },
+                    { new Guid("fe825e65-ec62-4016-b881-6841f25dc2c9"), null, 1, "Computer2", new DateTime(2024, 2, 8, 17, 25, 8, 155, DateTimeKind.Utc).AddTicks(6238), "192.168.1.2", "Mustafa", 95.0, 1, "Şehit Hasan Ortaokulu", true, "Şahin", "101-24", null, null, null, null }
                 });
 
             migrationBuilder.CreateIndex(
