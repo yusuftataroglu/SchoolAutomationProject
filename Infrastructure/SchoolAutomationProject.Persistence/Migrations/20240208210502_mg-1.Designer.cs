@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SchoolAutomationProject.Persistence.Contexts;
 
@@ -11,9 +12,11 @@ using SchoolAutomationProject.Persistence.Contexts;
 namespace SchoolAutomationProject.Persistence.Migrations
 {
     [DbContext(typeof(SchoolAutomationProjectDbContext))]
-    partial class SchoolAutomationProjectDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240208210502_mg-1")]
+    partial class mg1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -183,470 +186,6 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     b.HasIndex("SubCourseId");
 
                     b.ToTable("Attendances");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("55c0a469-b13e-4cbf-b0f4-63f78a2e10df"),
-                            AttendanceDate = new DateTime(2023, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 0,
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1054),
-                            CreatedIpAddress = "192.168.1.94",
-                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("b6c71c09-2128-4881-9a89-b7fb23170992"),
-                            AttendanceDate = new DateTime(2023, 5, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 1,
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1089),
-                            CreatedIpAddress = "192.168.1.1",
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("19b775ec-f799-4b66-bb7a-e661f33b98e7"),
-                            AttendanceDate = new DateTime(2023, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 0,
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1094),
-                            CreatedIpAddress = "192.168.1.6",
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("8b27f55d-e07c-4c84-9ef6-d9c96c09912e"),
-                            AttendanceDate = new DateTime(2023, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer3",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1099),
-                            CreatedIpAddress = "192.168.1.24",
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("265b584a-781d-4838-a62b-044f8ff45dd8"),
-                            AttendanceDate = new DateTime(2023, 7, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer4",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1104),
-                            CreatedIpAddress = "192.168.1.25",
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
-                        },
-                        new
-                        {
-                            Id = new Guid("db11a6a7-ed53-4fc7-b46e-db6aba397d7a"),
-                            AttendanceDate = new DateTime(2023, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 1,
-                            CreatedComputerName = "Computer5",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1124),
-                            CreatedIpAddress = "192.168.1.80",
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
-                        },
-                        new
-                        {
-                            Id = new Guid("38dbfb7a-30ac-4de1-a4fa-fc26abc49c0e"),
-                            AttendanceDate = new DateTime(2023, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 3,
-                            CreatedComputerName = "Computer6",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1130),
-                            CreatedIpAddress = "192.168.1.29",
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("161263e7-5f5d-4c2a-9893-5613e0e5610c"),
-                            AttendanceDate = new DateTime(2023, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 0,
-                            CreatedComputerName = "Computer7",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1134),
-                            CreatedIpAddress = "192.168.1.91",
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("50e3afc5-657e-40a7-a114-73f890f09f17"),
-                            AttendanceDate = new DateTime(2023, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer8",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1139),
-                            CreatedIpAddress = "192.168.1.83",
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("ee5e5fbb-b249-4bfc-97cd-4c91cef25a58"),
-                            AttendanceDate = new DateTime(2023, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 0,
-                            CreatedComputerName = "Computer9",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1144),
-                            CreatedIpAddress = "192.168.1.26",
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("73371116-0449-459a-a8ea-77002f7b7f82"),
-                            AttendanceDate = new DateTime(2023, 9, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer10",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1149),
-                            CreatedIpAddress = "192.168.1.69",
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
-                        },
-                        new
-                        {
-                            Id = new Guid("0e923ee7-ffc6-46f9-ab97-04be9bb0264c"),
-                            AttendanceDate = new DateTime(2023, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 0,
-                            CreatedComputerName = "Computer11",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1154),
-                            CreatedIpAddress = "192.168.1.13",
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
-                        },
-                        new
-                        {
-                            Id = new Guid("48da76e9-5702-42d8-8e37-9799df6d903e"),
-                            AttendanceDate = new DateTime(2023, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer12",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1159),
-                            CreatedIpAddress = "192.168.1.94",
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("508186df-ed50-48b3-8687-8799ab573a51"),
-                            AttendanceDate = new DateTime(2023, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 1,
-                            CreatedComputerName = "Computer13",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1166),
-                            CreatedIpAddress = "192.168.1.33",
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("2d45b71c-6c68-44d7-95d2-4ac51057ecb8"),
-                            AttendanceDate = new DateTime(2023, 2, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 3,
-                            CreatedComputerName = "Computer14",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1175),
-                            CreatedIpAddress = "192.168.1.55",
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
-                        },
-                        new
-                        {
-                            Id = new Guid("bba41297-b879-4547-8fbe-5d2e2ef0a410"),
-                            AttendanceDate = new DateTime(2023, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 0,
-                            CreatedComputerName = "Computer15",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1179),
-                            CreatedIpAddress = "192.168.1.6",
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
-                        },
-                        new
-                        {
-                            Id = new Guid("c583a372-4a13-4c41-9019-e929d6c14358"),
-                            AttendanceDate = new DateTime(2023, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 0,
-                            CreatedComputerName = "Computer16",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1188),
-                            CreatedIpAddress = "192.168.1.69",
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
-                        },
-                        new
-                        {
-                            Id = new Guid("c2d1e70f-7041-4f5a-97db-ffa5a378cf11"),
-                            AttendanceDate = new DateTime(2023, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 0,
-                            CreatedComputerName = "Computer17",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1196),
-                            CreatedIpAddress = "192.168.1.23",
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("69b1c5c9-c699-47b3-8729-dedf99e0abd3"),
-                            AttendanceDate = new DateTime(2023, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 1,
-                            CreatedComputerName = "Computer18",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1200),
-                            CreatedIpAddress = "192.168.1.39",
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
-                        },
-                        new
-                        {
-                            Id = new Guid("1bed3368-24e6-4946-a054-88bdd4b27719"),
-                            AttendanceDate = new DateTime(2023, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 3,
-                            CreatedComputerName = "Computer19",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1206),
-                            CreatedIpAddress = "192.168.1.54",
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
-                        },
-                        new
-                        {
-                            Id = new Guid("f966a921-a23f-4f15-8c96-4f945d9cef16"),
-                            AttendanceDate = new DateTime(2023, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 1,
-                            CreatedComputerName = "Computer20",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1210),
-                            CreatedIpAddress = "192.168.1.40",
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("2faac03d-5175-41d6-86a6-6cb726636ecf"),
-                            AttendanceDate = new DateTime(2023, 11, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer21",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1218),
-                            CreatedIpAddress = "192.168.1.73",
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
-                        },
-                        new
-                        {
-                            Id = new Guid("a78cbc29-ea60-4528-bf42-f06aebefd0c3"),
-                            AttendanceDate = new DateTime(2023, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer22",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1223),
-                            CreatedIpAddress = "192.168.1.51",
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
-                        },
-                        new
-                        {
-                            Id = new Guid("daa19d0d-db35-47e4-9e22-80938217e731"),
-                            AttendanceDate = new DateTime(2023, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer23",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1230),
-                            CreatedIpAddress = "192.168.1.20",
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
-                        },
-                        new
-                        {
-                            Id = new Guid("657f1264-8ed1-496e-b4f2-2004a3321052"),
-                            AttendanceDate = new DateTime(2023, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer24",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1234),
-                            CreatedIpAddress = "192.168.1.44",
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("292c99d5-b31b-4161-a4cd-93d9020050fd"),
-                            AttendanceDate = new DateTime(2023, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 1,
-                            CreatedComputerName = "Computer25",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1239),
-                            CreatedIpAddress = "192.168.1.35",
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("3e36ba47-84ca-4551-88ff-020f42ae15f0"),
-                            AttendanceDate = new DateTime(2023, 1, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 0,
-                            CreatedComputerName = "Computer26",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1244),
-                            CreatedIpAddress = "192.168.1.86",
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("791745fb-2b46-4790-a0a0-74bba0722fb2"),
-                            AttendanceDate = new DateTime(2023, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer27",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1249),
-                            CreatedIpAddress = "192.168.1.1",
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
-                        },
-                        new
-                        {
-                            Id = new Guid("24ee35b0-9c88-45bf-94da-cc74beaed453"),
-                            AttendanceDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer28",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1257),
-                            CreatedIpAddress = "192.168.1.22",
-                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
-                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
-                        },
-                        new
-                        {
-                            Id = new Guid("9a315ea2-c153-4485-ae62-87859d0cecf3"),
-                            AttendanceDate = new DateTime(2023, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 0,
-                            CreatedComputerName = "Computer29",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1263),
-                            CreatedIpAddress = "192.168.1.53",
-                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("1993975b-9ee5-43a1-ae03-8700978037ad"),
-                            AttendanceDate = new DateTime(2023, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer30",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1268),
-                            CreatedIpAddress = "192.168.1.43",
-                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("f1da2ced-3bf8-4acb-9bf0-bf2ed737aa8e"),
-                            AttendanceDate = new DateTime(2023, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer31",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1272),
-                            CreatedIpAddress = "192.168.1.74",
-                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("17a28e47-49cf-49db-87d3-97da5cb3246c"),
-                            AttendanceDate = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 1,
-                            CreatedComputerName = "Computer32",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1277),
-                            CreatedIpAddress = "192.168.1.61",
-                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
-                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
-                        },
-                        new
-                        {
-                            Id = new Guid("52a574ad-f9c0-4841-a294-ed103e9b0791"),
-                            AttendanceDate = new DateTime(2023, 10, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 1,
-                            CreatedComputerName = "Computer33",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1283),
-                            CreatedIpAddress = "192.168.1.5",
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
-                        },
-                        new
-                        {
-                            Id = new Guid("8d0e30dc-9c55-4a1c-8274-382189c57416"),
-                            AttendanceDate = new DateTime(2023, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 3,
-                            CreatedComputerName = "Computer34",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1288),
-                            CreatedIpAddress = "192.168.1.67",
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
-                        },
-                        new
-                        {
-                            Id = new Guid("e4ca871d-6cba-4c47-879a-81ecf3508992"),
-                            AttendanceDate = new DateTime(2023, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 3,
-                            CreatedComputerName = "Computer35",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1293),
-                            CreatedIpAddress = "192.168.1.48",
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("31a43abf-8d8f-44fe-897e-7fc57a25992e"),
-                            AttendanceDate = new DateTime(2023, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 3,
-                            CreatedComputerName = "Computer36",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1298),
-                            CreatedIpAddress = "192.168.1.6",
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
-                        },
-                        new
-                        {
-                            Id = new Guid("809d4f90-a219-43ac-91da-cc5c40af6778"),
-                            AttendanceDate = new DateTime(2023, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer37",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1305),
-                            CreatedIpAddress = "192.168.1.19",
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
-                        },
-                        new
-                        {
-                            Id = new Guid("cac39991-4c5e-4a4e-b925-233a259e7083"),
-                            AttendanceDate = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 1,
-                            CreatedComputerName = "Computer38",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1309),
-                            CreatedIpAddress = "192.168.1.59",
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("ecd50c48-7231-4088-bf36-bfb3756cda9c"),
-                            AttendanceDate = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 0,
-                            CreatedComputerName = "Computer39",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1314),
-                            CreatedIpAddress = "192.168.1.39",
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
-                        },
-                        new
-                        {
-                            Id = new Guid("7fd1d745-37d5-4355-869a-4a3dc9105ac3"),
-                            AttendanceDate = new DateTime(2023, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 1,
-                            CreatedComputerName = "Computer40",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1318),
-                            CreatedIpAddress = "192.168.1.17",
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("ffdcb1d8-8bc1-4ef7-bf61-1cc580af817b"),
-                            AttendanceDate = new DateTime(2023, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer41",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(1324),
-                            CreatedIpAddress = "192.168.1.3",
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
-                        });
                 });
 
             modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.UniqueTables.Classroom", b =>
@@ -693,48 +232,6 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Classrooms");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("666917cb-ccff-46e2-81be-1dc06b74ddcb"),
-                            Capacity = (byte)25,
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(2137),
-                            CreatedIpAddress = "192.168.1.1",
-                            Grade = "1",
-                            Section = 0
-                        },
-                        new
-                        {
-                            Id = new Guid("22d118a6-a81b-435f-a4c7-ffed69e37f12"),
-                            Capacity = (byte)25,
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(2140),
-                            CreatedIpAddress = "192.168.1.2",
-                            Grade = "1",
-                            Section = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("05c0da3b-87a7-4b85-b3e6-aa133dbab5f0"),
-                            Capacity = (byte)25,
-                            CreatedComputerName = "Computer3",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(2142),
-                            CreatedIpAddress = "192.168.1.3",
-                            Grade = "2",
-                            Section = 0
-                        },
-                        new
-                        {
-                            Id = new Guid("7a3741e2-d501-4710-b0c9-a0a53142ad79"),
-                            Capacity = (byte)25,
-                            CreatedComputerName = "Computer4",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(2144),
-                            CreatedIpAddress = "192.168.1.4",
-                            Grade = "2",
-                            Section = 1
-                        });
                 });
 
             modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.UniqueTables.DiscontinuedStudent", b =>
@@ -831,43 +328,43 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("8908a8c5-b412-4c14-b0fb-3a4ef62c5303"),
+                            Id = new Guid("a9360450-4099-4aeb-9725-d293dfaf94f4"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(2956),
-                            CreatedIpAddress = "192.168.1.38",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(218),
+                            CreatedIpAddress = "192.168.1.25",
                             ExamNumber = (byte)1,
-                            Score = 87.0,
+                            Score = 3.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("d1635293-1dcd-49eb-b6b2-72adeb67a465"),
+                            Id = new Guid("a1187c36-e657-4ee5-8d65-da9961d76fed"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(2971),
-                            CreatedIpAddress = "192.168.1.89",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(267),
+                            CreatedIpAddress = "192.168.1.91",
                             ExamNumber = (byte)1,
-                            Score = 0.0,
+                            Score = 76.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("9ba13719-e465-404a-aacd-ef7b5c8c3d7b"),
+                            Id = new Guid("f66fbb28-f99a-4d37-b0ea-d114551b15c3"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(2976),
-                            CreatedIpAddress = "192.168.1.66",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(273),
+                            CreatedIpAddress = "192.168.1.45",
                             ExamNumber = (byte)1,
-                            Score = 62.0,
+                            Score = 6.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("4cd3af98-2298-45fd-b792-2c901a6c8732"),
+                            Id = new Guid("690e9d0d-3916-47f8-9e28-4202967f759d"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(2980),
-                            CreatedIpAddress = "192.168.1.85",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(277),
+                            CreatedIpAddress = "192.168.1.18",
                             ExamNumber = (byte)1,
                             Score = 29.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
@@ -875,3134 +372,3134 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4b70989b-32f4-4345-a82e-80222f035f57"),
+                            Id = new Guid("8d0e5213-08f9-4082-ab7f-46b8221aa514"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(2984),
-                            CreatedIpAddress = "192.168.1.49",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(281),
+                            CreatedIpAddress = "192.168.1.29",
                             ExamNumber = (byte)1,
-                            Score = 60.0,
+                            Score = 39.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("a4ba454e-84e5-4461-8cdf-97b68eb5f4d0"),
+                            Id = new Guid("5a0ea3d8-a229-493c-8e85-aa16685709ce"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(2989),
-                            CreatedIpAddress = "192.168.1.97",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(286),
+                            CreatedIpAddress = "192.168.1.33",
                             ExamNumber = (byte)1,
-                            Score = 82.0,
+                            Score = 46.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
                         },
                         new
                         {
-                            Id = new Guid("783fee72-ed96-4309-ae77-9e3e901b6c58"),
+                            Id = new Guid("a00b3819-cdb2-4fa9-a33e-f04ca92ad63e"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(2993),
-                            CreatedIpAddress = "192.168.1.31",
-                            ExamNumber = (byte)1,
-                            Score = 67.0,
-                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("d372ef2d-d5d4-4f25-a3c8-f92caad2b1f8"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(2997),
-                            CreatedIpAddress = "192.168.1.18",
-                            ExamNumber = (byte)1,
-                            Score = 25.0,
-                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("33eb0767-7365-46b3-afdf-e27f16b22322"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3000),
-                            CreatedIpAddress = "192.168.1.65",
-                            ExamNumber = (byte)1,
-                            Score = 56.0,
-                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
-                        },
-                        new
-                        {
-                            Id = new Guid("ca8d404f-1bdd-4a15-8374-94f1444dbea2"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3007),
-                            CreatedIpAddress = "192.168.1.43",
-                            ExamNumber = (byte)1,
-                            Score = 16.0,
-                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("ae642378-f2ed-4f3e-bdef-bbdffbe0988a"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3011),
-                            CreatedIpAddress = "192.168.1.83",
-                            ExamNumber = (byte)1,
-                            Score = 21.0,
-                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
-                        },
-                        new
-                        {
-                            Id = new Guid("fbbfaf1b-01ab-4b34-9780-5c84d82af819"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3022),
-                            CreatedIpAddress = "192.168.1.38",
-                            ExamNumber = (byte)1,
-                            Score = 76.0,
-                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("f3109e45-a13f-49d0-8d6f-0f8aba39566d"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3026),
-                            CreatedIpAddress = "192.168.1.53",
-                            ExamNumber = (byte)1,
-                            Score = 83.0,
-                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("44375be4-027a-4c59-9a20-123df9713bcd"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3030),
-                            CreatedIpAddress = "192.168.1.84",
-                            ExamNumber = (byte)1,
-                            Score = 15.0,
-                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
-                        },
-                        new
-                        {
-                            Id = new Guid("8d45a6a7-fcf9-4946-b086-2c7bc06af88f"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3033),
-                            CreatedIpAddress = "192.168.1.73",
-                            ExamNumber = (byte)1,
-                            Score = 20.0,
-                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
-                        },
-                        new
-                        {
-                            Id = new Guid("90a924b1-a6ae-4ddb-8012-7cd2d3a5d3b9"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3037),
-                            CreatedIpAddress = "192.168.1.12",
-                            ExamNumber = (byte)1,
-                            Score = 11.0,
-                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
-                        },
-                        new
-                        {
-                            Id = new Guid("87739a21-b93b-4bc7-8c1f-d3372c164f93"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3041),
-                            CreatedIpAddress = "192.168.1.97",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(293),
+                            CreatedIpAddress = "192.168.1.40",
                             ExamNumber = (byte)1,
                             Score = 96.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
                         },
                         new
                         {
-                            Id = new Guid("e4b43366-e6ca-4324-a945-2e2f0e3c3889"),
+                            Id = new Guid("4a4f3f94-c586-4ce4-b59b-60768c3fc3d6"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3047),
-                            CreatedIpAddress = "192.168.1.68",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(297),
+                            CreatedIpAddress = "192.168.1.32",
                             ExamNumber = (byte)1,
-                            Score = 59.0,
+                            Score = 69.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
+                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
                         },
                         new
                         {
-                            Id = new Guid("3eba9114-6985-4a35-ba80-19c59542ce9c"),
+                            Id = new Guid("c41ce667-66b5-46d8-91d0-8ece6b537f77"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3051),
-                            CreatedIpAddress = "192.168.1.39",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(301),
+                            CreatedIpAddress = "192.168.1.25",
                             ExamNumber = (byte)1,
-                            Score = 6.0,
+                            Score = 53.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
+                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
                         },
                         new
                         {
-                            Id = new Guid("8d1e1fc6-b280-4ba5-be0b-14823567c760"),
+                            Id = new Guid("04a79d1b-d7d9-422b-afe2-d054f6388690"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3055),
-                            CreatedIpAddress = "192.168.1.29",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(306),
+                            CreatedIpAddress = "192.168.1.26",
+                            ExamNumber = (byte)1,
+                            Score = 19.0,
+                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
+                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                        },
+                        new
+                        {
+                            Id = new Guid("666f3ba3-5890-487d-af18-bd06be9f6aee"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(310),
+                            CreatedIpAddress = "192.168.1.46",
+                            ExamNumber = (byte)1,
+                            Score = 71.0,
+                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("b0fcf0d6-14d0-4c49-ad10-7dbb6dc8eb1b"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(314),
+                            CreatedIpAddress = "192.168.1.1",
+                            ExamNumber = (byte)1,
+                            Score = 1.0,
+                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
+                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
+                        },
+                        new
+                        {
+                            Id = new Guid("21a04485-257c-4a50-82cb-370069efbc5c"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(318),
+                            CreatedIpAddress = "192.168.1.89",
+                            ExamNumber = (byte)1,
+                            Score = 94.0,
+                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
+                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
+                        },
+                        new
+                        {
+                            Id = new Guid("528172a2-89ca-4c01-8273-c87b34701940"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(322),
+                            CreatedIpAddress = "192.168.1.4",
                             ExamNumber = (byte)1,
                             Score = 85.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
-                        },
-                        new
-                        {
-                            Id = new Guid("dc732ec6-a394-4cc7-82cc-97722e6b07e5"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3060),
-                            CreatedIpAddress = "192.168.1.96",
-                            ExamNumber = (byte)1,
-                            Score = 87.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
-                        },
-                        new
-                        {
-                            Id = new Guid("eee29a70-2cd9-43e9-a11e-07b35957db51"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3064),
-                            CreatedIpAddress = "192.168.1.7",
-                            ExamNumber = (byte)1,
-                            Score = 9.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
-                        },
-                        new
-                        {
-                            Id = new Guid("73057b35-56be-4e67-ab65-db62b4fa5a5c"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3068),
-                            CreatedIpAddress = "192.168.1.40",
-                            ExamNumber = (byte)1,
-                            Score = 8.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
-                        },
-                        new
-                        {
-                            Id = new Guid("ec9dadd3-8659-4159-8e0f-d7186cae974b"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3071),
-                            CreatedIpAddress = "192.168.1.92",
-                            ExamNumber = (byte)1,
-                            Score = 17.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("8162028e-8f5c-4797-89a2-4af39b6aa9fc"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3075),
-                            CreatedIpAddress = "192.168.1.55",
-                            ExamNumber = (byte)1,
-                            Score = 66.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
-                        },
-                        new
-                        {
-                            Id = new Guid("bf7f27bb-f0a8-4d39-890f-b33dae78e9c0"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3081),
-                            CreatedIpAddress = "192.168.1.23",
-                            ExamNumber = (byte)1,
-                            Score = 58.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("372eb80e-96a7-4611-a244-25cb0ab29fa9"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3085),
-                            CreatedIpAddress = "192.168.1.16",
-                            ExamNumber = (byte)1,
-                            Score = 92.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("f29e9293-b555-4c7b-ac3a-4cccb22e5d56"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3088),
-                            CreatedIpAddress = "192.168.1.99",
-                            ExamNumber = (byte)1,
-                            Score = 61.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("a8b4ae23-e936-4b47-a9bc-7ab48de5672c"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3092),
-                            CreatedIpAddress = "192.168.1.99",
-                            ExamNumber = (byte)1,
-                            Score = 87.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
-                        },
-                        new
-                        {
-                            Id = new Guid("d713d9b6-58c7-4a9c-9eda-c810b95369ed"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3096),
-                            CreatedIpAddress = "192.168.1.24",
-                            ExamNumber = (byte)1,
-                            Score = 65.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("4054207d-0fed-40a4-8659-7d0040bf1280"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3100),
-                            CreatedIpAddress = "192.168.1.80",
-                            ExamNumber = (byte)1,
-                            Score = 90.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
-                        },
-                        new
-                        {
-                            Id = new Guid("20b2fd40-80db-44c2-b718-c9acc20add35"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3104),
-                            CreatedIpAddress = "192.168.1.38",
-                            ExamNumber = (byte)1,
-                            Score = 1.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("7da9dba1-9c42-45c1-93c4-cbd416747687"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3108),
-                            CreatedIpAddress = "192.168.1.17",
-                            ExamNumber = (byte)1,
-                            Score = 43.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("e810a4f6-7704-40c2-8b84-66a76d9dd6a9"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3114),
-                            CreatedIpAddress = "192.168.1.49",
-                            ExamNumber = (byte)1,
-                            Score = 99.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("425743d7-894c-4cec-ad33-b8a34421f0c9"),
+                            Id = new Guid("2705a5fb-388d-4816-866a-a6e695611dc4"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3118),
-                            CreatedIpAddress = "192.168.1.34",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(328),
+                            CreatedIpAddress = "192.168.1.90",
                             ExamNumber = (byte)1,
-                            Score = 75.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            Score = 92.0,
+                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("629094ac-28eb-4ae9-946a-070edc329d3f"),
+                            Id = new Guid("461445fb-7f19-4991-afc6-f4d4e7dafcce"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3122),
-                            CreatedIpAddress = "192.168.1.30",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(332),
+                            CreatedIpAddress = "192.168.1.52",
                             ExamNumber = (byte)1,
-                            Score = 49.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            Score = 14.0,
+                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("987d98d0-4299-4dbd-af70-f04522909114"),
+                            Id = new Guid("6dedf6c2-75ad-47a7-b2d3-fbe6cee70036"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3126),
-                            CreatedIpAddress = "192.168.1.17",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(336),
+                            CreatedIpAddress = "192.168.1.72",
                             ExamNumber = (byte)1,
-                            Score = 71.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            Score = 6.0,
+                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("c33f70e2-633f-4012-9b2a-27b568c2e7ad"),
+                            Id = new Guid("985bc4bc-6da1-473e-8b8a-5984d0c5a660"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3130),
-                            CreatedIpAddress = "192.168.1.97",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(341),
+                            CreatedIpAddress = "192.168.1.6",
+                            ExamNumber = (byte)1,
+                            Score = 14.0,
+                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
+                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
+                        },
+                        new
+                        {
+                            Id = new Guid("c81cc66d-744f-4b42-a7f8-85a81c56ad81"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(346),
+                            CreatedIpAddress = "192.168.1.14",
+                            ExamNumber = (byte)1,
+                            Score = 26.0,
+                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
+                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
+                        },
+                        new
+                        {
+                            Id = new Guid("afd05206-0d89-4d50-b4d6-919591ac096f"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(350),
+                            CreatedIpAddress = "192.168.1.87",
+                            ExamNumber = (byte)1,
+                            Score = 90.0,
+                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
+                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
+                        },
+                        new
+                        {
+                            Id = new Guid("59dccad1-42db-44b2-a262-d6657b613ded"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(355),
+                            CreatedIpAddress = "192.168.1.2",
                             ExamNumber = (byte)1,
                             Score = 88.0,
                             StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
+                        },
+                        new
+                        {
+                            Id = new Guid("b13b4138-b2e4-4d48-bd57-7d689cac9c03"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(359),
+                            CreatedIpAddress = "192.168.1.61",
+                            ExamNumber = (byte)1,
+                            Score = 54.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
+                        },
+                        new
+                        {
+                            Id = new Guid("0153d560-42a5-49c6-ba81-a9cd0b6c51f1"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(365),
+                            CreatedIpAddress = "192.168.1.83",
+                            ExamNumber = (byte)1,
+                            Score = 94.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
+                        },
+                        new
+                        {
+                            Id = new Guid("b285dda9-0c08-4d28-a2ae-fb44461398e2"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(369),
+                            CreatedIpAddress = "192.168.1.26",
+                            ExamNumber = (byte)1,
+                            Score = 95.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
+                        },
+                        new
+                        {
+                            Id = new Guid("1715b521-0758-4d11-8510-a5e5ccd40cce"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(373),
+                            CreatedIpAddress = "192.168.1.82",
+                            ExamNumber = (byte)1,
+                            Score = 73.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
+                        },
+                        new
+                        {
+                            Id = new Guid("c21156df-e36e-4210-a7bc-8ae0b9cd0953"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(377),
+                            CreatedIpAddress = "192.168.1.27",
+                            ExamNumber = (byte)1,
+                            Score = 38.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
+                        },
+                        new
+                        {
+                            Id = new Guid("57ff179e-3614-4d90-ade1-0125aa8a0bb4"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(381),
+                            CreatedIpAddress = "192.168.1.95",
+                            ExamNumber = (byte)1,
+                            Score = 50.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("c0c805b0-86a9-43fc-b9c2-2142c607eda5"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(393),
+                            CreatedIpAddress = "192.168.1.89",
+                            ExamNumber = (byte)1,
+                            Score = 6.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                        },
+                        new
+                        {
+                            Id = new Guid("9371773c-4437-416c-9ee0-c9fa61fd8121"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(397),
+                            CreatedIpAddress = "192.168.1.48",
+                            ExamNumber = (byte)1,
+                            Score = 34.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                        },
+                        new
+                        {
+                            Id = new Guid("24a4b881-f1ef-4c88-9f73-95b3ab383400"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(401),
+                            CreatedIpAddress = "192.168.1.96",
+                            ExamNumber = (byte)1,
+                            Score = 88.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                        },
+                        new
+                        {
+                            Id = new Guid("4c99a7cf-3333-44f6-a731-a9da981b9a88"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(407),
+                            CreatedIpAddress = "192.168.1.73",
+                            ExamNumber = (byte)1,
+                            Score = 62.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("541c4c1b-dfda-4cfb-839d-c49da7082425"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(411),
+                            CreatedIpAddress = "192.168.1.76",
+                            ExamNumber = (byte)1,
+                            Score = 17.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
+                        },
+                        new
+                        {
+                            Id = new Guid("c7a7f940-58ab-4cf1-9b6e-aca7589ab4f0"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(415),
+                            CreatedIpAddress = "192.168.1.57",
+                            ExamNumber = (byte)1,
+                            Score = 26.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
+                        },
+                        new
+                        {
+                            Id = new Guid("ea7bf8c3-68e4-41db-9dc2-2aea6041eef8"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(420),
+                            CreatedIpAddress = "192.168.1.10",
+                            ExamNumber = (byte)1,
+                            Score = 59.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
+                        },
+                        new
+                        {
+                            Id = new Guid("16934a89-783b-4284-b79c-ea6827709cf6"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(424),
+                            CreatedIpAddress = "192.168.1.13",
+                            ExamNumber = (byte)1,
+                            Score = 28.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
+                        },
+                        new
+                        {
+                            Id = new Guid("0e65cd09-eb38-483f-8ac0-8b6529fbf36e"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(428),
+                            CreatedIpAddress = "192.168.1.74",
+                            ExamNumber = (byte)1,
+                            Score = 41.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
+                        },
+                        new
+                        {
+                            Id = new Guid("702408e8-ec14-4d2f-bb29-4131391262f0"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(432),
+                            CreatedIpAddress = "192.168.1.52",
+                            ExamNumber = (byte)1,
+                            Score = 22.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
+                        },
+                        new
+                        {
+                            Id = new Guid("ecf69ef9-7b72-4f83-8767-be46df1de335"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(436),
+                            CreatedIpAddress = "192.168.1.26",
+                            ExamNumber = (byte)1,
+                            Score = 38.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("c90248be-828a-4268-8196-e2fa453d4dbd"),
+                            Id = new Guid("d8d34239-bc3c-41fb-87f2-4268a1a13168"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3134),
-                            CreatedIpAddress = "192.168.1.75",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(442),
+                            CreatedIpAddress = "192.168.1.6",
                             ExamNumber = (byte)1,
-                            Score = 1.0,
+                            Score = 72.0,
                             StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("e80fbb64-928a-464e-80f9-821ead28c28e"),
+                            Id = new Guid("80dde249-e9dd-439f-ba11-035af5f4e0d1"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3137),
-                            CreatedIpAddress = "192.168.1.85",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(446),
+                            CreatedIpAddress = "192.168.1.67",
                             ExamNumber = (byte)1,
-                            Score = 51.0,
+                            Score = 4.0,
                             StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("03831e1e-c9d5-4932-8a55-3260d643b6cd"),
+                            Id = new Guid("9fc3ed31-96a1-444a-8a7a-90b1ffe8d39f"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3141),
-                            CreatedIpAddress = "192.168.1.18",
-                            ExamNumber = (byte)1,
-                            Score = 36.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
-                        },
-                        new
-                        {
-                            Id = new Guid("4656495a-a1ba-453c-b85b-1b2fb0abc1da"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3148),
-                            CreatedIpAddress = "192.168.1.14",
-                            ExamNumber = (byte)1,
-                            Score = 13.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
-                        },
-                        new
-                        {
-                            Id = new Guid("7a3e1459-7af5-46b1-bb94-addf1fe8d1bd"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3164),
-                            CreatedIpAddress = "192.168.1.88",
-                            ExamNumber = (byte)1,
-                            Score = 40.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
-                        },
-                        new
-                        {
-                            Id = new Guid("f979c8a9-5ec8-4230-80a3-dda7cef8747f"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3168),
-                            CreatedIpAddress = "192.168.1.97",
-                            ExamNumber = (byte)1,
-                            Score = 81.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("1895ae3c-ba11-4729-a229-8402ecd6887b"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3172),
-                            CreatedIpAddress = "192.168.1.46",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(450),
+                            CreatedIpAddress = "192.168.1.47",
                             ExamNumber = (byte)1,
                             Score = 4.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
+                        },
+                        new
+                        {
+                            Id = new Guid("10aeb169-9451-4a90-923a-1fa0a79e73e0"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(454),
+                            CreatedIpAddress = "192.168.1.67",
+                            ExamNumber = (byte)1,
+                            Score = 82.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
+                        },
+                        new
+                        {
+                            Id = new Guid("b75771e7-9cf1-4d7f-a8a4-ca53212a4760"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(458),
+                            CreatedIpAddress = "192.168.1.97",
+                            ExamNumber = (byte)1,
+                            Score = 42.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
+                        },
+                        new
+                        {
+                            Id = new Guid("3fec89e9-c4e6-4328-9294-3b6fdf073c8b"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(462),
+                            CreatedIpAddress = "192.168.1.41",
+                            ExamNumber = (byte)1,
+                            Score = 51.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
+                        },
+                        new
+                        {
+                            Id = new Guid("3a12e8ee-cccc-4506-a414-b56fd67bab7d"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(466),
+                            CreatedIpAddress = "192.168.1.77",
+                            ExamNumber = (byte)1,
+                            Score = 40.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("f3ab62c9-0c1c-44ac-b766-bb5a46f5c3bd"),
+                            Id = new Guid("677367db-b794-444e-b7a2-bf3a938ce43c"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3176),
-                            CreatedIpAddress = "192.168.1.77",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(470),
+                            CreatedIpAddress = "192.168.1.66",
                             ExamNumber = (byte)1,
-                            Score = 23.0,
+                            Score = 94.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
                         },
                         new
                         {
-                            Id = new Guid("cdd288ee-57eb-4a65-8974-c9a634165d11"),
+                            Id = new Guid("deb52c11-93e2-4966-83d5-e7e8a26de2e6"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3180),
-                            CreatedIpAddress = "192.168.1.98",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(476),
+                            CreatedIpAddress = "192.168.1.17",
                             ExamNumber = (byte)1,
-                            Score = 50.0,
+                            Score = 94.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
                         },
                         new
                         {
-                            Id = new Guid("c2563891-4f15-4e06-9b45-3f75e8b3576e"),
+                            Id = new Guid("a9805fea-ab96-4edb-8015-33ac20818efc"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3184),
-                            CreatedIpAddress = "192.168.1.45",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(480),
+                            CreatedIpAddress = "192.168.1.46",
                             ExamNumber = (byte)1,
-                            Score = 76.0,
+                            Score = 32.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
                         },
                         new
                         {
-                            Id = new Guid("f4481a90-2695-448c-be97-e1f1f685a388"),
+                            Id = new Guid("4142f201-2b47-452e-af38-a983970fc895"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3188),
-                            CreatedIpAddress = "192.168.1.64",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(484),
+                            CreatedIpAddress = "192.168.1.71",
                             ExamNumber = (byte)1,
-                            Score = 25.0,
+                            Score = 76.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
                         },
                         new
                         {
-                            Id = new Guid("4e05e32a-be1a-4885-ac22-801476eb8ef8"),
+                            Id = new Guid("72653e45-9311-4c54-b3cf-76655a7841fe"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3193),
-                            CreatedIpAddress = "192.168.1.8",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(488),
+                            CreatedIpAddress = "192.168.1.60",
                             ExamNumber = (byte)1,
-                            Score = 26.0,
+                            Score = 53.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
                         },
                         new
                         {
-                            Id = new Guid("202b0f18-de60-4627-867f-9c47077b9b92"),
+                            Id = new Guid("b842471f-b47d-45b5-bca3-7f4ed6962da0"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3197),
-                            CreatedIpAddress = "192.168.1.2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(492),
+                            CreatedIpAddress = "192.168.1.9",
                             ExamNumber = (byte)1,
-                            Score = 3.0,
+                            Score = 31.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
                         },
                         new
                         {
-                            Id = new Guid("cd6a979e-0d25-4db3-9265-63de5268c3b1"),
+                            Id = new Guid("38525b41-92eb-4dc3-a768-614251cf1c63"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3201),
-                            CreatedIpAddress = "192.168.1.46",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(496),
+                            CreatedIpAddress = "192.168.1.68",
                             ExamNumber = (byte)1,
-                            Score = 87.0,
+                            Score = 64.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
                         },
                         new
                         {
-                            Id = new Guid("02da0517-a293-49c6-b43c-09d6c1515bc4"),
+                            Id = new Guid("5228a8f9-31eb-4f37-b585-692c49baf94d"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3205),
-                            CreatedIpAddress = "192.168.1.55",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(500),
+                            CreatedIpAddress = "192.168.1.36",
                             ExamNumber = (byte)1,
-                            Score = 34.0,
+                            Score = 60.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
                         },
                         new
                         {
-                            Id = new Guid("f873a64b-346d-4ddd-b463-e64d2387ce12"),
+                            Id = new Guid("553b82b7-12ce-464c-ae9a-0444d29af4b9"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3209),
-                            CreatedIpAddress = "192.168.1.11",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(504),
+                            CreatedIpAddress = "192.168.1.40",
                             ExamNumber = (byte)1,
-                            Score = 36.0,
+                            Score = 97.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("4fc12269-0d1b-47b9-80d9-2ce6a1878fac"),
+                            Id = new Guid("c0aec1df-0e59-4dbf-abaa-1ae578f468a8"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3213),
-                            CreatedIpAddress = "192.168.1.94",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(510),
+                            CreatedIpAddress = "192.168.1.63",
                             ExamNumber = (byte)1,
-                            Score = 74.0,
+                            Score = 3.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("30c564ec-7e63-4c16-b6e8-cf2a395a8629"),
+                            Id = new Guid("c7ad8eb7-346a-4493-954c-f094c6325ff5"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3216),
-                            CreatedIpAddress = "192.168.1.78",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(514),
+                            CreatedIpAddress = "192.168.1.8",
                             ExamNumber = (byte)1,
-                            Score = 6.0,
+                            Score = 39.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("bca818a3-8776-4c87-8dd2-48517c922864"),
+                            Id = new Guid("263bda6b-009a-48ee-ab29-fdd5e331736b"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3220),
-                            CreatedIpAddress = "192.168.1.60",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(518),
+                            CreatedIpAddress = "192.168.1.42",
                             ExamNumber = (byte)1,
-                            Score = 92.0,
+                            Score = 20.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("8fc359a9-46e5-4724-8f4e-ec2c8242d606"),
+                            Id = new Guid("b440fb61-5e26-425a-a6f5-23cbec310d50"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3226),
-                            CreatedIpAddress = "192.168.1.16",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(523),
+                            CreatedIpAddress = "192.168.1.40",
                             ExamNumber = (byte)1,
-                            Score = 71.0,
+                            Score = 49.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("3a58650a-1faa-410a-86ff-c06bb2ac44f7"),
+                            Id = new Guid("38616302-52fb-470d-a7fd-40de48cef2d1"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3229),
-                            CreatedIpAddress = "192.168.1.71",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(529),
+                            CreatedIpAddress = "192.168.1.76",
                             ExamNumber = (byte)1,
-                            Score = 25.0,
+                            Score = 45.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("454cead1-9f8f-41af-b3e6-deb4c29fa022"),
+                            Id = new Guid("a2022ae2-1deb-4293-953a-41d0dc5b91f6"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3233),
-                            CreatedIpAddress = "192.168.1.68",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(544),
+                            CreatedIpAddress = "192.168.1.69",
                             ExamNumber = (byte)1,
-                            Score = 68.0,
+                            Score = 32.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("bbfc794d-c270-44ce-bb1f-133f8c564a94"),
+                            Id = new Guid("28ba7f9d-2ea0-4bdf-99c6-81b6eb1fe44d"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3237),
-                            CreatedIpAddress = "192.168.1.73",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(548),
+                            CreatedIpAddress = "192.168.1.11",
                             ExamNumber = (byte)1,
-                            Score = 86.0,
+                            Score = 63.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("88d07af1-89f1-41f1-b61e-4ee5aa8eb4c9"),
+                            Id = new Guid("235494cb-4796-4242-8ca7-2e9631c0a109"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3241),
-                            CreatedIpAddress = "192.168.1.9",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(552),
+                            CreatedIpAddress = "192.168.1.19",
                             ExamNumber = (byte)1,
-                            Score = 28.0,
+                            Score = 13.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("d116024d-226a-4318-9bc4-e68710f69c33"),
+                            Id = new Guid("f418d9b7-9ca1-4bd0-9797-d4d68269c08e"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3245),
-                            CreatedIpAddress = "192.168.1.95",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(558),
+                            CreatedIpAddress = "192.168.1.49",
                             ExamNumber = (byte)1,
-                            Score = 65.0,
+                            Score = 18.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("9dfc22ad-6098-4ec4-988e-4593ef0493e5"),
+                            Id = new Guid("bedb3ac8-9193-4fce-80a9-e5bf23ff32cc"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3249),
-                            CreatedIpAddress = "192.168.1.11",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(562),
+                            CreatedIpAddress = "192.168.1.72",
                             ExamNumber = (byte)1,
-                            Score = 90.0,
+                            Score = 2.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
                         },
                         new
                         {
-                            Id = new Guid("e2e6e59e-bec5-48e5-ab4f-0a75f52d1b38"),
+                            Id = new Guid("8686c6ce-a3a0-40f9-b4c7-452470b8f2cc"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3252),
-                            CreatedIpAddress = "192.168.1.72",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(566),
+                            CreatedIpAddress = "192.168.1.18",
                             ExamNumber = (byte)1,
-                            Score = 22.0,
+                            Score = 14.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("c9135bba-f511-49ca-96a4-82fffef3cb13"),
+                            Id = new Guid("70e01f14-6b91-4cf8-884c-78238a2cefac"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3259),
-                            CreatedIpAddress = "192.168.1.1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(571),
+                            CreatedIpAddress = "192.168.1.94",
                             ExamNumber = (byte)1,
-                            Score = 61.0,
+                            Score = 55.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
                         },
                         new
                         {
-                            Id = new Guid("05980cd0-48ea-42a0-95a2-ad9fee04db42"),
+                            Id = new Guid("6a55745a-e857-4344-9ac9-3cace2ba1aa7"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3263),
-                            CreatedIpAddress = "192.168.1.86",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(575),
+                            CreatedIpAddress = "192.168.1.61",
                             ExamNumber = (byte)1,
-                            Score = 90.0,
+                            Score = 15.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
                         },
                         new
                         {
-                            Id = new Guid("874ec9a3-ed33-4d93-b92e-a81b4104f7a2"),
+                            Id = new Guid("5d853734-7eff-42e7-9967-4fe825147200"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3267),
-                            CreatedIpAddress = "192.168.1.80",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(579),
+                            CreatedIpAddress = "192.168.1.21",
                             ExamNumber = (byte)1,
-                            Score = 90.0,
+                            Score = 5.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
                         },
                         new
                         {
-                            Id = new Guid("129a9c47-933f-41ab-a434-709c6a375ae3"),
+                            Id = new Guid("bb71f2dd-90e0-4f7e-a7b6-c2f74743f37d"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3271),
-                            CreatedIpAddress = "192.168.1.31",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(583),
+                            CreatedIpAddress = "192.168.1.74",
                             ExamNumber = (byte)1,
-                            Score = 61.0,
+                            Score = 47.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
                         },
                         new
                         {
-                            Id = new Guid("67b0aa65-3a54-4a99-ac0b-082104e869b3"),
+                            Id = new Guid("6c43113c-039a-426e-80ea-2abea97d9eeb"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3275),
-                            CreatedIpAddress = "192.168.1.93",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(587),
+                            CreatedIpAddress = "192.168.1.96",
                             ExamNumber = (byte)1,
-                            Score = 74.0,
+                            Score = 58.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
                         },
                         new
                         {
-                            Id = new Guid("b468e894-8fca-4815-bdde-b100d26c42b9"),
+                            Id = new Guid("97307ef8-3e12-4882-8879-c8b25ce60b6f"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3279),
-                            CreatedIpAddress = "192.168.1.95",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(593),
+                            CreatedIpAddress = "192.168.1.6",
+                            ExamNumber = (byte)1,
+                            Score = 99.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("f68343ef-844d-4d93-88e2-4f0073c60589"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(597),
+                            CreatedIpAddress = "192.168.1.91",
+                            ExamNumber = (byte)1,
+                            Score = 4.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
+                        },
+                        new
+                        {
+                            Id = new Guid("4a01e113-a889-40f5-9445-d42552ad1b6d"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(601),
+                            CreatedIpAddress = "192.168.1.17",
                             ExamNumber = (byte)1,
                             Score = 82.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
-                        },
-                        new
-                        {
-                            Id = new Guid("d92f3db8-da11-4eb8-b59d-2249dbcad6c3"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3283),
-                            CreatedIpAddress = "192.168.1.33",
-                            ExamNumber = (byte)1,
-                            Score = 27.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("c8ba3b06-d493-4b55-80b8-862e985ccb86"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3295),
-                            CreatedIpAddress = "192.168.1.1",
-                            ExamNumber = (byte)1,
-                            Score = 59.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
                         },
                         new
                         {
-                            Id = new Guid("edf13b86-fd50-4783-8f86-da0c3d38da04"),
+                            Id = new Guid("bc164984-07ba-48c3-9b8c-baa5b9e2e35d"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3300),
-                            CreatedIpAddress = "192.168.1.65",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(605),
+                            CreatedIpAddress = "192.168.1.92",
                             ExamNumber = (byte)1,
-                            Score = 93.0,
+                            Score = 39.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("7e9616f0-c006-44be-b32e-195e59e66db2"),
+                            Id = new Guid("7f2a1749-9fe3-4436-ae7b-f07dc81929c9"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3304),
-                            CreatedIpAddress = "192.168.1.86",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(609),
+                            CreatedIpAddress = "192.168.1.71",
                             ExamNumber = (byte)1,
-                            Score = 76.0,
+                            Score = 86.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("4576a47a-70ff-4601-a510-a73baab5dc18"),
+                            Id = new Guid("df04e07a-f76d-43cd-a887-307c2e31e19f"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3308),
-                            CreatedIpAddress = "192.168.1.57",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(613),
+                            CreatedIpAddress = "192.168.1.9",
                             ExamNumber = (byte)1,
-                            Score = 80.0,
+                            Score = 63.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("0c6978ce-c3dc-452e-b896-e4565c041ccf"),
+                            Id = new Guid("bdedc41f-4025-40a7-ba50-a89fcffb5905"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3312),
-                            CreatedIpAddress = "192.168.1.42",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(617),
+                            CreatedIpAddress = "192.168.1.37",
                             ExamNumber = (byte)1,
-                            Score = 70.0,
+                            Score = 5.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("e1849fd8-24d5-4bb2-bda4-28f0c0ccf5bf"),
+                            Id = new Guid("77212da1-b273-4488-844c-e55933a48948"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3315),
-                            CreatedIpAddress = "192.168.1.72",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(621),
+                            CreatedIpAddress = "192.168.1.99",
                             ExamNumber = (byte)1,
-                            Score = 67.0,
+                            Score = 9.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("c23f302e-6a81-46ef-ac80-7bb0afc2ced2"),
+                            Id = new Guid("c2322800-347a-4822-a896-54cec692cc25"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3319),
-                            CreatedIpAddress = "192.168.1.13",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(626),
+                            CreatedIpAddress = "192.168.1.35",
                             ExamNumber = (byte)1,
-                            Score = 75.0,
+                            Score = 73.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("8311ccf0-9b48-4b05-b7b1-e68f2f69259d"),
+                            Id = new Guid("2c8c18f5-70a9-4b2b-8357-03dc47718db3"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3323),
-                            CreatedIpAddress = "192.168.1.63",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(630),
+                            CreatedIpAddress = "192.168.1.39",
                             ExamNumber = (byte)1,
-                            Score = 93.0,
+                            Score = 18.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("732412f8-6e98-4b2a-a709-0aa059d3253a"),
+                            Id = new Guid("2a8b0c22-1b59-4cbd-a981-9c5ae78ffe44"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3327),
-                            CreatedIpAddress = "192.168.1.36",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(634),
+                            CreatedIpAddress = "192.168.1.79",
                             ExamNumber = (byte)1,
-                            Score = 94.0,
+                            Score = 18.0,
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("1542dbad-8e38-439a-a0d5-fb8689230d73"),
+                            Id = new Guid("020f9157-150b-4c03-979a-edd2b754cefe"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3332),
-                            CreatedIpAddress = "192.168.1.52",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(638),
+                            CreatedIpAddress = "192.168.1.54",
                             ExamNumber = (byte)1,
-                            Score = 51.0,
+                            Score = 24.0,
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("d314694f-717e-49ab-a2bf-4e6b50de12b5"),
+                            Id = new Guid("93d9e07f-af4f-4339-a5fc-a98e2996e8e2"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3336),
-                            CreatedIpAddress = "192.168.1.75",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(642),
+                            CreatedIpAddress = "192.168.1.81",
                             ExamNumber = (byte)1,
-                            Score = 63.0,
+                            Score = 55.0,
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("396bd2a7-0401-4d6a-a343-fdbcddbbc057"),
+                            Id = new Guid("3491b8f8-2bf7-4bc1-99f1-0ddabaf698a8"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3340),
-                            CreatedIpAddress = "192.168.1.78",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(646),
+                            CreatedIpAddress = "192.168.1.8",
                             ExamNumber = (byte)1,
-                            Score = 81.0,
+                            Score = 45.0,
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
                         },
                         new
                         {
-                            Id = new Guid("4a5edd60-c2f1-4b34-9eb8-b783696a0a77"),
+                            Id = new Guid("10bcc664-debc-4486-931a-510b5a642dff"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3344),
-                            CreatedIpAddress = "192.168.1.63",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(650),
+                            CreatedIpAddress = "192.168.1.58",
                             ExamNumber = (byte)1,
-                            Score = 0.0,
+                            Score = 39.0,
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("d023ae17-c71b-41a1-a95d-62d199eeef96"),
+                            Id = new Guid("754ce70a-af1c-4d62-8f06-ccb05ec34c60"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3348),
-                            CreatedIpAddress = "192.168.1.21",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(654),
+                            CreatedIpAddress = "192.168.1.4",
                             ExamNumber = (byte)1,
-                            Score = 55.0,
+                            Score = 51.0,
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
                         },
                         new
                         {
-                            Id = new Guid("ed695d1a-5ed7-44e8-b350-737744e7e284"),
+                            Id = new Guid("b99f932d-8ef8-42db-a775-48b41ec3ce2e"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3352),
-                            CreatedIpAddress = "192.168.1.28",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(660),
+                            CreatedIpAddress = "192.168.1.91",
                             ExamNumber = (byte)1,
-                            Score = 42.0,
+                            Score = 10.0,
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
                         },
                         new
                         {
-                            Id = new Guid("4a42b9b5-e5ea-456e-830b-d69c1bfd6375"),
+                            Id = new Guid("1de70282-f945-424c-af0e-02fd209c6cf5"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3356),
-                            CreatedIpAddress = "192.168.1.35",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(664),
+                            CreatedIpAddress = "192.168.1.67",
                             ExamNumber = (byte)1,
-                            Score = 65.0,
+                            Score = 25.0,
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
                         },
                         new
                         {
-                            Id = new Guid("423d32f9-38ac-4cd0-830b-8f0048a2f9aa"),
+                            Id = new Guid("de589d1e-8692-4599-8150-19514668fdc6"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3359),
-                            CreatedIpAddress = "192.168.1.5",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(675),
+                            CreatedIpAddress = "192.168.1.57",
                             ExamNumber = (byte)1,
-                            Score = 21.0,
+                            Score = 55.0,
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
                         },
                         new
                         {
-                            Id = new Guid("3cef277b-428b-4093-8944-871d06cba3d7"),
+                            Id = new Guid("3943f2b8-d71c-4664-ac79-d22ba32bae75"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3365),
-                            CreatedIpAddress = "192.168.1.25",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(681),
+                            CreatedIpAddress = "192.168.1.30",
                             ExamNumber = (byte)1,
-                            Score = 51.0,
+                            Score = 53.0,
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
                         },
                         new
                         {
-                            Id = new Guid("cd670cce-edac-4f84-9e4e-1520491707b1"),
+                            Id = new Guid("f89d1f07-0ef6-4fff-acb5-84d3594c4dd2"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3369),
-                            CreatedIpAddress = "192.168.1.87",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(685),
+                            CreatedIpAddress = "192.168.1.62",
                             ExamNumber = (byte)1,
-                            Score = 3.0,
+                            Score = 43.0,
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
                         },
                         new
                         {
-                            Id = new Guid("2c11e06b-f76e-4b38-9508-5f3145e03184"),
+                            Id = new Guid("a8395ec9-ab6f-469c-8f85-0c2376d48fa8"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3373),
-                            CreatedIpAddress = "192.168.1.15",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(689),
+                            CreatedIpAddress = "192.168.1.37",
                             ExamNumber = (byte)1,
-                            Score = 47.0,
+                            Score = 75.0,
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
                         },
                         new
                         {
-                            Id = new Guid("fa5ba1a1-89cf-4c77-b889-12448ba40427"),
+                            Id = new Guid("a0b33673-e24c-4687-83dd-c63faaa8e860"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3376),
-                            CreatedIpAddress = "192.168.1.29",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(693),
+                            CreatedIpAddress = "192.168.1.16",
                             ExamNumber = (byte)1,
-                            Score = 74.0,
+                            Score = 36.0,
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
                         },
                         new
                         {
-                            Id = new Guid("5d9b91e8-86d0-48b9-9733-1072edcb5831"),
+                            Id = new Guid("7cd1d0f6-553a-4eb3-b758-79b300d69d03"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3380),
-                            CreatedIpAddress = "192.168.1.93",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(697),
+                            CreatedIpAddress = "192.168.1.28",
                             ExamNumber = (byte)1,
-                            Score = 56.0,
+                            Score = 88.0,
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("b60ac2ed-774e-4183-a9f1-2f41fd939697"),
+                            Id = new Guid("66265daf-5a55-4bf6-a7a6-d77eb558d2bb"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3384),
-                            CreatedIpAddress = "192.168.1.20",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(702),
+                            CreatedIpAddress = "192.168.1.2",
                             ExamNumber = (byte)1,
-                            Score = 78.0,
+                            Score = 89.0,
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("a8599a30-51ae-4d9b-bc3c-79774f0bcdd5"),
+                            Id = new Guid("20fe9e83-ae12-4c4f-8a81-8c727bad2f6a"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3388),
-                            CreatedIpAddress = "192.168.1.93",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(706),
+                            CreatedIpAddress = "192.168.1.15",
                             ExamNumber = (byte)1,
-                            Score = 7.0,
+                            Score = 50.0,
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("1cb52e52-4a2b-49e9-8bb1-4043c70be1c4"),
+                            Id = new Guid("4d645fd5-9b0a-4502-ba1e-aba8142fded2"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3392),
-                            CreatedIpAddress = "192.168.1.82",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(710),
+                            CreatedIpAddress = "192.168.1.92",
                             ExamNumber = (byte)1,
-                            Score = 8.0,
+                            Score = 38.0,
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("3670f722-fb42-439d-958a-0324b4fbd912"),
+                            Id = new Guid("f5ae73e3-f102-4191-b7ad-5c27c4d09d1d"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3397),
-                            CreatedIpAddress = "192.168.1.90",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(714),
+                            CreatedIpAddress = "192.168.1.14",
                             ExamNumber = (byte)1,
-                            Score = 76.0,
+                            Score = 41.0,
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("e483e097-1b7b-4923-8a6f-a3c4fe4c8c97"),
+                            Id = new Guid("af6af98c-a261-459d-b81e-ed956ddd1624"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3401),
-                            CreatedIpAddress = "192.168.1.11",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(718),
+                            CreatedIpAddress = "192.168.1.68",
                             ExamNumber = (byte)1,
-                            Score = 60.0,
+                            Score = 46.0,
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("55f33a20-7c05-4216-9c01-b156467879af"),
+                            Id = new Guid("216f8845-4eed-46b6-928a-d9d00ab55284"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3405),
-                            CreatedIpAddress = "192.168.1.63",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(722),
+                            CreatedIpAddress = "192.168.1.50",
                             ExamNumber = (byte)1,
-                            Score = 33.0,
+                            Score = 41.0,
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("f776caa4-b8fe-4444-822e-28dc95715c0d"),
+                            Id = new Guid("ebed287b-1bda-4787-b707-e844fd4986e9"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3409),
-                            CreatedIpAddress = "192.168.1.17",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(727),
+                            CreatedIpAddress = "192.168.1.30",
                             ExamNumber = (byte)1,
-                            Score = 49.0,
+                            Score = 45.0,
                             StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("c1f87496-b015-4b0f-a3bf-afba05695397"),
+                            Id = new Guid("37507b48-f20a-401d-bbe3-1fd5678ce8d9"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3413),
-                            CreatedIpAddress = "192.168.1.87",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(731),
+                            CreatedIpAddress = "192.168.1.89",
                             ExamNumber = (byte)1,
-                            Score = 51.0,
+                            Score = 74.0,
                             StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("431f7dce-155d-4465-8b9b-d43b23f88c0c"),
+                            Id = new Guid("3ace5757-c930-48d9-8f14-3b3c634b16ca"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3417),
-                            CreatedIpAddress = "192.168.1.93",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(736),
+                            CreatedIpAddress = "192.168.1.70",
                             ExamNumber = (byte)1,
-                            Score = 63.0,
+                            Score = 91.0,
                             StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("6ceff983-ccc3-4310-aece-e2c7a054455e"),
+                            Id = new Guid("d328c9e6-28b5-44b3-9474-02a0a7dcb4bf"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3421),
-                            CreatedIpAddress = "192.168.1.48",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(740),
+                            CreatedIpAddress = "192.168.1.30",
                             ExamNumber = (byte)1,
-                            Score = 69.0,
+                            Score = 96.0,
                             StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
                             SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
                         },
                         new
                         {
-                            Id = new Guid("2b642581-b0cf-49a7-b8a0-cc703655845f"),
+                            Id = new Guid("e8709738-1ef2-4339-ad47-4c3adf78df80"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3424),
-                            CreatedIpAddress = "192.168.1.50",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(744),
+                            CreatedIpAddress = "192.168.1.98",
                             ExamNumber = (byte)1,
-                            Score = 47.0,
+                            Score = 78.0,
                             StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
                             SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("ded2ec44-0e46-413f-9bc5-0b95d58955b0"),
+                            Id = new Guid("59d3ced6-cc03-445a-8577-65f453f6c023"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3430),
-                            CreatedIpAddress = "192.168.1.16",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(748),
+                            CreatedIpAddress = "192.168.1.26",
+                            ExamNumber = (byte)1,
+                            Score = 24.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
+                        },
+                        new
+                        {
+                            Id = new Guid("85a4bf14-f551-4fea-bb9d-be791d11c18a"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(752),
+                            CreatedIpAddress = "192.168.1.19",
+                            ExamNumber = (byte)1,
+                            Score = 39.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("86310ec5-2ede-4006-9991-a75606a08803"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(756),
+                            CreatedIpAddress = "192.168.1.86",
+                            ExamNumber = (byte)1,
+                            Score = 62.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                        },
+                        new
+                        {
+                            Id = new Guid("649f0ceb-1458-46e7-bd1f-53488dab33de"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(760),
+                            CreatedIpAddress = "192.168.1.6",
+                            ExamNumber = (byte)1,
+                            Score = 88.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                        },
+                        new
+                        {
+                            Id = new Guid("ba2ecd41-58cf-4060-b03c-aa977c973993"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(765),
+                            CreatedIpAddress = "192.168.1.83",
+                            ExamNumber = (byte)1,
+                            Score = 71.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                        },
+                        new
+                        {
+                            Id = new Guid("bfeef9a5-ee3a-4ae8-b1f0-391f920f6eeb"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(770),
+                            CreatedIpAddress = "192.168.1.48",
+                            ExamNumber = (byte)1,
+                            Score = 82.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("a8928369-7c0a-4b0d-9a10-406977a6ef07"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(774),
+                            CreatedIpAddress = "192.168.1.67",
                             ExamNumber = (byte)1,
                             Score = 95.0,
                             StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("db160c1f-6a8a-416b-bc26-51f5292e8696"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3448),
-                            CreatedIpAddress = "192.168.1.99",
-                            ExamNumber = (byte)1,
-                            Score = 94.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("080fcb42-ff6d-492f-b3a7-8bf8be4b3e22"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3452),
-                            CreatedIpAddress = "192.168.1.82",
-                            ExamNumber = (byte)1,
-                            Score = 12.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("cb5c43ee-1de1-437f-b235-24404079b352"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3456),
-                            CreatedIpAddress = "192.168.1.58",
-                            ExamNumber = (byte)1,
-                            Score = 15.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
-                        },
-                        new
-                        {
-                            Id = new Guid("f2000468-faa2-4003-87b6-ce4d954e1484"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3460),
-                            CreatedIpAddress = "192.168.1.53",
-                            ExamNumber = (byte)1,
-                            Score = 91.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("e7b5c536-226a-4321-ab80-9d5667717a89"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3464),
-                            CreatedIpAddress = "192.168.1.74",
-                            ExamNumber = (byte)1,
-                            Score = 34.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
-                        },
-                        new
-                        {
-                            Id = new Guid("9f822002-ced6-462c-8c6b-d28e9f759f18"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3467),
-                            CreatedIpAddress = "192.168.1.40",
-                            ExamNumber = (byte)1,
-                            Score = 22.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
                             SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
                         },
                         new
                         {
-                            Id = new Guid("bdc9774c-5bce-461f-8b45-49043bb593f4"),
+                            Id = new Guid("6aec5c92-f5bc-4fff-a472-7e16978acab3"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3471),
-                            CreatedIpAddress = "192.168.1.88",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(778),
+                            CreatedIpAddress = "192.168.1.53",
                             ExamNumber = (byte)1,
-                            Score = 92.0,
+                            Score = 0.0,
                             StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
                             SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
                         },
                         new
                         {
-                            Id = new Guid("b00724a3-0dea-4e9e-82d6-c3b6de726d22"),
+                            Id = new Guid("7ac23089-4d45-4ae0-914f-814f9f43c0ad"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3477),
-                            CreatedIpAddress = "192.168.1.88",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(782),
+                            CreatedIpAddress = "192.168.1.27",
+                            ExamNumber = (byte)1,
+                            Score = 32.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
+                        },
+                        new
+                        {
+                            Id = new Guid("0096f934-1d0f-4627-b002-5f48f30ab67c"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(786),
+                            CreatedIpAddress = "192.168.1.19",
+                            ExamNumber = (byte)1,
+                            Score = 21.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
+                        },
+                        new
+                        {
+                            Id = new Guid("03d27b2b-c591-4fe1-aad4-6a18146c0239"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(791),
+                            CreatedIpAddress = "192.168.1.26",
                             ExamNumber = (byte)1,
                             Score = 75.0,
                             StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
-                        },
-                        new
-                        {
-                            Id = new Guid("87c67373-0e19-49ef-a866-790fac2f024c"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3481),
-                            CreatedIpAddress = "192.168.1.78",
-                            ExamNumber = (byte)1,
-                            Score = 27.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
-                        },
-                        new
-                        {
-                            Id = new Guid("e7a0af5c-4925-4d6a-95b7-9cde254e9bd0"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3484),
-                            CreatedIpAddress = "192.168.1.7",
-                            ExamNumber = (byte)1,
-                            Score = 21.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("605f9447-c647-4add-9302-9c073cbeb934"),
+                            Id = new Guid("76b90666-8450-4fd7-87b0-78792fd4fc58"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3488),
-                            CreatedIpAddress = "192.168.1.94",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(795),
+                            CreatedIpAddress = "192.168.1.51",
                             ExamNumber = (byte)1,
-                            Score = 27.0,
+                            Score = 15.0,
                             StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("0dbfac6e-07ea-4bfd-9c88-2ed912f8a20c"),
+                            Id = new Guid("3bbacaa5-cb33-4cab-a281-c748d8393d68"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3492),
-                            CreatedIpAddress = "192.168.1.63",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(799),
+                            CreatedIpAddress = "192.168.1.49",
                             ExamNumber = (byte)1,
-                            Score = 82.0,
+                            Score = 43.0,
                             StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("95f0c3d1-7eb4-4110-aa78-1507951fce59"),
+                            Id = new Guid("60f51409-17a1-4db3-b75b-b8862df94097"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3496),
-                            CreatedIpAddress = "192.168.1.32",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(804),
+                            CreatedIpAddress = "192.168.1.51",
                             ExamNumber = (byte)1,
-                            Score = 76.0,
+                            Score = 65.0,
                             StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("851157d5-21a8-462c-a9e4-c39bc3cd3a98"),
+                            Id = new Guid("079b533b-74b5-4f40-a58b-53e72c174611"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3500),
-                            CreatedIpAddress = "192.168.1.49",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(808),
+                            CreatedIpAddress = "192.168.1.58",
                             ExamNumber = (byte)1,
-                            Score = 13.0,
+                            Score = 44.0,
                             StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("5b1f8af8-65f4-40f1-ae3f-7611d75816f1"),
+                            Id = new Guid("bfb5e3d5-35c2-46c4-a458-5fc463789f70"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3504),
-                            CreatedIpAddress = "192.168.1.87",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(813),
+                            CreatedIpAddress = "192.168.1.25",
                             ExamNumber = (byte)1,
-                            Score = 49.0,
+                            Score = 44.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("e997dafc-48c1-4164-b2a4-7e04ed141c0b"),
+                            Id = new Guid("b5ee7f4e-8265-4b55-819b-48fadc2c34b3"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3509),
-                            CreatedIpAddress = "192.168.1.65",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(817),
+                            CreatedIpAddress = "192.168.1.17",
                             ExamNumber = (byte)1,
-                            Score = 11.0,
+                            Score = 5.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("d822cb37-c1fc-4781-8eb3-25aacf8b31a7"),
+                            Id = new Guid("5f3ec9df-a5ad-4682-96fd-dcdb0e1bd050"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3513),
-                            CreatedIpAddress = "192.168.1.45",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(822),
+                            CreatedIpAddress = "192.168.1.77",
                             ExamNumber = (byte)1,
-                            Score = 30.0,
+                            Score = 77.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("4a25b871-1618-4b39-a523-2928d673d30c"),
+                            Id = new Guid("9d66e52c-e2d8-4c2c-b2e8-b259ee892fc1"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3517),
-                            CreatedIpAddress = "192.168.1.54",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(840),
+                            CreatedIpAddress = "192.168.1.96",
                             ExamNumber = (byte)1,
-                            Score = 71.0,
+                            Score = 33.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
                         },
                         new
                         {
-                            Id = new Guid("3d20cc78-6738-4f19-8658-2fed46417a42"),
+                            Id = new Guid("a6729991-4bc2-4acd-854f-af7f6ca97812"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3521),
-                            CreatedIpAddress = "192.168.1.78",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(844),
+                            CreatedIpAddress = "192.168.1.87",
                             ExamNumber = (byte)1,
-                            Score = 64.0,
+                            Score = 11.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("afd530c3-fd15-44be-ae8d-c7d460f62401"),
+                            Id = new Guid("bfa7ac68-a4c5-4611-a666-029af6c69aa4"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3525),
-                            CreatedIpAddress = "192.168.1.41",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(848),
+                            CreatedIpAddress = "192.168.1.49",
                             ExamNumber = (byte)1,
-                            Score = 53.0,
+                            Score = 68.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
                         },
                         new
                         {
-                            Id = new Guid("9812fe3f-ad9b-4051-a1be-722c65ae7d0b"),
+                            Id = new Guid("4c9b3c0d-ae63-442d-96c8-9af04d2254eb"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3529),
-                            CreatedIpAddress = "192.168.1.71",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(855),
+                            CreatedIpAddress = "192.168.1.42",
                             ExamNumber = (byte)1,
-                            Score = 0.0,
+                            Score = 77.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
                         },
                         new
                         {
-                            Id = new Guid("17820cd5-6dc8-45cf-bd45-c514903bb10f"),
+                            Id = new Guid("733ef7f3-3268-4e50-9b1f-5d494d37fcdf"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3533),
-                            CreatedIpAddress = "192.168.1.23",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(859),
+                            CreatedIpAddress = "192.168.1.16",
                             ExamNumber = (byte)1,
-                            Score = 30.0,
+                            Score = 92.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
                         },
                         new
                         {
-                            Id = new Guid("b7d87261-2f44-4ee8-a063-27798f6947ae"),
+                            Id = new Guid("91680d10-cc4e-4c42-936b-28f882fd3248"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3536),
-                            CreatedIpAddress = "192.168.1.92",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(863),
+                            CreatedIpAddress = "192.168.1.56",
                             ExamNumber = (byte)1,
-                            Score = 29.0,
+                            Score = 4.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
                         },
                         new
                         {
-                            Id = new Guid("c07a816a-85ff-45c0-a1b1-867190429ea1"),
+                            Id = new Guid("8099b3ce-59a4-4b77-a622-b6d625f93297"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3543),
-                            CreatedIpAddress = "192.168.1.32",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(868),
+                            CreatedIpAddress = "192.168.1.49",
                             ExamNumber = (byte)1,
-                            Score = 55.0,
+                            Score = 51.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
                         },
                         new
                         {
-                            Id = new Guid("120d8f52-177e-45c6-96eb-3fa7975fee5e"),
+                            Id = new Guid("cc9eef83-27ec-4758-9465-194254a59680"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3547),
-                            CreatedIpAddress = "192.168.1.85",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(872),
+                            CreatedIpAddress = "192.168.1.71",
                             ExamNumber = (byte)1,
-                            Score = 35.0,
+                            Score = 99.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
                         },
                         new
                         {
-                            Id = new Guid("80b969ca-81e0-49b7-b4c8-b77505e97a9f"),
+                            Id = new Guid("a175adc7-c2a2-47ae-ad08-9bd23405719c"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3562),
-                            CreatedIpAddress = "192.168.1.10",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(876),
+                            CreatedIpAddress = "192.168.1.14",
                             ExamNumber = (byte)1,
-                            Score = 25.0,
+                            Score = 65.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
                         },
                         new
                         {
-                            Id = new Guid("5d4de293-4a61-440b-9e1f-71345be97714"),
+                            Id = new Guid("21caeec9-4bb4-4211-832e-129b6970782d"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3566),
-                            CreatedIpAddress = "192.168.1.66",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(880),
+                            CreatedIpAddress = "192.168.1.77",
                             ExamNumber = (byte)1,
-                            Score = 14.0,
+                            Score = 36.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
                         },
                         new
                         {
-                            Id = new Guid("b112c1b9-f36c-462f-bf9f-0c80d2af1217"),
+                            Id = new Guid("86035219-1954-4e0c-a8a1-6cb1c87e85a6"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3570),
-                            CreatedIpAddress = "192.168.1.60",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(884),
+                            CreatedIpAddress = "192.168.1.53",
                             ExamNumber = (byte)1,
-                            Score = 17.0,
+                            Score = 72.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("271a3416-b6cd-4527-89b8-4555b2daee7a"),
+                            Id = new Guid("1701698e-00a5-498a-bb2b-fdfb6ec42ffa"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3574),
-                            CreatedIpAddress = "192.168.1.11",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(890),
+                            CreatedIpAddress = "192.168.1.27",
                             ExamNumber = (byte)1,
-                            Score = 24.0,
+                            Score = 80.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("982d9793-2b69-4e98-a01a-228c7ce4fbb7"),
+                            Id = new Guid("faa29458-9121-4dae-b5dc-7b506178e8c6"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3578),
-                            CreatedIpAddress = "192.168.1.66",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(894),
+                            CreatedIpAddress = "192.168.1.67",
                             ExamNumber = (byte)1,
-                            Score = 17.0,
+                            Score = 67.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("d898f464-d5c1-4792-8366-7e15b2fac23d"),
+                            Id = new Guid("4bcd8109-991b-4d17-bb80-3040e99c321a"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3582),
-                            CreatedIpAddress = "192.168.1.6",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(898),
+                            CreatedIpAddress = "192.168.1.39",
                             ExamNumber = (byte)1,
-                            Score = 40.0,
+                            Score = 19.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("3152651f-9028-4a0b-a97f-8a51444eacca"),
+                            Id = new Guid("3e590e61-ccaf-48bf-afe1-361d3265aae3"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3587),
-                            CreatedIpAddress = "192.168.1.91",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(902),
+                            CreatedIpAddress = "192.168.1.3",
                             ExamNumber = (byte)1,
-                            Score = 88.0,
+                            Score = 51.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("3c838d2f-a2a9-4a67-9bb2-82959c844db5"),
+                            Id = new Guid("f7a509b0-0450-445a-a5bb-1ed66a23560d"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3591),
-                            CreatedIpAddress = "192.168.1.40",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(907),
+                            CreatedIpAddress = "192.168.1.19",
                             ExamNumber = (byte)1,
-                            Score = 53.0,
+                            Score = 44.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("6306df29-b7d7-4812-adb7-b91cd36c5d31"),
+                            Id = new Guid("d162e1d0-6a91-412d-b3b0-638c722a2325"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3595),
-                            CreatedIpAddress = "192.168.1.11",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(911),
+                            CreatedIpAddress = "192.168.1.80",
                             ExamNumber = (byte)1,
-                            Score = 77.0,
+                            Score = 85.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("ea25bf14-a6de-4042-89c2-48417cf4dff0"),
+                            Id = new Guid("00cd61b7-a775-4a49-ad02-9a34e71369de"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3599),
-                            CreatedIpAddress = "192.168.1.95",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(915),
+                            CreatedIpAddress = "192.168.1.74",
                             ExamNumber = (byte)1,
-                            Score = 76.0,
+                            Score = 41.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("0e49e2ed-f546-4a33-a0ce-6be6e8aff512"),
+                            Id = new Guid("5c044793-5b4e-41c0-baac-992e2df25ebb"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3603),
-                            CreatedIpAddress = "192.168.1.15",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(919),
+                            CreatedIpAddress = "192.168.1.78",
                             ExamNumber = (byte)1,
-                            Score = 7.0,
+                            Score = 21.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("85f8fe48-a3a7-47ef-8a80-1e95d5e12d2e"),
+                            Id = new Guid("1aa474d9-c3f8-4691-8f25-3bae1cbbadad"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3607),
-                            CreatedIpAddress = "192.168.1.41",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(924),
+                            CreatedIpAddress = "192.168.1.85",
                             ExamNumber = (byte)1,
-                            Score = 97.0,
+                            Score = 3.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("600cceff-91bc-4282-ac2e-5bbb52484f4e"),
+                            Id = new Guid("f9d13b48-dae3-4cf3-9809-c141f802a22e"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3610),
-                            CreatedIpAddress = "192.168.1.40",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(928),
+                            CreatedIpAddress = "192.168.1.48",
                             ExamNumber = (byte)1,
-                            Score = 5.0,
+                            Score = 35.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
                         },
                         new
                         {
-                            Id = new Guid("f6c5b1cd-bf2c-4c17-97cc-d849a7213344"),
+                            Id = new Guid("1503e46b-78da-4ca8-9396-e9aca74e429a"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3614),
-                            CreatedIpAddress = "192.168.1.63",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(932),
+                            CreatedIpAddress = "192.168.1.76",
                             ExamNumber = (byte)1,
-                            Score = 2.0,
+                            Score = 28.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("f85e629b-a3b8-4177-985f-1e883d0d377e"),
+                            Id = new Guid("1a25d504-f27a-4a32-8e9f-4fb528c10047"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3620),
-                            CreatedIpAddress = "192.168.1.13",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(937),
+                            CreatedIpAddress = "192.168.1.99",
                             ExamNumber = (byte)1,
-                            Score = 94.0,
+                            Score = 34.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
                         },
                         new
                         {
-                            Id = new Guid("c98cfc2d-3f03-4815-9559-6a02a2761875"),
+                            Id = new Guid("25d23f1d-7fa7-423b-8631-e1dc5fff9122"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3624),
-                            CreatedIpAddress = "192.168.1.99",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(941),
+                            CreatedIpAddress = "192.168.1.2",
                             ExamNumber = (byte)1,
-                            Score = 14.0,
+                            Score = 15.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
                         },
                         new
                         {
-                            Id = new Guid("4184e602-9bf9-44c6-9d2c-f57273ddb5e7"),
+                            Id = new Guid("cce3b328-0e27-42c9-95aa-cd759418762b"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3628),
-                            CreatedIpAddress = "192.168.1.42",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(945),
+                            CreatedIpAddress = "192.168.1.57",
                             ExamNumber = (byte)1,
-                            Score = 96.0,
+                            Score = 66.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
                         },
                         new
                         {
-                            Id = new Guid("a3f73bdc-8e01-43e2-a37b-20591723bef4"),
+                            Id = new Guid("5807b948-cde3-4be4-bed6-733e0bda13e1"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3631),
-                            CreatedIpAddress = "192.168.1.93",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(958),
+                            CreatedIpAddress = "192.168.1.44",
                             ExamNumber = (byte)1,
-                            Score = 34.0,
+                            Score = 65.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
                         },
                         new
                         {
-                            Id = new Guid("306cf10a-a718-404c-8f81-06f4bfa40cb2"),
+                            Id = new Guid("f9c139c3-9e26-41ee-9833-290868deeef1"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3635),
-                            CreatedIpAddress = "192.168.1.90",
-                            ExamNumber = (byte)1,
-                            Score = 94.0,
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("f010284c-5c5d-4465-9891-b1fe09f22754"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3639),
-                            CreatedIpAddress = "192.168.1.37",
-                            ExamNumber = (byte)1,
-                            Score = 54.0,
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
-                        },
-                        new
-                        {
-                            Id = new Guid("3b82b8cd-6e29-4def-b35d-76ce6f58b8c9"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3643),
-                            CreatedIpAddress = "192.168.1.92",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(962),
+                            CreatedIpAddress = "192.168.1.32",
                             ExamNumber = (byte)1,
                             Score = 84.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
+                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                        },
+                        new
+                        {
+                            Id = new Guid("b4c36b46-013c-4bb5-bf60-5c1110f1999c"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(968),
+                            CreatedIpAddress = "192.168.1.23",
+                            ExamNumber = (byte)1,
+                            Score = 53.0,
+                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("89887849-b188-42af-bfc0-184005d827e8"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(972),
+                            CreatedIpAddress = "192.168.1.18",
+                            ExamNumber = (byte)1,
+                            Score = 72.0,
+                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
                         },
                         new
                         {
-                            Id = new Guid("f6b2f38c-4167-4270-827f-631932c37b88"),
+                            Id = new Guid("849e07d5-acb3-4a9b-949d-8d60c766ac5a"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3647),
-                            CreatedIpAddress = "192.168.1.50",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(976),
+                            CreatedIpAddress = "192.168.1.95",
                             ExamNumber = (byte)1,
-                            Score = 28.0,
+                            Score = 21.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
                         },
                         new
                         {
-                            Id = new Guid("754fc2b7-c6fb-4cee-8225-afed58633c1c"),
+                            Id = new Guid("d4bec406-4b9c-4797-94f6-223b9b16a3b5"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3652),
-                            CreatedIpAddress = "192.168.1.31",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(980),
+                            CreatedIpAddress = "192.168.1.46",
                             ExamNumber = (byte)1,
-                            Score = 71.0,
+                            Score = 87.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("3e6c0e1b-c555-4dda-95c4-1d0713fd8443"),
+                            Id = new Guid("5404056f-7d64-463d-9082-a3f4e64ddd4d"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3656),
-                            CreatedIpAddress = "192.168.1.45",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(984),
+                            CreatedIpAddress = "192.168.1.93",
                             ExamNumber = (byte)1,
-                            Score = 45.0,
+                            Score = 33.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("81ae0e22-a243-4a8c-a211-6397af06ba72"),
+                            Id = new Guid("72433370-16a2-4a4d-bd18-7cb4943d7dfe"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3660),
-                            CreatedIpAddress = "192.168.1.23",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(988),
+                            CreatedIpAddress = "192.168.1.78",
                             ExamNumber = (byte)1,
-                            Score = 78.0,
+                            Score = 0.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("f38f17eb-b834-411d-ba1b-71103404f548"),
+                            Id = new Guid("06f21e2c-9ff5-4967-9ae2-d30d53923912"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3664),
-                            CreatedIpAddress = "192.168.1.73",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(992),
+                            CreatedIpAddress = "192.168.1.4",
                             ExamNumber = (byte)1,
-                            Score = 29.0,
+                            Score = 14.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("924d6ab9-8f74-4a62-94be-c863248ea37b"),
+                            Id = new Guid("1be60486-0e26-45b1-9565-76b291022d21"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3667),
-                            CreatedIpAddress = "192.168.1.21",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(996),
+                            CreatedIpAddress = "192.168.1.34",
                             ExamNumber = (byte)1,
-                            Score = 20.0,
+                            Score = 60.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("56779b5f-4364-4fef-8126-4f9ca2b79840"),
+                            Id = new Guid("10e3123a-4749-43f0-8c96-dfcc88a9b67d"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3671),
-                            CreatedIpAddress = "192.168.1.80",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1002),
+                            CreatedIpAddress = "192.168.1.21",
                             ExamNumber = (byte)1,
-                            Score = 52.0,
+                            Score = 26.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("107147bb-af00-46f9-ab2a-a086c28fa56a"),
+                            Id = new Guid("3dfb14d6-8519-47c5-b119-953f10efb90d"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3675),
-                            CreatedIpAddress = "192.168.1.92",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1006),
+                            CreatedIpAddress = "192.168.1.91",
                             ExamNumber = (byte)1,
-                            Score = 61.0,
+                            Score = 92.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("489b0984-cacd-4b91-9431-afed65193d1c"),
+                            Id = new Guid("52b50c44-1979-4d59-b58a-b260c4b4525e"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3679),
-                            CreatedIpAddress = "192.168.1.54",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1010),
+                            CreatedIpAddress = "192.168.1.31",
                             ExamNumber = (byte)1,
-                            Score = 11.0,
+                            Score = 4.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("8674e312-b797-4c8b-8ee4-b36804e1e219"),
+                            Id = new Guid("00a7fca0-329f-4de4-b963-d3fc58df13a6"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3685),
-                            CreatedIpAddress = "192.168.1.45",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1014),
+                            CreatedIpAddress = "192.168.1.31",
                             ExamNumber = (byte)1,
-                            Score = 55.0,
+                            Score = 18.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("a1d19428-7a68-4c08-baa2-b24bc4d468d8"),
+                            Id = new Guid("3647094d-e6f6-4efd-a8c3-261866d150ef"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3688),
-                            CreatedIpAddress = "192.168.1.69",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1018),
+                            CreatedIpAddress = "192.168.1.42",
                             ExamNumber = (byte)1,
-                            Score = 65.0,
+                            Score = 84.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("5f28bd38-7d77-4ac7-92d1-0ec9321155ea"),
+                            Id = new Guid("f3edfd99-9ed7-4175-8690-34f7b5729fd4"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3692),
-                            CreatedIpAddress = "192.168.1.6",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1022),
+                            CreatedIpAddress = "192.168.1.33",
+                            ExamNumber = (byte)1,
+                            Score = 63.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
+                        },
+                        new
+                        {
+                            Id = new Guid("bbf4f805-bc6a-41ae-83a0-b396304ed3ae"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1026),
+                            CreatedIpAddress = "192.168.1.60",
+                            ExamNumber = (byte)1,
+                            Score = 26.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
+                        },
+                        new
+                        {
+                            Id = new Guid("c583cb4d-c2e9-4974-91ca-b3be09cc1bd0"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1030),
+                            CreatedIpAddress = "192.168.1.36",
+                            ExamNumber = (byte)1,
+                            Score = 5.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
+                        },
+                        new
+                        {
+                            Id = new Guid("a8da9805-bf54-49e4-8b34-c763217fbd48"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1036),
+                            CreatedIpAddress = "192.168.1.23",
                             ExamNumber = (byte)1,
                             Score = 25.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("473835c6-79a2-4612-bef5-793fe6373421"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3696),
-                            CreatedIpAddress = "192.168.1.77",
-                            ExamNumber = (byte)1,
-                            Score = 57.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
-                        },
-                        new
-                        {
-                            Id = new Guid("186ab1f1-1107-418d-9853-5eb75879c26d"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3717),
-                            CreatedIpAddress = "192.168.1.52",
-                            ExamNumber = (byte)1,
-                            Score = 44.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("61707f11-4b26-428e-84e4-480f9a440852"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3721),
-                            CreatedIpAddress = "192.168.1.48",
-                            ExamNumber = (byte)1,
-                            Score = 11.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
                         },
                         new
                         {
-                            Id = new Guid("700548b4-f4ae-4657-82f1-1275592fc75f"),
+                            Id = new Guid("ee8bda3f-3605-4ed5-942f-563afd509570"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3725),
-                            CreatedIpAddress = "192.168.1.97",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1040),
+                            CreatedIpAddress = "192.168.1.75",
                             ExamNumber = (byte)1,
-                            Score = 4.0,
+                            Score = 51.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
                         },
                         new
                         {
-                            Id = new Guid("08835eb9-b939-45ee-a87f-ee972812b57b"),
+                            Id = new Guid("d637ef75-397e-4002-aea0-0d0f725bfc04"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3729),
-                            CreatedIpAddress = "192.168.1.1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1044),
+                            CreatedIpAddress = "192.168.1.72",
                             ExamNumber = (byte)1,
-                            Score = 91.0,
+                            Score = 58.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
                         },
                         new
                         {
-                            Id = new Guid("2aa48c7f-a06a-4140-afb4-9e1e69715dce"),
+                            Id = new Guid("b3569474-f714-4a39-b026-3c1c8287a551"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3734),
-                            CreatedIpAddress = "192.168.1.73",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1048),
+                            CreatedIpAddress = "192.168.1.78",
                             ExamNumber = (byte)1,
-                            Score = 10.0,
+                            Score = 64.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
                         },
                         new
                         {
-                            Id = new Guid("a9c7c32e-2807-4234-aca4-9eb5829e908b"),
+                            Id = new Guid("82884224-2c8f-4c67-937d-18749f5ce328"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3738),
-                            CreatedIpAddress = "192.168.1.61",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1052),
+                            CreatedIpAddress = "192.168.1.19",
                             ExamNumber = (byte)1,
-                            Score = 58.0,
+                            Score = 63.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
                         },
                         new
                         {
-                            Id = new Guid("9659dcb0-78e5-4140-90a9-4207b8afbe59"),
+                            Id = new Guid("daa7b5af-1447-4051-8c0d-194b47d9cdb8"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3742),
-                            CreatedIpAddress = "192.168.1.49",
-                            ExamNumber = (byte)1,
-                            Score = 71.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("49ba6293-4b36-494e-9c1f-b9b561d4f4d4"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3746),
-                            CreatedIpAddress = "192.168.1.84",
-                            ExamNumber = (byte)1,
-                            Score = 34.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("2a9671da-1d02-4f63-841a-9fbc9a2a8097"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3750),
-                            CreatedIpAddress = "192.168.1.34",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1056),
+                            CreatedIpAddress = "192.168.1.18",
                             ExamNumber = (byte)1,
                             Score = 36.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
+                        },
+                        new
+                        {
+                            Id = new Guid("92615f56-bfeb-4e2d-a02a-6565604d9a94"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1060),
+                            CreatedIpAddress = "192.168.1.92",
+                            ExamNumber = (byte)1,
+                            Score = 19.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
+                        },
+                        new
+                        {
+                            Id = new Guid("11b79711-b20c-4673-8dc1-3e8ba56a5948"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1064),
+                            CreatedIpAddress = "192.168.1.57",
+                            ExamNumber = (byte)1,
+                            Score = 84.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("1c3bbfec-51b7-46b4-8ed0-f1f129d13cda"),
+                            Id = new Guid("4d5020ee-d36e-4b5d-9703-c299c9204263"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3753),
-                            CreatedIpAddress = "192.168.1.33",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1070),
+                            CreatedIpAddress = "192.168.1.32",
+                            ExamNumber = (byte)1,
+                            Score = 67.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
+                        },
+                        new
+                        {
+                            Id = new Guid("07b8f3ff-5306-4fc5-a52f-687b8594d61a"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1074),
+                            CreatedIpAddress = "192.168.1.62",
                             ExamNumber = (byte)1,
                             Score = 49.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
-                        },
-                        new
-                        {
-                            Id = new Guid("2fbb4f42-e315-4630-8a76-920d625c546a"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3757),
-                            CreatedIpAddress = "192.168.1.9",
-                            ExamNumber = (byte)1,
-                            Score = 24.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("467926b5-932c-42f3-9adf-b5a95933f0c8"),
+                            Id = new Guid("c456a458-ebe4-48b1-a507-14c08db24744"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3761),
-                            CreatedIpAddress = "192.168.1.65",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1078),
+                            CreatedIpAddress = "192.168.1.13",
                             ExamNumber = (byte)1,
-                            Score = 9.0,
+                            Score = 67.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("fd1b9622-5c65-4ac7-921d-7f911905626b"),
+                            Id = new Guid("3264fe74-53fd-4559-ab19-55ed717480bd"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3767),
-                            CreatedIpAddress = "192.168.1.36",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1082),
+                            CreatedIpAddress = "192.168.1.2",
                             ExamNumber = (byte)1,
-                            Score = 22.0,
+                            Score = 84.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("288a3fbb-c2b9-4602-8adf-d6e37a7b5d97"),
+                            Id = new Guid("5cd2e602-99b5-431e-86ec-66baf14f4f11"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3770),
-                            CreatedIpAddress = "192.168.1.86",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1086),
+                            CreatedIpAddress = "192.168.1.87",
                             ExamNumber = (byte)1,
-                            Score = 13.0,
+                            Score = 28.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("a1eb1083-39ee-4330-bb23-9657ce0b386d"),
+                            Id = new Guid("f25dd7b5-58be-4470-99c5-e67b2301b202"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3774),
-                            CreatedIpAddress = "192.168.1.8",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1090),
+                            CreatedIpAddress = "192.168.1.12",
                             ExamNumber = (byte)1,
-                            Score = 87.0,
+                            Score = 29.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("5d95c611-9ef6-4434-9671-f2d4ca3eda9d"),
+                            Id = new Guid("f3bbc1fb-0471-4b86-8211-0fc4c22035bd"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3778),
-                            CreatedIpAddress = "192.168.1.2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1094),
+                            CreatedIpAddress = "192.168.1.92",
                             ExamNumber = (byte)1,
-                            Score = 39.0,
+                            Score = 64.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("fbfb162b-011b-4788-9983-15725259b4d4"),
+                            Id = new Guid("9d19f365-a1e1-4bc0-842d-e266d3a3d491"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3782),
-                            CreatedIpAddress = "192.168.1.57",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1098),
+                            CreatedIpAddress = "192.168.1.90",
                             ExamNumber = (byte)1,
-                            Score = 23.0,
+                            Score = 85.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("aed9bef0-ff9c-4945-ae15-04923006d181"),
+                            Id = new Guid("8bd68f76-79c7-46ea-8353-8c524d68fba8"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3786),
-                            CreatedIpAddress = "192.168.1.20",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1120),
+                            CreatedIpAddress = "192.168.1.2",
                             ExamNumber = (byte)1,
-                            Score = 13.0,
+                            Score = 51.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("9d36cd95-0ca5-40e1-9d24-d358e7ed989e"),
+                            Id = new Guid("de2c6ec8-425f-4e2c-8391-f74cef1c3c73"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3790),
-                            CreatedIpAddress = "192.168.1.74",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1124),
+                            CreatedIpAddress = "192.168.1.29",
                             ExamNumber = (byte)1,
-                            Score = 67.0,
+                            Score = 96.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
                         },
                         new
                         {
-                            Id = new Guid("bb113fb5-c0fe-440d-97ca-4ac00fb6400d"),
+                            Id = new Guid("1965ac2f-6138-4f3f-975d-0a5d8bdca706"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3794),
-                            CreatedIpAddress = "192.168.1.76",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1128),
+                            CreatedIpAddress = "192.168.1.66",
                             ExamNumber = (byte)1,
-                            Score = 63.0,
+                            Score = 39.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("705218d4-5cb3-4aad-9a34-ca2a81221c7c"),
+                            Id = new Guid("fc7730d3-0f0a-4c93-8461-a0b4d1728280"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3799),
-                            CreatedIpAddress = "192.168.1.13",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1132),
+                            CreatedIpAddress = "192.168.1.21",
                             ExamNumber = (byte)1,
-                            Score = 16.0,
+                            Score = 84.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
                         },
                         new
                         {
-                            Id = new Guid("56d00a5f-d1bb-41ef-87f2-14da16417337"),
+                            Id = new Guid("490a793e-bfe4-41ba-a129-66a31e540aa9"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3803),
-                            CreatedIpAddress = "192.168.1.14",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1136),
+                            CreatedIpAddress = "192.168.1.87",
                             ExamNumber = (byte)1,
-                            Score = 97.0,
+                            Score = 82.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
                         },
                         new
                         {
-                            Id = new Guid("52b49a36-8613-4523-b0e9-ae0f8257c311"),
+                            Id = new Guid("1f1de70d-1b1d-4d62-86e7-22a26a82bbc0"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3807),
-                            CreatedIpAddress = "192.168.1.6",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1140),
+                            CreatedIpAddress = "192.168.1.51",
                             ExamNumber = (byte)1,
-                            Score = 58.0,
+                            Score = 53.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
                         },
                         new
                         {
-                            Id = new Guid("2d39fb50-c724-4755-928c-c9f20082ef33"),
+                            Id = new Guid("39f79c06-2d05-4335-a45d-fcc6ad914171"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3810),
-                            CreatedIpAddress = "192.168.1.97",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1144),
+                            CreatedIpAddress = "192.168.1.11",
                             ExamNumber = (byte)1,
-                            Score = 44.0,
+                            Score = 72.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
                         },
                         new
                         {
-                            Id = new Guid("e1662c37-9fc6-4af9-a367-d6d14cce43d8"),
+                            Id = new Guid("67519c30-be4f-4eba-bffd-282172d54860"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3814),
-                            CreatedIpAddress = "192.168.1.48",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1148),
+                            CreatedIpAddress = "192.168.1.50",
                             ExamNumber = (byte)1,
-                            Score = 89.0,
+                            Score = 98.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
                         },
                         new
                         {
-                            Id = new Guid("7b3dc499-3e13-4d96-9c2c-bffbbf9163d0"),
+                            Id = new Guid("410bd774-4b05-40d6-9aa1-a4eb6167b871"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3818),
-                            CreatedIpAddress = "192.168.1.62",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1154),
+                            CreatedIpAddress = "192.168.1.28",
                             ExamNumber = (byte)1,
-                            Score = 27.0,
+                            Score = 60.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
                         },
                         new
                         {
-                            Id = new Guid("1e5f51d6-146c-4f17-b157-fb42cec7de02"),
+                            Id = new Guid("bc8c21fe-3937-4718-afc2-ac80b05851df"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3822),
-                            CreatedIpAddress = "192.168.1.33",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1158),
+                            CreatedIpAddress = "192.168.1.24",
+                            ExamNumber = (byte)1,
+                            Score = 54.0,
+                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
+                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
+                        },
+                        new
+                        {
+                            Id = new Guid("dc10c672-b2b2-402f-b995-bbb03bf0fac4"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1162),
+                            CreatedIpAddress = "192.168.1.5",
+                            ExamNumber = (byte)1,
+                            Score = 51.0,
+                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
+                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
+                        },
+                        new
+                        {
+                            Id = new Guid("ab5b686e-b673-43c6-8dcc-fb9fcd69ef93"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1166),
+                            CreatedIpAddress = "192.168.1.75",
+                            ExamNumber = (byte)1,
+                            Score = 61.0,
+                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
+                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
+                        },
+                        new
+                        {
+                            Id = new Guid("20f3e91a-39e3-4135-81e7-088357cdc30c"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1170),
+                            CreatedIpAddress = "192.168.1.31",
+                            ExamNumber = (byte)1,
+                            Score = 40.0,
+                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
+                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
+                        },
+                        new
+                        {
+                            Id = new Guid("27585c8f-b115-4ad7-98a7-976b39b26fc9"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1174),
+                            CreatedIpAddress = "192.168.1.96",
+                            ExamNumber = (byte)1,
+                            Score = 5.0,
+                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
+                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
+                        },
+                        new
+                        {
+                            Id = new Guid("ddc42bcb-b9ed-40fd-92a0-302f58b63e88"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1178),
+                            CreatedIpAddress = "192.168.1.94",
                             ExamNumber = (byte)1,
                             Score = 29.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("24d536fc-f45d-4a75-9d51-1b9f00af7690"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3826),
-                            CreatedIpAddress = "192.168.1.41",
-                            ExamNumber = (byte)1,
-                            Score = 41.0,
-                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("c84902a8-310a-4f6b-9aa7-b3737789a4e9"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3831),
-                            CreatedIpAddress = "192.168.1.75",
-                            ExamNumber = (byte)1,
-                            Score = 52.0,
-                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
-                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
-                        },
-                        new
-                        {
-                            Id = new Guid("8e4c6c1b-8875-44fd-adad-3adb6cf7686d"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3835),
-                            CreatedIpAddress = "192.168.1.55",
-                            ExamNumber = (byte)1,
-                            Score = 74.0,
-                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
-                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
-                        },
-                        new
-                        {
-                            Id = new Guid("18375a7f-1f79-4468-b1ba-3ed90e75b556"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3838),
-                            CreatedIpAddress = "192.168.1.7",
-                            ExamNumber = (byte)1,
-                            Score = 69.0,
-                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
-                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
-                        },
-                        new
-                        {
-                            Id = new Guid("0b62347c-dec1-4b16-81b2-51e65d03e551"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3842),
-                            CreatedIpAddress = "192.168.1.47",
-                            ExamNumber = (byte)1,
-                            Score = 86.0,
-                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("decfd17a-6ff7-422e-b42c-498b026fd4e6"),
+                            Id = new Guid("39de7b0d-790b-4f12-900f-1b942df0f73f"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3846),
-                            CreatedIpAddress = "192.168.1.53",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1182),
+                            CreatedIpAddress = "192.168.1.52",
                             ExamNumber = (byte)1,
-                            Score = 38.0,
+                            Score = 24.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("9de93654-e22c-4c98-a1c5-2b39581b7e07"),
+                            Id = new Guid("34711ca4-2f9f-4887-a6fd-085d16231795"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3850),
-                            CreatedIpAddress = "192.168.1.29",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1187),
+                            CreatedIpAddress = "192.168.1.36",
                             ExamNumber = (byte)1,
-                            Score = 10.0,
+                            Score = 97.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("ead3aa96-1848-41c4-8932-d491456a22f7"),
+                            Id = new Guid("d97adc60-df46-489b-a17a-6aa4b5961c42"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3865),
-                            CreatedIpAddress = "192.168.1.39",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1191),
+                            CreatedIpAddress = "192.168.1.20",
                             ExamNumber = (byte)1,
-                            Score = 55.0,
+                            Score = 8.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("05f55d9a-f41e-44d6-b279-5ca62bbb842a"),
+                            Id = new Guid("7df78e1c-afe1-48c0-bd8e-31d9c8887cf0"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3869),
-                            CreatedIpAddress = "192.168.1.33",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1196),
+                            CreatedIpAddress = "192.168.1.90",
                             ExamNumber = (byte)1,
-                            Score = 9.0,
+                            Score = 25.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("e96acc1f-50c5-4e2c-94e7-31097b2afb25"),
+                            Id = new Guid("ce5df76d-7985-4d64-9093-d4f2b4ec6818"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3874),
-                            CreatedIpAddress = "192.168.1.10",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1200),
+                            CreatedIpAddress = "192.168.1.52",
                             ExamNumber = (byte)1,
-                            Score = 53.0,
+                            Score = 15.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("edde65d8-5d7a-445f-bd23-33685f2f23cb"),
+                            Id = new Guid("6fad1d01-4b51-49c0-ab3e-e1534bdaf70f"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3878),
-                            CreatedIpAddress = "192.168.1.10",
-                            ExamNumber = (byte)1,
-                            Score = 86.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
-                        },
-                        new
-                        {
-                            Id = new Guid("f15d3f07-b45f-457a-adc6-ae95bd0d1198"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3882),
-                            CreatedIpAddress = "192.168.1.58",
-                            ExamNumber = (byte)1,
-                            Score = 72.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("53cfc2e5-f2de-4270-b7de-41191711fa59"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3886),
-                            CreatedIpAddress = "192.168.1.67",
-                            ExamNumber = (byte)1,
-                            Score = 96.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
-                        },
-                        new
-                        {
-                            Id = new Guid("305d9e75-9b1d-495d-90e2-0fed8c08d70d"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3890),
-                            CreatedIpAddress = "192.168.1.68",
-                            ExamNumber = (byte)1,
-                            Score = 58.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("b897d223-9060-4cd9-af9b-066ceec9beee"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3893),
-                            CreatedIpAddress = "192.168.1.60",
-                            ExamNumber = (byte)1,
-                            Score = 67.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("8677bd81-1184-4b89-8ec7-a2122e782702"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3897),
-                            CreatedIpAddress = "192.168.1.77",
-                            ExamNumber = (byte)1,
-                            Score = 82.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("56cc5cfa-f209-4643-99e7-86dc518a93b4"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3901),
-                            CreatedIpAddress = "192.168.1.79",
-                            ExamNumber = (byte)1,
-                            Score = 39.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
-                        },
-                        new
-                        {
-                            Id = new Guid("89d4a476-3bc8-4e78-943f-181a0583607c"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3906),
-                            CreatedIpAddress = "192.168.1.16",
-                            ExamNumber = (byte)1,
-                            Score = 48.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("f62227a9-df30-4a6b-9231-0790eefe018e"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3910),
-                            CreatedIpAddress = "192.168.1.93",
-                            ExamNumber = (byte)1,
-                            Score = 30.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
-                        },
-                        new
-                        {
-                            Id = new Guid("7b1e947a-a45b-4dd9-b1a4-b4dc25132704"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3914),
-                            CreatedIpAddress = "192.168.1.62",
-                            ExamNumber = (byte)1,
-                            Score = 97.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("628a056e-22f3-4bc3-9104-ae1feb2fa226"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3918),
-                            CreatedIpAddress = "192.168.1.65",
-                            ExamNumber = (byte)1,
-                            Score = 57.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("b674eadd-3491-4c17-9e02-d764ea33c570"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3922),
-                            CreatedIpAddress = "192.168.1.95",
-                            ExamNumber = (byte)1,
-                            Score = 41.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
-                        },
-                        new
-                        {
-                            Id = new Guid("62e4f0af-da2e-4431-8f30-de7f1b0f2976"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3926),
-                            CreatedIpAddress = "192.168.1.53",
-                            ExamNumber = (byte)1,
-                            Score = 23.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
-                        },
-                        new
-                        {
-                            Id = new Guid("92d51c12-68d9-4927-9ae3-1ede36ab7554"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3929),
-                            CreatedIpAddress = "192.168.1.13",
-                            ExamNumber = (byte)1,
-                            Score = 32.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
-                        },
-                        new
-                        {
-                            Id = new Guid("efedd462-b3be-465d-abef-43da22a91a54"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3933),
-                            CreatedIpAddress = "192.168.1.46",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1204),
+                            CreatedIpAddress = "192.168.1.21",
                             ExamNumber = (byte)1,
                             Score = 47.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
+                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("cf0ef4f8-b272-4b4b-a562-cdbb700fe59c"),
+                            Id = new Guid("c99a1d8c-caf0-4a2b-a519-4b088e80293a"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3938),
-                            CreatedIpAddress = "192.168.1.13",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1208),
+                            CreatedIpAddress = "192.168.1.86",
                             ExamNumber = (byte)1,
-                            Score = 51.0,
+                            Score = 99.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
+                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
                         },
                         new
                         {
-                            Id = new Guid("3bf25044-1e23-4e2f-8ce1-9c2ce5bee504"),
+                            Id = new Guid("b4302f67-9354-4bc6-9fff-981133b58ae0"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3942),
-                            CreatedIpAddress = "192.168.1.43",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1212),
+                            CreatedIpAddress = "192.168.1.8",
                             ExamNumber = (byte)1,
-                            Score = 76.0,
+                            Score = 73.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
+                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("a2ae645e-765c-481d-b57d-a36eee312f9a"),
+                            Id = new Guid("6daf3d24-d71f-43c8-a338-a242633ad373"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3946),
-                            CreatedIpAddress = "192.168.1.30",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1216),
+                            CreatedIpAddress = "192.168.1.98",
+                            ExamNumber = (byte)1,
+                            Score = 18.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
+                        },
+                        new
+                        {
+                            Id = new Guid("f015fb56-89d0-4bda-885d-573559d1ddec"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1222),
+                            CreatedIpAddress = "192.168.1.20",
+                            ExamNumber = (byte)1,
+                            Score = 72.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("de200252-1b33-4a81-9831-ecf78d7ca9ea"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1226),
+                            CreatedIpAddress = "192.168.1.33",
+                            ExamNumber = (byte)1,
+                            Score = 54.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                        },
+                        new
+                        {
+                            Id = new Guid("7ed5b12a-82b2-4dbe-9258-595a82b58d2d"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1230),
+                            CreatedIpAddress = "192.168.1.71",
+                            ExamNumber = (byte)1,
+                            Score = 13.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                        },
+                        new
+                        {
+                            Id = new Guid("1f984cd1-0304-4ec3-9d57-00552d9b5c7a"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1234),
+                            CreatedIpAddress = "192.168.1.32",
+                            ExamNumber = (byte)1,
+                            Score = 32.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                        },
+                        new
+                        {
+                            Id = new Guid("0dd51633-6340-47cd-b845-53894e3e09e3"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1238),
+                            CreatedIpAddress = "192.168.1.17",
+                            ExamNumber = (byte)1,
+                            Score = 62.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("1b2a5e84-9e26-48f3-ba28-f7792da0a30c"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1242),
+                            CreatedIpAddress = "192.168.1.74",
+                            ExamNumber = (byte)1,
+                            Score = 0.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
+                        },
+                        new
+                        {
+                            Id = new Guid("3738df81-a0fa-4bb6-be96-e6ef47bc0845"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1246),
+                            CreatedIpAddress = "192.168.1.37",
+                            ExamNumber = (byte)1,
+                            Score = 55.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
+                        },
+                        new
+                        {
+                            Id = new Guid("418e5a58-cae2-4460-9822-53163141dedb"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1250),
+                            CreatedIpAddress = "192.168.1.85",
+                            ExamNumber = (byte)1,
+                            Score = 25.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
+                        },
+                        new
+                        {
+                            Id = new Guid("c38b83d4-f935-414e-ba71-19464d3fc812"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1256),
+                            CreatedIpAddress = "192.168.1.62",
+                            ExamNumber = (byte)1,
+                            Score = 65.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
+                        },
+                        new
+                        {
+                            Id = new Guid("9c956905-c60f-47e4-8d2d-113aa2b15df4"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1260),
+                            CreatedIpAddress = "192.168.1.63",
+                            ExamNumber = (byte)1,
+                            Score = 36.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
+                        },
+                        new
+                        {
+                            Id = new Guid("57bdce50-7efc-483b-a281-73be0ba02ada"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1271),
+                            CreatedIpAddress = "192.168.1.64",
                             ExamNumber = (byte)1,
                             Score = 7.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
+                        },
+                        new
+                        {
+                            Id = new Guid("5f0064c8-a3a2-4037-8163-a352b6448636"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1275),
+                            CreatedIpAddress = "192.168.1.13",
+                            ExamNumber = (byte)1,
+                            Score = 79.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
+                        },
+                        new
+                        {
+                            Id = new Guid("285cdd31-d8a0-4495-8924-2abe9d7dc49f"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1279),
+                            CreatedIpAddress = "192.168.1.27",
+                            ExamNumber = (byte)1,
+                            Score = 68.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
+                        },
+                        new
+                        {
+                            Id = new Guid("5aab2894-4ecb-48ac-8c68-fff7bc1c6735"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1283),
+                            CreatedIpAddress = "192.168.1.14",
+                            ExamNumber = (byte)1,
+                            Score = 89.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("e8c5a175-5bb2-4259-a3dd-377eddaa4ffe"),
+                            Id = new Guid("602b4335-a50c-4ca0-8ded-a7bc944f3f41"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3950),
-                            CreatedIpAddress = "192.168.1.70",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1288),
+                            CreatedIpAddress = "192.168.1.36",
                             ExamNumber = (byte)1,
-                            Score = 64.0,
+                            Score = 5.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("029f8a95-e099-40bf-9b14-f131be2e201d"),
+                            Id = new Guid("767380d5-2495-4764-92e8-33f7bbba3d5f"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3954),
-                            CreatedIpAddress = "192.168.1.74",
-                            ExamNumber = (byte)1,
-                            Score = 29.0,
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
-                        },
-                        new
-                        {
-                            Id = new Guid("862f2d99-7b83-4cf1-b8e5-449c90806a54"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3958),
-                            CreatedIpAddress = "192.168.1.34",
-                            ExamNumber = (byte)1,
-                            Score = 33.0,
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
-                        },
-                        new
-                        {
-                            Id = new Guid("887f5b59-8703-4676-a033-062550b649a8"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3961),
-                            CreatedIpAddress = "192.168.1.28",
-                            ExamNumber = (byte)1,
-                            Score = 8.0,
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("ad6b6dce-de5c-460b-bd37-5a9360c4f7c6"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3965),
-                            CreatedIpAddress = "192.168.1.71",
-                            ExamNumber = (byte)1,
-                            Score = 73.0,
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
-                        },
-                        new
-                        {
-                            Id = new Guid("e2114dba-a155-43c7-b18e-9464ad608623"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3970),
-                            CreatedIpAddress = "192.168.1.13",
-                            ExamNumber = (byte)1,
-                            Score = 24.0,
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("0852b948-cbf6-41ea-badc-c1a22d32994d"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3974),
-                            CreatedIpAddress = "192.168.1.16",
-                            ExamNumber = (byte)1,
-                            Score = 38.0,
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("c895f365-2575-4aaa-958a-fead223c75e1"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3978),
-                            CreatedIpAddress = "192.168.1.22",
-                            ExamNumber = (byte)1,
-                            Score = 92.0,
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("4a949b78-9182-4b2d-8772-a376183ef212"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3982),
-                            CreatedIpAddress = "192.168.1.72",
-                            ExamNumber = (byte)1,
-                            Score = 90.0,
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
-                        },
-                        new
-                        {
-                            Id = new Guid("4f7ffd7a-a6dc-4f84-b288-09db29f8c243"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3986),
-                            CreatedIpAddress = "192.168.1.60",
-                            ExamNumber = (byte)1,
-                            Score = 42.0,
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("fbb9668b-4535-40e5-8513-cf91b54116db"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3990),
-                            CreatedIpAddress = "192.168.1.60",
-                            ExamNumber = (byte)1,
-                            Score = 77.0,
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
-                        },
-                        new
-                        {
-                            Id = new Guid("e51ba194-7808-41f0-9dff-15100c23865a"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3993),
-                            CreatedIpAddress = "192.168.1.69",
-                            ExamNumber = (byte)1,
-                            Score = 6.0,
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("ed03f021-6f85-4a52-9d8a-d303fec256a1"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(3997),
-                            CreatedIpAddress = "192.168.1.11",
-                            ExamNumber = (byte)1,
-                            Score = 82.0,
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("102f3aed-2bca-4cd5-af98-4f34c75585f4"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4013),
-                            CreatedIpAddress = "192.168.1.65",
-                            ExamNumber = (byte)1,
-                            Score = 52.0,
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
-                        },
-                        new
-                        {
-                            Id = new Guid("bf94b099-3de9-47c1-aa97-99361c6d7015"),
-                            CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4017),
-                            CreatedIpAddress = "192.168.1.51",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1292),
+                            CreatedIpAddress = "192.168.1.89",
                             ExamNumber = (byte)1,
                             Score = 69.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
+                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("0935d61d-80ae-459f-bc55-220d869eef18"),
+                            Id = new Guid("e1f9cf8c-f144-41c9-b6a8-b24d57f28c6e"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4021),
-                            CreatedIpAddress = "192.168.1.88",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1297),
+                            CreatedIpAddress = "192.168.1.41",
                             ExamNumber = (byte)1,
-                            Score = 80.0,
+                            Score = 27.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
+                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("84d7ef8b-db87-4c5c-8fe7-73ed30e3235d"),
+                            Id = new Guid("dc22df91-5ea1-4bb9-ad85-1516d4d09cbf"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4024),
-                            CreatedIpAddress = "192.168.1.63",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1301),
+                            CreatedIpAddress = "192.168.1.21",
                             ExamNumber = (byte)1,
-                            Score = 43.0,
+                            Score = 98.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
+                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
                         },
                         new
                         {
-                            Id = new Guid("0bfbee4b-7789-41d4-af08-17e567d7eec0"),
+                            Id = new Guid("ce2406ba-f77e-4c99-b456-ac26271f8f59"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4028),
-                            CreatedIpAddress = "192.168.1.99",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1306),
+                            CreatedIpAddress = "192.168.1.18",
                             ExamNumber = (byte)1,
-                            Score = 65.0,
+                            Score = 55.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
+                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("f7e5f8a7-3b19-4cf8-8d4f-ce5f537db787"),
+                            Id = new Guid("e6eb64e0-3aef-45c1-9a5c-4108183b03ef"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4032),
-                            CreatedIpAddress = "192.168.1.76",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1310),
+                            CreatedIpAddress = "192.168.1.37",
                             ExamNumber = (byte)1,
-                            Score = 66.0,
+                            Score = 25.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
                         },
                         new
                         {
-                            Id = new Guid("c44ee97d-55ad-4394-94fb-6a6ead7f20f4"),
+                            Id = new Guid("bd690373-8bb6-48dd-8fa8-4ae5f65f7996"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4036),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1314),
+                            CreatedIpAddress = "192.168.1.44",
+                            ExamNumber = (byte)1,
+                            Score = 34.0,
+                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("3f67c46e-5195-4482-a36a-751dfea738ed"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1318),
+                            CreatedIpAddress = "192.168.1.20",
+                            ExamNumber = (byte)1,
+                            Score = 10.0,
+                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
+                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                        },
+                        new
+                        {
+                            Id = new Guid("72320e07-8451-472d-b843-9c120b214151"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1322),
+                            CreatedIpAddress = "192.168.1.6",
+                            ExamNumber = (byte)1,
+                            Score = 3.0,
+                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
+                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                        },
+                        new
+                        {
+                            Id = new Guid("6726fed2-b27c-46a2-b976-c90479502c97"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1326),
                             CreatedIpAddress = "192.168.1.68",
                             ExamNumber = (byte)1,
-                            Score = 85.0,
+                            Score = 89.0,
+                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
+                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                        },
+                        new
+                        {
+                            Id = new Guid("671a49d2-d7f6-43c1-854b-801a15118957"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1331),
+                            CreatedIpAddress = "192.168.1.97",
+                            ExamNumber = (byte)1,
+                            Score = 37.0,
+                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("427fe0e5-c09c-4fab-93af-79c7c46bf633"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1335),
+                            CreatedIpAddress = "192.168.1.1",
+                            ExamNumber = (byte)1,
+                            Score = 34.0,
+                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
+                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
+                        },
+                        new
+                        {
+                            Id = new Guid("6cf3553a-ba22-4702-9dff-40978476e89c"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1340),
+                            CreatedIpAddress = "192.168.1.17",
+                            ExamNumber = (byte)1,
+                            Score = 6.0,
+                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
+                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
+                        },
+                        new
+                        {
+                            Id = new Guid("ef0dc1fa-9fef-4548-8f4c-0d7d74e0ff1c"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1343),
+                            CreatedIpAddress = "192.168.1.46",
+                            ExamNumber = (byte)1,
+                            Score = 45.0,
+                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
+                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
+                        },
+                        new
+                        {
+                            Id = new Guid("a059f97c-48d8-427f-925d-808d5d13152f"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1348),
+                            CreatedIpAddress = "192.168.1.7",
+                            ExamNumber = (byte)1,
+                            Score = 46.0,
+                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
+                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
+                        },
+                        new
+                        {
+                            Id = new Guid("dad54440-7d0e-4ebe-be74-92d8afe6a6bf"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1352),
+                            CreatedIpAddress = "192.168.1.19",
+                            ExamNumber = (byte)1,
+                            Score = 67.0,
+                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
+                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
+                        },
+                        new
+                        {
+                            Id = new Guid("baedda14-b7e7-4dec-9e62-0eb73b03e2bb"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1356),
+                            CreatedIpAddress = "192.168.1.55",
+                            ExamNumber = (byte)1,
+                            Score = 48.0,
+                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
+                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
+                        },
+                        new
+                        {
+                            Id = new Guid("4e9661ab-4482-4c51-bd05-389b6d33f93f"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1360),
+                            CreatedIpAddress = "192.168.1.6",
+                            ExamNumber = (byte)1,
+                            Score = 78.0,
+                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
+                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
+                        },
+                        new
+                        {
+                            Id = new Guid("8b248eaf-9454-48d5-8e98-877cfd360779"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1365),
+                            CreatedIpAddress = "192.168.1.2",
+                            ExamNumber = (byte)1,
+                            Score = 96.0,
+                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
+                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
+                        },
+                        new
+                        {
+                            Id = new Guid("ad92e928-9020-425c-bfb0-2c120a4f7d1a"),
+                            CreatedComputerName = "Computer0",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1370),
+                            CreatedIpAddress = "192.168.1.31",
+                            ExamNumber = (byte)1,
+                            Score = 54.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("7c1978c3-6dc7-4a8a-b06e-eeddddb1ba9f"),
+                            Id = new Guid("5a0ea1c9-81f6-4982-a1e5-0230816624e5"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4041),
-                            CreatedIpAddress = "192.168.1.43",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1374),
+                            CreatedIpAddress = "192.168.1.76",
                             ExamNumber = (byte)2,
-                            Score = 96.0,
+                            Score = 86.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("4edc87d9-4aa1-4b33-a59a-3c8c1e9e4fd9"),
+                            Id = new Guid("f0b0ba59-3863-4f0c-be6d-e017dac073dd"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4046),
-                            CreatedIpAddress = "192.168.1.71",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1378),
+                            CreatedIpAddress = "192.168.1.47",
                             ExamNumber = (byte)2,
-                            Score = 61.0,
+                            Score = 11.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("72bb9214-fa13-401b-b9ab-4a77df673c83"),
+                            Id = new Guid("b1a55f73-8c05-4fe3-8069-8448e88f892b"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4050),
-                            CreatedIpAddress = "192.168.1.18",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1382),
+                            CreatedIpAddress = "192.168.1.17",
                             ExamNumber = (byte)2,
-                            Score = 88.0,
+                            Score = 79.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("86540f05-8a25-480b-8b80-2f3fdd44185b"),
+                            Id = new Guid("5efbcfe6-1054-4424-95d0-5ca9356324d6"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4054),
-                            CreatedIpAddress = "192.168.1.13",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1386),
+                            CreatedIpAddress = "192.168.1.73",
                             ExamNumber = (byte)2,
-                            Score = 28.0,
+                            Score = 6.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
                         },
                         new
                         {
-                            Id = new Guid("fcc5c93e-3860-41a5-9b17-2c34e3c886c6"),
+                            Id = new Guid("06ba3088-3123-4db6-877a-a8cc16eda4c7"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4057),
-                            CreatedIpAddress = "192.168.1.76",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1390),
+                            CreatedIpAddress = "192.168.1.33",
                             ExamNumber = (byte)2,
-                            Score = 21.0,
+                            Score = 79.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("4ed0cb7e-872d-4e44-a990-532381d84abe"),
+                            Id = new Guid("981bd448-8d6f-4f65-9441-31e61bee518a"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4061),
-                            CreatedIpAddress = "192.168.1.11",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1394),
+                            CreatedIpAddress = "192.168.1.78",
                             ExamNumber = (byte)2,
-                            Score = 12.0,
+                            Score = 42.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
                         },
                         new
                         {
-                            Id = new Guid("bf5147e7-39c2-4fb7-a7de-33c879c2203b"),
+                            Id = new Guid("ee601937-0936-45d0-afea-f1de84ae0f9d"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4065),
-                            CreatedIpAddress = "192.168.1.51",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1400),
+                            CreatedIpAddress = "192.168.1.45",
                             ExamNumber = (byte)2,
-                            Score = 96.0,
+                            Score = 22.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
                         },
                         new
                         {
-                            Id = new Guid("70b0cddd-8761-40be-a77d-201e78ac2829"),
+                            Id = new Guid("ce0da1f1-a2c2-4dfc-b57e-b007db4298c6"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4069),
-                            CreatedIpAddress = "192.168.1.63",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1404),
+                            CreatedIpAddress = "192.168.1.48",
                             ExamNumber = (byte)2,
-                            Score = 9.0,
+                            Score = 61.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
                         },
                         new
                         {
-                            Id = new Guid("9a80b038-c0a4-47ff-a7e9-288f2015f9f7"),
+                            Id = new Guid("dacba622-b1c6-4f74-bfb3-539980776462"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4073),
-                            CreatedIpAddress = "192.168.1.63",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1408),
+                            CreatedIpAddress = "192.168.1.62",
                             ExamNumber = (byte)2,
-                            Score = 16.0,
+                            Score = 38.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
                         },
                         new
                         {
-                            Id = new Guid("56495796-4d96-4dac-90d1-2f1b916c6175"),
+                            Id = new Guid("d70d76f3-eb52-4dc8-a440-dc19780a922a"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4078),
-                            CreatedIpAddress = "192.168.1.76",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1412),
+                            CreatedIpAddress = "192.168.1.42",
                             ExamNumber = (byte)2,
-                            Score = 38.0,
+                            Score = 51.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
                         },
                         new
                         {
-                            Id = new Guid("01e826a2-3c33-4374-b2b6-c3985e738210"),
+                            Id = new Guid("c9fb559a-8421-4488-bd27-eec71f83646f"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4082),
-                            CreatedIpAddress = "192.168.1.60",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1422),
+                            CreatedIpAddress = "192.168.1.87",
                             ExamNumber = (byte)2,
-                            Score = 61.0,
+                            Score = 26.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
                         },
                         new
                         {
-                            Id = new Guid("3c9e9629-c06c-467d-b6bf-842c3eaa3d1d"),
+                            Id = new Guid("e49bfcd0-cc9a-4d97-b75f-e9c3d24ce92b"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4086),
-                            CreatedIpAddress = "192.168.1.36",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1427),
+                            CreatedIpAddress = "192.168.1.64",
                             ExamNumber = (byte)2,
-                            Score = 32.0,
+                            Score = 46.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
                         },
                         new
                         {
-                            Id = new Guid("1bf1414a-7ba7-4f67-924d-fae308ba52a8"),
+                            Id = new Guid("f105ddf1-6ddf-4338-852c-440f9aa46c94"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4090),
-                            CreatedIpAddress = "192.168.1.49",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1431),
+                            CreatedIpAddress = "192.168.1.26",
                             ExamNumber = (byte)2,
-                            Score = 80.0,
+                            Score = 46.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
                         },
                         new
                         {
-                            Id = new Guid("45e6a6e4-fbd4-4d31-abce-ef3eabba7e36"),
+                            Id = new Guid("9326d925-c703-4434-9f60-a3080691dac5"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4093),
-                            CreatedIpAddress = "192.168.1.78",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1435),
+                            CreatedIpAddress = "192.168.1.97",
                             ExamNumber = (byte)2,
-                            Score = 39.0,
+                            Score = 18.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("f60e19a3-dcc8-4c69-b920-c6bda6781786"),
+                            Id = new Guid("d8464cc4-0d07-4aa0-bed5-7f42057a43de"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4097),
-                            CreatedIpAddress = "192.168.1.88",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1440),
+                            CreatedIpAddress = "192.168.1.27",
                             ExamNumber = (byte)2,
-                            Score = 72.0,
+                            Score = 66.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("afe4d86c-ef7d-4202-ad47-a480844b4319"),
+                            Id = new Guid("353eac5c-817f-4980-b5d9-534dd2b093e1"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4101),
-                            CreatedIpAddress = "192.168.1.56",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1444),
+                            CreatedIpAddress = "192.168.1.6",
                             ExamNumber = (byte)2,
-                            Score = 37.0,
+                            Score = 10.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("6239c955-6bdc-4075-bc64-0a98bdc72937"),
+                            Id = new Guid("3be3a8af-b5dc-4b85-8cfc-c7a4852b7b09"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4105),
-                            CreatedIpAddress = "192.168.1.35",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1448),
+                            CreatedIpAddress = "192.168.1.72",
                             ExamNumber = (byte)2,
-                            Score = 52.0,
+                            Score = 0.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("5ac2b58a-0367-4054-8075-c4d67985edf2"),
+                            Id = new Guid("a8d4f728-d952-4d27-acec-ba2c5e5d9249"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4128),
-                            CreatedIpAddress = "192.168.1.37",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1454),
+                            CreatedIpAddress = "192.168.1.84",
                             ExamNumber = (byte)2,
-                            Score = 13.0,
+                            Score = 45.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("dc30b435-b203-49a5-8ba3-37499a3b2ce2"),
+                            Id = new Guid("5b2f6bbb-cb0e-4031-aaf4-c69176202b3c"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4132),
-                            CreatedIpAddress = "192.168.1.59",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1458),
+                            CreatedIpAddress = "192.168.1.5",
                             ExamNumber = (byte)2,
-                            Score = 35.0,
+                            Score = 30.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("c36e5b6a-1088-43e0-b4df-1d9c02324c71"),
+                            Id = new Guid("b52b9394-4a92-4181-bdf2-e98330bd4df1"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4136),
-                            CreatedIpAddress = "192.168.1.70",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1462),
+                            CreatedIpAddress = "192.168.1.29",
                             ExamNumber = (byte)2,
-                            Score = 49.0,
+                            Score = 53.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("ae92c2d5-29cf-42f3-9262-485d8295b332"),
+                            Id = new Guid("9420da26-7f60-417e-bc92-963fe7a8126a"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4140),
-                            CreatedIpAddress = "192.168.1.29",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1466),
+                            CreatedIpAddress = "192.168.1.32",
                             ExamNumber = (byte)2,
-                            Score = 70.0,
+                            Score = 96.0,
                             StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("600fdde1-33b4-4cd7-9bac-c6f1f561a12e"),
+                            Id = new Guid("76e2b8de-cbee-497a-994d-6d1b3ff54ce0"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4144),
-                            CreatedIpAddress = "192.168.1.49",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1471),
+                            CreatedIpAddress = "192.168.1.30",
                             ExamNumber = (byte)2,
-                            Score = 89.0,
+                            Score = 93.0,
                             StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("064a3894-ec4b-40e9-bf23-12626ab0dab8"),
+                            Id = new Guid("e5d99fd9-8782-41fb-9f86-825de1e09443"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4148),
-                            CreatedIpAddress = "192.168.1.97",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1476),
+                            CreatedIpAddress = "192.168.1.3",
                             ExamNumber = (byte)2,
-                            Score = 56.0,
+                            Score = 98.0,
                             StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("41082298-12e6-465b-aaa1-881c36caf0c0"),
+                            Id = new Guid("97b919ba-3713-4cf6-be6a-8152c914fe46"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4152),
-                            CreatedIpAddress = "192.168.1.94",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1480),
+                            CreatedIpAddress = "192.168.1.97",
                             ExamNumber = (byte)2,
-                            Score = 32.0,
+                            Score = 26.0,
                             StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
                         },
                         new
                         {
-                            Id = new Guid("628df542-a197-412f-ac89-954a286ce4d7"),
+                            Id = new Guid("dfd59c46-d8c0-4794-b316-6ed345b44ca9"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4155),
-                            CreatedIpAddress = "192.168.1.32",
-                            ExamNumber = (byte)2,
-                            Score = 27.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
-                        },
-                        new
-                        {
-                            Id = new Guid("51171114-3348-4009-96f3-418d1dadae5d"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4161),
-                            CreatedIpAddress = "192.168.1.58",
-                            ExamNumber = (byte)2,
-                            Score = 38.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("f63b4943-e36b-489f-ac1c-40952947aace"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4165),
-                            CreatedIpAddress = "192.168.1.18",
-                            ExamNumber = (byte)2,
-                            Score = 8.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("7b077e83-0335-4b83-8023-faf7d66213ce"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4168),
-                            CreatedIpAddress = "192.168.1.34",
-                            ExamNumber = (byte)2,
-                            Score = 34.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("953ee7cc-9805-4695-9098-a2d24b665603"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4172),
-                            CreatedIpAddress = "192.168.1.9",
-                            ExamNumber = (byte)2,
-                            Score = 30.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
-                        },
-                        new
-                        {
-                            Id = new Guid("9ba6d5c7-aeb7-482f-9689-a10faccb14b1"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4176),
-                            CreatedIpAddress = "192.168.1.4",
-                            ExamNumber = (byte)2,
-                            Score = 46.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("92453555-d5ad-412f-9050-431454bb9944"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4180),
-                            CreatedIpAddress = "192.168.1.52",
-                            ExamNumber = (byte)2,
-                            Score = 11.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
-                        },
-                        new
-                        {
-                            Id = new Guid("f98b3e9a-672a-4841-8b81-ebed80f5974c"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4183),
-                            CreatedIpAddress = "192.168.1.45",
-                            ExamNumber = (byte)2,
-                            Score = 97.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("f40e4633-02d1-4949-921e-396642424aa7"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4187),
-                            CreatedIpAddress = "192.168.1.26",
-                            ExamNumber = (byte)2,
-                            Score = 27.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("fb62594a-7118-4d19-aa59-2a3de4d02fbb"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4193),
-                            CreatedIpAddress = "192.168.1.33",
-                            ExamNumber = (byte)2,
-                            Score = 56.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
-                        },
-                        new
-                        {
-                            Id = new Guid("21013ee5-8979-455e-bb86-9d2e4c5567cf"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4197),
-                            CreatedIpAddress = "192.168.1.23",
-                            ExamNumber = (byte)2,
-                            Score = 10.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
-                        },
-                        new
-                        {
-                            Id = new Guid("55b1a1d1-5a2f-4d24-a268-f5fdca00c03c"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4201),
-                            CreatedIpAddress = "192.168.1.89",
-                            ExamNumber = (byte)2,
-                            Score = 61.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
-                        },
-                        new
-                        {
-                            Id = new Guid("7b5b62be-bd0e-493e-96ce-cec0c8c74ec2"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4204),
-                            CreatedIpAddress = "192.168.1.91",
-                            ExamNumber = (byte)2,
-                            Score = 38.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
-                        },
-                        new
-                        {
-                            Id = new Guid("0bc90d60-e040-4ab3-9851-3979803253bb"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4208),
-                            CreatedIpAddress = "192.168.1.3",
-                            ExamNumber = (byte)2,
-                            Score = 99.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
-                        },
-                        new
-                        {
-                            Id = new Guid("3636ca87-9ea0-4bc6-9eba-6ff03463159b"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4212),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1484),
                             CreatedIpAddress = "192.168.1.83",
                             ExamNumber = (byte)2,
                             Score = 64.0,
                             StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
+                        },
+                        new
+                        {
+                            Id = new Guid("0c3f84fe-18ad-4f7d-b1df-464673af122b"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1488),
+                            CreatedIpAddress = "192.168.1.69",
+                            ExamNumber = (byte)2,
+                            Score = 54.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
+                        },
+                        new
+                        {
+                            Id = new Guid("783f24c6-df75-47cf-834d-0980751c5074"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1494),
+                            CreatedIpAddress = "192.168.1.65",
+                            ExamNumber = (byte)2,
+                            Score = 35.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("3662db5e-147d-4c97-9a85-77203c6e165e"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1511),
+                            CreatedIpAddress = "192.168.1.1",
+                            ExamNumber = (byte)2,
+                            Score = 13.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                        },
+                        new
+                        {
+                            Id = new Guid("19335846-c8f3-41da-a601-72be91bc7f4b"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1516),
+                            CreatedIpAddress = "192.168.1.82",
+                            ExamNumber = (byte)2,
+                            Score = 70.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                        },
+                        new
+                        {
+                            Id = new Guid("917b1577-6625-4ca2-92a8-f4cd49a1059b"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1520),
+                            CreatedIpAddress = "192.168.1.99",
+                            ExamNumber = (byte)2,
+                            Score = 52.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                        },
+                        new
+                        {
+                            Id = new Guid("2e16d837-646b-41cf-883d-35a9f5368a44"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1525),
+                            CreatedIpAddress = "192.168.1.46",
+                            ExamNumber = (byte)2,
+                            Score = 5.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("d37f8b8d-c0ea-44fd-b1fe-06e53e33f06d"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1529),
+                            CreatedIpAddress = "192.168.1.72",
+                            ExamNumber = (byte)2,
+                            Score = 59.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
+                        },
+                        new
+                        {
+                            Id = new Guid("9cbeeb01-4fd1-4297-bb54-23d0afbe901d"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1533),
+                            CreatedIpAddress = "192.168.1.16",
+                            ExamNumber = (byte)2,
+                            Score = 3.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
+                        },
+                        new
+                        {
+                            Id = new Guid("74610edd-3206-4358-ad94-55e01eb626a2"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1537),
+                            CreatedIpAddress = "192.168.1.84",
+                            ExamNumber = (byte)2,
+                            Score = 25.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
+                        },
+                        new
+                        {
+                            Id = new Guid("bef56608-bb18-4939-9f21-bba57a7cec38"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1541),
+                            CreatedIpAddress = "192.168.1.55",
+                            ExamNumber = (byte)2,
+                            Score = 49.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
+                        },
+                        new
+                        {
+                            Id = new Guid("96259997-57d9-4656-8497-5d0a76d1a436"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1545),
+                            CreatedIpAddress = "192.168.1.28",
+                            ExamNumber = (byte)2,
+                            Score = 68.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
+                        },
+                        new
+                        {
+                            Id = new Guid("f0f822b3-cbe3-4ebe-b87b-900111a2245d"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1550),
+                            CreatedIpAddress = "192.168.1.8",
+                            ExamNumber = (byte)2,
+                            Score = 94.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
+                        },
+                        new
+                        {
+                            Id = new Guid("c97a43b6-81f8-45ac-9879-003e5f2d738d"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1554),
+                            CreatedIpAddress = "192.168.1.42",
+                            ExamNumber = (byte)2,
+                            Score = 17.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
+                        },
+                        new
+                        {
+                            Id = new Guid("b807ad9d-2710-4419-ae3c-e10c040b3f80"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1559),
+                            CreatedIpAddress = "192.168.1.61",
+                            ExamNumber = (byte)2,
+                            Score = 94.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("ecb2b35b-3f17-4daf-a882-0ec72e6e439f"),
+                            Id = new Guid("a25ac64e-d50d-417b-b0e1-9f723f72115c"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4216),
-                            CreatedIpAddress = "192.168.1.28",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1563),
+                            CreatedIpAddress = "192.168.1.89",
                             ExamNumber = (byte)2,
-                            Score = 9.0,
+                            Score = 40.0,
                             StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("9064d89e-c879-41ac-ab9a-1c8ebe5633b0"),
+                            Id = new Guid("017f33b3-555c-45a1-8452-2268f97eae2f"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4220),
-                            CreatedIpAddress = "192.168.1.16",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1568),
+                            CreatedIpAddress = "192.168.1.54",
                             ExamNumber = (byte)2,
-                            Score = 4.0,
+                            Score = 48.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("3fb63f13-b245-4c9b-8a9a-b1825a791d38"),
+                            Id = new Guid("628d39cd-0291-4bfe-8ff2-7b80ef2b8e4c"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4226),
-                            CreatedIpAddress = "192.168.1.34",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1572),
+                            CreatedIpAddress = "192.168.1.44",
                             ExamNumber = (byte)2,
-                            Score = 65.0,
+                            Score = 21.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("d68775a2-4d5b-4e1d-a6da-65fa14c0629f"),
+                            Id = new Guid("5a236331-6c46-40ee-bf00-a16a994cca41"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4230),
-                            CreatedIpAddress = "192.168.1.34",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1576),
+                            CreatedIpAddress = "192.168.1.74",
                             ExamNumber = (byte)2,
-                            Score = 80.0,
+                            Score = 9.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("37dd9e32-ad38-4b3c-b19b-07e882354e87"),
+                            Id = new Guid("64644816-1867-4634-9010-4ec6ccf2cedf"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4234),
-                            CreatedIpAddress = "192.168.1.40",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1580),
+                            CreatedIpAddress = "192.168.1.87",
                             ExamNumber = (byte)2,
-                            Score = 35.0,
+                            Score = 80.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
                         },
                         new
                         {
-                            Id = new Guid("b0df99b9-8694-44be-9b1b-cfd0a56e0720"),
+                            Id = new Guid("7880491b-518e-40b6-927f-ba57ea2a1773"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4244),
-                            CreatedIpAddress = "192.168.1.47",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1584),
+                            CreatedIpAddress = "192.168.1.98",
                             ExamNumber = (byte)2,
-                            Score = 12.0,
+                            Score = 6.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("7d364666-85dd-4623-b7aa-10e256f057fd"),
+                            Id = new Guid("2b80bf9c-2434-417a-a15f-c97b60aa8039"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4248),
-                            CreatedIpAddress = "192.168.1.77",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1588),
+                            CreatedIpAddress = "192.168.1.23",
                             ExamNumber = (byte)2,
-                            Score = 90.0,
+                            Score = 89.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
                         },
                         new
                         {
-                            Id = new Guid("eed8b6e9-de28-4af8-95eb-6bcf3ba61832"),
+                            Id = new Guid("e1c87b79-e423-4223-bde3-cf89d3cb4112"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4252),
-                            CreatedIpAddress = "192.168.1.12",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1594),
+                            CreatedIpAddress = "192.168.1.42",
                             ExamNumber = (byte)2,
-                            Score = 93.0,
+                            Score = 80.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
                         },
                         new
                         {
-                            Id = new Guid("cbc69a43-3290-4c96-b61b-c8f27a7311e3"),
+                            Id = new Guid("afb1ee4e-89f2-4fa9-ac2d-2dcdb90c4802"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4256),
-                            CreatedIpAddress = "192.168.1.62",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1598),
+                            CreatedIpAddress = "192.168.1.93",
                             ExamNumber = (byte)2,
-                            Score = 1.0,
+                            Score = 81.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
                         },
                         new
                         {
-                            Id = new Guid("ed5d22a0-b19e-43bf-a3b3-d7e38a3a8c2f"),
+                            Id = new Guid("43d8cb54-75af-4471-8f35-d1d52063e4ef"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4260),
-                            CreatedIpAddress = "192.168.1.71",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1602),
+                            CreatedIpAddress = "192.168.1.51",
                             ExamNumber = (byte)2,
                             Score = 89.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
@@ -4010,1352 +3507,1352 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("55f9339e-054a-4215-9b13-36acc9de3ffe"),
+                            Id = new Guid("45e4bb48-8b5d-4967-8688-7535e8a60eae"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4265),
-                            CreatedIpAddress = "192.168.1.42",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1606),
+                            CreatedIpAddress = "192.168.1.2",
                             ExamNumber = (byte)2,
-                            Score = 98.0,
+                            Score = 15.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
                         },
                         new
                         {
-                            Id = new Guid("2ef189db-0751-45cc-b763-91634793bd98"),
+                            Id = new Guid("84f75a43-57bb-42ce-8b35-679185bd0347"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4269),
-                            CreatedIpAddress = "192.168.1.95",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1610),
+                            CreatedIpAddress = "192.168.1.50",
                             ExamNumber = (byte)2,
-                            Score = 83.0,
+                            Score = 11.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
                         },
                         new
                         {
-                            Id = new Guid("84d9b029-7427-4135-a71f-5a30d1da43a0"),
+                            Id = new Guid("2cb3ddda-8cc3-4d30-9355-a825d98d3955"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4273),
-                            CreatedIpAddress = "192.168.1.83",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1614),
+                            CreatedIpAddress = "192.168.1.6",
                             ExamNumber = (byte)2,
-                            Score = 86.0,
+                            Score = 50.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
                         },
                         new
                         {
-                            Id = new Guid("1e489cac-c5db-491f-a4a4-b7d79d5460ed"),
+                            Id = new Guid("fbcd3351-8520-4b65-b22f-16390a052635"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4277),
-                            CreatedIpAddress = "192.168.1.86",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1618),
+                            CreatedIpAddress = "192.168.1.87",
                             ExamNumber = (byte)2,
-                            Score = 5.0,
+                            Score = 96.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
                         },
                         new
                         {
-                            Id = new Guid("081f85c3-4fb1-48fc-b9ec-c49f6a1a2d2f"),
+                            Id = new Guid("a4363933-adc1-4e86-a0fc-255295e0af97"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4280),
-                            CreatedIpAddress = "192.168.1.67",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1622),
+                            CreatedIpAddress = "192.168.1.52",
                             ExamNumber = (byte)2,
-                            Score = 4.0,
+                            Score = 91.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("5e06dfdb-d6cd-4abb-b752-ed170fe8b14d"),
+                            Id = new Guid("617be939-d052-4ba9-bc43-ec180bb6fdbb"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4284),
-                            CreatedIpAddress = "192.168.1.97",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1628),
+                            CreatedIpAddress = "192.168.1.68",
                             ExamNumber = (byte)2,
-                            Score = 18.0,
+                            Score = 5.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("a40b2b3d-ac23-4e29-89ef-cd3022054f98"),
+                            Id = new Guid("7e840f62-20b3-4b14-b6b6-e10856705607"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4288),
-                            CreatedIpAddress = "192.168.1.93",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1632),
+                            CreatedIpAddress = "192.168.1.91",
                             ExamNumber = (byte)2,
-                            Score = 2.0,
+                            Score = 35.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("ae129cc1-309d-4085-8274-0e4fcba74a37"),
+                            Id = new Guid("250eda2a-a45d-41b3-82a9-a9fd2502e884"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4292),
-                            CreatedIpAddress = "192.168.1.68",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1636),
+                            CreatedIpAddress = "192.168.1.14",
                             ExamNumber = (byte)2,
-                            Score = 26.0,
+                            Score = 6.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("195a6988-f7c1-4271-becc-cf0f19110aa4"),
+                            Id = new Guid("9c2cb9bc-4b32-49ce-9bb0-e4bbfe0242c9"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4297),
-                            CreatedIpAddress = "192.168.1.62",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1640),
+                            CreatedIpAddress = "192.168.1.97",
                             ExamNumber = (byte)2,
-                            Score = 5.0,
+                            Score = 39.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("94686311-5748-458d-be62-32fbf254ad22"),
+                            Id = new Guid("00d8ce74-5000-4409-a3fc-e52fa3d8b3e9"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4301),
-                            CreatedIpAddress = "192.168.1.35",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1644),
+                            CreatedIpAddress = "192.168.1.13",
                             ExamNumber = (byte)2,
-                            Score = 71.0,
+                            Score = 7.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("e1f346f6-7429-4706-9f8b-e6800e3bb17b"),
+                            Id = new Guid("46d69fa0-836f-4fc9-9df2-a6f5e30d6916"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4305),
-                            CreatedIpAddress = "192.168.1.52",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1648),
+                            CreatedIpAddress = "192.168.1.59",
                             ExamNumber = (byte)2,
-                            Score = 99.0,
+                            Score = 73.0,
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("813cc4bf-adaa-4fe5-8727-d04295cfbf47"),
+                            Id = new Guid("9e75f274-52c3-43d3-9135-7c7f287821d9"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4309),
-                            CreatedIpAddress = "192.168.1.7",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1652),
+                            CreatedIpAddress = "192.168.1.38",
                             ExamNumber = (byte)2,
-                            Score = 24.0,
+                            Score = 56.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("65cf5e0b-ef42-4408-8cff-8c2c0052c867"),
+                            Id = new Guid("414bd307-e103-49b1-bdd9-e0fd7c4cfec5"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4313),
-                            CreatedIpAddress = "192.168.1.36",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1666),
+                            CreatedIpAddress = "192.168.1.59",
                             ExamNumber = (byte)2,
-                            Score = 61.0,
+                            Score = 36.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("0b66f424-941d-4d31-9c42-ec1ce040c64e"),
+                            Id = new Guid("9aa6db95-fbe2-4067-851a-c56386458753"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4316),
-                            CreatedIpAddress = "192.168.1.74",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1672),
+                            CreatedIpAddress = "192.168.1.55",
                             ExamNumber = (byte)2,
-                            Score = 68.0,
+                            Score = 57.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("a7538c43-f484-45f3-bec1-e46e429cd532"),
+                            Id = new Guid("8a2fe288-7884-4ce6-8cb9-28c75c3ea84f"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4320),
-                            CreatedIpAddress = "192.168.1.50",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1676),
+                            CreatedIpAddress = "192.168.1.38",
                             ExamNumber = (byte)2,
-                            Score = 43.0,
+                            Score = 62.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
                         },
                         new
                         {
-                            Id = new Guid("03f63b58-c856-40da-aa5a-36bb78e4cbaa"),
+                            Id = new Guid("ea6f9af5-c391-48fa-854e-74c3dcfe29e4"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4324),
-                            CreatedIpAddress = "192.168.1.45",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1680),
+                            CreatedIpAddress = "192.168.1.22",
                             ExamNumber = (byte)2,
-                            Score = 30.0,
+                            Score = 12.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("20812df5-3298-4843-bf98-273e3bbc829b"),
+                            Id = new Guid("61f931f6-2991-4d9d-beef-7177241e47b1"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4329),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1684),
                             CreatedIpAddress = "192.168.1.40",
                             ExamNumber = (byte)2,
-                            Score = 22.0,
+                            Score = 5.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
                         },
                         new
                         {
-                            Id = new Guid("0d2010ac-3feb-404b-8a8c-2f7ab6fa272b"),
+                            Id = new Guid("977de1c0-f4d7-42ea-b3e5-146cd655f71e"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4333),
-                            CreatedIpAddress = "192.168.1.7",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1688),
+                            CreatedIpAddress = "192.168.1.65",
                             ExamNumber = (byte)2,
-                            Score = 19.0,
+                            Score = 45.0,
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
                         },
                         new
                         {
-                            Id = new Guid("32338b5c-041d-47b9-9acf-76d74397646c"),
+                            Id = new Guid("db305176-7ce5-42da-8ca1-97f212b8863b"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4337),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1692),
+                            CreatedIpAddress = "192.168.1.41",
+                            ExamNumber = (byte)2,
+                            Score = 17.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                        },
+                        new
+                        {
+                            Id = new Guid("c83f7641-20cd-40c4-be8d-c2eb88000d8c"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1696),
+                            CreatedIpAddress = "192.168.1.77",
+                            ExamNumber = (byte)2,
+                            Score = 42.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                        },
+                        new
+                        {
+                            Id = new Guid("7dc6f518-4ec2-46b2-b170-5d9da69273be"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1700),
+                            CreatedIpAddress = "192.168.1.3",
+                            ExamNumber = (byte)2,
+                            Score = 54.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                        },
+                        new
+                        {
+                            Id = new Guid("09592c32-610a-4ecb-b711-6a3060577cf5"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1706),
+                            CreatedIpAddress = "192.168.1.70",
+                            ExamNumber = (byte)2,
+                            Score = 71.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("9749eada-9a94-48b5-a379-d535f9c789d7"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1710),
+                            CreatedIpAddress = "192.168.1.42",
+                            ExamNumber = (byte)2,
+                            Score = 81.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
+                        },
+                        new
+                        {
+                            Id = new Guid("302adb23-ee73-49bc-88ec-55ecd905e8c2"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1714),
+                            CreatedIpAddress = "192.168.1.68",
+                            ExamNumber = (byte)2,
+                            Score = 21.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
+                        },
+                        new
+                        {
+                            Id = new Guid("72f16d27-541d-4f52-9b69-f304be144075"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1718),
+                            CreatedIpAddress = "192.168.1.60",
+                            ExamNumber = (byte)2,
+                            Score = 84.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
+                        },
+                        new
+                        {
+                            Id = new Guid("6c9d5cda-f01a-493a-97c0-91682bb2875a"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1722),
+                            CreatedIpAddress = "192.168.1.80",
+                            ExamNumber = (byte)2,
+                            Score = 42.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
+                        },
+                        new
+                        {
+                            Id = new Guid("33430c20-e1ed-4820-872d-bf44ec1564eb"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1726),
+                            CreatedIpAddress = "192.168.1.26",
+                            ExamNumber = (byte)2,
+                            Score = 39.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
+                        },
+                        new
+                        {
+                            Id = new Guid("c8397f87-7c2f-4a47-8def-2f6685e434ab"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1730),
+                            CreatedIpAddress = "192.168.1.31",
+                            ExamNumber = (byte)2,
+                            Score = 29.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
+                        },
+                        new
+                        {
+                            Id = new Guid("da373961-af2b-4069-9508-89a01bc5ba8c"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1734),
+                            CreatedIpAddress = "192.168.1.38",
+                            ExamNumber = (byte)2,
+                            Score = 66.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
+                        },
+                        new
+                        {
+                            Id = new Guid("ba41cd8e-3930-488c-9818-192e74b79848"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1740),
+                            CreatedIpAddress = "192.168.1.42",
+                            ExamNumber = (byte)2,
+                            Score = 78.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
+                        },
+                        new
+                        {
+                            Id = new Guid("1401929f-0fd5-4a9c-a396-9c2d67086818"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1744),
+                            CreatedIpAddress = "192.168.1.77",
+                            ExamNumber = (byte)2,
+                            Score = 6.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
+                        },
+                        new
+                        {
+                            Id = new Guid("7e241c6f-7387-46be-9786-b7604a826adf"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1748),
+                            CreatedIpAddress = "192.168.1.90",
+                            ExamNumber = (byte)2,
+                            Score = 15.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
+                        },
+                        new
+                        {
+                            Id = new Guid("af6280d5-b5ac-46c4-9fe1-d4b48652dacd"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1752),
+                            CreatedIpAddress = "192.168.1.95",
+                            ExamNumber = (byte)2,
+                            Score = 94.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
+                        },
+                        new
+                        {
+                            Id = new Guid("3f305415-4f60-4fa8-86d6-349dd7206415"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1756),
+                            CreatedIpAddress = "192.168.1.33",
+                            ExamNumber = (byte)2,
+                            Score = 66.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
+                        },
+                        new
+                        {
+                            Id = new Guid("b161576a-afd3-45e0-adf2-4dfbd5046a7b"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1760),
+                            CreatedIpAddress = "192.168.1.59",
+                            ExamNumber = (byte)2,
+                            Score = 12.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
+                        },
+                        new
+                        {
+                            Id = new Guid("ede01801-2544-4fe7-a610-12456e120227"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1764),
+                            CreatedIpAddress = "192.168.1.40",
+                            ExamNumber = (byte)2,
+                            Score = 34.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
+                        },
+                        new
+                        {
+                            Id = new Guid("68df9db0-c225-43fb-89f2-4e3f691c1893"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1768),
+                            CreatedIpAddress = "192.168.1.2",
+                            ExamNumber = (byte)2,
+                            Score = 34.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
+                        },
+                        new
+                        {
+                            Id = new Guid("679b59c4-1f62-4f85-b987-4be820daf342"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1774),
+                            CreatedIpAddress = "192.168.1.39",
+                            ExamNumber = (byte)2,
+                            Score = 45.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("d9fc27ec-4d58-4e1e-9800-91bc38169dbe"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1778),
+                            CreatedIpAddress = "192.168.1.66",
+                            ExamNumber = (byte)2,
+                            Score = 1.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                        },
+                        new
+                        {
+                            Id = new Guid("7448ef41-9890-4798-8813-6a31f95f8e5d"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1782),
+                            CreatedIpAddress = "192.168.1.88",
+                            ExamNumber = (byte)2,
+                            Score = 57.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                        },
+                        new
+                        {
+                            Id = new Guid("5e9bb6dc-7f63-4ee2-97e2-2704e96e17f2"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1786),
+                            CreatedIpAddress = "192.168.1.12",
+                            ExamNumber = (byte)2,
+                            Score = 26.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                        },
+                        new
+                        {
+                            Id = new Guid("573c74b7-6a0f-4ba1-b969-65cacb27131a"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1790),
+                            CreatedIpAddress = "192.168.1.90",
+                            ExamNumber = (byte)2,
+                            Score = 34.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("9ead0569-1a40-490a-92b2-839dead8d973"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1795),
+                            CreatedIpAddress = "192.168.1.75",
+                            ExamNumber = (byte)2,
+                            Score = 45.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
+                        },
+                        new
+                        {
+                            Id = new Guid("e23ffe89-00f4-457b-92fb-7e70be4c9198"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1798),
+                            CreatedIpAddress = "192.168.1.28",
+                            ExamNumber = (byte)2,
+                            Score = 60.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
+                        },
+                        new
+                        {
+                            Id = new Guid("00404610-3127-41a3-bb38-d49d32acc40c"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1803),
+                            CreatedIpAddress = "192.168.1.23",
+                            ExamNumber = (byte)2,
+                            Score = 69.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
+                        },
+                        new
+                        {
+                            Id = new Guid("cfbee167-dbee-452e-8ebe-3ddde9629e97"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1808),
+                            CreatedIpAddress = "192.168.1.56",
+                            ExamNumber = (byte)2,
+                            Score = 89.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
+                        },
+                        new
+                        {
+                            Id = new Guid("ba4a42b1-06ec-4c93-aa57-2c8c685ae4e9"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1821),
+                            CreatedIpAddress = "192.168.1.94",
+                            ExamNumber = (byte)2,
+                            Score = 37.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
+                        },
+                        new
+                        {
+                            Id = new Guid("7e76bd46-daeb-498d-b004-fe3c0eac9dc6"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1825),
+                            CreatedIpAddress = "192.168.1.15",
+                            ExamNumber = (byte)2,
+                            Score = 67.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
+                        },
+                        new
+                        {
+                            Id = new Guid("88ba9565-914b-4497-83ae-a3f15d27e8c1"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1829),
+                            CreatedIpAddress = "192.168.1.40",
+                            ExamNumber = (byte)2,
+                            Score = 82.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
+                        },
+                        new
+                        {
+                            Id = new Guid("a9387ef9-5edc-4d70-908f-ca837c973159"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1833),
+                            CreatedIpAddress = "192.168.1.73",
+                            ExamNumber = (byte)2,
+                            Score = 19.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
+                        },
+                        new
+                        {
+                            Id = new Guid("32b403ea-ff3f-45d3-bcb6-6059934e11e1"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1837),
+                            CreatedIpAddress = "192.168.1.62",
+                            ExamNumber = (byte)2,
+                            Score = 75.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
+                        },
+                        new
+                        {
+                            Id = new Guid("b00cf52d-43b5-4ddb-8344-6a3d6574dc44"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1841),
+                            CreatedIpAddress = "192.168.1.73",
+                            ExamNumber = (byte)2,
+                            Score = 10.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
+                        },
+                        new
+                        {
+                            Id = new Guid("484cf20e-bef8-456f-8ade-47f1aa9d9a46"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1845),
+                            CreatedIpAddress = "192.168.1.16",
+                            ExamNumber = (byte)2,
+                            Score = 68.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
+                        },
+                        new
+                        {
+                            Id = new Guid("d2eac767-4e2c-4f5c-ac5a-32074aa56cc4"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1851),
+                            CreatedIpAddress = "192.168.1.13",
+                            ExamNumber = (byte)2,
+                            Score = 49.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
+                        },
+                        new
+                        {
+                            Id = new Guid("b01897ff-6fbf-464c-916a-6acc71efc71a"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1855),
+                            CreatedIpAddress = "192.168.1.34",
+                            ExamNumber = (byte)2,
+                            Score = 52.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
+                        },
+                        new
+                        {
+                            Id = new Guid("737a6749-4a01-4157-a7c7-628a350acc41"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1859),
+                            CreatedIpAddress = "192.168.1.99",
+                            ExamNumber = (byte)2,
+                            Score = 32.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
+                        },
+                        new
+                        {
+                            Id = new Guid("32f790e9-b099-41e6-bb57-fe4be0eca8d7"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1863),
+                            CreatedIpAddress = "192.168.1.87",
+                            ExamNumber = (byte)2,
+                            Score = 0.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
+                        },
+                        new
+                        {
+                            Id = new Guid("838e2bdf-704a-496a-9488-8e34d9181a2b"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1867),
+                            CreatedIpAddress = "192.168.1.70",
+                            ExamNumber = (byte)2,
+                            Score = 40.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("3f6ed68d-d3b6-499c-983f-dbcfd5d002ec"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1871),
+                            CreatedIpAddress = "192.168.1.44",
+                            ExamNumber = (byte)2,
+                            Score = 21.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                        },
+                        new
+                        {
+                            Id = new Guid("92ce190b-1e00-4342-8164-1e05cd43206f"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1875),
+                            CreatedIpAddress = "192.168.1.34",
+                            ExamNumber = (byte)2,
+                            Score = 72.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                        },
+                        new
+                        {
+                            Id = new Guid("19f7c8b5-8ffc-4f35-bb02-307b675a9332"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1879),
+                            CreatedIpAddress = "192.168.1.85",
+                            ExamNumber = (byte)2,
+                            Score = 93.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                        },
+                        new
+                        {
+                            Id = new Guid("3c2d2fdc-3ba7-4484-b211-b78895e10182"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1884),
+                            CreatedIpAddress = "192.168.1.87",
+                            ExamNumber = (byte)2,
+                            Score = 67.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("03afc949-1c63-40ef-9646-76bcebef194a"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1889),
+                            CreatedIpAddress = "192.168.1.73",
+                            ExamNumber = (byte)2,
+                            Score = 7.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
+                        },
+                        new
+                        {
+                            Id = new Guid("42424199-eab7-4541-b30c-5af56792f40e"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1893),
+                            CreatedIpAddress = "192.168.1.22",
+                            ExamNumber = (byte)2,
+                            Score = 81.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
+                        },
+                        new
+                        {
+                            Id = new Guid("504e0c17-9b97-493d-8d0e-cb70d5c49917"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1897),
+                            CreatedIpAddress = "192.168.1.73",
+                            ExamNumber = (byte)2,
+                            Score = 97.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
+                        },
+                        new
+                        {
+                            Id = new Guid("b0626acd-572b-4cf8-97c4-67aaa8bdbe2e"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1901),
+                            CreatedIpAddress = "192.168.1.5",
+                            ExamNumber = (byte)2,
+                            Score = 58.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
+                        },
+                        new
+                        {
+                            Id = new Guid("e04248d9-ead8-4949-a782-1f7a1862f91b"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1905),
+                            CreatedIpAddress = "192.168.1.30",
+                            ExamNumber = (byte)2,
+                            Score = 43.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
+                        },
+                        new
+                        {
+                            Id = new Guid("7f3a4e66-716d-4664-8a7d-289d2732362c"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1909),
+                            CreatedIpAddress = "192.168.1.88",
+                            ExamNumber = (byte)2,
+                            Score = 44.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
+                        },
+                        new
+                        {
+                            Id = new Guid("4f37bb11-7227-41cb-b4d0-16af536ca0d4"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1913),
+                            CreatedIpAddress = "192.168.1.88",
+                            ExamNumber = (byte)2,
+                            Score = 31.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
+                        },
+                        new
+                        {
+                            Id = new Guid("c18350e3-2a82-4cb7-b38e-b4ad5987e8fc"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1918),
+                            CreatedIpAddress = "192.168.1.88",
+                            ExamNumber = (byte)2,
+                            Score = 89.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
+                        },
+                        new
+                        {
+                            Id = new Guid("f76609dd-9d8d-4517-83e6-ac5e688cdee1"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1922),
+                            CreatedIpAddress = "192.168.1.15",
+                            ExamNumber = (byte)2,
+                            Score = 44.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
+                        },
+                        new
+                        {
+                            Id = new Guid("c949491b-29f2-48b2-be33-beb801027034"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1927),
+                            CreatedIpAddress = "192.168.1.5",
+                            ExamNumber = (byte)2,
+                            Score = 60.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
+                        },
+                        new
+                        {
+                            Id = new Guid("3e22fb14-1d6e-4415-b8a0-204e9180164d"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1931),
+                            CreatedIpAddress = "192.168.1.7",
+                            ExamNumber = (byte)2,
+                            Score = 66.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
+                        },
+                        new
+                        {
+                            Id = new Guid("46890646-50f6-4cc1-8b95-6008e21d6f01"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1935),
+                            CreatedIpAddress = "192.168.1.57",
+                            ExamNumber = (byte)2,
+                            Score = 95.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
+                        },
+                        new
+                        {
+                            Id = new Guid("770df54a-d7a6-4166-855d-a2ae0da27f6e"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1939),
+                            CreatedIpAddress = "192.168.1.37",
+                            ExamNumber = (byte)2,
+                            Score = 90.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
+                        },
+                        new
+                        {
+                            Id = new Guid("641cfd4c-ef82-4031-9ec7-5bd42d950da7"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1943),
+                            CreatedIpAddress = "192.168.1.27",
+                            ExamNumber = (byte)2,
+                            Score = 69.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
+                        },
+                        new
+                        {
+                            Id = new Guid("2c2a653c-e7ae-4d3a-bfe3-3c1bb83791d1"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1947),
                             CreatedIpAddress = "192.168.1.19",
                             ExamNumber = (byte)2,
-                            Score = 70.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("b219a6d2-ce6e-48d8-b799-e076077d93c7"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4341),
-                            CreatedIpAddress = "192.168.1.45",
-                            ExamNumber = (byte)2,
-                            Score = 47.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
-                        },
-                        new
-                        {
-                            Id = new Guid("eb15d711-97f0-45d8-9d48-6db1d1b4261f"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4345),
-                            CreatedIpAddress = "192.168.1.58",
-                            ExamNumber = (byte)2,
-                            Score = 59.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("348be028-f6f6-49e0-a264-61f9a8a953c7"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4348),
-                            CreatedIpAddress = "192.168.1.93",
-                            ExamNumber = (byte)2,
-                            Score = 54.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
-                        },
-                        new
-                        {
-                            Id = new Guid("75c4e128-0382-4970-9bae-ed8eaa442224"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4352),
-                            CreatedIpAddress = "192.168.1.35",
-                            ExamNumber = (byte)2,
-                            Score = 40.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("44396132-5c1d-4530-9208-a8325db7932b"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4356),
-                            CreatedIpAddress = "192.168.1.26",
-                            ExamNumber = (byte)2,
-                            Score = 62.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("2acb9199-6483-468a-addf-f165818453ac"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4361),
-                            CreatedIpAddress = "192.168.1.78",
-                            ExamNumber = (byte)2,
-                            Score = 89.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
-                        },
-                        new
-                        {
-                            Id = new Guid("e207a530-1537-45b6-86f3-0cf65ad25c81"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4365),
-                            CreatedIpAddress = "192.168.1.52",
-                            ExamNumber = (byte)2,
-                            Score = 16.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
-                        },
-                        new
-                        {
-                            Id = new Guid("da2f1e79-f838-4438-9ee6-40955809eea4"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4369),
-                            CreatedIpAddress = "192.168.1.93",
-                            ExamNumber = (byte)2,
-                            Score = 50.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
-                        },
-                        new
-                        {
-                            Id = new Guid("b4601d13-b8ce-458f-9b87-fbddbbf84d93"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4373),
-                            CreatedIpAddress = "192.168.1.15",
-                            ExamNumber = (byte)2,
-                            Score = 59.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
-                        },
-                        new
-                        {
-                            Id = new Guid("3bf8ad7a-8a6f-4dec-8331-f2e186be8748"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4380),
-                            CreatedIpAddress = "192.168.1.85",
-                            ExamNumber = (byte)2,
-                            Score = 48.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
-                        },
-                        new
-                        {
-                            Id = new Guid("64feb0fe-51da-42cf-a6d3-7f42009e0505"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4391),
-                            CreatedIpAddress = "192.168.1.51",
-                            ExamNumber = (byte)2,
-                            Score = 78.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
-                        },
-                        new
-                        {
-                            Id = new Guid("960801b8-0b2c-4860-9800-4b1f6edb45a2"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4396),
-                            CreatedIpAddress = "192.168.1.10",
-                            ExamNumber = (byte)2,
-                            Score = 28.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
-                        },
-                        new
-                        {
-                            Id = new Guid("7a7a1649-1543-4354-bc6b-3c2bd575d091"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4400),
-                            CreatedIpAddress = "192.168.1.52",
-                            ExamNumber = (byte)2,
-                            Score = 4.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
-                        },
-                        new
-                        {
-                            Id = new Guid("b8118bc4-3476-4b10-9a2d-78e6c32b96aa"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4405),
-                            CreatedIpAddress = "192.168.1.35",
-                            ExamNumber = (byte)2,
-                            Score = 52.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
-                        },
-                        new
-                        {
-                            Id = new Guid("b75f11f0-9e22-4887-874b-85511dcaa435"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4409),
-                            CreatedIpAddress = "192.168.1.47",
-                            ExamNumber = (byte)2,
-                            Score = 40.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
-                        },
-                        new
-                        {
-                            Id = new Guid("1e8c4b74-d7b1-44f0-abc2-86655b41cd96"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4413),
-                            CreatedIpAddress = "192.168.1.2",
-                            ExamNumber = (byte)2,
-                            Score = 45.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("5d91fb54-dc28-4720-8297-a11f2078351c"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4417),
-                            CreatedIpAddress = "192.168.1.11",
-                            ExamNumber = (byte)2,
-                            Score = 98.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
-                        },
-                        new
-                        {
-                            Id = new Guid("416c6976-9d1b-490b-9694-e0bdf7598be4"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4421),
-                            CreatedIpAddress = "192.168.1.97",
-                            ExamNumber = (byte)2,
-                            Score = 97.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("2e167901-1a1c-46bf-b1be-fa29caf36d38"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4425),
-                            CreatedIpAddress = "192.168.1.99",
-                            ExamNumber = (byte)2,
-                            Score = 3.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("72d388f7-dc48-4328-9206-0a974bb003bc"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4428),
-                            CreatedIpAddress = "192.168.1.31",
-                            ExamNumber = (byte)2,
-                            Score = 47.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("d2b2ecff-7973-4cf3-ba49-b0cd260039e7"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4432),
-                            CreatedIpAddress = "192.168.1.10",
-                            ExamNumber = (byte)2,
-                            Score = 15.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
-                        },
-                        new
-                        {
-                            Id = new Guid("ee466e21-73eb-4e81-bff6-89c4aa0ffe14"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4438),
-                            CreatedIpAddress = "192.168.1.67",
-                            ExamNumber = (byte)2,
-                            Score = 19.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("98a65969-e21b-4e7f-a766-882573ecaaec"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4442),
-                            CreatedIpAddress = "192.168.1.12",
-                            ExamNumber = (byte)2,
-                            Score = 12.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
-                        },
-                        new
-                        {
-                            Id = new Guid("39114618-a328-4207-bcbc-2719cbdb5750"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4446),
-                            CreatedIpAddress = "192.168.1.51",
-                            ExamNumber = (byte)2,
-                            Score = 82.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("5bf3361b-ae51-484e-9a32-2300d085b459"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4449),
-                            CreatedIpAddress = "192.168.1.39",
-                            ExamNumber = (byte)2,
-                            Score = 7.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("7203893f-5a7d-4901-91a2-f5ab49d68291"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4453),
-                            CreatedIpAddress = "192.168.1.56",
-                            ExamNumber = (byte)2,
-                            Score = 40.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
-                        },
-                        new
-                        {
-                            Id = new Guid("4fd41a00-3155-4c01-820f-61bb8f549d88"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4457),
-                            CreatedIpAddress = "192.168.1.87",
-                            ExamNumber = (byte)2,
-                            Score = 37.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
-                        },
-                        new
-                        {
-                            Id = new Guid("5725c070-ffc1-470e-8d55-0e6f8d3a8f86"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4461),
-                            CreatedIpAddress = "192.168.1.80",
-                            ExamNumber = (byte)2,
-                            Score = 95.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
-                        },
-                        new
-                        {
-                            Id = new Guid("9ae1e2ef-5120-4a0d-bac6-b360bd28bab0"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4465),
-                            CreatedIpAddress = "192.168.1.1",
-                            ExamNumber = (byte)2,
-                            Score = 15.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
-                        },
-                        new
-                        {
-                            Id = new Guid("6efdb980-4de9-42cf-8331-b1234c52f5f2"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4470),
-                            CreatedIpAddress = "192.168.1.10",
-                            ExamNumber = (byte)2,
-                            Score = 70.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
-                        },
-                        new
-                        {
-                            Id = new Guid("1f169baa-5672-4331-9a3a-996d5cfc3b66"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4474),
-                            CreatedIpAddress = "192.168.1.46",
-                            ExamNumber = (byte)2,
-                            Score = 43.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
-                        },
-                        new
-                        {
-                            Id = new Guid("376e86b9-9a95-4d9d-bd8e-f6609bca3827"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4478),
-                            CreatedIpAddress = "192.168.1.56",
-                            ExamNumber = (byte)2,
-                            Score = 83.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
-                        },
-                        new
-                        {
-                            Id = new Guid("bef6860c-c000-481e-9135-5c69c6111877"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4482),
-                            CreatedIpAddress = "192.168.1.24",
-                            ExamNumber = (byte)2,
-                            Score = 77.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
-                        },
-                        new
-                        {
-                            Id = new Guid("3703aa80-9584-4f65-90a9-83703d34e7f3"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4486),
-                            CreatedIpAddress = "192.168.1.63",
-                            ExamNumber = (byte)2,
-                            Score = 37.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
-                        },
-                        new
-                        {
-                            Id = new Guid("02fc1706-42d9-409c-8fcf-839061c7197f"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4490),
-                            CreatedIpAddress = "192.168.1.93",
-                            ExamNumber = (byte)2,
-                            Score = 2.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
-                        },
-                        new
-                        {
-                            Id = new Guid("0317cc41-80e6-460f-94f2-f7ab4bfe3c40"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4494),
-                            CreatedIpAddress = "192.168.1.92",
-                            ExamNumber = (byte)2,
-                            Score = 67.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("00c82c65-8f53-4859-9d5d-7e2a61152d53"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4497),
-                            CreatedIpAddress = "192.168.1.59",
-                            ExamNumber = (byte)2,
-                            Score = 67.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
-                        },
-                        new
-                        {
-                            Id = new Guid("850c64ec-fced-4361-83cb-1014a0f985db"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4503),
-                            CreatedIpAddress = "192.168.1.39",
-                            ExamNumber = (byte)2,
-                            Score = 95.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("65680f9e-80da-48c9-a527-9dd0348cb83c"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4507),
-                            CreatedIpAddress = "192.168.1.37",
-                            ExamNumber = (byte)2,
-                            Score = 45.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("a594f8d0-27fd-49b7-9745-012cb9c23d91"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4510),
-                            CreatedIpAddress = "192.168.1.46",
-                            ExamNumber = (byte)2,
-                            Score = 95.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("f26c5e13-3e3c-4e37-ab02-b0fa9deb2174"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4514),
-                            CreatedIpAddress = "192.168.1.47",
-                            ExamNumber = (byte)2,
-                            Score = 32.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
-                        },
-                        new
-                        {
-                            Id = new Guid("8fdfbfc6-96f0-4be0-9f0a-f37c1b0b7180"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4518),
-                            CreatedIpAddress = "192.168.1.62",
-                            ExamNumber = (byte)2,
-                            Score = 91.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("31e2047f-8d4c-4164-a1c8-9ab7f9761abd"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4522),
-                            CreatedIpAddress = "192.168.1.36",
-                            ExamNumber = (byte)2,
-                            Score = 77.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
-                        },
-                        new
-                        {
-                            Id = new Guid("ff22295e-347c-439a-a54c-ab601b0b651f"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4526),
-                            CreatedIpAddress = "192.168.1.82",
-                            ExamNumber = (byte)2,
-                            Score = 5.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("beb9252b-29ba-456e-89bd-7fc95dcef6db"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4542),
-                            CreatedIpAddress = "192.168.1.53",
-                            ExamNumber = (byte)2,
-                            Score = 19.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("cc8a85af-a73d-44f3-aaf3-d0065df625b7"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4548),
-                            CreatedIpAddress = "192.168.1.76",
-                            ExamNumber = (byte)2,
-                            Score = 85.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
-                        },
-                        new
-                        {
-                            Id = new Guid("f4e25052-2d53-437e-8f75-1c27317b9e6a"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4552),
-                            CreatedIpAddress = "192.168.1.48",
-                            ExamNumber = (byte)2,
-                            Score = 79.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
-                        },
-                        new
-                        {
-                            Id = new Guid("45c312eb-8f20-442b-bab9-483e8d68041a"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4555),
-                            CreatedIpAddress = "192.168.1.23",
-                            ExamNumber = (byte)2,
-                            Score = 40.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
-                        },
-                        new
-                        {
-                            Id = new Guid("3709e600-cb24-4438-8065-5e66ddb6d564"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4559),
-                            CreatedIpAddress = "192.168.1.2",
-                            ExamNumber = (byte)2,
-                            Score = 41.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
-                        },
-                        new
-                        {
-                            Id = new Guid("ec290e8e-53d2-4d82-ac11-5cc6aed04223"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4563),
-                            CreatedIpAddress = "192.168.1.52",
-                            ExamNumber = (byte)2,
-                            Score = 12.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
-                        },
-                        new
-                        {
-                            Id = new Guid("0c96b17b-919a-450b-bf88-8104c5c52dde"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4567),
-                            CreatedIpAddress = "192.168.1.6",
-                            ExamNumber = (byte)2,
-                            Score = 32.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
-                        },
-                        new
-                        {
-                            Id = new Guid("c5a4ca73-7624-484c-b0c7-f3814ffb6ebc"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4571),
-                            CreatedIpAddress = "192.168.1.74",
-                            ExamNumber = (byte)2,
-                            Score = 39.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
-                        },
-                        new
-                        {
-                            Id = new Guid("0fdd1566-e8ba-4920-9e24-9282b01fc7a5"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4575),
-                            CreatedIpAddress = "192.168.1.81",
-                            ExamNumber = (byte)2,
-                            Score = 0.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
-                        },
-                        new
-                        {
-                            Id = new Guid("35d2e469-8a0d-43fb-945b-1122ca2a9d63"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4581),
-                            CreatedIpAddress = "192.168.1.61",
-                            ExamNumber = (byte)2,
-                            Score = 21.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
-                        },
-                        new
-                        {
-                            Id = new Guid("ab3e5a18-31ad-4992-baa3-70e90d2cf779"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4585),
-                            CreatedIpAddress = "192.168.1.80",
-                            ExamNumber = (byte)2,
-                            Score = 96.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
-                        },
-                        new
-                        {
-                            Id = new Guid("808d0136-2626-46db-be67-59889fe15a2c"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4589),
-                            CreatedIpAddress = "192.168.1.50",
-                            ExamNumber = (byte)2,
-                            Score = 97.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("30f1ebab-5b00-4d40-9048-8f8b50cd0a4c"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4592),
-                            CreatedIpAddress = "192.168.1.47",
-                            ExamNumber = (byte)2,
-                            Score = 4.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
-                        },
-                        new
-                        {
-                            Id = new Guid("64d9e3c5-282a-4223-a22f-489e6a070ea6"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4596),
-                            CreatedIpAddress = "192.168.1.58",
-                            ExamNumber = (byte)2,
-                            Score = 79.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("3c710929-0fb1-4c59-b5ad-f2b68ff72b80"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4600),
-                            CreatedIpAddress = "192.168.1.67",
-                            ExamNumber = (byte)2,
-                            Score = 62.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("28975faf-8656-43b0-ab8e-0106c792367d"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4604),
-                            CreatedIpAddress = "192.168.1.27",
-                            ExamNumber = (byte)2,
-                            Score = 96.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("02050e4b-2d40-484c-99ce-cdafc5612670"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4608),
-                            CreatedIpAddress = "192.168.1.34",
-                            ExamNumber = (byte)2,
-                            Score = 60.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
-                        },
-                        new
-                        {
-                            Id = new Guid("c32e1e67-2ba3-4a71-8318-40f1e5801c32"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4613),
-                            CreatedIpAddress = "192.168.1.46",
-                            ExamNumber = (byte)2,
-                            Score = 90.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("eb48ba70-7c52-47d6-8be1-fdfc9a7c9cc4"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4617),
-                            CreatedIpAddress = "192.168.1.83",
-                            ExamNumber = (byte)2,
-                            Score = 60.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
-                        },
-                        new
-                        {
-                            Id = new Guid("8992db93-385e-42c0-b5a4-9a6bfb60814f"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4621),
-                            CreatedIpAddress = "192.168.1.96",
-                            ExamNumber = (byte)2,
-                            Score = 48.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("a72a811b-5927-45eb-a296-cd37a250adf8"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4625),
-                            CreatedIpAddress = "192.168.1.24",
-                            ExamNumber = (byte)2,
-                            Score = 3.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("4ded6e54-c7ab-4961-93e1-e4a06f95d297"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4629),
-                            CreatedIpAddress = "192.168.1.7",
-                            ExamNumber = (byte)2,
-                            Score = 7.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
-                        },
-                        new
-                        {
-                            Id = new Guid("34f5215c-4e6b-4b07-97c7-7fd67b9aaaf9"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4633),
-                            CreatedIpAddress = "192.168.1.34",
-                            ExamNumber = (byte)2,
-                            Score = 91.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
-                        },
-                        new
-                        {
-                            Id = new Guid("4066335c-443c-42a0-bb6e-c9ab48923b7f"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4636),
-                            CreatedIpAddress = "192.168.1.79",
-                            ExamNumber = (byte)2,
                             Score = 63.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
+                        },
+                        new
+                        {
+                            Id = new Guid("31480806-5c55-4260-9402-197308e6dd8a"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1953),
+                            CreatedIpAddress = "192.168.1.53",
+                            ExamNumber = (byte)2,
+                            Score = 43.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("0c3cfea9-dcdd-489d-ba8c-015e760330b2"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1957),
+                            CreatedIpAddress = "192.168.1.61",
+                            ExamNumber = (byte)2,
+                            Score = 24.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                        },
+                        new
+                        {
+                            Id = new Guid("c43a093b-f349-4285-96f2-5c598cc048b8"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1961),
+                            CreatedIpAddress = "192.168.1.18",
+                            ExamNumber = (byte)2,
+                            Score = 23.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                        },
+                        new
+                        {
+                            Id = new Guid("15216f76-68cb-4f98-9461-e2afdaac1621"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1971),
+                            CreatedIpAddress = "192.168.1.22",
+                            ExamNumber = (byte)2,
+                            Score = 56.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                        },
+                        new
+                        {
+                            Id = new Guid("d7d5f583-7ae4-4a80-b8b2-14aa9c0554aa"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1975),
+                            CreatedIpAddress = "192.168.1.61",
+                            ExamNumber = (byte)2,
+                            Score = 60.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("4e8d59fa-6266-489d-90f4-dfcd1f330f92"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1979),
+                            CreatedIpAddress = "192.168.1.85",
+                            ExamNumber = (byte)2,
+                            Score = 59.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
+                        },
+                        new
+                        {
+                            Id = new Guid("a339378d-7030-4991-a196-9a7de4af77e9"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1983),
+                            CreatedIpAddress = "192.168.1.57",
+                            ExamNumber = (byte)2,
+                            Score = 88.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
+                        },
+                        new
+                        {
+                            Id = new Guid("a07fc86d-3ee1-481f-8c40-30ff0a04d339"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1987),
+                            CreatedIpAddress = "192.168.1.88",
+                            ExamNumber = (byte)2,
+                            Score = 67.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
+                        },
+                        new
+                        {
+                            Id = new Guid("4d15b952-1302-4bd2-b859-099acf52a2e9"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1993),
+                            CreatedIpAddress = "192.168.1.69",
+                            ExamNumber = (byte)2,
+                            Score = 34.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
+                        },
+                        new
+                        {
+                            Id = new Guid("477022b7-c538-4d17-ad20-b950a8662f78"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(1997),
+                            CreatedIpAddress = "192.168.1.44",
+                            ExamNumber = (byte)2,
+                            Score = 73.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("cc8a5fc5-b917-4bd2-bc45-bd0361b7a225"),
+                            Id = new Guid("a6229282-2bd0-417e-bd5b-dde043c1a1f9"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4640),
-                            CreatedIpAddress = "192.168.1.5",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2001),
+                            CreatedIpAddress = "192.168.1.60",
                             ExamNumber = (byte)2,
-                            Score = 61.0,
+                            Score = 80.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("ff36f54d-fd13-4ed5-96f6-a33545df08d7"),
+                            Id = new Guid("783f246d-c928-45fe-8f8c-fb0cf98039a5"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4645),
-                            CreatedIpAddress = "192.168.1.25",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2005),
+                            CreatedIpAddress = "192.168.1.55",
                             ExamNumber = (byte)2,
-                            Score = 84.0,
+                            Score = 86.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("7aad1c6d-f883-4a5f-877c-5a30789c9e35"),
+                            Id = new Guid("d0f85bf4-896c-4b1d-a4d5-849c3239c62a"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4649),
-                            CreatedIpAddress = "192.168.1.59",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2009),
+                            CreatedIpAddress = "192.168.1.40",
                             ExamNumber = (byte)2,
-                            Score = 43.0,
+                            Score = 89.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("eb2528e7-83e1-4688-9420-72054d1a3ea2"),
+                            Id = new Guid("8f4abde0-d249-4633-add7-65b33f52a22d"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4653),
-                            CreatedIpAddress = "192.168.1.11",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2014),
+                            CreatedIpAddress = "192.168.1.96",
                             ExamNumber = (byte)2,
-                            Score = 5.0,
+                            Score = 95.0,
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("31fc34d0-635f-4b50-9410-527ea8627528"),
+                            Id = new Guid("e9b63987-4812-46c0-93c9-c2a51f62f471"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4657),
-                            CreatedIpAddress = "192.168.1.10",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2018),
+                            CreatedIpAddress = "192.168.1.95",
                             ExamNumber = (byte)2,
-                            Score = 82.0,
+                            Score = 7.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("b7923622-db6c-49cf-821d-724f13ab884f"),
+                            Id = new Guid("a5f9d843-465c-4162-9766-1a855efb055c"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4661),
-                            CreatedIpAddress = "192.168.1.44",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2022),
+                            CreatedIpAddress = "192.168.1.17",
                             ExamNumber = (byte)2,
-                            Score = 65.0,
+                            Score = 96.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("540241b8-690c-4c18-a84a-e8d2d58da288"),
+                            Id = new Guid("e8b246b9-b80e-4698-b486-cc7273b8986a"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4665),
-                            CreatedIpAddress = "192.168.1.34",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2027),
+                            CreatedIpAddress = "192.168.1.61",
+                            ExamNumber = (byte)2,
+                            Score = 3.0,
+                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
+                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
+                        },
+                        new
+                        {
+                            Id = new Guid("e24e6efe-8a84-4771-aec9-8d70ec3eee13"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2031),
+                            CreatedIpAddress = "192.168.1.31",
+                            ExamNumber = (byte)2,
+                            Score = 7.0,
+                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
+                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
+                        },
+                        new
+                        {
+                            Id = new Guid("f4e6756e-f73e-44c0-a192-6ab35e485050"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2035),
+                            CreatedIpAddress = "192.168.1.2",
+                            ExamNumber = (byte)2,
+                            Score = 30.0,
+                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
+                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
+                        },
+                        new
+                        {
+                            Id = new Guid("0027c404-b20f-4893-8fe1-f916eaa655e2"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2039),
+                            CreatedIpAddress = "192.168.1.97",
+                            ExamNumber = (byte)2,
+                            Score = 13.0,
+                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
+                        },
+                        new
+                        {
+                            Id = new Guid("32b99e64-2e21-46c8-85ff-fd489c6d9393"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2043),
+                            CreatedIpAddress = "192.168.1.79",
+                            ExamNumber = (byte)2,
+                            Score = 69.0,
+                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("4d4dd49d-eb86-4a40-a3d3-acce091fdeb4"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2047),
+                            CreatedIpAddress = "192.168.1.20",
+                            ExamNumber = (byte)2,
+                            Score = 88.0,
+                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
+                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                        },
+                        new
+                        {
+                            Id = new Guid("8548d3d5-d4d9-465e-96d7-6a2d41405cd3"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2051),
+                            CreatedIpAddress = "192.168.1.18",
+                            ExamNumber = (byte)2,
+                            Score = 68.0,
+                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
+                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                        },
+                        new
+                        {
+                            Id = new Guid("37bf2508-cc99-4306-86f2-cad7e73d004e"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2055),
+                            CreatedIpAddress = "192.168.1.2",
                             ExamNumber = (byte)2,
                             Score = 12.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
-                        },
-                        new
-                        {
-                            Id = new Guid("2fa69e9b-c3b2-4479-a63f-76d39ef2e899"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4669),
-                            CreatedIpAddress = "192.168.1.67",
-                            ExamNumber = (byte)2,
-                            Score = 58.0,
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("8522033a-3c5f-4b26-ae13-7f4342684f3a"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4673),
-                            CreatedIpAddress = "192.168.1.99",
-                            ExamNumber = (byte)2,
-                            Score = 58.0,
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
-                        },
-                        new
-                        {
-                            Id = new Guid("66dddcc1-92cd-4103-9f34-f18e0c4f0d00"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4678),
-                            CreatedIpAddress = "192.168.1.69",
-                            ExamNumber = (byte)2,
-                            Score = 81.0,
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("52037a6f-1d49-47e9-ace3-24e04835fb44"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4696),
-                            CreatedIpAddress = "192.168.1.2",
-                            ExamNumber = (byte)2,
-                            Score = 28.0,
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("1542e04d-234d-48a7-8c2f-9c01ca9e92cd"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4700),
-                            CreatedIpAddress = "192.168.1.92",
-                            ExamNumber = (byte)2,
-                            Score = 57.0,
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("278b1385-90f9-49a2-881b-eacec6642b3e"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4704),
-                            CreatedIpAddress = "192.168.1.72",
-                            ExamNumber = (byte)2,
-                            Score = 42.0,
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
-                        },
-                        new
-                        {
-                            Id = new Guid("96419eea-47dc-4e98-a504-9f6b85d7c0c6"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4708),
-                            CreatedIpAddress = "192.168.1.12",
-                            ExamNumber = (byte)2,
-                            Score = 39.0,
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
                         },
                         new
                         {
-                            Id = new Guid("1778b37f-ea07-4b44-a942-bf0d0a3ab290"),
+                            Id = new Guid("8c0e66c9-d7d7-48d8-ac9c-bff1ce91759f"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4712),
-                            CreatedIpAddress = "192.168.1.93",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2061),
+                            CreatedIpAddress = "192.168.1.18",
                             ExamNumber = (byte)2,
-                            Score = 89.0,
+                            Score = 55.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
                         },
                         new
                         {
-                            Id = new Guid("fa898ebb-217a-411c-99c2-140c4cc5f990"),
+                            Id = new Guid("406f0ff2-46c2-4703-9899-00b4a8878659"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4716),
-                            CreatedIpAddress = "192.168.1.67",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2065),
+                            CreatedIpAddress = "192.168.1.20",
                             ExamNumber = (byte)2,
-                            Score = 76.0,
+                            Score = 98.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
                         },
                         new
                         {
-                            Id = new Guid("5fda2c0a-6306-4187-84c0-05507f241157"),
+                            Id = new Guid("eb17fb55-0157-47c2-82a1-3416d86b4232"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4719),
-                            CreatedIpAddress = "192.168.1.93",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2069),
+                            CreatedIpAddress = "192.168.1.96",
                             ExamNumber = (byte)2,
-                            Score = 84.0,
+                            Score = 63.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
                         },
                         new
                         {
-                            Id = new Guid("f0fa5aa9-2a0c-4911-95e3-ee22ec0f6c1b"),
+                            Id = new Guid("6c0b641c-8f0e-4ecc-b089-ce438db15dd8"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4725),
-                            CreatedIpAddress = "192.168.1.50",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2073),
+                            CreatedIpAddress = "192.168.1.85",
                             ExamNumber = (byte)2,
-                            Score = 21.0,
+                            Score = 71.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("1b74349a-1d5f-4c33-b8c6-26538f61bca9"),
+                            Id = new Guid("a4249ef5-fce6-4d2e-9a0f-84202df85e79"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4729),
-                            CreatedIpAddress = "192.168.1.93",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2077),
+                            CreatedIpAddress = "192.168.1.68",
                             ExamNumber = (byte)2,
-                            Score = 36.0,
+                            Score = 30.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("49e1608b-4999-4f98-9bb4-8a8f76198ddf"),
+                            Id = new Guid("d7727756-39e1-47ef-8276-a873afdd030d"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4733),
-                            CreatedIpAddress = "192.168.1.75",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2081),
+                            CreatedIpAddress = "192.168.1.89",
                             ExamNumber = (byte)2,
-                            Score = 1.0,
+                            Score = 37.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("58439ae0-2d3c-4525-848f-df32c57e1f51"),
+                            Id = new Guid("0767f779-59f7-4916-94bc-cb17f8f4e586"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4737),
-                            CreatedIpAddress = "192.168.1.92",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2085),
+                            CreatedIpAddress = "192.168.1.48",
                             ExamNumber = (byte)2,
-                            Score = 8.0,
+                            Score = 38.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("2c1f7d86-b7dc-45e6-8ebe-15ffc5916675"),
+                            Id = new Guid("7b545565-8bf4-4c5e-b020-f6dbb61da5fc"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4740),
-                            CreatedIpAddress = "192.168.1.49",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2089),
+                            CreatedIpAddress = "192.168.1.27",
                             ExamNumber = (byte)2,
-                            Score = 51.0,
+                            Score = 17.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("b7744743-a21a-4752-a035-6de4e2ea425b"),
+                            Id = new Guid("f1bf4788-cac3-4696-b9fa-fd6969c4aa45"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4744),
-                            CreatedIpAddress = "192.168.1.43",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2095),
+                            CreatedIpAddress = "192.168.1.12",
                             ExamNumber = (byte)2,
-                            Score = 67.0,
+                            Score = 3.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("1b5678ea-45d2-4972-915e-8bc07791b84e"),
+                            Id = new Guid("1a938d76-ad85-4c9a-90ac-30e70d45f9ef"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4748),
-                            CreatedIpAddress = "192.168.1.76",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2099),
+                            CreatedIpAddress = "192.168.1.52",
                             ExamNumber = (byte)2,
-                            Score = 64.0,
+                            Score = 62.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("d6e6d410-50db-4384-92c5-d7f4d794fdf3"),
+                            Id = new Guid("a09d0af2-0cf3-4100-99f3-bd17e10f0fa7"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4752),
-                            CreatedIpAddress = "192.168.1.68",
-                            ExamNumber = (byte)2,
-                            Score = 37.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
-                        },
-                        new
-                        {
-                            Id = new Guid("6bb62f0c-e6f3-4063-a3b7-34cf8fd1cc93"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4757),
-                            CreatedIpAddress = "192.168.1.6",
-                            ExamNumber = (byte)2,
-                            Score = 39.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
-                        },
-                        new
-                        {
-                            Id = new Guid("81e65a46-acd5-4cf7-8a7c-77d1cff79f77"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4761),
-                            CreatedIpAddress = "192.168.1.5",
-                            ExamNumber = (byte)2,
-                            Score = 99.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
-                        },
-                        new
-                        {
-                            Id = new Guid("c61b5ab5-018b-4474-9678-53aa5aad0006"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4765),
-                            CreatedIpAddress = "192.168.1.24",
-                            ExamNumber = (byte)2,
-                            Score = 93.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("c1639663-5e76-4ed3-9928-3a432523df75"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4769),
-                            CreatedIpAddress = "192.168.1.25",
-                            ExamNumber = (byte)2,
-                            Score = 22.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
-                        },
-                        new
-                        {
-                            Id = new Guid("739ac0f4-1dd4-4663-963f-4ece7e4c6acb"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4773),
-                            CreatedIpAddress = "192.168.1.92",
-                            ExamNumber = (byte)2,
-                            Score = 86.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("7f9d22d6-4382-419b-8587-f89b0dd953d4"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4776),
-                            CreatedIpAddress = "192.168.1.65",
-                            ExamNumber = (byte)2,
-                            Score = 44.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("39b7fa2e-e1ad-4a98-a313-ee774d66a6a6"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4781),
-                            CreatedIpAddress = "192.168.1.49",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2103),
+                            CreatedIpAddress = "192.168.1.57",
                             ExamNumber = (byte)2,
                             Score = 69.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
+                        },
+                        new
+                        {
+                            Id = new Guid("bb233785-8f3f-41ad-99f7-57af28851015"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2107),
+                            CreatedIpAddress = "192.168.1.24",
+                            ExamNumber = (byte)2,
+                            Score = 12.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
+                        },
+                        new
+                        {
+                            Id = new Guid("dc43007f-200b-44f7-a2c2-eeb7353d7e71"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2111),
+                            CreatedIpAddress = "192.168.1.54",
+                            ExamNumber = (byte)2,
+                            Score = 52.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
+                        },
+                        new
+                        {
+                            Id = new Guid("9978798a-d43a-4e78-b5ce-7ea9dcd7c1b5"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2122),
+                            CreatedIpAddress = "192.168.1.45",
+                            ExamNumber = (byte)2,
+                            Score = 25.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
+                        },
+                        new
+                        {
+                            Id = new Guid("4571ec8a-2382-4b2f-bce3-ec9541b8699a"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2126),
+                            CreatedIpAddress = "192.168.1.45",
+                            ExamNumber = (byte)2,
+                            Score = 35.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
+                        },
+                        new
+                        {
+                            Id = new Guid("10237bab-dade-4e0a-ba07-f48af7635a99"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2130),
+                            CreatedIpAddress = "192.168.1.12",
+                            ExamNumber = (byte)2,
+                            Score = 14.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
+                        },
+                        new
+                        {
+                            Id = new Guid("0d6950f7-953c-4873-bc90-69c8ba96ef4c"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2136),
+                            CreatedIpAddress = "192.168.1.73",
+                            ExamNumber = (byte)2,
+                            Score = 1.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("633b2656-c03f-4168-8d4f-3225ec7fee01"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2140),
+                            CreatedIpAddress = "192.168.1.4",
+                            ExamNumber = (byte)2,
+                            Score = 51.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
                         },
                         new
                         {
-                            Id = new Guid("d95fc1c2-7b92-4840-ab01-28d2b12aaab9"),
+                            Id = new Guid("d6354cf2-e4ce-445a-a0c7-efe040ae907e"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4784),
-                            CreatedIpAddress = "192.168.1.30",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2144),
+                            CreatedIpAddress = "192.168.1.99",
                             ExamNumber = (byte)2,
-                            Score = 30.0,
+                            Score = 29.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
                         },
                         new
                         {
-                            Id = new Guid("24f39ca3-7053-4566-a7b6-feb027596406"),
+                            Id = new Guid("d25aeaa6-33ab-4bba-89af-68202278f95e"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4790),
-                            CreatedIpAddress = "192.168.1.23",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2148),
+                            CreatedIpAddress = "192.168.1.27",
                             ExamNumber = (byte)2,
-                            Score = 18.0,
+                            Score = 12.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
                         },
                         new
                         {
-                            Id = new Guid("1d23b68c-38c7-4e85-a182-d085b4ba94b1"),
+                            Id = new Guid("322931e6-7e9b-402c-b1a8-a0caecf556d5"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4793),
-                            CreatedIpAddress = "192.168.1.23",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2152),
+                            CreatedIpAddress = "192.168.1.57",
                             ExamNumber = (byte)2,
-                            Score = 73.0,
+                            Score = 79.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
                         },
                         new
                         {
-                            Id = new Guid("b90b4ffa-cc65-4f04-8996-b99f7e5f6b3a"),
+                            Id = new Guid("164fde25-4dd7-4810-8b6f-86949e908ec9"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4797),
-                            CreatedIpAddress = "192.168.1.64",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2156),
+                            CreatedIpAddress = "192.168.1.9",
                             ExamNumber = (byte)2,
                             Score = 43.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
@@ -5363,571 +4860,571 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a494503d-88ad-4c28-ab18-cba7cd887307"),
+                            Id = new Guid("720fc07c-7f89-47f8-836b-f05bda78827f"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4801),
-                            CreatedIpAddress = "192.168.1.40",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2160),
+                            CreatedIpAddress = "192.168.1.9",
                             ExamNumber = (byte)2,
-                            Score = 26.0,
+                            Score = 6.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
                         },
                         new
                         {
-                            Id = new Guid("4151239c-2b5d-4f6d-9a14-8000a9de1c5e"),
+                            Id = new Guid("60eaaf42-e7cb-429d-ba62-6e1858ed9c08"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4805),
-                            CreatedIpAddress = "192.168.1.1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2164),
+                            CreatedIpAddress = "192.168.1.29",
                             ExamNumber = (byte)2,
-                            Score = 73.0,
+                            Score = 70.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("0e3284fc-2b2a-46fb-bb8b-5ae4548c1a2d"),
+                            Id = new Guid("e9e8af73-6dd2-4605-8713-3f2adc916844"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4809),
-                            CreatedIpAddress = "192.168.1.56",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2170),
+                            CreatedIpAddress = "192.168.1.39",
                             ExamNumber = (byte)2,
-                            Score = 43.0,
+                            Score = 11.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("06abd1c2-b295-4275-9276-c92edfe2f34d"),
+                            Id = new Guid("76568d48-9057-4081-a2b6-69986034b66c"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4813),
-                            CreatedIpAddress = "192.168.1.46",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2174),
+                            CreatedIpAddress = "192.168.1.98",
                             ExamNumber = (byte)2,
-                            Score = 42.0,
+                            Score = 5.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("2475287b-4831-462d-8dd8-2939919a1637"),
+                            Id = new Guid("bd06f38b-9154-4fd9-942a-02b63d3b80d5"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4816),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2178),
                             CreatedIpAddress = "192.168.1.90",
                             ExamNumber = (byte)2,
-                            Score = 74.0,
+                            Score = 68.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("24c421f5-97a8-4078-9826-f06f948e1f07"),
+                            Id = new Guid("edda85c8-6fb4-4f86-859e-7257f7db3d86"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4822),
-                            CreatedIpAddress = "192.168.1.81",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2182),
+                            CreatedIpAddress = "192.168.1.1",
                             ExamNumber = (byte)2,
-                            Score = 38.0,
+                            Score = 54.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("85030c86-5787-457f-a15b-833277c1dca6"),
+                            Id = new Guid("98e07e77-b187-49f8-b4a8-1470ce826c6f"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4826),
-                            CreatedIpAddress = "192.168.1.66",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2186),
+                            CreatedIpAddress = "192.168.1.23",
                             ExamNumber = (byte)2,
-                            Score = 10.0,
+                            Score = 46.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("71abc636-006d-4a81-b03a-37c689352386"),
+                            Id = new Guid("a9e8847c-5529-4a3b-a40a-841a4f0e99f2"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4830),
-                            CreatedIpAddress = "192.168.1.93",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2190),
+                            CreatedIpAddress = "192.168.1.96",
                             ExamNumber = (byte)2,
-                            Score = 23.0,
+                            Score = 93.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("f07d934f-84c8-4748-af5a-a693c786224f"),
+                            Id = new Guid("f90b548b-590d-4935-b41a-b1f1d2c3b4ca"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4841),
-                            CreatedIpAddress = "192.168.1.56",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2194),
+                            CreatedIpAddress = "192.168.1.35",
                             ExamNumber = (byte)2,
-                            Score = 56.0,
+                            Score = 99.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("fe711d83-8603-4ce7-a2ca-d410b7a42ec0"),
+                            Id = new Guid("e4733bcd-b7f6-41e9-8c00-c22365e73a59"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4845),
-                            CreatedIpAddress = "192.168.1.38",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2198),
+                            CreatedIpAddress = "192.168.1.68",
                             ExamNumber = (byte)2,
-                            Score = 73.0,
+                            Score = 23.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("a2537a97-3574-401e-a508-1e7b9d483827"),
+                            Id = new Guid("ca31edeb-0477-4fc5-b810-0d2184efc6b9"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4849),
-                            CreatedIpAddress = "192.168.1.80",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2204),
+                            CreatedIpAddress = "192.168.1.62",
                             ExamNumber = (byte)2,
-                            Score = 47.0,
+                            Score = 54.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("d8f18313-ee7b-4e11-9cd7-49e7edbd5cc4"),
+                            Id = new Guid("0a834e7b-f73f-436c-9d49-339af8f13709"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4853),
-                            CreatedIpAddress = "192.168.1.35",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2208),
+                            CreatedIpAddress = "192.168.1.63",
                             ExamNumber = (byte)2,
-                            Score = 90.0,
+                            Score = 80.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
                         },
                         new
                         {
-                            Id = new Guid("1897f3aa-a26d-469c-a779-b1154b0330a9"),
+                            Id = new Guid("286bd742-eebb-4ec5-b077-2837d5575820"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4856),
-                            CreatedIpAddress = "192.168.1.86",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2212),
+                            CreatedIpAddress = "192.168.1.52",
                             ExamNumber = (byte)2,
-                            Score = 27.0,
+                            Score = 5.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("9a167568-81cc-42c4-b117-4ecb11152232"),
+                            Id = new Guid("6d8dc948-ebc1-4c67-ba09-54e741f6ae29"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4862),
-                            CreatedIpAddress = "192.168.1.52",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2216),
+                            CreatedIpAddress = "192.168.1.78",
+                            ExamNumber = (byte)2,
+                            Score = 47.0,
+                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
+                        },
+                        new
+                        {
+                            Id = new Guid("14d23d74-0347-4c9b-ae73-d142e8f93672"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2220),
+                            CreatedIpAddress = "192.168.1.49",
+                            ExamNumber = (byte)2,
+                            Score = 31.0,
+                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("b52f16a1-7b8c-4be8-8f1b-25d55fcac78e"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2224),
+                            CreatedIpAddress = "192.168.1.49",
                             ExamNumber = (byte)2,
                             Score = 76.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("78a010e7-1055-48a2-abe1-56b6fcfa4d59"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4866),
-                            CreatedIpAddress = "192.168.1.45",
-                            ExamNumber = (byte)2,
-                            Score = 93.0,
-                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("a1244fc9-bd60-4e98-91b7-9070c9f9e696"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4869),
-                            CreatedIpAddress = "192.168.1.50",
-                            ExamNumber = (byte)2,
-                            Score = 36.0,
-                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
                         },
                         new
                         {
-                            Id = new Guid("c2fd24c4-851c-42a7-a1a9-87c5cc85583e"),
+                            Id = new Guid("e455b5f3-c48c-4827-85d9-963e67edf9f0"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4873),
-                            CreatedIpAddress = "192.168.1.57",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2228),
+                            CreatedIpAddress = "192.168.1.92",
                             ExamNumber = (byte)2,
-                            Score = 13.0,
+                            Score = 35.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
                         },
                         new
                         {
-                            Id = new Guid("ed2fc603-3e9e-47e4-b1c8-f45b216c5fdb"),
+                            Id = new Guid("8b49c941-68f2-4702-80d3-6cfb709cb3c4"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4877),
-                            CreatedIpAddress = "192.168.1.32",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2232),
+                            CreatedIpAddress = "192.168.1.83",
                             ExamNumber = (byte)2,
-                            Score = 24.0,
+                            Score = 33.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
                         },
                         new
                         {
-                            Id = new Guid("1dbad590-79eb-4d04-a855-12a45957e572"),
+                            Id = new Guid("06401865-5608-426e-8215-9fdf0e6612e8"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4881),
-                            CreatedIpAddress = "192.168.1.68",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2237),
+                            CreatedIpAddress = "192.168.1.65",
                             ExamNumber = (byte)2,
-                            Score = 81.0,
+                            Score = 94.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
                         },
                         new
                         {
-                            Id = new Guid("7828de9d-b551-40c0-bac4-5bc8b77b7517"),
+                            Id = new Guid("b43c3c49-dd0e-41ea-bb3a-2cb9d959722b"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4885),
-                            CreatedIpAddress = "192.168.1.13",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2241),
+                            CreatedIpAddress = "192.168.1.21",
                             ExamNumber = (byte)2,
-                            Score = 92.0,
+                            Score = 70.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
                         },
                         new
                         {
-                            Id = new Guid("06cbf30b-15c1-4ce1-a32e-d8668a265a8c"),
+                            Id = new Guid("f99b019b-0a6a-404b-9fdc-d67bc912e6a6"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4888),
-                            CreatedIpAddress = "192.168.1.13",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2245),
+                            CreatedIpAddress = "192.168.1.73",
                             ExamNumber = (byte)2,
-                            Score = 11.0,
+                            Score = 29.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
                         },
                         new
                         {
-                            Id = new Guid("2eb6d3f1-248e-4c21-bdc8-48573589f068"),
+                            Id = new Guid("5f1e123b-2bf2-4220-a3ad-32082d75a016"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4894),
-                            CreatedIpAddress = "192.168.1.64",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2249),
+                            CreatedIpAddress = "192.168.1.49",
                             ExamNumber = (byte)2,
-                            Score = 26.0,
+                            Score = 48.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("f66d8a8d-6697-41e8-9be0-7714d28c231a"),
+                            Id = new Guid("35d7af60-0b15-4549-98fd-320662574045"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4898),
-                            CreatedIpAddress = "192.168.1.85",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2253),
+                            CreatedIpAddress = "192.168.1.26",
                             ExamNumber = (byte)2,
-                            Score = 55.0,
+                            Score = 95.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("cbee2f08-35b4-40ff-9827-4494f6d6f05c"),
+                            Id = new Guid("18e5db9f-5978-48f6-8e2b-0ecb9f558940"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4902),
-                            CreatedIpAddress = "192.168.1.47",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2257),
+                            CreatedIpAddress = "192.168.1.50",
                             ExamNumber = (byte)2,
-                            Score = 30.0,
+                            Score = 31.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("e95aef24-7121-4bc7-beb0-19769827fcf5"),
+                            Id = new Guid("0b48f549-554e-4e3d-904b-5bbe54c8e1f6"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4905),
-                            CreatedIpAddress = "192.168.1.13",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2262),
+                            CreatedIpAddress = "192.168.1.60",
                             ExamNumber = (byte)2,
-                            Score = 58.0,
+                            Score = 84.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("dc58e244-b073-4f91-9c83-71a61392164e"),
+                            Id = new Guid("c7836e58-bd18-4ab8-a658-cccc031401dc"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4909),
-                            CreatedIpAddress = "192.168.1.48",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2273),
+                            CreatedIpAddress = "192.168.1.55",
                             ExamNumber = (byte)2,
-                            Score = 75.0,
+                            Score = 1.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("ee510b35-62f0-44dd-9362-3c8c5f417b85"),
+                            Id = new Guid("939cf807-b419-4228-b09b-2380bff033ab"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4913),
-                            CreatedIpAddress = "192.168.1.86",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2279),
+                            CreatedIpAddress = "192.168.1.70",
                             ExamNumber = (byte)2,
-                            Score = 71.0,
+                            Score = 16.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("adc8229f-42b1-4324-9413-153eea104a2f"),
+                            Id = new Guid("dafd1de2-531b-4087-bf56-1c4d95df23cd"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4917),
-                            CreatedIpAddress = "192.168.1.57",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2283),
+                            CreatedIpAddress = "192.168.1.14",
                             ExamNumber = (byte)2,
-                            Score = 1.0,
+                            Score = 10.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("243ec556-d1a9-4cde-93b3-15ddb73b0389"),
+                            Id = new Guid("14594f6e-7f90-4fc1-bdaf-a4df9aa6ff33"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4921),
-                            CreatedIpAddress = "192.168.1.93",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2287),
+                            CreatedIpAddress = "192.168.1.92",
                             ExamNumber = (byte)2,
-                            Score = 4.0,
+                            Score = 26.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("3db10848-1703-495f-8e4b-19f389fea0d6"),
+                            Id = new Guid("30a3ab92-360b-4b4d-b243-8868047c868c"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4926),
-                            CreatedIpAddress = "192.168.1.71",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2291),
+                            CreatedIpAddress = "192.168.1.2",
                             ExamNumber = (byte)2,
-                            Score = 66.0,
+                            Score = 74.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("466838e1-773c-4129-a252-da5b43a2d58c"),
+                            Id = new Guid("e81a0797-fe6a-4427-83eb-de5c17286d98"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4930),
-                            CreatedIpAddress = "192.168.1.22",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2295),
+                            CreatedIpAddress = "192.168.1.69",
                             ExamNumber = (byte)2,
-                            Score = 51.0,
+                            Score = 29.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("82b8bf18-7d4e-41c9-b77c-5fa57b586983"),
+                            Id = new Guid("5b3f7fe0-67c4-45e3-a404-d7548bc0b161"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4934),
-                            CreatedIpAddress = "192.168.1.84",
-                            ExamNumber = (byte)2,
-                            Score = 80.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("ab99f40f-576f-41ea-b68c-29d1f7a4e8e6"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4938),
-                            CreatedIpAddress = "192.168.1.68",
-                            ExamNumber = (byte)2,
-                            Score = 37.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
-                        },
-                        new
-                        {
-                            Id = new Guid("84ad8d11-f4da-407b-9f47-a790855fafc5"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4942),
-                            CreatedIpAddress = "192.168.1.2",
-                            ExamNumber = (byte)2,
-                            Score = 25.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("e05a4abd-e101-46f5-90af-7ca7a336f633"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4945),
-                            CreatedIpAddress = "192.168.1.48",
-                            ExamNumber = (byte)2,
-                            Score = 66.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("c9a77a49-d135-427b-8365-1bfb7f5ec1cf"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4949),
-                            CreatedIpAddress = "192.168.1.9",
-                            ExamNumber = (byte)2,
-                            Score = 36.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("c7ca4f5e-9541-4023-a4f3-4d96abba0576"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4953),
-                            CreatedIpAddress = "192.168.1.82",
-                            ExamNumber = (byte)2,
-                            Score = 43.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
-                        },
-                        new
-                        {
-                            Id = new Guid("caeb93c5-5168-45f9-95bf-1ab5175dc8ad"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4958),
-                            CreatedIpAddress = "192.168.1.16",
-                            ExamNumber = (byte)2,
-                            Score = 47.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("1245f510-91be-42da-b54b-9c34ab1c9e0a"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4962),
-                            CreatedIpAddress = "192.168.1.2",
-                            ExamNumber = (byte)2,
-                            Score = 75.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
-                        },
-                        new
-                        {
-                            Id = new Guid("9a55bf12-2d4c-4aac-9f95-8a33bfc7e1c9"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4966),
-                            CreatedIpAddress = "192.168.1.89",
-                            ExamNumber = (byte)2,
-                            Score = 90.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("1792e6a6-7c50-4e9a-aede-5772283621c1"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4970),
-                            CreatedIpAddress = "192.168.1.89",
-                            ExamNumber = (byte)2,
-                            Score = 27.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("febd1cf4-55ec-4342-88d1-f69074d5f238"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4974),
-                            CreatedIpAddress = "192.168.1.69",
-                            ExamNumber = (byte)2,
-                            Score = 49.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
-                        },
-                        new
-                        {
-                            Id = new Guid("4745698b-d720-4d5c-99b4-ba7819e3ee0a"),
-                            CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4990),
-                            CreatedIpAddress = "192.168.1.22",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2299),
+                            CreatedIpAddress = "192.168.1.50",
                             ExamNumber = (byte)2,
                             Score = 98.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
+                        },
+                        new
+                        {
+                            Id = new Guid("8bbad59d-2589-495c-a87e-e8aa78ced8ee"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2303),
+                            CreatedIpAddress = "192.168.1.48",
+                            ExamNumber = (byte)2,
+                            Score = 19.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
+                        },
+                        new
+                        {
+                            Id = new Guid("0d6b3093-1490-4228-975d-8c69024934fb"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2307),
+                            CreatedIpAddress = "192.168.1.86",
+                            ExamNumber = (byte)2,
+                            Score = 60.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
+                        },
+                        new
+                        {
+                            Id = new Guid("1ca8cf25-081a-45ac-8d3b-34660b8f183a"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2312),
+                            CreatedIpAddress = "192.168.1.42",
+                            ExamNumber = (byte)2,
+                            Score = 40.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("9ddeadb5-90ac-45cb-9cdd-1f0e6b6df1ab"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2317),
+                            CreatedIpAddress = "192.168.1.12",
+                            ExamNumber = (byte)2,
+                            Score = 58.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                        },
+                        new
+                        {
+                            Id = new Guid("0d9b946e-dd92-43e7-80e1-a0643823e406"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2321),
+                            CreatedIpAddress = "192.168.1.94",
+                            ExamNumber = (byte)2,
+                            Score = 42.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                        },
+                        new
+                        {
+                            Id = new Guid("be328bd8-fb70-4370-b86d-4f90064652f4"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2325),
+                            CreatedIpAddress = "192.168.1.34",
+                            ExamNumber = (byte)2,
+                            Score = 68.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                        },
+                        new
+                        {
+                            Id = new Guid("97704c53-f85a-4390-9b3a-8befab5b037b"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2329),
+                            CreatedIpAddress = "192.168.1.29",
+                            ExamNumber = (byte)2,
+                            Score = 9.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("2070ed1a-c68e-4ad4-a9a8-c64cfba6c0ec"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2333),
+                            CreatedIpAddress = "192.168.1.51",
+                            ExamNumber = (byte)2,
+                            Score = 11.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
+                        },
+                        new
+                        {
+                            Id = new Guid("53445486-099a-4185-9c95-697b2d974d29"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2337),
+                            CreatedIpAddress = "192.168.1.33",
+                            ExamNumber = (byte)2,
+                            Score = 96.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
+                        },
+                        new
+                        {
+                            Id = new Guid("278ae144-8167-433c-8066-c08116f49311"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2341),
+                            CreatedIpAddress = "192.168.1.86",
+                            ExamNumber = (byte)2,
+                            Score = 98.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
+                        },
+                        new
+                        {
+                            Id = new Guid("22491749-6f9e-4d5c-be75-5f1aaad8a397"),
+                            CreatedComputerName = "Computer1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2347),
+                            CreatedIpAddress = "192.168.1.61",
+                            ExamNumber = (byte)2,
+                            Score = 46.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("8d7f2913-bd42-418c-8cf6-52ca57d5e81e"),
+                            Id = new Guid("30dc4d54-15bc-4004-b07e-4eaf16ead984"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(4997),
-                            CreatedIpAddress = "192.168.1.96",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2351),
+                            CreatedIpAddress = "192.168.1.10",
                             ExamNumber = (byte)2,
-                            Score = 4.0,
+                            Score = 36.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("e6fd395c-5119-494a-9bee-ffea1a58eda6"),
+                            Id = new Guid("af96772a-8276-4408-a474-39452a6d8a98"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5000),
-                            CreatedIpAddress = "192.168.1.56",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2355),
+                            CreatedIpAddress = "192.168.1.5",
                             ExamNumber = (byte)2,
-                            Score = 42.0,
+                            Score = 67.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("3475d58b-3784-4b06-b558-66fbf232ce3f"),
+                            Id = new Guid("d0b8e524-cf88-4591-b9e9-8de2101b6d30"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5006),
-                            CreatedIpAddress = "192.168.1.71",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2359),
+                            CreatedIpAddress = "192.168.1.93",
                             ExamNumber = (byte)2,
-                            Score = 40.0,
+                            Score = 8.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("473e910d-1941-4279-afad-7cdc9d46d2c4"),
+                            Id = new Guid("02482418-a5c1-4dbc-84a8-08b76de0f10f"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5010),
-                            CreatedIpAddress = "192.168.1.56",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2363),
+                            CreatedIpAddress = "192.168.1.41",
                             ExamNumber = (byte)2,
-                            Score = 17.0,
+                            Score = 68.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("c72cd508-95ad-4ae1-b68e-ad43789cdb32"),
+                            Id = new Guid("e2306715-0617-46d3-861d-b6a09c7d3982"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5014),
-                            CreatedIpAddress = "192.168.1.27",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2367),
+                            CreatedIpAddress = "192.168.1.35",
                             ExamNumber = (byte)2,
-                            Score = 28.0,
+                            Score = 88.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("d05efcc8-c6ee-47c4-bb48-ab2bdaf97874"),
+                            Id = new Guid("237dc72d-804d-499d-a7c5-b551fdd4792c"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5018),
-                            CreatedIpAddress = "192.168.1.31",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2371),
+                            CreatedIpAddress = "192.168.1.51",
                             ExamNumber = (byte)2,
-                            Score = 69.0,
+                            Score = 59.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("55d344c3-cebc-444b-b5f2-e3620daac038"),
+                            Id = new Guid("8df1a5ac-04df-4b7a-9536-00adf88b76e2"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5021),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2375),
                             CreatedIpAddress = "192.168.1.69",
                             ExamNumber = (byte)2,
-                            Score = 6.0,
+                            Score = 61.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("84de2850-bd8b-4956-a827-0eb92b65690b"),
+                            Id = new Guid("58f03d6b-6a57-4f99-b143-3f884ff59be6"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5025),
-                            CreatedIpAddress = "192.168.1.1",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2381),
+                            CreatedIpAddress = "192.168.1.15",
                             ExamNumber = (byte)2,
-                            Score = 19.0,
+                            Score = 70.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("76743f97-ecfc-4270-9cc6-6480b5cc74bc"),
+                            Id = new Guid("358fbf9e-e61d-47a1-8469-cd54ce4d5489"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5029),
-                            CreatedIpAddress = "192.168.1.48",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2385),
+                            CreatedIpAddress = "192.168.1.34",
                             ExamNumber = (byte)2,
                             Score = 30.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
@@ -5935,384 +5432,384 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b54eb84c-e454-44a3-a3f2-7882c06f721e"),
+                            Id = new Guid("339c68a5-ecba-4993-808a-00171b0c1b1b"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5033),
-                            CreatedIpAddress = "192.168.1.66",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2389),
+                            CreatedIpAddress = "192.168.1.18",
                             ExamNumber = (byte)2,
-                            Score = 15.0,
+                            Score = 53.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("00ea34e4-3b98-4bb2-8c8c-89dcb1d5bf01"),
+                            Id = new Guid("1685f572-9c4d-44f6-a4b6-5caa67583009"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5039),
-                            CreatedIpAddress = "192.168.1.4",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2393),
+                            CreatedIpAddress = "192.168.1.9",
                             ExamNumber = (byte)2,
-                            Score = 40.0,
+                            Score = 86.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
                         },
                         new
                         {
-                            Id = new Guid("c27b4fe9-310e-4b46-b993-4a15f1cee6a0"),
+                            Id = new Guid("f35275c4-56d3-40f3-a2e5-68d6c0908d80"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5042),
-                            CreatedIpAddress = "192.168.1.80",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2397),
+                            CreatedIpAddress = "192.168.1.20",
                             ExamNumber = (byte)2,
-                            Score = 84.0,
+                            Score = 13.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
                         },
                         new
                         {
-                            Id = new Guid("49f3a748-581e-48e5-935b-335826523702"),
+                            Id = new Guid("4f02d28b-a9dd-4ba6-867d-a866400208c8"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5046),
-                            CreatedIpAddress = "192.168.1.64",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2401),
+                            CreatedIpAddress = "192.168.1.93",
                             ExamNumber = (byte)2,
-                            Score = 19.0,
+                            Score = 21.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
                         },
                         new
                         {
-                            Id = new Guid("f717a6af-bb3d-4150-a2a6-456451616727"),
+                            Id = new Guid("1cecd03b-0d3d-432d-89be-631add75c2b6"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5050),
-                            CreatedIpAddress = "192.168.1.90",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2405),
+                            CreatedIpAddress = "192.168.1.83",
                             ExamNumber = (byte)2,
-                            Score = 84.0,
+                            Score = 69.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
                         },
                         new
                         {
-                            Id = new Guid("e0819bac-fd58-42c8-94aa-08712cfc1a3a"),
+                            Id = new Guid("c3c9d254-7a92-428d-9277-27d209a2db2a"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5054),
-                            CreatedIpAddress = "192.168.1.83",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2409),
+                            CreatedIpAddress = "192.168.1.85",
                             ExamNumber = (byte)2,
-                            Score = 43.0,
+                            Score = 61.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
                         },
                         new
                         {
-                            Id = new Guid("6e2689c7-9205-415c-9687-3a10d13a4305"),
+                            Id = new Guid("d7ea595a-08da-46b3-9eac-290c5991950b"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5058),
-                            CreatedIpAddress = "192.168.1.37",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2414),
+                            CreatedIpAddress = "192.168.1.27",
                             ExamNumber = (byte)2,
-                            Score = 96.0,
+                            Score = 87.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
                         },
                         new
                         {
-                            Id = new Guid("92792ef9-e34b-4ef3-97eb-d887a30d4e5c"),
+                            Id = new Guid("8e9fcec4-a04b-40f5-8bf8-82888d7e3e61"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5062),
-                            CreatedIpAddress = "192.168.1.22",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2426),
+                            CreatedIpAddress = "192.168.1.92",
                             ExamNumber = (byte)2,
-                            Score = 57.0,
+                            Score = 10.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
                         },
                         new
                         {
-                            Id = new Guid("51c05018-9f51-4ea9-acb1-8518b7d59d57"),
+                            Id = new Guid("7e63ae8c-5830-4ff6-9a40-ae3aaf25418e"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5066),
-                            CreatedIpAddress = "192.168.1.84",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2430),
+                            CreatedIpAddress = "192.168.1.78",
                             ExamNumber = (byte)2,
-                            Score = 10.0,
+                            Score = 63.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
                         },
                         new
                         {
-                            Id = new Guid("e41d5d30-f100-490d-add7-d9d96a5b2c6f"),
+                            Id = new Guid("54a7ad12-ca19-4e5f-b713-9b1d42eaad9c"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5071),
-                            CreatedIpAddress = "192.168.1.89",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2434),
+                            CreatedIpAddress = "192.168.1.31",
                             ExamNumber = (byte)2,
-                            Score = 93.0,
+                            Score = 3.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("d7f5bd5c-788c-4437-b833-ee44d3d39574"),
+                            Id = new Guid("a17415f5-7d71-44c6-8ad8-38c2ed731704"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5075),
-                            CreatedIpAddress = "192.168.1.10",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2438),
+                            CreatedIpAddress = "192.168.1.21",
                             ExamNumber = (byte)2,
-                            Score = 67.0,
+                            Score = 75.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("e88103e9-2dc9-445b-a7ef-8843f3ce838e"),
+                            Id = new Guid("74fc5c2a-c28a-4799-8229-3bd5ea7117fa"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5079),
-                            CreatedIpAddress = "192.168.1.88",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2442),
+                            CreatedIpAddress = "192.168.1.59",
                             ExamNumber = (byte)2,
-                            Score = 21.0,
+                            Score = 3.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("d34c91e1-082d-4c81-bf9a-66ae1d09b55f"),
+                            Id = new Guid("981077dd-1bc0-4c72-ad53-666f09f0f82c"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5082),
-                            CreatedIpAddress = "192.168.1.39",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2446),
+                            CreatedIpAddress = "192.168.1.2",
                             ExamNumber = (byte)2,
-                            Score = 68.0,
+                            Score = 30.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("66a2c9e5-3831-4416-9cfb-5821c38eb468"),
+                            Id = new Guid("626c9e38-1b31-4a5d-acef-f7c278b27381"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5086),
-                            CreatedIpAddress = "192.168.1.89",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2450),
+                            CreatedIpAddress = "192.168.1.95",
                             ExamNumber = (byte)2,
-                            Score = 13.0,
+                            Score = 18.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("7c7f1f49-819d-435f-9a43-0d4bb7972885"),
+                            Id = new Guid("8fb590fb-6059-48bc-90d9-43152ae0b6c2"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5090),
-                            CreatedIpAddress = "192.168.1.80",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2456),
+                            CreatedIpAddress = "192.168.1.67",
                             ExamNumber = (byte)2,
-                            Score = 59.0,
+                            Score = 47.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("2b224eae-2c7f-48b3-b032-de243ac12d9c"),
+                            Id = new Guid("95e7dea4-426b-4d18-9b3a-8e9dec1a5197"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5094),
-                            CreatedIpAddress = "192.168.1.23",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2460),
+                            CreatedIpAddress = "192.168.1.87",
                             ExamNumber = (byte)2,
-                            Score = 95.0,
+                            Score = 87.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("3a845edc-f348-423c-8ec0-21005d2bb3cb"),
+                            Id = new Guid("5385c978-0061-4b6f-97c6-cbc745c21cb4"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5098),
-                            CreatedIpAddress = "192.168.1.38",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2464),
+                            CreatedIpAddress = "192.168.1.87",
                             ExamNumber = (byte)3,
-                            Score = 43.0,
+                            Score = 15.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("84450eab-c7b4-4433-a39b-e928c1bcf41c"),
+                            Id = new Guid("2559eae9-3c99-4451-874d-4cde3c0fbe83"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5104),
-                            CreatedIpAddress = "192.168.1.31",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2468),
+                            CreatedIpAddress = "192.168.1.21",
                             ExamNumber = (byte)3,
-                            Score = 15.0,
+                            Score = 83.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("db809914-39c5-46f9-9d56-ee1431151111"),
+                            Id = new Guid("0b4a0a40-a018-4789-9817-81acae500b1b"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5108),
-                            CreatedIpAddress = "192.168.1.56",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2472),
+                            CreatedIpAddress = "192.168.1.6",
                             ExamNumber = (byte)3,
-                            Score = 9.0,
+                            Score = 77.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("2a974f02-92c4-4f7d-b051-08ad550aba64"),
+                            Id = new Guid("3a41ae1b-880d-47f9-8c6a-dcda363d0fb3"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5111),
-                            CreatedIpAddress = "192.168.1.54",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2476),
+                            CreatedIpAddress = "192.168.1.13",
                             ExamNumber = (byte)3,
-                            Score = 21.0,
+                            Score = 67.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
                         },
                         new
                         {
-                            Id = new Guid("4d459588-b354-4383-b976-0c2a9911359f"),
+                            Id = new Guid("788842de-2221-42ac-ad0f-2980447c5348"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5115),
-                            CreatedIpAddress = "192.168.1.32",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2480),
+                            CreatedIpAddress = "192.168.1.11",
                             ExamNumber = (byte)3,
-                            Score = 71.0,
+                            Score = 91.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("9fef8934-52a6-44a1-9b97-c90d241372c4"),
+                            Id = new Guid("eab9896c-6061-4a82-9758-a32ee715d9a1"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5119),
-                            CreatedIpAddress = "192.168.1.78",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2484),
+                            CreatedIpAddress = "192.168.1.12",
                             ExamNumber = (byte)3,
-                            Score = 49.0,
+                            Score = 47.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
                         },
                         new
                         {
-                            Id = new Guid("95aa089d-f3a1-4c26-87e0-a1444549705f"),
+                            Id = new Guid("fdd52704-aa57-4c5f-82c2-1d06317e6822"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5124),
-                            CreatedIpAddress = "192.168.1.84",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2490),
+                            CreatedIpAddress = "192.168.1.59",
                             ExamNumber = (byte)3,
-                            Score = 75.0,
+                            Score = 99.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
                         },
                         new
                         {
-                            Id = new Guid("120a6c98-db89-40e3-b88d-f3514aa80571"),
+                            Id = new Guid("86edc9d1-10e5-45e5-afc9-91752e7731b1"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5130),
-                            CreatedIpAddress = "192.168.1.5",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2494),
+                            CreatedIpAddress = "192.168.1.82",
                             ExamNumber = (byte)3,
-                            Score = 85.0,
+                            Score = 30.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
                         },
                         new
                         {
-                            Id = new Guid("53640d54-d9db-4ffc-8b17-eb726960b385"),
+                            Id = new Guid("c3ba44d7-cbf7-43c6-a9db-a930e3387810"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5145),
-                            CreatedIpAddress = "192.168.1.15",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2498),
+                            CreatedIpAddress = "192.168.1.38",
                             ExamNumber = (byte)3,
-                            Score = 66.0,
+                            Score = 24.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
                         },
                         new
                         {
-                            Id = new Guid("39578de7-6ad2-40dc-a983-54b86dba9e08"),
+                            Id = new Guid("da8d634c-0b87-462e-8446-9716450f2cb1"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5151),
-                            CreatedIpAddress = "192.168.1.3",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2502),
+                            CreatedIpAddress = "192.168.1.46",
                             ExamNumber = (byte)3,
-                            Score = 42.0,
+                            Score = 58.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
                         },
                         new
                         {
-                            Id = new Guid("63d713ff-cd54-496a-b3c6-f20c2e8622ce"),
+                            Id = new Guid("99f749cf-fac5-471b-be81-32a56c988768"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5155),
-                            CreatedIpAddress = "192.168.1.22",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2506),
+                            CreatedIpAddress = "192.168.1.51",
                             ExamNumber = (byte)3,
-                            Score = 6.0,
+                            Score = 0.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
                         },
                         new
                         {
-                            Id = new Guid("67ec2b94-9d30-4397-b16c-7eab523e7fb3"),
+                            Id = new Guid("59e5ff8f-231a-46eb-b7a1-bd4ed34d930a"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5159),
-                            CreatedIpAddress = "192.168.1.86",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2510),
+                            CreatedIpAddress = "192.168.1.58",
                             ExamNumber = (byte)3,
-                            Score = 66.0,
+                            Score = 59.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
                         },
                         new
                         {
-                            Id = new Guid("0733df98-45dc-4a4d-9ada-0abd758782a3"),
+                            Id = new Guid("788639dc-0b08-4a36-b2c1-3ac6538af997"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5163),
-                            CreatedIpAddress = "192.168.1.76",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2514),
+                            CreatedIpAddress = "192.168.1.16",
                             ExamNumber = (byte)3,
-                            Score = 37.0,
+                            Score = 11.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
                         },
                         new
                         {
-                            Id = new Guid("750f3f73-60f8-4d09-86e5-bfdaaa36250b"),
+                            Id = new Guid("bf58a652-5eef-4532-9d57-54be399c7c06"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5166),
-                            CreatedIpAddress = "192.168.1.5",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2518),
+                            CreatedIpAddress = "192.168.1.53",
                             ExamNumber = (byte)3,
-                            Score = 18.0,
+                            Score = 51.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("99852e49-5969-4b71-90d8-244a587027ba"),
+                            Id = new Guid("3fc993d7-3bfc-4e81-b4c9-6a3dac2dd8c3"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5170),
-                            CreatedIpAddress = "192.168.1.80",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2524),
+                            CreatedIpAddress = "192.168.1.18",
                             ExamNumber = (byte)3,
-                            Score = 54.0,
+                            Score = 35.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("4407c20c-0ccf-4af1-92ed-721a3bfc6e1c"),
+                            Id = new Guid("73809318-65e4-4fb6-be29-ff49734da0f4"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5174),
-                            CreatedIpAddress = "192.168.1.24",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2528),
+                            CreatedIpAddress = "192.168.1.20",
                             ExamNumber = (byte)3,
-                            Score = 81.0,
+                            Score = 90.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("73743abb-56ff-493a-815d-cab927d809bd"),
+                            Id = new Guid("56249584-7bc9-4a28-93dd-b2965b512e2b"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5178),
-                            CreatedIpAddress = "192.168.1.51",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2532),
+                            CreatedIpAddress = "192.168.1.58",
                             ExamNumber = (byte)3,
-                            Score = 13.0,
+                            Score = 61.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("d7e7b1a0-34af-4602-8396-aa1fdb5a06eb"),
+                            Id = new Guid("36bcf0a8-b05d-4a5c-a2fc-a2edd3823223"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5183),
-                            CreatedIpAddress = "192.168.1.64",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2536),
+                            CreatedIpAddress = "192.168.1.69",
                             ExamNumber = (byte)3,
-                            Score = 72.0,
+                            Score = 25.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("087c258f-d371-41a2-91f1-af41b5664b55"),
+                            Id = new Guid("eb64e105-244c-4294-ab35-f0a76b72c6a5"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5187),
-                            CreatedIpAddress = "192.168.1.98",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2540),
+                            CreatedIpAddress = "192.168.1.40",
                             ExamNumber = (byte)3,
                             Score = 0.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
@@ -6320,2353 +5817,2353 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8b9997ee-621f-4fe0-84db-f37a3bb834de"),
+                            Id = new Guid("ed50d84b-975e-4bb6-8b05-c72864e6d970"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5191),
-                            CreatedIpAddress = "192.168.1.93",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2544),
+                            CreatedIpAddress = "192.168.1.16",
                             ExamNumber = (byte)3,
-                            Score = 15.0,
+                            Score = 88.0,
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("f9b3d4e6-6d98-4c09-8913-a8d6151f1f2d"),
+                            Id = new Guid("8c4e9d7c-6a60-4918-be42-ffa339f4e2b3"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5195),
-                            CreatedIpAddress = "192.168.1.79",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2548),
+                            CreatedIpAddress = "192.168.1.84",
                             ExamNumber = (byte)3,
-                            Score = 44.0,
+                            Score = 81.0,
                             StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("1d18647d-4003-4c4e-aaeb-105de4c09e2f"),
+                            Id = new Guid("e6980bdd-9e79-4a56-b3c5-64d8a5aece53"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5199),
-                            CreatedIpAddress = "192.168.1.29",
-                            ExamNumber = (byte)3,
-                            Score = 9.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
-                        },
-                        new
-                        {
-                            Id = new Guid("3a67dde1-7d59-4fa0-9b66-16b147fc6cb1"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5203),
-                            CreatedIpAddress = "192.168.1.59",
-                            ExamNumber = (byte)3,
-                            Score = 62.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
-                        },
-                        new
-                        {
-                            Id = new Guid("12757346-ae4a-4faf-b3e5-d1686828bfa2"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5207),
-                            CreatedIpAddress = "192.168.1.54",
-                            ExamNumber = (byte)3,
-                            Score = 35.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("3b8d26a8-b33c-40a4-8fdb-3d01356afcaa"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5211),
-                            CreatedIpAddress = "192.168.1.24",
-                            ExamNumber = (byte)3,
-                            Score = 34.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
-                        },
-                        new
-                        {
-                            Id = new Guid("28b0f096-f0b8-4ac7-a4d6-1b982374dcf4"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5216),
-                            CreatedIpAddress = "192.168.1.23",
-                            ExamNumber = (byte)3,
-                            Score = 19.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("d24a47e6-6af9-4cae-b06d-ca52ce8c23c5"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5220),
-                            CreatedIpAddress = "192.168.1.45",
-                            ExamNumber = (byte)3,
-                            Score = 34.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("97647225-e7bd-4363-9cbe-be5ed8495198"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5224),
-                            CreatedIpAddress = "192.168.1.41",
-                            ExamNumber = (byte)3,
-                            Score = 79.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("86815e43-ab4d-4742-b67b-7c492e6be2b8"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5227),
-                            CreatedIpAddress = "192.168.1.38",
-                            ExamNumber = (byte)3,
-                            Score = 92.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
-                        },
-                        new
-                        {
-                            Id = new Guid("ba6113e1-ac71-4d86-988e-4e0a1d077528"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5231),
-                            CreatedIpAddress = "192.168.1.45",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2552),
+                            CreatedIpAddress = "192.168.1.8",
                             ExamNumber = (byte)3,
                             Score = 56.0,
                             StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("b261e489-e0df-4e0d-a023-547431918df0"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5235),
-                            CreatedIpAddress = "192.168.1.65",
-                            ExamNumber = (byte)3,
-                            Score = 6.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
-                        },
-                        new
-                        {
-                            Id = new Guid("3d71448e-555e-486c-8212-5a7bb13b4c10"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5239),
-                            CreatedIpAddress = "192.168.1.24",
-                            ExamNumber = (byte)3,
-                            Score = 58.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("f92ebba1-5acb-43bd-9de4-478d806b7e22"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5243),
-                            CreatedIpAddress = "192.168.1.80",
-                            ExamNumber = (byte)3,
-                            Score = 34.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("ae7428ab-ed33-46a3-947c-e2ae1cb49c5f"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5255),
-                            CreatedIpAddress = "192.168.1.36",
-                            ExamNumber = (byte)3,
-                            Score = 79.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
-                        },
-                        new
-                        {
-                            Id = new Guid("e98c8d78-4aca-4b68-84fe-27a02bf38b82"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5259),
-                            CreatedIpAddress = "192.168.1.94",
-                            ExamNumber = (byte)3,
-                            Score = 59.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
-                        },
-                        new
-                        {
-                            Id = new Guid("c8753c3f-eaad-498a-8c5f-8d8fa00cd49b"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5263),
-                            CreatedIpAddress = "192.168.1.32",
-                            ExamNumber = (byte)3,
-                            Score = 25.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
-                        },
-                        new
-                        {
-                            Id = new Guid("aa44e5e7-4e7d-4ae4-86a3-724c17edca35"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5267),
-                            CreatedIpAddress = "192.168.1.91",
-                            ExamNumber = (byte)3,
-                            Score = 89.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
-                        },
-                        new
-                        {
-                            Id = new Guid("b79eaa78-affa-4817-9b91-e63ebf6b336b"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5271),
-                            CreatedIpAddress = "192.168.1.63",
-                            ExamNumber = (byte)3,
-                            Score = 60.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
-                        },
-                        new
-                        {
-                            Id = new Guid("77bb6c7d-e463-459f-8a53-d40783cba1f1"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5275),
-                            CreatedIpAddress = "192.168.1.32",
-                            ExamNumber = (byte)3,
-                            Score = 47.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
-                        },
-                        new
-                        {
-                            Id = new Guid("04b26624-9a88-4ced-8006-c91e780b630e"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5279),
-                            CreatedIpAddress = "192.168.1.15",
-                            ExamNumber = (byte)3,
-                            Score = 72.0,
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
-                        },
-                        new
-                        {
-                            Id = new Guid("7a575b48-d632-4407-bb73-52225e3cbb03"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5283),
-                            CreatedIpAddress = "192.168.1.60",
-                            ExamNumber = (byte)3,
-                            Score = 71.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
-                        },
-                        new
-                        {
-                            Id = new Guid("f36ae12e-fe5a-4548-9f9a-e1fd0421852d"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5288),
-                            CreatedIpAddress = "192.168.1.34",
-                            ExamNumber = (byte)3,
-                            Score = 5.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("91d890e2-075f-40be-84ec-bc9e6efbc129"),
+                            Id = new Guid("da9b8c96-d535-4ac3-b3b5-38bfad87f0aa"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5303),
-                            CreatedIpAddress = "192.168.1.56",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2558),
+                            CreatedIpAddress = "192.168.1.63",
                             ExamNumber = (byte)3,
-                            Score = 21.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            Score = 14.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("185b55be-9963-4c95-a660-62d709b1cb92"),
+                            Id = new Guid("e4f98fc7-20e5-46e7-8281-bb48086738bc"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5307),
-                            CreatedIpAddress = "192.168.1.34",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2562),
+                            CreatedIpAddress = "192.168.1.48",
                             ExamNumber = (byte)3,
-                            Score = 16.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            Score = 95.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
                         },
                         new
                         {
-                            Id = new Guid("4f7f6be1-8149-4f5b-a6bc-3192f9ced0f2"),
+                            Id = new Guid("1e67dd95-ee3e-4fa8-bef0-7e777f73c8d0"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5310),
-                            CreatedIpAddress = "192.168.1.54",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2566),
+                            CreatedIpAddress = "192.168.1.34",
                             ExamNumber = (byte)3,
-                            Score = 97.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            Score = 34.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("ea0f3081-2704-4ce8-9b4e-c4066fdff703"),
+                            Id = new Guid("d6ae191f-ad66-40e7-b376-f48cc40f606c"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5314),
-                            CreatedIpAddress = "192.168.1.90",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2575),
+                            CreatedIpAddress = "192.168.1.24",
                             ExamNumber = (byte)3,
-                            Score = 58.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            Score = 59.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
                         },
                         new
                         {
-                            Id = new Guid("7819fe47-4713-4698-8fdc-1bbee3c031cf"),
+                            Id = new Guid("2d50aa52-8848-4eec-9bc5-9dbc6afdc1cc"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5318),
-                            CreatedIpAddress = "192.168.1.70",
-                            ExamNumber = (byte)3,
-                            Score = 80.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("98a55147-1cb6-4790-b0c3-c74236934242"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5322),
-                            CreatedIpAddress = "192.168.1.36",
-                            ExamNumber = (byte)3,
-                            Score = 24.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("93c0b834-669f-4284-876a-e1f1a4a7fdf8"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5326),
-                            CreatedIpAddress = "192.168.1.20",
-                            ExamNumber = (byte)3,
-                            Score = 83.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
-                        },
-                        new
-                        {
-                            Id = new Guid("49b71719-ac7b-44dc-82e9-2eb4eaf09dfb"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5331),
-                            CreatedIpAddress = "192.168.1.86",
-                            ExamNumber = (byte)3,
-                            Score = 53.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("608c089e-6a5e-417e-9122-a34b7c5ac0da"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5335),
-                            CreatedIpAddress = "192.168.1.71",
-                            ExamNumber = (byte)3,
-                            Score = 75.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
-                        },
-                        new
-                        {
-                            Id = new Guid("735b4e4b-7104-424a-b919-d3544e58f0fe"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5339),
-                            CreatedIpAddress = "192.168.1.32",
-                            ExamNumber = (byte)3,
-                            Score = 78.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("fc82332a-c99e-41fd-a5b9-f802e2fff181"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5343),
-                            CreatedIpAddress = "192.168.1.24",
-                            ExamNumber = (byte)3,
-                            Score = 52.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("3eb12d4b-6c12-4cc4-aa6f-efc6d5f6552a"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5347),
-                            CreatedIpAddress = "192.168.1.82",
-                            ExamNumber = (byte)3,
-                            Score = 95.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
-                        },
-                        new
-                        {
-                            Id = new Guid("4dcbc9d3-dac7-4ba1-88a8-4869f3d2cfdc"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5351),
-                            CreatedIpAddress = "192.168.1.9",
-                            ExamNumber = (byte)3,
-                            Score = 97.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
-                        },
-                        new
-                        {
-                            Id = new Guid("9a5465cb-e9e5-4a07-a083-4a050dbc3c99"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5355),
-                            CreatedIpAddress = "192.168.1.53",
-                            ExamNumber = (byte)3,
-                            Score = 54.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
-                        },
-                        new
-                        {
-                            Id = new Guid("dfdd93de-dd8d-438c-8dbb-2049c622b4ec"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5359),
-                            CreatedIpAddress = "192.168.1.94",
-                            ExamNumber = (byte)3,
-                            Score = 52.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
-                        },
-                        new
-                        {
-                            Id = new Guid("2a43705a-2e77-4a98-90a4-c371baee6353"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5364),
-                            CreatedIpAddress = "192.168.1.43",
-                            ExamNumber = (byte)3,
-                            Score = 33.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
-                        },
-                        new
-                        {
-                            Id = new Guid("eb783d75-c00c-450f-8917-5ab1f57ca7db"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5368),
-                            CreatedIpAddress = "192.168.1.56",
-                            ExamNumber = (byte)3,
-                            Score = 14.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
-                        },
-                        new
-                        {
-                            Id = new Guid("226c1218-5e6a-4921-a030-96d766a5b64c"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5372),
-                            CreatedIpAddress = "192.168.1.33",
-                            ExamNumber = (byte)3,
-                            Score = 76.0,
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
-                        },
-                        new
-                        {
-                            Id = new Guid("86472819-6871-40bd-8ed9-e94e2501f4ce"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5376),
-                            CreatedIpAddress = "192.168.1.15",
-                            ExamNumber = (byte)3,
-                            Score = 66.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
-                        },
-                        new
-                        {
-                            Id = new Guid("a79d1640-4042-49ff-bd72-c1509f249087"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5380),
-                            CreatedIpAddress = "192.168.1.79",
-                            ExamNumber = (byte)3,
-                            Score = 27.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
-                        },
-                        new
-                        {
-                            Id = new Guid("7a69c7a9-ae26-48fd-b0aa-79ed4e14ae73"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5384),
-                            CreatedIpAddress = "192.168.1.66",
-                            ExamNumber = (byte)3,
-                            Score = 65.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
-                        },
-                        new
-                        {
-                            Id = new Guid("6d814ffa-4893-4dcf-95a4-f5e53e6f4c8c"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5388),
-                            CreatedIpAddress = "192.168.1.12",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2579),
+                            CreatedIpAddress = "192.168.1.22",
                             ExamNumber = (byte)3,
                             Score = 20.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("92e8394d-2416-46e4-82d8-32839e6ae96b"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5392),
-                            CreatedIpAddress = "192.168.1.69",
-                            ExamNumber = (byte)3,
-                            Score = 8.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
-                        },
-                        new
-                        {
-                            Id = new Guid("4de4ff8d-3b88-4f0c-88eb-136083881424"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5397),
-                            CreatedIpAddress = "192.168.1.87",
-                            ExamNumber = (byte)3,
-                            Score = 81.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("15d70a4c-a8bc-4235-974a-53a58fded264"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5401),
-                            CreatedIpAddress = "192.168.1.53",
-                            ExamNumber = (byte)3,
-                            Score = 6.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
                         },
                         new
                         {
-                            Id = new Guid("42dc6272-2e2c-4705-828d-f602c77b7628"),
+                            Id = new Guid("b24bcb53-426e-410b-9d29-62f497e53262"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5405),
-                            CreatedIpAddress = "192.168.1.22",
-                            ExamNumber = (byte)3,
-                            Score = 13.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("8555a3b7-8238-4c18-9e22-9e7744324d6e"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5409),
-                            CreatedIpAddress = "192.168.1.99",
-                            ExamNumber = (byte)3,
-                            Score = 6.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
-                        },
-                        new
-                        {
-                            Id = new Guid("974d0da7-8d5e-4be6-a522-75c6c0257ede"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5412),
-                            CreatedIpAddress = "192.168.1.91",
-                            ExamNumber = (byte)3,
-                            Score = 99.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("85a430e0-de4b-4aef-9fd0-bb9b461a8b92"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5416),
-                            CreatedIpAddress = "192.168.1.63",
-                            ExamNumber = (byte)3,
-                            Score = 57.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
-                        },
-                        new
-                        {
-                            Id = new Guid("7cce8d9c-7a24-4839-a509-d09576d07aa5"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5420),
-                            CreatedIpAddress = "192.168.1.36",
-                            ExamNumber = (byte)3,
-                            Score = 53.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("61113293-b392-4696-b969-794f313ceb0a"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5424),
-                            CreatedIpAddress = "192.168.1.47",
-                            ExamNumber = (byte)3,
-                            Score = 97.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("0dbeb85a-f69f-4edd-96ae-66679018deb5"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5429),
-                            CreatedIpAddress = "192.168.1.69",
-                            ExamNumber = (byte)3,
-                            Score = 24.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
-                        },
-                        new
-                        {
-                            Id = new Guid("9d7f9042-248a-4545-bfff-970d935761e6"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5434),
-                            CreatedIpAddress = "192.168.1.23",
-                            ExamNumber = (byte)3,
-                            Score = 79.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
-                        },
-                        new
-                        {
-                            Id = new Guid("a32c1341-037e-42e8-a117-08465c6e361b"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5442),
-                            CreatedIpAddress = "192.168.1.13",
-                            ExamNumber = (byte)3,
-                            Score = 28.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
-                        },
-                        new
-                        {
-                            Id = new Guid("0ec0f5b2-8329-44a7-9ee4-6dd1be099e79"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5456),
-                            CreatedIpAddress = "192.168.1.42",
-                            ExamNumber = (byte)3,
-                            Score = 6.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
-                        },
-                        new
-                        {
-                            Id = new Guid("fcc662fb-c072-45b5-ad42-5e6608d16dbc"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5460),
-                            CreatedIpAddress = "192.168.1.39",
-                            ExamNumber = (byte)3,
-                            Score = 27.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
-                        },
-                        new
-                        {
-                            Id = new Guid("2183d1e9-7032-41cb-955c-b9c982fc3f46"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5464),
-                            CreatedIpAddress = "192.168.1.41",
-                            ExamNumber = (byte)3,
-                            Score = 39.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
-                        },
-                        new
-                        {
-                            Id = new Guid("9eefb4c9-5f35-49e2-bd1f-e106fbf4ad65"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5467),
-                            CreatedIpAddress = "192.168.1.62",
-                            ExamNumber = (byte)3,
-                            Score = 75.0,
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
-                        },
-                        new
-                        {
-                            Id = new Guid("cc4891d7-990e-42ec-b215-843a735c2093"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5472),
-                            CreatedIpAddress = "192.168.1.95",
-                            ExamNumber = (byte)3,
-                            Score = 11.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
-                        },
-                        new
-                        {
-                            Id = new Guid("9cb182df-f8eb-42ce-8fdd-c8db81c982e4"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5477),
-                            CreatedIpAddress = "192.168.1.9",
-                            ExamNumber = (byte)3,
-                            Score = 21.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
-                        },
-                        new
-                        {
-                            Id = new Guid("9cc98745-f1d5-4395-b200-8a3ade47bf1d"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5481),
-                            CreatedIpAddress = "192.168.1.74",
-                            ExamNumber = (byte)3,
-                            Score = 23.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
-                        },
-                        new
-                        {
-                            Id = new Guid("151b80df-a5bd-4664-bb36-6c10f9a2e092"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5485),
-                            CreatedIpAddress = "192.168.1.76",
-                            ExamNumber = (byte)3,
-                            Score = 48.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("ea7916a1-d99c-4382-9fe1-01088c7850dc"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5489),
-                            CreatedIpAddress = "192.168.1.21",
-                            ExamNumber = (byte)3,
-                            Score = 13.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
-                        },
-                        new
-                        {
-                            Id = new Guid("4eac0b71-68ff-4a05-a62a-4e6f8c2b77c7"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5493),
-                            CreatedIpAddress = "192.168.1.54",
-                            ExamNumber = (byte)3,
-                            Score = 69.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("ca09e127-dbf2-44ff-ba8c-cfbb4968f64f"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5496),
-                            CreatedIpAddress = "192.168.1.63",
-                            ExamNumber = (byte)3,
-                            Score = 51.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("c3e150ef-1583-44cc-9cdc-0358567cb00b"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5500),
-                            CreatedIpAddress = "192.168.1.68",
-                            ExamNumber = (byte)3,
-                            Score = 40.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("09800265-d0f0-4f87-a3f5-767e9e79c071"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5504),
-                            CreatedIpAddress = "192.168.1.9",
-                            ExamNumber = (byte)3,
-                            Score = 69.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
-                        },
-                        new
-                        {
-                            Id = new Guid("14907a6a-fc70-4f28-b20a-bbb400f13108"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5510),
-                            CreatedIpAddress = "192.168.1.73",
-                            ExamNumber = (byte)3,
-                            Score = 93.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("5f614f90-705e-4ee6-9688-24fab5364719"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5513),
-                            CreatedIpAddress = "192.168.1.28",
-                            ExamNumber = (byte)3,
-                            Score = 3.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
-                        },
-                        new
-                        {
-                            Id = new Guid("40fab202-e1a8-457a-88db-fef2d84e3f6f"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5517),
-                            CreatedIpAddress = "192.168.1.96",
-                            ExamNumber = (byte)3,
-                            Score = 48.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("b3481ce4-60e2-4863-bf7f-9aa6cb757c57"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5521),
-                            CreatedIpAddress = "192.168.1.30",
-                            ExamNumber = (byte)3,
-                            Score = 48.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("3019c1c0-8a47-4651-a0e2-1ac462fa49ba"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5525),
-                            CreatedIpAddress = "192.168.1.96",
-                            ExamNumber = (byte)3,
-                            Score = 66.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
-                        },
-                        new
-                        {
-                            Id = new Guid("16359cf7-b1ba-40bd-b5a9-34ef36a590e5"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5529),
-                            CreatedIpAddress = "192.168.1.30",
-                            ExamNumber = (byte)3,
-                            Score = 89.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
-                        },
-                        new
-                        {
-                            Id = new Guid("a25af98e-60ed-4984-b4ab-ed6a9e41d2d9"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5533),
-                            CreatedIpAddress = "192.168.1.56",
-                            ExamNumber = (byte)3,
-                            Score = 15.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
-                        },
-                        new
-                        {
-                            Id = new Guid("3f27cedc-1634-4435-b026-3e0e067b50a4"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5537),
-                            CreatedIpAddress = "192.168.1.98",
-                            ExamNumber = (byte)3,
-                            Score = 65.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
-                        },
-                        new
-                        {
-                            Id = new Guid("cf968187-a82b-43a5-9047-85508bf84859"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5542),
-                            CreatedIpAddress = "192.168.1.63",
-                            ExamNumber = (byte)3,
-                            Score = 44.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
-                        },
-                        new
-                        {
-                            Id = new Guid("dbb9ff5c-8e01-4fe1-978c-40665ec53775"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5546),
-                            CreatedIpAddress = "192.168.1.44",
-                            ExamNumber = (byte)3,
-                            Score = 30.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
-                        },
-                        new
-                        {
-                            Id = new Guid("e82165c3-6b38-44e4-93a5-940a76fda4fe"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5550),
-                            CreatedIpAddress = "192.168.1.86",
-                            ExamNumber = (byte)3,
-                            Score = 42.0,
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
-                        },
-                        new
-                        {
-                            Id = new Guid("e293fe03-2b49-40d9-9395-dcc209639cac"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5554),
-                            CreatedIpAddress = "192.168.1.5",
-                            ExamNumber = (byte)3,
-                            Score = 18.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
-                        },
-                        new
-                        {
-                            Id = new Guid("c33c7081-398d-4f94-bda9-5be2b9ea8d39"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5558),
-                            CreatedIpAddress = "192.168.1.13",
-                            ExamNumber = (byte)3,
-                            Score = 7.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
-                        },
-                        new
-                        {
-                            Id = new Guid("f43ef46f-127f-44d1-b5f4-edc49c454d7f"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5562),
-                            CreatedIpAddress = "192.168.1.50",
-                            ExamNumber = (byte)3,
-                            Score = 98.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
-                        },
-                        new
-                        {
-                            Id = new Guid("73198b45-68a1-4088-a7ef-5d2daa7651da"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5565),
-                            CreatedIpAddress = "192.168.1.34",
-                            ExamNumber = (byte)3,
-                            Score = 91.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("1d2fa58b-617f-45a9-8466-ad31efcbfb17"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5569),
-                            CreatedIpAddress = "192.168.1.94",
-                            ExamNumber = (byte)3,
-                            Score = 24.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
-                        },
-                        new
-                        {
-                            Id = new Guid("1c834951-c92b-414c-8f54-a2076ba18f84"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5575),
-                            CreatedIpAddress = "192.168.1.63",
-                            ExamNumber = (byte)3,
-                            Score = 58.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("b7979f30-bc92-45cd-a909-611ef258100e"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5578),
-                            CreatedIpAddress = "192.168.1.50",
-                            ExamNumber = (byte)3,
-                            Score = 22.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("fa505cc3-c6be-4bbe-b565-48e4a0ac4b79"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5582),
-                            CreatedIpAddress = "192.168.1.93",
-                            ExamNumber = (byte)3,
-                            Score = 88.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("bdab2614-d7da-47c9-a880-e99e942d1df8"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5587),
-                            CreatedIpAddress = "192.168.1.13",
-                            ExamNumber = (byte)3,
-                            Score = 77.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
-                        },
-                        new
-                        {
-                            Id = new Guid("ad5df956-b775-4860-98ab-c3a997cc1ee9"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5591),
-                            CreatedIpAddress = "192.168.1.22",
-                            ExamNumber = (byte)3,
-                            Score = 51.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("0b209ba7-67bf-4b69-9985-e6740d51f7df"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5595),
-                            CreatedIpAddress = "192.168.1.67",
-                            ExamNumber = (byte)3,
-                            Score = 72.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
-                        },
-                        new
-                        {
-                            Id = new Guid("054e5a9e-3027-4d87-b702-a008ec8df4c5"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5605),
-                            CreatedIpAddress = "192.168.1.20",
-                            ExamNumber = (byte)3,
-                            Score = 86.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("5693404a-6a14-40e9-814e-0d7e41bd8734"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5609),
-                            CreatedIpAddress = "192.168.1.63",
-                            ExamNumber = (byte)3,
-                            Score = 56.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("116f1f8f-3dd2-495d-8591-e5b3a8ff50ec"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5615),
-                            CreatedIpAddress = "192.168.1.70",
-                            ExamNumber = (byte)3,
-                            Score = 88.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
-                        },
-                        new
-                        {
-                            Id = new Guid("78fd3260-ec8f-49e6-8c2c-8c47a16728ff"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5619),
-                            CreatedIpAddress = "192.168.1.66",
-                            ExamNumber = (byte)3,
-                            Score = 13.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
-                        },
-                        new
-                        {
-                            Id = new Guid("a051c8b7-d50c-4000-9967-66383c110a92"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5623),
-                            CreatedIpAddress = "192.168.1.9",
-                            ExamNumber = (byte)3,
-                            Score = 88.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
-                        },
-                        new
-                        {
-                            Id = new Guid("96e6aeb5-4aef-4300-b008-e2dbc09024e3"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5626),
-                            CreatedIpAddress = "192.168.1.69",
-                            ExamNumber = (byte)3,
-                            Score = 19.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
-                        },
-                        new
-                        {
-                            Id = new Guid("6838151d-5899-407d-b805-e243d9eaf0ed"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5630),
-                            CreatedIpAddress = "192.168.1.85",
-                            ExamNumber = (byte)3,
-                            Score = 23.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
-                        },
-                        new
-                        {
-                            Id = new Guid("f15cd0fb-fbed-4410-9e94-eeb225650d58"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5634),
-                            CreatedIpAddress = "192.168.1.62",
-                            ExamNumber = (byte)3,
-                            Score = 43.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
-                        },
-                        new
-                        {
-                            Id = new Guid("e1372592-edc6-4e90-979f-316b555abcc3"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5638),
-                            CreatedIpAddress = "192.168.1.45",
-                            ExamNumber = (byte)3,
-                            Score = 73.0,
-                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
-                        },
-                        new
-                        {
-                            Id = new Guid("8a4681b0-6e80-45d9-b965-6165db1326d8"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5642),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2584),
                             CreatedIpAddress = "192.168.1.64",
                             ExamNumber = (byte)3,
-                            Score = 55.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
-                        },
-                        new
-                        {
-                            Id = new Guid("e77d352e-7e70-45d9-af8d-92bb9b6a49d8"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5647),
-                            CreatedIpAddress = "192.168.1.52",
-                            ExamNumber = (byte)3,
-                            Score = 70.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
-                        },
-                        new
-                        {
-                            Id = new Guid("a45ab35d-64e7-4710-bf67-6a97ba609fa1"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5651),
-                            CreatedIpAddress = "192.168.1.44",
-                            ExamNumber = (byte)3,
-                            Score = 93.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
-                        },
-                        new
-                        {
-                            Id = new Guid("bb309cd3-75cd-4e0a-abf2-5b757d595933"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5655),
-                            CreatedIpAddress = "192.168.1.92",
-                            ExamNumber = (byte)3,
-                            Score = 61.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("b832b93d-5dbc-4469-8bac-04b90812a11a"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5659),
-                            CreatedIpAddress = "192.168.1.43",
-                            ExamNumber = (byte)3,
-                            Score = 46.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
-                        },
-                        new
-                        {
-                            Id = new Guid("6405244c-be02-4f55-9eee-47d6d048c8fd"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5663),
-                            CreatedIpAddress = "192.168.1.99",
-                            ExamNumber = (byte)3,
-                            Score = 80.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("08e5925a-5475-4f7f-9085-dff9c956df8f"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5666),
-                            CreatedIpAddress = "192.168.1.15",
-                            ExamNumber = (byte)3,
-                            Score = 95.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("e9cb4e52-3850-41ec-ab13-e62de30ef51d"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5670),
-                            CreatedIpAddress = "192.168.1.89",
-                            ExamNumber = (byte)3,
-                            Score = 58.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            Score = 84.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
                         },
                         new
                         {
-                            Id = new Guid("241ba944-22bd-4546-a2de-f53aa0f203e0"),
+                            Id = new Guid("368b680b-6100-4a06-aa51-af7a66112142"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5674),
-                            CreatedIpAddress = "192.168.1.86",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2588),
+                            CreatedIpAddress = "192.168.1.17",
                             ExamNumber = (byte)3,
-                            Score = 72.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            Score = 27.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
                         },
                         new
                         {
-                            Id = new Guid("80dc0a9f-d579-48c9-918b-5d3a0d3229bd"),
+                            Id = new Guid("3f884a48-046b-4d03-82a1-7bbdea139d94"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5680),
-                            CreatedIpAddress = "192.168.1.50",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2592),
+                            CreatedIpAddress = "192.168.1.37",
                             ExamNumber = (byte)3,
-                            Score = 47.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            Score = 53.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
                         },
                         new
                         {
-                            Id = new Guid("147342ea-ec9d-4194-adbc-ca68442b2854"),
+                            Id = new Guid("28a57bc7-b700-4a34-bb92-fd6f8dffd112"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5684),
-                            CreatedIpAddress = "192.168.1.5",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2597),
+                            CreatedIpAddress = "192.168.1.41",
                             ExamNumber = (byte)3,
-                            Score = 80.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            Score = 53.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
                         },
                         new
                         {
-                            Id = new Guid("1ab3fcf6-8514-4cd8-8667-eaeeeadfe3e4"),
+                            Id = new Guid("50a5bc22-3652-4688-a7ca-bf38d045160e"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5687),
-                            CreatedIpAddress = "192.168.1.46",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2601),
+                            CreatedIpAddress = "192.168.1.83",
                             ExamNumber = (byte)3,
-                            Score = 14.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            Score = 32.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
                         },
                         new
                         {
-                            Id = new Guid("38c789b7-5c30-46cc-beca-3f84b6213daa"),
+                            Id = new Guid("d07d725a-d9e6-4b34-a64a-895127eee7ba"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5691),
-                            CreatedIpAddress = "192.168.1.65",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2605),
+                            CreatedIpAddress = "192.168.1.28",
                             ExamNumber = (byte)3,
-                            Score = 97.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            Score = 76.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
                         },
                         new
                         {
-                            Id = new Guid("dc8f9c26-fee5-4c84-9432-88cc4fa89995"),
+                            Id = new Guid("a2c60650-af82-4861-addc-057c4de3ecf6"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5695),
-                            CreatedIpAddress = "192.168.1.89",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2626),
+                            CreatedIpAddress = "192.168.1.41",
                             ExamNumber = (byte)3,
-                            Score = 90.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            Score = 76.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("fcb0934b-e5b7-49f9-badd-16aca68d1727"),
+                            Id = new Guid("7c37f790-ba25-491f-91ae-3a65017a935d"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5699),
-                            CreatedIpAddress = "192.168.1.18",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2630),
+                            CreatedIpAddress = "192.168.1.73",
                             ExamNumber = (byte)3,
-                            Score = 59.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            Score = 80.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("b054bce4-c459-4aca-92d8-2a0ca8ee4917"),
+                            Id = new Guid("adb7c38e-d798-4ed2-8634-4d86624a6d3e"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5703),
-                            CreatedIpAddress = "192.168.1.52",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2634),
+                            CreatedIpAddress = "192.168.1.72",
                             ExamNumber = (byte)3,
-                            Score = 66.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            Score = 91.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("fcbe7df4-3758-4a88-bb6d-55d85a1388df"),
+                            Id = new Guid("62e9b04d-4556-49d5-987d-103a82cdd349"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5706),
-                            CreatedIpAddress = "192.168.1.91",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2638),
+                            CreatedIpAddress = "192.168.1.47",
                             ExamNumber = (byte)3,
-                            Score = 81.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            Score = 51.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("43844159-43bb-49f3-90f0-aca5b4907cb4"),
+                            Id = new Guid("c695b28c-0009-4acb-b6dd-48c5fbcdfb80"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5712),
-                            CreatedIpAddress = "192.168.1.81",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2642),
+                            CreatedIpAddress = "192.168.1.54",
                             ExamNumber = (byte)3,
-                            Score = 10.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            Score = 7.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("2fdc446c-e0e5-4fb2-9489-f802c93eacf8"),
+                            Id = new Guid("f6e1f258-b4ec-45e7-97c6-6e072fa604a9"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5716),
-                            CreatedIpAddress = "192.168.1.60",
-                            ExamNumber = (byte)3,
-                            Score = 72.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
-                        },
-                        new
-                        {
-                            Id = new Guid("a07bd9c5-8a4e-42f5-b1fc-0c3422cb4f33"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5719),
-                            CreatedIpAddress = "192.168.1.94",
-                            ExamNumber = (byte)3,
-                            Score = 71.0,
-                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
-                        },
-                        new
-                        {
-                            Id = new Guid("6aab4fb6-acfd-42ce-9748-b01e97e1fc13"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5723),
-                            CreatedIpAddress = "192.168.1.75",
-                            ExamNumber = (byte)3,
-                            Score = 48.0,
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
-                        },
-                        new
-                        {
-                            Id = new Guid("3639eb85-ff6b-4b51-9b73-0e10f2e35ca2"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5727),
-                            CreatedIpAddress = "192.168.1.9",
-                            ExamNumber = (byte)3,
-                            Score = 90.0,
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
-                        },
-                        new
-                        {
-                            Id = new Guid("339502d4-65c2-44e8-aa70-00c4f40afa75"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5732),
-                            CreatedIpAddress = "192.168.1.98",
-                            ExamNumber = (byte)3,
-                            Score = 55.0,
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
-                        },
-                        new
-                        {
-                            Id = new Guid("1b124077-526b-4814-b47f-0a004938d54d"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5736),
-                            CreatedIpAddress = "192.168.1.57",
-                            ExamNumber = (byte)3,
-                            Score = 13.0,
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("c63bb1fb-1955-4ed1-8b24-3a7e0d48aa52"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5741),
-                            CreatedIpAddress = "192.168.1.34",
-                            ExamNumber = (byte)3,
-                            Score = 76.0,
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
-                        },
-                        new
-                        {
-                            Id = new Guid("ec83978f-cede-4ad5-95d0-7c71d78ebe18"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5753),
-                            CreatedIpAddress = "192.168.1.58",
-                            ExamNumber = (byte)3,
-                            Score = 52.0,
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("24f65315-9d92-4547-9774-1e8cbb498a34"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5757),
-                            CreatedIpAddress = "192.168.1.62",
-                            ExamNumber = (byte)3,
-                            Score = 55.0,
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("0460eddf-675a-4b7f-b056-be433179b4b7"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5760),
-                            CreatedIpAddress = "192.168.1.10",
-                            ExamNumber = (byte)3,
-                            Score = 76.0,
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
-                        },
-                        new
-                        {
-                            Id = new Guid("e45a5407-b751-49a5-aaae-5a3405df86ad"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5764),
-                            CreatedIpAddress = "192.168.1.99",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2648),
+                            CreatedIpAddress = "192.168.1.72",
                             ExamNumber = (byte)3,
                             Score = 31.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
+                        },
+                        new
+                        {
+                            Id = new Guid("b677bd24-005b-458d-a97d-c5b8a0fda31d"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2652),
+                            CreatedIpAddress = "192.168.1.63",
+                            ExamNumber = (byte)3,
+                            Score = 40.0,
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
+                        },
+                        new
+                        {
+                            Id = new Guid("94a6a737-73fd-416e-9ba9-a29d08745d6d"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2656),
+                            CreatedIpAddress = "192.168.1.26",
+                            ExamNumber = (byte)3,
+                            Score = 5.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
+                        },
+                        new
+                        {
+                            Id = new Guid("077e8178-a2a9-4be2-aaf7-3bea16c76b8c"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2660),
+                            CreatedIpAddress = "192.168.1.43",
+                            ExamNumber = (byte)3,
+                            Score = 29.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
+                        },
+                        new
+                        {
+                            Id = new Guid("68ba76ef-75aa-4fad-8396-5259e563ab30"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2664),
+                            CreatedIpAddress = "192.168.1.63",
+                            ExamNumber = (byte)3,
+                            Score = 88.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
+                        },
+                        new
+                        {
+                            Id = new Guid("41d634ad-da95-4c13-95a4-c02d959817f1"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2668),
+                            CreatedIpAddress = "192.168.1.64",
+                            ExamNumber = (byte)3,
+                            Score = 54.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
+                        },
+                        new
+                        {
+                            Id = new Guid("56d23e18-d184-4904-a8d6-d5149cb6f1e3"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2672),
+                            CreatedIpAddress = "192.168.1.20",
+                            ExamNumber = (byte)3,
+                            Score = 35.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
+                        },
+                        new
+                        {
+                            Id = new Guid("b0e7f571-b354-45db-8710-13c33a37793e"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2676),
+                            CreatedIpAddress = "192.168.1.21",
+                            ExamNumber = (byte)3,
+                            Score = 89.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
+                        },
+                        new
+                        {
+                            Id = new Guid("8023b267-ee10-468a-a03b-d1acb5ab0e59"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2682),
+                            CreatedIpAddress = "192.168.1.15",
+                            ExamNumber = (byte)3,
+                            Score = 2.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("ad461891-fda8-417f-9069-0b4d9826e6dc"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2686),
+                            CreatedIpAddress = "192.168.1.55",
+                            ExamNumber = (byte)3,
+                            Score = 95.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                        },
+                        new
+                        {
+                            Id = new Guid("1e5d21ea-6f77-45a0-9848-c70a9c7933fd"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2690),
+                            CreatedIpAddress = "192.168.1.8",
+                            ExamNumber = (byte)3,
+                            Score = 13.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                        },
+                        new
+                        {
+                            Id = new Guid("b37a344b-548f-4066-9cc8-1567bffb5af1"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2694),
+                            CreatedIpAddress = "192.168.1.99",
+                            ExamNumber = (byte)3,
+                            Score = 21.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                        },
+                        new
+                        {
+                            Id = new Guid("e411d03f-0cfb-465d-8a8f-e6d47b172298"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2698),
+                            CreatedIpAddress = "192.168.1.27",
+                            ExamNumber = (byte)3,
+                            Score = 37.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("8153114b-a966-4883-a53f-ee0cf66078ef"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2702),
+                            CreatedIpAddress = "192.168.1.88",
+                            ExamNumber = (byte)3,
+                            Score = 24.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
+                        },
+                        new
+                        {
+                            Id = new Guid("55df16ef-b28e-4ff3-8555-3ac5d48945d5"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2706),
+                            CreatedIpAddress = "192.168.1.98",
+                            ExamNumber = (byte)3,
+                            Score = 7.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
+                        },
+                        new
+                        {
+                            Id = new Guid("a950f5cb-d56b-4e31-835d-c5c68f244c17"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2710),
+                            CreatedIpAddress = "192.168.1.10",
+                            ExamNumber = (byte)3,
+                            Score = 3.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
+                        },
+                        new
+                        {
+                            Id = new Guid("183072dc-afcb-4e5f-a00e-cd297d14098e"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2716),
+                            CreatedIpAddress = "192.168.1.16",
+                            ExamNumber = (byte)3,
+                            Score = 41.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
+                        },
+                        new
+                        {
+                            Id = new Guid("e9bdfb1a-cfd5-4e79-9fa6-2644229dd798"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2720),
+                            CreatedIpAddress = "192.168.1.1",
+                            ExamNumber = (byte)3,
+                            Score = 50.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
+                        },
+                        new
+                        {
+                            Id = new Guid("6eb2e3bb-94d4-4043-8d60-6d5590d181cc"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2724),
+                            CreatedIpAddress = "192.168.1.49",
+                            ExamNumber = (byte)3,
+                            Score = 81.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
+                        },
+                        new
+                        {
+                            Id = new Guid("971cbfe8-f758-4b98-94f5-b5d25f2493a2"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2728),
+                            CreatedIpAddress = "192.168.1.71",
+                            ExamNumber = (byte)3,
+                            Score = 22.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
+                        },
+                        new
+                        {
+                            Id = new Guid("8abb9875-da51-4728-ac4c-7d0f4d7d4ef3"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2732),
+                            CreatedIpAddress = "192.168.1.47",
+                            ExamNumber = (byte)3,
+                            Score = 58.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
+                        },
+                        new
+                        {
+                            Id = new Guid("8d52f41c-fdfe-49cf-9c8b-2abb4db1d79d"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2745),
+                            CreatedIpAddress = "192.168.1.67",
+                            ExamNumber = (byte)3,
+                            Score = 89.0,
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
+                        },
+                        new
+                        {
+                            Id = new Guid("db6ffb95-41a5-4e4a-b339-a5d1b90e1211"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2750),
+                            CreatedIpAddress = "192.168.1.60",
+                            ExamNumber = (byte)3,
+                            Score = 78.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
+                        },
+                        new
+                        {
+                            Id = new Guid("98d72b8d-6ec8-4989-a226-7d6a5e17dfb3"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2754),
+                            CreatedIpAddress = "192.168.1.17",
+                            ExamNumber = (byte)3,
+                            Score = 75.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
+                        },
+                        new
+                        {
+                            Id = new Guid("07ca0798-59f3-4fbd-a073-a9208848b0bb"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2759),
+                            CreatedIpAddress = "192.168.1.35",
+                            ExamNumber = (byte)3,
+                            Score = 47.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
+                        },
+                        new
+                        {
+                            Id = new Guid("aec8b92c-21f5-4523-8a21-e6c8675c8333"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2763),
+                            CreatedIpAddress = "192.168.1.38",
+                            ExamNumber = (byte)3,
+                            Score = 80.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
+                        },
+                        new
+                        {
+                            Id = new Guid("8040f643-5245-4e7e-ac6c-f3bb376fca4f"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2767),
+                            CreatedIpAddress = "192.168.1.17",
+                            ExamNumber = (byte)3,
+                            Score = 27.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
+                        },
+                        new
+                        {
+                            Id = new Guid("a14f19a0-6fdd-4673-8b69-17e58be2a1cf"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2771),
+                            CreatedIpAddress = "192.168.1.5",
+                            ExamNumber = (byte)3,
+                            Score = 5.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
+                        },
+                        new
+                        {
+                            Id = new Guid("05cc7b75-d091-40ea-b4e1-2d5987359e9d"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2775),
+                            CreatedIpAddress = "192.168.1.50",
+                            ExamNumber = (byte)3,
+                            Score = 0.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("7daae0d8-b603-45ea-a3d5-d277e268efea"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2779),
+                            CreatedIpAddress = "192.168.1.94",
+                            ExamNumber = (byte)3,
+                            Score = 81.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                        },
+                        new
+                        {
+                            Id = new Guid("eada136f-0e4a-40d4-aea9-34a1e258a552"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2783),
+                            CreatedIpAddress = "192.168.1.96",
+                            ExamNumber = (byte)3,
+                            Score = 35.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                        },
+                        new
+                        {
+                            Id = new Guid("2f188e53-2dc8-490b-b747-d9bc6166674c"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2787),
+                            CreatedIpAddress = "192.168.1.24",
+                            ExamNumber = (byte)3,
+                            Score = 39.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                        },
+                        new
+                        {
+                            Id = new Guid("c4549583-0b01-410e-8ce8-698d9dd8ebb8"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2793),
+                            CreatedIpAddress = "192.168.1.62",
+                            ExamNumber = (byte)3,
+                            Score = 6.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("b8d44d9d-e0d3-413d-aefe-ef2c943148d2"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2797),
+                            CreatedIpAddress = "192.168.1.37",
+                            ExamNumber = (byte)3,
+                            Score = 90.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
+                        },
+                        new
+                        {
+                            Id = new Guid("71ef5d8b-9919-4970-9b9c-5a0a05352c5a"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2801),
+                            CreatedIpAddress = "192.168.1.79",
+                            ExamNumber = (byte)3,
+                            Score = 74.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
+                        },
+                        new
+                        {
+                            Id = new Guid("c6e62132-ccd2-425c-9238-b170d80889be"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2805),
+                            CreatedIpAddress = "192.168.1.10",
+                            ExamNumber = (byte)3,
+                            Score = 87.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
+                        },
+                        new
+                        {
+                            Id = new Guid("7ed4ce89-a9da-4db2-9426-822a0d3194b6"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2809),
+                            CreatedIpAddress = "192.168.1.23",
+                            ExamNumber = (byte)3,
+                            Score = 0.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
+                        },
+                        new
+                        {
+                            Id = new Guid("47eb4891-39a4-400e-bd7b-2a44f4732e56"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2813),
+                            CreatedIpAddress = "192.168.1.55",
+                            ExamNumber = (byte)3,
+                            Score = 71.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
+                        },
+                        new
+                        {
+                            Id = new Guid("95c78d3b-29fa-482e-ab42-2c3fdb666f4a"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2817),
+                            CreatedIpAddress = "192.168.1.61",
+                            ExamNumber = (byte)3,
+                            Score = 19.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
+                        },
+                        new
+                        {
+                            Id = new Guid("677c6d16-7e4b-49b0-add8-656c191b6dbb"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2821),
+                            CreatedIpAddress = "192.168.1.77",
+                            ExamNumber = (byte)3,
+                            Score = 24.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
+                        },
+                        new
+                        {
+                            Id = new Guid("e72d08a3-e9c5-4004-b1b5-a5ee651343f6"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2827),
+                            CreatedIpAddress = "192.168.1.34",
+                            ExamNumber = (byte)3,
+                            Score = 47.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
+                        },
+                        new
+                        {
+                            Id = new Guid("d8f2a039-9e5d-427f-8d35-1024da3aed78"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2831),
+                            CreatedIpAddress = "192.168.1.98",
+                            ExamNumber = (byte)3,
+                            Score = 61.0,
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
+                        },
+                        new
+                        {
+                            Id = new Guid("e79893ab-9cbb-45e0-936a-94a8e6111a9e"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2835),
+                            CreatedIpAddress = "192.168.1.11",
+                            ExamNumber = (byte)3,
+                            Score = 65.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
+                        },
+                        new
+                        {
+                            Id = new Guid("4efed7a3-6bc9-4592-8bce-8268d5f932f2"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2839),
+                            CreatedIpAddress = "192.168.1.21",
+                            ExamNumber = (byte)3,
+                            Score = 31.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
+                        },
+                        new
+                        {
+                            Id = new Guid("9d12468d-d4db-491c-b567-be1035ea714f"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2843),
+                            CreatedIpAddress = "192.168.1.86",
+                            ExamNumber = (byte)3,
+                            Score = 34.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
+                        },
+                        new
+                        {
+                            Id = new Guid("da42dc3d-6e34-4771-b6f7-b1c1c646682f"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2847),
+                            CreatedIpAddress = "192.168.1.17",
+                            ExamNumber = (byte)3,
+                            Score = 41.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
+                        },
+                        new
+                        {
+                            Id = new Guid("4bf17fe2-8251-4739-b1d6-b95f1a1b7903"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2851),
+                            CreatedIpAddress = "192.168.1.55",
+                            ExamNumber = (byte)3,
+                            Score = 23.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
+                        },
+                        new
+                        {
+                            Id = new Guid("be4c613c-5b82-455c-a567-d611b4d3a127"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2855),
+                            CreatedIpAddress = "192.168.1.78",
+                            ExamNumber = (byte)3,
+                            Score = 66.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
+                        },
+                        new
+                        {
+                            Id = new Guid("74ebba5f-0459-4da5-9371-15b79edaa70f"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2861),
+                            CreatedIpAddress = "192.168.1.59",
+                            ExamNumber = (byte)3,
+                            Score = 66.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("246fe92e-21d6-4421-b2a7-a7b953a2b414"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2865),
+                            CreatedIpAddress = "192.168.1.75",
+                            ExamNumber = (byte)3,
+                            Score = 39.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                        },
+                        new
+                        {
+                            Id = new Guid("16508911-92fc-4858-bf66-29c59d67b481"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2869),
+                            CreatedIpAddress = "192.168.1.92",
+                            ExamNumber = (byte)3,
+                            Score = 76.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                        },
+                        new
+                        {
+                            Id = new Guid("1e219ae6-c996-4535-8cf0-0f79de0ba9e8"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2873),
+                            CreatedIpAddress = "192.168.1.35",
+                            ExamNumber = (byte)3,
+                            Score = 62.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                        },
+                        new
+                        {
+                            Id = new Guid("bb145656-396f-44c3-9dca-b9935d89a150"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2877),
+                            CreatedIpAddress = "192.168.1.8",
+                            ExamNumber = (byte)3,
+                            Score = 54.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("2567873b-7243-4313-9736-52018061942f"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2881),
+                            CreatedIpAddress = "192.168.1.25",
+                            ExamNumber = (byte)3,
+                            Score = 55.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
+                        },
+                        new
+                        {
+                            Id = new Guid("e00da24c-63f7-48d5-bed8-436a820cac17"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2885),
+                            CreatedIpAddress = "192.168.1.41",
+                            ExamNumber = (byte)3,
+                            Score = 93.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
+                        },
+                        new
+                        {
+                            Id = new Guid("01ed156f-8099-42a2-9830-412cdf459702"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2897),
+                            CreatedIpAddress = "192.168.1.69",
+                            ExamNumber = (byte)3,
+                            Score = 3.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
+                        },
+                        new
+                        {
+                            Id = new Guid("af9711f7-0361-4c6b-bcf5-51fb1f65ffbd"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2904),
+                            CreatedIpAddress = "192.168.1.23",
+                            ExamNumber = (byte)3,
+                            Score = 10.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
+                        },
+                        new
+                        {
+                            Id = new Guid("7cf31b8e-3851-4fbb-953f-aa73b3d35d71"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2908),
+                            CreatedIpAddress = "192.168.1.78",
+                            ExamNumber = (byte)3,
+                            Score = 36.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
+                        },
+                        new
+                        {
+                            Id = new Guid("bc4d3603-bd2e-4189-ae96-deb1c29b382b"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2912),
+                            CreatedIpAddress = "192.168.1.49",
+                            ExamNumber = (byte)3,
+                            Score = 51.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
+                        },
+                        new
+                        {
+                            Id = new Guid("30618fcc-fede-4d5f-b31d-86873e9d9232"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2916),
+                            CreatedIpAddress = "192.168.1.83",
+                            ExamNumber = (byte)3,
+                            Score = 26.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
+                        },
+                        new
+                        {
+                            Id = new Guid("fc9f1e2a-51ad-4bb2-979d-3ecefb727d8b"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2920),
+                            CreatedIpAddress = "192.168.1.33",
+                            ExamNumber = (byte)3,
+                            Score = 76.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
+                        },
+                        new
+                        {
+                            Id = new Guid("74dfca2c-cf5d-485f-81dc-f433e3c6379e"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2924),
+                            CreatedIpAddress = "192.168.1.83",
+                            ExamNumber = (byte)3,
+                            Score = 2.0,
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
+                        },
+                        new
+                        {
+                            Id = new Guid("f7ac8ec7-d3ac-471b-8d9f-0b755d5509d4"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2928),
+                            CreatedIpAddress = "192.168.1.5",
+                            ExamNumber = (byte)3,
+                            Score = 29.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
+                        },
+                        new
+                        {
+                            Id = new Guid("e6115647-d2d0-4e30-976c-1d9be5efd22c"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2932),
+                            CreatedIpAddress = "192.168.1.62",
+                            ExamNumber = (byte)3,
+                            Score = 66.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
+                        },
+                        new
+                        {
+                            Id = new Guid("d788871e-3c15-49c0-9347-758dd5f7baa7"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2938),
+                            CreatedIpAddress = "192.168.1.72",
+                            ExamNumber = (byte)3,
+                            Score = 77.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
+                        },
+                        new
+                        {
+                            Id = new Guid("4b3c5f00-30f8-4b39-94c9-4910b8ae5ed6"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2942),
+                            CreatedIpAddress = "192.168.1.58",
+                            ExamNumber = (byte)3,
+                            Score = 52.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
+                        },
+                        new
+                        {
+                            Id = new Guid("81ff655b-1e82-4fd5-a925-f4cef2f311a1"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2946),
+                            CreatedIpAddress = "192.168.1.51",
+                            ExamNumber = (byte)3,
+                            Score = 72.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
+                        },
+                        new
+                        {
+                            Id = new Guid("e401319c-1522-489e-be0b-810b27d4b6cc"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2950),
+                            CreatedIpAddress = "192.168.1.85",
+                            ExamNumber = (byte)3,
+                            Score = 90.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
+                        },
+                        new
+                        {
+                            Id = new Guid("aabfbeac-3ad2-471c-a319-b73cfd9948c9"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2954),
+                            CreatedIpAddress = "192.168.1.3",
+                            ExamNumber = (byte)3,
+                            Score = 8.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("ae9115b9-050c-4fa4-8c5c-6c12293300e1"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2958),
+                            CreatedIpAddress = "192.168.1.37",
+                            ExamNumber = (byte)3,
+                            Score = 62.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                        },
+                        new
+                        {
+                            Id = new Guid("4f838368-69cb-47ed-b2c1-8487494f9590"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2962),
+                            CreatedIpAddress = "192.168.1.42",
+                            ExamNumber = (byte)3,
+                            Score = 92.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                        },
+                        new
+                        {
+                            Id = new Guid("36de45b2-987a-437d-ade7-ea75f083a807"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2966),
+                            CreatedIpAddress = "192.168.1.73",
+                            ExamNumber = (byte)3,
+                            Score = 54.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                        },
+                        new
+                        {
+                            Id = new Guid("762e0385-65b3-4688-9194-49becf6e8fa3"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2972),
+                            CreatedIpAddress = "192.168.1.74",
+                            ExamNumber = (byte)3,
+                            Score = 77.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("d547f697-5bff-4db2-9a1d-4422834003a2"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2976),
+                            CreatedIpAddress = "192.168.1.27",
+                            ExamNumber = (byte)3,
+                            Score = 28.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
+                        },
+                        new
+                        {
+                            Id = new Guid("14a7221a-19cb-49c0-932b-aa8e95b8ad6e"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2980),
+                            CreatedIpAddress = "192.168.1.93",
+                            ExamNumber = (byte)3,
+                            Score = 70.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
+                        },
+                        new
+                        {
+                            Id = new Guid("14992c0f-edbb-4ef6-971a-1067d8fe67c4"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2984),
+                            CreatedIpAddress = "192.168.1.65",
+                            ExamNumber = (byte)3,
+                            Score = 87.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
+                        },
+                        new
+                        {
+                            Id = new Guid("89303a7d-68a9-4cd4-8518-b959649756e2"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2988),
+                            CreatedIpAddress = "192.168.1.58",
+                            ExamNumber = (byte)3,
+                            Score = 33.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
+                        },
+                        new
+                        {
+                            Id = new Guid("1cfb3154-dc36-4e85-8280-db43365aa78b"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2992),
+                            CreatedIpAddress = "192.168.1.23",
+                            ExamNumber = (byte)3,
+                            Score = 9.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
+                        },
+                        new
+                        {
+                            Id = new Guid("6a01e650-cc90-400d-bfd0-1b2af9b8728a"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(2996),
+                            CreatedIpAddress = "192.168.1.9",
+                            ExamNumber = (byte)3,
+                            Score = 43.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
+                        },
+                        new
+                        {
+                            Id = new Guid("8d652b38-573c-4199-ac19-396778f38e24"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3000),
+                            CreatedIpAddress = "192.168.1.85",
+                            ExamNumber = (byte)3,
+                            Score = 30.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
+                        },
+                        new
+                        {
+                            Id = new Guid("5fe374bd-a526-45ba-840a-04514d55cc33"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3006),
+                            CreatedIpAddress = "192.168.1.3",
+                            ExamNumber = (byte)3,
+                            Score = 96.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
+                        },
+                        new
+                        {
+                            Id = new Guid("883a9707-2a47-45e5-9a4d-370eaf1ec207"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3010),
+                            CreatedIpAddress = "192.168.1.88",
+                            ExamNumber = (byte)3,
+                            Score = 65.0,
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
+                        },
+                        new
+                        {
+                            Id = new Guid("b1ec0122-e39e-4377-bcf1-4964648c683c"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3015),
+                            CreatedIpAddress = "192.168.1.44",
+                            ExamNumber = (byte)3,
+                            Score = 53.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
+                        },
+                        new
+                        {
+                            Id = new Guid("f9583979-180e-41bc-9980-836d549c77ff"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3019),
+                            CreatedIpAddress = "192.168.1.67",
+                            ExamNumber = (byte)3,
+                            Score = 88.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
+                        },
+                        new
+                        {
+                            Id = new Guid("5e00ac87-2ac8-451f-8498-4417b0370d7c"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3023),
+                            CreatedIpAddress = "192.168.1.8",
+                            ExamNumber = (byte)3,
+                            Score = 5.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
+                        },
+                        new
+                        {
+                            Id = new Guid("26728dfd-f898-4fb6-a282-736867eca494"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3027),
+                            CreatedIpAddress = "192.168.1.84",
+                            ExamNumber = (byte)3,
+                            Score = 40.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
+                        },
+                        new
+                        {
+                            Id = new Guid("6b9cfdb2-8340-4f15-a869-8806e42f2f31"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3033),
+                            CreatedIpAddress = "192.168.1.10",
+                            ExamNumber = (byte)3,
+                            Score = 49.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
+                        },
+                        new
+                        {
+                            Id = new Guid("47d42c60-9a79-404f-8344-bfd87b4d183f"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3041),
+                            CreatedIpAddress = "192.168.1.29",
+                            ExamNumber = (byte)3,
+                            Score = 50.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
+                        },
+                        new
+                        {
+                            Id = new Guid("3fbe7f87-8115-42c0-b8f1-bb5941db8fe6"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3046),
+                            CreatedIpAddress = "192.168.1.63",
+                            ExamNumber = (byte)3,
+                            Score = 92.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("7b3266c3-62a9-4c8d-8f66-6a4ef625e494"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3058),
+                            CreatedIpAddress = "192.168.1.51",
+                            ExamNumber = (byte)3,
+                            Score = 89.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                        },
+                        new
+                        {
+                            Id = new Guid("137529ca-bfed-43db-aed2-f2b8ef3575fc"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3062),
+                            CreatedIpAddress = "192.168.1.55",
+                            ExamNumber = (byte)3,
+                            Score = 23.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                        },
+                        new
+                        {
+                            Id = new Guid("f8b3b242-72fa-4a42-8147-c658b0aa879f"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3066),
+                            CreatedIpAddress = "192.168.1.35",
+                            ExamNumber = (byte)3,
+                            Score = 80.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                        },
+                        new
+                        {
+                            Id = new Guid("fba77533-ce5d-434a-920c-89fa86574fbd"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3070),
+                            CreatedIpAddress = "192.168.1.19",
+                            ExamNumber = (byte)3,
+                            Score = 4.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("2b0da82d-2aa5-4021-8e80-b5c8905d65ec"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3074),
+                            CreatedIpAddress = "192.168.1.30",
+                            ExamNumber = (byte)3,
+                            Score = 61.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
+                        },
+                        new
+                        {
+                            Id = new Guid("b8a0c819-27f8-4ab2-a9e3-f347a7b7ebb1"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3078),
+                            CreatedIpAddress = "192.168.1.39",
+                            ExamNumber = (byte)3,
+                            Score = 39.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
+                        },
+                        new
+                        {
+                            Id = new Guid("efab8219-50e6-4215-b258-26518088648d"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3082),
+                            CreatedIpAddress = "192.168.1.42",
+                            ExamNumber = (byte)3,
+                            Score = 53.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
+                        },
+                        new
+                        {
+                            Id = new Guid("44390b9b-cabe-440e-aaca-3ef2568cef7b"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3088),
+                            CreatedIpAddress = "192.168.1.3",
+                            ExamNumber = (byte)3,
+                            Score = 95.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
+                        },
+                        new
+                        {
+                            Id = new Guid("1f5a6f7a-16d2-4993-8833-f6d57a3d0f82"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3092),
+                            CreatedIpAddress = "192.168.1.13",
+                            ExamNumber = (byte)3,
+                            Score = 2.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
+                        },
+                        new
+                        {
+                            Id = new Guid("b6e44f2c-acfa-4455-82e3-5fd96678ec61"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3096),
+                            CreatedIpAddress = "192.168.1.94",
+                            ExamNumber = (byte)3,
+                            Score = 29.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
+                        },
+                        new
+                        {
+                            Id = new Guid("149afb3b-c46b-4686-ada1-4837d953eedc"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3100),
+                            CreatedIpAddress = "192.168.1.68",
+                            ExamNumber = (byte)3,
+                            Score = 27.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
+                        },
+                        new
+                        {
+                            Id = new Guid("738110bd-3e51-46ec-8a75-cb2fa269cb49"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3104),
+                            CreatedIpAddress = "192.168.1.6",
+                            ExamNumber = (byte)3,
+                            Score = 73.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
+                        },
+                        new
+                        {
+                            Id = new Guid("9efb4e1d-b945-43c5-8419-d2c237d29bcf"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3108),
+                            CreatedIpAddress = "192.168.1.17",
+                            ExamNumber = (byte)3,
+                            Score = 32.0,
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
+                        },
+                        new
+                        {
+                            Id = new Guid("96679841-f097-44f7-a8c6-915ce9e83ead"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3112),
+                            CreatedIpAddress = "192.168.1.8",
+                            ExamNumber = (byte)3,
+                            Score = 7.0,
+                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
+                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
+                        },
+                        new
+                        {
+                            Id = new Guid("1ccbccbe-f8be-410e-ac7b-a0e779bccfac"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3116),
+                            CreatedIpAddress = "192.168.1.60",
+                            ExamNumber = (byte)3,
+                            Score = 6.0,
+                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
+                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
+                        },
+                        new
+                        {
+                            Id = new Guid("9877a311-ce52-4016-ae3b-4ef0b42577b6"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3122),
+                            CreatedIpAddress = "192.168.1.81",
+                            ExamNumber = (byte)3,
+                            Score = 27.0,
+                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
+                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
+                        },
+                        new
+                        {
+                            Id = new Guid("e0dc37d2-9105-4aff-80a1-6cf0cb88c9be"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3126),
+                            CreatedIpAddress = "192.168.1.33",
+                            ExamNumber = (byte)3,
+                            Score = 95.0,
+                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
+                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
+                        },
+                        new
+                        {
+                            Id = new Guid("d53a0713-8d1b-4f76-9ffa-6e26a7b8f323"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3130),
+                            CreatedIpAddress = "192.168.1.36",
+                            ExamNumber = (byte)3,
+                            Score = 29.0,
+                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
+                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
+                        },
+                        new
+                        {
+                            Id = new Guid("06cf5340-491f-45da-9fb6-dc344b27c41e"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3134),
+                            CreatedIpAddress = "192.168.1.15",
+                            ExamNumber = (byte)3,
+                            Score = 45.0,
+                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
+                        },
+                        new
+                        {
+                            Id = new Guid("00872bcc-f4f0-4729-8da8-3273681a2531"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3138),
+                            CreatedIpAddress = "192.168.1.82",
+                            ExamNumber = (byte)3,
+                            Score = 38.0,
+                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("6a95214b-7afa-47d5-8ef1-893861ef1c3b"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3142),
+                            CreatedIpAddress = "192.168.1.37",
+                            ExamNumber = (byte)3,
+                            Score = 53.0,
+                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
+                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                        },
+                        new
+                        {
+                            Id = new Guid("773e983d-6aa9-4946-b863-10a18882e435"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3146),
+                            CreatedIpAddress = "192.168.1.35",
+                            ExamNumber = (byte)3,
+                            Score = 72.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
                         },
                         new
                         {
-                            Id = new Guid("b7f92651-be24-4452-b1d0-113cbe9a7cef"),
+                            Id = new Guid("4dc541c9-fbfc-4331-a04e-f1c0b29c19fe"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5768),
-                            CreatedIpAddress = "192.168.1.73",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3150),
+                            CreatedIpAddress = "192.168.1.25",
                             ExamNumber = (byte)3,
-                            Score = 67.0,
+                            Score = 74.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
                         },
                         new
                         {
-                            Id = new Guid("6ace70dd-7518-4527-a925-9a5754a44dd8"),
+                            Id = new Guid("44c17664-d3df-4531-b728-882a5e6bcec1"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5772),
-                            CreatedIpAddress = "192.168.1.5",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3156),
+                            CreatedIpAddress = "192.168.1.47",
                             ExamNumber = (byte)3,
-                            Score = 71.0,
+                            Score = 42.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
                         },
                         new
                         {
-                            Id = new Guid("6db44493-6399-451a-8f71-608860bf993b"),
+                            Id = new Guid("d958173a-a458-4b39-af9b-481c02d29ebc"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5776),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3160),
                             CreatedIpAddress = "192.168.1.8",
                             ExamNumber = (byte)3,
-                            Score = 86.0,
+                            Score = 78.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
                         },
                         new
                         {
-                            Id = new Guid("42c4f2e7-ee22-4094-b1f8-0ca49cd04f84"),
+                            Id = new Guid("79e8923e-791e-4ff2-95a1-061a7a93ed26"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5780),
-                            CreatedIpAddress = "192.168.1.83",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3164),
+                            CreatedIpAddress = "192.168.1.86",
                             ExamNumber = (byte)3,
-                            Score = 61.0,
+                            Score = 75.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
                         },
                         new
                         {
-                            Id = new Guid("a7c48095-7fbb-4e5f-bda5-78323e1125d1"),
+                            Id = new Guid("3973b9dd-0036-40b8-8d51-e904b5335d3a"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5785),
-                            CreatedIpAddress = "192.168.1.6",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3168),
+                            CreatedIpAddress = "192.168.1.61",
                             ExamNumber = (byte)3,
-                            Score = 47.0,
+                            Score = 61.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("2931eb1a-1adb-4cd1-8ecc-ec4b1c8d0020"),
+                            Id = new Guid("6e712f8a-c322-4494-a984-eaef0b8217f6"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5789),
-                            CreatedIpAddress = "192.168.1.98",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3172),
+                            CreatedIpAddress = "192.168.1.16",
                             ExamNumber = (byte)3,
-                            Score = 88.0,
+                            Score = 36.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("4ef748e4-43f5-465f-ab5c-eb779099af9d"),
+                            Id = new Guid("01710294-713f-45c7-a7aa-6825c5b9788c"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5793),
-                            CreatedIpAddress = "192.168.1.22",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3176),
+                            CreatedIpAddress = "192.168.1.4",
                             ExamNumber = (byte)3,
-                            Score = 17.0,
+                            Score = 11.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("a209a088-8e7d-43fc-8821-79f6b378e435"),
+                            Id = new Guid("50a511ca-8e8d-4e38-8835-6c191a3835b7"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5797),
-                            CreatedIpAddress = "192.168.1.33",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3180),
+                            CreatedIpAddress = "192.168.1.7",
                             ExamNumber = (byte)3,
-                            Score = 81.0,
+                            Score = 43.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("a7cfee46-27a1-43a3-8e66-43fe81150a11"),
+                            Id = new Guid("744f7f99-613f-4978-aaf0-ca0b535946f8"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5801),
-                            CreatedIpAddress = "192.168.1.88",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3184),
+                            CreatedIpAddress = "192.168.1.86",
                             ExamNumber = (byte)3,
-                            Score = 4.0,
+                            Score = 73.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("c25ebf93-757e-40bb-a977-6f1e41d02ac9"),
+                            Id = new Guid("f46a20c7-4765-41aa-9a96-6e7bd03cea60"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5805),
-                            CreatedIpAddress = "192.168.1.10",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3190),
+                            CreatedIpAddress = "192.168.1.97",
                             ExamNumber = (byte)3,
-                            Score = 24.0,
+                            Score = 60.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("ef98ce3c-aa28-4309-a006-73cf1be1b284"),
+                            Id = new Guid("205cfd57-76ab-4779-85b5-b0a85954b42c"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5808),
-                            CreatedIpAddress = "192.168.1.64",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3194),
+                            CreatedIpAddress = "192.168.1.6",
                             ExamNumber = (byte)3,
-                            Score = 48.0,
+                            Score = 50.0,
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("2ac92bc6-dc2a-4283-8083-4ae65db0d4a7"),
+                            Id = new Guid("1c161d4e-7673-4a9f-b4bd-597a4001cf60"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5812),
-                            CreatedIpAddress = "192.168.1.36",
-                            ExamNumber = (byte)3,
-                            Score = 74.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
-                        },
-                        new
-                        {
-                            Id = new Guid("7328a810-aa3b-40d5-b1d7-4302e871edff"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5818),
-                            CreatedIpAddress = "192.168.1.4",
-                            ExamNumber = (byte)3,
-                            Score = 61.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
-                        },
-                        new
-                        {
-                            Id = new Guid("d461b062-f540-45c4-b010-f25e14427b3b"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5822),
-                            CreatedIpAddress = "192.168.1.36",
-                            ExamNumber = (byte)3,
-                            Score = 76.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
-                        },
-                        new
-                        {
-                            Id = new Guid("0c2c23fb-8ee3-4c01-ad68-44541b7475e6"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5825),
-                            CreatedIpAddress = "192.168.1.19",
-                            ExamNumber = (byte)3,
-                            Score = 55.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("8c41fc2a-dc89-4c94-8910-a27e553360c0"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5829),
-                            CreatedIpAddress = "192.168.1.91",
-                            ExamNumber = (byte)3,
-                            Score = 78.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
-                        },
-                        new
-                        {
-                            Id = new Guid("f99b2c0b-7cd4-46b6-bdf7-789e07e4a6eb"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5833),
-                            CreatedIpAddress = "192.168.1.84",
-                            ExamNumber = (byte)3,
-                            Score = 54.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
-                        },
-                        new
-                        {
-                            Id = new Guid("44b443f9-26fb-4fe1-93c8-d874887e14b8"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5837),
-                            CreatedIpAddress = "192.168.1.85",
-                            ExamNumber = (byte)3,
-                            Score = 34.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("515bfd3c-7941-41d7-b14e-8410167b6328"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5841),
-                            CreatedIpAddress = "192.168.1.4",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3198),
+                            CreatedIpAddress = "192.168.1.48",
                             ExamNumber = (byte)3,
                             Score = 36.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("7d6ff364-81de-473d-b63b-6a7c1827e05f"),
+                            Id = new Guid("d39f5fdb-fd79-46cf-8bd1-d15d37a8194d"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5845),
-                            CreatedIpAddress = "192.168.1.64",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3212),
+                            CreatedIpAddress = "192.168.1.34",
                             ExamNumber = (byte)3,
-                            Score = 64.0,
+                            Score = 99.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("0fc8a6ac-d587-4b96-a4e8-3201525eb92f"),
+                            Id = new Guid("1a8bb77d-fc41-49bf-bd5e-0c6fd8ef4184"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5851),
-                            CreatedIpAddress = "192.168.1.35",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3216),
+                            CreatedIpAddress = "192.168.1.9",
+                            ExamNumber = (byte)3,
+                            Score = 74.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
+                        },
+                        new
+                        {
+                            Id = new Guid("35ad1e67-5384-4666-8a1f-2de652d5f24e"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3220),
+                            CreatedIpAddress = "192.168.1.90",
+                            ExamNumber = (byte)3,
+                            Score = 50.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
+                        },
+                        new
+                        {
+                            Id = new Guid("6f2dabeb-7c6b-42ba-bc55-90c37b74b64a"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3224),
+                            CreatedIpAddress = "192.168.1.92",
+                            ExamNumber = (byte)3,
+                            Score = 59.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
+                        },
+                        new
+                        {
+                            Id = new Guid("e0ff90c2-d8ae-4d94-9f55-a92168b6a495"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3228),
+                            CreatedIpAddress = "192.168.1.68",
                             ExamNumber = (byte)3,
                             Score = 82.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
                         },
                         new
                         {
-                            Id = new Guid("3f0c89d4-5c0a-4dba-824b-40ce9a2b7c88"),
+                            Id = new Guid("d933768a-0007-466b-8f0e-026e782725b3"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5854),
-                            CreatedIpAddress = "192.168.1.44",
-                            ExamNumber = (byte)3,
-                            Score = 37.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
-                        },
-                        new
-                        {
-                            Id = new Guid("6d91dc67-8d4f-466e-bc4b-46605bea1751"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5858),
-                            CreatedIpAddress = "192.168.1.16",
-                            ExamNumber = (byte)3,
-                            Score = 35.0,
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("08b759f2-7860-45dd-b095-3bbe57ec2119"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5862),
-                            CreatedIpAddress = "192.168.1.51",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3234),
+                            CreatedIpAddress = "192.168.1.42",
                             ExamNumber = (byte)3,
                             Score = 61.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("997ed409-fad1-45c5-b9b2-c780264b8643"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3238),
+                            CreatedIpAddress = "192.168.1.10",
+                            ExamNumber = (byte)3,
+                            Score = 0.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                        },
+                        new
+                        {
+                            Id = new Guid("2f4ea0a3-7500-43d9-8024-28b6b7250c61"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3242),
+                            CreatedIpAddress = "192.168.1.5",
+                            ExamNumber = (byte)3,
+                            Score = 58.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                        },
+                        new
+                        {
+                            Id = new Guid("01938fac-fe28-4807-881b-834c5783ac68"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3246),
+                            CreatedIpAddress = "192.168.1.31",
+                            ExamNumber = (byte)3,
+                            Score = 51.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                        },
+                        new
+                        {
+                            Id = new Guid("d9d4a33b-7f54-4b06-897d-3af2249cc2d7"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3250),
+                            CreatedIpAddress = "192.168.1.60",
+                            ExamNumber = (byte)3,
+                            Score = 0.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("0b5f014b-7141-482a-b0ed-0bac9917cd8b"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3254),
+                            CreatedIpAddress = "192.168.1.8",
+                            ExamNumber = (byte)3,
+                            Score = 9.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
+                        },
+                        new
+                        {
+                            Id = new Guid("82895bff-52cb-4d76-b1f4-f75d720c3fdb"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3258),
+                            CreatedIpAddress = "192.168.1.16",
+                            ExamNumber = (byte)3,
+                            Score = 77.0,
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
                         },
                         new
                         {
-                            Id = new Guid("527e369c-65c6-4a2a-a050-6e7c9210d6d1"),
+                            Id = new Guid("38c0932a-97fb-403f-bf20-7d5ad4b3c96e"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5866),
-                            CreatedIpAddress = "192.168.1.89",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3262),
+                            CreatedIpAddress = "192.168.1.45",
                             ExamNumber = (byte)3,
-                            Score = 83.0,
+                            Score = 45.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("4eaa3696-4d6d-4503-ba15-751a122ac560"),
+                            Id = new Guid("fb112719-2ccd-41fc-acee-2502b61731fe"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5870),
-                            CreatedIpAddress = "192.168.1.28",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3268),
+                            CreatedIpAddress = "192.168.1.56",
                             ExamNumber = (byte)3,
-                            Score = 40.0,
+                            Score = 5.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("bb56d36c-3488-482a-afe2-3b6b007b87c1"),
+                            Id = new Guid("79145dab-cd8b-4802-add5-4b62c8664648"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5874),
-                            CreatedIpAddress = "192.168.1.15",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3272),
+                            CreatedIpAddress = "192.168.1.28",
                             ExamNumber = (byte)3,
-                            Score = 81.0,
+                            Score = 26.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("8509e85f-7dae-4a9f-a65b-d7d50b7bb860"),
+                            Id = new Guid("29029453-7fe9-4683-90fc-437a1511c4bc"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5878),
-                            CreatedIpAddress = "192.168.1.20",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3276),
+                            CreatedIpAddress = "192.168.1.97",
                             ExamNumber = (byte)3,
-                            Score = 92.0,
+                            Score = 46.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("ea093df3-27f3-4e67-9fcb-3051a7354701"),
+                            Id = new Guid("45faef8e-6ac1-4355-8120-d691da40ac6b"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5883),
-                            CreatedIpAddress = "192.168.1.7",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3280),
+                            CreatedIpAddress = "192.168.1.69",
                             ExamNumber = (byte)3,
-                            Score = 54.0,
+                            Score = 13.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("b304242e-085e-49a4-a0bf-07a84b15c95c"),
+                            Id = new Guid("e83b499a-2dd5-4fd3-855e-fcd5cfe0af25"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5887),
-                            CreatedIpAddress = "192.168.1.5",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3284),
+                            CreatedIpAddress = "192.168.1.65",
                             ExamNumber = (byte)3,
-                            Score = 54.0,
+                            Score = 78.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("94d96307-adbe-45d9-be30-308eef3c9e18"),
+                            Id = new Guid("92f892d3-fffb-4647-a106-78b6aa2ef79d"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5902),
-                            CreatedIpAddress = "192.168.1.96",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3288),
+                            CreatedIpAddress = "192.168.1.78",
                             ExamNumber = (byte)3,
-                            Score = 11.0,
+                            Score = 35.0,
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("11ca99e5-9a26-48ac-bb55-6e47ecab6e16"),
+                            Id = new Guid("ab847d97-6717-4c9b-afef-7afc6dfbe3f2"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5906),
-                            CreatedIpAddress = "192.168.1.41",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3292),
+                            CreatedIpAddress = "192.168.1.2",
                             ExamNumber = (byte)3,
-                            Score = 60.0,
+                            Score = 65.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("63fdbe03-8f99-4ffd-a754-a94796d6ce6b"),
+                            Id = new Guid("e1077508-9acd-42f3-8f2e-d6ce8e169083"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5909),
-                            CreatedIpAddress = "192.168.1.46",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3296),
+                            CreatedIpAddress = "192.168.1.85",
                             ExamNumber = (byte)3,
-                            Score = 99.0,
+                            Score = 95.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("169699bd-efab-4bf7-8a5f-0e87e58e2fd4"),
+                            Id = new Guid("b17bbc83-9e99-4943-8666-8fcc38d27ba6"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5913),
-                            CreatedIpAddress = "192.168.1.38",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3302),
+                            CreatedIpAddress = "192.168.1.60",
                             ExamNumber = (byte)3,
-                            Score = 86.0,
+                            Score = 35.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("24f39d28-e276-42b7-b145-104191fa768f"),
+                            Id = new Guid("36574a65-78c2-422a-879d-e59e7aebe364"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5917),
-                            CreatedIpAddress = "192.168.1.12",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3306),
+                            CreatedIpAddress = "192.168.1.38",
                             ExamNumber = (byte)3,
-                            Score = 56.0,
+                            Score = 93.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
                         },
                         new
                         {
-                            Id = new Guid("04f70f96-0003-4c7b-94a2-37522c1b25d1"),
+                            Id = new Guid("a83e9958-0861-4068-a178-fdd9479e5391"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5921),
-                            CreatedIpAddress = "192.168.1.3",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3310),
+                            CreatedIpAddress = "192.168.1.51",
                             ExamNumber = (byte)3,
-                            Score = 33.0,
+                            Score = 93.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("88032613-6593-4952-92a0-abcfa1eb36c1"),
+                            Id = new Guid("503c3324-c99d-4f6c-92b4-f4f8de2f49d3"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5926),
-                            CreatedIpAddress = "192.168.1.14",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3314),
+                            CreatedIpAddress = "192.168.1.52",
                             ExamNumber = (byte)3,
-                            Score = 68.0,
+                            Score = 5.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
                         },
                         new
                         {
-                            Id = new Guid("226ad083-20a4-441c-a3eb-bc963feb12a5"),
+                            Id = new Guid("834c3091-e347-4284-b705-355b0b47bda5"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5930),
-                            CreatedIpAddress = "192.168.1.23",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3318),
+                            CreatedIpAddress = "192.168.1.96",
                             ExamNumber = (byte)3,
-                            Score = 5.0,
+                            Score = 82.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
                         },
                         new
                         {
-                            Id = new Guid("099d27d5-5dbf-427a-9e38-94af6f85913f"),
+                            Id = new Guid("2b4795a2-5a1f-4910-8bfc-83ab3a9aa77e"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5934),
-                            CreatedIpAddress = "192.168.1.85",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3322),
+                            CreatedIpAddress = "192.168.1.34",
                             ExamNumber = (byte)3,
-                            Score = 14.0,
+                            Score = 26.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
                         },
                         new
                         {
-                            Id = new Guid("4387ff9a-6502-41c9-822a-2ca46e940816"),
+                            Id = new Guid("eda15dc5-beb8-4ae6-aae3-d57eae01ffc1"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5938),
-                            CreatedIpAddress = "192.168.1.61",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3326),
+                            CreatedIpAddress = "192.168.1.39",
                             ExamNumber = (byte)3,
-                            Score = 66.0,
+                            Score = 8.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
                         },
                         new
                         {
-                            Id = new Guid("1702b5dc-fb01-4ed1-b76c-d9d9d5b09b22"),
+                            Id = new Guid("48b03f0e-ca01-453e-b6e9-fdedf4299b21"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5942),
-                            CreatedIpAddress = "192.168.1.9",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3330),
+                            CreatedIpAddress = "192.168.1.75",
                             ExamNumber = (byte)3,
-                            Score = 58.0,
+                            Score = 96.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
                         },
                         new
                         {
-                            Id = new Guid("502ec6da-aa9c-4ac4-b3f9-dbaa16f7131a"),
+                            Id = new Guid("8cf9e82c-acb6-4fcc-a199-9db8bfe6590f"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5946),
-                            CreatedIpAddress = "192.168.1.69",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3335),
+                            CreatedIpAddress = "192.168.1.88",
                             ExamNumber = (byte)3,
-                            Score = 64.0,
+                            Score = 61.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
                         },
                         new
                         {
-                            Id = new Guid("9e95e871-8508-4e7c-a5ec-1fa57604785e"),
+                            Id = new Guid("6c69a772-c96a-46a1-a508-27a9c5968f81"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5949),
-                            CreatedIpAddress = "192.168.1.18",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3340),
+                            CreatedIpAddress = "192.168.1.75",
                             ExamNumber = (byte)3,
-                            Score = 5.0,
+                            Score = 69.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
                         },
                         new
                         {
-                            Id = new Guid("d5cae830-0d17-4267-abd3-025b02b26b68"),
+                            Id = new Guid("48881ae3-ffa5-4617-8dc6-963792cd8a78"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5953),
-                            CreatedIpAddress = "192.168.1.7",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3344),
+                            CreatedIpAddress = "192.168.1.5",
                             ExamNumber = (byte)3,
-                            Score = 10.0,
+                            Score = 18.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
                         },
                         new
                         {
-                            Id = new Guid("3a0c1860-0a1d-4951-82e5-2ac1786949ef"),
+                            Id = new Guid("e5c6f57b-0a4a-4a33-954b-6be312c0b8a4"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5959),
-                            CreatedIpAddress = "192.168.1.17",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3348),
+                            CreatedIpAddress = "192.168.1.97",
                             ExamNumber = (byte)3,
-                            Score = 67.0,
+                            Score = 73.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("928032bf-08b4-4341-8788-bba6890174a4"),
+                            Id = new Guid("948ee8fe-edf7-4a98-96b9-15abf4a652c9"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5963),
-                            CreatedIpAddress = "192.168.1.31",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3352),
+                            CreatedIpAddress = "192.168.1.39",
                             ExamNumber = (byte)3,
-                            Score = 58.0,
+                            Score = 7.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("93f51afa-1ae3-4ba2-b2c3-bf79672074c4"),
+                            Id = new Guid("03d23f09-7e3a-4116-b479-8df00fc5140b"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5966),
-                            CreatedIpAddress = "192.168.1.89",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3362),
+                            CreatedIpAddress = "192.168.1.27",
                             ExamNumber = (byte)3,
-                            Score = 75.0,
+                            Score = 85.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("0b7da110-3d1c-4d33-b572-903982e5b791"),
+                            Id = new Guid("8fea9866-abc8-484d-a709-b06175086d79"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5970),
-                            CreatedIpAddress = "192.168.1.53",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3367),
+                            CreatedIpAddress = "192.168.1.16",
                             ExamNumber = (byte)3,
-                            Score = 18.0,
+                            Score = 97.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("d8d6ac77-30b0-458c-ba22-8ba648dca348"),
+                            Id = new Guid("157247c3-02e2-4afd-a96c-55dc01b1fd99"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5974),
-                            CreatedIpAddress = "192.168.1.58",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3371),
+                            CreatedIpAddress = "192.168.1.69",
                             ExamNumber = (byte)3,
-                            Score = 37.0,
+                            Score = 92.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("bdd15efc-82bf-4cee-98ef-55ddc52886ad"),
+                            Id = new Guid("5a1143a6-11f3-45b5-a108-ddc8b1bf53af"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5978),
-                            CreatedIpAddress = "192.168.1.31",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3376),
+                            CreatedIpAddress = "192.168.1.82",
                             ExamNumber = (byte)3,
-                            Score = 54.0,
+                            Score = 15.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("ccd389bf-96c0-43fa-91a5-a3b9f99b4e7a"),
+                            Id = new Guid("747774db-b6bc-48b5-9a95-ae77def6c770"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5982),
-                            CreatedIpAddress = "192.168.1.73",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3380),
+                            CreatedIpAddress = "192.168.1.95",
                             ExamNumber = (byte)3,
-                            Score = 77.0,
+                            Score = 49.0,
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("6ad168cd-8124-41b8-98a5-387a90622f06"),
+                            Id = new Guid("c7f6fd1d-3624-4761-b536-f8f7a771f7b6"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5986),
-                            CreatedIpAddress = "192.168.1.65",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3385),
+                            CreatedIpAddress = "192.168.1.46",
                             ExamNumber = (byte)3,
-                            Score = 18.0,
+                            Score = 52.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("a8cd28d9-1ab4-43b3-809b-4c44b1baa3aa"),
+                            Id = new Guid("92e6755f-6f06-4df2-865b-ea70c02c5a35"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5991),
-                            CreatedIpAddress = "192.168.1.15",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3389),
+                            CreatedIpAddress = "192.168.1.14",
                             ExamNumber = (byte)3,
-                            Score = 23.0,
+                            Score = 0.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("e386502e-3a54-47bb-b8f4-621519985111"),
+                            Id = new Guid("e11705a5-ca83-4783-86de-df922adc265b"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5995),
-                            CreatedIpAddress = "192.168.1.26",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3393),
+                            CreatedIpAddress = "192.168.1.49",
                             ExamNumber = (byte)3,
-                            Score = 75.0,
+                            Score = 12.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("aae040d5-547e-48be-847e-e8ea9e52be44"),
+                            Id = new Guid("d2ed26e7-9fe0-4c2b-b5de-2366439863ec"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(5999),
-                            CreatedIpAddress = "192.168.1.53",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3397),
+                            CreatedIpAddress = "192.168.1.99",
                             ExamNumber = (byte)3,
-                            Score = 84.0,
+                            Score = 3.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
                         },
                         new
                         {
-                            Id = new Guid("f69a8d72-5369-41f3-ad09-fa364dad0653"),
+                            Id = new Guid("3b99b03e-0468-41e5-b603-6cff4a03d40c"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6002),
-                            CreatedIpAddress = "192.168.1.74",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3401),
+                            CreatedIpAddress = "192.168.1.76",
                             ExamNumber = (byte)3,
-                            Score = 92.0,
+                            Score = 24.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("f799cc56-97a8-457f-a08b-48af877af975"),
+                            Id = new Guid("633054dc-b9fa-4534-9e15-1463eb997b2f"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6006),
-                            CreatedIpAddress = "192.168.1.33",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3405),
+                            CreatedIpAddress = "192.168.1.24",
                             ExamNumber = (byte)3,
-                            Score = 14.0,
+                            Score = 24.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
                         },
                         new
                         {
-                            Id = new Guid("b75f6665-c532-423f-a6a1-572ee2d8f079"),
+                            Id = new Guid("c6f53cd9-818c-46f7-9d1d-9de1c28bcf41"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6010),
-                            CreatedIpAddress = "192.168.1.48",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3410),
+                            CreatedIpAddress = "192.168.1.33",
                             ExamNumber = (byte)3,
-                            Score = 80.0,
+                            Score = 8.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
                         },
                         new
                         {
-                            Id = new Guid("7873aad5-a800-4677-b54b-4109bcfcb451"),
+                            Id = new Guid("586e370b-4ed2-472c-b6ed-ecac6fc6b2f5"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6014),
-                            CreatedIpAddress = "192.168.1.58",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3414),
+                            CreatedIpAddress = "192.168.1.15",
                             ExamNumber = (byte)3,
-                            Score = 54.0,
+                            Score = 16.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
                         },
                         new
                         {
-                            Id = new Guid("28ad959d-63d1-4b5f-9b8e-71489ca9c893"),
+                            Id = new Guid("94332081-c55e-4f5d-ac6a-7b90e56813d2"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6018),
-                            CreatedIpAddress = "192.168.1.77",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3418),
+                            CreatedIpAddress = "192.168.1.70",
+                            ExamNumber = (byte)3,
+                            Score = 64.0,
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                        },
+                        new
+                        {
+                            Id = new Guid("1c971f82-84cd-46bc-8ab8-4745d5aa2612"),
+                            CreatedComputerName = "Computer2",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3422),
+                            CreatedIpAddress = "192.168.1.89",
                             ExamNumber = (byte)3,
                             Score = 90.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
-                        },
-                        new
-                        {
-                            Id = new Guid("8e662657-db01-453e-b5e9-ce97d58de65e"),
-                            CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6023),
-                            CreatedIpAddress = "192.168.1.54",
-                            ExamNumber = (byte)3,
-                            Score = 34.0,
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
                         },
                         new
                         {
-                            Id = new Guid("d9e20262-bdb7-4342-af9e-28e753baeb17"),
+                            Id = new Guid("8671fcaf-944b-4010-aebe-6755191a5923"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6027),
-                            CreatedIpAddress = "192.168.1.83",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3426),
+                            CreatedIpAddress = "192.168.1.42",
                             ExamNumber = (byte)3,
-                            Score = 23.0,
+                            Score = 1.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
                         },
                         new
                         {
-                            Id = new Guid("bfe1a57a-fdab-431d-8169-ca4626b14f13"),
+                            Id = new Guid("9f9e9473-16bb-46ce-a969-ff501a3d54d6"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6031),
-                            CreatedIpAddress = "192.168.1.4",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3431),
+                            CreatedIpAddress = "192.168.1.89",
                             ExamNumber = (byte)3,
-                            Score = 16.0,
+                            Score = 40.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
                         },
                         new
                         {
-                            Id = new Guid("96b39b50-daed-48eb-9988-ae5d946cff6a"),
+                            Id = new Guid("e09a22a6-b015-40f3-aef7-92dd9a7e15e5"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6035),
-                            CreatedIpAddress = "192.168.1.84",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3435),
+                            CreatedIpAddress = "192.168.1.55",
                             ExamNumber = (byte)3,
-                            Score = 41.0,
+                            Score = 34.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
                         },
                         new
                         {
-                            Id = new Guid("b2578120-5d83-47a9-8082-b963be4df366"),
+                            Id = new Guid("19e9799e-1ea8-416d-b067-357aa1b349de"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6055),
-                            CreatedIpAddress = "192.168.1.89",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3439),
+                            CreatedIpAddress = "192.168.1.39",
                             ExamNumber = (byte)3,
-                            Score = 1.0,
+                            Score = 50.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("af10df0c-103d-49a8-90b1-871bd0a68462"),
+                            Id = new Guid("af9d2062-14ba-40b0-a169-2e642f8146e8"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6058),
-                            CreatedIpAddress = "192.168.1.75",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3444),
+                            CreatedIpAddress = "192.168.1.84",
                             ExamNumber = (byte)3,
-                            Score = 29.0,
+                            Score = 46.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("ca5252bf-b585-4a63-b048-81d93afff199"),
+                            Id = new Guid("4d3931ff-27df-4240-b381-b204ab149313"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6062),
-                            CreatedIpAddress = "192.168.1.7",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3448),
+                            CreatedIpAddress = "192.168.1.51",
                             ExamNumber = (byte)3,
-                            Score = 56.0,
+                            Score = 26.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("9e9afd62-5184-4241-ad9e-c6fb2a136b52"),
+                            Id = new Guid("27bc8256-6cc4-4a2a-8013-408f45dac58e"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6066),
-                            CreatedIpAddress = "192.168.1.8",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3452),
+                            CreatedIpAddress = "192.168.1.3",
                             ExamNumber = (byte)3,
-                            Score = 16.0,
+                            Score = 31.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("0cb3bbd6-d331-4f91-8293-07632464803a"),
+                            Id = new Guid("6af72ebb-866d-44ca-9dfa-b5f739748d51"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6072),
-                            CreatedIpAddress = "192.168.1.52",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3457),
+                            CreatedIpAddress = "192.168.1.86",
                             ExamNumber = (byte)3,
-                            Score = 72.0,
+                            Score = 44.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("22f59bc7-f686-404c-86b4-4fffdecf57d0"),
+                            Id = new Guid("f40eb02c-a05a-483d-93b0-309dc6eb30c5"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6076),
-                            CreatedIpAddress = "192.168.1.86",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3461),
+                            CreatedIpAddress = "192.168.1.50",
                             ExamNumber = (byte)3,
-                            Score = 49.0,
+                            Score = 43.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("ab96a842-602a-4f71-8b4c-f50465c8c83b"),
+                            Id = new Guid("581f52c7-f54d-4119-91c3-23afc8437bd5"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6080),
-                            CreatedIpAddress = "192.168.1.27",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3465),
+                            CreatedIpAddress = "192.168.1.58",
                             ExamNumber = (byte)3,
-                            Score = 88.0,
+                            Score = 68.0,
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         },
                         new
                         {
-                            Id = new Guid("5db28f59-c5ab-4213-846c-b9e0cb79a1bb"),
+                            Id = new Guid("77683d5a-e3ae-41a9-83ca-cdfb29ecd91a"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6084),
-                            CreatedIpAddress = "192.168.1.69",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3469),
+                            CreatedIpAddress = "192.168.1.82",
                             ExamNumber = (byte)3,
-                            Score = 88.0,
+                            Score = 29.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
                         },
                         new
                         {
-                            Id = new Guid("1fb1cfd8-737f-4a77-a19e-88165cf6aa2b"),
+                            Id = new Guid("f90f418d-e7b7-4391-ad54-fc0bd00c5d1b"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6087),
-                            CreatedIpAddress = "192.168.1.28",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3473),
+                            CreatedIpAddress = "192.168.1.68",
                             ExamNumber = (byte)3,
-                            Score = 24.0,
+                            Score = 29.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
                         },
                         new
                         {
-                            Id = new Guid("f78adfd8-51d5-46e1-9d0d-24c1df55dd9c"),
+                            Id = new Guid("9d7b9e30-01cd-49b4-b0dd-5030a84bf056"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6091),
-                            CreatedIpAddress = "192.168.1.8",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3478),
+                            CreatedIpAddress = "192.168.1.3",
                             ExamNumber = (byte)3,
-                            Score = 24.0,
+                            Score = 18.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("1f71a6f4-a27e-4623-8c8c-1e50b996f81b"),
+                            Id = new Guid("5870dbaf-a1f9-430a-a56b-26f8d5ae800d"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6095),
-                            CreatedIpAddress = "192.168.1.25",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3482),
+                            CreatedIpAddress = "192.168.1.55",
                             ExamNumber = (byte)3,
-                            Score = 83.0,
+                            Score = 84.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
                         },
                         new
                         {
-                            Id = new Guid("763b39ea-4889-4aa5-bd58-f03b12b22278"),
+                            Id = new Guid("0502019f-b8bd-41fb-85f5-7875d630f779"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6099),
-                            CreatedIpAddress = "192.168.1.38",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3486),
+                            CreatedIpAddress = "192.168.1.10",
                             ExamNumber = (byte)3,
-                            Score = 48.0,
+                            Score = 70.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("08170bf0-79f6-43ad-8cf3-c333d7bb09f7"),
+                            Id = new Guid("3a8efe9f-7e56-4d14-abef-86953e57d401"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6104),
-                            CreatedIpAddress = "192.168.1.77",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3490),
+                            CreatedIpAddress = "192.168.1.56",
                             ExamNumber = (byte)3,
-                            Score = 28.0,
+                            Score = 21.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
                         },
                         new
                         {
-                            Id = new Guid("a981e2a8-6bce-4861-8fc9-c9a4de149e14"),
+                            Id = new Guid("0ec61aa8-3ca8-422a-ade9-1178b4d33891"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6108),
-                            CreatedIpAddress = "192.168.1.48",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3496),
+                            CreatedIpAddress = "192.168.1.74",
                             ExamNumber = (byte)3,
-                            Score = 54.0,
+                            Score = 0.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
                         },
                         new
                         {
-                            Id = new Guid("1aa3ee72-6f4c-4d1a-9543-a1f9f1f79041"),
+                            Id = new Guid("daa2d8e1-fc2e-4010-9d05-4afaa70a204b"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6112),
-                            CreatedIpAddress = "192.168.1.71",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3502),
+                            CreatedIpAddress = "192.168.1.91",
                             ExamNumber = (byte)3,
-                            Score = 4.0,
+                            Score = 14.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
                         },
                         new
                         {
-                            Id = new Guid("4b6ae6a9-d192-4842-9425-94bc2e0e02f3"),
+                            Id = new Guid("ca64119e-434b-4feb-b9ed-8caae7b8eee4"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6116),
-                            CreatedIpAddress = "192.168.1.64",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3506),
+                            CreatedIpAddress = "192.168.1.89",
                             ExamNumber = (byte)3,
-                            Score = 25.0,
+                            Score = 0.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
                         },
                         new
                         {
-                            Id = new Guid("74f309a8-7d27-4a86-abfc-77e4f9d39520"),
+                            Id = new Guid("aee9f9b5-e726-418c-a0eb-b1ec59b1b8e3"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6120),
-                            CreatedIpAddress = "192.168.1.80",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3517),
+                            CreatedIpAddress = "192.168.1.65",
                             ExamNumber = (byte)3,
-                            Score = 82.0,
+                            Score = 43.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
                         },
                         new
                         {
-                            Id = new Guid("58e6e566-e05c-4b3c-b11f-1bd083d271ac"),
+                            Id = new Guid("5caa5081-6223-44c5-a294-c738e4e6e34a"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6124),
-                            CreatedIpAddress = "192.168.1.82",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3523),
+                            CreatedIpAddress = "192.168.1.35",
                             ExamNumber = (byte)3,
-                            Score = 70.0,
+                            Score = 71.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
                         },
                         new
                         {
-                            Id = new Guid("5aba373f-c621-40b6-9fbf-4c0b3b92b20c"),
+                            Id = new Guid("b3f37ce5-3fab-4edf-b41f-fdc1eba1d506"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6128),
-                            CreatedIpAddress = "192.168.1.38",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3527),
+                            CreatedIpAddress = "192.168.1.44",
                             ExamNumber = (byte)3,
-                            Score = 66.0,
+                            Score = 1.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
                         },
                         new
                         {
-                            Id = new Guid("db8c1e35-e392-4ca0-aa33-1686d94fdaf2"),
+                            Id = new Guid("cd0f1298-7a0e-493b-8641-31e01cbbd0f7"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6131),
-                            CreatedIpAddress = "192.168.1.83",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3531),
+                            CreatedIpAddress = "192.168.1.46",
                             ExamNumber = (byte)3,
                             Score = 98.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
@@ -8674,78 +8171,78 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("885e3b6e-0540-40cb-860f-11b74e5fc4e5"),
+                            Id = new Guid("506b747f-4fc5-4409-9366-668472c9bee8"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6137),
-                            CreatedIpAddress = "192.168.1.30",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3536),
+                            CreatedIpAddress = "192.168.1.17",
                             ExamNumber = (byte)3,
-                            Score = 79.0,
+                            Score = 25.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("48e5029f-04e0-474c-97ab-bff238fc65d8"),
+                            Id = new Guid("f7bbbcef-1af6-45f0-9c8b-6a0ecd7debc8"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6141),
-                            CreatedIpAddress = "192.168.1.16",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3539),
+                            CreatedIpAddress = "192.168.1.27",
                             ExamNumber = (byte)3,
-                            Score = 56.0,
+                            Score = 39.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("9802806a-73cf-4066-91b3-6ad9a8967548"),
+                            Id = new Guid("1e2be50e-d961-4fdf-9433-0daf6a851412"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6145),
-                            CreatedIpAddress = "192.168.1.37",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3544),
+                            CreatedIpAddress = "192.168.1.34",
                             ExamNumber = (byte)3,
-                            Score = 91.0,
+                            Score = 92.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("178264a7-79db-45bc-a03a-8dbf54c662bd"),
+                            Id = new Guid("eccec721-6648-4dd2-8e05-ed2f0ea6a341"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6148),
-                            CreatedIpAddress = "192.168.1.48",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3548),
+                            CreatedIpAddress = "192.168.1.64",
                             ExamNumber = (byte)3,
-                            Score = 53.0,
+                            Score = 29.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("89f79fcc-7c00-465b-8f32-ba3c4b8b80cf"),
+                            Id = new Guid("61f5a96c-2d31-4277-9fe1-ccb5b36eba3f"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6152),
-                            CreatedIpAddress = "192.168.1.57",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3552),
+                            CreatedIpAddress = "192.168.1.32",
                             ExamNumber = (byte)3,
-                            Score = 81.0,
+                            Score = 77.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
                         },
                         new
                         {
-                            Id = new Guid("53cb6c50-2829-495d-8984-b945363c75b2"),
+                            Id = new Guid("c5aa250b-956e-4a6a-8282-f50d7a37e9c7"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6156),
-                            CreatedIpAddress = "192.168.1.16",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3557),
+                            CreatedIpAddress = "192.168.1.54",
                             ExamNumber = (byte)3,
-                            Score = 71.0,
+                            Score = 73.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         },
                         new
                         {
-                            Id = new Guid("2c291d6b-effa-4192-9cd2-6d96a022dc44"),
+                            Id = new Guid("ed879f13-9578-45ba-9b5e-e4ce0dd30e42"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(6160),
-                            CreatedIpAddress = "192.168.1.24",
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(3561),
+                            CreatedIpAddress = "192.168.1.86",
                             ExamNumber = (byte)3,
-                            Score = 71.0,
+                            Score = 17.0,
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
                         });
@@ -8795,7 +8292,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("11111111-1111-1111-1111-111111111111"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(7024),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(4541),
                             CreatedIpAddress = "192.168.1.1",
                             Name = "Matematik"
                         },
@@ -8803,7 +8300,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("22222222-2222-2222-2222-222222222222"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(7032),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(4545),
                             CreatedIpAddress = "192.168.1.2",
                             Name = "Türkçe"
                         },
@@ -8811,7 +8308,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("33333333-3333-3333-3333-333333333333"),
                             CreatedComputerName = "Computer3",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(7033),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(4546),
                             CreatedIpAddress = "192.168.1.3",
                             Name = "Biyoloji"
                         },
@@ -8819,7 +8316,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("44444444-4444-4444-4444-444444444444"),
                             CreatedComputerName = "Computer4",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(7035),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(4548),
                             CreatedIpAddress = "192.168.1.4",
                             Name = "Fizik"
                         },
@@ -8827,7 +8324,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("55555555-5555-5555-5555-555555555555"),
                             CreatedComputerName = "Computer5",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(7036),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(4550),
                             CreatedIpAddress = "192.168.1.5",
                             Name = "Kimya"
                         },
@@ -8835,7 +8332,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("66666666-6666-6666-6666-666666666666"),
                             CreatedComputerName = "Computer6",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(7039),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(4552),
                             CreatedIpAddress = "192.168.1.6",
                             Name = "Tarih"
                         },
@@ -8843,7 +8340,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("77777777-7777-7777-7777-777777777777"),
                             CreatedComputerName = "Computer7",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(7041),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(4554),
                             CreatedIpAddress = "192.168.1.7",
                             Name = "Coğrafya"
                         },
@@ -8851,7 +8348,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("88888888-8888-8888-8888-888888888888"),
                             CreatedComputerName = "Computer8",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(7042),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(4555),
                             CreatedIpAddress = "192.168.1.8",
                             Name = "İngilizce"
                         },
@@ -8859,7 +8356,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("99999999-9999-9999-9999-999999999999"),
                             CreatedComputerName = "Computer9",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(7044),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(4557),
                             CreatedIpAddress = "192.168.1.9",
                             Name = "Müzik"
                         },
@@ -8867,7 +8364,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
                             CreatedComputerName = "Computer10",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(7046),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(4559),
                             CreatedIpAddress = "192.168.1.10",
                             Name = "Görsel Sanatlar"
                         });
@@ -9068,10 +8565,9 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         new
                         {
                             Id = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            ClassroomId = new Guid("666917cb-ccff-46e2-81be-1dc06b74ddcb"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(9345),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7012),
                             CreatedIpAddress = "192.168.1.1",
                             FirstName = "Fatma",
                             GPA = 88.200000000000003,
@@ -9084,10 +8580,9 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         new
                         {
                             Id = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            ClassroomId = new Guid("666917cb-ccff-46e2-81be-1dc06b74ddcb"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(9349),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7015),
                             CreatedIpAddress = "192.168.1.2",
                             FirstName = "Mustafa",
                             GPA = 95.0,
@@ -9100,10 +8595,9 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         new
                         {
                             Id = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            ClassroomId = new Guid("666917cb-ccff-46e2-81be-1dc06b74ddcb"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer3",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(9352),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7017),
                             CreatedIpAddress = "192.168.1.3",
                             FirstName = "Zeynep",
                             GPA = 82.700000000000003,
@@ -9116,10 +8610,9 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         new
                         {
                             Id = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            ClassroomId = new Guid("666917cb-ccff-46e2-81be-1dc06b74ddcb"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer4",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(9354),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7019),
                             CreatedIpAddress = "192.168.1.4",
                             FirstName = "Ayşe",
                             GPA = 91.5,
@@ -9132,10 +8625,9 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         new
                         {
                             Id = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            ClassroomId = new Guid("22d118a6-a81b-435f-a4c7-ffed69e37f12"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer5",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(9356),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7021),
                             CreatedIpAddress = "192.168.1.5",
                             FirstName = "Ahmet",
                             GPA = 79.799999999999997,
@@ -9148,10 +8640,9 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         new
                         {
                             Id = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            ClassroomId = new Guid("22d118a6-a81b-435f-a4c7-ffed69e37f12"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer6",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(9360),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7024),
                             CreatedIpAddress = "192.168.1.6",
                             FirstName = "Emine",
                             GPA = 87.299999999999997,
@@ -9164,10 +8655,9 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         new
                         {
                             Id = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            ClassroomId = new Guid("22d118a6-a81b-435f-a4c7-ffed69e37f12"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer7",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(9362),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7026),
                             CreatedIpAddress = "192.168.1.7",
                             FirstName = "Mehmet",
                             GPA = 83.599999999999994,
@@ -9180,10 +8670,9 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         new
                         {
                             Id = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            ClassroomId = new Guid("05c0da3b-87a7-4b85-b3e6-aa133dbab5f0"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer8",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(9364),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7028),
                             CreatedIpAddress = "192.168.1.8",
                             FirstName = "Fatih",
                             GPA = 94.200000000000003,
@@ -9196,10 +8685,9 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         new
                         {
                             Id = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            ClassroomId = new Guid("05c0da3b-87a7-4b85-b3e6-aa133dbab5f0"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer9",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(9367),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7031),
                             CreatedIpAddress = "192.168.1.9",
                             FirstName = "Elif",
                             GPA = 78.900000000000006,
@@ -9212,10 +8700,9 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         new
                         {
                             Id = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
-                            ClassroomId = new Guid("05c0da3b-87a7-4b85-b3e6-aa133dbab5f0"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer10",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(9370),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7033),
                             CreatedIpAddress = "192.168.1.10",
                             FirstName = "Ali",
                             GPA = 88.700000000000003,
@@ -9228,10 +8715,9 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         new
                         {
                             Id = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            ClassroomId = new Guid("7a3741e2-d501-4710-b0c9-a0a53142ad79"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer11",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(9372),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7035),
                             CreatedIpAddress = "192.168.1.11",
                             FirstName = "Sema",
                             GPA = 85.400000000000006,
@@ -9244,10 +8730,9 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         new
                         {
                             Id = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            ClassroomId = new Guid("7a3741e2-d501-4710-b0c9-a0a53142ad79"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer12",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 264, DateTimeKind.Utc).AddTicks(9375),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7037),
                             CreatedIpAddress = "192.168.1.12",
                             FirstName = "Can",
                             GPA = 92.099999999999994,
@@ -9315,7 +8800,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54"),
                             Code = "MAT101",
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 265, DateTimeKind.Utc).AddTicks(51),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7744),
                             CreatedIpAddress = "192.168.1.1",
                             MainCourseId = new Guid("11111111-1111-1111-1111-111111111111"),
                             Position = 1,
@@ -9326,7 +8811,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2"),
                             Code = "MAT102",
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 265, DateTimeKind.Utc).AddTicks(54),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7746),
                             CreatedIpAddress = "192.168.1.2",
                             MainCourseId = new Guid("11111111-1111-1111-1111-111111111111"),
                             Position = 2,
@@ -9337,7 +8822,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e"),
                             Code = "TUR101",
                             CreatedComputerName = "Computer3",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 265, DateTimeKind.Utc).AddTicks(57),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7749),
                             CreatedIpAddress = "192.168.1.3",
                             MainCourseId = new Guid("22222222-2222-2222-2222-222222222222"),
                             Position = 1,
@@ -9348,7 +8833,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48"),
                             Code = "TUR102",
                             CreatedComputerName = "Computer4",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 265, DateTimeKind.Utc).AddTicks(58),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7751),
                             CreatedIpAddress = "192.168.1.4",
                             MainCourseId = new Guid("22222222-2222-2222-2222-222222222222"),
                             Position = 2,
@@ -9359,7 +8844,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab"),
                             Code = "BIO101",
                             CreatedComputerName = "Computer5",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 265, DateTimeKind.Utc).AddTicks(70),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7753),
                             CreatedIpAddress = "192.168.1.5",
                             MainCourseId = new Guid("33333333-3333-3333-3333-333333333333"),
                             Position = 1,
@@ -9370,7 +8855,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("c0340c3c-9153-4951-969d-1b0136758af7"),
                             Code = "BIO102",
                             CreatedComputerName = "Computer6",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 265, DateTimeKind.Utc).AddTicks(72),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7756),
                             CreatedIpAddress = "192.168.1.6",
                             MainCourseId = new Guid("33333333-3333-3333-3333-333333333333"),
                             Position = 2,
@@ -9381,7 +8866,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1"),
                             Code = "PHY101",
                             CreatedComputerName = "Computer7",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 265, DateTimeKind.Utc).AddTicks(74),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7758),
                             CreatedIpAddress = "192.168.1.7",
                             MainCourseId = new Guid("44444444-4444-4444-4444-444444444444"),
                             Position = 1,
@@ -9392,7 +8877,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c"),
                             Code = "PHY102",
                             CreatedComputerName = "Computer8",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 265, DateTimeKind.Utc).AddTicks(76),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7760),
                             CreatedIpAddress = "192.168.1.8",
                             MainCourseId = new Guid("44444444-4444-4444-4444-444444444444"),
                             Position = 2,
@@ -9403,7 +8888,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9"),
                             Code = "CHEM101",
                             CreatedComputerName = "Computer9",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 265, DateTimeKind.Utc).AddTicks(78),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7762),
                             CreatedIpAddress = "192.168.1.9",
                             MainCourseId = new Guid("55555555-5555-5555-5555-555555555555"),
                             Position = 1,
@@ -9414,7 +8899,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a"),
                             Code = "CHEM102",
                             CreatedComputerName = "Computer10",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 265, DateTimeKind.Utc).AddTicks(81),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7765),
                             CreatedIpAddress = "192.168.1.10",
                             MainCourseId = new Guid("55555555-5555-5555-5555-555555555555"),
                             Position = 2,
@@ -9425,7 +8910,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("bd914d22-1482-497d-a552-6926b915f669"),
                             Code = "HIS101",
                             CreatedComputerName = "Computer11",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 265, DateTimeKind.Utc).AddTicks(83),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7767),
                             CreatedIpAddress = "192.168.1.11",
                             MainCourseId = new Guid("66666666-6666-6666-6666-666666666666"),
                             Position = 1,
@@ -9436,7 +8921,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b"),
                             Code = "HIS102",
                             CreatedComputerName = "Computer12",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 265, DateTimeKind.Utc).AddTicks(85),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7769),
                             CreatedIpAddress = "192.168.1.12",
                             MainCourseId = new Guid("66666666-6666-6666-6666-666666666666"),
                             Position = 2,
@@ -9447,7 +8932,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df"),
                             Code = "GEO101",
                             CreatedComputerName = "Computer13",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 265, DateTimeKind.Utc).AddTicks(87),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7777),
                             CreatedIpAddress = "192.168.1.13",
                             MainCourseId = new Guid("77777777-7777-7777-7777-777777777777"),
                             Position = 1,
@@ -9458,7 +8943,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7"),
                             Code = "GEO102",
                             CreatedComputerName = "Computer14",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 265, DateTimeKind.Utc).AddTicks(89),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7779),
                             CreatedIpAddress = "192.168.1.14",
                             MainCourseId = new Guid("77777777-7777-7777-7777-777777777777"),
                             Position = 2,
@@ -9469,7 +8954,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1"),
                             Code = "ENG101",
                             CreatedComputerName = "Computer15",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 265, DateTimeKind.Utc).AddTicks(91),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7781),
                             CreatedIpAddress = "192.168.1.15",
                             MainCourseId = new Guid("88888888-8888-8888-8888-888888888888"),
                             Position = 1,
@@ -9480,7 +8965,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56"),
                             Code = "ENG102",
                             CreatedComputerName = "Computer16",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 265, DateTimeKind.Utc).AddTicks(93),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7783),
                             CreatedIpAddress = "192.168.1.16",
                             MainCourseId = new Guid("88888888-8888-8888-8888-888888888888"),
                             Position = 2,
@@ -9491,7 +8976,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73"),
                             Code = "MUS101",
                             CreatedComputerName = "Computer17",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 265, DateTimeKind.Utc).AddTicks(94),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7785),
                             CreatedIpAddress = "192.168.1.17",
                             MainCourseId = new Guid("99999999-9999-9999-9999-999999999999"),
                             Position = 1,
@@ -9502,7 +8987,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723"),
                             Code = "MUS102",
                             CreatedComputerName = "Computer18",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 265, DateTimeKind.Utc).AddTicks(97),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7787),
                             CreatedIpAddress = "192.168.1.18",
                             MainCourseId = new Guid("99999999-9999-9999-9999-999999999999"),
                             Position = 2,
@@ -9513,7 +8998,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797"),
                             Code = "ART101",
                             CreatedComputerName = "Computer19",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 265, DateTimeKind.Utc).AddTicks(99),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7789),
                             CreatedIpAddress = "192.168.1.19",
                             MainCourseId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
                             Position = 1,
@@ -9524,7 +9009,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("fb221081-45cd-42be-abd4-45976e996233"),
                             Code = "ART102",
                             CreatedComputerName = "Computer20",
-                            CreatedDate = new DateTime(2024, 2, 8, 22, 6, 29, 265, DateTimeKind.Utc).AddTicks(101),
+                            CreatedDate = new DateTime(2024, 2, 8, 21, 5, 2, 318, DateTimeKind.Utc).AddTicks(7791),
                             CreatedIpAddress = "192.168.1.20",
                             MainCourseId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
                             Position = 2,
