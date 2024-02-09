@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using SchoolAutomationProject.Domain.Entities.CommonTables;
+using SchoolAutomationProject.Domain.Entities.CrossTables;
 using SchoolAutomationProject.Domain.Entities.Enums;
 using SchoolAutomationProject.Domain.Entities.UniqueTables;
 using SchoolAutomationProject.Persistence.Configurations.CrossTableConfigurations;
@@ -24,6 +24,12 @@ namespace SchoolAutomationProject.Persistence.Contexts
         public DbSet<Grade> Grades { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
         public DbSet<DiscontinuedStudent> DiscontinuedStudents { get; set; }
+
+        //todo çoka çok tablolar kaldırılabilir emin değilim.
+        public DbSet<ClassroomMainCourse> ClassroomMainCourses { get; set; }
+        public DbSet<ClassroomTeacher> ClassroomTeachers { get; set; }
+        public DbSet<ParentStudent> ParentStudents { get; set; }
+        public DbSet<StudentTeacher> StudentTeachers { get; set; }
 
         public SchoolAutomationProjectDbContext()
         {
@@ -56,15 +62,15 @@ namespace SchoolAutomationProject.Persistence.Contexts
                             var student = item.Entity as Student;
                             var originalValue = item.OriginalValues["ContinuationStatus"].ToString();
                             var currentValue = item.CurrentValues["ContinuationStatus"].ToString();
-                            if (originalValue!=currentValue)
+                            if (originalValue != currentValue)
                             {
                                 //todo denenecek.
                                 if (currentValue == ContinuationStatus.Mezun.ToString() || currentValue == ContinuationStatus.Sevk.ToString())
                                 {
-                                    await DiscontinuedStudents.AddAsync(new DiscontinuedStudent { StudentId = student.Id, CreatedComputerName="yusuf-pc", CreatedDate=DateTime.UtcNow,CreatedIpAddress="123.1.3.1"}); //todo otomatik atanacak.
+                                    await DiscontinuedStudents.AddAsync(new DiscontinuedStudent { StudentId = student.Id, CreatedComputerName = "yusuf-pc", CreatedDate = DateTime.UtcNow, CreatedIpAddress = "123.1.3.1" }); //todo otomatik atanacak.
                                 }
                             }
-                            
+
                         }
                         break;
                     case EntityState.Added:
@@ -99,6 +105,7 @@ namespace SchoolAutomationProject.Persistence.Contexts
             {
                 optionsBuilder.UseSqlServer(ConnectionStringHelper.GetConnectionString());
             }
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

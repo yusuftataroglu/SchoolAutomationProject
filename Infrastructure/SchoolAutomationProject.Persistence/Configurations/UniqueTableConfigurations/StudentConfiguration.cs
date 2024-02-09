@@ -205,7 +205,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
             GPA = 85.4,
             IsPreRegistered = false,
             ClassroomId =Guid.Parse("7a3741e2-d501-4710-b0c9-a0a53142ad79"),
-            ContinuationStatus = ContinuationStatus.Devam,
+            ContinuationStatus = ContinuationStatus.Mezun,
             CreatedDate = DateTime.UtcNow,
             CreatedComputerName = "Computer11",
             CreatedIpAddress = "192.168.1.11"
@@ -221,7 +221,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
             GPA = 92.1,
             IsPreRegistered = true,
             ClassroomId =Guid.Parse("7a3741e2-d501-4710-b0c9-a0a53142ad79"),
-            ContinuationStatus = ContinuationStatus.Devam,
+            ContinuationStatus = ContinuationStatus.Sevk,
             CreatedDate = DateTime.UtcNow,
             CreatedComputerName = "Computer12",
             CreatedIpAddress = "192.168.1.12"
