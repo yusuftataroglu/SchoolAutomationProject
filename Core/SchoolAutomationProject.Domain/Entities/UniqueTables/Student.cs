@@ -19,12 +19,13 @@ namespace SchoolAutomationProject.Domain.Entities.UniqueTables
         //Student-Parent ilişkisi
         public virtual ICollection<ParentStudent> ParentStudents { get; set; }
 
-        //Student-Class ilişkisi
+        //Student-Classroom ilişkisi
         public virtual Classroom Classroom { get; set; }
         public Guid? ClassroomId { get; set; } //Ön kayıt aşamasında girilmesine gerek yok.
 
         //Student-Teacher ilişkisi
-        public virtual ICollection<StudentTeacher> StudentTeachers { get; set; }
+        //KALDIRILDI
+        //public virtual ICollection<StudentTeacher> StudentTeachers { get; set; }
 
         //Student-Achievement ilişkisi
         public virtual ICollection<Achievement> Achievement { get; set; }

@@ -24,12 +24,10 @@ namespace SchoolAutomationProject.Persistence.Contexts
         public DbSet<Grade> Grades { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
         public DbSet<DiscontinuedStudent> DiscontinuedStudents { get; set; }
-
-        //todo çoka çok tablolar kaldırılabilir emin değilim.
+        public DbSet<TeacherSchedule> TeacherSchedules { get; set; }
         public DbSet<ClassroomMainCourse> ClassroomMainCourses { get; set; }
         public DbSet<ClassroomTeacher> ClassroomTeachers { get; set; }
         public DbSet<ParentStudent> ParentStudents { get; set; }
-        public DbSet<StudentTeacher> StudentTeachers { get; set; }
 
         public SchoolAutomationProjectDbContext()
         {
@@ -56,7 +54,7 @@ namespace SchoolAutomationProject.Persistence.Contexts
                     case EntityState.Modified:
                         item.Entity.UpdatedDate = DateTime.UtcNow;
                         item.Entity.UpdatedComputerName = Environment.MachineName;
-                        item.Entity.UpdatedIpAddress = IpAddressHelper.GetIpAddress();
+                        item.Entity.UpdatedIpAddress = await IpAddressHelper.GetIpAddress();
                         if (item.Entity is Student)
                         {
                             var student = item.Entity as Student;
@@ -76,7 +74,7 @@ namespace SchoolAutomationProject.Persistence.Contexts
                     case EntityState.Added:
                         item.Entity.CreatedDate = DateTime.UtcNow;
                         item.Entity.CreatedComputerName = Environment.MachineName;
-                        item.Entity.CreatedIpAddress = IpAddressHelper.GetIpAddress(); //todo async olabilir
+                        item.Entity.CreatedIpAddress = await IpAddressHelper.GetIpAddress();
 
                         if (item.Entity is Student)
                         {
@@ -113,7 +111,6 @@ namespace SchoolAutomationProject.Persistence.Contexts
             modelBuilder.ApplyConfiguration(new ClassroomMainCourseConfiguration());
             modelBuilder.ApplyConfiguration(new ClassroomTeacherConfiguration());
             modelBuilder.ApplyConfiguration(new ParentStudentConfiguration());
-            modelBuilder.ApplyConfiguration(new StudentTeacherConfiguration());
             modelBuilder.ApplyConfiguration(new AchievementConfiguration());
             modelBuilder.ApplyConfiguration(new AttendanceConfiguration());
             modelBuilder.ApplyConfiguration(new ClassroomConfiguration());

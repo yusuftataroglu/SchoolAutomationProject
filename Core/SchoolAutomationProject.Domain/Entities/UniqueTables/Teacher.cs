@@ -17,8 +17,12 @@ namespace SchoolAutomationProject.Domain.Entities.UniqueTables
         //Teacher-Classroom ilişkisi
         public virtual ICollection<ClassroomTeacher> ClassroomTeachers { get; set; }
 
+        //Teacher-TeacherSchedule ilişkisi
+        public virtual ICollection<TeacherSchedule> TeacherSchedules { get; set; }
+
         //Teacher-Student ilişkisi
-        public virtual ICollection<StudentTeacher> StudentTeachers { get; set; }
+        //KALDIRILDI
+        //public virtual ICollection<StudentTeacher> StudentTeachers { get; set; }
 
 
     }
