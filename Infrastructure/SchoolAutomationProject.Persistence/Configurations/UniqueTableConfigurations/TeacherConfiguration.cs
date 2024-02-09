@@ -36,7 +36,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
     {
         new Teacher
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("b1cf8e9f-c6a9-4070-9304-b9602ce9ef76"),
             FirstName = "Ahmet",
             LastName = "Yılmaz",
             Role = "Öğretmen",
@@ -48,7 +48,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
         },
         new Teacher
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("4eca2d83-365e-4926-b42c-2415618b5e19"),
             FirstName = "Ayşe",
             LastName = "Demir",
             Role = "Öğretmen",
@@ -60,7 +60,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
         },
         new Teacher
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("a82047bd-f57e-4c34-928c-8b8d2c3fa636"),
             FirstName = "Mehmet",
             LastName = "Kaya",
             Role = "Öğretmen",
@@ -72,7 +72,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
         },
         new Teacher
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("a444db40-a494-4e3d-91d1-eea2779bf147"),
             FirstName = "Fatma",
             LastName = "Şahin",
             Role = "Öğretmen",
@@ -84,7 +84,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
         },
         new Teacher
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("2e032c26-8554-4ab9-8e06-77cfd8f9652d"),
             FirstName = "Ali",
             LastName = "Demirci",
             Role = "Öğretmen",
@@ -96,7 +96,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
         },
         new Teacher
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("fa70cb23-9c69-4548-8f15-77e93139ab41"),
             FirstName = "Zeynep",
             LastName = "Yıldız",
             Role = "Öğretmen",
@@ -108,7 +108,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
         },
         new Teacher
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("35cced10-9fc1-4413-9e09-080b408b23c3"),
             FirstName = "Mehmet",
             LastName = "Kaya",
             Role = "Öğretmen",
@@ -120,7 +120,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
         },
         new Teacher
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("3ca93105-bfff-4791-9cc4-82a7a97ad756"),
             FirstName = "Ayşe",
             LastName = "Yılmaz",
             Role = "Öğretmen",
@@ -132,7 +132,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
         },
         new Teacher
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("f12dbbce-5d81-4f38-8eab-b267b2263556"),
             FirstName = "Ahmet",
             LastName = "Çelik",
             Role = "Öğretmen",
@@ -144,7 +144,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
         },
         new Teacher
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("dd82ca7c-38ca-4a8c-989b-a47d44d9b132"),
             FirstName = "Seda",
             LastName = "Demir",
             Role = "Öğretmen",
@@ -156,7 +156,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
         },
         new Teacher
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("f6563118-b1bf-4d43-ab6d-c427a9f13f7c"),
             FirstName = "Burak",
             LastName = "Korkmaz",
             Role = "Öğretmen",

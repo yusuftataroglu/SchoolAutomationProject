@@ -35,7 +35,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
     {
         new Parent
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("f6b10f49-d859-47bd-99b3-2d5e52f3ba25"),
             FirstName = "Ali",
             LastName = "Yılmaz",
             MobilePhone = "5551234567",
@@ -49,7 +49,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
         },
         new Parent
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("304a46c6-a4cb-4fed-8b44-0f40b510e881"),
             FirstName = "Ayşe",
             LastName = "Kaya",
             MobilePhone = "5559876543",
@@ -63,7 +63,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
         },
         new Parent
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("0b28a8c9-b390-485d-815d-82977278f08d"),
             FirstName = "Mehmet",
             LastName = "Demir",
             MobilePhone = "5552345678",
@@ -76,7 +76,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
         },
         new Parent
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("45e137c7-0927-4931-bbf3-2b42a90f66d3"),
             FirstName = "Fatma",
             LastName = "Şahin",
             MobilePhone = "5558765432",
@@ -90,7 +90,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
         },
         new Parent
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("1f607b4f-3157-490d-9ce2-85883aa55c70"),
             FirstName = "Mustafa",
             LastName = "Aydın",
             MobilePhone = "5553456789",
@@ -103,7 +103,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
         },
         new Parent
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("4bafb160-f5a6-4dae-9a80-bc8c47ae0bdc"),
             FirstName = "Zeynep",
             LastName = "Erdoğan",
             MobilePhone = "5556543210",
@@ -117,7 +117,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
         },
         new Parent
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("5ddce5a3-d715-46f8-8ca3-4fca5f75b139"),
             FirstName = "Emine",
             LastName = "Kurt",
             MobilePhone = "5555432109",
@@ -130,7 +130,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
         },
         new Parent
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("1c9b13ae-e98c-4c1e-95c4-3b315670c61c"),
             FirstName = "Ahmet",
             LastName = "Sarı",
             MobilePhone = "5554321098",
@@ -144,7 +144,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
         },
         new Parent
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("47d6a0ea-8050-420e-9500-2c9eb265a678"),
             FirstName = "Fatma",
             LastName = "Can",
             MobilePhone = "5553210987",
@@ -157,7 +157,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigur
         },
         new Parent
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("8cd19ad1-e4e2-4f70-a154-cfb42b49d52b"),
             FirstName = "Mehmet",
             LastName = "Kara",
             MobilePhone = "5552109876",
