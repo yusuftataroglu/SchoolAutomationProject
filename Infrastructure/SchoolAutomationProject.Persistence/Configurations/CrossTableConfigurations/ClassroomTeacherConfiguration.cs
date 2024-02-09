@@ -9,7 +9,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.CrossTableConfigura
     public class ClassroomTeacherConfiguration : IEntityTypeConfiguration<ClassroomTeacher>
     {
         //SchoolAutomationProjectDbContext _context = new SchoolAutomationProjectDbContext();
-        
+
         public void Configure(EntityTypeBuilder<ClassroomTeacher> builder)
         {
             builder.HasKey(x => new { x.ClassroomId, x.TeacherId });
