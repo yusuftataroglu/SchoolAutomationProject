@@ -26,10 +26,10 @@ namespace SchoolAutomationProject.Persistence.Contexts
         public DbSet<DiscontinuedStudent> DiscontinuedStudents { get; set; }
 
         //todo çoka çok tablolar kaldırılabilir emin değilim.
-        public DbSet<ClassroomMainCourse> ClassroomMainCourses { get; set; }
-        public DbSet<ClassroomTeacher> ClassroomTeachers { get; set; }
-        public DbSet<ParentStudent> ParentStudents { get; set; }
-        public DbSet<StudentTeacher> StudentTeachers { get; set; }
+        //public DbSet<ClassroomMainCourse> ClassroomMainCourses { get; set; }
+        //public DbSet<ClassroomTeacher> ClassroomTeachers { get; set; }
+        //public DbSet<ParentStudent> ParentStudents { get; set; }
+        //public DbSet<StudentTeacher> StudentTeachers { get; set; }
 
         public SchoolAutomationProjectDbContext()
         {
