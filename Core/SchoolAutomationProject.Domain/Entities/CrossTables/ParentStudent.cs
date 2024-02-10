@@ -1,4 +1,4 @@
-﻿using SchoolAutomationProject.Domain.Entities.UniqueTables;
+﻿using SchoolAutomationProject.Domain.Entities.CustomTables;
 using System;
 using System.Collections.Generic;
 using System.Linq;

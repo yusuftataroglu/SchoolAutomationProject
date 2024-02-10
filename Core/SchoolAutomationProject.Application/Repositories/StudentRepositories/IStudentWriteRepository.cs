@@ -1,4 +1,4 @@
-﻿using SchoolAutomationProject.Domain.Entities.UniqueTables;
+﻿using SchoolAutomationProject.Domain.Entities.CustomTables;
 
 namespace SchoolAutomationProject.Application.Repositories.CommonRepositories
 {

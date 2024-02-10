@@ -1,16 +1,19 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using SchoolAutomationProject.Domain.Entities.CommonTables;
 using SchoolAutomationProject.Domain.Entities.CrossTables;
+using SchoolAutomationProject.Domain.Entities.CustomTables;
 using SchoolAutomationProject.Domain.Entities.Enums;
-using SchoolAutomationProject.Domain.Entities.UniqueTables;
-using SchoolAutomationProject.Persistence.Configurations.CrossTableConfigurations;
-using SchoolAutomationProject.Persistence.Configurations.UniqueTableConfigurations;
+using SchoolAutomationProject.Domain.Entities.IdentityTables;
+using SchoolAutomationProject.Persistence.Configurations.CrossTablesConfigurations;
+using SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigurations;
+using SchoolAutomationProject.Persistence.Configurations.IdentityTablesConfigurations;
 using SchoolAutomationProject.Persistence.Helpers;
 
 namespace SchoolAutomationProject.Persistence.Contexts
 {
-    public class SchoolAutomationProjectDbContext : DbContext //todo identity eklenebilir!
+    public class SchoolAutomationProjectDbContext : IdentityDbContext <AppUser,AppUserRole,string>
     {
 
         public DbSet<Classroom> Classrooms { get; set; }
@@ -98,16 +101,18 @@ namespace SchoolAutomationProject.Persistence.Contexts
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
+            
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(ConnectionStringHelper.GetConnectionString());
+                //appsettings.json dosyası bu katmanda olmadığı için Custom bir GetConnectionString metodu üzerinde ulaşıyoruz.
+                optionsBuilder.UseSqlServer(ConnectionStringHelper.GetConnectionString()); 
             }
 
         }
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new ClassroomMainCourseConfiguration());
             modelBuilder.ApplyConfiguration(new ClassroomTeacherConfiguration());
             modelBuilder.ApplyConfiguration(new ParentStudentConfiguration());
@@ -122,6 +127,11 @@ namespace SchoolAutomationProject.Persistence.Contexts
             modelBuilder.ApplyConfiguration(new SubCourseConfiguration());
             modelBuilder.ApplyConfiguration(new TeacherConfiguration());
             modelBuilder.ApplyConfiguration(new DiscontinuedStudentConfiguration());
+            modelBuilder.ApplyConfiguration(new AppUserConfiguration());
+            modelBuilder.ApplyConfiguration(new AppUserRoleConfiguration());
+            modelBuilder.ApplyConfiguration(new IdentityUserRoleConfiguration());
         }
+
+
     }
 }

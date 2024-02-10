@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SchoolAutomationProject.Application.Repositories.AchievementRepositories;
 using SchoolAutomationProject.Application.Repositories.AttendanceRepositories;
@@ -13,6 +15,7 @@ using SchoolAutomationProject.Application.Repositories.StudentRepositories;
 using SchoolAutomationProject.Application.Repositories.SubCourseRepositories;
 using SchoolAutomationProject.Application.Repositories.TeacherRepositories;
 using SchoolAutomationProject.Application.Repositories.TeacherScheduleRepositories;
+using SchoolAutomationProject.Domain.Entities.IdentityTables;
 using SchoolAutomationProject.Persistence.Contexts;
 using SchoolAutomationProject.Persistence.Helpers;
 using SchoolAutomationProject.Persistence.Repositories.AchievementRepositories;
@@ -32,10 +35,11 @@ namespace SchoolAutomationProject.Persistence.IoCContainer
 {
     public static class ServiceRegistration
     {
-        public static void AddService(this IServiceCollection services)
+        public static void AddServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<SchoolAutomationProjectDbContext>(x => x.UseSqlServer(ConnectionStringHelper.GetConnectionString()));
-            
+            //Burada katmandan gelen configuration üzerinden appsetting.json dosyasına ulaşıyoruz.
+            services.AddDbContext<SchoolAutomationProjectDbContext>(x => x.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddIdentity<AppUser, AppUserRole>().AddEntityFrameworkStores<SchoolAutomationProjectDbContext>();
             services.AddScoped<IAchievementReadRepository, AchievementReadRepository>();
             services.AddScoped<IAchievementWriteRepository, AchievementWriteRepository>();
             services.AddScoped<IAttendanceReadRepository, AttendanceReadRepository>();

@@ -1,5 +1,5 @@
 ﻿using SchoolAutomationProject.Application.Repositories.TeacherScheduleRepositories;
-using SchoolAutomationProject.Domain.Entities.UniqueTables;
+using SchoolAutomationProject.Domain.Entities.CustomTables;
 using SchoolAutomationProject.Persistence.Contexts;
 using SchoolAutomationProject.Persistence.Repositories.CommonRepositories;
 
