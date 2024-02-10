@@ -37,6 +37,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
             Role = "Öğretmen",
             Department = "Matematik",
             MainCourseId = Guid.Parse("11111111-1111-1111-1111-111111111111"),
+            UserId="1abfbe1e-41be-4440-8dd3-4bf6127d77d3",
             CreatedDate = DateTime.UtcNow,
             CreatedComputerName = "Computer1",
             CreatedIpAddress = "192.168.1.1"

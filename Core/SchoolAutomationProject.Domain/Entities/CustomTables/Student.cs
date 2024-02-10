@@ -40,7 +40,7 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
         //Student-DiscontinuedStudent ilişkisi
         public virtual DiscontinuedStudent DiscontinuedStudent{ get; set; }
 
-        //Student-IdentityUser ilişkisi
+        //Student-AppUser ilişkisi
         public virtual AppUser User { get; set; }
         public string? UserId { get; set; }
     }

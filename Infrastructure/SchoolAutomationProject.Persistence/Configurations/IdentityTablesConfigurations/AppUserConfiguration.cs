@@ -17,7 +17,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.IdentityTablesConfi
         {
             var student = new Student
             {
-                Id = Guid.Parse("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                Id = Guid.NewGuid(),
                 RegistrationNumber = "101-24",
                 FirstName = "Mustafa",
                 LastName = "Şahin",
@@ -34,7 +34,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.IdentityTablesConfi
 
             var teacher = new Teacher
             {
-                Id = Guid.Parse("b1cf8e9f-c6a9-4070-9304-b9602ce9ef76"),
+                Id = Guid.NewGuid(),
                 FirstName = "Ahmet",
                 LastName = "Yılmaz",
                 Role = "Öğretmen",
@@ -47,7 +47,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.IdentityTablesConfi
 
             var parent = new Parent
             {
-                Id = Guid.Parse("304a46c6-a4cb-4fed-8b44-0f40b510e881"),
+                Id = Guid.NewGuid(),
                 FirstName = "Ayşe",
                 LastName = "Kaya",
                 MobilePhone = "5559876543",

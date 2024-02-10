@@ -1,6 +1,7 @@
 ﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
 using SchoolAutomationProject.Domain.Entities.CrossTables;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
+using SchoolAutomationProject.Domain.Entities.IdentityTables;
 
 namespace SchoolAutomationProject.Domain.Entities.CustomTables
 {
@@ -16,6 +17,9 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
 
         // Student-Parent ilişkisi
         public virtual ICollection<ParentStudent> ParentStudents { get; set; }
+        //Parent-AppUser ilişkisi
+        public virtual AppUser User { get; set; }
+        public string? UserId { get; set; }
 
     }
 

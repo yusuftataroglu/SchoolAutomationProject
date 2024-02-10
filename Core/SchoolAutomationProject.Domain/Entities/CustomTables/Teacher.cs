@@ -23,7 +23,7 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
         //Teacher-TeacherSchedule ilişkisi
         public virtual ICollection<TeacherSchedule> TeacherSchedules { get; set; }
 
-        //Teacher-IdentityUser ilişkisi
+        //Teacher-AppUser ilişkisi
         public virtual AppUser User { get; set; }
         public string? UserId { get; set; }
 
