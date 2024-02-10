@@ -5,5 +5,6 @@ namespace SchoolAutomationProject.Application.Repositories.AttendanceRepositorie
 {
     public interface IAttendanceReadRepository:IReadRepository<Attendance>
     {
+        public int GetAttendanceCountForStudent(Guid studentId);
     }
 }

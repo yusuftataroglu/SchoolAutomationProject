@@ -7,8 +7,18 @@ namespace SchoolAutomationProject.Persistence.Repositories.AttendanceRepositorie
 {
     public class AttendanceReadRepository : ReadRepository<Attendance>, IAttendanceReadRepository
     {
+        private readonly SchoolAutomationProjectDbContext _context;
+
         public AttendanceReadRepository(SchoolAutomationProjectDbContext context) : base(context)
         {
+            _context = context;
+        }
+
+        public int GetAttendanceCountForStudent(Guid studentId)
+        {
+            int? attendanceCount = _context.Attendances.Count(a => a.StudentId == studentId && a.AttendanceStatus == Domain.Entities.Enums.AttendanceStatus.Yok);
+            return attendanceCount ?? 0;
+            
         }
     }
 }

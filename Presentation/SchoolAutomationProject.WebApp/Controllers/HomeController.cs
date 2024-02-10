@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SchoolAutomationProject.Application.Repositories.AttendanceRepositories;
 using SchoolAutomationProject.Application.Repositories.CommonRepositories;
 using SchoolAutomationProject.Application.Repositories.StudentRepositories;
-using SchoolAutomationProject.Domain.Entities.Enums;
-using SchoolAutomationProject.Domain.Entities.UniqueTables;
+using SchoolAutomationProject.Persistence.Repositories.AttendanceRepositories;
 using SchoolAutomationProject.WebApp.Models;
 using System.Diagnostics;
 
@@ -13,41 +13,25 @@ namespace SchoolAutomationProject.WebApp.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IStudentReadRepository _studentReadRepository;
         private readonly IStudentWriteRepository _studentWriteRepository;
+        private readonly IAttendanceReadRepository _attendanceReadRepository;
 
-        public HomeController(ILogger<HomeController> logger, IStudentReadRepository studentReadRepository, IStudentWriteRepository studentWriteRepository)
+        public HomeController(
+            ILogger<HomeController> logger,
+            IStudentReadRepository studentReadRepository,
+            IStudentWriteRepository studentWriteRepository,
+            IAttendanceReadRepository attendanceReadRepository)
         {
             _studentReadRepository = studentReadRepository;
             _studentWriteRepository = studentWriteRepository;
+            _attendanceReadRepository = attendanceReadRepository;
             _logger = logger;
         }
 
         public async Task<IActionResult> Index()
         {
-
-            //List<Student> studentlist = new List<Student>
-            //{
-            //    new Student{
-            //    Id = Guid.NewGuid(),
-            //    FirstName = "Yusuf",
-            //    LastName = "Tataroğlu",
-            //    Gender = Gender.Erkek,
-            //    GraduatedSchool = "Dr. Nuri Bayar İ.Ö.O.",
-            //    GPA = 99.2,
-            //    IsPreRegistered = true,
-            //},
-            //  new Student{
-            //    Id = Guid.NewGuid(),
-            //    FirstName = "Yağmur",
-            //    LastName = "Yaman",
-            //    Gender = Gender.Kız,
-            //    GraduatedSchool = "Dr. Nuri Bayar İ.Ö.O.",
-            //    GPA = 77.5,
-            //    IsPreRegistered = true,
-            //}
-            //};
-            //await _studentWriteRepository.AddRangeAsync(studentlist);
-            
             var studentList = _studentReadRepository.GetAll().ToList();
+            
+                
             return View(studentList);
         }
 

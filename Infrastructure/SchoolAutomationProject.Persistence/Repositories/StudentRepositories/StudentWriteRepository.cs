@@ -5,9 +5,9 @@ using SchoolAutomationProject.Persistence.Repositories.CommonRepositories;
 
 namespace SchoolAutomationProject.Persistence.Repositories.StudentRepositories
 {
-    public class AttendanceWriteRepository : WriteRepository<Student>, IStudentWriteRepository
+    public class StudentWriteRepository : WriteRepository<Student>, IStudentWriteRepository
     {
-        public AttendanceWriteRepository(SchoolAutomationProjectDbContext context) : base(context)
+        public StudentWriteRepository(SchoolAutomationProjectDbContext context) : base(context)
         {
         }
     }

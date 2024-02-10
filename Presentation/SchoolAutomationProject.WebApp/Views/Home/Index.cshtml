@@ -1,4 +1,6 @@
-﻿@model List<Student>
+﻿@using SchoolAutomationProject.Application.Repositories.AttendanceRepositories;
+@model List<Student>
+@inject IAttendanceReadRepository attendanceReadRepository
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -31,7 +33,7 @@
                                 <td>@item.Gender</td>
                                 <td>@item.GraduatedSchool</td>
                                 <td>@item.GPA</td>
-                                <td>@item.TotalAbsenceCount</td>
+                                <td>@attendanceReadRepository.GetAttendanceCountForStudent(item.Id)</td>
                             </tr>
                         }
                     </tbody>
