@@ -10,6 +10,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddServices(builder.Configuration);
+builder.Services.AddCors(options => options.AddPolicy("SchoolAutomationProject", policy => policy
+    .WithOrigins("https://localhost:7070")
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .AllowCredentials()
+));
 
 var app = builder.Build();
 
@@ -20,6 +26,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("SchoolAutomationProject");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
