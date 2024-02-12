@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SchoolAutomationProject.Application.Repositories.StudentRepositories;
+using SchoolAutomationProject.Application.ViewModels;
 
 namespace SchoolAutomationProject.WebAPI.Controllers
 {
@@ -17,6 +18,15 @@ namespace SchoolAutomationProject.WebAPI.Controllers
         public IActionResult GetStudents()
         {
             return Ok(_studentReadRepository.GetAll());
+        }
+        [HttpPost]
+        public IActionResult CheckUserInfos(LoginUserViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                return Ok();
+            }
+            return BadRequest(ModelState);
         }
     }
 }

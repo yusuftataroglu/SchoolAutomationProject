@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SchoolAutomationProject.Application.ViewModels;
 using SchoolAutomationProject.WebApp.Models;
 using System.Diagnostics;
 
@@ -12,10 +13,17 @@ namespace SchoolAutomationProject.WebApp.Controllers
         {
             _logger = logger;
         }
-
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult CheckUserInfos(LoginUserViewModel model)
+        {
+
+            return RedirectToAction("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
