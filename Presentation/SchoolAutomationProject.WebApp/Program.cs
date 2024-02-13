@@ -1,10 +1,12 @@
 using SchoolAutomationProject.Persistence.IoCContainer;
+using SchoolAutomationProject.Infrastructure.IoCContainer;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 //Add custom services
-builder.Services.AddServices(builder.Configuration);
+builder.Services.AddPersistenceServices(builder.Configuration);
+builder.Services.AddInfrastructureServices(builder.Configuration);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

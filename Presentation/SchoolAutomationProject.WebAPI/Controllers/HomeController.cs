@@ -41,20 +41,7 @@ namespace SchoolAutomationProject.WebAPI.Controllers
             var result = await _userManager.CreateAsync(user, model.Password);
             return Ok();
 
-            //if (ModelState.IsValid)
-            //{
-            //    var user = await _userManager.FindByNameAsync(model.UserName);
-            //    if (user != null)
-            //    {
-            //        var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
-            //        if (result.Succeeded)
-            //        {
-            //            return Ok();
-
-            //        }
-            //    }
-            //}
-            //return BadRequest();
+            
         }
     }
 }

@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using SchoolAutomationProject.Application.Repositories.AchievementRepositories;
 using SchoolAutomationProject.Application.Repositories.AttendanceRepositories;
 using SchoolAutomationProject.Application.Repositories.ClassroomRepositories;
@@ -29,16 +31,19 @@ using SchoolAutomationProject.Persistence.Repositories.StudentRepositories;
 using SchoolAutomationProject.Persistence.Repositories.SubCourseRepositories;
 using SchoolAutomationProject.Persistence.Repositories.TeacherRepositories;
 using SchoolAutomationProject.Persistence.Repositories.TeacherScheduleRepositories;
+using System.Text;
 
 namespace SchoolAutomationProject.Persistence.IoCContainer
 {
-    public static class ServiceRegistration
+    public static class PersistenceServiceRegistration
     {
-        public static void AddServices(this IServiceCollection services, IConfiguration configuration)
+        public static void AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
         {
             //Burada katmandan gelen configuration üzerinden appsetting.json dosyasına ulaşıyoruz.
             services.AddDbContext<SchoolAutomationProjectDbContext>(x => x.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            //Identity
             services.AddIdentity<AppUser, AppUserRole>().AddEntityFrameworkStores<SchoolAutomationProjectDbContext>().AddDefaultTokenProviders();
+
             services.AddScoped<IAchievementReadRepository, AchievementReadRepository>();
             services.AddScoped<IAchievementWriteRepository, AchievementWriteRepository>();
             services.AddScoped<IAttendanceReadRepository, AttendanceReadRepository>();
