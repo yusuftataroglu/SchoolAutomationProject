@@ -17,7 +17,6 @@ using SchoolAutomationProject.Application.Repositories.TeacherRepositories;
 using SchoolAutomationProject.Application.Repositories.TeacherScheduleRepositories;
 using SchoolAutomationProject.Domain.Entities.IdentityTables;
 using SchoolAutomationProject.Persistence.Contexts;
-using SchoolAutomationProject.Persistence.Helpers;
 using SchoolAutomationProject.Persistence.Repositories.AchievementRepositories;
 using SchoolAutomationProject.Persistence.Repositories.AttendanceRepositories;
 using SchoolAutomationProject.Persistence.Repositories.ClassroomRepositories;
@@ -39,7 +38,7 @@ namespace SchoolAutomationProject.Persistence.IoCContainer
         {
             //Burada katmandan gelen configuration üzerinden appsetting.json dosyasına ulaşıyoruz.
             services.AddDbContext<SchoolAutomationProjectDbContext>(x => x.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-            services.AddIdentity<AppUser, AppUserRole>().AddEntityFrameworkStores<SchoolAutomationProjectDbContext>();
+            services.AddIdentity<AppUser, AppUserRole>().AddEntityFrameworkStores<SchoolAutomationProjectDbContext>().AddDefaultTokenProviders();
             services.AddScoped<IAchievementReadRepository, AchievementReadRepository>();
             services.AddScoped<IAchievementWriteRepository, AchievementWriteRepository>();
             services.AddScoped<IAttendanceReadRepository, AttendanceReadRepository>();

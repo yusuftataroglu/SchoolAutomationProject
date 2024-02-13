@@ -42,9 +42,29 @@ document.getElementById("loginButton").onclick = function () {
             console.log(data);
         },
         error: function (err) {
-            console.log(err);
+            // Gelen hata objesinin içeriğini kontrol edin
+            if (err.responseJSON && err.responseJSON.errors) {
+                // Hata mesajlarını alın
+                var errorMessages = err.responseJSON.errors;
+
+                // Hata mesajlarını validationSummary elementine ekleyin
+                var validationSummary = document.getElementById("validationSummary");
+                validationSummary.innerHTML = ""; // Önceki içeriği temizleyin
+                for (var key in errorMessages) {
+                    if (errorMessages.hasOwnProperty(key)) {
+                        var errorMessage = errorMessages[key];
+                        validationSummary.style.display="block";
+                        validationSummary.innerHTML += '<div>' + errorMessage + '</div>';
+                    }
+                }
+            } else {
+                // Hata objesi uygun formatta değilse genel bir hata mesajı gösterin
+                document.getElementById("validationSummary").innerHTML = "Bir hata oluştu. Lütfen tekrar deneyin.";
+            }
         }
-    })
+
+    }
+    )
 }
 
 

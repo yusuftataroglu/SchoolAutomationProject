@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using SchoolAutomationProject.Application.Repositories.StudentRepositories;
 using SchoolAutomationProject.Application.ViewModels;
+using SchoolAutomationProject.Domain.Entities.IdentityTables;
 
 namespace SchoolAutomationProject.WebAPI.Controllers
 {
@@ -8,23 +10,35 @@ namespace SchoolAutomationProject.WebAPI.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
-        private readonly IStudentReadRepository _studentReadRepository;
 
-        public HomeController(IStudentReadRepository studentReadRepository)
+        private readonly IStudentReadRepository _studentReadRepository;
+        private readonly UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
+
+        public HomeController(IStudentReadRepository studentReadRepository,
+            UserManager<AppUser> userManager,
+            SignInManager<AppUser> signInManager)
         {
             _studentReadRepository = studentReadRepository;
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
-        [HttpGet]
-        public IActionResult GetStudents()
-        {
-            return Ok(_studentReadRepository.GetAll());
-        }
+
         [HttpPost]
-        public IActionResult CheckUserInfos(LoginUserViewModel model)
+        public async Task<IActionResult> CheckUserInfosAsync(LoginUserViewModel model)
         {
             if (ModelState.IsValid)
             {
-                return Ok();
+                var user = await _userManager.FindByNameAsync(model.UserName);
+                if (user != null)
+                {
+                    var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
+                    if (result.Succeeded)
+                    {
+                        return Ok("giriş başarılı");
+
+                    }
+                }
             }
             return BadRequest(ModelState);
         }
