@@ -24,23 +24,37 @@ namespace SchoolAutomationProject.WebAPI.Controllers
             _signInManager = signInManager;
         }
 
+        [HttpGet]
+        public async Task<IActionResult> IndexAsync()
+        {
+            return Ok(await _userManager.GetUserNameAsync(new() { UserName = "yusuftataroglu" }));
+        }
         [HttpPost]
         public async Task<IActionResult> CheckUserInfosAsync(LoginUserViewModel model)
         {
-            if (ModelState.IsValid)
+            AppUser user = new AppUser
             {
-                var user = await _userManager.FindByNameAsync(model.UserName);
-                if (user != null)
-                {
-                    var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
-                    if (result.Succeeded)
-                    {
-                        return Ok("giriş başarılı");
+                Id = Guid.NewGuid().ToString(),
+                Email = model.UserName+"@gmail.com",
+                UserName = model.UserName,
+            };
+            var result = await _userManager.CreateAsync(user, model.Password);
+            return Ok();
 
-                    }
-                }
-            }
-            return BadRequest(ModelState);
+            //if (ModelState.IsValid)
+            //{
+            //    var user = await _userManager.FindByNameAsync(model.UserName);
+            //    if (user != null)
+            //    {
+            //        var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
+            //        if (result.Succeeded)
+            //        {
+            //            return Ok();
+
+            //        }
+            //    }
+            //}
+            //return BadRequest();
         }
     }
 }

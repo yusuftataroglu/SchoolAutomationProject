@@ -16,12 +16,14 @@ builder.Services.AddCors(options => options.AddPolicy("SchoolAutomationProject",
     .AllowAnyMethod()
     .AllowCredentials()
 ));
-
+builder.Services.AddSwaggerGen();
 var app = builder.Build();
-
+app.UseSwagger();
+app.UseSwaggerUI();
 app.UseCors("SchoolAutomationProject");
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
