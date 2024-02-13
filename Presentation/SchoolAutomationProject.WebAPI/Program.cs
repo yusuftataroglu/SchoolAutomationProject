@@ -1,3 +1,4 @@
+using SchoolAutomationProject.Infrastructure.IoCContainer;
 using SchoolAutomationProject.Persistence.IoCContainer;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddPersistenceServices(builder.Configuration);
+builder.Services.AddInfrastructureServices(builder.Configuration);
 
 builder.Services.AddCors(options => options.AddPolicy("SchoolAutomationProject", policy => policy
     .WithOrigins("https://localhost:7070")
@@ -16,11 +18,12 @@ builder.Services.AddCors(options => options.AddPolicy("SchoolAutomationProject",
     .AllowAnyMethod()
     .AllowCredentials()
 ));
-builder.Services.AddSwaggerGen();
+
+
 var app = builder.Build();
-app.UseSwagger();
-app.UseSwaggerUI();
+
 app.UseCors("SchoolAutomationProject");
+
 app.UseHttpsRedirection();
 
 app.UseAuthentication();

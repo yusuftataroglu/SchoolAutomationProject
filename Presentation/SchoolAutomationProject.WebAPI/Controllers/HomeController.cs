@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using SchoolAutomationProject.Application.Helpers.TokenHelpers;
 using SchoolAutomationProject.Application.Repositories.StudentRepositories;
 using SchoolAutomationProject.Application.ViewModels;
 using SchoolAutomationProject.Domain.Entities.IdentityTables;
@@ -14,34 +15,47 @@ namespace SchoolAutomationProject.WebAPI.Controllers
         private readonly IStudentReadRepository _studentReadRepository;
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly IJwtProvider _jwtProvider;
 
-        public HomeController(IStudentReadRepository studentReadRepository,
+        public HomeController(
+            IStudentReadRepository studentReadRepository,
             UserManager<AppUser> userManager,
-            SignInManager<AppUser> signInManager)
+            SignInManager<AppUser> signInManager,
+            IJwtProvider jwtProvider)
         {
             _studentReadRepository = studentReadRepository;
             _userManager = userManager;
             _signInManager = signInManager;
+            _jwtProvider = jwtProvider;
         }
 
         [HttpGet]
-        public async Task<IActionResult> IndexAsync()
+        public async Task<IActionResult> Index()
         {
             return Ok(await _userManager.GetUserNameAsync(new() { UserName = "yusuftataroglu" }));
         }
         [HttpPost]
-        public async Task<IActionResult> CheckUserInfosAsync(LoginUserViewModel model)
+        public async Task<IActionResult> Login(LoginUserViewModel model)
         {
-            AppUser user = new AppUser
+            if (ModelState.IsValid)
             {
-                Id = Guid.NewGuid().ToString(),
-                Email = model.UserName+"@gmail.com",
-                UserName = model.UserName,
-            };
-            var result = await _userManager.CreateAsync(user, model.Password);
-            return Ok();
-
-            
+                var user = await _userManager.FindByNameAsync(model.UserName);
+                if (user == null) return BadRequest("Kullanıcı bulunamadı!");
+                var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
+                if (result.Succeeded)
+                {
+                    string token = _jwtProvider.GenerateJwt(user);
+                    return Ok(token);
+                }
+                else
+                {
+                    return BadRequest("Kullanıcı adı veya şifre yanlış!");
+                }
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
         }
     }
 }

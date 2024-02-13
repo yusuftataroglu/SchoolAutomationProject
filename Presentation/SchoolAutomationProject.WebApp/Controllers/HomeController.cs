@@ -35,41 +35,52 @@ namespace SchoolAutomationProject.WebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(LoginUserViewModel model)
         {
-            ViewBag.Message = "";
-            if (ModelState.IsValid)
-            {
-                var user = await _userManager.FindByNameAsync(model.UserName);
-                if (user != null)
-                {
-                    var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
-                    if (result.Succeeded)
-                    {
-                        var roles = await _userManager.GetRolesAsync(user);
-                        ViewBag.Message = "Giriş başarılı";
-                        _jwtProvider.GenerateJwt(user);
-                        return View();
-                    }
-                    else
-                    {
-                        ViewBag.Message = "Kullanıcı adı veya parola yanlış";
-                        return View(model);
-                    }
-                }
-                else
-                {
-                    ViewBag.Message = "Böyle bir kullanıcı bulunamadı!";
-                    return View(model);
-                }
-            }
-            else
-            {
-                ViewBag.Message = ModelState;
-                return View(model);
+            //ViewBag.Message = "";
+            //if (ModelState.IsValid)
+            //{
+            //    var user = await _userManager.FindByNameAsync(model.UserName);
+            //    if (user != null)
+            //    {
+            //        var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
+            //        if (result.Succeeded)
+            //        {
+            //            var roles = await _userManager.GetRolesAsync(user);
+            //            ViewBag.Message = "Giriş başarılı";
+            //            string token = _jwtProvider.GenerateJwt(user);
+            //            if (roles.Contains("Admin"))
+            //            {
+            //                return RedirectToAction("Index", "Home", new { area = "Admin" , token });
+            //            }
+            //            else
+            //            {
+            //                return RedirectToAction("DeniedPage");
+            //            }
+            //        }
+            //        else
+            //        {
+            //            ViewBag.Message = "Kullanıcı adı veya parola yanlış";
+            //            return View(model);
+            //        }
+            //    }
+            //    else
+            //    {
+            //        ViewBag.Message = "Böyle bir kullanıcı bulunamadı!";
+            //        return View(model);
+            //    }
+            //}
+            //else
+            //{
+            //    return View(model);
 
-            }
+            //}
+            return View();
         }
 
-       
+        public IActionResult DeniedPage()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
