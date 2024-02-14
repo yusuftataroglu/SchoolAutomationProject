@@ -16,7 +16,8 @@ namespace SchoolAutomationProject.WebApp.Controllers
         private readonly SignInManager<AppUser> _signInManager;
         private readonly IJwtProvider _jwtProvider;
 
-        public HomeController(ILogger<HomeController> logger,
+        public HomeController(
+            ILogger<HomeController> logger,
             UserManager<AppUser> userManager,
             SignInManager<AppUser> signInManager,
             IJwtProvider jwtProvider)
