@@ -5,14 +5,35 @@
 https://localhost:7070/admin/home/index
 
 $(document).ready(() => {
-    CheckToken();
+    //CheckToken();
 });
 
 function CheckToken() {
     let token = localStorage.getItem("appJwt")
     if (token != null) {
-        RedirectToAdminArea();
+        //RedirectToAdminArea(token);
     }
+};
+
+
+
+function RedirectToAdminArea(token) {
+    $.ajax({
+        url: "https://localhost:7070/admin",
+        type: "Get",
+        headers: {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "Authorization": "Bearer " + token
+        },
+        success: function (data) {
+            console.log(data);
+            window.location.href="https://localhost:7070/admin";
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    })
 };
 
 function Login() {
@@ -56,20 +77,6 @@ function Login() {
 
     }
     )
-};
-
-function RedirectToAdminArea() {
-    $.ajax({
-        url: "https://localhost:7070/admin",
-        type: "Get",
-        contentType: 'application/json',
-        success: function (data) {
-            console.log(data);
-        },
-        error: function (err) {
-            console.log(err);
-        }
-    })
 };
 
 $("#loginButton").click(function (e) { 

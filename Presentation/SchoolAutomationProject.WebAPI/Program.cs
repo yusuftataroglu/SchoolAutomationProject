@@ -20,6 +20,7 @@ builder.Services.AddCors(options => options.AddPolicy("SchoolAutomationProject",
 ));
 
 
+
 var app = builder.Build();
 
 app.UseCors("SchoolAutomationProject");
@@ -28,7 +29,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
-
+app.UseCookiePolicy();
 app.MapControllers();
 
 app.Run();

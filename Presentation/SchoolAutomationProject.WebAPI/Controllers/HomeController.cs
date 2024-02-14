@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using SchoolAutomationProject.Application.Helpers.TokenHelpers;
 using SchoolAutomationProject.Application.Repositories.StudentRepositories;
 using SchoolAutomationProject.Application.ViewModels;
@@ -30,32 +32,35 @@ namespace SchoolAutomationProject.WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        private IActionResult Index()
         {
-            return Ok(await _userManager.GetUserNameAsync(new() { UserName = "yusuftataroglu" }));
+            return Ok();
+
         }
+
         [HttpPost]
         public async Task<IActionResult> Login(LoginUserViewModel model)
         {
-            if (ModelState.IsValid)
-            {
-                var user = await _userManager.FindByNameAsync(model.UserName);
-                if (user == null) return BadRequest("Kullanıcı bulunamadı!");
-                var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
-                if (result.Succeeded)
-                {
-                    string token = _jwtProvider.GenerateJwt(user);
-                    return Ok(token);
-                }
-                else
-                {
-                    return BadRequest("Kullanıcı adı veya şifre yanlış!");
-                }
-            }
-            else
-            {
-                return BadRequest(ModelState);
-            }
+            //if (ModelState.IsValid)
+            //{
+            //    var user = await _userManager.FindByNameAsync(model.UserName);
+            //    if (user == null) return BadRequest("Kullanıcı bulunamadı!");
+            //    var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
+            //    if (result.Succeeded)
+            //    {
+            //        string token = _jwtProvider.GenerateJwt(user);
+                    
+            //    }
+            //    else
+            //    {
+            //        return BadRequest("Kullanıcı adı veya şifre yanlış!");
+            //    }
+            //}
+            //else
+            //{
+            //    return BadRequest(ModelState);
+            //}
+            return Ok(model);
         }
     }
 }

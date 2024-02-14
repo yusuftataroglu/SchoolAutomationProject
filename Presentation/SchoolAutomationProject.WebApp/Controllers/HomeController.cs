@@ -5,6 +5,7 @@ using SchoolAutomationProject.Application.ViewModels;
 using SchoolAutomationProject.Domain.Entities.IdentityTables;
 using SchoolAutomationProject.WebApp.Models;
 using System.Diagnostics;
+using System.Web;
 
 namespace SchoolAutomationProject.WebApp.Controllers
 {
@@ -32,54 +33,97 @@ namespace SchoolAutomationProject.WebApp.Controllers
             return View();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Index(LoginUserViewModel model)
+        [HttpGet]
+        public IActionResult Register()
         {
-            //ViewBag.Message = "";
-            //if (ModelState.IsValid)
-            //{
-            //    var user = await _userManager.FindByNameAsync(model.UserName);
-            //    if (user != null)
-            //    {
-            //        var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
-            //        if (result.Succeeded)
-            //        {
-            //            var roles = await _userManager.GetRolesAsync(user);
-            //            ViewBag.Message = "Giriş başarılı";
-            //            string token = _jwtProvider.GenerateJwt(user);
-            //            if (roles.Contains("Admin"))
-            //            {
-            //                return RedirectToAction("Index", "Home", new { area = "Admin" , token });
-            //            }
-            //            else
-            //            {
-            //                return RedirectToAction("DeniedPage");
-            //            }
-            //        }
-            //        else
-            //        {
-            //            ViewBag.Message = "Kullanıcı adı veya parola yanlış";
-            //            return View(model);
-            //        }
-            //    }
-            //    else
-            //    {
-            //        ViewBag.Message = "Böyle bir kullanıcı bulunamadı!";
-            //        return View(model);
-            //    }
-            //}
-            //else
-            //{
-            //    return View(model);
-
-            //}
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterUserViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                AppUser user = new AppUser
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = model.Email,
+                    UserName = model.UserName
+                };
+
+                var registerResult = await _userManager.CreateAsync(user, model.Password);
+
+                if (registerResult.Succeeded)
+                {
+                    var roleResult = await _userManager.AddToRoleAsync(user, "Admin");
+                    if (roleResult.Succeeded)
+                    {
+                        TempData["Success"] = "Kullanıcı başarılı bir şekilde oluşturuldu!";
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        TempData["Error"] = "Rol atanırken bir hata meydana geldi!";
+                        return View(model);
+                    }
+                }
+                else
+                {
+                    TempData["Error"] = "Kayıt aşamasında bir hata meydana geldi!";
+                    return View(model);
+                }
+            }
+            else
+            {
+                TempData["Error"] = "Girilen bilgilerde hata var!";
+                return View(model);
+            }
+        }
+
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginUserViewModel model)
+        {
+
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.FindByNameAsync(model.UserName);
+                if (user != null)
+                {
+                    var result = await _signInManager.PasswordSignInAsync(user, model.Password, false, false);
+                    if (result.Succeeded)
+                    {
+                        //string token = _jwtProvider.GenerateJwt(user);
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        return View(model);
+                    }
+                }
+                else
+                {
+                    return View(model);
+                }
+            }
+            else
+            {
+                return View(model);
+            }
+        }
+
 
         public IActionResult DeniedPage()
         {
             return View();
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

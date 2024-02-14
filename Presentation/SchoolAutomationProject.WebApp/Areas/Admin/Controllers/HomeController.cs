@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(AuthenticationSchemes =JwtBearerDefaults.AuthenticationScheme)]
+    [Authorize(Roles = "Admin")]
     public class HomeController : Controller
     {
         [HttpGet]

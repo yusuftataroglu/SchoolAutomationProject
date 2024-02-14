@@ -7,6 +7,20 @@ builder.Services.AddControllersWithViews();
 //Add custom services
 builder.Services.AddPersistenceServices(builder.Configuration);
 builder.Services.AddInfrastructureServices(builder.Configuration);
+
+//Cookie
+builder.Services.ConfigureApplicationCookie(x =>
+{
+    x.Cookie = new CookieBuilder
+    {
+        Name = "SchoolAutomationCookie"
+    };
+    x.LoginPath = new PathString("/Home/Login");
+    x.AccessDeniedPath = new PathString("/Home/DeniedPage");
+    x.SlidingExpiration = true;
+    x.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -18,13 +32,13 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
-
 
 app.UseEndpoints(endpoints =>
 {
