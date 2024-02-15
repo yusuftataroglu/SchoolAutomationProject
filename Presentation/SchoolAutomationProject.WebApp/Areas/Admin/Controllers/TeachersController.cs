@@ -1,10 +1,14 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata;
+using NuGet.DependencyResolver;
 using SchoolAutomationProject.Application.Repositories.ClassroomRepositories;
 using SchoolAutomationProject.Application.Repositories.MainCourseRepositories;
 using SchoolAutomationProject.Application.Repositories.TeacherRepositories;
 using SchoolAutomationProject.Application.ViewModels;
+using SchoolAutomationProject.Domain.Entities.CrossTables;
+using SchoolAutomationProject.Domain.Entities.CustomTables;
 using SchoolAutomationProject.Domain.Entities.IdentityTables;
 
 namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
@@ -38,9 +42,9 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         {
             var teacherList = _teacherReadRepository.GetAll().ToList();
             List<ReadTeacherViewModel> teacherVMList = new List<ReadTeacherViewModel>();
+
             foreach (var teacher in teacherList)
             {
-                var mainCourse = _mainCourseReadRepository.GetAll().FirstOrDefault(x => x.Id == teacher.MainCourseId).Name;
                 var teacherVM = new ReadTeacherViewModel
                 {
                     Id = teacher.Id,
@@ -52,8 +56,10 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                     UpdatedIpAddress = teacher.UpdatedIpAddress,
                     FirstName = teacher.FirstName,
                     LastName = teacher.LastName,
-                    Department = mainCourse,
-                    Role = teacher.Role
+                    Role = teacher.Role,
+                    Department = teacher.MainCourse.Name,
+                    ClassroomTeachers = teacher.ClassroomTeachers,
+                    TeacherSchedules = teacher.TeacherSchedules
                 };
                 teacherVMList.Add(teacherVM);
             }

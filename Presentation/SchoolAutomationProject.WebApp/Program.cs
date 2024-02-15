@@ -18,7 +18,7 @@ builder.Services.ConfigureApplicationCookie(x =>
     x.LoginPath = new PathString("/Home/Login");
     x.AccessDeniedPath = new PathString("/Home/DeniedPage");
     x.SlidingExpiration = true;
-    x.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+    x.ExpireTimeSpan = TimeSpan.FromMinutes(60);
 });
 
 var app = builder.Build();

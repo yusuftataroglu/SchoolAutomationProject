@@ -1,9 +1,7 @@
 ﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SchoolAutomationProject.Domain.Entities.CrossTables;
+using SchoolAutomationProject.Domain.Entities.CustomTables;
+using SchoolAutomationProject.Domain.Entities.Enums;
 
 namespace SchoolAutomationProject.Application.ViewModels
 {
@@ -13,5 +11,8 @@ namespace SchoolAutomationProject.Application.ViewModels
         public string LastName { get; set; }
         public string? Role { get; set; }
         public string Department { get; set; }
+
+        public ICollection<ClassroomTeacher> ClassroomTeachers { get; set; }
+        public ICollection<TeacherSchedule> TeacherSchedules { get; set; }
     }
 }

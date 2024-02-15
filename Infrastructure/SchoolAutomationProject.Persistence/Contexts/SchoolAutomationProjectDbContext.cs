@@ -13,7 +13,7 @@ using SchoolAutomationProject.Persistence.Helpers;
 
 namespace SchoolAutomationProject.Persistence.Contexts
 {
-    public class SchoolAutomationProjectDbContext : IdentityDbContext <AppUser,AppUserRole,string>
+    public class SchoolAutomationProjectDbContext : IdentityDbContext<AppUser, AppUserRole, string>
     {
 
         public DbSet<Classroom> Classrooms { get; set; }
@@ -101,15 +101,16 @@ namespace SchoolAutomationProject.Persistence.Contexts
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            
+
             if (!optionsBuilder.IsConfigured)
             {
                 //appsettings.json dosyası bu katmanda olmadığı için Custom bir GetConnectionString metodu üzerinde ulaşıyoruz.
-                optionsBuilder.UseSqlServer(ConnectionStringHelper.GetConnectionString()); 
+                optionsBuilder.UseSqlServer(ConnectionStringHelper.GetConnectionString());
             }
 
+            optionsBuilder.UseLazyLoadingProxies();
         }
-        
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -126,6 +127,7 @@ namespace SchoolAutomationProject.Persistence.Contexts
             modelBuilder.ApplyConfiguration(new StudentConfiguration());
             modelBuilder.ApplyConfiguration(new SubCourseConfiguration());
             modelBuilder.ApplyConfiguration(new TeacherConfiguration());
+            modelBuilder.ApplyConfiguration(new TeacherScheduleConfiguration());
             modelBuilder.ApplyConfiguration(new DiscontinuedStudentConfiguration());
             modelBuilder.ApplyConfiguration(new AppUserConfiguration());
             modelBuilder.ApplyConfiguration(new AppUserRoleConfiguration());

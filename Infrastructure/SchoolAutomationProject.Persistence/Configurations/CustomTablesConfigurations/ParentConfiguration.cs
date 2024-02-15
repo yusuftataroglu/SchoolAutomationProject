@@ -57,7 +57,6 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
             Address = "Deneme Mahallesi, Deneme Sokak No: 2",
             District = "Deneme İlçe",
             City = "Deneme Şehir",
-            UserId="5fc06fe1-18ad-4bf9-8833-85c502b493cc",
             CreatedDate = DateTime.UtcNow,
             CreatedComputerName = "Computer2",
             CreatedIpAddress = "192.168.1.2"

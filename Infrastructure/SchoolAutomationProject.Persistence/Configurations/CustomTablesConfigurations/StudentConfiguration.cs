@@ -61,7 +61,6 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
             GPA = 95.0,
             IsPreRegistered = true,
             ClassroomId =Guid.Parse("666917cb-ccff-46e2-81be-1dc06b74ddcb"),
-            UserId="2862264a-af6f-447a-a449-c317c736ed48",
             ContinuationStatus = ContinuationStatus.Devam,
             CreatedDate = DateTime.UtcNow,
             CreatedComputerName = "Computer2",

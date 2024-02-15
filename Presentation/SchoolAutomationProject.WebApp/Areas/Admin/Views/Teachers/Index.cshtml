@@ -32,7 +32,12 @@
                         <td>@item.LastName</td>
                         <td>@item.Role</td>
                         <td>@item.Department</td>
-                        <td><div class="badge bg-info">Girdiği sınıf</div></td>
+                        <td>
+                            @foreach (var classroomTeachers in item.ClassroomTeachers)
+                            {
+                                <badge class="badge bg-danger">@classroomTeachers.Classroom.Grade / @classroomTeachers.Classroom.Section</badge>
+                            }
+                        </td>
                         <td><a>Ders programı</a></td>
                         <td>
                             <button class="btn btn-warning">Detaylar</button>
@@ -45,42 +50,4 @@
         </table>
     </div>
 </div>
-
-
-@* <div class="card-body">
-    <table class="table table-hover table-bordered">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>İsim</th>
-                <th>Soyisim</th>
-                <th>Rol</th>
-                <th>Alan</th>
-                <th>Girdiği Sınıflar</th>
-                <th>Ders Programı</a></th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                @foreach (var item in Model)
-                {
-                    <td>@item.Id</td>
-                    <td>@item.FirstName</td>
-                    <td>@item.LastName</td>
-                    <td>@item.Role</td>
-                    <td>@item.Department</td>
-                    <td><div class="badge bg-info">Girdiği sınıf</div></td>
-                    <td><a>Ders programı</a></td>
-                    <td>
-                        <button class="btn btn-primary">Güncelle</button>
-                        <button class="btn btn-danger">Sil</button>
-                        <button class="btn btn-warning">Detay Gör</button>
-                    </td>
-                }
-            </tr>
-        </tbody>
-    </table>
-
-</div> *@
 

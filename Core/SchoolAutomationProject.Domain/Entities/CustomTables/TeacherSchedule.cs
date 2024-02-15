@@ -4,12 +4,12 @@ using SchoolAutomationProject.Domain.Entities.CustomTables;
 
 namespace SchoolAutomationProject.Domain.Entities.CustomTables
 {
-    public class TeacherSchedule:BaseClass
+    public class TeacherSchedule : BaseClass
     {
-
-        public Day Day { get; set; }
+        public DateTime DateTime { get; set; }
+        public DayOfWeek Day { get; set; }
         public byte TimeSlot { get; set; }
-        public string Classroom { get; set; } //todo değişebilir.
+        public string? Classroom { get; set; }
 
         //TeacherSchedule - Teacher ilişkisi
         public virtual Teacher Teacher { get; set; }
