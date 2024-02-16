@@ -1,0 +1,64 @@
+﻿@model ReadTeacherViewModel
+@{
+    ViewData["Title"] = "GetDetailsTeacher";
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+
+<div class="card mb-4">
+    <div class="card-header d-flex align-Models-center">
+        <i class="fas fa-table me-1 me-2"></i>
+        <h3>Öğretmen Detayları</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>İsim</th>
+                    <th>Soyisim</th>
+                    <th>Ünvan</th>
+                    <th>Alan</th>
+                    <th>Girdiği Sınıflar</th>
+                    <th>Ders Programı</a></th>
+                    <th>Oluşturma Tarihi</th>
+                    <th>Oluşturanın Bilgisayar Adı</th>
+                    <th>Oluşturanın IP Adresi</th>
+                    <th>Güncelleme Tarihi</th>
+                    <th>Güncelleyenin Bilgisayar Adı</th>
+                    <th>Güncelleyenin IP Adresi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Model.Id</td>
+                    <td>@Model.FirstName</td>
+                    <td>@Model.LastName</td>
+                    <td>@Model.Title</td>
+                    <td>@Model.MainCourse.Name</td>
+                    <td>
+                        @foreach (var classroomTeachers in Model.ClassroomTeachers)
+                        {
+                            <badge class="badge bg-danger">@classroomTeachers.Classroom.Name</badge>
+                        }
+                    </td> <!--Classroom Names-->
+                    <td>
+                        @if (Model.TeacherSchedules is not null)
+                        {
+                            @foreach (var teacherSchedule in Model.TeacherSchedules)
+                            {
+                                <badge id="teacherSchedule" class="badge bg-black">Ders Programı</badge>
+                            }
+                        }
+
+                    </td><!--Teacher Schedules-->
+                    <td>@Model.CreatedDate</td>
+                    <td>@Model.CreatedComputerName</td>
+                    <td>@Model.CreatedIpAddress</td>
+                    <td>@Model.UpdatedDate</td>
+                    <td>@Model.UpdatedComputerName</td>
+                    <td>@Model.UpdatedIpAddress</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

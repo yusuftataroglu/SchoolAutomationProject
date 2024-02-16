@@ -81,49 +81,57 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
             {
                 AppUser user = new()
                 {
-                    Id=Guid.NewGuid().ToString(),
+                    Id = Guid.NewGuid().ToString(),
                     UserName = model.FirstName,
                 };
                 var userCreationResult = await _userManager.CreateAsync(user, $"{model.FirstName[0].ToString().ToUpper()}{model.FirstName.Substring(1)}{model.LastName}{model.Id.ToString().Substring(0, 3)}");
-
+                var roleAssignmentResult = await _userManager.AddToRoleAsync(user, "Teacher");
                 if (userCreationResult.Succeeded)
                 {
-                    List<ClassroomTeacher> classroomTeachers = new();
-                    Teacher teacher = new Teacher
+                    if (roleAssignmentResult.Succeeded)
                     {
-                        FirstName = model.FirstName,
-                        LastName = model.LastName,
-                        Title = model.Title,
-                        MainCourseId = Guid.Parse(model.MainCourseId),
-                        UserId = user.Id,
-                        ClassroomTeachers = classroomTeachers
-                    };
-
-                    foreach (var classroomId in classrooms)
-                    {
-                        var classroomTeacher = new ClassroomTeacher
+                        List<ClassroomTeacher> classroomTeachers = new();
+                        Teacher teacher = new Teacher
                         {
-                            TeacherId = teacher.Id,
-                            ClassroomId = Guid.Parse(classroomId)
+                            FirstName = model.FirstName,
+                            LastName = model.LastName,
+                            Title = model.Title,
+                            MainCourseId = Guid.Parse(model.MainCourseId),
+                            UserId = user.Id,
+                            ClassroomTeachers = classroomTeachers
                         };
-                        classroomTeachers.Add(classroomTeacher);
-                    }
-                    var result = await _teacherWriteRepository.AddAsync(teacher);
-                    if (result)
-                    {
-                        await _teacherWriteRepository.SaveChangesAsync();
-                        TempData["Success"] = "Öğretmen başarıyla eklendi";
-                        return View(model);
+
+                        foreach (var classroomId in classrooms)
+                        {
+                            var classroomTeacher = new ClassroomTeacher
+                            {
+                                TeacherId = teacher.Id,
+                                ClassroomId = Guid.Parse(classroomId)
+                            };
+                            classroomTeachers.Add(classroomTeacher);
+                        }
+                        var result = await _teacherWriteRepository.AddAsync(teacher);
+                        if (result)
+                        {
+                            await _teacherWriteRepository.SaveChangesAsync();
+                            TempData["Success"] = "Öğretmen başarıyla eklendi";
+                            return View(model);
+                        }
+                        else
+                        {
+                            TempData["Error"] = "Bir hata meydana geldi!";
+                            return View(model);
+                        }
                     }
                     else
                     {
-                        TempData["Error"] = "Bir hata meydana geldi!";
+                        TempData["Error"] = "Öğretmene ait rol atanırken bir hata meydana geldi!";
                         return View(model);
                     }
                 }
                 else
                 {
-                    TempData["Error"] = "Bir hata meydana geldi!";
+                    TempData["Error"] = "Öğretmene ait kullanıcı oluştururken bir hata meydana geldi!";
                     return View(model);
                 }
             }
@@ -191,6 +199,65 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                 TempData["Error"] = "Bu öğretmen veri tabanında bulunmuyor!";
                 return RedirectToAction("Index");
             }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> DeleteTeacher(string id)
+        {
+            Teacher teacher = await _teacherReadRepository.GetByIdAsync(id);
+            if (teacher != null)
+            {
+                var result = _teacherWriteRepository.Remove(teacher);
+                if (result)
+                {
+                    AppUser user = await _userManager.FindByIdAsync(teacher.UserId);
+                    if (user != null)
+                    {
+                        await _userManager.DeleteAsync(user);
+                    }
+                    await _teacherWriteRepository.SaveChangesAsync();
+                    TempData["Success"] = "Silme işlemi başarıyla gerçekleştirildi";
+                    return RedirectToAction("GetTeacher");
+                }
+                else
+                {
+                    TempData["Error"] = "Bir sorun oluştu!";
+                    return RedirectToAction("GetTeacher");
+                }
+            }
+            else
+            {
+                TempData["Error"] = "Bu öğretmen veri tabanındandan kaldırılmış!";
+                return RedirectToAction("GetTeacher");
+            }
+
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetDetailsTeacher(string id)
+        {
+            Teacher teacher = await _teacherReadRepository.GetByIdAsync(id);
+            if (teacher != null)
+            {
+                ReadTeacherViewModel model = new()
+                {
+                    Id = teacher.Id,
+                    CreatedComputerName = teacher.CreatedComputerName,
+                    CreatedDate = teacher.CreatedDate,
+                    CreatedIpAddress = teacher.CreatedIpAddress,
+                    UpdatedComputerName = teacher.UpdatedComputerName,
+                    UpdatedDate = teacher.UpdatedDate,
+                    UpdatedIpAddress = teacher.UpdatedIpAddress,
+                    FirstName = teacher.FirstName,
+                    LastName = teacher.LastName,
+                    Title = teacher.Title,
+                    MainCourse = teacher.MainCourse,
+                    ClassroomTeachers = teacher.ClassroomTeachers,
+                };
+                return View(model);
+            }
+            TempData["Error"] = "Bu öğretmen veri tabanından kaldırılmış!";
+            return RedirectToAction("GetTeacher");
         }
     }
 }
