@@ -7,7 +7,8 @@
 <div class="card mb-4">
     <div class="card-header d-flex align-items-center">
         <i class="fas fa-table me-1 me-2"></i>
-        <h3>Öğretmenler Tablosu</h3>
+        <h3>Öğretmen Listesi</h3>
+        <a class="btn btn-success" asp-area="Admin" asp-controller="Teachers" asp-action="AddTeacher">+</a>
     </div>
     <div class="card-body">
         <table class="table table-hover table-bordered">
@@ -16,7 +17,7 @@
                     <th>#</th>
                     <th>İsim</th>
                     <th>Soyisim</th>
-                    <th>Rol</th>
+                    <th>Ünvan</th>
                     <th>Alan</th>
                     <th>Girdiği Sınıflar</th>
                     <th>Ders Programı</a></th>
@@ -30,18 +31,23 @@
                         <td>@item.Id</td>
                         <td>@item.FirstName</td>
                         <td>@item.LastName</td>
-                        <td>@item.Role</td>
+                        <td>@item.Title</td>
                         <td>@item.Department</td>
                         <td>
                             @foreach (var classroomTeachers in item.ClassroomTeachers)
                             {
-                                <badge class="badge bg-danger">@classroomTeachers.Classroom.Grade / @classroomTeachers.Classroom.Section</badge>
+                                <badge class="badge bg-danger">@classroomTeachers.Classroom.Name</badge>
                             }
                         </td>
-                        <td><a>Ders programı</a></td>
+                        <td>
+                            @foreach (var teacherSchedule in item.TeacherSchedules)
+                            {
+                                <badge id="teacherSchedule" class="badge bg-black">Ders Programı</badge>
+                            }
+                        </td>
                         <td>
                             <button class="btn btn-warning">Detaylar</button>
-                            <button class="btn btn-primary">Güncelle</button>
+                            <a class="btn btn-primary" asp-area="Admin" asp-controller="Teachers" asp-action="UpdateTeacher" asp-route-id="@item.Id">Güncelle</a>
                             <button class="btn btn-danger">Sil</button>
                         </td>
                     </tr>

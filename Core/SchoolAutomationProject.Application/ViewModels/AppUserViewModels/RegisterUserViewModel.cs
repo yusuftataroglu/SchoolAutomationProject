@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolAutomationProject.Application.ViewModels
+namespace SchoolAutomationProject.Application.ViewModels.AppUserViewModels
 {
     public class RegisterUserViewModel
     {
         [Required(ErrorMessage = "Kullanıcı adı boş geçilemez!")]
         public string UserName { get; set; }
 
-        [Required(ErrorMessage ="Email boş geçilemez!")]
+        [Required(ErrorMessage = "Email boş geçilemez!")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Şifre boş geçilemez")]

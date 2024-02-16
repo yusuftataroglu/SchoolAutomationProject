@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using SchoolAutomationProject.Application.Helpers.TokenHelpers;
 using SchoolAutomationProject.Application.Repositories.StudentRepositories;
-using SchoolAutomationProject.Application.ViewModels;
+using SchoolAutomationProject.Application.ViewModels.AppUserViewModels;
 using SchoolAutomationProject.Domain.Entities.IdentityTables;
 
 namespace SchoolAutomationProject.WebAPI.Controllers

@@ -1,0 +1,54 @@
+﻿@model WriteTeacherViewModel
+@inject ITeacherReadRepository _teacherReadRepository
+@inject IMainCourseReadRepository _mainCourseReadRepository
+@inject IClassroomReadRepository _classroomReadRepository
+@{
+    ViewData["Title"] = "AddTeacher";
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <form method="post" asp-area="Admin" asp-controller="Teachers" asp-action="AddTeacher">
+            <div class="card">
+                <div class="card-header">Öğretmen Ekle</div>
+                <div class="card-body">
+                    <div asp-validation-summary="All"></div>
+                    <label for="firstName">İsim</label>
+                    <input id="firstName" class="form-control" type="text" asp-for="FirstName" />
+
+                    <label for="lastName">Soyisim</label>
+                    <input id="lastName" class="form-control" type="text" asp-for="LastName" />
+
+                    <label for="title">Unvan</label>
+                    <input id="title" class="form-control" type="text" asp-for="Title" />
+
+                    <label>Verilen Ders</label>
+                    <select class="form-select" asp-for="@Model.MainCourseId">
+                        <option value="" selected disabled>Bir ders seçiniz</option>
+                        @foreach (var item in _mainCourseReadRepository.GetAll().ToList())
+                        {
+                            <option value=@item.Id>@item.Name</option>
+
+                        }
+                    </select>
+
+                    <label>Ders Verilen Sınıflar</label>
+                    @foreach (var classroom in _classroomReadRepository.GetAll().OrderBy(x=> x.Name).ToList())
+                    {
+                    <input type="checkbox" class="btn-check" id="@classroom.Id" name="classrooms" value="@classroom.Id">
+                    <label class="btn btn-outline-primary" for="@classroom.Id">@classroom.Name</label>
+                    }
+                        
+
+
+                    <div>
+                    <button class="btn btn-primary mt-2" type="submit">Ekle</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

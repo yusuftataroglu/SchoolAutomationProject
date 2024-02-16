@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SchoolAutomationProject.Application.Helpers.TokenHelpers;
-using SchoolAutomationProject.Application.ViewModels;
+using SchoolAutomationProject.Application.ViewModels.AppUserViewModels;
 using SchoolAutomationProject.Domain.Entities.IdentityTables;
 using SchoolAutomationProject.WebApp.Models;
 using System.Diagnostics;
-using System.Web;
 
 namespace SchoolAutomationProject.WebApp.Controllers
 {
@@ -76,7 +75,6 @@ namespace SchoolAutomationProject.WebApp.Controllers
             }
             else
             {
-                TempData["Error"] = "Girilen bilgilerde hata var!";
                 return View(model);
             }
         }
@@ -101,15 +99,18 @@ namespace SchoolAutomationProject.WebApp.Controllers
                     if (result.Succeeded)
                     {
                         //string token = _jwtProvider.GenerateJwt(user);
+                        TempData["Success"] = "Giriş Başarılı";
                         return RedirectToAction("Index", "Home");
                     }
                     else
                     {
+                        TempData["Error"] = "Giriş bilgilerinizi kontrol ediniz!";
                         return View(model);
                     }
                 }
                 else
                 {
+                    TempData["Error"] = "Böyle bir kullanıcı bulunamadı!";
                     return View(model);
                 }
             }

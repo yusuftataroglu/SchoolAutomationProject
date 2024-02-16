@@ -117,6 +117,19 @@
         </div>
         <div id="layoutSidenav_content">
             <main>
+                <!--Messages-->
+                @if (TempData["Success"] != null)
+                {
+                    <div class="alert alert-success">
+                        @TempData["Success"]
+                    </div>
+                }
+                else if (TempData["Error"] != null)
+                {
+                    <div class="alert alert-danger">
+                        @TempData["Error"]
+                    </div>
+                }
                 @RenderBody()
             </main>
 

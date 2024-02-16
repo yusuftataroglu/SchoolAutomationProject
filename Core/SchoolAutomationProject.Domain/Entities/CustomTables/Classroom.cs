@@ -1,14 +1,12 @@
 ﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
 using SchoolAutomationProject.Domain.Entities.CrossTables;
 using SchoolAutomationProject.Domain.Entities.Enums;
-using SchoolAutomationProject.Domain.Entities.CustomTables;
 
 namespace SchoolAutomationProject.Domain.Entities.CustomTables
 {
     public class Classroom : BaseClass
     {
-        public string Grade { get; set; } // Sınıf (1, 2, ...)
-        public Section Section { get; set; } // Şube (A, B, C, ...)
+        public string Name { get; set; } // Sınıf
         public byte Capacity { get; set; } // Kapasite
 
         // Derslik - Ders ilişkisi

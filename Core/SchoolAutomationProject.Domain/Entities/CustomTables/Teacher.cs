@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
-using SchoolAutomationProject.Domain.Entities.CommonTables;
+﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
 using SchoolAutomationProject.Domain.Entities.CrossTables;
-using SchoolAutomationProject.Domain.Entities.CustomTables;
 using SchoolAutomationProject.Domain.Entities.IdentityTables;
 
 namespace SchoolAutomationProject.Domain.Entities.CustomTables
@@ -10,8 +8,7 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string? Role { get; set; }
-        public string Department { get; set; }
+        public string? Title { get; set; }
 
         //Teacher-MainCourse ilişkisi
         public virtual MainCourse MainCourse { get; set; }
