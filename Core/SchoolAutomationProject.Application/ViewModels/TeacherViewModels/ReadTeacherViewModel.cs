@@ -9,8 +9,7 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherViewModels
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string? Title { get; set; }
-        public string Department { get; set; }
-
+        public MainCourse MainCourse { get; set; }
         public ICollection<ClassroomTeacher> ClassroomTeachers { get; set; }
         public ICollection<TeacherSchedule> TeacherSchedules { get; set; }
     }

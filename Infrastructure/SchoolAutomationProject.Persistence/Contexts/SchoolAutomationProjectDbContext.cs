@@ -81,6 +81,7 @@ namespace SchoolAutomationProject.Persistence.Contexts
 
                         if (item.Entity is Student)
                         {
+
                             Student student = (Student)item.Entity;
                             var lastRegistrationNumber = Students.OrderByDescending(x => x.RegistrationNumber).FirstOrDefault()?.RegistrationNumber;
                             if (lastRegistrationNumber == null)
