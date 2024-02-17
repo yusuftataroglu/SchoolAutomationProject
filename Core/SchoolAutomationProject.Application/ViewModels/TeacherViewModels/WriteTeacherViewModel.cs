@@ -6,7 +6,7 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherViewModels
 {
     public class WriteTeacherViewModel
     {
-        public Guid Id { get; set; } //todo gerekli mi?
+        public Guid Id { get; set; }
 
         [Required(ErrorMessage = "İsim boş geçilemez!")]
         public string FirstName { get; set; }
@@ -18,7 +18,7 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherViewModels
         [Required(ErrorMessage = "Ders seçimi boş geçilemez!")]
         public string MainCourseId { get; set; }
 
-        //Öğretmen eklendikten sonra sınıf ataması yapmak zorunlu değil. Sonradan da atama yapılabilir.
+        //Öğretmen eklendikten sonra sınıf ataması yapmak zorunlu değil. Atama sonradan yapılabilir.(Update yaparken)
         public List<string>? ClassroomId { get; set; }
     }
 }

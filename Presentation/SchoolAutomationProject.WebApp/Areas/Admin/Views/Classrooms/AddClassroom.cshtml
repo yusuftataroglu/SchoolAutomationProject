@@ -1,0 +1,57 @@
+﻿@model WriteClassroomViewModel
+@inject ITeacherReadRepository _teacherReadRepository
+@inject IMainCourseReadRepository _mainCourseReadRepository
+@inject IClassroomReadRepository _classroomReadRepository
+@inject IStudentReadRepository _studentReadRepository
+@{
+    ViewData["Title"] = "AddClassroom";
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <form method="post" asp-area="Admin" asp-controller="Classrooms" asp-action="AddClassroom">
+            <div class="card">
+                <div class="card-header">Sınıf Ekle</div>
+                <div class="card-body">
+
+
+                    <div asp-validation-summary="All"></div>
+                    <label for="name">Sınıf Adı</label>
+                    <input id="name" class="form-control" type="text" asp-for="Name" />
+
+                    <label for="capacity">Kapasite</label>
+                    <input id="capacity" class="form-control" type="number" value="25" asp-for="Capacity" />
+
+
+                    <label class="d-block mb-2">Verilecek Dersler</label>
+                    @foreach (var mainCourse in _mainCourseReadRepository.GetAll().OrderBy(x => x.Name).ToList())
+                    {
+                        <input type="checkbox" class="btn-check" id="@mainCourse.Id" name="modelMainCourseIds" value="@mainCourse.Id">
+                        <label class="btn btn-outline-primary" for="@mainCourse.Id">@mainCourse.Name</label>
+                    }
+
+                    <label class="d-block mb-2">Öğrenciler</label>
+                    @foreach (var student in _studentReadRepository.GetAll().OrderBy(x => x.FirstName).ToList())
+                    {
+                        <input type="checkbox" class="btn-check" id="@student.Id" name="modelStudentIds" value="@student.Id">
+                        <label class="btn btn-outline-primary" for="@student.Id">@student.FirstName @student.LastName</label>
+                    }
+
+                    <label class="d-block mb-2">Öğretmenler</label>
+                    @foreach (var teacher in _teacherReadRepository.GetAll().OrderBy(x => x.FirstName).ToList())
+                    {
+                        <input type="checkbox" class="btn-check" id="@teacher.Id" name="modelTeacherIds" value="@teacher.Id">
+                        <label class="btn btn-outline-primary" for="@teacher.Id">@teacher.FirstName @teacher.LastName</label>
+                    }
+
+
+                    <div>
+                        <button class="btn btn-primary mt-2" type="submit">Ekle</button>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

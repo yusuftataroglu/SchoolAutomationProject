@@ -27,7 +27,6 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <label>Verilen Dersler</label>
                     <div class="row">
                         <div class="col-md-auto">
                             <div class="form-group">
@@ -54,7 +53,7 @@
                             <div class="form-group">
                                 @foreach (var classroom in _classroomReadRepository.GetAll().ToList())
                                 {
-                                    <input type="checkbox" id="@classroom.Id" name="classrooms" class="form-check-input" value="@Model.ClassroomId" @(Model.ClassroomId.Contains(classroom.Id.ToString()) ? "checked" : "") />
+                                    <input type="checkbox" id="@classroom.Id" name="modelClassroomIds" class="form-check-input" value="@classroom.Id" @(Model.ClassroomId.Contains(classroom.Id.ToString()) ? "checked" : "") />
                                     <label for="@classroom.Id">@classroom.Name</label>
                                 }
                             </div>

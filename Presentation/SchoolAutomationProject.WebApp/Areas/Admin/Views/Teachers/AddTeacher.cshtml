@@ -36,7 +36,7 @@
                     <label>Ders Verilen Sınıflar</label>
                     @foreach (var classroom in _classroomReadRepository.GetAll().OrderBy(x => x.Name).ToList())
                     {
-                        <input type="checkbox" class="btn-check" id="@classroom.Id" name="classrooms" value="@classroom.Id">
+                        <input type="checkbox" class="btn-check" id="@classroom.Id" name="modelClassroomIds" value="@classroom.Id">
                         <label class="btn btn-outline-primary" for="@classroom.Id">@classroom.Name</label>
                     }
 

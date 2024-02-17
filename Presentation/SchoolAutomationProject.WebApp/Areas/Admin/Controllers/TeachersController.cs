@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.IdentityModel.Tokens;
 using NuGet.DependencyResolver;
 using SchoolAutomationProject.Application.Repositories.ClassroomRepositories;
 using SchoolAutomationProject.Application.Repositories.MainCourseRepositories;
@@ -39,7 +41,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetTeacher()
+        public IActionResult GetTeachers()
         {
             var teacherList = _teacherReadRepository.GetAll().ToList();
             List<ReadTeacherViewModel> teacherVMList = new List<ReadTeacherViewModel>();
@@ -74,7 +76,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddTeacher(WriteTeacherViewModel model, List<string> classrooms)
+        public async Task<IActionResult> AddTeacher(WriteTeacherViewModel model, List<string> modelClassroomIds)
         {
             //todo schedule eklenebilecek!
             if (ModelState.IsValid)
@@ -82,13 +84,13 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                 AppUser user = new()
                 {
                     Id = Guid.NewGuid().ToString(),
-                    UserName = $"{model.FirstName}{model.LastName}",
+                    UserName = $"{model.FirstName}{model.LastName}", //todo türkçe karakter hata verdi
                 };
                 var userCreationResult = await _userManager.CreateAsync(user);
                 if (userCreationResult.Succeeded)
                 {
-                var roleAssignmentResult = await _userManager.AddToRoleAsync(user, "Teacher");
-                    
+                    var roleAssignmentResult = await _userManager.AddToRoleAsync(user, "Teacher");
+
                     if (roleAssignmentResult.Succeeded)
                     {
                         List<ClassroomTeacher> classroomTeachers = new();
@@ -102,12 +104,12 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                             ClassroomTeachers = classroomTeachers
                         };
 
-                        foreach (var classroomId in classrooms)
+                        foreach (var modelClassroomId in modelClassroomIds)
                         {
                             var classroomTeacher = new ClassroomTeacher
                             {
                                 TeacherId = teacher.Id,
-                                ClassroomId = Guid.Parse(classroomId)
+                                ClassroomId = Guid.Parse(modelClassroomId)
                             };
                             classroomTeachers.Add(classroomTeacher);
                         }
@@ -115,7 +117,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                         if (result)
                         {
                             var password = $"{model.FirstName[0].ToString().ToUpper()}{model.FirstName.Substring(1)}{model.LastName}{user.Id.ToString().Substring(0, 3)}-";
-                            await _userManager.AddPasswordAsync(user,password);
+                            await _userManager.AddPasswordAsync(user, password);
                             await _teacherWriteRepository.SaveChangesAsync();
                             TempData["Success"] = "Öğretmen başarıyla eklendi";
                             return View(model);
@@ -161,35 +163,38 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         } //todo tüm bilgiler güncellenecek!
 
         [HttpPost]
-        public async Task<IActionResult> UpdateTeacher(WriteTeacherViewModel model, List<string> classrooms)
+        public async Task<IActionResult> UpdateTeacher(WriteTeacherViewModel model, List<string> modelClassroomIds)
         {
             //todo schedule güncellenebilecek
             Teacher teacher = await _teacherReadRepository.GetByIdAsync(model.Id.ToString());
+            List<ClassroomTeacher> classroomTeachers = new();
+
             if (teacher != null)
             {
-                List<ClassroomTeacher> classroomTeachers = new();
 
                 teacher.FirstName = model.FirstName;
                 teacher.LastName = model.LastName;
                 teacher.Title = model.Title;
                 teacher.MainCourseId = Guid.Parse(model.MainCourseId);
-                teacher.ClassroomTeachers = classroomTeachers;
 
-                foreach (var classroomId in classrooms)
+
+                foreach (var modelClassroomId in modelClassroomIds)
                 {
                     var classroomTeacher = new ClassroomTeacher
                     {
                         TeacherId = teacher.Id,
-                        ClassroomId = Guid.Parse(classroomId)
+                        ClassroomId = Guid.Parse(modelClassroomId)
                     };
                     classroomTeachers.Add(classroomTeacher);
                 }
+                teacher.ClassroomTeachers = classroomTeachers;
+
                 var result = _teacherWriteRepository.Update(teacher);
                 if (result)
                 {
                     await _teacherWriteRepository.SaveChangesAsync();
                     TempData["Success"] = "Güncelleme işlemi başarıyla gerçekleştirildi";
-                    return RedirectToAction("Index");
+                    return RedirectToAction("GetTeachers");
                 }
                 else
                 {
@@ -200,7 +205,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
             else
             {
                 TempData["Error"] = "Bu öğretmen veri tabanında bulunmuyor!";
-                return RedirectToAction("Index");
+                return RedirectToAction("GetTeachers");
             }
         }
 
@@ -220,18 +225,18 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                     }
                     await _teacherWriteRepository.SaveChangesAsync();
                     TempData["Success"] = "Silme işlemi başarıyla gerçekleştirildi";
-                    return RedirectToAction("GetTeacher");
+                    return RedirectToAction("GetTeachers");
                 }
                 else
                 {
                     TempData["Error"] = "Bir sorun oluştu!";
-                    return RedirectToAction("GetTeacher");
+                    return RedirectToAction("GetTeachers");
                 }
             }
             else
             {
                 TempData["Error"] = "Bu öğretmen veri tabanındandan kaldırılmış!";
-                return RedirectToAction("GetTeacher");
+                return RedirectToAction("GetTeachers");
             }
 
         }
@@ -260,7 +265,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                 return View(model);
             }
             TempData["Error"] = "Bu öğretmen veri tabanından kaldırılmış!";
-            return RedirectToAction("GetTeacher");
+            return RedirectToAction("GetTeachers");
         }
     }
 }
