@@ -82,12 +82,13 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                 AppUser user = new()
                 {
                     Id = Guid.NewGuid().ToString(),
-                    UserName = model.FirstName,
+                    UserName = $"{model.FirstName}{model.LastName}",
                 };
-                var userCreationResult = await _userManager.CreateAsync(user, $"{model.FirstName[0].ToString().ToUpper()}{model.FirstName.Substring(1)}{model.LastName}{model.Id.ToString().Substring(0, 3)}");
-                var roleAssignmentResult = await _userManager.AddToRoleAsync(user, "Teacher");
+                var userCreationResult = await _userManager.CreateAsync(user);
                 if (userCreationResult.Succeeded)
                 {
+                var roleAssignmentResult = await _userManager.AddToRoleAsync(user, "Teacher");
+                    
                     if (roleAssignmentResult.Succeeded)
                     {
                         List<ClassroomTeacher> classroomTeachers = new();
@@ -113,6 +114,8 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                         var result = await _teacherWriteRepository.AddAsync(teacher);
                         if (result)
                         {
+                            var password = $"{model.FirstName[0].ToString().ToUpper()}{model.FirstName.Substring(1)}{model.LastName}{user.Id.ToString().Substring(0, 3)}-";
+                            await _userManager.AddPasswordAsync(user,password);
                             await _teacherWriteRepository.SaveChangesAsync();
                             TempData["Success"] = "Öğretmen başarıyla eklendi";
                             return View(model);
