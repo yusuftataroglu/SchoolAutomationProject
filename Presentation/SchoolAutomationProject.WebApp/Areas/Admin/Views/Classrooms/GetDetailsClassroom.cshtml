@@ -39,7 +39,7 @@
                         {
                             <badge class="badge bg-info">@classroomMainCourse.MainCourse.Name</badge>
                         }
-                    </td> 
+                    </td>
 
                     <!--Öğrenciler-->
                     <td>
@@ -51,10 +51,10 @@
 
                     <!--Öğretmenler-->
                     <td>
-                    @foreach (var classroomTeacher in Model.ClassroomTeachers)
-                    {
-                        <badge class="badge bg-danger">@classroomTeacher.Teacher.FirstName @classroomTeacher.Teacher.LastName</badge>
-                    }
+                        @foreach (var classroomTeacher in Model.ClassroomTeachers)
+                        {
+                            <badge class="badge bg-danger">@classroomTeacher.Teacher.FirstName @classroomTeacher.Teacher.LastName</badge>
+                        }
                     </td>
 
                     <td>@Model.CreatedDate</td>

@@ -38,7 +38,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetDetailsClassroom(Guid id)
+        public async Task<IActionResult> GetDetailsClassroom(string id)
         {
             Classroom classroom = await _classroomReadRepository.GetByIdAsync(id);
             if (classroom != null)
