@@ -1,6 +1,5 @@
 ﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
 using SchoolAutomationProject.Domain.Entities.CrossTables;
-using SchoolAutomationProject.Domain.Entities.Enums;
 
 namespace SchoolAutomationProject.Domain.Entities.CustomTables
 {

@@ -45,7 +45,7 @@
                         <td class="d-flex">
                             <a class="btn btn-warning" asp-area="Admin" asp-controller="Teachers" asp-action="GetDetailsTeacher" asp-route-id="@item.Id">Detaylar</a>
 
-                            <a class="btn btn-primary" asp-area="Admin" asp-controller="Teachers" asp-action="UpdateTeacher" asp-route-id="@item.Id">Güncelle</a>
+                            <a class="btn btn-primary" asp-area="Admin" asp-controller="Teachers" asp-action="UpdateTeacher" asp-route-id="@item.Id.ToString()">Güncelle</a>
 
                             <a class="btn btn-danger" asp-area="Admin" asp-controller="Teachers" asp-action="DeleteTeacher" asp-route-id="@item.Id">Sil</a>
                         </td>

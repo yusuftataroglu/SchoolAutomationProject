@@ -14,8 +14,10 @@ namespace SchoolAutomationProject.Application.Helpers.MappingHelpers.Profiles.Cl
     {
         public ClassroomProfile()
         {
-            CreateMap<Classroom, ReadClassroomViewModel>();       
-            CreateMap<WriteClassroomViewModel, Classroom>();       
+            CreateMap<Classroom, ReadClassroomViewModel>();
+            CreateMap<ReadClassroomViewModel, Classroom>();
+            CreateMap<Classroom, WriteClassroomViewModel>();
+            CreateMap<WriteClassroomViewModel, Classroom>();
         }
 
     }

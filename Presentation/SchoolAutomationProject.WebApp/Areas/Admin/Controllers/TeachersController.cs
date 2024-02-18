@@ -120,7 +120,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                             await _userManager.AddPasswordAsync(user, password);
                             await _teacherWriteRepository.SaveChangesAsync();
                             TempData["Success"] = "Öğretmen başarıyla eklendi";
-                            return View(model);
+                            return RedirectToAction("GetTeachers");
                         }
                         else
                         {
@@ -148,16 +148,16 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> UpdateTeacher(Guid id)
+        public async Task<IActionResult> UpdateTeacher(string id)
         {
-            var teacher = await _teacherReadRepository.GetByIdAsync(id.ToString());
+            var teacher = await _teacherReadRepository.GetByIdAsync(id);
             var teacherVM = new WriteTeacherViewModel
             {
                 FirstName = teacher.FirstName,
                 LastName = teacher.LastName,
                 Title = teacher.Title,
                 MainCourseId = teacher.MainCourseId.ToString(),
-                ClassroomId = teacher.ClassroomTeachers.Select(x => x.ClassroomId.ToString()).ToList()
+                ClassroomIds = teacher.ClassroomTeachers.Select(x => x.ClassroomId.ToString()).ToList()
             };
             return View(teacherVM);
         } //todo tüm bilgiler güncellenecek!
@@ -247,6 +247,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
             Teacher teacher = await _teacherReadRepository.GetByIdAsync(id);
             if (teacher != null)
             {
+                //todo automapper ile aktarılabilir
                 ReadTeacherViewModel model = new()
                 {
                     Id = teacher.Id,

@@ -27,7 +27,7 @@
                     <label class="d-block mb-2">Verilecek Dersler</label>
                     @foreach (var mainCourse in _mainCourseReadRepository.GetAll().OrderBy(x => x.Name).ToList())
                     {
-                        <input type="checkbox" class="btn-check" id="@mainCourse.Id" name="modelMainCourseIds" value="@mainCourse.Id">
+                        <input type="checkbox" class="btn-check" id="@mainCourse.Id" name="ModelClassroomMainCoursesMainCourseIds" value="@mainCourse.Id">
                         <label class="btn btn-outline-primary" for="@mainCourse.Id">@mainCourse.Name</label>
                     }
 
@@ -41,7 +41,7 @@
                     <label class="d-block mb-2">Öğretmenler</label>
                     @foreach (var teacher in _teacherReadRepository.GetAll().OrderBy(x => x.FirstName).ToList())
                     {
-                        <input type="checkbox" class="btn-check" id="@teacher.Id" name="modelTeacherIds" value="@teacher.Id">
+                        <input type="checkbox" class="btn-check" id="@teacher.Id" name="modelClassroomTeachersTeacherIds" value="@teacher.Id">
                         <label class="btn btn-outline-primary" for="@teacher.Id">@teacher.FirstName @teacher.LastName</label>
                     }
 

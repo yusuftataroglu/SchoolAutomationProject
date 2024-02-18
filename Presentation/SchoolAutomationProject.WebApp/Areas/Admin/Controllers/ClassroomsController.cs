@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SchoolAutomationProject.Application.Repositories.ClassroomRepositories;
+using SchoolAutomationProject.Application.Repositories.StudentRepositories;
 using SchoolAutomationProject.Application.ViewModels.ClassroomViewModels;
 using SchoolAutomationProject.Domain.Entities.CrossTables;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
@@ -15,15 +16,18 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         private readonly IMapper _mapper;
         private readonly IClassroomReadRepository _classroomReadRepository;
         private readonly IClassroomWriteRepository _classroomWriteRepository;
+        private readonly IStudentReadRepository _studentReadRepository;
 
         public ClassroomsController(
             IMapper mapper,
             IClassroomReadRepository classroomReadRepository,
-            IClassroomWriteRepository classroomWriteRepository)
+            IClassroomWriteRepository classroomWriteRepository,
+            IStudentReadRepository studentReadRepository)
         {
             _mapper = mapper;
             _classroomReadRepository = classroomReadRepository;
             _classroomWriteRepository = classroomWriteRepository;
+            _studentReadRepository = studentReadRepository;
         }
 
         [HttpGet]
@@ -40,49 +44,53 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddClassroom(WriteClassroomViewModel model, List<string> mainCourseId, List<string> studentId, List<string> teacherId)
+        public async Task<IActionResult> AddClassroom(WriteClassroomViewModel model, List<string> ModelClassroomMainCoursesMainCourseIds, List<string> modelStudentIds, List<string> modelClassroomTeachersTeacherIds)
         {
             if (ModelState.IsValid)
             {
-                var classroom = new Classroom
-                {
-                    Name = model.Name,
-                    Capacity = model.Capacity,
-                    ClassroomTeachers = new List<ClassroomTeacher>(),
-                    ClassroomMainCourses = new List<ClassroomMainCourse>(),
-                    Students = new List<Student>()
-                };
+                Classroom classroom = new Classroom();
+                List<ClassroomMainCourse> classroomMainCourses = new List<ClassroomMainCourse>();
+                List<ClassroomTeacher> classroomTeachers = new List<ClassroomTeacher>();
+                List<Student> students = new List<Student>();
 
-                // Eklenen kod:
-                foreach (var id in studentId)
+                foreach (var modelMainCourseId in ModelClassroomMainCoursesMainCourseIds)
                 {
-                    classroom.Students.Add(new Student { Id = Guid.Parse(id) });
-                }
-
-                foreach (var id in teacherId)
-                {
-                    classroom.ClassroomTeachers.Add(new ClassroomTeacher
+                    var classroomMainCourse = new ClassroomMainCourse()
                     {
                         ClassroomId = classroom.Id,
-                        TeacherId = Guid.Parse(id)
-                    });
+                        MainCourseId = Guid.Parse(modelMainCourseId)
+                    };
+                    classroomMainCourses.Add(classroomMainCourse);
                 }
 
-                foreach (var id in mainCourseId)
+                //Id ile öğrenciyi bul
+                foreach (var modelStudentId in modelStudentIds)
                 {
-                    classroom.ClassroomMainCourses.Add(new ClassroomMainCourse
+                    students.Add(await _studentReadRepository.GetByIdAsync(modelStudentId));
+                }
+
+                foreach (var modelTeacherId in modelClassroomTeachersTeacherIds)
+                {
+                    var classroomTeacher = new ClassroomTeacher()
                     {
                         ClassroomId = classroom.Id,
-                        MainCourseId = Guid.Parse(id)
-                    });
+                        TeacherId = Guid.Parse(modelTeacherId)
+                    };
+                    classroomTeachers.Add(classroomTeacher);
                 }
+
+                classroom.Name = model.Name;
+                classroom.Capacity = model.Capacity;
+                classroom.ClassroomTeachers = classroomTeachers;
+                classroom.ClassroomMainCourses = classroomMainCourses;
+                classroom.Students = students;
 
                 var result = await _classroomWriteRepository.AddAsync(classroom);
                 if (result)
                 {
                     await _classroomWriteRepository.SaveChangesAsync();
                     TempData["Success"] = "Sınıf başarıyla eklendi";
-                    return View(model);
+                    return RedirectToAction("GetClassrooms");
                 }
                 else
                 {
@@ -95,6 +103,59 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                 TempData["Error"] = "Bir hata meydana geldi!";
                 return View(model);
             }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> UpdateClassroom(string id)
+        {
+            var classroom = await _classroomReadRepository.GetByIdAsync(id);
+            if (classroom != null)
+            {
+                var classroomVM = new WriteClassroomViewModel()
+                {
+                    Name = classroom.Name,
+                    Capacity = classroom.Capacity,
+                    StudentIds = classroom.Students.Select(x => x.Id.ToString()).ToList(),
+                    ClassroomMainCoursesMainCourseIds = classroom.ClassroomMainCourses.Select(x => x.MainCourseId.ToString()).ToList(),
+                    ClassroomTeachersTeacherIds = classroom.ClassroomTeachers.Select(x => x.TeacherId.ToString()).ToList()
+                };
+                return View(classroomVM);
+            }
+            else
+            {
+                TempData["Error"] = "Bu sınıf veri tabanında mevcut değil!";
+                return RedirectToAction("GetClassrooms");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult UpdateClassroom(WriteClassroomViewModel model)
+        {
+            return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> DeleteClassroom(string id)
+        {
+            var classroom = await _classroomReadRepository.GetByIdAsync(id);
+            if (classroom != null)
+            {
+                var deleteResult = _classroomWriteRepository.Remove(classroom);
+                if (deleteResult)
+                {
+                    await _classroomWriteRepository.SaveChangesAsync();
+                    TempData["Success"] = "Silme işlemi başarıyla gerçekleşti";
+                }
+                else
+                {
+                    TempData["Error"] = "Silme işleminde bir sorun oluştu!";
+                }
+            }
+            else
+            {
+                TempData["Error"] = "Bu sınıf veri tabanında bulunmuyor!";
+            }
+            return RedirectToAction("GetClassrooms");
         }
     }
 }

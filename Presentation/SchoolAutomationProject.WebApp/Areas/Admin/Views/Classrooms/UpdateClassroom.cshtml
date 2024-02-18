@@ -1,0 +1,32 @@
+﻿@model WriteClassroomViewModel
+@inject IMainCourseReadRepository _mainCourseReadRepository
+@{
+    ViewData["Title"] = "UpdateClassroom";
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-auto">
+        <div class="card">
+            <form method="post" asp-area="Admin" asp-controller="Classrooms" asp-action="UpdateClassroom" onsubmit="return true">
+                <div class="card-header">Sınıf Güncelle</div>
+                <div asp-validation-summary="All"></div>
+                <div class="card-body">
+                    <label for="@Model.Name">Sınıf Adı</label>
+                    <input id="@Model.Name" class="form-control" type="text" asp-for="Name" />
+
+                    <label for="@Model.Capacity">Kapasite</label>
+                    <input id="@Model.Capacity" class="form-control" type="number" min="0" asp-for="Capacity" />
+
+
+                    <label class="d-block mb-2">Verilecek Dersler</label>
+                    @foreach (var mainCourse in _mainCourseReadRepository.GetAll().ToList())
+                    {
+                        <input class="btn-check" type="checkbox" id="@mainCourse.Id" name="ClassroomMainCoursesMainCourseIds" value="@mainCourse.Id" checked="@Model.ClassroomMainCoursesMainCourseIds.Contains(mainCourse.Id.ToString())" />
+                        <label class="btn btn-outline-primary" for="@mainCourse.Id">@mainCourse.Name</label>
+                    }
+                    <div class="card-footer"><button class="btn btn-primary" type="submit">Güncelle</button></div>
+            </form>
+        </div>
+    </div>
+</div>

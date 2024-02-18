@@ -19,6 +19,6 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherViewModels
         public string MainCourseId { get; set; }
 
         //Öğretmen eklendikten sonra sınıf ataması yapmak zorunlu değil. Atama sonradan yapılabilir.(Update yaparken)
-        public List<string>? ClassroomId { get; set; }
+        public List<string>? ClassroomIds { get; set; }
     }
 }
