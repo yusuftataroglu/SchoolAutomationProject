@@ -59,9 +59,9 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetDetailsTeacher(Guid id)
+        public async Task<IActionResult> GetDetailsTeacher(string id)
         {
-            Teacher teacher = await _teacherReadRepository.GetByIdAsync(id);
+            Teacher teacher = await _teacherReadRepository.GetByIdAsync(id.ToString());
             if (teacher != null)
             {
                 //todo automapper ile aktarılabilir
@@ -102,7 +102,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                             FirstName = model.FirstName,
                             LastName = model.LastName,
                             Title = model.Title,
-                            MainCourseId = model.MainCourseId,
+                            MainCourseId = Guid.Parse(model.MainCourseId),
                             UserId = user.Id,
                             ClassroomTeachers = classroomTeachers
                         };
@@ -112,7 +112,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                             var classroomTeacher = new ClassroomTeacher
                             {
                                 TeacherId = teacher.Id,
-                                ClassroomId = modelClassroomId
+                                ClassroomId = Guid.Parse(modelClassroomId)
                             };
                             classroomTeachers.Add(classroomTeacher);
                         }
@@ -151,7 +151,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> UpdateTeacher(Guid id)
+        public async Task<IActionResult> UpdateTeacher(string id)
         {
             var teacher = await _teacherReadRepository.GetByIdAsync(id);
             var teacherVM = new WriteTeacherViewModel
@@ -160,8 +160,8 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                 FirstName = teacher.FirstName,
                 LastName = teacher.LastName,
                 Title = teacher.Title,
-                MainCourseId = teacher.MainCourseId,
-                ClassroomTeachersClassroomIds = teacher.ClassroomTeachers.Select(x => x.ClassroomId).ToList()
+                MainCourseId = teacher.MainCourseId.ToString(),
+                ClassroomTeachersClassroomIds = teacher.ClassroomTeachers.Select(x => x.ClassroomId.ToString()).ToList()
             };
             return View(teacherVM);
         } //todo tüm bilgiler güncellenecek!
@@ -170,7 +170,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         public async Task<IActionResult> UpdateTeacher(WriteTeacherViewModel model)
         {
             //todo schedule güncellenebilecek
-            Teacher teacher = await _teacherReadRepository.GetByIdAsync(model.Id);
+            Teacher teacher = await _teacherReadRepository.GetByIdAsync(model.Id.ToString());
 
             if (teacher != null)
             {
@@ -189,14 +189,14 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                     classroomTeachers.Add(new ClassroomTeacher
                     {
                         TeacherId = teacher.Id,
-                        ClassroomId = classroomId
+                        ClassroomId = Guid.Parse(classroomId)   
                     });
                 }
 
                 teacher.FirstName = model.FirstName;
                 teacher.LastName = model.LastName;
                 teacher.Title = model.Title;
-                teacher.MainCourseId = model.MainCourseId;
+                teacher.MainCourseId = Guid.Parse(model.MainCourseId);
                 teacher.ClassroomTeachers = classroomTeachers;
 
                 _teacherWriteRepository.Update(teacher);
@@ -212,7 +212,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> DeleteTeacher(Guid id)
+        public async Task<IActionResult> DeleteTeacher(string id)
         {
             Teacher teacher = await _teacherReadRepository.GetByIdAsync(id);
             if (teacher != null)

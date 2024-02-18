@@ -18,9 +18,9 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherViewModels
         public string? Title { get; set; }
 
         [Required(ErrorMessage = "Ders seçimi boş geçilemez!")]
-        public Guid MainCourseId { get; set; }
+        public string MainCourseId { get; set; }
 
         //Öğretmen eklendikten sonra sınıf ataması yapmak zorunlu değil. Atama sonradan yapılabilir.(Update yaparken)
-        public List<Guid>? ClassroomTeachersClassroomIds { get; set; }
+        public List<string>? ClassroomTeachersClassroomIds { get; set; }
     }
 }

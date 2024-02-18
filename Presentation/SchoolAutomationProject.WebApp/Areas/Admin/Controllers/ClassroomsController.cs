@@ -72,7 +72,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                     var classroomMainCourse = new ClassroomMainCourse()
                     {
                         ClassroomId = classroom.Id,
-                        MainCourseId = modelMainCourseId
+                        MainCourseId = Guid.Parse(modelMainCourseId)
                     };
                     classroomMainCourses.Add(classroomMainCourse);
                 }
@@ -80,7 +80,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                 //Id ile öğrenciyi bul
                 foreach (var modelStudentId in model.StudentIds)
                 {
-                    students.Add(await _studentReadRepository.GetByIdAsync(modelStudentId));
+                    students.Add(await _studentReadRepository.GetByIdAsync(modelStudentId.ToString()));
                 }
 
                 foreach (var modelTeacherId in model.ClassroomTeachersTeacherIds)
@@ -88,7 +88,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                     var classroomTeacher = new ClassroomTeacher()
                     {
                         ClassroomId = classroom.Id,
-                        TeacherId = modelTeacherId
+                        TeacherId = Guid.Parse(modelTeacherId)
                     };
                     classroomTeachers.Add(classroomTeacher);
                 }
@@ -120,9 +120,9 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> UpdateClassroom(Guid id)
+        public async Task<IActionResult> UpdateClassroom(string id)
         {
-            var classroom = await _classroomReadRepository.GetByIdAsync(id);
+            var classroom = await _classroomReadRepository.GetByIdAsync(id.ToString());
             if (classroom != null)
             {
                 var classroomVM = new WriteClassroomViewModel()
@@ -130,9 +130,9 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                     Id = classroom.Id,
                     Name = classroom.Name,
                     Capacity = classroom.Capacity,
-                    StudentIds = classroom.Students.Select(x => x.Id).ToList(),
-                    ClassroomMainCoursesMainCourseIds = classroom.ClassroomMainCourses.Select(x => x.MainCourseId).ToList(),
-                    ClassroomTeachersTeacherIds = classroom.ClassroomTeachers.Select(x => x.TeacherId).ToList()
+                    StudentIds = classroom.Students.Select(x => x.Id.ToString()).ToList(),
+                    ClassroomMainCoursesMainCourseIds = classroom.ClassroomMainCourses.Select(x => x.MainCourseId.ToString()).ToList(),
+                    ClassroomTeachersTeacherIds = classroom.ClassroomTeachers.Select(x => x.TeacherId.ToString()).ToList()
                 };
                 return View(classroomVM);
             }
@@ -146,7 +146,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateClassroom(WriteClassroomViewModel model)
         {
-            Classroom classroom = await _classroomReadRepository.GetByIdAsync(model.Id);
+            Classroom classroom = await _classroomReadRepository.GetByIdAsync(model.Id.ToString());
 
             if (classroom != null)
             {
@@ -181,7 +181,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                     classroomTeachers.Add(new ClassroomTeacher
                     {
                         ClassroomId = classroom.Id,
-                        TeacherId = teacherId
+                        TeacherId = Guid.Parse(teacherId)
                     });
                 }
 
@@ -193,7 +193,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                     classroomMainCourses.Add(new ClassroomMainCourse
                     {
                         ClassroomId = classroom.Id,
-                        MainCourseId = mainCourseId
+                        MainCourseId = Guid.Parse(mainCourseId)
                     });
                 }
 
@@ -202,7 +202,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                 List<Student> students = new();
                 foreach (var studentId in model.StudentIds)
                 {
-                    var student = await _studentReadRepository.GetByIdAsync(studentId);
+                    var student = await _studentReadRepository.GetByIdAsync(studentId.ToString());
                     students.Add(student);
                 }
 
@@ -228,7 +228,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> DeleteClassroom(Guid id)
+        public async Task<IActionResult> DeleteClassroom(string id)
         {
             var classroom = await _classroomReadRepository.GetByIdAsync(id);
             if (classroom != null)

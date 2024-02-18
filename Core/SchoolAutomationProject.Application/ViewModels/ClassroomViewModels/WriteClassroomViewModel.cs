@@ -22,9 +22,9 @@ namespace SchoolAutomationProject.Application.ViewModels.ClassroomViewModels
         public byte Capacity { get; set; }
 
         //Sonradan da girilebilir.
-        public List<Guid>? ClassroomMainCoursesMainCourseIds { get; set; }
-        public List<Guid>? StudentIds { get; set; }
-        public List<Guid>? ClassroomTeachersTeacherIds { get; set; }
+        public List<string>? ClassroomMainCoursesMainCourseIds { get; set; }
+        public List<string>? StudentIds { get; set; }
+        public List<string>? ClassroomTeachersTeacherIds { get; set; }
 
     }
 }

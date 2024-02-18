@@ -16,8 +16,8 @@ namespace SchoolAutomationProject.Application.ViewModels.MainCourseViewModels
         [Required(ErrorMessage = "İsim boş geçilemez")]
         public string Name { get; set; }
 
-        public List<Guid> SubCourseIds { get; set; }
-        public List<Guid> TeacherIds { get; set; }
-        public List<Guid> ClassroomMainCoursesClassroomIds { get; set; }
+        public List<string> SubCourseIds { get; set; }
+        public List<string> TeacherIds { get; set; }
+        public List<string> ClassroomMainCoursesClassroomIds { get; set; }
     }
 }
