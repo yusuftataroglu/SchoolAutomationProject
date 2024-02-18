@@ -44,7 +44,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddClassroom(WriteClassroomViewModel model, List<string> ModelClassroomMainCoursesMainCourseIds, List<string> modelStudentIds, List<string> modelClassroomTeachersTeacherIds)
+        public async Task<IActionResult> AddClassroom(WriteClassroomViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -53,7 +53,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                 List<ClassroomTeacher> classroomTeachers = new List<ClassroomTeacher>();
                 List<Student> students = new List<Student>();
 
-                foreach (var modelMainCourseId in ModelClassroomMainCoursesMainCourseIds)
+                foreach (var modelMainCourseId in model.ClassroomMainCoursesMainCourseIds)
                 {
                     var classroomMainCourse = new ClassroomMainCourse()
                     {
@@ -64,12 +64,12 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                 }
 
                 //Id ile öğrenciyi bul
-                foreach (var modelStudentId in modelStudentIds)
+                foreach (var modelStudentId in model.StudentIds)
                 {
                     students.Add(await _studentReadRepository.GetByIdAsync(modelStudentId));
                 }
 
-                foreach (var modelTeacherId in modelClassroomTeachersTeacherIds)
+                foreach (var modelTeacherId in model.ClassroomTeachersTeacherIds)
                 {
                     var classroomTeacher = new ClassroomTeacher()
                     {

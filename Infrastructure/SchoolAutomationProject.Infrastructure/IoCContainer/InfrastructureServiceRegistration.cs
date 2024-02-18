@@ -1,10 +1,7 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using SchoolAutomationProject.Application.Helpers.MappingHelpers.Profiles.ClassroomProfile;
 using SchoolAutomationProject.Application.Helpers.TokenHelpers;
 using SchoolAutomationProject.Infrastructure.Helpers;
 using System.Reflection;

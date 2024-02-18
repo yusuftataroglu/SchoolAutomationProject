@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -25,19 +26,22 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         private readonly IClassroomReadRepository _classroomReadRepository;
         private readonly IMainCourseReadRepository _mainCourseReadRepository;
         private readonly UserManager<AppUser> _userManager;
+        private readonly IMapper _mapper;
 
         public TeachersController(
             ITeacherReadRepository teacherReadRepository,
             ITeacherWriteRepository teacherWriteRepository,
             IClassroomReadRepository classroomReadRepository,
             IMainCourseReadRepository mainCourseReadRepository,
-            UserManager<AppUser> userManager)
+            UserManager<AppUser> userManager,
+            IMapper mapper)
         {
             _teacherReadRepository = teacherReadRepository;
             _teacherWriteRepository = teacherWriteRepository;
             _classroomReadRepository = classroomReadRepository;
             _mainCourseReadRepository = mainCourseReadRepository;
             _userManager = userManager;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -48,22 +52,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
 
             foreach (var teacher in teacherList)
             {
-                var teacherVM = new ReadTeacherViewModel
-                {
-                    Id = teacher.Id,
-                    CreatedDate = teacher.CreatedDate,
-                    CreatedComputerName = teacher.CreatedComputerName,
-                    CreatedIpAddress = teacher.CreatedIpAddress,
-                    UpdatedDate = teacher.UpdatedDate,
-                    UpdatedComputerName = teacher.UpdatedComputerName,
-                    UpdatedIpAddress = teacher.UpdatedIpAddress,
-                    FirstName = teacher.FirstName,
-                    LastName = teacher.LastName,
-                    Title = teacher.Title,
-                    MainCourse = teacher.MainCourse,
-                    ClassroomTeachers = teacher.ClassroomTeachers,
-                    TeacherSchedules = teacher.TeacherSchedules
-                };
+                ReadTeacherViewModel teacherVM = _mapper.Map<ReadTeacherViewModel>(teacher);
                 teacherVMList.Add(teacherVM);
             }
             return View(teacherVMList);
@@ -76,7 +65,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddTeacher(WriteTeacherViewModel model, List<string> modelClassroomIds)
+        public async Task<IActionResult> AddTeacher(WriteTeacherViewModel model)
         {
             //todo schedule eklenebilecek!
             if (ModelState.IsValid)
@@ -104,7 +93,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                             ClassroomTeachers = classroomTeachers
                         };
 
-                        foreach (var modelClassroomId in modelClassroomIds)
+                        foreach (var modelClassroomId in model.ClassroomTeacherClassroomIds)
                         {
                             var classroomTeacher = new ClassroomTeacher
                             {
@@ -153,54 +142,53 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
             var teacher = await _teacherReadRepository.GetByIdAsync(id);
             var teacherVM = new WriteTeacherViewModel
             {
+                Id = teacher.Id,
                 FirstName = teacher.FirstName,
                 LastName = teacher.LastName,
                 Title = teacher.Title,
                 MainCourseId = teacher.MainCourseId.ToString(),
-                ClassroomIds = teacher.ClassroomTeachers.Select(x => x.ClassroomId.ToString()).ToList()
+                ClassroomTeacherClassroomIds = teacher.ClassroomTeachers.Select(x => x.ClassroomId.ToString()).ToList()
             };
             return View(teacherVM);
         } //todo tüm bilgiler güncellenecek!
 
         [HttpPost]
-        public async Task<IActionResult> UpdateTeacher(WriteTeacherViewModel model, List<string> modelClassroomIds)
+        public async Task<IActionResult> UpdateTeacher(WriteTeacherViewModel model)
         {
             //todo schedule güncellenebilecek
             Teacher teacher = await _teacherReadRepository.GetByIdAsync(model.Id.ToString());
-            List<ClassroomTeacher> classroomTeachers = new();
 
             if (teacher != null)
             {
+                //İlgili öğretmenin ClassroomTeachers tablosunda mevcut olan TeacherId değerlerini kaldırıyorum.
+                var existingClassroomTeachers = teacher.ClassroomTeachers.Where(x=> x.TeacherId==teacher.Id).ToList();
+                foreach (var existingClassroomTeacher in existingClassroomTeachers)
+                {
+                    teacher.ClassroomTeachers.Remove(existingClassroomTeacher);
+                }
+
+                //İlgili öğretmen için model'dan gelen ClassroomId değerlerini ClassroomTeachers tablosuna ekliyorum.
+                List<ClassroomTeacher> classroomTeachers = new();
+
+                foreach (var classroomId in model.ClassroomTeacherClassroomIds)
+                {
+                    classroomTeachers.Add(new ClassroomTeacher
+                    {
+                        TeacherId = teacher.Id,
+                        ClassroomId = Guid.Parse(classroomId)
+                    });
+                }
 
                 teacher.FirstName = model.FirstName;
                 teacher.LastName = model.LastName;
                 teacher.Title = model.Title;
                 teacher.MainCourseId = Guid.Parse(model.MainCourseId);
-
-
-                foreach (var modelClassroomId in modelClassroomIds)
-                {
-                    var classroomTeacher = new ClassroomTeacher
-                    {
-                        TeacherId = teacher.Id,
-                        ClassroomId = Guid.Parse(modelClassroomId)
-                    };
-                    classroomTeachers.Add(classroomTeacher);
-                }
                 teacher.ClassroomTeachers = classroomTeachers;
 
-                var result = _teacherWriteRepository.Update(teacher);
-                if (result)
-                {
-                    await _teacherWriteRepository.SaveChangesAsync();
-                    TempData["Success"] = "Güncelleme işlemi başarıyla gerçekleştirildi";
-                    return RedirectToAction("GetTeachers");
-                }
-                else
-                {
-                    TempData["Error"] = "Güncelleme işleminde bir hata meydana geldi";
-                    return View(model);
-                }
+                _teacherWriteRepository.Update(teacher);
+                await _teacherWriteRepository.SaveChangesAsync();
+                TempData["Success"] = "Güncelleme işlemi başarıyla gerçekleştirildi";
+                return RedirectToAction("GetTeachers");
             }
             else
             {
@@ -248,22 +236,8 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
             if (teacher != null)
             {
                 //todo automapper ile aktarılabilir
-                ReadTeacherViewModel model = new()
-                {
-                    Id = teacher.Id,
-                    CreatedComputerName = teacher.CreatedComputerName,
-                    CreatedDate = teacher.CreatedDate,
-                    CreatedIpAddress = teacher.CreatedIpAddress,
-                    UpdatedComputerName = teacher.UpdatedComputerName,
-                    UpdatedDate = teacher.UpdatedDate,
-                    UpdatedIpAddress = teacher.UpdatedIpAddress,
-                    FirstName = teacher.FirstName,
-                    LastName = teacher.LastName,
-                    Title = teacher.Title,
-                    MainCourse = teacher.MainCourse,
-                    ClassroomTeachers = teacher.ClassroomTeachers,
-                };
-                return View(model);
+                ReadTeacherViewModel teacherVM = _mapper.Map<ReadTeacherViewModel>(teacher);
+                return View(teacherVM);
             }
             TempData["Error"] = "Bu öğretmen veri tabanından kaldırılmış!";
             return RedirectToAction("GetTeachers");

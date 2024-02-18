@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolAutomationProject.Application.Helpers.MappingHelpers.Profiles.ClassroomProfile
+namespace SchoolAutomationProject.Infrastructure.Helpers.Profiles
 {
     public class ClassroomProfile : Profile
     {

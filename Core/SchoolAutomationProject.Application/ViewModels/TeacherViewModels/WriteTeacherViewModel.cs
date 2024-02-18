@@ -1,11 +1,13 @@
-﻿using SchoolAutomationProject.Domain.Entities.CrossTables;
-using SchoolAutomationProject.Domain.Entities.CustomTables;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace SchoolAutomationProject.Application.ViewModels.TeacherViewModels
 {
     public class WriteTeacherViewModel
     {
+        public WriteTeacherViewModel()
+        {
+            ClassroomTeacherClassroomIds = new();
+        }
         public Guid Id { get; set; }
 
         [Required(ErrorMessage = "İsim boş geçilemez!")]
@@ -19,6 +21,6 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherViewModels
         public string MainCourseId { get; set; }
 
         //Öğretmen eklendikten sonra sınıf ataması yapmak zorunlu değil. Atama sonradan yapılabilir.(Update yaparken)
-        public List<string>? ClassroomIds { get; set; }
+        public List<string>? ClassroomTeacherClassroomIds { get; set; }
     }
 }
