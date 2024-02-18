@@ -1,5 +1,4 @@
-﻿using SchoolAutomationProject.Domain.Entities.CustomTables;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace SchoolAutomationProject.Application.ViewModels.ClassroomViewModels
@@ -23,9 +22,9 @@ namespace SchoolAutomationProject.Application.ViewModels.ClassroomViewModels
         public byte Capacity { get; set; }
 
         //Sonradan da girilebilir.
-        public List<string>? ClassroomMainCoursesMainCourseIds { get; set; }
-        public List<string>? StudentIds { get; set; }
-        public List<string>? ClassroomTeachersTeacherIds { get; set; }
+        public List<Guid>? ClassroomMainCoursesMainCourseIds { get; set; }
+        public List<Guid>? StudentIds { get; set; }
+        public List<Guid>? ClassroomTeachersTeacherIds { get; set; }
 
     }
 }

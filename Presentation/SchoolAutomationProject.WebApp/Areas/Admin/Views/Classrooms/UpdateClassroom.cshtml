@@ -26,7 +26,7 @@
                     <label class="d-block mb-2">Verilecek Dersler</label>
                     @foreach (var mainCourse in _mainCourseReadRepository.GetAll().ToList())
                     {
-                        <input class="btn-check" type="checkbox" id="@mainCourse.Id" name="ClassroomMainCoursesMainCourseIds" value="@mainCourse.Id" checked="@Model.ClassroomMainCoursesMainCourseIds.Contains(mainCourse.Id.ToString())" />
+                        <input class="btn-check" type="checkbox" id="@mainCourse.Id" name="ClassroomMainCoursesMainCourseIds" value="@mainCourse.Id" checked="@Model.ClassroomMainCoursesMainCourseIds.Contains(mainCourse.Id)" />
                         <label class="btn btn-outline-primary" for="@mainCourse.Id">@mainCourse.Name</label>
                     }
 
@@ -34,7 +34,7 @@
                     <label class="d-block mb-2">Öğrenciler</label>
                     @foreach (var student in _studentReadRepository.GetAll().ToList())
                     {
-                        <input class="btn-check" type="checkbox" id="@student.Id" name="StudentIds" value="@student.Id" checked="@Model.StudentIds.Contains(student.Id.ToString())" />
+                        <input class="btn-check" type="checkbox" id="@student.Id" name="StudentIds" value="@student.Id" checked="@Model.StudentIds.Contains(student.Id)" />
                         <label class="btn btn-outline-primary" for="@student.Id">@student.FirstName @student.LastName</label>
                     }
 
@@ -42,7 +42,7 @@
                     <label class="d-block mb-2">Öğretmenler</label>
                     @foreach (var teacher in _teacherReadRepository.GetAll().ToList())
                     {
-                        <input class="btn-check" type="checkbox" id="@teacher.Id" name="ClassroomTeachersTeacherIds" value="@teacher.Id" checked="@Model.ClassroomTeachersTeacherIds.Contains(teacher.Id.ToString())" />
+                        <input class="btn-check" type="checkbox" id="@teacher.Id" name="ClassroomTeachersTeacherIds" value="@teacher.Id" checked="@Model.ClassroomTeachersTeacherIds.Contains(teacher.Id)" />
                         <label class="btn btn-outline-primary" for="@teacher.Id">@teacher.FirstName @teacher.LastName</label>
                     }
 

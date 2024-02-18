@@ -1,6 +1,5 @@
 ﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
 using SchoolAutomationProject.Domain.Entities.CrossTables;
-using SchoolAutomationProject.Domain.Entities.CustomTables;
 
 namespace SchoolAutomationProject.Domain.Entities.CustomTables
 {
@@ -8,13 +7,13 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
     {
         public string Name { get; set; }
 
-        //MainCourse - SubCourse ilişkisi
+        //MainCourse - SubCourse ilişkisi (One to Many)
         public virtual ICollection<SubCourse> SubCourses { get; set; }
 
-        //MainCourse-Teacher ilişkisi
+        //MainCourse-Teacher ilişkisi (One to Many)
         public virtual ICollection<Teacher> Teachers { get; set; }
 
-        //MainCourse - Classroom ilişkisi
+        //MainCourse - Classroom ilişkisi (Many to Many)
         public virtual ICollection<ClassroomMainCourse> ClassroomMainCourses { get; set; }
 
     }

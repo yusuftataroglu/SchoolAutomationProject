@@ -19,7 +19,6 @@
     <Folder Include="ViewModels\AttendanceViewModels\" />
     <Folder Include="ViewModels\DiscontinuedStudentViewModels\" />
     <Folder Include="ViewModels\GradeViewModels\" />
-    <Folder Include="ViewModels\MainCourseViewModels\" />
     <Folder Include="ViewModels\TeacherScheduleViewModels\" />
     <Folder Include="ViewModels\SubCourseViewModels\" />
     <Folder Include="ViewModels\StudentViewModels\" />

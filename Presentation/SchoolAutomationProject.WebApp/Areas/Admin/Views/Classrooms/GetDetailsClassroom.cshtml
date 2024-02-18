@@ -1,0 +1,70 @@
+﻿@model ReadClassroomViewModel
+@{
+    ViewData["Title"] = "GetDetailsClassroom";
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+
+<div class="card mb-4">
+    <div class="card-header d-flex align-Models-center">
+        <i class="fas fa-table me-1 me-2"></i>
+        <h3>Sınıf Detayları</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Sınıf Adı</th>
+                    <th>Kapasitesi</th>
+                    <th>Verilen Dersler</th>
+                    <th>Öğrenciler</th>
+                    <th>Öğretmenler</th>
+                    <th>Oluşturma Tarihi</th>
+                    <th>Oluşturanın Bilgisayar Adı</th>
+                    <th>Oluşturanın IP Adresi</th>
+                    <th>Güncelleme Tarihi</th>
+                    <th>Güncelleyenin Bilgisayar Adı</th>
+                    <th>Güncelleyenin IP Adresi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Model.Id</td>
+                    <td>@Model.Name</td>
+                    <td>@Model.Capacity</td>
+
+                    <!--Verilen Dersler-->
+                    <td>
+                        @foreach (var classroomMainCourse in Model.ClassroomMainCourses)
+                        {
+                            <badge class="badge bg-info">@classroomMainCourse.MainCourse.Name</badge>
+                        }
+                    </td> 
+
+                    <!--Öğrenciler-->
+                    <td>
+                        @foreach (var student in Model.Students)
+                        {
+                            <badge class="badge bg-success">@student.FirstName @student.LastName</badge>
+                        }
+                    </td>
+
+                    <!--Öğretmenler-->
+                    <td>
+                    @foreach (var classroomTeacher in Model.ClassroomTeachers)
+                    {
+                        <badge class="badge bg-danger">@classroomTeacher.Teacher.FirstName @classroomTeacher.Teacher.LastName</badge>
+                    }
+                    </td>
+
+                    <td>@Model.CreatedDate</td>
+                    <td>@Model.CreatedComputerName</td>
+                    <td>@Model.CreatedIpAddress</td>
+                    <td>@Model.UpdatedDate</td>
+                    <td>@Model.UpdatedComputerName</td>
+                    <td>@Model.UpdatedIpAddress</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
