@@ -27,28 +27,36 @@
                     <tr>
                         <td>@item.Name</td>
                         <td>@item.Capacity</td>
+
+                        <!--Verilen Dersler-->
                         <td>
                             @foreach (var classroomMainCourses in item.ClassroomMainCourses)
                             {
                                 <badge class="badge bg-info">@classroomMainCourses.MainCourse.Name</badge>
                             }
                         </td>
+
+                        <!--Öğrenciler-->
                         <td>
                             @foreach (var student in item.Students)
                             {
                                 <badge class="badge bg-success">@student.FirstName @student.LastName</badge>
                             }
                         </td>
+
+                        <!--Öğretmenler-->
                         <td>
                             @foreach (var classroomTeachers in item.ClassroomTeachers)
                             {
                                 <badge class="badge bg-danger">@classroomTeachers.Teacher.FirstName @classroomTeachers.Teacher.LastName </badge>
                             }
                         </td>
+
+                        <!--Butonlar-->
                         <td class="d-flex">
                             <a class="btn btn-warning" asp-area="Admin" asp-controller="Classrooms" asp-action="GetDetailsClassroom" asp-route-id="@item.Id">Detaylar</a>
 
-                            <a class="btn btn-primary" asp-area="Admin" asp-controller="Classrooms" asp-action="UpdateClassroom" asp-route-id="@item.Id.ToString()">Güncelle</a>
+                            <a class="btn btn-primary" asp-area="Admin" asp-controller="Classrooms" asp-action="UpdateClassroom" asp-route-id="@item.Id">Güncelle</a>
 
                             <a class="btn btn-danger" asp-area="Admin" asp-controller="Classrooms" asp-action="DeleteClassroom" asp-route-id="@item.Id">Sil</a>
                         </td>
@@ -58,4 +66,3 @@
         </table>
     </div>
 </div>
-

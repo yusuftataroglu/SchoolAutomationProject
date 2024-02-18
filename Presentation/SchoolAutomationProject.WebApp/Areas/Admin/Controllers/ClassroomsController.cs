@@ -38,6 +38,20 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> GetDetailsClassroom(string id)
+        {
+            Classroom classroom = await _classroomReadRepository.GetByIdAsync(id);
+            if (classroom != null)
+            {
+                //todo automapper ile aktarılabilir
+                ReadClassroomViewModel classroomVM = _mapper.Map<ReadClassroomViewModel>(classroom);
+                return View(classroomVM);
+            }
+            TempData["Error"] = "Bu sınıf veri tabanından kaldırılmış!";
+            return RedirectToAction("GetClassrooms");
+        }
+
+        [HttpGet]
         public IActionResult AddClassroom()
         {
             return View();
