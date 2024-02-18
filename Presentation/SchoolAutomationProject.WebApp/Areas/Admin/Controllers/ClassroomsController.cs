@@ -113,6 +113,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
             {
                 var classroomVM = new WriteClassroomViewModel()
                 {
+                    Id = classroom.Id,
                     Name = classroom.Name,
                     Capacity = classroom.Capacity,
                     StudentIds = classroom.Students.Select(x => x.Id.ToString()).ToList(),
@@ -129,9 +130,87 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult UpdateClassroom(WriteClassroomViewModel model)
+        public async Task<IActionResult> UpdateClassroom(WriteClassroomViewModel model)
         {
-            return View(model);
+            Classroom classroom = await _classroomReadRepository.GetByIdAsync(model.Id.ToString());
+
+            if (classroom != null)
+            {
+                //İlgili sınıfın ClassroomTeachers tablosunda mevcut olan değerlerini kaldırıyorum.
+                var existingClassroomTeachers = classroom.ClassroomTeachers.Where(x => x.ClassroomId == classroom.Id).ToList();
+                foreach (var existingClassroomTeacher in existingClassroomTeachers)
+                {
+                    classroom.ClassroomTeachers.Remove(existingClassroomTeacher);
+                }
+
+
+                //İlgili sınıfın ClassroomMainCourses tablosunda mevcut olan değerlerini kaldırıyorum.
+                var existingClassroomMainCourses = classroom.ClassroomMainCourses.Where(x => x.ClassroomId == classroom.Id).ToList();
+                foreach (var existingClassroomMainCourse in existingClassroomMainCourses)
+                {
+                    classroom.ClassroomMainCourses.Remove(existingClassroomMainCourse);
+                }
+
+
+                //İlgili sınıfın Students değerlerini siliyorum.
+                List<Student> existingStudents = classroom.Students.ToList();
+                foreach (var existingStudent in existingStudents)
+                {
+                    classroom.Students.Remove(existingStudent);
+                }
+
+
+                //İlgili sınıf için model'dan gelen ClassroomId değerlerini ClassroomTeachers tablosuna ekliyorum.
+                List<ClassroomTeacher> classroomTeachers = new();
+                foreach (var teacherId in model.ClassroomTeachersTeacherIds)
+                {
+                    classroomTeachers.Add(new ClassroomTeacher
+                    {
+                        ClassroomId = classroom.Id,
+                        TeacherId = Guid.Parse(teacherId)
+                    });
+                }
+
+
+                //İlgili sınıf için model'dan gelen MainCourseId değerlerini ClassroomTeachers tablosuna ekliyorum.
+                List<ClassroomMainCourse> classroomMainCourses = new();
+                foreach (var mainCourseId in model.ClassroomMainCoursesMainCourseIds)
+                {
+                    classroomMainCourses.Add(new ClassroomMainCourse
+                    {
+                        ClassroomId = classroom.Id,
+                        MainCourseId = Guid.Parse(mainCourseId)
+                    });
+                }
+
+
+                //İlgili sınıf için model'dan gelen Students değerlerini ekliyorum.
+                List<Student> students = new();
+                foreach (var studentId in model.StudentIds)
+                {
+                    var student = await _studentReadRepository.GetByIdAsync(studentId);
+                    students.Add(student);
+                }
+
+                //Güncellenen değerleri aktarıyorum.
+                classroom.Name = model.Name;
+                classroom.Capacity = model.Capacity;
+                classroom.ClassroomTeachers = classroomTeachers;
+                classroom.Students = students;
+                classroom.ClassroomMainCourses = classroomMainCourses;
+
+
+                //Veri tabanına kaydediyorum.
+                _classroomWriteRepository.Update(classroom);
+                await _classroomWriteRepository.SaveChangesAsync();
+                TempData["Success"] = "Güncelleme işlemi başarıyla gerçekleştirildi";
+                return RedirectToAction("GetClassrooms");
+            }
+            else
+            {
+                TempData["Error"] = "Bu sınıf veri tabanında bulunmuyor!";
+                return RedirectToAction("GetClassrooms");
+            }
         }
 
         [HttpGet]

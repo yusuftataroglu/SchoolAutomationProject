@@ -93,7 +93,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                             ClassroomTeachers = classroomTeachers
                         };
 
-                        foreach (var modelClassroomId in model.ClassroomTeacherClassroomIds)
+                        foreach (var modelClassroomId in model.ClassroomTeachersClassroomIds)
                         {
                             var classroomTeacher = new ClassroomTeacher
                             {
@@ -147,7 +147,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                 LastName = teacher.LastName,
                 Title = teacher.Title,
                 MainCourseId = teacher.MainCourseId.ToString(),
-                ClassroomTeacherClassroomIds = teacher.ClassroomTeachers.Select(x => x.ClassroomId.ToString()).ToList()
+                ClassroomTeachersClassroomIds = teacher.ClassroomTeachers.Select(x => x.ClassroomId.ToString()).ToList()
             };
             return View(teacherVM);
         } //todo tüm bilgiler güncellenecek!
@@ -160,7 +160,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
 
             if (teacher != null)
             {
-                //İlgili öğretmenin ClassroomTeachers tablosunda mevcut olan TeacherId değerlerini kaldırıyorum.
+                //İlgili öğretmenin ClassroomTeachers tablosunda mevcut olan değerlerini kaldırıyorum.
                 var existingClassroomTeachers = teacher.ClassroomTeachers.Where(x=> x.TeacherId==teacher.Id).ToList();
                 foreach (var existingClassroomTeacher in existingClassroomTeachers)
                 {
@@ -170,7 +170,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
                 //İlgili öğretmen için model'dan gelen ClassroomId değerlerini ClassroomTeachers tablosuna ekliyorum.
                 List<ClassroomTeacher> classroomTeachers = new();
 
-                foreach (var classroomId in model.ClassroomTeacherClassroomIds)
+                foreach (var classroomId in model.ClassroomTeachersClassroomIds)
                 {
                     classroomTeachers.Add(new ClassroomTeacher
                     {

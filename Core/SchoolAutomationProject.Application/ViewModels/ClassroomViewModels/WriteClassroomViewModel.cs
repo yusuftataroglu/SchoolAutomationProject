@@ -6,6 +6,15 @@ namespace SchoolAutomationProject.Application.ViewModels.ClassroomViewModels
 {
     public class WriteClassroomViewModel
     {
+        public WriteClassroomViewModel()
+        {
+            ClassroomMainCoursesMainCourseIds = new();
+            StudentIds = new();
+            ClassroomTeachersTeacherIds = new();
+        }
+
+        public Guid Id { get; set; }
+
         [Required(ErrorMessage ="İsim boş geçilemez")]
         public string Name { get; set; }
 

@@ -20,7 +20,7 @@
                     <label for="lastName">Soyisim</label>
                     <input id="lastName" class="form-control" type="text" asp-for="LastName" />
 
-                    <label for="title">Unvan</label>
+                    <label for="title">Ünvan</label>
                     <input id="title" class="form-control" type="text" asp-for="Title" />
 
                     <label>Verilen Ders</label>
@@ -36,7 +36,7 @@
                     <label>Ders Verilen Sınıflar</label>
                     @foreach (var classroom in _classroomReadRepository.GetAll().OrderBy(x => x.Name).ToList())
                     {
-                        <input type="checkbox" class="btn-check" id="@classroom.Id" name="modelClassroomIds" value="@classroom.Id">
+                        <input type="checkbox" class="btn-check" id="@classroom.Id" name="ClassroomTeachersClassroomIds" value="@classroom.Id">
                         <label class="btn btn-outline-primary" for="@classroom.Id">@classroom.Name</label>
                     }
 

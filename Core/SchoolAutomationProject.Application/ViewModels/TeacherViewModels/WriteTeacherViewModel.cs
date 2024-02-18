@@ -6,7 +6,7 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherViewModels
     {
         public WriteTeacherViewModel()
         {
-            ClassroomTeacherClassroomIds = new();
+            ClassroomTeachersClassroomIds = new();
         }
         public Guid Id { get; set; }
 
@@ -21,6 +21,6 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherViewModels
         public string MainCourseId { get; set; }
 
         //Öğretmen eklendikten sonra sınıf ataması yapmak zorunlu değil. Atama sonradan yapılabilir.(Update yaparken)
-        public List<string>? ClassroomTeacherClassroomIds { get; set; }
+        public List<string>? ClassroomTeachersClassroomIds { get; set; }
     }
 }
