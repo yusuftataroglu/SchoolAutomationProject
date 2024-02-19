@@ -1,6 +1,6 @@
 ﻿@model List<ReadClassroomViewModel>
 @{
-    ViewData["Title"] = "GetClassrooms";
+    ViewData["Title"] = "Get";
     Layout = "~/Views/Shared/_ManagementLayout.cshtml";
 }
 
@@ -18,7 +18,7 @@
                     <th>Verilen Dersler</th>
                     <th>Öğrenciler</th>
                     <th>Öğretmenler</th>
-                    <th><a class="btn btn-success" asp-area="Admin" asp-controller="Classrooms" asp-action="AddClassroom">+</a></th>
+                    <th><a class="btn btn-success" asp-area="Admin" asp-controller="Classrooms" asp-action="Add">+</a></th>
                 </tr>
             </thead>
             <tbody>
@@ -54,11 +54,11 @@
 
                         <!--Butonlar-->
                         <td class="d-flex">
-                            <a class="btn btn-warning" asp-area="Admin" asp-controller="Classrooms" asp-action="GetDetailsClassroom" asp-route-id="@item.Id">Detaylar</a>
+                            <a class="btn btn-warning" asp-area="Admin" asp-controller="Classrooms" asp-action="Details" asp-route-id="@item.Id">Detaylar</a>
 
-                            <a class="btn btn-primary" asp-area="Admin" asp-controller="Classrooms" asp-action="UpdateClassroom" asp-route-id="@item.Id">Güncelle</a>
+                            <a class="btn btn-primary" asp-area="Admin" asp-controller="Classrooms" asp-action="Update" asp-route-id="@item.Id">Güncelle</a>
 
-                            <a class="btn btn-danger" asp-area="Admin" asp-controller="Classrooms" asp-action="DeleteClassroom" asp-route-id="@item.Id">Sil</a>
+                            <a class="btn btn-danger" asp-area="Admin" asp-controller="Classrooms" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
                         </td>
                     </tr>
                 }

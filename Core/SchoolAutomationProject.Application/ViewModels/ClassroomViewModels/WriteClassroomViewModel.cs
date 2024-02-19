@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using SchoolAutomationProject.Domain.Entities.CustomTables;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace SchoolAutomationProject.Application.ViewModels.ClassroomViewModels
@@ -14,10 +15,10 @@ namespace SchoolAutomationProject.Application.ViewModels.ClassroomViewModels
 
         public Guid Id { get; set; }
 
-        [Required(ErrorMessage ="İsim boş geçilemez")]
+        [Required(ErrorMessage = "İsim boş geçilemez")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage ="Kapasite boş geçilemez")]
+        [Required(ErrorMessage = "Kapasite boş geçilemez")]
         [DefaultValue(25)]
         public byte Capacity { get; set; }
 

@@ -15,6 +15,7 @@
                 <div asp-validation-summary="All"></div>
                 <div class="card-body">
 
+                    <input name="id" type="hidden" value="@Model.Id"/>
 
                     <label for="@Model.Name">Sınıf Adı</label>
                     <input id="@Model.Name" class="form-control" type="text" asp-for="Name" />
@@ -34,7 +35,7 @@
                     <label class="d-block mb-2">Öğrenciler</label>
                     @foreach (var student in _studentReadRepository.GetAll().ToList())
                     {
-                        <input class="btn-check" type="checkbox" id="@student.Id" name="StudentIds" value="@student.Id" checked="@Model.StudentIds.Contains(student.Id.ToString())" />
+                        @* <input class="btn-check" type="checkbox" id="@student.Id" name="StudentIds" value="@student.Id" checked="@Model.StudentIds.Contains(student.Id.ToString())" /> *@
                         <label class="btn btn-outline-primary" for="@student.Id">@student.FirstName @student.LastName</label>
                     }
 
