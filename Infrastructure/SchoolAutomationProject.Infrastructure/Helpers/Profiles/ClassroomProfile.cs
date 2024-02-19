@@ -1,12 +1,6 @@
 ﻿using AutoMapper;
 using SchoolAutomationProject.Application.ViewModels.ClassroomViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchoolAutomationProject.Infrastructure.Helpers.Profiles
 {
@@ -17,7 +11,11 @@ namespace SchoolAutomationProject.Infrastructure.Helpers.Profiles
             CreateMap<Classroom, ReadClassroomViewModel>();
             CreateMap<ReadClassroomViewModel, Classroom>();
             CreateMap<Classroom, WriteClassroomViewModel>();
-            CreateMap<WriteClassroomViewModel, Classroom>();
+            CreateMap<WriteClassroomViewModel, Classroom>()
+                .ForMember(x => x.CreatedDate, option => option.Ignore())
+                .ForMember(x => x.CreatedComputerName, option => option.Ignore())
+                .ForMember(x => x.CreatedIpAddress, option => option.Ignore());
+
         }
 
     }

@@ -1,10 +1,10 @@
-﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
+﻿using SchoolAutomationProject.Application.ViewModels.BaseViewModels;
 using SchoolAutomationProject.Domain.Entities.CrossTables;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 
 namespace SchoolAutomationProject.Application.ViewModels.ClassroomViewModels
 {
-    public class ReadClassroomViewModel : BaseClass
+    public class ReadClassroomViewModel : ReadViewModel
     {
         public string Name { get; set; } // Sınıf
         public byte Capacity { get; set; } // Kapasite

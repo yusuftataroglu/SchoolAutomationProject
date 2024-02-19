@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SchoolAutomationProject.Application.Helpers.EntityRelationshipHelpers;
+using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers.CommonEntityFillRelationshipsServices;
 using SchoolAutomationProject.Application.Repositories.ClassroomRepositories;
 using SchoolAutomationProject.Application.ViewModels.ClassroomViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
@@ -12,6 +12,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
     [Authorize(Roles = "Admin")]
     public class ClassroomsController : GenericController<Classroom, ReadClassroomViewModel, WriteClassroomViewModel>
     {
+
         public ClassroomsController(
             IClassroomReadRepository readRepository,
             IClassroomWriteRepository writeRepository,
@@ -36,24 +37,25 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
             return base.Add();
         }
 
-        public override async Task<IActionResult> Add(WriteClassroomViewModel model)
+        public override async Task<IActionResult> Add(WriteClassroomViewModel modelVM)
         {
-            return await base.Add(model);
+            return await base.Add(modelVM);
         }
 
-        public override async Task<IActionResult> Update(Guid id, WriteClassroomViewModel model)
+        public override async Task<IActionResult> Update(string id)
         {
-            return await base.Update(id,model);
+            return await base.Update(id);
         }
 
-        public override async Task<IActionResult> Update(string id, WriteClassroomViewModel model)
+        
+        public override async Task<IActionResult> Update(WriteClassroomViewModel modelVM)
         {
-            return await base.Update(id, model);
+            return await base.Update(modelVM);
         }
 
-        public override Task<IActionResult> Delete(string id)
+        public override async Task<IActionResult> Delete(string id)
         {
-            return base.Delete(id);
+            return await base.Delete(id);
         }
 
 
@@ -64,7 +66,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
 
 
 
-#region EskiClassroomController
+//#region EskiClassroomController
 
 
 
@@ -266,4 +268,4 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
 //    return RedirectToAction("GetClassrooms");
 //}
 
-#endregion
+//#endregion

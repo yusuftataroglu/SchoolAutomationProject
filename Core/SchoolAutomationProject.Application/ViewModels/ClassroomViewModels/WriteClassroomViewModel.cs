@@ -1,10 +1,10 @@
-﻿using SchoolAutomationProject.Domain.Entities.CustomTables;
+﻿using SchoolAutomationProject.Application.ViewModels.BaseViewModels;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace SchoolAutomationProject.Application.ViewModels.ClassroomViewModels
 {
-    public class WriteClassroomViewModel
+    public class WriteClassroomViewModel : WriteViewModel
     {
         public WriteClassroomViewModel()
         {
@@ -13,9 +13,8 @@ namespace SchoolAutomationProject.Application.ViewModels.ClassroomViewModels
             ClassroomTeachersTeacherIds = new();
         }
 
-        public Guid Id { get; set; }
 
-        [Required(ErrorMessage = "İsim boş geçilemez")]
+        [Required(ErrorMessage = "Sınıf adı boş geçilemez")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Kapasite boş geçilemez")]

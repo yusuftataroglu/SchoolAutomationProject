@@ -1,14 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using SchoolAutomationProject.Application.ViewModels.BaseViewModels;
+using System.ComponentModel.DataAnnotations;
 
 namespace SchoolAutomationProject.Application.ViewModels.TeacherViewModels
 {
-    public class WriteTeacherViewModel
+    public class WriteTeacherViewModel:WriteViewModel
     {
         public WriteTeacherViewModel()
         {
             ClassroomTeachersClassroomIds = new();
         }
-        public Guid Id { get; set; }
 
         [Required(ErrorMessage = "İsim boş geçilemez!")]
         public string FirstName { get; set; }

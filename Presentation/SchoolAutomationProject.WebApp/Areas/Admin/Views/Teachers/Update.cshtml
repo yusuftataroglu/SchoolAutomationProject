@@ -10,7 +10,7 @@
 <div class="card">
     <div class="card-header">Güncelle</div>
     <div class="card-body">
-        <form method="post" asp-area="Admin" asp-controller="Teachers" asp-action="UpdateTeacher">
+        <form method="post" asp-area="Admin" asp-controller="Teachers" asp-action="Update">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -22,7 +22,7 @@
                         <input asp-for="LastName" type="text" class="form-control" />
                     </div>
                     <div class="form-group">
-                        <label asp-for="Title">Alan</label>
+                        <label asp-for="Title">Ünvan</label>
                         <input asp-for="Title" type="text" class="form-control" />
                     </div>
                 </div>
@@ -40,7 +40,6 @@
                                     {
                                         var isSelected = item.Id.ToString() == selectedValue;
                                         <option value="@item.Id" selected="@isSelected">@item.Name</option>
-
                                     }
                                 </select>
                             </div>
@@ -53,7 +52,7 @@
                             <div class="form-group">
                                 @foreach (var classroom in _classroomReadRepository.GetAll().ToList())
                                 {
-                                    <input type="checkbox" id="@classroom.Id" name="ClassroomTeachersClassroomIds" class="form-check-input" value="@classroom.Id" checked="@Model.ClassroomTeachersClassroomIds.Contains(classroom.Id.ToString())"/>
+                                    <input id="@classroom.Id" type="checkbox" name="ClassroomTeachersClassroomIds" class="form-check-input" value="@classroom.Id" checked="@Model.ClassroomTeachersClassroomIds.Contains(classroom.Id.ToString())" />
                                     <label for="@classroom.Id">@classroom.Name</label>
                                 }
                             </div>

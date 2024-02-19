@@ -27,7 +27,7 @@ namespace SchoolAutomationProject.Persistence.Repositories.CommonRepositories
             foreach (var entity in entities)
             {
                 await AddAsync(entity);
-               await SaveChangesAsync();
+                await SaveChangesAsync();
             }
         }
 
