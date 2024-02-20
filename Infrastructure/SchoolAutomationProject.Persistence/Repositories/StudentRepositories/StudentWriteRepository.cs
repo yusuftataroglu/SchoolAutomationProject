@@ -1,4 +1,4 @@
-﻿using SchoolAutomationProject.Application.Repositories.CommonRepositories;
+﻿using SchoolAutomationProject.Application.Repositories.StudentRepositories;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 using SchoolAutomationProject.Persistence.Contexts;
 using SchoolAutomationProject.Persistence.Repositories.CommonRepositories;

@@ -5,6 +5,11 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
 {
     public class Grade : BaseClass
     {
+        public Grade()
+        {
+            //Student = new Student();
+            //SubCourse = new SubCourse();
+        }
         public double Score { get; set; } // Öğrencinin aldığı not
         public byte ExamNumber { get; set; } // O dersin kaçıncı sınavı
 

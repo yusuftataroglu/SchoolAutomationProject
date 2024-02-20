@@ -9,7 +9,8 @@ using SchoolAutomationProject.Domain.Entities.IdentityTables;
 using SchoolAutomationProject.Persistence.Configurations.CrossTablesConfigurations;
 using SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigurations;
 using SchoolAutomationProject.Persistence.Configurations.IdentityTablesConfigurations;
-using SchoolAutomationProject.Persistence.Helpers;
+using SchoolAutomationProject.Persistence.Helpers.ConnectionStringHelpers;
+using SchoolAutomationProject.Persistence.Helpers.IpAddressHelpers;
 
 namespace SchoolAutomationProject.Persistence.Contexts
 {

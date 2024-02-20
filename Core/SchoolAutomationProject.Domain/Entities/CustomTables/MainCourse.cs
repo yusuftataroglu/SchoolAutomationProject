@@ -7,9 +7,9 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
     {
         public MainCourse()
         {
-            SubCourses = new List<SubCourse>();
-            Teachers = new List<Teacher>();
-            ClassroomMainCourses = new List<ClassroomMainCourse>();
+            //SubCourses = new List<SubCourse>();
+            //Teachers = new List<Teacher>();
+            //ClassroomMainCourses = new List<ClassroomMainCourse>();
         }
         public string Name { get; set; }
 

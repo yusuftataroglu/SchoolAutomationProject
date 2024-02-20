@@ -6,6 +6,10 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherViewModels
 {
     public class ReadTeacherViewModel : ReadViewModel
     {
+        public ReadTeacherViewModel()
+        {
+            MainCourse = new MainCourse();
+        }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string? Title { get; set; }

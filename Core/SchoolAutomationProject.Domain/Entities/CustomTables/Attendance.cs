@@ -6,6 +6,11 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
 {
     public class Attendance : BaseClass
     {
+        public Attendance()
+        {
+            //Student=new Student();
+            //SubCourse=new SubCourse();
+        }
         public DateTime AttendanceDate { get; set; } // Devamsızlık tarihi
         public AttendanceStatus AttendanceStatus { get; set; }
 

@@ -1,6 +1,7 @@
-﻿using SchoolAutomationProject.Domain.Entities.CustomTables;
+﻿using SchoolAutomationProject.Application.Repositories.CommonRepositories;
+using SchoolAutomationProject.Domain.Entities.CustomTables;
 
-namespace SchoolAutomationProject.Application.Repositories.CommonRepositories
+namespace SchoolAutomationProject.Application.Repositories.StudentRepositories
 {
     public interface IStudentWriteRepository : IWriteRepository<Student>
     {

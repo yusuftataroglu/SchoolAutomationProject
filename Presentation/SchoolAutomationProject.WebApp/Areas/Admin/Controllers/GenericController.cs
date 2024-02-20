@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers.CommonEntityFillRelationshipsServices;
+using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.CommonRepositories;
 using SchoolAutomationProject.Application.ViewModels.BaseViewModels;
 using SchoolAutomationProject.Domain.Entities.CommonTables;

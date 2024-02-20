@@ -1,10 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers.CommonEntityFillRelationshipsServices;
-using SchoolAutomationProject.Application.Repositories.CommonRepositories;
+using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.MainCourseRepositories;
-using SchoolAutomationProject.Application.ViewModels.ClassroomViewModels;
 using SchoolAutomationProject.Application.ViewModels.MainCourseViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 
@@ -12,13 +10,13 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Authorize(Roles = "Admin")]
-    public class MainCoursesController : GenericController<MainCourse,ReadMainCourseViewModel,WriteMainCourseViewModel>
+    public class MainCoursesController : GenericController<MainCourse, ReadMainCourseViewModel, WriteMainCourseViewModel>
     {
         public MainCoursesController(
             IMainCourseReadRepository readRepository,
-            IMainCourseWriteRepository writeRepository, 
-            IMapper mapper, 
-            IFillEntityRelationshipsService fillEntityRelationshipsService) 
+            IMainCourseWriteRepository writeRepository,
+            IMapper mapper,
+            IFillEntityRelationshipsService fillEntityRelationshipsService)
             : base(readRepository, writeRepository, mapper, fillEntityRelationshipsService)
         {
         }

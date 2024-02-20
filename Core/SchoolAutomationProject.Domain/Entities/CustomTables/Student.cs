@@ -7,6 +7,16 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
 {
     public class Student : BaseClass
     {
+        public Student()
+        {
+            //DiscontinuedStudent = new DiscontinuedStudent();
+            //Classroom = new Classroom();
+            //User = new AppUser();
+            //ParentStudents = new List<ParentStudent>();
+            //Grades = new List<Grade>();
+            //Achievements = new List<Achievement>();
+            //Attendances = new List<Attendance>();
+        }
         public string RegistrationNumber { get; set; } // Okul No
         public string FirstName { get; set; } // Öğrenci Ad
         public string LastName { get; set; } // Öğrenci Soyad
@@ -17,31 +27,28 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
         public short? TotalAbsenceCount { get; set; } // Devamsızlık sayısı
         public ContinuationStatus? ContinuationStatus { get; set; } //Devam etme durumu
 
-        //Student-Parent ilişkisi
-        public virtual ICollection<ParentStudent> ParentStudents { get; set; }
+        //Student-DiscontinuedStudent ilişkisi
+        public virtual DiscontinuedStudent DiscontinuedStudent{ get; set; }
 
         //Student-Classroom ilişkisi
         public virtual Classroom Classroom { get; set; }
         public Guid? ClassroomId { get; set; } //Ön kayıt aşamasında girilmesine gerek yok.
 
-        //Student-Teacher ilişkisi
-        //KALDIRILDI
-        //public virtual ICollection<StudentTeacher> StudentTeachers { get; set; }
+        //Student-AppUser ilişkisi
+        public virtual AppUser User { get; set; }
+        public string? UserId { get; set; }
 
-        //Student-Achievement ilişkisi
-        public virtual ICollection<Achievement> Achievement { get; set; }
+        //Student-Parent ilişkisi
+        public virtual ICollection<ParentStudent> ParentStudents { get; set; }
 
         //Student-Grade ilişkisi
         public virtual ICollection<Grade> Grades { get; set; }
 
+        //Student-Achievement ilişkisi
+        public virtual ICollection<Achievement> Achievements { get; set; }
+
         //Student-Attendance ilişkisi
         public virtual ICollection<Attendance> Attendances { get; set; }
 
-        //Student-DiscontinuedStudent ilişkisi
-        public virtual DiscontinuedStudent DiscontinuedStudent{ get; set; }
-
-        //Student-AppUser ilişkisi
-        public virtual AppUser User { get; set; }
-        public string? UserId { get; set; }
     }
 }

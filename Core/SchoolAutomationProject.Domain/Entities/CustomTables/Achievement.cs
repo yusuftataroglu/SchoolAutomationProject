@@ -6,6 +6,11 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
 {
     public class Achievement : BaseClass
     {
+        public Achievement()
+        {
+            //Student = new Student();
+            //Semester = new Semester();
+        }
         public AchievementType Type { get; set; } // Belge türü (Takdir, Teşekkür)
         public string? Description { get; set; } // Belge açıklaması
 

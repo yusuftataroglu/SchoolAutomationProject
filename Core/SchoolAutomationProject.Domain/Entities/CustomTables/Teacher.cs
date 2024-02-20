@@ -8,8 +8,8 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
     {
         public Teacher()
         {
-            ClassroomTeachers = new List<ClassroomTeacher>();
-            TeacherSchedules = new List<TeacherSchedule>();
+            //ClassroomTeachers = new List<ClassroomTeacher>();
+            //TeacherSchedules = new List<TeacherSchedule>();
         }
         public string FirstName { get; set; }
         public string LastName { get; set; }

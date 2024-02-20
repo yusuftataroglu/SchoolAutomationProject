@@ -7,9 +7,9 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
     {
         public Classroom()
         {
-            ClassroomMainCourses = new List<ClassroomMainCourse>();
-            Students = new List<Student>();
-            ClassroomTeachers = new List<ClassroomTeacher>();
+            //ClassroomMainCourses = new List<ClassroomMainCourse>();
+            //Students = new List<Student>();
+            //ClassroomTeachers = new List<ClassroomTeacher>();
         }
         public string Name { get; set; } // Sınıf
         public byte Capacity { get; set; } // Kapasite
