@@ -10,12 +10,12 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
 
         // Not - Öğrenci ilişkisi
         public virtual Student Student { get; set; }
-        public Guid StudentId { get; set; } // Öğrenci ID'si
+        public Guid? StudentId { get; set; } // Öğrenci ID'si
 
 
         // Not - Alt Ders ilişkisi
         public virtual SubCourse SubCourse { get; set; }
-        public Guid SubCourseId { get; set; } // Ana Ders ID'si
+        public Guid? SubCourseId { get; set; } // Ana Ders ID'si
 
     }
 }

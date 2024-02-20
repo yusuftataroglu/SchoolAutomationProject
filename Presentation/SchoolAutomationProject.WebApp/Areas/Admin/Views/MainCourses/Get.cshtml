@@ -1,0 +1,63 @@
+﻿@model List<ReadMainCourseViewModel>
+
+@{
+    ViewData["Title"] = "Main Courses";
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+
+<div class="card mb-4">
+    <div class="card-header d-flex align-items-center">
+        <i class="fas fa-table me-1 me-2"></i>
+        <h3>Main Courses</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>SubCourses</th>
+                    <th>Teachers</th>
+                    <th>Classrooms</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var mainCourse in Model)
+                {
+                    <tr>
+                        <td>@mainCourse.Name</td>
+                        <td>
+                            @foreach (var subCourse in mainCourse.SubCourses)
+                            {
+                                <span>@subCourse.Code</span>
+
+                                <br />
+                            }
+                        </td>
+                        <td>
+                            @foreach (var teacher in mainCourse.Teachers)
+                            {
+                                <span>@teacher.FirstName @teacher.LastName</span>
+
+                                <br />
+                            }
+                        </td>
+                        <td>
+                            @foreach (var classroomMainCourse in mainCourse.ClassroomMainCourses)
+                            {
+                                <span>@classroomMainCourse.Classroom.Name</span>
+
+                                <br />
+                            }
+                        </td>
+                        <td>
+                            <a class="btn btn-warning" asp-area="Admin" asp-controller="MainCourses" asp-action="Details" asp-route-id="@mainCourse.Id">Details</a>
+                            <a class="btn btn-primary" asp-area="Admin" asp-controller="MainCourses" asp-action="Update" asp-route-id="@mainCourse.Id">Update</a>
+                            <a class="btn btn-danger" asp-area="Admin" asp-controller="MainCourses" asp-action="Delete" asp-route-id="@mainCourse.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

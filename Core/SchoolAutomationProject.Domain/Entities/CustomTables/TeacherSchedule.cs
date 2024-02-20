@@ -13,6 +13,6 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
 
         //TeacherSchedule - Teacher ilişkisi
         public virtual Teacher Teacher { get; set; }
-        public Guid TeacherId { get; set; }
+        public Guid? TeacherId { get; set; }
     }
 }

@@ -79,12 +79,12 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
 
 
                 //İlgili sınıfın Students değerlerini kaldırıyorum.
-                List<Student> existingStudents = classroom.Students.ToList();
-                foreach (var existingStudent in existingStudents)
-                {
-                    classroom.Students.Remove(existingStudent);
-                }
-
+                //List<Student> existingStudents = classroom.Students.ToList();
+                //foreach (var existingStudent in existingStudents)
+                //{
+                //    classroom.Students.Remove(existingStudent);
+                //}
+                classroom.Students.Clear();
 
                 //İlgili sınıf için modelVM'den gelen ClassroomId değerlerini ClassroomTeachers tablosuna ekliyorum.
                 List<ClassroomTeacher> classroomTeachers = new();

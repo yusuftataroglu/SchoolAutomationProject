@@ -25,6 +25,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
             builder.Property(x => x.GraduatedSchool).HasMaxLength(255).IsRequired();
             builder.Property(x => x.GPA).IsRequired();
             builder.Property(x => x.IsPreRegistered).IsRequired();
+            //builder.HasOne(x=> x.Classroom).WithMany(x=> x.Students).HasForeignKey(x=> x.ClassroomId).OnDelete(DeleteBehavior.SetNull);
 
             //SeedData eklenmesi
             builder.HasData(GetSampleStudents());

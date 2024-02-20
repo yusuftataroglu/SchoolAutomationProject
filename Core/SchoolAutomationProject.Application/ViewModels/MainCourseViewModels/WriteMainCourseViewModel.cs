@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using SchoolAutomationProject.Application.ViewModels.BaseViewModels;
+using System.ComponentModel.DataAnnotations;
 
 namespace SchoolAutomationProject.Application.ViewModels.MainCourseViewModels
 {
-    public class WriteMainCourseViewModel
+    public class WriteMainCourseViewModel:WriteViewModel
     {
         public WriteMainCourseViewModel()
         {
@@ -11,13 +12,13 @@ namespace SchoolAutomationProject.Application.ViewModels.MainCourseViewModels
             ClassroomMainCoursesClassroomIds = new();
         }
 
-        public Guid Id { get; set; }
 
-        [Required(ErrorMessage = "İsim boş geçilemez")]
+        [Required(ErrorMessage = "Ders adı boş geçilemez")]
         public string Name { get; set; }
 
-        public List<string> SubCourseIds { get; set; }
-        public List<string> TeacherIds { get; set; }
-        public List<string> ClassroomMainCoursesClassroomIds { get; set; }
+        //Sonradan da girilebilir
+        public List<string>? TeacherIds { get; set; }
+        public List<string>? SubCourseIds { get; set; }
+        public List<string>? ClassroomMainCoursesClassroomIds { get; set; }
     }
 }

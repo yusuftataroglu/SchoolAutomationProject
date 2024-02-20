@@ -5,6 +5,12 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
 {
     public class MainCourse : BaseClass
     {
+        public MainCourse()
+        {
+            SubCourses = new List<SubCourse>();
+            Teachers = new List<Teacher>();
+            ClassroomMainCourses = new List<ClassroomMainCourse>();
+        }
         public string Name { get; set; }
 
         //MainCourse - SubCourse ilişkisi (One to Many)

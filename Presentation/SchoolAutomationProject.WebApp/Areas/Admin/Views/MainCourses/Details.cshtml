@@ -1,0 +1,37 @@
+﻿@model ReadMainCourseViewModel
+
+@{
+    ViewData["Title"] = "Main Course Details";
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+
+<div class="card mb-4">
+    <div class="card-header d-flex align-items-center">
+        <i class="fas fa-table me-1 me-2"></i>
+        <h3>Main Course Details</h3>
+    </div>
+    <div class="card-body">
+        <h4>Name: @Model.Name</h4>
+        <h4>SubCourses:</h4>
+        <ul>
+            @foreach (var subCourse in Model.SubCourses)
+            {
+                <li>@subCourse.Code</li>
+            }
+        </ul>
+        <h4>Teachers:</h4>
+        <ul>
+            @foreach (var teacher in Model.Teachers)
+            {
+                <li>@teacher.FirstName @teacher.LastName</li>
+            }
+        </ul>
+        <h4>Classrooms:</h4>
+        <ul>
+            @foreach (var classroomMainCourse in Model.ClassroomMainCourses)
+            {
+                <li>@classroomMainCourse.Classroom.Name</li>
+            }
+        </ul>
+    </div>
+</div>

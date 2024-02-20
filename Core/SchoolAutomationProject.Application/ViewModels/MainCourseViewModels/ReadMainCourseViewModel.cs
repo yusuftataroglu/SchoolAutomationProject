@@ -1,10 +1,10 @@
-﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
+﻿using SchoolAutomationProject.Application.ViewModels.BaseViewModels;
 using SchoolAutomationProject.Domain.Entities.CrossTables;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 
 namespace SchoolAutomationProject.Application.ViewModels.MainCourseViewModels
 {
-    public class ReadMainCourseViewModel : BaseClass
+    public class ReadMainCourseViewModel : ReadViewModel
     {
         public string Name { get; set; }
         public ICollection<SubCourse> SubCourses { get; set; }

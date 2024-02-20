@@ -6,6 +6,6 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
     public class DiscontinuedStudent:BaseClass
     {
         public virtual Student Student { get; set; }
-        public Guid StudentId { get; set; }
+        public Guid? StudentId { get; set; }
     }
 }

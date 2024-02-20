@@ -11,7 +11,7 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
 
         //SubCourse - MainCourse ilişkisi
         public virtual MainCourse MainCourse { get; set; }
-        public Guid MainCourseId { get; set; }
+        public Guid? MainCourseId { get; set; }
 
         //SubCourse - Grade ilişkisi
         public virtual ICollection<Grade> Grades { get; set; }

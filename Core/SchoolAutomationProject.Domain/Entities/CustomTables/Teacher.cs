@@ -6,13 +6,18 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
 {
     public class Teacher : BaseClass
     {
+        public Teacher()
+        {
+            ClassroomTeachers = new List<ClassroomTeacher>();
+            TeacherSchedules = new List<TeacherSchedule>();
+        }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string? Title { get; set; }
 
         //Teacher-MainCourse ilişkisi
         public virtual MainCourse MainCourse { get; set; }
-        public Guid MainCourseId { get; set; }
+        public Guid? MainCourseId { get; set; }
 
         //Teacher-Classroom ilişkisi
         public virtual ICollection<ClassroomTeacher> ClassroomTeachers { get; set; }

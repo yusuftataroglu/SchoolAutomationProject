@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers.ClassroomFillRelationshipsServices;
 using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers.CommonEntityFillRelationshipsServices;
+using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers.MainCourseFillRelationshipsServices;
 using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers.TeacherFillRelationshipsServices;
 using SchoolAutomationProject.Application.Repositories.AchievementRepositories;
 using SchoolAutomationProject.Application.Repositories.AttendanceRepositories;
@@ -25,6 +26,7 @@ using SchoolAutomationProject.Domain.Entities.IdentityTables;
 using SchoolAutomationProject.Persistence.Contexts;
 using SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHelpers.ClassroomFillRelationshipsServices;
 using SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHelpers.CommonEntityFillRelationshipsServices;
+using SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHelpers.MainCourseFillRelationshipsServices;
 using SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHelpers.TeacherFillRelationshipsServices;
 using SchoolAutomationProject.Persistence.Repositories.AchievementRepositories;
 using SchoolAutomationProject.Persistence.Repositories.AttendanceRepositories;
@@ -79,6 +81,7 @@ namespace SchoolAutomationProject.Persistence.IoCContainer
             services.AddScoped<IFillEntityRelationshipsService, FillEntityRelationshipsService>();
             services.AddScoped<IClassroomFillRelationshipsService, ClassroomFillRelationshipsService>();
             services.AddScoped<ITeacherFillRelationshipsService, TeacherFillRelationshipsService>();
+            services.AddScoped<IMainCourseFillRelationshipsService, MainCourseFillRelationshipsService>();
         }
     }
 }
