@@ -1,14 +1,11 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
 using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.AchievementRepositories;
 using SchoolAutomationProject.Application.Repositories.AttendanceRepositories;
 using SchoolAutomationProject.Application.Repositories.ClassroomRepositories;
-using SchoolAutomationProject.Application.Repositories.CommonRepositories;
 using SchoolAutomationProject.Application.Repositories.DiscontinuedStudentRepositories;
 using SchoolAutomationProject.Application.Repositories.GradeRepositories;
 using SchoolAutomationProject.Application.Repositories.MainCourseRepositories;
@@ -18,7 +15,6 @@ using SchoolAutomationProject.Application.Repositories.StudentRepositories;
 using SchoolAutomationProject.Application.Repositories.SubCourseRepositories;
 using SchoolAutomationProject.Application.Repositories.TeacherRepositories;
 using SchoolAutomationProject.Application.Repositories.TeacherScheduleRepositories;
-using SchoolAutomationProject.Domain.Entities.CustomTables;
 using SchoolAutomationProject.Domain.Entities.IdentityTables;
 using SchoolAutomationProject.Persistence.Contexts;
 using SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHelpers;
@@ -34,7 +30,6 @@ using SchoolAutomationProject.Persistence.Repositories.StudentRepositories;
 using SchoolAutomationProject.Persistence.Repositories.SubCourseRepositories;
 using SchoolAutomationProject.Persistence.Repositories.TeacherRepositories;
 using SchoolAutomationProject.Persistence.Repositories.TeacherScheduleRepositories;
-using System.Text;
 
 namespace SchoolAutomationProject.Persistence.IoCContainer
 {
@@ -73,9 +68,18 @@ namespace SchoolAutomationProject.Persistence.IoCContainer
             services.AddScoped<ITeacherScheduleWriteRepository, TeacherScheduleWriteRepository>();
 
             services.AddScoped<IFillEntityRelationshipsService, FillEntityRelationshipsService>();
+            services.AddScoped<IAchievementFillRelationshipsService, AchievementFillRelationshipsService>();
+            services.AddScoped<IAttendanceFillRelationshipsService, AttendanceFillRelationshipsService>();
             services.AddScoped<IClassroomFillRelationshipsService, ClassroomFillRelationshipsService>();
-            services.AddScoped<ITeacherFillRelationshipsService, TeacherFillRelationshipsService>();
+            services.AddScoped<IDiscontinuedStudentFillRelationshipsService, DiscontinuedStudentFillRelationshipsService>();
+            services.AddScoped<IGradeFillRelationshipsService, GradeFillRelationshipsService>();
             services.AddScoped<IMainCourseFillRelationshipsService, MainCourseFillRelationshipsService>();
+            services.AddScoped<IParentFillRelationshipsService, ParentFillRelationshipsService>();
+            services.AddScoped<ISemesterFillRelationshipsService, SemesterFillRelationshipsService>();
+            services.AddScoped<IStudentFillRelationshipsService, StudentFillRelationshipsService>();
+            services.AddScoped<ISubCourseFillRelationshipsService, SubCourseFillRelationshipsService>();
+            services.AddScoped<ITeacherFillRelationshipsService, TeacherFillRelationshipsService>();
+            services.AddScoped<ITeacherScheduleFillRelationshipsService, TeacherScheduleFillRelationshipsService>();
         }
     }
 }

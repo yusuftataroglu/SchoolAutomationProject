@@ -84,8 +84,9 @@ namespace SchoolAutomationProject.Persistence.Contexts
                         {
 
                             Student student = (Student)item.Entity;
+                            student.IsPreRegistered = true;
                             var lastRegistrationNumber = Students.OrderByDescending(x => x.RegistrationNumber).FirstOrDefault()?.RegistrationNumber;
-                            if (lastRegistrationNumber == null)
+                            if (lastRegistrationNumber == null) 
                             {
                                 student.RegistrationNumber = $"100-{DateTime.Now.Year.ToString().Substring(2)}";
                             }

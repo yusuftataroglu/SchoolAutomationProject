@@ -14,7 +14,7 @@ namespace SchoolAutomationProject.Application.ViewModels.ClassroomViewModels
         }
 
 
-        [Required(ErrorMessage = "Sınıf adı boş geçilemez")]
+        [Required(ErrorMessage = "Sınıf boş geçilemez")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Kapasite boş geçilemez")]

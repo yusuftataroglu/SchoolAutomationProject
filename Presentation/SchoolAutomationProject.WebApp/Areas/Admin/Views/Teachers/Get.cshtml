@@ -29,7 +29,15 @@
                         <td>@item.FirstName</td>
                         <td>@item.LastName</td>
                         <td>@item.Title</td>
-                        <td>@item.MainCourse.Name</td>
+                        @if (item.MainCourse != null)
+                        {
+                            <td>@item.MainCourse.Name</td>
+                        }
+                        else
+                        {
+                            <td></td>
+                        }
+
                         <td>
                             @foreach (var classroomTeachers in item.ClassroomTeachers)
                             {

@@ -1,5 +1,4 @@
 ﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
-using SchoolAutomationProject.Domain.Entities.CustomTables;
 using SchoolAutomationProject.Domain.Entities.Enums;
 
 namespace SchoolAutomationProject.Domain.Entities.CustomTables

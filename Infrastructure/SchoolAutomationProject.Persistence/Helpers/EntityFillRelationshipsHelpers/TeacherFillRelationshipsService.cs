@@ -18,7 +18,7 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
             {
                 teacher.MainCourseId = Guid.Parse(modelVM.MainCourseId);
 
-                // Sınıf öğretmenleri ekleniyor
+                // İlgili ClassroomTeachers ekleniyor
                 foreach (var classroomId in modelVM.ClassroomTeachersClassroomIds)
                 {
                     var classroomTeacher = new ClassroomTeacher()
@@ -28,6 +28,8 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
                     };
                     teacher.ClassroomTeachers.Add(classroomTeacher);
                 }
+                
+
             }
             else if (requestType == "UpdateGet")
             {
@@ -36,12 +38,6 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
             }
             else if (requestType == "UpdatePost")
             {
-                // Öğretmenin sahip olduğu sınıf öğretmenlerini güncelle
-                //var existingClassroomTeachers = teacher.ClassroomTeachers.ToList();
-                //foreach (var existingClassroomTeacher in existingClassroomTeachers)
-                //{
-                //    teacher.ClassroomTeachers.Remove(existingClassroomTeacher);
-                //}
                 teacher.ClassroomTeachers.Clear();
 
                 // İlgili ClassroomTeachers ekleniyor
