@@ -1,0 +1,48 @@
+﻿@model WriteAchievementViewModel
+@inject IStudentReadRepository _studentReadRepository
+@inject ISemesterReadRepository _semesterReadRepository
+@{
+    ViewData["Title"] = "AddAchievement";
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <form method="post" asp-area="Admin" asp-controller="Achievements" asp-action="Add">
+            <div class="card">
+                <div class="card-header">Belge Ekle</div>
+                <div class="card-body">
+                    <div asp-validation-summary="All"></div>
+                    <label for="type">Türü</label>
+                    <select id="type" class="form-control" asp-for="Type" asp-items="@Html.GetEnumSelectList<AchievementType>()">
+                    </select>
+
+                    <label for="description">Açıklama</label>
+                    <input id="description" class="form-control" type="text" asp-for="Description" />
+
+                    <label>Öğrenci</label>
+                    <select class="form-select" asp-for="@Model.StudentId">
+                        <option value="" selected disabled>Bir öğrenci seçiniz</option>
+                        @foreach (var item in _studentReadRepository.GetAll().ToList())
+                        {
+                            <option value="@item.Id">@item.FirstName @item.LastName</option>
+                        }
+                    </select>
+
+                    <label>Dönem</label>
+                    <select class="form-select" asp-for="@Model.SemesterId">
+                        <option value="" selected disabled>Bir dönem seçiniz</option>
+                        @foreach (var item in _semesterReadRepository.GetAll().ToList())
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+
+                    <div>
+                        <button class="btn btn-primary mt-2" type="submit">Ekle</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

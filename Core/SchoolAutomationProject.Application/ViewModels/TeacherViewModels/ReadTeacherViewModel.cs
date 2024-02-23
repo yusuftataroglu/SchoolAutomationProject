@@ -13,7 +13,7 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherViewModels
         public MainCourse MainCourse { get; set; }
         public ICollection<ClassroomTeacher> ClassroomTeachers { get; set; }
         public ICollection<TeacherSchedule> TeacherSchedules { get; set; }
-        public virtual AppUser User { get; set; }
+        public AppUser User { get; set; }
 
     }
 }

@@ -62,29 +62,8 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
             }
             else if (requestType == "UpdatePost")
             {
-                //İlgili sınıfın ClassroomTeachers tablosunda mevcut olan değerlerini kaldırıyorum.
-                //var existingClassroomTeachers = classroom.ClassroomTeachers.Where(x => x.ClassroomId == classroom.Id).ToList();
-                //foreach (var existingClassroomTeacher in existingClassroomTeachers)
-                //{
-                //    classroom.ClassroomTeachers.Remove(existingClassroomTeacher);
-                //}
                 classroom.ClassroomTeachers.Clear();
-
-                //İlgili sınıfın ClassroomMainCourses tablosunda mevcut olan değerlerini kaldırıyorum.
-                //var existingClassroomMainCourses = classroom.ClassroomMainCourses.Where(x => x.ClassroomId == classroom.Id).ToList();
-                //foreach (var existingClassroomMainCourse in existingClassroomMainCourses)
-                //{
-                //    classroom.ClassroomMainCourses.Remove(existingClassroomMainCourse);
-                //}
                 classroom.ClassroomMainCourses.Clear();
-
-
-                //İlgili sınıfın Students değerlerini kaldırıyorum.
-                //List<Student> existingStudents = classroom.Students.ToList();
-                //foreach (var existingStudent in existingStudents)
-                //{
-                //    classroom.Students.Remove(existingStudent);
-                //}
                 classroom.Students.Clear();
 
                 //İlgili sınıf için modelVM'den gelen ClassroomId değerlerini ClassroomTeachers tablosuna ekliyorum.

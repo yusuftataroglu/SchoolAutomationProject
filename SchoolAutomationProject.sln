@@ -19,8 +19,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolAutomationProject.WebApp", "Presentation\SchoolAutomationProject.WebApp\SchoolAutomationProject.WebApp.csproj", "{B54D10D0-CE1C-478B-ADCC-4100E26A1D2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolAutomationProject.WebAPI", "Presentation\SchoolAutomationProject.WebAPI\SchoolAutomationProject.WebAPI.csproj", "{61A43FB1-FEA7-49E5-909E-D58BAF3C6C37}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,10 +45,6 @@ Global
 		{B54D10D0-CE1C-478B-ADCC-4100E26A1D2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B54D10D0-CE1C-478B-ADCC-4100E26A1D2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B54D10D0-CE1C-478B-ADCC-4100E26A1D2F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{61A43FB1-FEA7-49E5-909E-D58BAF3C6C37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{61A43FB1-FEA7-49E5-909E-D58BAF3C6C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{61A43FB1-FEA7-49E5-909E-D58BAF3C6C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{61A43FB1-FEA7-49E5-909E-D58BAF3C6C37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,7 +55,6 @@ Global
 		{62708C38-1A40-4B80-9018-FAB3BA0DE5B6} = {949D71F0-43A9-4931-A23A-341B42228076}
 		{2B27C60A-7CD9-4935-9028-2286B5E5B638} = {949D71F0-43A9-4931-A23A-341B42228076}
 		{B54D10D0-CE1C-478B-ADCC-4100E26A1D2F} = {6AC1DADD-CDBC-47C2-A57B-40400D0B8D9F}
-		{61A43FB1-FEA7-49E5-909E-D58BAF3C6C37} = {6AC1DADD-CDBC-47C2-A57B-40400D0B8D9F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1599004-F7A4-4035-8878-5BF4CE845ED1}

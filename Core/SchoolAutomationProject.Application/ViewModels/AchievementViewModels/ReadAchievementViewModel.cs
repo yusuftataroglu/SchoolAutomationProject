@@ -1,7 +1,6 @@
 ﻿using SchoolAutomationProject.Application.ViewModels.BaseViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 using SchoolAutomationProject.Domain.Entities.Enums;
-using System.ComponentModel.DataAnnotations;
 
 namespace SchoolAutomationProject.Application.ViewModels.AchievementViewModels
 {

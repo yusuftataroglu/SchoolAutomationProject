@@ -1,0 +1,54 @@
+﻿@model WriteAchievementViewModel
+@inject IStudentReadRepository _studentReadRepository
+@inject ISemesterReadRepository _semesterReadRepository
+@{
+    ViewData["Title"] = "UpdateAchievement";
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">Güncelle</div>
+    <div class="card-body">
+        <form method="post" asp-area="Admin" asp-controller="Achievements" asp-action="Update">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="type">Türü</label>
+                    <select id="type" class="form-control" asp-for="Type" asp-items="@Html.GetEnumSelectList<AchievementType>()">
+                    </select>
+                    <div class="form-group">
+                        <label asp-for="Description">Açıklama</label>
+                        <input asp-for="Description" type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-auto">
+                            <label>Öğrenci</label>
+                            <select class="form-select" asp-for="@Model.StudentId">
+                                @foreach (var item in _studentReadRepository.GetAll().ToList())
+                                {
+                                    var isSelected = Model.StudentId == item.Id.ToString();
+                                    <option value="@item.Id" selected="@isSelected">@item.FirstName @item.LastName</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-auto">
+                            <label>Dönem</label>
+                            <select class="form-select" asp-for="@Model.SemesterId">
+                                @foreach (var item in _semesterReadRepository.GetAll().ToList())
+                                {
+                                    var isSelected = Model.SemesterId == item.Id.ToString();
+                                    <option value="@item.Id" selected="@isSelected">@item.Name</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Güncelle</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
