@@ -11,6 +11,6 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherScheduleViewMode
         public string? Classroom { get; set; }
 
         //TeacherSchedule - Teacher ilişkisi
-        public virtual Teacher Teacher { get; set; }
+        public Teacher Teacher { get; set; }
     }
 }

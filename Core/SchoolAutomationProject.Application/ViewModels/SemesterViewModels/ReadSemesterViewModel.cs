@@ -10,6 +10,6 @@ namespace SchoolAutomationProject.Application.ViewModels.SemesterViewModels
         public DateTime EndDate { get; set; }
 
         //Semester - Achievement ilişkisi
-        public virtual ICollection<Achievement> Achievements { get; set; }
+        public ICollection<Achievement> Achievements { get; set; }
     }
 }

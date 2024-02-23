@@ -15,9 +15,9 @@ namespace SchoolAutomationProject.Application.ViewModels.ParentViewModels
         public string City { get; set; } // İl
 
         // Student-Parent ilişkisi
-        public virtual ICollection<ParentStudent> ParentStudents { get; set; }
+        public ICollection<ParentStudent> ParentStudents { get; set; }
 
         //Parent-AppUser ilişkisi
-        public virtual AppUser User { get; set; }
+        public AppUser User { get; set; }
     }
 }

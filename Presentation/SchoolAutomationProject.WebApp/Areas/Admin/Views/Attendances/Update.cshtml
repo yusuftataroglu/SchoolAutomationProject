@@ -1,0 +1,53 @@
+﻿@model WriteAttendanceViewModel
+@inject IStudentReadRepository _studentReadRepository
+@inject ISubCourseReadRepository _subCourseReadRepository
+@{
+    ViewData["Title"] = "UpdateAttendance";
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">Güncelle</div>
+    <div class="card-body">
+        <form method="post" asp-area="Admin" asp-controller="Attendances" asp-action="Update">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="attendanceDate">Tarih</label>
+                    <input id="attendanceDate" class="form-control" type="date" asp-for="AttendanceDate" />
+
+                    <label for="attendanceStatus">Durum</label>
+                    <select id="attendanceStatus" class="form-control" asp-for="AttendanceStatus" asp-items="@Html.GetEnumSelectList<AttendanceStatus>()">
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-auto">
+                            <label>Öğrenci</label>
+                            <select class="form-select" asp-for="@Model.StudentId">
+                                @foreach (var item in _studentReadRepository.GetAll().ToList())
+                                {
+                                    var isSelected = Model.StudentId == item.Id.ToString();
+                                    <option value="@item.Id" selected="@isSelected">@item.FirstName @item.LastName</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-auto">
+                            <label>Ders</label>
+                            <select class="form-select" asp-for="@Model.SubCourseId">
+                                @foreach (var item in _subCourseReadRepository.GetAll().ToList())
+                                {
+                                    var isSelected = Model.SubCourseId == item.Id.ToString();
+                                    <option value="@item.Id" selected="@isSelected">@item.Code</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Güncelle</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

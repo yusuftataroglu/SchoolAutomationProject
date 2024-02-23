@@ -22,21 +22,21 @@ namespace SchoolAutomationProject.Application.ViewModels.StudentViewModels
         //public virtual DiscontinuedStudent DiscontinuedStudent { get; set; }
 
         //Student-Classroom ilişkisi
-        public virtual Classroom Classroom { get; set; }
+        public Classroom Classroom { get; set; }
 
         //Student-AppUser ilişkisi
-        public virtual AppUser User { get; set; }
+        public AppUser User { get; set; }
 
         //Student-Parent ilişkisi
-        public virtual ICollection<ParentStudent> ParentStudents { get; set; }
+        public ICollection<ParentStudent> ParentStudents { get; set; }
 
         //Student-Grade ilişkisi
-        public virtual ICollection<Grade> Grades { get; set; }
+        public ICollection<Grade> Grades { get; set; }
 
         //Student-Achievement ilişkisi
-        public virtual ICollection<Achievement> Achievements { get; set; }
+        public ICollection<Achievement> Achievements { get; set; }
 
         //Student-Attendance ilişkisi
-        public virtual ICollection<Attendance> Attendances { get; set; }
+        public ICollection<Attendance> Attendances { get; set; }
     }
 }

@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
-using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
+﻿using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.SemesterRepositories;
 using SchoolAutomationProject.Application.Repositories.StudentRepositories;
 using SchoolAutomationProject.Application.ViewModels.AchievementViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
-using SchoolAutomationProject.Domain.Entities.Enums;
 
 namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHelpers
 {

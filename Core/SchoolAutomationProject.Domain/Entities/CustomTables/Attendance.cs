@@ -1,16 +1,10 @@
 ﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
 using SchoolAutomationProject.Domain.Entities.Enums;
-using SchoolAutomationProject.Domain.Entities.CustomTables;
 
 namespace SchoolAutomationProject.Domain.Entities.CustomTables
 {
     public class Attendance : BaseClass
     {
-        public Attendance()
-        {
-            //Student=new Student();
-            //SubCourse=new SubCourse();
-        }
         public DateTime AttendanceDate { get; set; } // Devamsızlık tarihi
         public AttendanceStatus AttendanceStatus { get; set; }
 

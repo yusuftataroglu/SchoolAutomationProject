@@ -9,9 +9,9 @@ namespace SchoolAutomationProject.Application.ViewModels.GradeViewModels
         public byte ExamNumber { get; set; } // O dersin kaçıncı sınavı
 
         // Not - Öğrenci ilişkisi
-        public virtual Student Student { get; set; }
+        public Student Student { get; set; }
 
         // Not - Alt Ders ilişkisi
-        public virtual SubCourse SubCourse { get; set; }
+        public SubCourse SubCourse { get; set; }
     }
 }

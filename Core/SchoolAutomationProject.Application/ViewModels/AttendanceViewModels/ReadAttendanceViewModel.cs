@@ -11,9 +11,9 @@ namespace SchoolAutomationProject.Application.ViewModels.AttendanceViewModels
         public AttendanceStatus AttendanceStatus { get; set; }
 
         // Devamsızlık - Öğrenci ilişkisi
-        public virtual Student Student { get; set; }
+        public Student Student { get; set; }
 
         // Devamsızlık - Ders ilişkisi
-        public virtual SubCourse SubCourse { get; set; }
+        public SubCourse SubCourse { get; set; }
     }
 }

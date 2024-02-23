@@ -1,0 +1,48 @@
+﻿@model WriteAttendanceViewModel
+@inject IStudentReadRepository _studentReadRepository
+@inject ISubCourseReadRepository _subCourseReadRepository
+@{
+    ViewData["Title"] = "AddAttendance";
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <form method="post" asp-area="Admin" asp-controller="Attendances" asp-action="Add">
+            <div class="card">
+                <div class="card-header">Devamsızlık Ekle</div>
+                <div class="card-body">
+                    <div asp-validation-summary="All"></div>
+                    <label for="attendanceDate">Tarih</label>
+                    <input id="attendanceDate" class="form-control" type="date" asp-for="AttendanceDate" />
+
+                    <label for="attendanceStatus">Durum</label>
+                    <select id="attendanceStatus" class="form-control" asp-for="AttendanceStatus" asp-items="@Html.GetEnumSelectList<AttendanceStatus>()">
+                    </select>
+
+                    <label>Öğrenci</label>
+                    <select class="form-select" asp-for="@Model.StudentId">
+                        <option value="" selected disabled>Bir öğrenci seçiniz</option>
+                        @foreach (var item in _studentReadRepository.GetAll().ToList())
+                        {
+                            <option value="@item.Id">@item.FirstName @item.LastName</option>
+                        }
+                    </select>
+
+                    <label>Ders</label>
+                    <select class="form-select" asp-for="@Model.SubCourseId">
+                        <option value="" selected disabled>Bir ders seçiniz</option>
+                        @foreach (var item in _subCourseReadRepository.GetAll().ToList())
+                        {
+                            <option value="@item.Id">@item.Code</option>
+                        }
+                    </select>
+
+                    <div>
+                        <button class="btn btn-primary mt-2" type="submit">Ekle</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+﻿@model List<ReadAttendanceViewModel>
+@{
+    ViewData["Title"] = "Get";
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+
+<div class="card mb-4">
+    <div class="card-header d-flex align-items-center">
+        <i class="fas fa-table me-1 me-2"></i>
+        <h3>Devamsızlık Listesi</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Tarih</th>
+                    <th>Durum</th>
+                    <th>Öğrenci</th>
+                    <th>Ders</th>
+                    <th><a class="btn btn-success" asp-area="Admin" asp-controller="Attendances" asp-action="Add">+</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.AttendanceDate.ToShortDateString()</td>
+                        <td>@item.AttendanceStatus</td>
+                        <td>@item.Student.FirstName @item.Student.LastName</td>
+                        <td>@item.SubCourse.Code</td>
+                        <td class="d-flex">
+                            <a class="btn btn-warning" asp-area="Admin" asp-controller="Attendances" asp-action="Details" asp-route-id="@item.Id">Detaylar</a>
+                            <a class="btn btn-primary" asp-area="Admin" asp-controller="Attendances" asp-action="Update" asp-route-id="@item.Id">Güncelle</a>
+                            <a class="btn btn-danger" asp-area="Admin" asp-controller="Attendances" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

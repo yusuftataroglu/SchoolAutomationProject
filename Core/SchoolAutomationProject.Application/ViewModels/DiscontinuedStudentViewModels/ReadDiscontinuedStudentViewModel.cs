@@ -5,6 +5,6 @@ namespace SchoolAutomationProject.Application.ViewModels.DiscontinuedStudentView
 {
     public class ReadDiscontinuedStudentViewModel:ReadViewModel
     {
-        public virtual Student Student { get; set; }
+        public Student Student { get; set; }
     }
 }

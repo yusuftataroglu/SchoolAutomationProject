@@ -10,9 +10,9 @@ namespace SchoolAutomationProject.Application.ViewModels.AchievementViewModels
         public string? Description { get; set; } // Belge açıklaması
 
         // Öğrenci - Belge ilişkisi
-        public virtual Student Student { get; set; }
+        public Student Student { get; set; }
 
         //Achievement - Semester ilişkisi
-        public virtual Semester Semester { get; set; }
+        public Semester Semester { get; set; }
     }
 }

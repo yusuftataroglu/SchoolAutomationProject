@@ -10,9 +10,9 @@ namespace SchoolAutomationProject.Application.ViewModels.SubCourseViewModels
         public int Position { get; set; }
 
         //SubCourse - MainCourse ilişkisi
-        public virtual MainCourse MainCourse { get; set; }
+        public MainCourse MainCourse { get; set; }
 
         //SubCourse - Grade ilişkisi
-        public virtual ICollection<Grade> Grades { get; set; }
+        public ICollection<Grade> Grades { get; set; }
     }
 }
