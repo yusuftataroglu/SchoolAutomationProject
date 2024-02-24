@@ -1,0 +1,55 @@
+﻿@model List<ReadParentViewModel>
+@inject IStudentReadRepository _studentReadRepository
+@{
+    ViewData["Title"] = "Veli Listesi";
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+
+<div class="card mb-4">
+    <div class="card-header d-flex align-items-center">
+        <i class="fas fa-table me-1 me-2"></i>
+        <h3>Veli Listesi</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Adı</th>
+                    <th>Soyadı</th>
+                    <th>Cep Telefonu</th>
+                    <th>İş Telefonu</th>
+                    <th>Adres</th>
+                    <th>İlçe</th>
+                    <th>İl</th>
+                    <th>Öğrenciler</th>
+                    <th><a class="btn btn-success" asp-area="Admin" asp-controller="Parents" asp-action="Add">+</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                        <td>@item.MobilePhone</td>
+                        <td>@item.WorkPhone</td>
+                        <td>@item.Address</td>
+                        <td>@item.District</td>
+                        <td>@item.City</td>
+                        <td>
+                            @foreach (var parentStudents in item.ParentStudents)
+                            {
+                                <badge class="badge bg-success">@parentStudents.Student.FirstName @parentStudents.Student.LastName</badge>
+                            }
+                        </td>
+                        <td class="d-flex">
+                            <a class="btn btn-warning" asp-area="Admin" asp-controller="Parents" asp-action="Details" asp-route-id="@item.Id">Detaylar</a>
+                            <a class="btn btn-primary" asp-area="Admin" asp-controller="Parents" asp-action="Update" asp-route-id="@item.Id">Güncelle</a>
+                            <a class="btn btn-danger" asp-area="Admin" asp-controller="Parents" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

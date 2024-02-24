@@ -86,7 +86,7 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
             }
             else if (typeof(T) == typeof(Parent))
             {
-                await _parentFillRelationshipsService.FillParentRelationships(entity as Parent, modelVM as WriteParentViewModel, requestType);
+                _parentFillRelationshipsService.FillParentRelationships(entity as Parent, modelVM as WriteParentViewModel, requestType);
             }
             else if (typeof(T) == typeof(Semester))
             {

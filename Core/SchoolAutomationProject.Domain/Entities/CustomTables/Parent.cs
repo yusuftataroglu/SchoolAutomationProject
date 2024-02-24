@@ -1,17 +1,11 @@
 ﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
 using SchoolAutomationProject.Domain.Entities.CrossTables;
-using SchoolAutomationProject.Domain.Entities.CustomTables;
 using SchoolAutomationProject.Domain.Entities.IdentityTables;
 
 namespace SchoolAutomationProject.Domain.Entities.CustomTables
 {
     public class Parent : BaseClass
     {
-        public Parent()
-        {
-            //ParentStudents = new List<ParentStudent>();
-            //User = new AppUser();
-        }
         public string FirstName { get; set; } // Veli Ad
         public string LastName { get; set; } // Veli Soyad
         public string MobilePhone { get; set; } // Cep Telefonu

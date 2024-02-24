@@ -1,0 +1,63 @@
+﻿@model WriteParentViewModel
+@inject IStudentReadRepository _studentReadRepository
+@{
+    ViewData["Title"] = "Veli Güncelle";
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <form method="post" asp-area="Admin" asp-controller="Parents" asp-action="Update">
+            <div class="card">
+                <div class="card-header">Veli Güncelle</div>
+                <div class="card-body">
+                    <div asp-validation-summary="All"></div>
+                    <div class="mb-3">
+                        <label for="firstName" class="form-label">Adı</label>
+                        <input id="firstName" class="form-control" type="text" asp-for="FirstName" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lastName" class="form-label">Soyadı</label>
+                        <input id="lastName" class="form-control" type="text" asp-for="LastName" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mobilePhone" class="form-label">Cep Telefonu</label>
+                        <input id="mobilePhone" class="form-control" type="tel" asp-for="MobilePhone" />
+                        <span asp-validation-for="MobilePhone" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="workPhone" class="form-label">İş Telefonu</label>
+                        <input id="workPhone" class="form-control" type="tel" asp-for="WorkPhone" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Adres</label>
+                        <input id="address" class="form-control" type="text" asp-for="Address" />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="district" class="form-label">İlçe</label>
+                        <input id="district" class="form-control" type="text" asp-for="District" />
+                        <span asp-validation-for="District" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="city" class="form-label">İl</label>
+                        <input id="city" class="form-control" type="text" asp-for="City" />
+                        <span asp-validation-for="City" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="parentStudentsStudentIds" class="form-label">Öğrenciler</label>
+                        @foreach (var student in _studentReadRepository.GetAll().ToList())
+                        {
+                            <input class="btn-check" type="checkbox" id="@student.Id" name="ParentStudentsStudentIds" value="@student.Id" checked="@Model.ParentStudentsStudentIds.Contains(student.Id.ToString())" />
+                            <label class="btn btn-outline-primary" for="@student.Id">@student.FirstName @student.LastName</label>
+                        }
+                        <span asp-validation-for="ParentStudentsStudentIds" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Güncelle</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

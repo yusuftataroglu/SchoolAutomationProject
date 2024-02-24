@@ -18,6 +18,6 @@ namespace SchoolAutomationProject.Application.ViewModels.ParentViewModels
         public ICollection<ParentStudent> ParentStudents { get; set; }
 
         //Parent-AppUser ilişkisi
-        public AppUser User { get; set; }
+        //public AppUser User { get; set; }
     }
 }

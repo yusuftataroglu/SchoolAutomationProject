@@ -5,6 +5,6 @@ namespace SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers
 {
     public interface IParentFillRelationshipsService
     {
-        public Task FillParentRelationships(Parent parent, WriteParentViewModel modelVM, string requestType);
+        public void FillParentRelationships(Parent parent, WriteParentViewModel modelVM, string requestType);
     }
 }

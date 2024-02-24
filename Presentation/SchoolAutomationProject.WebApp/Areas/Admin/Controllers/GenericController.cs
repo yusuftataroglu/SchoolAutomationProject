@@ -52,9 +52,10 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         [HttpPost]
         public virtual async Task<IActionResult> Add(TWriteViewModel modelVM)
         {
+            //todo T tipinde nesne oluşturulacak.
             if (ModelState.IsValid)
             {
-                T entity = _mapper.Map<T>(modelVM); // Model'i varlık türüne eşle
+                T entity = _mapper.Map<T>(modelVM);
                 await _fillEntityRelationshipsService.FillEntityRelationships(entity, modelVM, nameof(Add));
                 var result = await _writeRepository.AddAsync(entity);
                 if (result)

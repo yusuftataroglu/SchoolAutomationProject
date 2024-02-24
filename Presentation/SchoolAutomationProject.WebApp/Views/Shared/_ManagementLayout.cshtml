@@ -88,6 +88,17 @@
                                 <a class="nav-link" asp-area="Admin" asp-controller="Grades" asp-action="Get">Not Listesi</a>
                             </nav>
                         </div>
+                        <!--Veli İşlemleri-->
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#parentCollapse" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Veli İşlemleri
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="parentCollapse" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" asp-area="Admin" asp-controller="Parents" asp-action="Get">Veli Listesi</a>
+                            </nav>
+                        </div>
                         <!--Öğretmen İşlemleri-->
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#teacherCollapse" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
