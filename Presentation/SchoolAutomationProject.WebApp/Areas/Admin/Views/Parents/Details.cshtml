@@ -41,9 +41,9 @@
                     <td>@Model.District</td>
                     <td>@Model.City</td>
                     <td>
-                        @foreach (var parentStudent in Model.ParentStudents)
+                        @foreach (var student in Model.Students)
                         {
-                            <badge class="badge bg-success">@parentStudent.Student.FirstName @parentStudent.Student.LastName</badge>
+                            <badge class="badge bg-success">@student.FirstName @student.LastName</badge>
                         }
                     </td>
                     <td>@Model.CreatedDate</td>

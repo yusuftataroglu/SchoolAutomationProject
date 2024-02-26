@@ -28,7 +28,7 @@ namespace SchoolAutomationProject.Application.ViewModels.StudentViewModels
         public AppUser User { get; set; }
 
         //Student-Parent ilişkisi
-        public ICollection<ParentStudent> ParentStudents { get; set; }
+        public ICollection<Parent> Parents { get; set; }
 
         //Student-Grade ilişkisi
         public ICollection<Grade> Grades { get; set; }

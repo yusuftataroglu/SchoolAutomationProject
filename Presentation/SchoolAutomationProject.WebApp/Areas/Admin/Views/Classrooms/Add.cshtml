@@ -23,29 +23,6 @@
                     <label for="capacity">Kapasite</label>
                     <input id="capacity" class="form-control" type="number" value="25" asp-for="Capacity" />
 
-
-                    <label class="d-block mb-2">Verilecek Dersler</label>
-                    @foreach (var mainCourse in _mainCourseReadRepository.GetAll().OrderBy(x => x.Name).ToList())
-                    {
-                        <input type="checkbox" class="btn-check" id="@mainCourse.Id" name="ClassroomMainCoursesMainCourseIds" value="@mainCourse.Id">
-                        <label class="btn btn-outline-primary" for="@mainCourse.Id">@mainCourse.Name</label>
-                    }
-
-                    <label class="d-block mb-2">Öğrenciler</label>
-                    @foreach (var student in _studentReadRepository.GetAll().OrderBy(x => x.FirstName).ToList())
-                    {
-                        <input type="checkbox" class="btn-check" id="@student.Id" name="StudentIds" value="@student.Id">
-                        <label class="btn btn-outline-primary" for="@student.Id">@student.FirstName @student.LastName</label>
-                    }
-
-                    <label class="d-block mb-2">Öğretmenler</label>
-                    @foreach (var teacher in _teacherReadRepository.GetAll().OrderBy(x => x.FirstName).ToList())
-                    {
-                        <input type="checkbox" class="btn-check" id="@teacher.Id" name="ClassroomTeachersTeacherIds" value="@teacher.Id">
-                        <label class="btn btn-outline-primary" for="@teacher.Id">@teacher.FirstName @teacher.LastName</label>
-                    }
-
-
                     <div>
                         <button class="btn btn-primary mt-2" type="submit">Ekle</button>
                     </div>

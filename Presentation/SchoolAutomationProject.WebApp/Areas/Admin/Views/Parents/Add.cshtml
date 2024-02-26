@@ -50,10 +50,10 @@
                         <label class="d-block mb-2">Öğrenciler</label>
                         @foreach (var student in _studentReadRepository.GetAll().OrderBy(x => x.FirstName).ToList())
                         {
-                            <input type="checkbox" class="btn-check" id="@student.Id" name="ParentStudentsStudentIds" value="@student.Id">
+                            <input type="checkbox" class="btn-check" id="@student.Id" name="StudentIds" value="@student.Id">
                             <label class="btn btn-outline-primary" for="@student.Id">@student.FirstName @student.LastName</label>
                         }
-                        <span asp-validation-for="ParentStudentsStudentIds" class="text-danger"></span>
+                        <span asp-validation-for="StudentIds" class="text-danger"></span>
                     </div>
                     <button type="submit" class="btn btn-primary">Ekle</button>
                 </div>

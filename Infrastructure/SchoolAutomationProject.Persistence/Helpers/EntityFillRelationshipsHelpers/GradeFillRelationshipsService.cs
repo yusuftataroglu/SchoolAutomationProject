@@ -19,33 +19,23 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
 
         public async Task FillGradeRelationships(Grade grade, WriteGradeViewModel modelVM, string requestType)
         {
-            grade.Score = modelVM.Score;
-            grade.ExamNumber = modelVM.ExamNumber;
-
             if (requestType == "Add" || requestType == "UpdatePost")
             {
-                if (!string.IsNullOrEmpty(modelVM.StudentId))
+                grade.Score = modelVM.Score;
+                grade.ExamNumber = modelVM.ExamNumber;
+
+                var student = await _studentReadRepository.GetByIdAsync(modelVM.StudentId);
+                if (student != null)
                 {
-                    var student = await _studentReadRepository.GetByIdAsync(modelVM.StudentId);
-                    if (student != null)
-                    {
-                        grade.Student = student;
-                    }
+                    grade.Student = student;
                 }
 
-                if (!string.IsNullOrEmpty(modelVM.SubCourseId))
+                var subCourse = await _subCourseReadRepository.GetByIdAsync(modelVM.SubCourseId);
+                if (subCourse != null)
                 {
-                    var subCourse = await _subCourseReadRepository.GetByIdAsync(modelVM.SubCourseId);
-                    if (subCourse != null)
-                    {
-                        grade.SubCourse = subCourse;
-                    }
+                    grade.SubCourse = subCourse;
                 }
-            }
-            else if (requestType == "UpdateGet")
-            {
-                modelVM.StudentId = grade.StudentId?.ToString();
-                modelVM.SubCourseId = grade.SubCourseId?.ToString();
+
             }
         }
     }

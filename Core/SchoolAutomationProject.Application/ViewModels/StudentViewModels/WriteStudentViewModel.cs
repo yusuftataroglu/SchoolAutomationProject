@@ -11,7 +11,6 @@ namespace SchoolAutomationProject.Application.ViewModels.StudentViewModels
     {
         public WriteStudentViewModel()
         {
-            ParentStudentsParentIds = new();
             GradeIds = new();
             AchievementIds = new();
             AttendanceIds = new();
@@ -32,29 +31,45 @@ namespace SchoolAutomationProject.Application.ViewModels.StudentViewModels
         [Required(ErrorMessage = "Not Ortalaması Boş Geçilemez!")]
         public double GPA { get; set; } // Mezun olduğu okulun not ortalaması
 
-        public bool? IsPreRegistered { get; set; } // Ön kayıt durumu
+        [Required(ErrorMessage ="Veli İsmi Boş Geçilemez!")]
+        public string ParentFirstName { get; set; }
 
-        //public short? TotalAbsenceCount { get; set; } // Devamsızlık sayısı (Otomatik olarak hesaplanacak.)
+        [Required(ErrorMessage = "Veli Soyismi Boş Geçilemez!")]
+        public string ParentLastName { get; set; }
 
-        public ContinuationStatus? ContinuationStatus { get; set; } //Devam etme durumu
+        [Required(ErrorMessage = "Veli Cep Telefon Numarası Boş Geçilemez!")]
+        public string ParentMobilePhone { get; set; }
+        public string? ParentWorkPhone { get; set; }
 
-        //Student-DiscontinuedStudent ilişkisi
-        //public virtual DiscontinuedStudent DiscontinuedStudent { get; set; } //Gerek olmayabilir.
+        [Required(ErrorMessage = "Adres Boş Geçilemez!")]
+        public string ParentAddress { get; set; }
+
+        [Required(ErrorMessage = "İlçe Boş Geçilemez!")]
+        public string ParentDistrict { get; set; }
+
+        [Required(ErrorMessage = "Şehir Boş Geçilemez!")]
+        public string ParentCity { get; set; }
+
+        public bool? IsPreRegistered { get; set; }
+
+        public ContinuationStatus? ContinuationStatus { get; set; }
 
         //Student-Classroom ilişkisi
         public string? ClassroomId { get; set; } //Ön kayıt aşamasında girilmesine gerek yok.
 
         //Student-Parent ilişkisi
-        [Required(ErrorMessage ="Veli Seçimi Boş Geçilemez!")]
-        public List<string> ParentStudentsParentIds { get; set; } //todo js ile required tanımlanabilir.
+        public string? ParentId { get; set; }
 
         //Student-Grade ilişkisi
         public List<string>? GradeIds { get; set; }
+        public List<Grade>? Grades { get; set; }
 
         //Student-Achievement ilişkisi
         public List<string>? AchievementIds { get; set; }
+        public List<Achievement>? Achievements { get; set; }
 
         //Student-Attendance ilişkisi
         public List<string>? AttendanceIds { get; set; }
+        public List<Attendance>? Attendances { get; set; }
     }
 }

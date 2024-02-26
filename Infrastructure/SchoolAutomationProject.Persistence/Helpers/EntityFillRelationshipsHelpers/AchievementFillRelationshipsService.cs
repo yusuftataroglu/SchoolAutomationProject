@@ -19,52 +19,26 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
 
         public async Task FillAchievementRelationships(Achievement achievement, WriteAchievementViewModel modelVM, string requestType)
         {
-            achievement.Type = modelVM.Type;
-            achievement.Description = modelVM.Description;
-            if (requestType == "Add")
-            {
-                if (!string.IsNullOrEmpty(modelVM.StudentId))
-                {
-                    var student = await _studentReadRepository.GetByIdAsync(modelVM.StudentId);
-                    if (student != null)
-                    {
-                        achievement.Student = student;
-                    }
-                }
-                if (!string.IsNullOrEmpty(modelVM.StudentId))
-                {
-                    var semester = await _semesterReadRepository.GetByIdAsync(modelVM.SemesterId);
-                    if (semester != null)
-                    {
-                        achievement.Semester = semester;
-                    }
-                }
-            }
-            else if (requestType == "UpdateGet")
-            {
-                modelVM.StudentId = achievement.StudentId?.ToString();
-                modelVM.SemesterId = achievement.SemesterId?.ToString();
-            }
-            else if (requestType == "UpdatePost")
-            {
 
-                if (!string.IsNullOrEmpty(modelVM.StudentId))
+            if (requestType == "Add" || requestType == "UpdatePost")
+            {
+                achievement.Type = modelVM.Type;
+                achievement.Description = modelVM.Description;
+
+                var student = await _studentReadRepository.GetByIdAsync(modelVM.StudentId);
+                if (student != null)
                 {
-                    var student = await _studentReadRepository.GetByIdAsync(modelVM.StudentId);
-                    if (student != null)
-                    {
-                        achievement.Student = student;
-                    }
+                    achievement.Student = student;
                 }
-                if (!string.IsNullOrEmpty(modelVM.SemesterId))
+
+                var semester = await _semesterReadRepository.GetByIdAsync(modelVM.SemesterId);
+                if (semester != null)
                 {
-                    var semester = await _semesterReadRepository.GetByIdAsync(modelVM.SemesterId);
-                    if (semester != null)
-                    {
-                        achievement.Semester = semester;
-                    }
+                    achievement.Semester = semester;
                 }
+
             }
+
         }
     }
 }

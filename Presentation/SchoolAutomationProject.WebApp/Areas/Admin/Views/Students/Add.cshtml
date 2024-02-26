@@ -1,8 +1,96 @@
-﻿
+﻿@model WriteStudentViewModel
+@inject IClassroomReadRepository _classroomReadRepository
 @{
-    ViewData["Title"] = "Add";
+    ViewData["Title"] = "Öğrenci Ekle";
     Layout = "~/Views/Shared/_ManagementLayout.cshtml";
 }
 
-<h1>Add</h1>
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <form method="post" asp-area="Admin" asp-controller="Students" asp-action="Add">
+            <div class="card">
+                <div class="card-header">Öğrenci Ekle</div>
+                <div class="card-body">
 
+                    <div asp-validation-summary="All"></div>
+
+                    <div class="mb-3">
+                        <label for="firstName" class="form-label">İsim</label>
+                        <input type="text" class="form-control" id="firstName" asp-for="FirstName">
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="lastName" class="form-label">Soyisim</label>
+                        <input type="text" class="form-control" id="lastName" asp-for="LastName">
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="gender" class="form-label">Cinsiyet</label>
+                        <select class="form-select" id="gender" asp-for="Gender" asp-items="@Html.GetEnumSelectList<Gender>()">
+                            <option value="">Cinsiyet Seçiniz</option>
+                        </select>
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="graduatedSchool" class="form-label">Mezun Olduğu Okul</label>
+                        <input type="text" class="form-control" id="graduatedSchool" asp-for="GraduatedSchool">
+                        <span asp-validation-for="GraduatedSchool" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="gpa" class="form-label">Not Ortalaması</label>
+                        <input type="number" class="form-control" id="gpa" asp-for="GPA">
+                        <span asp-validation-for="GPA" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="parentFirstName" class="form-label">Veli İsim</label>
+                        <input type="text" class="form-control" id="parentFirstName" asp-for="ParentFirstName">
+                        <span asp-validation-for="ParentFirstName" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="parentLastName" class="form-label">Veli Soyisim</label>
+                        <input type="text" class="form-control" id="parentLastName" asp-for="ParentLastName">
+                        <span asp-validation-for="ParentLastName" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="parentMobilePhone" class="form-label">Veli Cep Telefonu</label>
+                        <input type="text" class="form-control" id="parentMobilePhone" asp-for="ParentMobilePhone">
+                        <span asp-validation-for="ParentMobilePhone" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="parentWorkPhone" class="form-label">Veli İş Telefonu</label>
+                        <input type="text" class="form-control" id="parentWorkPhone" asp-for="ParentWorkPhone">
+                        <span asp-validation-for="ParentWorkPhone" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="parentAddress" class="form-label">Veli Adresi</label>
+                        <input type="text" class="form-control" id="parentAddress" asp-for="ParentAddress">
+                        <span asp-validation-for="ParentAddress" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="parentDistrict" class="form-label">İlçe</label>
+                        <input type="text" class="form-control" id="parentDistrict" asp-for="ParentDistrict">
+                        <span asp-validation-for="ParentDistrict" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="parentCity" class="form-label">İl</label>
+                        <input type="text" class="form-control" id="parentCity" asp-for="ParentCity">
+                        <span asp-validation-for="ParentCity" class="text-danger"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Ekle</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

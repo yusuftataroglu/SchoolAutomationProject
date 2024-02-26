@@ -31,7 +31,6 @@ namespace SchoolAutomationProject.Persistence.Contexts
         public DbSet<TeacherSchedule> TeacherSchedules { get; set; }
         public DbSet<ClassroomMainCourse> ClassroomMainCourses { get; set; }
         public DbSet<ClassroomTeacher> ClassroomTeachers { get; set; }
-        public DbSet<ParentStudent> ParentStudents { get; set; }
 
         public SchoolAutomationProjectDbContext()
         {
@@ -59,11 +58,12 @@ namespace SchoolAutomationProject.Persistence.Contexts
                         item.Entity.UpdatedDate = DateTime.UtcNow;
                         item.Entity.UpdatedComputerName = Environment.MachineName;
                         item.Entity.UpdatedIpAddress = await IpAddressHelper.GetIpAddress();
+                        
                         if (item.Entity is Student)
                         {
                             var student = item.Entity as Student;
-                            var originalValue = item.OriginalValues["ContinuationStatus"].ToString();
-                            var currentValue = item.CurrentValues["ContinuationStatus"].ToString();
+                            var originalValue = item.OriginalValues["ContinuationStatus"]?.ToString();
+                            var currentValue = item.CurrentValues["ContinuationStatus"]?.ToString();
                             if (originalValue != currentValue)
                             {
                                 //todo denenecek.
@@ -119,7 +119,6 @@ namespace SchoolAutomationProject.Persistence.Contexts
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new ClassroomMainCourseConfiguration());
             modelBuilder.ApplyConfiguration(new ClassroomTeacherConfiguration());
-            modelBuilder.ApplyConfiguration(new ParentStudentConfiguration());
             modelBuilder.ApplyConfiguration(new AchievementConfiguration());
             modelBuilder.ApplyConfiguration(new AttendanceConfiguration());
             modelBuilder.ApplyConfiguration(new ClassroomConfiguration());

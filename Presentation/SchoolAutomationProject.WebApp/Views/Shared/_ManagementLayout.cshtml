@@ -58,7 +58,7 @@
                         <!--Devamsızlık İşlemleri-->
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#attendanceCollapse" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Yoklama İşlemleri
+                            Devamsızlık İşlemleri
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="attendanceCollapse" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
@@ -88,6 +88,17 @@
                                 <a class="nav-link" asp-area="Admin" asp-controller="Grades" asp-action="Get">Not Listesi</a>
                             </nav>
                         </div>
+                        <!--Ana Ders işlemleri-->
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#mainCourseCollapse" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Ana Ders İşlemleri
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="mainCourseCollapse" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" asp-area="Admin" asp-controller="MainCourses" asp-action="Get">Ana Ders Listesi</a>
+                            </nav>
+                        </div>
                         <!--Veli İşlemleri-->
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#parentCollapse" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -97,6 +108,50 @@
                         <div class="collapse" id="parentCollapse" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" asp-area="Admin" asp-controller="Parents" asp-action="Get">Veli Listesi</a>
+                            </nav>
+                        </div>
+                        <!--Dönem İşlemleri-->
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#semesterCollapse" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Dönem İşlemleri
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="semesterCollapse" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" asp-area="Admin" asp-controller="Semesters" asp-action="Get">Dönem Listesi</a>
+                            </nav>
+                        </div>
+                        <!--Öğrenci İşlemleri-->
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#studentCollapse" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Öğrenci İşlemleri
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="studentCollapse" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" asp-area="Admin" asp-controller="Students" asp-action="Get">Öğrenci Listesi</a>
+                            </nav>
+                        </div>
+                        <!--İlişiği Kesilen Öğrenci İşlemleri-->
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#discontinuedStudentCollapse" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            İlişiği Kesilen Öğrenci İşlemleri
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="discontinuedStudentCollapse" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" asp-area="Admin" asp-controller="DiscontinuedStudents" asp-action="Get">İlişiği Kesilen Öğrenci Listesi</a>
+                            </nav>
+                        </div>
+                        <!--Alt Ders İşlemleri-->
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#subCourseCollapse" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Alt Ders İşlemleri
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="subCourseCollapse" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" asp-area="Admin" asp-controller="SubCourses" asp-action="Get">Alt Ders İşlemleri</a>
                             </nav>
                         </div>
                         <!--Öğretmen İşlemleri-->
@@ -110,26 +165,15 @@
                                 <a class="nav-link" asp-area="Admin" asp-controller="Teachers" asp-action="Get">Öğretmen Listesi</a>
                             </nav>
                         </div>
-                        <!--Ana Ders işlemleri-->
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#mainCourseCollapse" aria-expanded="false" aria-controls="collapseLayouts">
+                        <!--Öğretmen Ders Programı İşlemleri-->
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#teacherScheduleCollapse" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Ana Ders İşlemleri
+                            Öğretmen Ders Programı İşlemleri
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <div class="collapse" id="mainCourseCollapse" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <div class="collapse" id="teacherScheduleCollapse" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" asp-area="Admin" asp-controller="MainCourses" asp-action="Get">Ana Ders Listesi</a>
-                            </nav>
-                        </div>
-                        <!--Öğrenci İşlemleri-->
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#studentCollapse" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Öğrenci İşlemleri
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="studentCollapse" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="#">Öğrenci Listesi</a>
+                                <a class="nav-link" asp-area="Admin" asp-controller="TeacherSchedules" asp-action="Get">Öğretmen Ders Programı Listesi</a>
                             </nav>
                         </div>
 

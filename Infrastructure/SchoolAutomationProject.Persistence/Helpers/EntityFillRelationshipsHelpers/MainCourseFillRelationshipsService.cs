@@ -23,72 +23,12 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
 
         public async Task FillMainCourseRelationships(MainCourse mainCourse, WriteMainCourseViewModel modelVM, string requestType)
         {
-            mainCourse.Name = modelVM.Name;
 
-            if (requestType == "Add")
+            if (requestType == "Add" || requestType == "UpdatePost")
             {
-                // İlgili Teachers ekleniyor
-                foreach (var teacherId in modelVM.TeacherIds)
-                {
-                    var teacher = await _teacherReadRepository.GetByIdAsync(teacherId.ToString());
-                    if (teacher != null)
-                    {
-                        mainCourse.Teachers.Add(teacher);
-                    }
-                }
+                mainCourse.Name = modelVM.Name;
 
-
-                // İlgili SubCourses ekleniyor
-                foreach (var modelVMStudentId in modelVM.SubCourseIds)
-                {
-                    var subCourse = await _subCourseReadRepository.GetByIdAsync(modelVMStudentId.ToString());
-                    if (subCourse != null)
-                    {
-                        mainCourse.SubCourses.Add(subCourse);
-                    }
-                }
-
-
-                // İlgili ClassroomMainCourses ekleniyor
-                foreach (var modelVMClassroomId in modelVM.ClassroomMainCoursesClassroomIds)
-                {
-                    var classroomMainCourse = new ClassroomMainCourse()
-                    {
-                        MainCourseId = mainCourse.Id,
-                        ClassroomId = Guid.Parse(modelVMClassroomId)
-                    };
-                    mainCourse.ClassroomMainCourses.Add(classroomMainCourse);
-                }
-
-            }
-            else if (requestType == "UpdateGet")
-            {
-                modelVM.TeacherIds = mainCourse.Teachers.Select(x => x.Id.ToString()).ToList();
-                modelVM.ClassroomMainCoursesClassroomIds = mainCourse.ClassroomMainCourses.Select(x => x.ClassroomId.ToString()).ToList();
-                modelVM.SubCourseIds = mainCourse.SubCourses.Select(x => x.Id.ToString()).ToList();
-            }
-            else if (requestType == "UpdatePost")
-            {
-                // İlgili Teachers değerleri kaldırılıyor
-                mainCourse.Teachers.Clear();
-
-                // İlgili ClassroomMainCourses değerleri kaldırılıyor
                 mainCourse.ClassroomMainCourses.Clear();
-
-                // İlgili SubCourses değerleri kaldırılıyor
-                mainCourse.SubCourses.Clear();
-
-                // İlgili Teachers ekleniyor
-                foreach (var teacherId in modelVM.TeacherIds)
-                {
-                    var teacher = await _teacherReadRepository.GetByIdAsync(teacherId.ToString());
-                    if (teacher != null)
-                    {
-                        mainCourse.Teachers.Add(teacher);
-                    }
-                }
-
-                // İlgili ClassroomMainCourses ekleniyor
                 foreach (var modelVMClassroomId in modelVM.ClassroomMainCoursesClassroomIds)
                 {
                     var classroomMainCourse = new ClassroomMainCourse()
@@ -97,16 +37,6 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
                         ClassroomId = Guid.Parse(modelVMClassroomId)
                     };
                     mainCourse.ClassroomMainCourses.Add(classroomMainCourse);
-                }
-
-                // İlgili SubCourses ekleniyor
-                foreach (var subCourseId in modelVM.SubCourseIds)
-                {
-                    var subCourse = await _subCourseReadRepository.GetByIdAsync(subCourseId.ToString());
-                    if (subCourse != null)
-                    {
-                        mainCourse.SubCourses.Add(subCourse);
-                    }
                 }
             }
         }

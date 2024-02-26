@@ -1,4 +1,5 @@
 ﻿using SchoolAutomationProject.Application.ViewModels.BaseViewModels;
+using SchoolAutomationProject.Domain.Entities.CustomTables;
 using System.ComponentModel.DataAnnotations;
 
 namespace SchoolAutomationProject.Application.ViewModels.ParentViewModels
@@ -7,8 +8,9 @@ namespace SchoolAutomationProject.Application.ViewModels.ParentViewModels
     {
         public WriteParentViewModel()
         {
-            ParentStudentsStudentIds = new();
+            StudentIds = new(); //todo kaldrılıp required eklenebilir. view tarafında null sorgusu yapılabilir.
         }
+
         [Required(ErrorMessage = "İsim Boş Geçilemez!")]
         public string FirstName { get; set; } // Veli Ad
 
@@ -30,9 +32,7 @@ namespace SchoolAutomationProject.Application.ViewModels.ParentViewModels
 
         [Required(ErrorMessage = "Şehir Boş Geçilemez!")]
         public string City { get; set; } // İl
-
-        // Student-Parent ilişkisi
-        [Required(ErrorMessage = "Öğrenci Boş Geçilemez!")]
-        public List<string> ParentStudentsStudentIds { get; set; } //todo js taraflı required sağlanabilir.
+        public List<string>? StudentIds { get; set; }
+        public List<Student>? Students { get; set; }
     }
 }

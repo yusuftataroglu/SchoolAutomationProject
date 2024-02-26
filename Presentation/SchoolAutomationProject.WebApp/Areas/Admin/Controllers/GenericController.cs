@@ -52,7 +52,6 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         [HttpPost]
         public virtual async Task<IActionResult> Add(TWriteViewModel modelVM)
         {
-            //todo T tipinde nesne oluşturulacak.
             if (ModelState.IsValid)
             {
                 T entity = _mapper.Map<T>(modelVM);

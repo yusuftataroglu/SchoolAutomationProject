@@ -11,9 +11,9 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherViewModels
         public string LastName { get; set; }
         public string? Title { get; set; }
         public MainCourse MainCourse { get; set; }
+        public AppUser User { get; set; }
         public ICollection<ClassroomTeacher> ClassroomTeachers { get; set; }
         public ICollection<TeacherSchedule> TeacherSchedules { get; set; }
-        public AppUser User { get; set; }
 
     }
 }

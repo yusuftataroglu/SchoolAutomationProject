@@ -1,4 +1,5 @@
 ﻿using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
+using SchoolAutomationProject.Application.Repositories.MainCourseRepositories;
 using SchoolAutomationProject.Application.ViewModels.TeacherViewModels;
 using SchoolAutomationProject.Domain.Entities.CrossTables;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
@@ -7,40 +8,28 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
 {
     public class TeacherFillRelationshipsService : ITeacherFillRelationshipsService
     {
+        private readonly IMainCourseReadRepository _mainCourseReadRepository;
+
+        public TeacherFillRelationshipsService(IMainCourseReadRepository mainCourseReadRepository)
+        {
+            _mainCourseReadRepository = mainCourseReadRepository;
+        }
         public async Task FillTeacherRelationships(Teacher teacher, WriteTeacherViewModel modelVM, string requestType)
         {
-            teacher.FirstName = modelVM.FirstName;
-            teacher.LastName = modelVM.LastName;
-            teacher.Title = modelVM.Title;
-            teacher.MainCourseId = Guid.Parse(modelVM.MainCourseId);
 
-            if (requestType == "Add")
+            if (requestType == "Add" || requestType == "UpdatePost")
             {
-                teacher.MainCourseId = Guid.Parse(modelVM.MainCourseId);
+                teacher.FirstName = modelVM.FirstName;
+                teacher.LastName = modelVM.LastName;
+                teacher.Title = modelVM.Title;
 
-                // İlgili ClassroomTeachers ekleniyor
-                foreach (var classroomId in modelVM.ClassroomTeachersClassroomIds)
+                var mainCourse = await _mainCourseReadRepository.GetByIdAsync(modelVM.MainCourseId);
+                if (mainCourse != null)
                 {
-                    var classroomTeacher = new ClassroomTeacher()
-                    {
-                        ClassroomId = Guid.Parse(classroomId),
-                        TeacherId = teacher.Id
-                    };
-                    teacher.ClassroomTeachers.Add(classroomTeacher);
+                    teacher.MainCourse = mainCourse;
                 }
-                
 
-            }
-            else if (requestType == "UpdateGet")
-            {
-                //Öğretmenin girdiği sınıfları modelVM'e aktar
-                modelVM.ClassroomTeachersClassroomIds = teacher.ClassroomTeachers.Select(x => x.ClassroomId.ToString()).ToList();
-            }
-            else if (requestType == "UpdatePost")
-            {
                 teacher.ClassroomTeachers.Clear();
-
-                // İlgili ClassroomTeachers ekleniyor
                 foreach (var classroomId in modelVM.ClassroomTeachersClassroomIds)
                 {
                     var classroomTeacher = new ClassroomTeacher()

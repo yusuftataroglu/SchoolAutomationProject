@@ -1,5 +1,6 @@
 ﻿using SchoolAutomationProject.Application.ViewModels.BaseViewModels;
 using SchoolAutomationProject.Domain.Entities.CrossTables;
+using SchoolAutomationProject.Domain.Entities.CustomTables;
 using SchoolAutomationProject.Domain.Entities.IdentityTables;
 
 namespace SchoolAutomationProject.Application.ViewModels.ParentViewModels
@@ -15,9 +16,9 @@ namespace SchoolAutomationProject.Application.ViewModels.ParentViewModels
         public string City { get; set; } // İl
 
         // Student-Parent ilişkisi
-        public ICollection<ParentStudent> ParentStudents { get; set; }
+        public ICollection<Student> Students { get; set; }
 
         //Parent-AppUser ilişkisi
-        //public AppUser User { get; set; }
+        public AppUser User { get; set; }
     }
 }

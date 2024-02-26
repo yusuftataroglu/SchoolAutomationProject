@@ -18,21 +18,7 @@
                     <label for="name">Ana Ders Adı</label>
                     <input id="name" class="form-control" type="text" asp-for="Name" />
 
-                    <label class="d-block mb-2">Öğretmenler</label>
-                    @foreach (var teacher in _teacherReadRepository.GetAll().OrderBy(x => x.FirstName).ToList())
-                    {
-                        <input type="checkbox" class="btn-check" id="@teacher.Id" name="TeacherIds" value="@teacher.Id">
-                        <label class="btn btn-outline-primary" for="@teacher.Id">@teacher.FirstName @teacher.LastName</label>
-                    }
-
-                    <label class="d-block mb-2">Alt Dersler</label>
-                    @foreach (var subCourse in _subCourseReadRepository.GetAll().OrderBy(x => x.Code).ToList())
-                    {
-                        <input type="checkbox" class="btn-check" id="@subCourse.Id" name="SubCourseIds" value="@subCourse.Id">
-                        <label class="btn btn-outline-primary" for="@subCourse.Id">@subCourse.Code</label>
-                    }
-
-                    <label class="d-block mb-2">Sınıflar</label>
+                    <label>Bu Dersin Verileceği Sınıflar</label>
                     @foreach (var classroom in _classroomReadRepository.GetAll().OrderBy(x => x.Name).ToList())
                     {
                         <input type="checkbox" class="btn-check" id="@classroom.Id" name="ClassroomMainCoursesClassroomIds" value="@classroom.Id">

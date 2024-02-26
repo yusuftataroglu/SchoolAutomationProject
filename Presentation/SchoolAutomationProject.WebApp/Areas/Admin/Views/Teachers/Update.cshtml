@@ -52,7 +52,7 @@
                             <div class="form-group">
                                 @foreach (var classroom in _classroomReadRepository.GetAll().ToList())
                                 {
-                                    <input id="@classroom.Id" type="checkbox" name="ClassroomTeachersClassroomIds" class="form-check-input" value="@classroom.Id" checked="@Model.ClassroomTeachersClassroomIds.Contains(classroom.Id.ToString())" />
+                                    <input id="@classroom.Id" type="checkbox" name="ClassroomTeachersClassroomIds" class="form-check-input" value="@classroom.Id" checked="@Model.ClassroomTeachers.Select(x=> x.ClassroomId).Contains(classroom.Id)" />
                                     <label for="@classroom.Id">@classroom.Name</label>
                                 }
                             </div>

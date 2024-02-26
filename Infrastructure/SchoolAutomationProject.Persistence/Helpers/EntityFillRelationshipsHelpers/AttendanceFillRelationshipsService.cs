@@ -23,28 +23,18 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
                 attendance.AttendanceDate = modelVM.AttendanceDate;
                 attendance.AttendanceStatus = modelVM.AttendanceStatus;
 
-                if (!string.IsNullOrEmpty(modelVM.StudentId))
+                var student = await _studentReadRepository.GetByIdAsync(modelVM.StudentId);
+                if (student != null)
                 {
-                    var student = await _studentReadRepository.GetByIdAsync(modelVM.StudentId);
-                    if (student != null)
-                    {
-                        attendance.Student = student;
-                    }
+                    attendance.Student = student;
                 }
 
-                if (!string.IsNullOrEmpty(modelVM.SubCourseId))
+                var subCourse = await _subCourseReadRepository.GetByIdAsync(modelVM.SubCourseId);
+                if (subCourse != null)
                 {
-                    var subCourse = await _subCourseReadRepository.GetByIdAsync(modelVM.SubCourseId);
-                    if (subCourse != null)
-                    {
-                        attendance.SubCourse = subCourse;
-                    }
+                    attendance.SubCourse = subCourse;
                 }
-            }
-            else if (requestType == "UpdateGet")
-            {
-                modelVM.StudentId = attendance.StudentId?.ToString();
-                modelVM.SubCourseId = attendance.SubCourseId?.ToString();
+
             }
         }
     }

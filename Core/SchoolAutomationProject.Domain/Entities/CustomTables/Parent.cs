@@ -15,7 +15,7 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
         public string City { get; set; } // İl
 
         // Student-Parent ilişkisi
-        public virtual ICollection<ParentStudent> ParentStudents { get; set; }
+        public virtual ICollection<Student> Students { get; set; }
         //Parent-AppUser ilişkisi
         public virtual AppUser User { get; set; }
         public string? UserId { get; set; }

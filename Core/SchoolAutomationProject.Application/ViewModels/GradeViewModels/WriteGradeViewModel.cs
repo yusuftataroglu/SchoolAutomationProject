@@ -8,6 +8,7 @@ namespace SchoolAutomationProject.Application.ViewModels.GradeViewModels
     {
         [Required(ErrorMessage = "Not Boş Geçilemez!")]
         public double Score { get; set; } // Öğrencinin aldığı not
+
         [Required(ErrorMessage ="Sınav Numarası Boş Geçilemez!")]
         public byte ExamNumber { get; set; } // O dersin kaçıncı sınavı
 

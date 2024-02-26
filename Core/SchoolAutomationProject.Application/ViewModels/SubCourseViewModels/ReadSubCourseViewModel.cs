@@ -11,8 +11,5 @@ namespace SchoolAutomationProject.Application.ViewModels.SubCourseViewModels
 
         //SubCourse - MainCourse ilişkisi
         public MainCourse MainCourse { get; set; }
-
-        //SubCourse - Grade ilişkisi
-        public ICollection<Grade> Grades { get; set; }
     }
 }

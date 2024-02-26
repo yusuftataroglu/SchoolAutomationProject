@@ -7,23 +7,13 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
 {
     public class Student : BaseClass
     {
-        public Student()
-        {
-            //DiscontinuedStudent = new DiscontinuedStudent();
-            //Classroom = new Classroom();
-            //User = new AppUser();
-            //ParentStudents = new List<ParentStudent>();
-            //Grades = new List<Grade>();
-            //Achievements = new List<Achievement>();
-            //Attendances = new List<Attendance>();
-        }
         public string RegistrationNumber { get; set; } // Okul No
         public string FirstName { get; set; } // Öğrenci Ad
         public string LastName { get; set; } // Öğrenci Soyad
         public Gender Gender { get; set; } //Cinsiyet
         public string GraduatedSchool { get; set; } // Bitirdiği Okul
         public double GPA { get; set; } // Mezun olduğu okulun not ortalaması
-        public bool IsPreRegistered { get; set; } // Ön kayıt durumu
+        public bool? IsPreRegistered { get; set; } // Ön kayıt durumu
         public short? TotalAbsenceCount { get; set; } // Devamsızlık sayısı
         public ContinuationStatus? ContinuationStatus { get; set; } //Devam etme durumu
 
@@ -39,7 +29,8 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
         public string? UserId { get; set; }
 
         //Student-Parent ilişkisi
-        public virtual ICollection<ParentStudent> ParentStudents { get; set; }
+        public virtual Parent Parent { get; set; }
+        public Guid? ParentId { get; set; }
 
         //Student-Grade ilişkisi
         public virtual ICollection<Grade> Grades { get; set; }

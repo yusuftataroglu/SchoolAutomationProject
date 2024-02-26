@@ -1,4 +1,5 @@
 ﻿using SchoolAutomationProject.Application.ViewModels.BaseViewModels;
+using SchoolAutomationProject.Domain.Entities.CrossTables;
 using System.ComponentModel.DataAnnotations;
 
 namespace SchoolAutomationProject.Application.ViewModels.MainCourseViewModels
@@ -7,18 +8,14 @@ namespace SchoolAutomationProject.Application.ViewModels.MainCourseViewModels
     {
         public WriteMainCourseViewModel()
         {
-            SubCourseIds = new();
-            TeacherIds = new();
             ClassroomMainCoursesClassroomIds = new();
         }
-
 
         [Required(ErrorMessage = "Ders adı boş geçilemez")]
         public string Name { get; set; }
 
-        //Sonradan da girilebilir
-        public List<string>? TeacherIds { get; set; }
-        public List<string>? SubCourseIds { get; set; }
+        public List<ClassroomMainCourse>? ClassroomMainCourses { get; set; }
         public List<string>? ClassroomMainCoursesClassroomIds { get; set; }
+
     }
 }

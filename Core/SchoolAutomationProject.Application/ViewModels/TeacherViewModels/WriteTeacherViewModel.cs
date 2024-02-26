@@ -1,9 +1,10 @@
 ﻿using SchoolAutomationProject.Application.ViewModels.BaseViewModels;
+using SchoolAutomationProject.Domain.Entities.CrossTables;
 using System.ComponentModel.DataAnnotations;
 
 namespace SchoolAutomationProject.Application.ViewModels.TeacherViewModels
 {
-    public class WriteTeacherViewModel:WriteViewModel
+    public class WriteTeacherViewModel : WriteViewModel
     {
         public WriteTeacherViewModel()
         {
@@ -19,8 +20,8 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherViewModels
 
         [Required(ErrorMessage = "Ders seçimi boş geçilemez!")]
         public string MainCourseId { get; set; }
-
-        //Öğretmen eklendikten sonra sınıf ataması yapmak zorunlu değil. Atama sonradan yapılabilir.(Update yaparken)
         public List<string>? ClassroomTeachersClassroomIds { get; set; }
+        public List<ClassroomTeacher>? ClassroomTeachers { get; set; }
+
     }
 }

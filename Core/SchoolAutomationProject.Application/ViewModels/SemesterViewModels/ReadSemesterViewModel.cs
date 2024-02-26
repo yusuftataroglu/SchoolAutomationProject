@@ -8,8 +8,5 @@ namespace SchoolAutomationProject.Application.ViewModels.SemesterViewModels
         public string Name { get; set; } // Örneğin "2022-2023 Spring Season"
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-
-        //Semester - Achievement ilişkisi
-        public ICollection<Achievement> Achievements { get; set; }
     }
 }

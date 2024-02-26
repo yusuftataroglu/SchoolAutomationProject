@@ -37,9 +37,9 @@
                         <td>@item.District</td>
                         <td>@item.City</td>
                         <td>
-                            @foreach (var parentStudents in item.ParentStudents)
+                            @foreach (var student in item.Students)
                             {
-                                <badge class="badge bg-success">@parentStudents.Student.FirstName @parentStudents.Student.LastName</badge>
+                                <badge class="badge bg-success">@student.FirstName @student.LastName</badge>
                             }
                         </td>
                         <td class="d-flex">

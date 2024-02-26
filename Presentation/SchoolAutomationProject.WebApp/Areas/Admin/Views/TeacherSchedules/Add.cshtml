@@ -1,8 +1,68 @@
-﻿
+﻿@model WriteTeacherScheduleViewModel
+@inject ITeacherReadRepository _teacherReadRepository
+@inject IClassroomReadRepository _classroomReadRepository
+
 @{
-    ViewData["Title"] = "Add";
+    ViewData["Title"] = "Öğretmen Programı Ekle";
     Layout = "~/Views/Shared/_ManagementLayout.cshtml";
 }
 
-<h1>Add</h1>
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <form method="post" asp-area="Admin" asp-controller="TeacherSchedules" asp-action="Add">
+            <div class="card">
+                <div class="card-header">Öğretmen Programı Ekle</div>
+                <div class="card-body">
 
+                    <div asp-validation-summary="All"></div>
+
+                    <div class="mb-3">
+                        <label for="dateTime" class="form-label">Tarih</label>
+                        <input id="dateTime" class="form-control" type="date" asp-for="DateTime" />
+                        <span asp-validation-for="DateTime" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="day" class="form-label">Gün</label>
+                        <select id="day" class="form-control" asp-for="Day" asp-items="@Html.GetEnumSelectList<DayOfWeek>()">
+                        </select>
+                        <span asp-validation-for="Day" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="timeSlot" class="form-label">Zaman Aralığı</label>
+                        <input id="timeSlot" class="form-control" type="number" asp-for="TimeSlot" />
+                        <span asp-validation-for="TimeSlot" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="classroom" class="form-label">Sınıf</label>
+                        <select id="classroom" class="form-control" asp-for="Classroom">
+                            <option value="" selected disabled>Lütfen bir sınıf seçiniz</option>
+                            @foreach (var classroom in _classroomReadRepository.GetAll())
+                            {
+                                <option value="@classroom.Name">@classroom.Name</option>
+                            }
+                        </select>
+                        <span asp-validation-for="Classroom" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="teacherId" class="form-label">Öğretmen</label>
+                        <select id="teacherId" class="form-control" asp-for="TeacherId">
+                            <option value="" selected disabled>Lütfen bir öğretmen seçiniz</option>
+                            @foreach (var teacher in _teacherReadRepository.GetAll())
+                            {
+                                <option value="@teacher.Id">@teacher.FirstName @teacher.LastName</option>
+                            }
+                        </select>
+                        <span asp-validation-for="TeacherId" class="text-danger"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Ekle</button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,8 +1,48 @@
-﻿
+﻿@model ReadTeacherScheduleViewModel
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Öğretmen Programı Detayları";
     Layout = "~/Views/Shared/_ManagementLayout.cshtml";
 }
 
-<h1>Details</h1>
-
+<div class="card mb-4">
+    <div class="card-header d-flex align-items-center">
+        <i class="fas fa-table me-1 me-2"></i>
+        <h3>Öğretmen Programı Detayları</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Tarih</th>
+                    <th>Gün</th>
+                    <th>Zaman Aralığı</th>
+                    <th>Sınıf</th>
+                    <th>Öğretmen</th>
+                    <th>Oluşturma Tarihi</th>
+                    <th>Oluşturanın Bilgisayar Adı</th>
+                    <th>Oluşturanın IP Adresi</th>
+                    <th>Güncelleme Tarihi</th>
+                    <th>Güncelleyenin Bilgisayar Adı</th>
+                    <th>Güncelleyenin IP Adresi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Model.Id</td>
+                    <td>@Model.DateTime.ToShortDateString()</td>
+                    <td>@Model.Day</td>
+                    <td>@Model.TimeSlot</td>
+                    <td>@Model.Classroom</td>
+                    <td>@Model.Teacher.FirstName @Model.Teacher.LastName</td>
+                    <td>@Model.CreatedDate</td>
+                    <td>@Model.CreatedComputerName</td>
+                    <td>@Model.CreatedIpAddress</td>
+                    <td>@Model.UpdatedDate</td>
+                    <td>@Model.UpdatedComputerName</td>
+                    <td>@Model.UpdatedIpAddress</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

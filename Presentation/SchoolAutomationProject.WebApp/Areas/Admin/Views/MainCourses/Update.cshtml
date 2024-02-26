@@ -1,7 +1,5 @@
 ﻿@model WriteMainCourseViewModel
-@inject ITeacherReadRepository _teacherReadRepository
 @inject IClassroomReadRepository _classroomReadRepository
-@inject ISubCourseReadRepository _subCourseReadRepository
 @{
     ViewData["Title"] = "UpdateMainCourse";
     Layout = "~/Views/Shared/_ManagementLayout.cshtml";
@@ -18,41 +16,15 @@
                     <label for="@Model.Name">Sınıf Adı</label>
                     <input id="@Model.Name" class="form-control" type="text" asp-for="Name" />
 
-
-                    <label class="d-block mb-2">Öğretmenler</label>
-                    @foreach (var teacher in _teacherReadRepository.GetAll().ToList())
+                    @foreach (var classroom in _classroomReadRepository.GetAll().ToList())
                     {
-                        <input class="btn-check" type="checkbox" id="@teacher.Id" name="TeacherIds" value="@teacher.Id" checked="@Model.TeacherIds.Contains(teacher.Id.ToString())" />
-                        <label class="btn btn-outline-primary" for="@teacher.Id">@teacher.FirstName @teacher.LastName</label>
+                        <input id="@classroom.Id" type="checkbox" name="ClassroomMainCoursesClassroomIds" class="form-check-input" value="@classroom.Id" checked="@Model.ClassroomMainCourses.Select(x=> x.ClassroomId).Contains(classroom.Id)" />
+                        <label for="@classroom.Id">@classroom.Name</label>
                     }
-
-
-                    <label class="d-block mb-2">Sınıflar</label>
-                    <div class="form-group">
-                        @foreach (var classroom in _classroomReadRepository.GetAll().ToList())
-                        {
-                            <input id="@classroom.Id" type="checkbox" name="ClassroomMainCoursesClassroomIds" class="form-check-input" value="@classroom.Id" checked="@Model.ClassroomMainCoursesClassroomIds.Contains(classroom.Id.ToString())" />
-                            <label for="@classroom.Id">@classroom.Name</label>
-                        }
-                    </div>
-
-
-                    <label class="d-block mb-2">Alt Dersler</label>
-                    <div class="form-group">
-                        @foreach (var subCourse in _subCourseReadRepository.GetAll().ToList())
-                        {
-                            <input id="@subCourse.Id" type="checkbox" name="SubCourseIds" class="form-check-input" value="@subCourse.Id" checked="@Model.SubCourseIds.Contains(subCourse.Id.ToString())" />
-                            <label for="@subCourse.Id">@subCourse.Code</label>
-                        }
-                    </div>
-
-
-
 
                     <div class="card-footer">
                         <button class="btn btn-primary" type="submit">Güncelle</button>
                     </div>
-
 
                 </div>
             </form>
