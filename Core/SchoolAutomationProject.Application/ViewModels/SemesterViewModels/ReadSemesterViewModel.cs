@@ -1,5 +1,4 @@
 ﻿using SchoolAutomationProject.Application.ViewModels.BaseViewModels;
-using SchoolAutomationProject.Domain.Entities.CustomTables;
 
 namespace SchoolAutomationProject.Application.ViewModels.SemesterViewModels
 {
@@ -7,6 +6,9 @@ namespace SchoolAutomationProject.Application.ViewModels.SemesterViewModels
     {
         public string Name { get; set; } // Örneğin "2022-2023 Spring Season"
         public DateTime StartDate { get; set; }
+        public string StartDateShort => StartDate.ToShortDateString();
         public DateTime EndDate { get; set; }
+        public string EndDateShort => EndDate.ToShortDateString();
+
     }
 }

@@ -1,93 +1,68 @@
 ﻿@model ReadStudentViewModel
+
 @{
-    ViewData["Title"] = "Öğrenci Detayları";
+    ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_ManagementLayout.cshtml";
 }
 
 <div class="card mb-4">
     <div class="card-header d-flex align-items-center">
         <i class="fas fa-table me-1 me-2"></i>
-        <h3>Öğrenci Detayları</h3>
+        <h3>@ViewData["TableTitle"]</h3>
     </div>
+
     <div class="card-body">
         <table class="table table-hover table-bordered">
+
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Okul No</th>
-                    <th>Ad</th>
-                    <th>Soyad</th>
-                    <th>Cinsiyet</th>
-                    <th>Bitirdiği Okul</th>
-                    <th>Not Ortalaması</th>
-                    <th>Ön Kayıt Durumu</th>
-                    <th>Devam Etme Durumu</th>
-                    <th>Sınıf</th>
-                    <th>Kullanıcı</th>
-                    <th>Veliler</th>
-                    <th>Notlar</th>
-                    <th>Başarılar</th>
-                    <th>Devamsızlıklar</th>
-                    <th>Oluşturma Tarihi</th>
-                    <th>Oluşturanın Bilgisayar Adı</th>
-                    <th>Oluşturanın IP Adresi</th>
-                    <th>Güncelleme Tarihi</th>
-                    <th>Güncelleyenin Bilgisayar Adı</th>
-                    <th>Güncelleyenin IP Adresi</th>
+                    @foreach (var columnTitle in ViewData["CustomColumnTitles"] as List<string>)
+                    {
+                        <th>@columnTitle</th>
+                    }
+                    @foreach (var commonColumnTitle in ViewData["CommonColumnTitles"] as List<string>)
+                    {
+                        <th>@commonColumnTitle</th>
+                    }
                 </tr>
             </thead>
+
             <tbody>
                 <tr>
-                    <td>@Model.Id</td>
-                    <td>@Model.RegistrationNumber</td>
-                    <td>@Model.FirstName</td>
-                    <td>@Model.LastName</td>
-                    <td>@Model.Gender</td>
-                    <td>@Model.GraduatedSchool</td>
-                    <td>@Model.GPA</td>
-                    <td>@Model.IsPreRegistered</td>
-                    <td>@Model.ContinuationStatus</td>
-                    <td>@Model.Classroom?.Name</td>
-                    <td>@Model.User?.UserName</td>
-                    <td>
-                        @foreach (var parent in Model.Parents)
-                        {
-                            <span>@parent.FirstName @parent.LastName</span>
+                    @foreach (var customProperty in ViewData["CustomProperties"] as List<string>)
+                    {
+                        <td>
+                            @if (customProperty == "Classroom")
+                            {
+                                    <badge class="badge bg-info">@Model.Classroom.Name</badge>
+                            }
 
-                            <br />
-                        }
-                    </td>
-                    <td>
-                        @foreach (var grade in Model.Grades)
-                        {
-                            <span>@grade.Score</span>
+                            else if (customProperty == "Parent")
+                            {
+                                    <badge class="badge bg-success">@Model.Parent.FirstName @Model.Parent.LastName</badge>
+                            }
 
-                            <br />
-                        }
-                    </td>
-                    <td>
-                        @foreach (var achievement in Model.Achievements)
-                        {
-                            <span>@achievement.Type</span>
+                            else if (customProperty == "Achievements")
+                            {
+                                foreach (var achievement in Model.Achievements)
+                                {
+                                    <badge class="badge bg-success">@achievement.Type</badge>
+                                }
+                            }
 
-                            <br />
-                        }
-                    </td>
-                    <td>
-                        @foreach (var attendance in Model.Attendances)
-                        {
-                            <span>@attendance.AttendanceDate.ToShortDateString()</span>
+                            else
+                            {
+                                <span>@Model.GetType().GetProperty(customProperty).GetValue(Model)</span>
+                            }
+                        </td>
+                    }
 
-                            <br />
-                        }
-                    </td>
-                    <td>@Model.CreatedDate</td>
-                    <td>@Model.CreatedComputerName</td>
-                    <td>@Model.CreatedIpAddress</td>
-                    <td>@Model.UpdatedDate</td>
-                    <td>@Model.UpdatedComputerName</td>
-                    <td>@Model.UpdatedIpAddress</td>
+                    @foreach (var commonProperty in ViewData["CommonProperties"] as List<string>)
+                    {
+                        <td>@Model.GetType().GetProperty(commonProperty).GetValue(Model)</td>
+                    }
                 </tr>
+
             </tbody>
         </table>
     </div>

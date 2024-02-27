@@ -1,37 +1,74 @@
 ﻿@model ReadMainCourseViewModel
 
 @{
-    ViewData["Title"] = "Main Course Details";
+    ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_ManagementLayout.cshtml";
 }
 
 <div class="card mb-4">
     <div class="card-header d-flex align-items-center">
         <i class="fas fa-table me-1 me-2"></i>
-        <h3>Main Course Details</h3>
+        <h3>@ViewData["TableTitle"]</h3>
     </div>
+
     <div class="card-body">
-        <h4>Name: @Model.Name</h4>
-        <h4>SubCourses:</h4>
-        <ul>
-            @foreach (var subCourse in Model.SubCourses)
-            {
-                <li>@subCourse.Code</li>
-            }
-        </ul>
-        <h4>Teachers:</h4>
-        <ul>
-            @foreach (var teacher in Model.Teachers)
-            {
-                <li>@teacher.FirstName @teacher.LastName</li>
-            }
-        </ul>
-        <h4>Classrooms:</h4>
-        <ul>
-            @foreach (var classroomMainCourse in Model.ClassroomMainCourses)
-            {
-                <li>@classroomMainCourse.Classroom.Name</li>
-            }
-        </ul>
+        <table class="table table-hover table-bordered">
+
+            <thead>
+                <tr>
+                    @foreach (var columnTitle in ViewData["CustomColumnTitles"] as List<string>)
+                    {
+                        <th>@columnTitle</th>
+                    }
+                    @foreach (var commonColumnTitle in ViewData["CommonColumnTitles"] as List<string>)
+                    {
+                        <th>@commonColumnTitle</th>
+                    }
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    @foreach (var customProperty in ViewData["CustomProperties"] as List<string>)
+                    {
+                        <td>
+                            @if (customProperty == "SubCourses")
+                            {
+                                foreach (var subCourse in Model.SubCourses)
+                                {
+                                    <badge class="badge bg-info">@subCourse.Code</badge>
+                                }
+                            }
+
+                            else if (customProperty == "Teachers")
+                            {
+                                foreach (var teacher in Model.Teachers)
+                                {
+                                    <badge class="badge bg-warning">@teacher.FirstName @teacher.LastName</badge>
+                                }
+                            }
+
+                            else if (customProperty == "ClassroomMainCourses")
+                            {
+                                foreach (var classroomMainCourse in Model.ClassroomMainCourses)
+                                {
+                                    <badge class="badge bg-success">@classroomMainCourse.Classroom.Name</badge>
+                                }
+                            }
+                            else
+                            {
+                                <span>@Model.GetType().GetProperty(customProperty).GetValue(Model)</span>
+                            }
+                        </td>
+                    }
+
+                    @foreach (var commonProperty in ViewData["CommonProperties"] as List<string>)
+                    {
+                        <td>@Model.GetType().GetProperty(commonProperty).GetValue(Model)</td>
+                    }
+                </tr>
+
+            </tbody>
+        </table>
     </div>
 </div>

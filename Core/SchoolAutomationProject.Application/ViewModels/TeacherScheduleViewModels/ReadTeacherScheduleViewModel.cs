@@ -12,5 +12,6 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherScheduleViewMode
 
         //TeacherSchedule - Teacher ilişkisi
         public Teacher Teacher { get; set; }
+        public string TeacherFullName => $"{Teacher.FirstName} {Teacher.LastName}";
     }
 }

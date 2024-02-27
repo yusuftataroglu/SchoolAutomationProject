@@ -38,6 +38,9 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         [HttpGet]
         public virtual async Task<IActionResult> Details(string id)
         {
+            ViewData["CommonColumnTitles"] = new List<string> { "Oluşturma Zamanı", "Oluşturulan Bilgisayar Adı", "Oluşturulan IP Adresi", "Güncelleme Zamanı", "Güncellenilen Bilgisayar Adı", "Güncellenilen IP Adresi" };
+            ViewData["CommonProperties"] = new List<string> { "CreatedDate", "CreatedComputerName", "CreatedIpAddress", "UpdatedDate","UpdatedComputerName", "UpdatedIpAddress" };
+
             var entity = await _readRepository.GetByIdAsync(id);
             TReadViewModel readViewModel = _mapper.Map<TReadViewModel>(entity);
             return View(readViewModel);

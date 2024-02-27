@@ -1,5 +1,4 @@
 ﻿using SchoolAutomationProject.Application.ViewModels.BaseViewModels;
-using SchoolAutomationProject.Domain.Entities.CrossTables;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 using SchoolAutomationProject.Domain.Entities.IdentityTables;
 

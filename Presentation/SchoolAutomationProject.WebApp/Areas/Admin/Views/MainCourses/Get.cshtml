@@ -1,63 +1,78 @@
 ﻿@model List<ReadMainCourseViewModel>
 
 @{
-    ViewData["Title"] = "Main Courses";
+    ViewData["Title"] = "Get";
     Layout = "~/Views/Shared/_ManagementLayout.cshtml";
 }
 
 <div class="card mb-4">
     <div class="card-header d-flex align-items-center">
         <i class="fas fa-table me-1 me-2"></i>
-        <h3>Main Courses</h3>
+        <h3>@ViewData["TableTitle"]</h3>
     </div>
+
     <div class="card-body">
-        <table class="table table-hover">
-            <thead class="table-dark">
+        <table class="table table-hover table-bordered">
+
+            <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>SubCourses</th>
-                    <th>Teachers</th>
-                    <th>Classrooms</th>
-                    <th><a class="btn btn-success" asp-area="Admin" asp-controller="MainCourses" asp-action="Add">+</a></th>
+                    @foreach (var columnTitle in ViewData["CustomColumnTitles"] as List<string>)
+                    {
+                        <th>@columnTitle</th>
+                    }
+                    <!-- Ekleme butonu -->
+                    <th>
+                        <a class="btn btn-success" asp-area="Admin" asp-controller="@ViewData["ControllerName"]" asp-action="Add">+</a>
+                    </th>
                 </tr>
             </thead>
+
             <tbody>
-                @foreach (var mainCourse in Model)
+                @foreach (var item in Model)
                 {
                     <tr>
-                        <td>@mainCourse.Name</td>
-                        <td>
-                            @foreach (var subCourse in mainCourse.SubCourses)
-                            {
-                                <span>@subCourse.Code</span>
+                        @foreach (var customProperty in ViewData["CustomProperties"] as List<string>)
+                        {
+                            <td>
+                                @if (customProperty == "SubCourses")
+                                {
+                                    foreach (var subCourse in item.SubCourses)
+                                    {
+                                        <badge class="badge bg-info">@subCourse.Code</badge>
+                                    }
+                                }
 
-                                <br />
-                            }
-                        </td>
-                        <td>
-                            @foreach (var teacher in mainCourse.Teachers)
-                            {
-                                <span>@teacher.FirstName @teacher.LastName</span>
+                                else if (customProperty == "Teachers")
+                                {
+                                    foreach (var teacher in item.Teachers)
+                                    {
+                                        <badge class="badge bg-warning">@teacher.FirstName @teacher.LastName</badge>
+                                    }
+                                }
 
-                                <br />
-                            }
-                        </td>
-                        <td>
-                            @foreach (var classroomMainCourse in mainCourse.ClassroomMainCourses)
-                            {
-                                <span>@classroomMainCourse.Classroom.Name</span>
-
-                                <br />
-                            }
-                        </td>
-                        <td>
-                            <a class="btn btn-warning" asp-area="Admin" asp-controller="MainCourses" asp-action="Details" asp-route-id="@mainCourse.Id">Details</a>
-                            <a class="btn btn-primary" asp-area="Admin" asp-controller="MainCourses" asp-action="Update" asp-route-id="@mainCourse.Id">Update</a>
-                            <a class="btn btn-danger" asp-area="Admin" asp-controller="MainCourses" asp-action="Delete" asp-route-id="@mainCourse.Id">Delete</a>
+                                else if (customProperty == "ClassroomMainCourses")
+                                {
+                                    foreach (var classroomMainCourse in item.ClassroomMainCourses)
+                                    {
+                                        <badge class="badge bg-success">@classroomMainCourse.Classroom.Name</badge>
+                                    }
+                                }
+                                else
+                                {
+                                    <span>@item.GetType().GetProperty(customProperty).GetValue(item)</span>
+                                }
+                            </td>
+                        }
+                        <!-- Detaylar, Güncelle, Sil butonları -->
+                        <td class="d-flex">
+                            <a class="btn btn-warning" asp-area="Admin" asp-controller="@ViewData["ControllerName"]" asp-action="Details" asp-route-id="@item.Id">Detaylar</a>
+                            <a class="btn btn-primary" asp-area="Admin" asp-controller="@ViewData["ControllerName"]" asp-action="Update" asp-route-id="@item.Id">Güncelle</a>
+                            <a class="btn btn-danger" asp-area="Admin" asp-controller="@ViewData["ControllerName"]" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
                         </td>
                     </tr>
                 }
             </tbody>
+
         </table>
     </div>
 </div>

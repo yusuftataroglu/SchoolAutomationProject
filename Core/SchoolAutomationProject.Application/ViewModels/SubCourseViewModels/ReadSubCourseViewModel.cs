@@ -11,5 +11,6 @@ namespace SchoolAutomationProject.Application.ViewModels.SubCourseViewModels
 
         //SubCourse - MainCourse ilişkisi
         public MainCourse MainCourse { get; set; }
+        public string MainCourseName => MainCourse.Name;
     }
 }

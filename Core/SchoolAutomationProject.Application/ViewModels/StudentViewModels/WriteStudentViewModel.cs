@@ -13,7 +13,6 @@ namespace SchoolAutomationProject.Application.ViewModels.StudentViewModels
         {
             GradeIds = new();
             AchievementIds = new();
-            AttendanceIds = new();
         }
 
         [Required(ErrorMessage = "İsim Boş Geçilemez!")]
@@ -67,9 +66,5 @@ namespace SchoolAutomationProject.Application.ViewModels.StudentViewModels
         //Student-Achievement ilişkisi
         public List<string>? AchievementIds { get; set; }
         public List<Achievement>? Achievements { get; set; }
-
-        //Student-Attendance ilişkisi
-        public List<string>? AttendanceIds { get; set; }
-        public List<Attendance>? Attendances { get; set; }
     }
 }

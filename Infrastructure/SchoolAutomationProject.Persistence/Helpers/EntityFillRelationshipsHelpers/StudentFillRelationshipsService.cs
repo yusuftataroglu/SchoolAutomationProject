@@ -12,22 +12,13 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
 {
     public class StudentFillRelationshipsService : IStudentFillRelationshipsService
     {
-        private readonly IGradeReadRepository _gradeReadRepository;
-        private readonly IAchievementReadRepository _achievementReadRepository;
-        private readonly IAttendanceReadRepository _attendanceReadRepository;
         private readonly IParentWriteRepository _parentWriteRepository;
         private readonly IParentReadRepository _parentReadRepository;
 
         public StudentFillRelationshipsService(
-            IGradeReadRepository gradeReadRepository,
-            IAchievementReadRepository achievementReadRepository,
-            IAttendanceReadRepository attendanceReadRepository,
             IParentWriteRepository parentWriteRepository,
             IParentReadRepository parentReadRepository)
         {
-            _gradeReadRepository = gradeReadRepository;
-            _achievementReadRepository = achievementReadRepository;
-            _attendanceReadRepository = attendanceReadRepository;
             _parentWriteRepository = parentWriteRepository;
             _parentReadRepository = parentReadRepository;
         }
@@ -61,7 +52,7 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
                 student.IsPreRegistered = modelVM.IsPreRegistered;
 
                 var parent = await _parentReadRepository.GetByIdAsync(modelVM.ParentId);
-                if (parent!=null)
+                if (parent != null)
                 {
                     student.Parent = parent;
                 }

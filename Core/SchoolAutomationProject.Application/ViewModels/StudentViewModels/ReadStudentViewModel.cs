@@ -1,5 +1,4 @@
 ﻿using SchoolAutomationProject.Application.ViewModels.BaseViewModels;
-using SchoolAutomationProject.Domain.Entities.CrossTables;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 using SchoolAutomationProject.Domain.Entities.Enums;
 using SchoolAutomationProject.Domain.Entities.IdentityTables;
@@ -18,9 +17,6 @@ namespace SchoolAutomationProject.Application.ViewModels.StudentViewModels
         public short? TotalAbsenceCount { get; set; } // Devamsızlık sayısı
         public ContinuationStatus? ContinuationStatus { get; set; } //Devam etme durumu
 
-        //Student-DiscontinuedStudent ilişkisi
-        //public virtual DiscontinuedStudent DiscontinuedStudent { get; set; }
-
         //Student-Classroom ilişkisi
         public Classroom Classroom { get; set; }
 
@@ -28,15 +24,12 @@ namespace SchoolAutomationProject.Application.ViewModels.StudentViewModels
         public AppUser User { get; set; }
 
         //Student-Parent ilişkisi
-        public ICollection<Parent> Parents { get; set; }
+        public Parent Parent { get; set; }
 
         //Student-Grade ilişkisi
         public ICollection<Grade> Grades { get; set; }
 
         //Student-Achievement ilişkisi
         public ICollection<Achievement> Achievements { get; set; }
-
-        //Student-Attendance ilişkisi
-        public ICollection<Attendance> Attendances { get; set; }
     }
 }

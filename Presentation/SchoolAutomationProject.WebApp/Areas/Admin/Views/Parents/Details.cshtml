@@ -1,58 +1,58 @@
 ﻿@model ReadParentViewModel
+
 @{
-    ViewData["Title"] = "Veli Detayları";
+    ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_ManagementLayout.cshtml";
 }
 
 <div class="card mb-4">
     <div class="card-header d-flex align-items-center">
         <i class="fas fa-table me-1 me-2"></i>
-        <h3>Veli Detayları</h3>
+        <h3>@ViewData["TableTitle"]</h3>
     </div>
+
     <div class="card-body">
         <table class="table table-hover table-bordered">
+
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Adı</th>
-                    <th>Soyadı</th>
-                    <th>Cep Telefonu</th>
-                    <th>İş Telefonu</th>
-                    <th>Adres</th>
-                    <th>İlçe</th>
-                    <th>İl</th>
-                    <th>Öğrenciler</th>
-                    <th>Oluşturma Tarihi</th>
-                    <th>Oluşturanın Bilgisayar Adı</th>
-                    <th>Oluşturanın IP Adresi</th>
-                    <th>Güncelleme Tarihi</th>
-                    <th>Güncelleyenin Bilgisayar Adı</th>
-                    <th>Güncelleyenin IP Adresi</th>
+                    @foreach (var columnTitle in ViewData["CustomColumnTitles"] as List<string>)
+                    {
+                        <th>@columnTitle</th>
+                    }
+                    @foreach (var commonColumnTitle in ViewData["CommonColumnTitles"] as List<string>)
+                    {
+                        <th>@commonColumnTitle</th>
+                    }
                 </tr>
             </thead>
+
             <tbody>
                 <tr>
-                    <td>@Model.Id</td>
-                    <td>@Model.FirstName</td>
-                    <td>@Model.LastName</td>
-                    <td>@Model.MobilePhone</td>
-                    <td>@Model.WorkPhone</td>
-                    <td>@Model.Address</td>
-                    <td>@Model.District</td>
-                    <td>@Model.City</td>
-                    <td>
-                        @foreach (var student in Model.Students)
-                        {
-                            <badge class="badge bg-success">@student.FirstName @student.LastName</badge>
-                        }
-                    </td>
-                    <td>@Model.CreatedDate</td>
-                    <td>@Model.CreatedComputerName</td>
-                    <td>@Model.CreatedIpAddress</td>
-                    <td>@Model.UpdatedDate</td>
-                    <td>@Model.UpdatedComputerName</td>
-                    <td>@Model.UpdatedIpAddress</td>
+                    @foreach (var customProperty in ViewData["CustomProperties"] as List<string>)
+                    {
+                        <td>
+                            @if (customProperty == "Students")
+                            {
+                                foreach (var student in Model.Students)
+                                {
+                                    <badge class="badge bg-info">@student.FirstName @student.LastName</badge>
+                                }
+                            }
+                            
+                            else
+                            {
+                                <span>@Model.GetType().GetProperty(customProperty).GetValue(Model)</span>
+                            }
+                        </td>
+                    }
+
+                    @foreach (var commonProperty in ViewData["CommonProperties"] as List<string>)
+                    {
+                        <td>@Model.GetType().GetProperty(commonProperty).GetValue(Model)</td>
+                    }
                 </tr>
+
             </tbody>
         </table>
     </div>

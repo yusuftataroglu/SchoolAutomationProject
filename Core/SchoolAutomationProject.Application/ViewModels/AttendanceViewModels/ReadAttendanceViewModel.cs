@@ -15,5 +15,10 @@ namespace SchoolAutomationProject.Application.ViewModels.AttendanceViewModels
 
         // Devamsızlık - Ders ilişkisi
         public SubCourse SubCourse { get; set; }
+
+        public string StudentFullName => $"{Student.FirstName} {Student.LastName}";
+        public string SubCourseCode => SubCourse.Code;
+
+        public string AttendanceDateShort => AttendanceDate.ToShortDateString();
     }
 }

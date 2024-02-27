@@ -10,6 +10,7 @@ namespace SchoolAutomationProject.Application.ViewModels.MainCourseViewModels
         public ICollection<SubCourse> SubCourses { get; set; }
         public ICollection<Teacher> Teachers { get; set; }
         public ICollection<ClassroomMainCourse> ClassroomMainCourses { get; set; }
+
     }
 
 }

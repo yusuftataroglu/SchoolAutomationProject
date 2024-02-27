@@ -1,45 +1,45 @@
 ﻿@model ReadSubCourseViewModel
+
 @{
-    ViewData["Title"] = "Alt Kurs Detayları";
+    ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_ManagementLayout.cshtml";
 }
 
 <div class="card mb-4">
     <div class="card-header d-flex align-items-center">
         <i class="fas fa-table me-1 me-2"></i>
-        <h3>Alt Kurs Detayları</h3>
+        <h3>@ViewData["TableTitle"]</h3>
     </div>
+
     <div class="card-body">
         <table class="table table-hover table-bordered">
+
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Kod</th>
-                    <th>Haftalık Ders Saati</th>
-                    <th>Pozisyon</th>
-                    <th>Ana Ders</th>
-                    <th>Oluşturma Tarihi</th>
-                    <th>Oluşturanın Bilgisayar Adı</th>
-                    <th>Oluşturanın IP Adresi</th>
-                    <th>Güncelleme Tarihi</th>
-                    <th>Güncelleyenin Bilgisayar Adı</th>
-                    <th>Güncelleyenin IP Adresi</th>
+                    @foreach (var columnTitle in ViewData["CustomColumnTitles"] as List<string>)
+                    {
+                        <th>@columnTitle</th>
+                    }
+                    @foreach (var commonColumnTitle in ViewData["CommonColumnTitles"] as List<string>)
+                    {
+                        <th>@commonColumnTitle</th>
+                    }
                 </tr>
             </thead>
+
             <tbody>
                 <tr>
-                    <td>@Model.Id</td>
-                    <td>@Model.Code</td>
-                    <td>@Model.WeeklyHour</td>
-                    <td>@Model.Position</td>
-                    <td>@Model.MainCourse.Name</td>
-                    <td>@Model.CreatedDate</td>
-                    <td>@Model.CreatedComputerName</td>
-                    <td>@Model.CreatedIpAddress</td>
-                    <td>@Model.UpdatedDate</td>
-                    <td>@Model.UpdatedComputerName</td>
-                    <td>@Model.UpdatedIpAddress</td>
+                    @foreach (var customProperty in ViewData["CustomProperties"] as List<string>)
+                    {
+                        <td>@Model.GetType().GetProperty(customProperty).GetValue(Model)</td>
+                    }
+
+                    @foreach (var commonProperty in ViewData["CommonProperties"] as List<string>)
+                    {
+                        <td>@Model.GetType().GetProperty(commonProperty).GetValue(Model)</td>
+                    }
                 </tr>
+
             </tbody>
         </table>
     </div>

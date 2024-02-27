@@ -25,10 +25,19 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
 
         public override IActionResult Get()
         {
+            // ViewData dictionary'sine özel verileri atama
+            ViewData["TableTitle"] = "Dönem Listesi";
+            ViewData["CustomColumnTitles"] = new List<string> { "Dönem Adı", "Başlangıç Tarihi", "Bitiş Tarihi" };
+            ViewData["CustomProperties"] = new List<string> { "Name", "StartDateShort", "EndDateShort" };
+            ViewData["ControllerName"] = "Semesters";
             return base.Get();
         }
         public override async Task<IActionResult> Details(string id)
         {
+            //ViewData dictionary'sine ortak verileri atama
+            ViewData["TableTitle"] = "Dönem Detayı";
+            ViewData["CustomColumnTitles"] = new List<string> { "Dönem Adı", "Başlangıç Tarihi", "Bitiş Tarihi" };
+            ViewData["CustomProperties"] = new List<string> { "Name", "StartDateShort", "EndDateShort" };
             return await base.Details(id);
         }
 

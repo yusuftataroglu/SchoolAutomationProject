@@ -4,7 +4,7 @@ using SchoolAutomationProject.Domain.Entities.Enums;
 
 namespace SchoolAutomationProject.Application.ViewModels.AchievementViewModels
 {
-    public class ReadAchievementViewModel:ReadViewModel
+    public class ReadAchievementViewModel : ReadViewModel
     {
         public AchievementType Type { get; set; } // Belge türü (Takdir, Teşekkür)
         public string? Description { get; set; } // Belge açıklaması
@@ -14,5 +14,9 @@ namespace SchoolAutomationProject.Application.ViewModels.AchievementViewModels
 
         //Achievement - Semester ilişkisi
         public Semester Semester { get; set; }
+
+        public string StudentFullName => $"{Student.FirstName} {Student.LastName}";
+        public string SemesterName => Semester.Name;
+
     }
 }

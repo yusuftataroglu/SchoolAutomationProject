@@ -12,23 +12,36 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
     [Authorize(Roles = "Admin")]
     public class AchievementsController : GenericController<Achievement, ReadAchievementViewModel, WriteAchievementViewModel>
     {
+        private readonly IAchievementReadRepository _achievementReadRepository;
+        private readonly IMapper _mapper;
 
         public AchievementsController(
-            IAchievementReadRepository readRepository,
-            IAchievementWriteRepository writeRepository,
+            IAchievementReadRepository achievementReadRepository,
+            IAchievementWriteRepository achievementWriteRepository,
             IFillEntityRelationshipsService fillEntityRelationshipsRepository,
             IMapper mapper)
-            : base(readRepository, writeRepository, mapper, fillEntityRelationshipsRepository)
+            : base(achievementReadRepository, achievementWriteRepository, mapper, fillEntityRelationshipsRepository)
 
         {
+            _achievementReadRepository = achievementReadRepository;
+            _mapper = mapper;
         }
 
         public override IActionResult Get()
         {
+            // ViewData dictionary'sine özel verileri atama
+            ViewData["TableTitle"] = "Belge Listesi";
+            ViewData["CustomColumnTitles"] = new List<string> { "Türü", "Açıklama", "Öğrenci", "Dönem" };
+            ViewData["CustomProperties"] = new List<string> { "Type", "Description","StudentFullName", "SemesterName" };
+            ViewData["ControllerName"] = "Achievements";
             return base.Get();
         }
         public override async Task<IActionResult> Details(string id)
         {
+            //ViewData dictionary'sine ortak verileri atama
+            ViewData["TableTitle"] = "Belge Detayı";
+            ViewData["CustomColumnTitles"] = new List<string> { "Türü", "Açıklama", "Öğrenci", "Dönem" };
+            ViewData["CustomProperties"] = new List<string> { "Type", "Description", "StudentFullName", "SemesterName" };
             return await base.Details(id);
         }
 

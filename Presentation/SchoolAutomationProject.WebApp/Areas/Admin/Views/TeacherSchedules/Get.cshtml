@@ -1,43 +1,50 @@
 ﻿@model List<ReadTeacherScheduleViewModel>
+
 @{
-    ViewData["Title"] = "Öğretmen Programı";
+    ViewData["Title"] = "Get";
     Layout = "~/Views/Shared/_ManagementLayout.cshtml";
 }
 
 <div class="card mb-4">
     <div class="card-header d-flex align-items-center">
         <i class="fas fa-table me-1 me-2"></i>
-        <h3>Öğretmen Programı</h3>
+        <h3>@ViewData["TableTitle"]</h3>
     </div>
+
     <div class="card-body">
         <table class="table table-hover table-bordered">
+
             <thead>
                 <tr>
-                    <th>Tarih</th>
-                    <th>Gün</th>
-                    <th>Zaman Aralığı</th>
-                    <th>Sınıf</th>
-                    <th>Öğretmen</th>
-                    <th><a class="btn btn-success" asp-area="Admin" asp-controller="TeacherSchedules" asp-action="Add">+</a></th>
+                    @foreach (var columnTitle in ViewData["CustomColumnTitles"] as List<string>)
+                    {
+                        <th>@columnTitle</th>
+                    }
+                    <!-- Ekleme butonu -->
+                    <th>
+                        <a class="btn btn-success" asp-area="Admin" asp-controller="@ViewData["ControllerName"]" asp-action="Add">+</a>
+                    </th>
                 </tr>
             </thead>
+
             <tbody>
-                @foreach (var schedule in Model)
+                @foreach (var item in Model)
                 {
                     <tr>
-                        <td>@schedule.DateTime.ToShortDateString()</td>
-                        <td>@schedule.Day</td>
-                        <td>@schedule.TimeSlot</td>
-                        <td>@schedule.Classroom</td>
-                        <td>@schedule.Teacher.FirstName @schedule.Teacher.LastName</td>
+                        @foreach (var customProperty in ViewData["CustomProperties"] as List<string>)
+                        {
+                            <td>@item.GetType().GetProperty(customProperty).GetValue(item)</td>
+                        }
+                        <!-- Detaylar, Güncelle, Sil butonları -->
                         <td class="d-flex">
-                            <a class="btn btn-warning" asp-area="Admin" asp-controller="TeacherSchedules" asp-action="Details" asp-route-id="@schedule.Id">Detaylar</a>
-                            <a class="btn btn-primary" asp-area="Admin" asp-controller="TeacherSchedules" asp-action="Update" asp-route-id="@schedule.Id">Güncelle</a>
-                            <a class="btn btn-danger" asp-area="Admin" asp-controller="TeacherSchedules" asp-action="Delete" asp-route-id="@schedule.Id">Sil</a>
+                            <a class="btn btn-warning" asp-area="Admin" asp-controller="@ViewData["ControllerName"]" asp-action="Details" asp-route-id="@item.Id">Detaylar</a>
+                            <a class="btn btn-primary" asp-area="Admin" asp-controller="@ViewData["ControllerName"]" asp-action="Update" asp-route-id="@item.Id">Güncelle</a>
+                            <a class="btn btn-danger" asp-area="Admin" asp-controller="@ViewData["ControllerName"]" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
                         </td>
                     </tr>
                 }
             </tbody>
+
         </table>
     </div>
 </div>

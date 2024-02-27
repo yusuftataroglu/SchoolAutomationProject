@@ -11,7 +11,7 @@ namespace SchoolAutomationProject.Application.ViewModels.ClassroomViewModels
         // Derslik - Ders ilişkisi
         public ICollection<ClassroomMainCourse> ClassroomMainCourses { get; set; }
         // Sınıf - Öğrenci ilişkisi
-        public ICollection<Student> Students { get; set; }
+        public ICollection<Student> Students { get; set; }  
 
         //Classroom-Teacher ilişkisi
         public ICollection<ClassroomTeacher> ClassroomTeachers { get; set; }
