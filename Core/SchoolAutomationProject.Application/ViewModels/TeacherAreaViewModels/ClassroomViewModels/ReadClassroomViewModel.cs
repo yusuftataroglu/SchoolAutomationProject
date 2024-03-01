@@ -6,10 +6,10 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.C
 {
     public class ReadClassroomViewModel : IReadViewModel
     {
+        public Guid Id { get; set; }
         public string Name { get; set; } // Sınıf
         public byte Capacity { get; set; } // Kapasite
-        // Derslik - Ders ilişkisi
-        public ICollection<ClassroomMainCourse> ClassroomMainCourses { get; set; }
+
         // Sınıf - Öğrenci ilişkisi
         public ICollection<Student> Students { get; set; }
 

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.CommonRepositories;
@@ -8,6 +9,8 @@ using SchoolAutomationProject.WebApp.Controllers;
 
 namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
 {
+    [Area("Teacher")]
+    [Authorize(Roles = "Teacher")]
     public class AttendancesController : GenericController<Attendance, ReadAttendanceViewModel, WriteAttendanceViewModel>
     {
         public AttendancesController(

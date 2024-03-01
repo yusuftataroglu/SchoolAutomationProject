@@ -16,9 +16,9 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         public AchievementsController(
             IAchievementReadRepository achievementReadRepository,
             IAchievementWriteRepository achievementWriteRepository,
-            IFillEntityRelationshipsService fillEntityRelationshipsRepository,
+            IFillEntityRelationshipsService fillEntityRelationshipsService,
             IMapper mapper)
-            : base(achievementReadRepository, achievementWriteRepository, mapper, fillEntityRelationshipsRepository)
+            : base(achievementReadRepository, achievementWriteRepository, mapper, fillEntityRelationshipsService)
 
         {
         }

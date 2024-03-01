@@ -1,0 +1,60 @@
+﻿@model List<ReadClassroomViewModel>
+@inject ITeacherReadRepository _teacherReadRepository;
+
+@{
+    ViewData["Title"] = "Get";
+    var userId = ViewBag.UserId as string;
+}
+
+<div class="card mb-4">
+    <div class="card-header d-flex align-items-center">
+        <i class="fas fa-table me-1 me-2"></i>
+        <h3>@ViewData["TableTitle"]</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover table-bordered">
+
+            <thead>
+                <tr>
+                    @foreach (var columnTitle in ViewData["CustomColumnTitles"] as List<string>)
+                    {
+                        <th>@columnTitle</th>
+                    }
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        @foreach (var customProperty in ViewData["CustomProperties"] as List<string>)
+                        {
+                            <td>
+                                @if (customProperty == "Students")
+                                {
+                                    foreach (var student in item.Students)
+                                    {
+                                        <a asp-area="Teacher" asp-controller="Students" asp-action="Get" asp-route-id="@student.Id"><badge class="badge bg-success">@student.FirstName @student.LastName</badge></a>
+                                    }
+                                }
+                                else if (customProperty == "ClassroomTeachers")
+                                {
+                                    foreach (var classroomTeacher in item.ClassroomTeachers)
+                                    {
+                                        <badge class="badge bg-danger">@classroomTeacher.Teacher.FirstName @classroomTeacher.Teacher.LastName</badge>
+
+                                    }
+                                }
+                                else
+                                {
+                                    <span>@item.GetType().GetProperty(customProperty).GetValue(item)</span>
+                                }
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>

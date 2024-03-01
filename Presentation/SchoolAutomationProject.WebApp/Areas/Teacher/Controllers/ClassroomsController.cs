@@ -1,66 +1,47 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
-using SchoolAutomationProject.Application.Repositories.CommonRepositories;
+using SchoolAutomationProject.Application.Repositories.ClassroomRepositories;
 using SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.ClassroomViewModels;
-using SchoolAutomationProject.Domain.Entities.CustomTables;
-using SchoolAutomationProject.WebApp.Controllers;
+using SchoolAutomationProject.Domain.Entities.IdentityTables;
 
 namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
 {
-    public class ClassroomsController : GenericController<Classroom, ReadClassroomViewModel, WriteClassroomViewModel>
+    [Area("Teacher")]
+    [Authorize(Roles = "Teacher")]
+    public class ClassroomsController : Controller
     {
+        private readonly IMapper _mapper;
+        private readonly UserManager<AppUser> _userManager;
+        private readonly IClassroomReadRepository _classroomReadRepository;
+
         public ClassroomsController(
-            IReadRepository<Classroom> readRepository,
-            IWriteRepository<Classroom> writeRepository,
             IMapper mapper,
-            IFillEntityRelationshipsService fillEntityRelationshipsService)
-            : base(readRepository, writeRepository, mapper, fillEntityRelationshipsService)
+            UserManager<AppUser> userManager,
+            IClassroomReadRepository classroomReadRepository)
         {
+            _mapper = mapper;
+            _userManager = userManager;
+            _classroomReadRepository = classroomReadRepository;
         }
 
-        public override IActionResult Get()
+        public async Task<IActionResult> Get(string userName)
         {
+            AppUser user = await _userManager.FindByNameAsync(userName);
+            string userId = user.Id;
+
             // ViewData dictionary'sine özel verileri atama
-            ViewData["TableTitle"] = "Belge Listesi";
-            ViewData["CustomColumnTitles"] = new List<string> { "Türü", "Açıklama", "Öğrenci", "Dönem" };
-            ViewData["CustomProperties"] = new List<string> { "Type", "Description", "StudentFullName", "SemesterName" };
-            ViewData["ControllerName"] = "Achievements";
-            return base.Get();
-        }
-        public override async Task<IActionResult> Details(string id)
-        {
-            //ViewData dictionary'sine ortak verileri atama
-            ViewData["TableTitle"] = "Belge Detayı";
-            ViewData["CustomColumnTitles"] = new List<string> { "Türü", "Açıklama", "Öğrenci", "Dönem" };
-            ViewData["CustomProperties"] = new List<string> { "Type", "Description", "StudentFullName", "SemesterName" };
-            return await base.Details(id);
-        }
+            ViewData["TableTitle"] = "Sınıf Listesi";
+            ViewData["CustomColumnTitles"] = new List<string> { "Sınıf", "Kapasite", "Öğrenciler", "Öğretmenler" };
+            ViewData["CustomProperties"] = new List<string> { "Name", "Capacity", "Students", "ClassroomTeachers" };
+            ViewData["ControllerName"] = "Classrooms";
 
-        public override IActionResult Add()
-        {
-            return base.Add();
-        }
-
-        public override async Task<IActionResult> Add(WriteClassroomViewModel modelVM)
-        {
-            return await base.Add(modelVM);
-        }
-
-        public override async Task<IActionResult> Update(string id)
-        {
-            return await base.Update(id);
-        }
-
-
-        public override async Task<IActionResult> Update(WriteClassroomViewModel modelVM)
-        {
-            return await base.Update(modelVM);
-        }
-
-        public override async Task<IActionResult> Delete(string id)
-        {
-            return await base.Delete(id);
+            var classroomList = _classroomReadRepository.GetAll()
+    .Where(c => c.ClassroomTeachers.Any(ct => ct.Teacher.UserId == userId))
+    .ToList();
+            List<ReadClassroomViewModel> readViewModelList = _mapper.Map<List<ReadClassroomViewModel>>(classroomList);
+            return View(readViewModelList);
         }
     }
 }

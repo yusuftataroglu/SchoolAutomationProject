@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.ClassroomViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 
 namespace SchoolAutomationProject.Infrastructure.Helpers.Profiles
@@ -8,10 +7,14 @@ namespace SchoolAutomationProject.Infrastructure.Helpers.Profiles
     {
         public ClassroomProfile()
         {
-            CreateMap<Classroom, ReadClassroomViewModel>();
-            CreateMap<ReadClassroomViewModel, Classroom>();
-            CreateMap<Classroom, WriteClassroomViewModel>();
-            CreateMap<WriteClassroomViewModel, Classroom>();
+            CreateMap<Classroom, Application.ViewModels.AdminAreaViewModels.ClassroomViewModels.ReadClassroomViewModel>();
+            CreateMap<Application.ViewModels.AdminAreaViewModels.ClassroomViewModels.ReadClassroomViewModel, Classroom>();
+            CreateMap<Classroom, Application.ViewModels.AdminAreaViewModels.ClassroomViewModels.WriteClassroomViewModel>();
+            CreateMap<Application.ViewModels.AdminAreaViewModels.ClassroomViewModels.WriteClassroomViewModel, Classroom>();
+
+
+            CreateMap<Classroom, Application.ViewModels.TeacherAreaViewModels.ClassroomViewModels.ReadClassroomViewModel>();
+            CreateMap<Application.ViewModels.TeacherAreaViewModels.ClassroomViewModels.ReadClassroomViewModel, Classroom>();
 
         }
 

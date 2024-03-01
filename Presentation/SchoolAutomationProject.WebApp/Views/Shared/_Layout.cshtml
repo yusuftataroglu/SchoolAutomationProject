@@ -52,7 +52,22 @@
                                 <ul class="dropdown-menu dropdown-menu-dark">
                                     @if (User.IsInRole("Admin"))
                                     {
-                                        <li><a asp-area="Admin" asp-action="Index" asp-controller="Home" class="dropdown-item">Administrator</a></li>
+                                        <li><a asp-area="Admin" asp-action="Index" asp-controller="Home" class="dropdown-item">Yönetim Paneli</a></li>
+                                    }
+                                    else if(User.IsInRole("Teacher"))
+                                    {
+                                        <li><a asp-area="Teacher" asp-action="Get" asp-controller="Classrooms" asp-route-userName="@User.Identity.Name" class="dropdown-item">Öğretmen Paneli</a></li>
+
+                                    }
+                                    else if (User.IsInRole("Student"))
+                                    {
+                                        <li><a asp-area="Student" asp-action="Get" asp-controller="Classrooms" class="dropdown-item">Öğrenci Paneli</a></li>
+
+                                    }
+                                    else if (User.IsInRole("Teacher"))
+                                    {
+                                        <li><a asp-area="Parent" asp-action="Get" asp-controller="Classrooms" class="dropdown-item">Veli Paneli</a></li>
+
                                     }
                                     @* <li><a asp-action="Index" asp-controller="Member" class="dropdown-item">Profile</a></li>
                                     <li><a asp-action="Signout" asp-controller="Account" class="dropdown-item">SignOut</a></li> *@

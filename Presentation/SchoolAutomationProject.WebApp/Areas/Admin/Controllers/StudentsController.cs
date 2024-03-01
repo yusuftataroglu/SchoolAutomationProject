@@ -17,9 +17,9 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         public StudentsController(
             IStudentReadRepository readRepository,
             IStudentWriteRepository writeRepository,
-            IFillEntityRelationshipsService fillEntityRelationshipsRepository,
+            IFillEntityRelationshipsService fillEntityRelationshipsService,
             IMapper mapper)
-            : base(readRepository, writeRepository, mapper, fillEntityRelationshipsRepository)
+            : base(readRepository, writeRepository, mapper, fillEntityRelationshipsService)
 
         {
         }
