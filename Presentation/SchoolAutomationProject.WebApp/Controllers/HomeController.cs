@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SchoolAutomationProject.Application.Helpers.TokenHelpers;
-using SchoolAutomationProject.Application.ViewModels.AppUserViewModels;
+using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.AppUserViewModels;
 using SchoolAutomationProject.Domain.Entities.IdentityTables;
 using SchoolAutomationProject.WebApp.Models;
 using System.Diagnostics;

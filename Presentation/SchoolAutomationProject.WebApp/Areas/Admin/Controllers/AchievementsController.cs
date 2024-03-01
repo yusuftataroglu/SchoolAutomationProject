@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.AchievementRepositories;
-using SchoolAutomationProject.Application.ViewModels.AchievementViewModels;
+using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.AchievementViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
+using SchoolAutomationProject.WebApp.Controllers;
 
 namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
 {
@@ -12,9 +13,6 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
     [Authorize(Roles = "Admin")]
     public class AchievementsController : GenericController<Achievement, ReadAchievementViewModel, WriteAchievementViewModel>
     {
-        private readonly IAchievementReadRepository _achievementReadRepository;
-        private readonly IMapper _mapper;
-
         public AchievementsController(
             IAchievementReadRepository achievementReadRepository,
             IAchievementWriteRepository achievementWriteRepository,
@@ -23,8 +21,6 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
             : base(achievementReadRepository, achievementWriteRepository, mapper, fillEntityRelationshipsRepository)
 
         {
-            _achievementReadRepository = achievementReadRepository;
-            _mapper = mapper;
         }
 
         public override IActionResult Get()

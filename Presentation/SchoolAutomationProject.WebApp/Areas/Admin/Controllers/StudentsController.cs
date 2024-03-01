@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.StudentRepositories;
-using SchoolAutomationProject.Application.ViewModels.StudentViewModels;
+using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.StudentViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
+using SchoolAutomationProject.WebApp.Controllers;
 
 namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
 {

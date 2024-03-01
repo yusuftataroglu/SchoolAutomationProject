@@ -1,4 +1,4 @@
-﻿using SchoolAutomationProject.Application.ViewModels.SemesterViewModels;
+﻿using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.SemesterViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 
 namespace SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers

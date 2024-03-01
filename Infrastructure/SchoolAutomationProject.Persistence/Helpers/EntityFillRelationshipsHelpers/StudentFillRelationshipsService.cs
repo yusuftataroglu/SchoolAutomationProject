@@ -3,7 +3,7 @@ using SchoolAutomationProject.Application.Repositories.AchievementRepositories;
 using SchoolAutomationProject.Application.Repositories.AttendanceRepositories;
 using SchoolAutomationProject.Application.Repositories.GradeRepositories;
 using SchoolAutomationProject.Application.Repositories.ParentRepositories;
-using SchoolAutomationProject.Application.ViewModels.StudentViewModels;
+using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.StudentViewModels;
 using SchoolAutomationProject.Domain.Entities.CrossTables;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 using System.Formats.Tar;

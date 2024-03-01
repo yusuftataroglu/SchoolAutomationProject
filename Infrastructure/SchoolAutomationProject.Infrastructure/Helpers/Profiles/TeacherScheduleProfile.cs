@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using SchoolAutomationProject.Application.ViewModels.TeacherScheduleViewModels;
+using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.TeacherScheduleViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 
 namespace SchoolAutomationProject.Infrastructure.Helpers.Profiles

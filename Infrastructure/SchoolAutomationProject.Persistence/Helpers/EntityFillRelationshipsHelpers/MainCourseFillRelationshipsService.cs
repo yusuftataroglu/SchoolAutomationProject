@@ -2,7 +2,7 @@
 using SchoolAutomationProject.Application.Repositories.ClassroomRepositories;
 using SchoolAutomationProject.Application.Repositories.SubCourseRepositories;
 using SchoolAutomationProject.Application.Repositories.TeacherRepositories;
-using SchoolAutomationProject.Application.ViewModels.MainCourseViewModels;
+using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.MainCourseViewModels;
 using SchoolAutomationProject.Domain.Entities.CrossTables;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 

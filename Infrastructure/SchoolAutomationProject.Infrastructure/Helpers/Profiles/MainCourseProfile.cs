@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using SchoolAutomationProject.Application.ViewModels.MainCourseViewModels;
+using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.MainCourseViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 using System;
 using System.Collections.Generic;

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using SchoolAutomationProject.Application.ViewModels.DiscontinuedStudentViewModels;
+using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.DiscontinuedStudentViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 
 namespace SchoolAutomationProject.Infrastructure.Helpers.Profiles

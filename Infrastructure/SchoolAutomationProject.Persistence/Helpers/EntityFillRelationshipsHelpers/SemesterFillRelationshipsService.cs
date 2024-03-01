@@ -1,6 +1,6 @@
 ﻿using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.AchievementRepositories;
-using SchoolAutomationProject.Application.ViewModels.SemesterViewModels;
+using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.SemesterViewModels;
 using SchoolAutomationProject.Domain.Entities.CrossTables;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 

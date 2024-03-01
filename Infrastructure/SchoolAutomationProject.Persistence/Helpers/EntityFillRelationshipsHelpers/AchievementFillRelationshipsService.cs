@@ -1,7 +1,7 @@
 ﻿using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.SemesterRepositories;
 using SchoolAutomationProject.Application.Repositories.StudentRepositories;
-using SchoolAutomationProject.Application.ViewModels.AchievementViewModels;
+using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.AchievementViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 
 namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHelpers
