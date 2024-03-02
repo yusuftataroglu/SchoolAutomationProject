@@ -86,7 +86,7 @@ namespace SchoolAutomationProject.WebApp.Controllers
             if (entity != null)
             {
                 TWriteViewModel modelVM = _mapper.Map<TWriteViewModel>(entity);
-                await _fillEntityRelationshipsService.FillEntityRelationships(entity, modelVM, $"{nameof(Update)}Get");
+                //await _fillEntityRelationshipsService.FillEntityRelationships(entity, modelVM, $"{nameof(Update)}Get");
                 return View(modelVM);
             }
             else

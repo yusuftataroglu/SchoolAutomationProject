@@ -11,6 +11,9 @@ using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Student
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.SubCourseViewModels;
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.TeacherScheduleViewModels;
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.TeacherViewModels;
+
+using SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.AttendanceViewModels;
+
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 
 namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHelpers
@@ -66,7 +69,14 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
             }
             else if (typeof(T) == typeof(Attendance))
             {
-                await _attendanceFillRelationshipsService.FillAttendanceRelationships(entity as Attendance, modelVM as WriteAttendanceViewModel, requestType);
+                if (typeof(TWriteViewModel).FullName== "SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.AttendanceViewModels.WriteAttendanceViewModel")
+                {
+                    await _attendanceFillRelationshipsService.FillAttendanceRelationshipsForAdmin(entity as Attendance, modelVM as Application.ViewModels.AdminAreaViewModels.AttendanceViewModels.WriteAttendanceViewModel, requestType);
+                }
+                else
+                {
+                    await _attendanceFillRelationshipsService.FillAttendanceRelationshipsForTeacher(entity as Attendance, modelVM as Application.ViewModels.TeacherAreaViewModels.AttendanceViewModels.WriteAttendanceViewModel, requestType);
+                }
             }
             else if (typeof(T) == typeof(Classroom))
             {

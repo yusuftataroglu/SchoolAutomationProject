@@ -1,7 +1,4 @@
-﻿using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.ClassroomViewModels;
-using SchoolAutomationProject.Domain.Entities.CustomTables;
-
-namespace SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers
+﻿namespace SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers
 {
     public interface IFillEntityRelationshipsService
     {

@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.GradeViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 
 namespace SchoolAutomationProject.Infrastructure.Helpers.Profiles
@@ -8,10 +7,15 @@ namespace SchoolAutomationProject.Infrastructure.Helpers.Profiles
     {
         public GradeProfile()
         {
-            CreateMap<Grade, ReadGradeViewModel>();
-            CreateMap<ReadGradeViewModel, Grade>();
-            CreateMap<Grade, WriteGradeViewModel>();
-            CreateMap<WriteGradeViewModel, Grade>();
+            CreateMap<Grade, Application.ViewModels.AdminAreaViewModels.GradeViewModels.ReadGradeViewModel>();
+            CreateMap<Application.ViewModels.AdminAreaViewModels.GradeViewModels.ReadGradeViewModel, Grade>();
+            CreateMap<Grade, Application.ViewModels.AdminAreaViewModels.GradeViewModels.WriteGradeViewModel>();
+            CreateMap<Application.ViewModels.AdminAreaViewModels.GradeViewModels.WriteGradeViewModel, Grade>();
+
+            CreateMap<Grade, Application.ViewModels.TeacherAreaViewModels.GradeViewModels.ReadGradeViewModel>();
+            CreateMap<Application.ViewModels.TeacherAreaViewModels.GradeViewModels.ReadGradeViewModel, Grade>();
+            CreateMap<Grade, Application.ViewModels.TeacherAreaViewModels.GradeViewModels.WriteGradeViewModel>();
+            CreateMap<Application.ViewModels.TeacherAreaViewModels.GradeViewModels.WriteGradeViewModel, Grade>();
         }
     }
 }

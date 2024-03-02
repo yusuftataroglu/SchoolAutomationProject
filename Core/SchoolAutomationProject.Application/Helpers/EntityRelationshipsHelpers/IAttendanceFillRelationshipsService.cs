@@ -1,10 +1,10 @@
-﻿using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.AttendanceViewModels;
-using SchoolAutomationProject.Domain.Entities.CustomTables;
+﻿using SchoolAutomationProject.Domain.Entities.CustomTables;
 
 namespace SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers
 {
     public interface IAttendanceFillRelationshipsService
     {
-        public Task FillAttendanceRelationships(Attendance attendance, WriteAttendanceViewModel modelVM, string requestType);
+        Task FillAttendanceRelationshipsForAdmin(Attendance attendance, ViewModels.AdminAreaViewModels.AttendanceViewModels.WriteAttendanceViewModel modelVM, string requestType);
+        Task FillAttendanceRelationshipsForTeacher(Attendance attendance, ViewModels.TeacherAreaViewModels.AttendanceViewModels.WriteAttendanceViewModel modelVM, string requestType);
     }
 }

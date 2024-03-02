@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.AttendanceViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 
 namespace SchoolAutomationProject.Infrastructure.Helpers.Profiles
@@ -8,10 +7,15 @@ namespace SchoolAutomationProject.Infrastructure.Helpers.Profiles
     {
         public AttendanceProfile()
         {
-            CreateMap<Attendance, ReadAttendanceViewModel>();
-            CreateMap<ReadAttendanceViewModel, Attendance>();
-            CreateMap<Attendance, WriteAttendanceViewModel>();
-            CreateMap<WriteAttendanceViewModel, Attendance>();
+            CreateMap<Attendance, Application.ViewModels.AdminAreaViewModels.AttendanceViewModels.ReadAttendanceViewModel>();
+            CreateMap<Application.ViewModels.AdminAreaViewModels.AttendanceViewModels.ReadAttendanceViewModel, Attendance>();
+            CreateMap<Attendance, Application.ViewModels.AdminAreaViewModels.AttendanceViewModels.WriteAttendanceViewModel>();
+            CreateMap<Application.ViewModels.AdminAreaViewModels.AttendanceViewModels.WriteAttendanceViewModel, Attendance>();
+
+            CreateMap<Attendance, Application.ViewModels.TeacherAreaViewModels.AttendanceViewModels.ReadAttendanceViewModel>();
+            CreateMap<Application.ViewModels.TeacherAreaViewModels.AttendanceViewModels.ReadAttendanceViewModel, Attendance>();
+            CreateMap<Attendance, Application.ViewModels.TeacherAreaViewModels.AttendanceViewModels.WriteAttendanceViewModel>();
+            CreateMap<Application.ViewModels.TeacherAreaViewModels.AttendanceViewModels.WriteAttendanceViewModel, Attendance>();
         }
     }
 }

@@ -120,6 +120,11 @@ namespace SchoolAutomationProject.WebApp.Controllers
             }
         }
 
+        public async Task<IActionResult> SignOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index");
+        }
 
         public IActionResult DeniedPage()
         {

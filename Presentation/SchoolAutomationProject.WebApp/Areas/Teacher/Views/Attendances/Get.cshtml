@@ -1,0 +1,49 @@
+﻿@model List<ReadAttendanceViewModel>
+
+@{
+    ViewData["Title"] = "Get";
+}
+
+<div class="card mb-4">
+    <div class="card-header d-flex align-items-center">
+        <i class="fas fa-table me-1 me-2"></i>
+        <h3>@ViewData["TableTitle"]</h3>
+    </div>
+
+    <div class="card-body">
+        <table class="table table-hover table-bordered">
+
+            <thead>
+                <tr>
+                    @foreach (var columnTitle in ViewData["CustomColumnTitles"] as List<string>)
+                    {
+                        <th>@columnTitle</th>
+                    }
+                    <!-- Ekleme butonu -->
+                    <th>
+                        <a class="btn btn-success" asp-area="Teacher" asp-controller="@ViewData["ControllerName"]" asp-action="Add">+</a>
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model.OrderByDescending(x => x.AttendanceDate))
+                {
+                    <tr>
+                        @foreach (var customProperty in ViewData["CustomProperties"] as List<string>)
+                        {
+
+                            <td>@item.GetType().GetProperty(customProperty).GetValue(item)</td>
+                        }
+                        <!-- Detaylar ve Sil butonları -->
+                        <td class="d-flex">
+                            <a class="btn btn-primary" asp-area="Teacher" asp-controller="@ViewData["ControllerName"]" asp-action="Update" asp-route-id="@item.Id">Güncelle</a>
+                            <a class="btn btn-danger" asp-area="Teacher" asp-controller="@ViewData["ControllerName"]" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>
