@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.CommonRepositories;
-using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.AchievementViewModels;
+using SchoolAutomationProject.Application.Repositories.GradeRepositories;
 using SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.GradeViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 using SchoolAutomationProject.WebApp.Controllers;
@@ -15,8 +15,8 @@ namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
     public class GradesController : GenericController<Grade, ReadGradeViewModel, WriteGradeViewModel>
     {
         public GradesController(
-            IReadRepository<Grade> readRepository,
-            IWriteRepository<Grade> writeRepository,
+            IGradeReadRepository readRepository,
+            IGradeWriteRepository writeRepository,
             IMapper mapper,
             IFillEntityRelationshipsService fillEntityRelationshipsService)
             : base(readRepository, writeRepository, mapper, fillEntityRelationshipsService)
@@ -26,19 +26,29 @@ namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
         public override IActionResult Get()
         {
             // ViewData dictionary'sine özel verileri atama
-            ViewData["TableTitle"] = "Belge Listesi";
-            ViewData["CustomColumnTitles"] = new List<string> { "Türü", "Açıklama", "Öğrenci", "Dönem" };
-            ViewData["CustomProperties"] = new List<string> { "Type", "Description", "StudentFullName", "SemesterName" };
-            ViewData["ControllerName"] = "Achievements";
+            ViewData["TableTitle"] = "Not Listesi";
+            ViewData["CustomColumnTitles"] = new List<string> { "Öğrenci", "Alt Ders", "Sınav Numarası", "Not" };
+            ViewData["CustomProperties"] = new List<string> { "StudentFullName", "SubCourseCode", "ExamNumber", "Score" };
+            ViewData["ControllerName"] = "Grades";
+
             return base.Get();
         }
         public override async Task<IActionResult> Details(string id)
         {
             //ViewData dictionary'sine ortak verileri atama
-            ViewData["TableTitle"] = "Belge Detayı";
-            ViewData["CustomColumnTitles"] = new List<string> { "Türü", "Açıklama", "Öğrenci", "Dönem" };
-            ViewData["CustomProperties"] = new List<string> { "Type", "Description", "StudentFullName", "SemesterName" };
+            ViewData["TableTitle"] = "Not Detayı";
+            ViewData["CustomColumnTitles"] = new List<string> { "Öğrenci", "Alt Ders", "Sınav Numarası", "Not" };
+            ViewData["CustomProperties"] = new List<string> { "StudentFullName", "SubCourseCode", "ExamNumber", "Score" };
             return await base.Details(id);
+        }
+
+        public async Task<IActionResult> AddWithStudentInfos(string id)
+        {
+            var gradeVM = new WriteGradeViewModel
+            {
+                StudentId=id
+            };
+            return View(gradeVM);
         }
 
         public override IActionResult Add()

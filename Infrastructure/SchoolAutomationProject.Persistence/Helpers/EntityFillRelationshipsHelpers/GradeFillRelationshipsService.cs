@@ -1,7 +1,6 @@
 ﻿using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.StudentRepositories;
 using SchoolAutomationProject.Application.Repositories.SubCourseRepositories;
-using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.GradeViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 
 namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHelpers
@@ -17,7 +16,29 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
             _subCourseReadRepository = subCourseReadRepository;
         }
 
-        public async Task FillGradeRelationships(Grade grade, WriteGradeViewModel modelVM, string requestType)
+        public async Task FillGradeRelationshipsForAdmin(Grade grade, Application.ViewModels.AdminAreaViewModels.GradeViewModels.WriteGradeViewModel modelVM, string requestType)
+        {
+            if (requestType == "Add" || requestType == "UpdatePost")
+            {
+                grade.Score = modelVM.Score;
+                grade.ExamNumber = modelVM.ExamNumber;
+
+                var student = await _studentReadRepository.GetByIdAsync(modelVM.StudentId);
+                if (student != null)
+                {
+                    grade.Student = student;
+                }
+
+                var subCourse = await _subCourseReadRepository.GetByIdAsync(modelVM.SubCourseId);
+                if (subCourse != null)
+                {
+                    grade.SubCourse = subCourse;
+                }
+
+            }
+        }
+
+        public async Task FillGradeRelationshipsForTeacher(Grade grade, Application.ViewModels.TeacherAreaViewModels.GradeViewModels.WriteGradeViewModel modelVM, string requestType)
         {
             if (requestType == "Add" || requestType == "UpdatePost")
             {

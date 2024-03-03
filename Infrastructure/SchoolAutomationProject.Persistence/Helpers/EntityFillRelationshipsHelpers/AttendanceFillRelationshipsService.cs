@@ -1,7 +1,6 @@
 ﻿using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.StudentRepositories;
 using SchoolAutomationProject.Application.Repositories.SubCourseRepositories;
-using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.AttendanceViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 
 namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHelpers
@@ -17,7 +16,7 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
             _subCourseReadRepository = subCourseReadRepository;
         }
 
-        public async Task FillAttendanceRelationshipsForAdmin(Attendance attendance, WriteAttendanceViewModel modelVM, string requestType)
+        public async Task FillAttendanceRelationshipsForAdmin(Attendance attendance, Application.ViewModels.AdminAreaViewModels.AttendanceViewModels.WriteAttendanceViewModel modelVM, string requestType)
         {
             if (requestType == "Add" || requestType == "UpdatePost")
             {

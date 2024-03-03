@@ -14,12 +14,6 @@ namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
     [Authorize(Roles = "Teacher")]
     public class StudentsController : Controller
     {
-        public StudentsController(
-           )
-            
-        {
-        }
-
         public IActionResult Get(string id)
         {
             return View();

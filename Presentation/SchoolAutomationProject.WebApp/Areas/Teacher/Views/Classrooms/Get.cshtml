@@ -4,7 +4,6 @@
 @{
     ViewData["Title"] = "Get";
 }
-
 <div class="card mb-4">
     <div class="card-header d-flex align-items-center">
         <i class="fas fa-table me-1 me-2"></i>
@@ -33,7 +32,7 @@
                                 {
                                     foreach (var student in item.Students)
                                     {
-                                        <a asp-area="Teacher" asp-controller="Students" asp-action="Get" asp-route-id="@student.Id"><badge class="badge bg-success">@student.FirstName @student.LastName</badge></a>
+                                        <a href="#"><badge onclick="OpenStudentPopup('@student.Id','@student.FirstName', '@student.LastName')" class="badge bg-success">@student.FirstName @student.LastName</badge></a>
                                     }
                                 }
                                 else if (customProperty == "ClassroomTeachers")

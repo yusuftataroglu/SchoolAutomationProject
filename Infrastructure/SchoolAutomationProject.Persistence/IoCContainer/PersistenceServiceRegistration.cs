@@ -42,6 +42,8 @@ namespace SchoolAutomationProject.Persistence.IoCContainer
             //Identity
             services.AddIdentity<AppUser, AppUserRole>().AddEntityFrameworkStores<SchoolAutomationProjectDbContext>().AddDefaultTokenProviders();
 
+            services.AddHttpContextAccessor();
+
             services.AddScoped<IAchievementReadRepository, AchievementReadRepository>();
             services.AddScoped<IAchievementWriteRepository, AchievementWriteRepository>();
             services.AddScoped<IAttendanceReadRepository, AttendanceReadRepository>();

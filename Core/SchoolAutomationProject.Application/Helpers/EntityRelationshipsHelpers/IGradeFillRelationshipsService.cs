@@ -1,10 +1,10 @@
-﻿using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.GradeViewModels;
-using SchoolAutomationProject.Domain.Entities.CustomTables;
+﻿using SchoolAutomationProject.Domain.Entities.CustomTables;
 
 namespace SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers
 {
     public interface IGradeFillRelationshipsService
     {
-        public Task FillGradeRelationships(Grade grade, WriteGradeViewModel modelVM, string requestType);
+        Task FillGradeRelationshipsForAdmin(Grade grade, ViewModels.AdminAreaViewModels.GradeViewModels.WriteGradeViewModel modelVM, string requestType);
+        Task FillGradeRelationshipsForTeacher(Grade grade, ViewModels.TeacherAreaViewModels.GradeViewModels.WriteGradeViewModel modelVM, string requestType);
     }
 }

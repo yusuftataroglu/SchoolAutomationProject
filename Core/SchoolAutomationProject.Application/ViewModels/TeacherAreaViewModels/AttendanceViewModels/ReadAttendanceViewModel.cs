@@ -8,6 +8,7 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.A
     public class ReadAttendanceViewModel : IReadViewModel
     {
         public Guid Id { get; set; }
+        public string CreatedUser { get; set; }
         public DateTime AttendanceDate { get; set; } // Devamsızlık tarihi
         public AttendanceStatus AttendanceStatus { get; set; }
 

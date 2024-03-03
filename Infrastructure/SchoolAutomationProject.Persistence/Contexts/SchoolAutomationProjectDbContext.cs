@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using SchoolAutomationProject.Domain.Entities.CommonTables;
@@ -58,7 +60,8 @@ namespace SchoolAutomationProject.Persistence.Contexts
                         item.Entity.UpdatedDate = DateTime.UtcNow;
                         item.Entity.UpdatedComputerName = Environment.MachineName;
                         item.Entity.UpdatedIpAddress = await IpAddressHelper.GetIpAddress();
-                        
+                        item.Entity.UpdatedUser = new HttpContextAccessor().HttpContext.User.Identity.Name; //todo değiştirilebilir.
+
                         if (item.Entity is Student)
                         {
                             var student = item.Entity as Student;
@@ -79,6 +82,7 @@ namespace SchoolAutomationProject.Persistence.Contexts
                         item.Entity.CreatedDate = DateTime.UtcNow;
                         item.Entity.CreatedComputerName = Environment.MachineName;
                         item.Entity.CreatedIpAddress = await IpAddressHelper.GetIpAddress();
+                        item.Entity.CreatedUser = new HttpContextAccessor().HttpContext.User.Identity.Name;
 
                         if (item.Entity is Student)
                         {

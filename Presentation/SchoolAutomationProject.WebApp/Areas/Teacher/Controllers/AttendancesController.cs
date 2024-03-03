@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.AttendanceRepositories;
 using SchoolAutomationProject.Application.Repositories.CommonRepositories;
+using SchoolAutomationProject.Application.Repositories.StudentRepositories;
 using SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.AttendanceViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 using SchoolAutomationProject.WebApp.Controllers;
@@ -15,10 +16,11 @@ namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
     public class AttendancesController : GenericController<Attendance, ReadAttendanceViewModel, WriteAttendanceViewModel>
     {
         public AttendancesController(
-            IAttendanceReadRepository readRepository, 
-            IAttendanceWriteRepository writeRepository, 
-            IMapper mapper, 
-            IFillEntityRelationshipsService fillEntityRelationshipsService) 
+            IAttendanceReadRepository readRepository,
+            IAttendanceWriteRepository writeRepository,
+            IMapper mapper,
+            IFillEntityRelationshipsService fillEntityRelationshipsService
+            )
             : base(readRepository, writeRepository, mapper, fillEntityRelationshipsService)
         {
         }
@@ -31,6 +33,17 @@ namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
             ViewData["CustomProperties"] = new List<string> { "StudentFullName", "AttendanceStatus", "AttendanceDateShort", "SubCourseCode" };
             ViewData["ControllerName"] = "Attendances";
             return base.Get();
+        }
+
+        public async Task<IActionResult> AddWithStudentInfos(string id)
+        {
+            var attendanceVM = new WriteAttendanceViewModel
+            {
+                StudentId = id,
+                AttendanceDate = DateTime.Today,
+                AttendanceStatus = Domain.Entities.Enums.AttendanceStatus.Mevcut,
+            };
+            return View(attendanceVM);
         }
 
         public override IActionResult Add()

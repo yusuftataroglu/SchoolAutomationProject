@@ -1,9 +1,7 @@
 ﻿using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.AchievementViewModels;
-using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.AttendanceViewModels;
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.ClassroomViewModels;
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.DiscontinuedStudentViewModels;
-using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.GradeViewModels;
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.MainCourseViewModels;
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.ParentViewModels;
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.SemesterViewModels;
@@ -11,8 +9,6 @@ using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Student
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.SubCourseViewModels;
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.TeacherScheduleViewModels;
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.TeacherViewModels;
-
-using SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.AttendanceViewModels;
 
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 
@@ -88,7 +84,14 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
             }
             else if (typeof(T) == typeof(Grade))
             {
-                await _gradeFillRelationshipsService.FillGradeRelationships(entity as Grade, modelVM as WriteGradeViewModel, requestType);
+                if (typeof(TWriteViewModel).FullName == "SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.GradeViewModels.WriteGradeViewModel")
+                {
+                    await _gradeFillRelationshipsService.FillGradeRelationshipsForAdmin(entity as Grade, modelVM as Application.ViewModels.AdminAreaViewModels.GradeViewModels.WriteGradeViewModel, requestType);
+                }
+                else
+                {
+                    await _gradeFillRelationshipsService.FillGradeRelationshipsForTeacher(entity as Grade, modelVM as Application.ViewModels.TeacherAreaViewModels.GradeViewModels.WriteGradeViewModel, requestType);
+                }
             }
             else if (typeof(T) == typeof(MainCourse))
             {
