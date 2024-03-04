@@ -4,14 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.StudentRepositories;
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.StudentViewModels;
-using SchoolAutomationProject.Domain.Entities.CustomTables;
 using SchoolAutomationProject.WebApp.Controllers;
 
 namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Authorize(Roles = "Admin")]
-    public class StudentsController : GenericController<Student, ReadStudentViewModel, WriteStudentViewModel>
+    public class StudentsController : GenericController<Domain.Entities.CustomTables.Student, ReadStudentViewModel, WriteStudentViewModel>
     {
 
         public StudentsController(

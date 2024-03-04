@@ -1,11 +1,14 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.CommonRepositories;
 using SchoolAutomationProject.Application.Repositories.GradeRepositories;
+using SchoolAutomationProject.Application.Repositories.TeacherRepositories;
 using SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.GradeViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
+using SchoolAutomationProject.Domain.Entities.IdentityTables;
 using SchoolAutomationProject.WebApp.Controllers;
 
 namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
@@ -14,13 +17,24 @@ namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
     [Authorize(Roles = "Teacher")]
     public class GradesController : GenericController<Grade, ReadGradeViewModel, WriteGradeViewModel>
     {
+        private readonly IGradeReadRepository _gradeReadRepository;
+        private readonly IMapper _mapper;
+        private readonly UserManager<AppUser> _userManager;
+        private readonly ITeacherReadRepository _teacherReadRepository;
+
         public GradesController(
-            IGradeReadRepository readRepository,
-            IGradeWriteRepository writeRepository,
+            IGradeReadRepository gradeReadRepository,
+            IGradeWriteRepository gradeWriteRepository,
             IMapper mapper,
-            IFillEntityRelationshipsService fillEntityRelationshipsService)
-            : base(readRepository, writeRepository, mapper, fillEntityRelationshipsService)
+            IFillEntityRelationshipsService fillEntityRelationshipsService,
+            UserManager<AppUser> userManager,
+            ITeacherReadRepository teacherReadRepository)
+            : base(gradeReadRepository, gradeWriteRepository, mapper, fillEntityRelationshipsService)
         {
+            _gradeReadRepository = gradeReadRepository;
+            _mapper = mapper;
+            _userManager = userManager;
+            _teacherReadRepository = teacherReadRepository;
         }
 
         public override IActionResult Get()
@@ -30,16 +44,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
             ViewData["CustomColumnTitles"] = new List<string> { "Öğrenci", "Alt Ders", "Sınav Numarası", "Not" };
             ViewData["CustomProperties"] = new List<string> { "StudentFullName", "SubCourseCode", "ExamNumber", "Score" };
             ViewData["ControllerName"] = "Grades";
-
             return base.Get();
-        }
-        public override async Task<IActionResult> Details(string id)
-        {
-            //ViewData dictionary'sine ortak verileri atama
-            ViewData["TableTitle"] = "Not Detayı";
-            ViewData["CustomColumnTitles"] = new List<string> { "Öğrenci", "Alt Ders", "Sınav Numarası", "Not" };
-            ViewData["CustomProperties"] = new List<string> { "StudentFullName", "SubCourseCode", "ExamNumber", "Score" };
-            return await base.Details(id);
         }
 
         public async Task<IActionResult> AddWithStudentInfos(string id)

@@ -20,7 +20,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
             builder.Property(x => x.Score).IsRequired();
             builder.Property(x => x.ExamNumber).IsRequired();
 
-            builder.HasData(GetSampleGrades());
+            //builder.HasData(GetSampleGrades());
         }
 
         public List<Grade> GetSampleGrades()
@@ -32,7 +32,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
             var subCourseList = subCourseConfiguration.GetSampleSubCourses();
             List<Grade> grades = new();
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 1; i++)
             {
                 foreach (var student in studentList)
                 {

@@ -5,6 +5,8 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.G
 {
     public class ReadGradeViewModel : IReadViewModel
     {
+        public Guid Id { get; set; }
+        public string CreatedUser { get; set; }
         public double Score { get; set; } // Öğrencinin aldığı not
         public byte ExamNumber { get; set; } // O dersin kaçıncı sınavı
 
