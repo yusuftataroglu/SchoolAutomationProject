@@ -4,11 +4,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.AchievementRepositories;
+using SchoolAutomationProject.Application.Repositories.AdministratorRepositories;
+using SchoolAutomationProject.Application.Repositories.AnnouncementRepositories;
 using SchoolAutomationProject.Application.Repositories.AttendanceRepositories;
 using SchoolAutomationProject.Application.Repositories.ClassroomRepositories;
 using SchoolAutomationProject.Application.Repositories.DiscontinuedStudentRepositories;
 using SchoolAutomationProject.Application.Repositories.GradeRepositories;
+using SchoolAutomationProject.Application.Repositories.HomeworkRepositories;
 using SchoolAutomationProject.Application.Repositories.MainCourseRepositories;
+using SchoolAutomationProject.Application.Repositories.MessageRepositories;
 using SchoolAutomationProject.Application.Repositories.ParentRepositories;
 using SchoolAutomationProject.Application.Repositories.SemesterRepositories;
 using SchoolAutomationProject.Application.Repositories.StudentRepositories;
@@ -19,11 +23,15 @@ using SchoolAutomationProject.Domain.Entities.IdentityTables;
 using SchoolAutomationProject.Persistence.Contexts;
 using SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHelpers;
 using SchoolAutomationProject.Persistence.Repositories.AchievementRepositories;
+using SchoolAutomationProject.Persistence.Repositories.AdministratorRepositories;
+using SchoolAutomationProject.Persistence.Repositories.AnnouncementRepositories;
 using SchoolAutomationProject.Persistence.Repositories.AttendanceRepositories;
 using SchoolAutomationProject.Persistence.Repositories.ClassroomRepositories;
 using SchoolAutomationProject.Persistence.Repositories.DiscontinuedStudentRepositories;
 using SchoolAutomationProject.Persistence.Repositories.GradeRepositories;
+using SchoolAutomationProject.Persistence.Repositories.HomeworkRepositories;
 using SchoolAutomationProject.Persistence.Repositories.MainCourseRepositories;
+using SchoolAutomationProject.Persistence.Repositories.MessageRepositories;
 using SchoolAutomationProject.Persistence.Repositories.ParentRepositories;
 using SchoolAutomationProject.Persistence.Repositories.SemesterRepositories;
 using SchoolAutomationProject.Persistence.Repositories.StudentRepositories;
@@ -68,6 +76,14 @@ namespace SchoolAutomationProject.Persistence.IoCContainer
             services.AddScoped<ITeacherWriteRepository, TeacherWriteRepository>();
             services.AddScoped<ITeacherScheduleReadRepository, TeacherScheduleReadRepository>();
             services.AddScoped<ITeacherScheduleWriteRepository, TeacherScheduleWriteRepository>();
+            services.AddScoped<IAdministratorReadRepository, AdministratorReadRepository>();
+            services.AddScoped<IAdministratorWriteRepository, AdministratorWriteRepository>();
+            services.AddScoped<IAnnouncementReadRepository, AnnouncementReadRepository>();
+            services.AddScoped<IAnnouncementWriteRepository, AnnouncementWriteRepository>();
+            services.AddScoped<IMessageReadRepository, MessageReadRepository>();
+            services.AddScoped<IMessageWriteRepository, MessageWriteRepository>();
+            services.AddScoped<IHomeworkReadRepository, HomeworkReadRepository>();
+            services.AddScoped<IHomeworkWriteRepository, HomeworkWriteRepository>();
 
             services.AddScoped<IFillEntityRelationshipsService, FillEntityRelationshipsService>();
             services.AddScoped<IAchievementFillRelationshipsService, AchievementFillRelationshipsService>();
@@ -82,6 +98,11 @@ namespace SchoolAutomationProject.Persistence.IoCContainer
             services.AddScoped<ISubCourseFillRelationshipsService, SubCourseFillRelationshipsService>();
             services.AddScoped<ITeacherFillRelationshipsService, TeacherFillRelationshipsService>();
             services.AddScoped<ITeacherScheduleFillRelationshipsService, TeacherScheduleFillRelationshipsService>();
+            services.AddScoped<IAdministratorFillRelationshipsService, AdministratorFillRelationshipsService>();
+            services.AddScoped<IAnnouncementFillRelationshipsService, AnnouncementFillRelationshipsService>();
+            services.AddScoped<IMessageFillRelationshipsService, MessageFillRelationshipsService>();
+            services.AddScoped<IHomeworkFillRelationshipsService, HomeworkFillRelationshipsService>();
+
         }
     }
 }

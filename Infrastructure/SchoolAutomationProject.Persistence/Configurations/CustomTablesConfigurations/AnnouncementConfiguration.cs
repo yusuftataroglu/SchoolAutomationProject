@@ -25,20 +25,8 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
                 .HasMaxLength(5000)
                 .IsRequired(); // Content sütununu zorunlu yapar
 
-            builder.Property(a => a.CreatorId)
-                .IsRequired(); // CreatorId sütununu zorunlu yapar
+            builder.HasOne(a => a.Sender).WithMany(a => a.Announcements).HasForeignKey(a => a.SenderId).IsRequired(false);
 
-            // Admin için navigation property konfigürasyonu
-            builder.HasOne(a => a.Admin)
-                .WithMany(a=> a.Announcements)
-                .HasForeignKey(a => a.CreatorId)
-                .IsRequired(false); // Admin ilişkisini belirtir ve zorunlu olmadığını ifade eder
-
-            // Teacher için navigation property konfigürasyonu
-            builder.HasOne(a => a.Teacher)
-                .WithMany(a=> a.Announcements)
-                .HasForeignKey(a => a.CreatorId)
-                .IsRequired(false); // Teacher ilişkisini belirtir ve zorunlu olmadığını ifade eder
         }
     }
 }

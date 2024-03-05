@@ -20,10 +20,6 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
             builder.Property(x => x.FirstName).HasMaxLength(50).IsRequired();
             builder.Property(x => x.LastName).HasMaxLength(50).IsRequired();
             builder.Property(x => x.Title).HasMaxLength(50);
-            builder.HasMany(a => a.Announcements)
-               .WithOne(an => an.Teacher)
-               .HasForeignKey(an => an.CreatorId)
-               .IsRequired(false);
 
             builder.HasData(GetSampleTeachers());
         }

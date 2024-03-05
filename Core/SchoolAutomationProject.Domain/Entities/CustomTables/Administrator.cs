@@ -10,6 +10,5 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
         public string? Title { get; set; }
         public virtual AppUser User { get; set; }
         public string? UserId { get; set; }
-        public virtual ICollection<Announcement>? Announcements { get; set; }
     }
 }

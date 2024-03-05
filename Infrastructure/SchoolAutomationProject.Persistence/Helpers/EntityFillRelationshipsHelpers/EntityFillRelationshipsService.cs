@@ -1,5 +1,6 @@
 ﻿using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.AchievementViewModels;
+using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.AdministratorViewModels;
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.ClassroomViewModels;
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.DiscontinuedStudentViewModels;
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.MainCourseViewModels;
@@ -25,6 +26,10 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
         private readonly IStudentFillRelationshipsService _studentFillRelationshipsService;
         private readonly ISubCourseFillRelationshipsService _subCourseFillRelationshipsService;
         private readonly ITeacherScheduleFillRelationshipsService _teacherScheduleFillRelationshipsService;
+        private readonly IAdministratorFillRelationshipsService _administratorFillRelationshipsService;
+        private readonly IAnnouncementFillRelationshipsService _announcementFillRelationshipsService;
+        private readonly IMessageFillRelationshipsService _messageFillRelationshipsService;
+        private readonly IHomeworkFillRelationshipsService _homeworkFillRelationshipsService;
         private readonly IClassroomFillRelationshipsService _classroomFillRelationshipsService;
         private readonly ITeacherFillRelationshipsService _teacherFillRelationshipsService;
         private readonly IMainCourseFillRelationshipsService _mainCourseFillRelationshipsService;
@@ -41,7 +46,11 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
             IStudentFillRelationshipsService studentFillRelationshipsService,
             ISubCourseFillRelationshipsService subCourseFillRelationshipsService,
             ITeacherFillRelationshipsService teacherFillRelationshipsService,
-            ITeacherScheduleFillRelationshipsService teacherScheduleFillRelationshipsService)
+            ITeacherScheduleFillRelationshipsService teacherScheduleFillRelationshipsService,
+            IAdministratorFillRelationshipsService administratorFillRelationshipsService,
+            IAnnouncementFillRelationshipsService announcementFillRelationshipsService,
+            IMessageFillRelationshipsService messageFillRelationshipsService,
+            IHomeworkFillRelationshipsService homeworkFillRelationshipsService)
         {
             _achievementFillRelationshipsService = achievementFillRelationshipsService;
             _attendanceFillRelationshipsService = attendanceFillRelationshipsService;
@@ -55,6 +64,10 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
             _subCourseFillRelationshipsService = subCourseFillRelationshipsService;
             _teacherFillRelationshipsService = teacherFillRelationshipsService;
             _teacherScheduleFillRelationshipsService = teacherScheduleFillRelationshipsService;
+            _administratorFillRelationshipsService = administratorFillRelationshipsService;
+            _announcementFillRelationshipsService = announcementFillRelationshipsService;
+            _messageFillRelationshipsService = messageFillRelationshipsService;
+            _homeworkFillRelationshipsService = homeworkFillRelationshipsService;
         }
 
         public async Task FillEntityRelationships<T, TWriteViewModel>(T entity, TWriteViewModel modelVM, string requestType)
@@ -121,6 +134,48 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
             {
                 await _teacherScheduleFillRelationshipsService.FillTeacherScheduleRelationships(entity as TeacherSchedule, modelVM as WriteTeacherScheduleViewModel, requestType);
             }
+            else if (typeof(T) == typeof(Administrator))
+            {
+                await _administratorFillRelationshipsService.FillAdministratorRelationships(entity as Administrator, modelVM as WriteAdministratorViewModel, requestType);
+            }
+            else if (typeof(T) == typeof(Announcement))
+            {
+                if (typeof(TWriteViewModel).FullName == "SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.AnnouncementViewModels.WriteAnnouncementViewModel")
+                {
+                    await _announcementFillRelationshipsService.FillAnnouncementRelationshipsForAdmin(entity as Announcement, modelVM as Application.ViewModels.AdminAreaViewModels.AnnouncementViewModels.WriteAnnouncementViewModel, requestType);
+                }
+                else
+                {
+                    await _announcementFillRelationshipsService.FillAnnouncementRelationshipsForTeacher(entity as Announcement, modelVM as Application.ViewModels.TeacherAreaViewModels.AnnouncementViewModels.WriteAnnouncementViewModel, requestType);
+                }
+            }
+            else if (typeof(T) == typeof(Message))
+            {
+                if (typeof(TWriteViewModel).FullName == "SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.MessageViewModels.WriteMessageViewModel")
+                {
+                    await _messageFillRelationshipsService.FillMessageRelationshipsForAdmin(entity as Message, modelVM as Application.ViewModels.AdminAreaViewModels.MessageViewModels.WriteMessageViewModel, requestType);
+                }
+                else if (typeof(TWriteViewModel).FullName == "SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.MessageViewModels.WriteMessageViewModel")
+                {
+                    await _messageFillRelationshipsService.FillMessageRelationshipsForTeacher(entity as Message, modelVM as Application.ViewModels.TeacherAreaViewModels.MessageViewModels.WriteMessageViewModel, requestType);
+                }
+                else
+                {
+                    await _messageFillRelationshipsService.FillMessageRelationshipsForParent(entity as Message, modelVM as Application.ViewModels.ParentAreaViewModels.MessageViewModels.WriteMessageViewModel, requestType);
+                }
+            }
+            else if (typeof(T) == typeof(Homework))
+            {
+                if (typeof(TWriteViewModel).FullName == "SchoolAutomationProject.Application.ViewModels.StudentAreaViewModels.HomeworkViewModels.WriteHomeworkViewModel")
+                {
+                    await _homeworkFillRelationshipsService.FillHomeworkRelationshipsForStudent(entity as Homework, modelVM as Application.ViewModels.StudentAreaViewModels.HomeworkViewModels.WriteHomeworkViewModel, requestType);
+                }
+                else
+                {
+                    await _homeworkFillRelationshipsService.FillHomeworkRelationshipsForTeacher(entity as Homework, modelVM as Application.ViewModels.TeacherAreaViewModels.HomeworkViewModels.WriteHomeworkViewModel, requestType);
+                }
+            }
+
         }
 
     }

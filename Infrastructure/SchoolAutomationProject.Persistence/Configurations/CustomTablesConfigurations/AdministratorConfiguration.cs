@@ -35,11 +35,6 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
                 .WithOne(u => u.Administrator)
                 .HasForeignKey<Administrator>(a => a.UserId)
                 .IsRequired(false); // UserId ilişkisini belirtir ve zorunlu olmadığını ifade eder
-
-            builder.HasMany(a => a.Announcements)
-               .WithOne(an => an.Admin)
-               .HasForeignKey(an => an.CreatorId)
-               .IsRequired(false);
         }
     }
 }

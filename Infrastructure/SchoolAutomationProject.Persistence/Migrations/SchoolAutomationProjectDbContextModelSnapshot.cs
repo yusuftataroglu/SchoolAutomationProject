@@ -660,603 +660,603 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("5c238820-b8f1-4093-b7d4-02afa4a18240"),
+                            Id = new Guid("2e3d9e67-e9b2-4f07-a9bd-3bc55c58bc21"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2726),
-                            CreatedIpAddress = "192.168.1.94",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8313),
+                            CreatedIpAddress = "192.168.1.15",
                             SemesterId = new Guid("afdfe876-3b49-4d60-9e1b-ddf2961bce56"),
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             Type = 2
                         },
                         new
                         {
-                            Id = new Guid("de7aba32-0d3b-402b-a777-c92be1d7a212"),
+                            Id = new Guid("0eed341c-3ff5-4a4a-b38d-0fc3ee65f342"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2772),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8357),
                             CreatedIpAddress = "192.168.1.6",
                             SemesterId = new Guid("afdfe876-3b49-4d60-9e1b-ddf2961bce56"),
                             StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            Type = 1
+                            Type = 0
                         },
                         new
                         {
-                            Id = new Guid("ae48e5de-b033-4a3c-9b6c-ea36aae9bd19"),
+                            Id = new Guid("2dfbbd81-d07b-4589-96c6-200e93b8cfdb"),
                             CreatedComputerName = "Computer3",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2777),
-                            CreatedIpAddress = "192.168.1.12",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8362),
+                            CreatedIpAddress = "192.168.1.47",
                             SemesterId = new Guid("afdfe876-3b49-4d60-9e1b-ddf2961bce56"),
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             Type = 1
                         },
                         new
                         {
-                            Id = new Guid("ab5305f0-a45c-40dd-b515-ac5008eeb908"),
+                            Id = new Guid("d9af344d-8bd3-4469-b143-31b7b09b26be"),
                             CreatedComputerName = "Computer4",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2781),
-                            CreatedIpAddress = "192.168.1.90",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8367),
+                            CreatedIpAddress = "192.168.1.30",
                             SemesterId = new Guid("afdfe876-3b49-4d60-9e1b-ddf2961bce56"),
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            Type = 2
+                            Type = 0
                         },
                         new
                         {
-                            Id = new Guid("81f477ed-371f-4f6f-a48d-94df2f8d09d8"),
+                            Id = new Guid("3b896074-1eb3-498a-9ac7-06d348ed9f87"),
                             CreatedComputerName = "Computer5",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2785),
-                            CreatedIpAddress = "192.168.1.89",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8385),
+                            CreatedIpAddress = "192.168.1.15",
                             SemesterId = new Guid("afdfe876-3b49-4d60-9e1b-ddf2961bce56"),
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
                             Type = 2
                         },
                         new
                         {
-                            Id = new Guid("92ca899b-7610-4bd5-97b3-40b1b2158ad7"),
+                            Id = new Guid("a77fdf0a-2b66-4c37-877e-e346e14d8f25"),
                             CreatedComputerName = "Computer6",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2790),
-                            CreatedIpAddress = "192.168.1.85",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8391),
+                            CreatedIpAddress = "192.168.1.52",
                             SemesterId = new Guid("afdfe876-3b49-4d60-9e1b-ddf2961bce56"),
                             StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
                             Type = 0
                         },
                         new
                         {
-                            Id = new Guid("c7d9cc3d-d4d9-4b18-8d46-ea084430f3f8"),
+                            Id = new Guid("5e20ec0a-1213-4109-ae8e-2f504b92d36c"),
                             CreatedComputerName = "Computer7",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2794),
-                            CreatedIpAddress = "192.168.1.93",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8396),
+                            CreatedIpAddress = "192.168.1.27",
                             SemesterId = new Guid("afdfe876-3b49-4d60-9e1b-ddf2961bce56"),
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            Type = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("fcb57f19-4b85-411a-9983-4f819b5e1da7"),
+                            CreatedComputerName = "Computer8",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8400),
+                            CreatedIpAddress = "192.168.1.82",
+                            SemesterId = new Guid("afdfe876-3b49-4d60-9e1b-ddf2961bce56"),
+                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             Type = 2
                         },
                         new
                         {
-                            Id = new Guid("6f40118c-9911-40c0-ac02-77ea76a2f357"),
-                            CreatedComputerName = "Computer8",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2798),
-                            CreatedIpAddress = "192.168.1.11",
-                            SemesterId = new Guid("afdfe876-3b49-4d60-9e1b-ddf2961bce56"),
-                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            Type = 0
-                        },
-                        new
-                        {
-                            Id = new Guid("c807f1e5-131f-4f07-9f6c-f3af67cc5e89"),
+                            Id = new Guid("e64009c6-9403-4fea-a3be-54049187f8cc"),
                             CreatedComputerName = "Computer9",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2802),
-                            CreatedIpAddress = "192.168.1.96",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8407),
+                            CreatedIpAddress = "192.168.1.47",
                             SemesterId = new Guid("afdfe876-3b49-4d60-9e1b-ddf2961bce56"),
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            Type = 0
+                            Type = 2
                         },
                         new
                         {
-                            Id = new Guid("75e88da4-2e49-4d51-8bac-23302921e533"),
+                            Id = new Guid("957d6014-f67f-476f-9d20-ac5cd068a39b"),
                             CreatedComputerName = "Computer10",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2810),
-                            CreatedIpAddress = "192.168.1.52",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8422),
+                            CreatedIpAddress = "192.168.1.10",
                             SemesterId = new Guid("afdfe876-3b49-4d60-9e1b-ddf2961bce56"),
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
                             Type = 1
                         },
                         new
                         {
-                            Id = new Guid("a3cdfb35-e2d8-4129-9083-1a790b11fd20"),
+                            Id = new Guid("46dfa0d2-53ef-4636-8da3-3424f1434ea9"),
                             CreatedComputerName = "Computer11",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2814),
-                            CreatedIpAddress = "192.168.1.92",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8427),
+                            CreatedIpAddress = "192.168.1.55",
                             SemesterId = new Guid("afdfe876-3b49-4d60-9e1b-ddf2961bce56"),
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             Type = 1
                         },
                         new
                         {
-                            Id = new Guid("fbd4f2bd-f2ce-4bdc-83fb-69c286aa9fc9"),
+                            Id = new Guid("9b3ff10f-d799-49cb-979f-3addf79dfdc0"),
                             CreatedComputerName = "Computer12",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2818),
-                            CreatedIpAddress = "192.168.1.41",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8431),
+                            CreatedIpAddress = "192.168.1.32",
                             SemesterId = new Guid("afdfe876-3b49-4d60-9e1b-ddf2961bce56"),
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             Type = 1
                         },
                         new
                         {
-                            Id = new Guid("53c706e0-18bf-4ff7-8fef-2029b097685a"),
+                            Id = new Guid("65f9bf5d-6cb4-431d-8167-64505b8d303f"),
                             CreatedComputerName = "Computer13",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2822),
-                            CreatedIpAddress = "192.168.1.34",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8443),
+                            CreatedIpAddress = "192.168.1.75",
                             SemesterId = new Guid("ac317057-dc54-44bc-a43c-e85c8f414044"),
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             Type = 1
                         },
                         new
                         {
-                            Id = new Guid("2e86f6a2-183b-4572-9255-0bd91cb2e65f"),
+                            Id = new Guid("dff9d96f-77e4-48ed-9551-ed39536244c8"),
                             CreatedComputerName = "Computer14",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2826),
-                            CreatedIpAddress = "192.168.1.8",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8448),
+                            CreatedIpAddress = "192.168.1.93",
                             SemesterId = new Guid("ac317057-dc54-44bc-a43c-e85c8f414044"),
                             StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
                             Type = 2
                         },
                         new
                         {
-                            Id = new Guid("4bc7f053-eae7-4bbe-a02b-40645a09a851"),
+                            Id = new Guid("d2a01625-8388-4a13-9488-205df1ebfa92"),
                             CreatedComputerName = "Computer15",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2830),
-                            CreatedIpAddress = "192.168.1.56",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8453),
+                            CreatedIpAddress = "192.168.1.68",
                             SemesterId = new Guid("ac317057-dc54-44bc-a43c-e85c8f414044"),
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            Type = 0
+                            Type = 1
                         },
                         new
                         {
-                            Id = new Guid("df87ff0e-dfaf-44c2-903e-7fca3ae2a2ea"),
+                            Id = new Guid("de8fb63b-6ef9-4e89-a48b-255f55721519"),
                             CreatedComputerName = "Computer16",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2834),
-                            CreatedIpAddress = "192.168.1.8",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8490),
+                            CreatedIpAddress = "192.168.1.97",
                             SemesterId = new Guid("ac317057-dc54-44bc-a43c-e85c8f414044"),
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            Type = 2
+                            Type = 1
                         },
                         new
                         {
-                            Id = new Guid("924775e6-153f-4124-8a87-82cebd5b1617"),
+                            Id = new Guid("15301098-bdc6-4399-8d5e-10a8d42e6351"),
                             CreatedComputerName = "Computer17",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2838),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8497),
                             CreatedIpAddress = "192.168.1.73",
                             SemesterId = new Guid("ac317057-dc54-44bc-a43c-e85c8f414044"),
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            Type = 2
+                            Type = 1
                         },
                         new
                         {
-                            Id = new Guid("41cbe129-1875-4e28-a6cf-95b4a96cd6e2"),
+                            Id = new Guid("898baa78-8059-415d-bbda-d20a9e293662"),
                             CreatedComputerName = "Computer18",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2845),
-                            CreatedIpAddress = "192.168.1.13",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8502),
+                            CreatedIpAddress = "192.168.1.18",
                             SemesterId = new Guid("ac317057-dc54-44bc-a43c-e85c8f414044"),
                             StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            Type = 2
+                            Type = 1
                         },
                         new
                         {
-                            Id = new Guid("9b8b0178-b8f0-46a5-8e73-55be5f92b08e"),
+                            Id = new Guid("87834993-ada0-421e-90a4-de55cbd4ac30"),
                             CreatedComputerName = "Computer19",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2849),
-                            CreatedIpAddress = "192.168.1.22",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8507),
+                            CreatedIpAddress = "192.168.1.90",
                             SemesterId = new Guid("ac317057-dc54-44bc-a43c-e85c8f414044"),
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            Type = 2
+                            Type = 0
                         },
                         new
                         {
-                            Id = new Guid("2a653ea5-198b-4e3f-bdba-ee8421dd4e38"),
+                            Id = new Guid("733d5e14-1fa1-4765-8e52-ec6bba6de047"),
                             CreatedComputerName = "Computer20",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2853),
-                            CreatedIpAddress = "192.168.1.67",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8511),
+                            CreatedIpAddress = "192.168.1.98",
                             SemesterId = new Guid("ac317057-dc54-44bc-a43c-e85c8f414044"),
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             Type = 2
                         },
                         new
                         {
-                            Id = new Guid("795ffff8-a62f-4df1-b493-58cdce3548cb"),
+                            Id = new Guid("c826a08a-77a8-400a-9243-50a0c232138e"),
                             CreatedComputerName = "Computer21",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2857),
-                            CreatedIpAddress = "192.168.1.97",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8517),
+                            CreatedIpAddress = "192.168.1.47",
                             SemesterId = new Guid("ac317057-dc54-44bc-a43c-e85c8f414044"),
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            Type = 1
+                        },
+                        new
+                        {
+                            Id = new Guid("f1dfe90b-4aee-4f38-8bc9-3cc95be8b028"),
+                            CreatedComputerName = "Computer22",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8522),
+                            CreatedIpAddress = "192.168.1.95",
+                            SemesterId = new Guid("ac317057-dc54-44bc-a43c-e85c8f414044"),
+                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
+                            Type = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("ec03019e-8602-42f9-b974-12bf2b8c3171"),
+                            CreatedComputerName = "Computer23",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8526),
+                            CreatedIpAddress = "192.168.1.72",
+                            SemesterId = new Guid("ac317057-dc54-44bc-a43c-e85c8f414044"),
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             Type = 2
                         },
                         new
                         {
-                            Id = new Guid("aec0f283-cb61-4be5-a522-91b7d7877508"),
-                            CreatedComputerName = "Computer22",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2861),
-                            CreatedIpAddress = "192.168.1.59",
-                            SemesterId = new Guid("ac317057-dc54-44bc-a43c-e85c8f414044"),
-                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
-                            Type = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("d4064484-b551-4c19-a5a9-b67368c18b44"),
-                            CreatedComputerName = "Computer23",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2865),
-                            CreatedIpAddress = "192.168.1.23",
-                            SemesterId = new Guid("ac317057-dc54-44bc-a43c-e85c8f414044"),
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            Type = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("e1c68eda-04d4-4f2a-bcff-66c35f98f28e"),
+                            Id = new Guid("4d240edd-bf78-46ab-a3b2-9c0ab98e8275"),
                             CreatedComputerName = "Computer24",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2869),
-                            CreatedIpAddress = "192.168.1.16",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8531),
+                            CreatedIpAddress = "192.168.1.34",
                             SemesterId = new Guid("ac317057-dc54-44bc-a43c-e85c8f414044"),
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            Type = 1
+                            Type = 2
                         },
                         new
                         {
-                            Id = new Guid("7884eab5-b25d-4fbf-9b81-a50acad2e033"),
+                            Id = new Guid("aba72f97-9f8c-4744-aeb2-102f619d0c9d"),
                             CreatedComputerName = "Computer25",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2873),
-                            CreatedIpAddress = "192.168.1.71",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8537),
+                            CreatedIpAddress = "192.168.1.53",
                             SemesterId = new Guid("bd6dfea8-ef24-438e-90df-aaeb10bb24f2"),
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             Type = 0
                         },
                         new
                         {
-                            Id = new Guid("81325659-3026-43d5-8122-5cd5b6d5b1f7"),
+                            Id = new Guid("e17a8488-295c-473a-9ec4-7553d8e8fe46"),
                             CreatedComputerName = "Computer26",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2879),
-                            CreatedIpAddress = "192.168.1.78",
-                            SemesterId = new Guid("bd6dfea8-ef24-438e-90df-aaeb10bb24f2"),
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            Type = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("12164ad3-488b-4da5-ae3d-fc311ade45d5"),
-                            CreatedComputerName = "Computer27",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2887),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8542),
                             CreatedIpAddress = "192.168.1.62",
                             SemesterId = new Guid("bd6dfea8-ef24-438e-90df-aaeb10bb24f2"),
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            Type = 2
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            Type = 1
                         },
                         new
                         {
-                            Id = new Guid("d7b21f35-1570-4239-85fc-152f376aeb5a"),
+                            Id = new Guid("a8328881-ce36-486e-8a7b-91831744429c"),
+                            CreatedComputerName = "Computer27",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8555),
+                            CreatedIpAddress = "192.168.1.7",
+                            SemesterId = new Guid("bd6dfea8-ef24-438e-90df-aaeb10bb24f2"),
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            Type = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("baeb758e-0283-4045-876d-09afffa44af7"),
                             CreatedComputerName = "Computer28",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2896),
-                            CreatedIpAddress = "192.168.1.40",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8560),
+                            CreatedIpAddress = "192.168.1.94",
                             SemesterId = new Guid("bd6dfea8-ef24-438e-90df-aaeb10bb24f2"),
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            Type = 1
+                            Type = 2
                         },
                         new
                         {
-                            Id = new Guid("861c5176-b7cf-4499-9b2d-cb0de184ab56"),
+                            Id = new Guid("94fc2286-98f4-4a58-92f5-60549ff529fc"),
                             CreatedComputerName = "Computer29",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2900),
-                            CreatedIpAddress = "192.168.1.15",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8575),
+                            CreatedIpAddress = "192.168.1.32",
                             SemesterId = new Guid("bd6dfea8-ef24-438e-90df-aaeb10bb24f2"),
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            Type = 0
+                            Type = 1
                         },
                         new
                         {
-                            Id = new Guid("232002fd-3a28-40bb-bc24-55d242fe6ca9"),
+                            Id = new Guid("dc2394ac-1450-4967-9720-e37e8d707250"),
                             CreatedComputerName = "Computer30",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2904),
-                            CreatedIpAddress = "192.168.1.43",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8580),
+                            CreatedIpAddress = "192.168.1.60",
                             SemesterId = new Guid("bd6dfea8-ef24-438e-90df-aaeb10bb24f2"),
                             StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            Type = 1
+                            Type = 0
                         },
                         new
                         {
-                            Id = new Guid("ba8e04f4-10f3-4a3e-a1b0-31225d2b469e"),
+                            Id = new Guid("4cb254dc-4518-437d-9691-d2d9162c0acd"),
                             CreatedComputerName = "Computer31",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2908),
-                            CreatedIpAddress = "192.168.1.51",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8585),
+                            CreatedIpAddress = "192.168.1.73",
                             SemesterId = new Guid("bd6dfea8-ef24-438e-90df-aaeb10bb24f2"),
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
-                            Type = 1
+                            Type = 0
                         },
                         new
                         {
-                            Id = new Guid("be1df604-2cf1-4301-9402-06453d3d8890"),
+                            Id = new Guid("49a0535a-70d4-4701-9096-c5b6bf7c5367"),
                             CreatedComputerName = "Computer32",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2912),
-                            CreatedIpAddress = "192.168.1.95",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8590),
+                            CreatedIpAddress = "192.168.1.2",
                             SemesterId = new Guid("bd6dfea8-ef24-438e-90df-aaeb10bb24f2"),
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             Type = 0
                         },
                         new
                         {
-                            Id = new Guid("414feeee-1923-416a-a79c-07926ef959fa"),
+                            Id = new Guid("2419cb1a-c5eb-454f-a04c-695959d43d3f"),
                             CreatedComputerName = "Computer33",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2917),
-                            CreatedIpAddress = "192.168.1.42",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8594),
+                            CreatedIpAddress = "192.168.1.85",
                             SemesterId = new Guid("bd6dfea8-ef24-438e-90df-aaeb10bb24f2"),
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            Type = 2
+                            Type = 0
                         },
                         new
                         {
-                            Id = new Guid("e9f83b66-67d1-4058-83ec-3de1a69db34d"),
+                            Id = new Guid("f25a90af-ff83-4467-8fd3-225cfceeeb7d"),
                             CreatedComputerName = "Computer34",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2923),
-                            CreatedIpAddress = "192.168.1.8",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8600),
+                            CreatedIpAddress = "192.168.1.78",
                             SemesterId = new Guid("bd6dfea8-ef24-438e-90df-aaeb10bb24f2"),
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
-                            Type = 0
-                        },
-                        new
-                        {
-                            Id = new Guid("2c30c198-1713-4cbf-bbbd-f9a9c62b6c38"),
-                            CreatedComputerName = "Computer35",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2927),
-                            CreatedIpAddress = "192.168.1.72",
-                            SemesterId = new Guid("bd6dfea8-ef24-438e-90df-aaeb10bb24f2"),
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             Type = 2
                         },
                         new
                         {
-                            Id = new Guid("8c6eed0a-d2f2-433c-b11c-100a72520777"),
-                            CreatedComputerName = "Computer36",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2931),
-                            CreatedIpAddress = "192.168.1.76",
+                            Id = new Guid("d3986571-7f75-4592-ac00-db65e0ccbbf3"),
+                            CreatedComputerName = "Computer35",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8604),
+                            CreatedIpAddress = "192.168.1.57",
                             SemesterId = new Guid("bd6dfea8-ef24-438e-90df-aaeb10bb24f2"),
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            Type = 0
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            Type = 1
                         },
                         new
                         {
-                            Id = new Guid("715342ae-2217-475c-ad09-a2a4636ef2ed"),
+                            Id = new Guid("a48a6990-b003-4f9f-857b-14c73afc54ee"),
+                            CreatedComputerName = "Computer36",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8609),
+                            CreatedIpAddress = "192.168.1.65",
+                            SemesterId = new Guid("bd6dfea8-ef24-438e-90df-aaeb10bb24f2"),
+                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = new Guid("71ec7f3b-80a6-4378-a21f-64c3141e4da7"),
                             CreatedComputerName = "Computer37",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2935),
-                            CreatedIpAddress = "192.168.1.30",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8615),
+                            CreatedIpAddress = "192.168.1.41",
                             SemesterId = new Guid("8929bfa5-e201-447a-a013-808a1672bbd5"),
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             Type = 2
                         },
                         new
                         {
-                            Id = new Guid("02d271d6-c089-40ec-a498-ac6509ac3f28"),
+                            Id = new Guid("92549c4c-6017-439f-b32e-89a83e500b53"),
                             CreatedComputerName = "Computer38",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2939),
-                            CreatedIpAddress = "192.168.1.24",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8620),
+                            CreatedIpAddress = "192.168.1.5",
                             SemesterId = new Guid("8929bfa5-e201-447a-a013-808a1672bbd5"),
                             StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            Type = 1
+                            Type = 0
                         },
                         new
                         {
-                            Id = new Guid("d1d7799b-c2c3-44e7-aa05-7d32d903f404"),
+                            Id = new Guid("0658dcc2-595f-4030-8235-c65356896e6e"),
                             CreatedComputerName = "Computer39",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2943),
-                            CreatedIpAddress = "192.168.1.84",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8624),
+                            CreatedIpAddress = "192.168.1.90",
                             SemesterId = new Guid("8929bfa5-e201-447a-a013-808a1672bbd5"),
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             Type = 2
                         },
                         new
                         {
-                            Id = new Guid("2ac97377-3a3b-4189-99b6-9fa3196f0c99"),
+                            Id = new Guid("ca0cd949-1478-4332-bfec-25ea07f50967"),
                             CreatedComputerName = "Computer40",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2948),
-                            CreatedIpAddress = "192.168.1.3",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8629),
+                            CreatedIpAddress = "192.168.1.28",
                             SemesterId = new Guid("8929bfa5-e201-447a-a013-808a1672bbd5"),
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
                             Type = 1
                         },
                         new
                         {
-                            Id = new Guid("51411f20-55ea-4575-bdbb-aa6acfdfccb6"),
+                            Id = new Guid("ffa82055-4b9c-4f91-b946-a0bb3f003017"),
                             CreatedComputerName = "Computer41",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2952),
-                            CreatedIpAddress = "192.168.1.53",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8633),
+                            CreatedIpAddress = "192.168.1.82",
                             SemesterId = new Guid("8929bfa5-e201-447a-a013-808a1672bbd5"),
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            Type = 1
+                            Type = 0
                         },
                         new
                         {
-                            Id = new Guid("92e9f6ea-3ca4-4910-bddb-60f821a71109"),
+                            Id = new Guid("88b7dde4-5ac7-479c-b8bd-302367048537"),
                             CreatedComputerName = "Computer42",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2957),
-                            CreatedIpAddress = "192.168.1.31",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8638),
+                            CreatedIpAddress = "192.168.1.27",
                             SemesterId = new Guid("8929bfa5-e201-447a-a013-808a1672bbd5"),
                             StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            Type = 1
+                            Type = 2
                         },
                         new
                         {
-                            Id = new Guid("11773a79-1d32-4d4a-ba18-91a1c1db07e3"),
+                            Id = new Guid("469a2c2e-431c-41a9-b503-7e2da7ff8f81"),
                             CreatedComputerName = "Computer43",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2961),
-                            CreatedIpAddress = "192.168.1.36",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8642),
+                            CreatedIpAddress = "192.168.1.80",
                             SemesterId = new Guid("8929bfa5-e201-447a-a013-808a1672bbd5"),
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             Type = 2
                         },
                         new
                         {
-                            Id = new Guid("cc4fbd6a-fce2-4488-81fd-eaa53524d66d"),
+                            Id = new Guid("60ccfcb7-df3a-4911-b9b1-0fe7da0fa23f"),
                             CreatedComputerName = "Computer44",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2965),
-                            CreatedIpAddress = "192.168.1.57",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8647),
+                            CreatedIpAddress = "192.168.1.7",
                             SemesterId = new Guid("8929bfa5-e201-447a-a013-808a1672bbd5"),
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             Type = 1
                         },
                         new
                         {
-                            Id = new Guid("2df6d60d-8af7-4c6d-aa4a-1f3b0d004eb7"),
+                            Id = new Guid("46c3942c-b253-4fd9-ad7f-02b5f1e6545f"),
                             CreatedComputerName = "Computer45",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2969),
-                            CreatedIpAddress = "192.168.1.36",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8653),
+                            CreatedIpAddress = "192.168.1.94",
                             SemesterId = new Guid("8929bfa5-e201-447a-a013-808a1672bbd5"),
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             Type = 1
                         },
                         new
                         {
-                            Id = new Guid("0e4afc81-a163-421d-a1bd-899b30ce6bcb"),
+                            Id = new Guid("051768a5-3c85-45dc-87c1-4933e48e6d7c"),
                             CreatedComputerName = "Computer46",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2973),
-                            CreatedIpAddress = "192.168.1.54",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8657),
+                            CreatedIpAddress = "192.168.1.98",
                             SemesterId = new Guid("8929bfa5-e201-447a-a013-808a1672bbd5"),
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
+                            Type = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("d88cbbe0-44cf-49ad-a1c5-935d9be0fa63"),
+                            CreatedComputerName = "Computer47",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8662),
+                            CreatedIpAddress = "192.168.1.19",
+                            SemesterId = new Guid("8929bfa5-e201-447a-a013-808a1672bbd5"),
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
                             Type = 1
                         },
                         new
                         {
-                            Id = new Guid("a5836a95-32ba-412d-8699-8583db862d0a"),
-                            CreatedComputerName = "Computer47",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2977),
-                            CreatedIpAddress = "192.168.1.99",
-                            SemesterId = new Guid("8929bfa5-e201-447a-a013-808a1672bbd5"),
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            Type = 2
-                        },
-                        new
-                        {
-                            Id = new Guid("2875960f-0bde-4062-9136-3666e8837aed"),
+                            Id = new Guid("8c2d1b36-4a86-4a0e-8f3c-21994ec420c6"),
                             CreatedComputerName = "Computer48",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2981),
-                            CreatedIpAddress = "192.168.1.37",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8666),
+                            CreatedIpAddress = "192.168.1.76",
                             SemesterId = new Guid("8929bfa5-e201-447a-a013-808a1672bbd5"),
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            Type = 2
+                            Type = 0
                         },
                         new
                         {
-                            Id = new Guid("82498b68-fb38-43dc-9395-a36e9629c986"),
+                            Id = new Guid("a9461a28-d2a8-4f5e-9af6-1ba20004beed"),
                             CreatedComputerName = "Computer49",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2985),
-                            CreatedIpAddress = "192.168.1.54",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8671),
+                            CreatedIpAddress = "192.168.1.47",
                             SemesterId = new Guid("851ed332-2317-4dd5-9076-63a9a46172c6"),
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
                             Type = 1
                         },
                         new
                         {
-                            Id = new Guid("177eaf63-d711-4b5b-8821-7e6ab77039c8"),
+                            Id = new Guid("d4d79bf8-5b7b-4458-9ae2-a868296533bb"),
                             CreatedComputerName = "Computer50",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2991),
-                            CreatedIpAddress = "192.168.1.18",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8676),
+                            CreatedIpAddress = "192.168.1.16",
                             SemesterId = new Guid("851ed332-2317-4dd5-9076-63a9a46172c6"),
                             StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            Type = 1
+                            Type = 2
                         },
                         new
                         {
-                            Id = new Guid("f95f1f8d-2100-4540-a661-9ed2eea06a31"),
+                            Id = new Guid("8b0c0979-c3d5-47d7-9401-75254adcc72b"),
                             CreatedComputerName = "Computer51",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2995),
-                            CreatedIpAddress = "192.168.1.36",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8680),
+                            CreatedIpAddress = "192.168.1.61",
                             SemesterId = new Guid("851ed332-2317-4dd5-9076-63a9a46172c6"),
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             Type = 2
                         },
                         new
                         {
-                            Id = new Guid("44164bde-3f20-4bc1-89ba-676613fe34c9"),
+                            Id = new Guid("2aee1fbc-30d8-4901-8c89-ed9172798def"),
                             CreatedComputerName = "Computer52",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(2999),
-                            CreatedIpAddress = "192.168.1.60",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8685),
+                            CreatedIpAddress = "192.168.1.54",
                             SemesterId = new Guid("851ed332-2317-4dd5-9076-63a9a46172c6"),
                             StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            Type = 1
+                            Type = 0
                         },
                         new
                         {
-                            Id = new Guid("a95540c8-ff0a-45bd-a615-10bfd0540494"),
+                            Id = new Guid("96d6fa41-8814-4cd2-8a92-4ab9640d3112"),
                             CreatedComputerName = "Computer53",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(3003),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8691),
                             CreatedIpAddress = "192.168.1.63",
                             SemesterId = new Guid("851ed332-2317-4dd5-9076-63a9a46172c6"),
                             StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            Type = 1
+                            Type = 0
                         },
                         new
                         {
-                            Id = new Guid("bbe7a754-9bbd-4df7-93c4-bd6394d5aa62"),
+                            Id = new Guid("0363fa1b-d96e-45cc-9fd6-39412aa3cd84"),
                             CreatedComputerName = "Computer54",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(3007),
-                            CreatedIpAddress = "192.168.1.62",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8695),
+                            CreatedIpAddress = "192.168.1.10",
                             SemesterId = new Guid("851ed332-2317-4dd5-9076-63a9a46172c6"),
                             StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            Type = 1
+                            Type = 2
                         },
                         new
                         {
-                            Id = new Guid("482357d1-9ffc-4ac6-b44a-be22314de87a"),
+                            Id = new Guid("3125a2d2-5559-40bb-ba78-b847138f7760"),
                             CreatedComputerName = "Computer55",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(3022),
-                            CreatedIpAddress = "192.168.1.60",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8706),
+                            CreatedIpAddress = "192.168.1.97",
                             SemesterId = new Guid("851ed332-2317-4dd5-9076-63a9a46172c6"),
                             StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
                             Type = 0
                         },
                         new
                         {
-                            Id = new Guid("367661c1-46a6-4dd1-ae62-767f5d2c310d"),
+                            Id = new Guid("063089fd-383f-4b20-8771-c0507b49ab25"),
                             CreatedComputerName = "Computer56",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(3026),
-                            CreatedIpAddress = "192.168.1.61",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8711),
+                            CreatedIpAddress = "192.168.1.83",
                             SemesterId = new Guid("851ed332-2317-4dd5-9076-63a9a46172c6"),
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            Type = 0
+                            Type = 1
                         },
                         new
                         {
-                            Id = new Guid("53b869b3-8523-40f7-bc31-f260855b0461"),
+                            Id = new Guid("4a95e526-78cd-4be9-8c75-475ccdeed6aa"),
                             CreatedComputerName = "Computer57",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(3030),
-                            CreatedIpAddress = "192.168.1.68",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8715),
+                            CreatedIpAddress = "192.168.1.11",
                             SemesterId = new Guid("851ed332-2317-4dd5-9076-63a9a46172c6"),
                             StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
                             Type = 1
                         },
                         new
                         {
-                            Id = new Guid("44f8b14b-8f94-4c7e-b38e-04ea32d404c8"),
+                            Id = new Guid("74f0785b-9182-417a-a203-89e70917bf0b"),
                             CreatedComputerName = "Computer58",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(3036),
-                            CreatedIpAddress = "192.168.1.18",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8720),
+                            CreatedIpAddress = "192.168.1.72",
                             SemesterId = new Guid("851ed332-2317-4dd5-9076-63a9a46172c6"),
                             StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
-                            Type = 2
+                            Type = 1
                         },
                         new
                         {
-                            Id = new Guid("bb61c465-f6de-443a-bb50-83b6de604dc9"),
+                            Id = new Guid("9c7054c5-e457-44ce-9d74-81899adff507"),
                             CreatedComputerName = "Computer59",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(3039),
-                            CreatedIpAddress = "192.168.1.53",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8724),
+                            CreatedIpAddress = "192.168.1.1",
                             SemesterId = new Guid("851ed332-2317-4dd5-9076-63a9a46172c6"),
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            Type = 1
+                            Type = 0
                         },
                         new
                         {
-                            Id = new Guid("86f22ade-8ffb-43f8-95fb-ad496da25227"),
+                            Id = new Guid("6d647062-8b1c-4876-a127-780249427e43"),
                             CreatedComputerName = "Computer60",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(3043),
-                            CreatedIpAddress = "192.168.1.85",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 157, DateTimeKind.Utc).AddTicks(8729),
+                            CreatedIpAddress = "192.168.1.51",
                             SemesterId = new Guid("851ed332-2317-4dd5-9076-63a9a46172c6"),
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            Type = 1
+                            Type = 0
                         });
                 });
 
@@ -1349,8 +1349,8 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     b.Property<string>("CreatedUser")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("CreatorId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("SenderId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -1373,7 +1373,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatorId");
+                    b.HasIndex("SenderId");
 
                     b.ToTable("Announcements");
                 });
@@ -1437,377 +1437,366 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("bba32dca-9085-4c2e-9e7f-1de8913ccdba"),
-                            AttendanceDate = new DateTime(2023, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = new Guid("b539b4d5-0690-4e92-a925-852c9f9e7339"),
+                            AttendanceDate = new DateTime(2023, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             AttendanceStatus = 1,
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4146),
-                            CreatedIpAddress = "192.168.1.68",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(38),
+                            CreatedIpAddress = "192.168.1.69",
                             StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
                         },
                         new
                         {
-                            Id = new Guid("59e290cc-e82b-4239-8804-52ad377af158"),
-                            AttendanceDate = new DateTime(2023, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = new Guid("e037e58e-b0aa-4a2e-9864-64e652de256c"),
+                            AttendanceDate = new DateTime(2023, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             AttendanceStatus = 1,
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4158),
-                            CreatedIpAddress = "192.168.1.31",
-                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(55),
+                            CreatedIpAddress = "192.168.1.5",
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
                         },
                         new
                         {
-                            Id = new Guid("5c7d34d5-0a26-493a-8d29-b820a85d340b"),
-                            AttendanceDate = new DateTime(2023, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = new Guid("5cf20ce6-1873-411f-80fd-cf6f9150d4d0"),
+                            AttendanceDate = new DateTime(2023, 5, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             AttendanceStatus = 3,
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4163),
-                            CreatedIpAddress = "192.168.1.2",
-                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(61),
+                            CreatedIpAddress = "192.168.1.91",
+                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
+                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
                         },
                         new
                         {
-                            Id = new Guid("985bf2af-8af3-4898-8412-cef6bac3256c"),
-                            AttendanceDate = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 0,
+                            Id = new Guid("a7ccbf69-3dd7-47c0-9440-66312beae740"),
+                            AttendanceDate = new DateTime(2023, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 1,
                             CreatedComputerName = "Computer3",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4172),
-                            CreatedIpAddress = "192.168.1.64",
-                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
-                        },
-                        new
-                        {
-                            Id = new Guid("74231fc1-3db1-479e-87ee-0d2cd60431fb"),
-                            AttendanceDate = new DateTime(2023, 10, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer4",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4176),
-                            CreatedIpAddress = "192.168.1.49",
-                            StudentId = new Guid("42c58e42-bbbf-4304-a553-11ba20522f20"),
-                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
-                        },
-                        new
-                        {
-                            Id = new Guid("864f355a-12a5-48d1-9dad-3f6d90e5ab04"),
-                            AttendanceDate = new DateTime(2023, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 3,
-                            CreatedComputerName = "Computer5",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4184),
-                            CreatedIpAddress = "192.168.1.80",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(66),
+                            CreatedIpAddress = "192.168.1.60",
                             StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
+                            SubCourseId = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7")
                         },
                         new
                         {
-                            Id = new Guid("2afb1a17-cbab-4d3d-9897-4f04e44afa7f"),
-                            AttendanceDate = new DateTime(2023, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer6",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4189),
-                            CreatedIpAddress = "192.168.1.43",
-                            StudentId = new Guid("a30b57b4-7d3e-4a7b-8cb9-da33e4246fa4"),
-                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
-                        },
-                        new
-                        {
-                            Id = new Guid("51bc91fc-8733-4940-b20c-84125464f4e7"),
-                            AttendanceDate = new DateTime(2023, 12, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 0,
-                            CreatedComputerName = "Computer7",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4200),
-                            CreatedIpAddress = "192.168.1.81",
-                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
-                        },
-                        new
-                        {
-                            Id = new Guid("d582b1b7-1dff-4961-93d3-7e4973c87fb4"),
+                            Id = new Guid("0b98aa1c-a2f1-4f6f-9754-4e826efc94da"),
                             AttendanceDate = new DateTime(2023, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 1,
-                            CreatedComputerName = "Computer8",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4205),
-                            CreatedIpAddress = "192.168.1.7",
+                            AttendanceStatus = 3,
+                            CreatedComputerName = "Computer4",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(74),
+                            CreatedIpAddress = "192.168.1.71",
                             StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
+                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
                         },
                         new
                         {
-                            Id = new Guid("ba843fa6-9eeb-4f22-a3a0-be23ba85de2a"),
-                            AttendanceDate = new DateTime(2023, 7, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 1,
-                            CreatedComputerName = "Computer9",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4212),
-                            CreatedIpAddress = "192.168.1.7",
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("4bc0e971-21f9-458c-9aad-71f7e3498b2a"),
-                            AttendanceDate = new DateTime(2023, 10, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer10",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4217),
-                            CreatedIpAddress = "192.168.1.23",
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
-                        },
-                        new
-                        {
-                            Id = new Guid("5880b46b-b3b7-4278-b81e-c1cfaf356c74"),
-                            AttendanceDate = new DateTime(2023, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 1,
-                            CreatedComputerName = "Computer11",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4224),
-                            CreatedIpAddress = "192.168.1.41",
-                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
-                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
-                        },
-                        new
-                        {
-                            Id = new Guid("e6feebbb-6c2e-4c74-9a2d-217fc885f4ae"),
-                            AttendanceDate = new DateTime(2023, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 3,
-                            CreatedComputerName = "Computer12",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4230),
-                            CreatedIpAddress = "192.168.1.15",
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
-                        },
-                        new
-                        {
-                            Id = new Guid("2d2afe0e-eafe-4b01-84f7-22b71789a3f9"),
-                            AttendanceDate = new DateTime(2023, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 1,
-                            CreatedComputerName = "Computer13",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4234),
-                            CreatedIpAddress = "192.168.1.56",
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48")
-                        },
-                        new
-                        {
-                            Id = new Guid("6ae066bb-daaa-4cd9-ae88-9ce9cc373208"),
-                            AttendanceDate = new DateTime(2023, 12, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 3,
-                            CreatedComputerName = "Computer14",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4239),
-                            CreatedIpAddress = "192.168.1.68",
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            Id = new Guid("fe447659-3830-48f6-9f4c-2357af5a61ba"),
+                            AttendanceDate = new DateTime(2023, 2, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 0,
+                            CreatedComputerName = "Computer5",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(80),
+                            CreatedIpAddress = "192.168.1.89",
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
                             SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
                         },
                         new
                         {
-                            Id = new Guid("2a5068b0-4b95-4f3e-84d8-da3eb4522a0c"),
-                            AttendanceDate = new DateTime(2023, 1, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer15",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4243),
-                            CreatedIpAddress = "192.168.1.45",
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("ca7f3f22-11a5-428c-8b1d-f3deeaf12d46"),
-                            AttendanceDate = new DateTime(2023, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = new Guid("254c2d01-8b8a-48ca-824d-9912d77165f5"),
+                            AttendanceDate = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             AttendanceStatus = 1,
-                            CreatedComputerName = "Computer16",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4248),
-                            CreatedIpAddress = "192.168.1.75",
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                            CreatedComputerName = "Computer6",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(88),
+                            CreatedIpAddress = "192.168.1.43",
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
                         },
                         new
                         {
-                            Id = new Guid("e38d44b4-2317-4316-9f30-27e1216ab03c"),
-                            AttendanceDate = new DateTime(2023, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = new Guid("41e6fefe-4b68-4cce-9aeb-440146c1890c"),
+                            AttendanceDate = new DateTime(2023, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             AttendanceStatus = 3,
-                            CreatedComputerName = "Computer17",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4254),
-                            CreatedIpAddress = "192.168.1.93",
-                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
-                            SubCourseId = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723")
+                            CreatedComputerName = "Computer7",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(93),
+                            CreatedIpAddress = "192.168.1.11",
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("62e3f7a4-f59c-4cb4-8141-9077093c0817"),
-                            AttendanceDate = new DateTime(2023, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = new Guid("8477efa4-b963-47ed-b4df-280b8d13e08c"),
+                            AttendanceDate = new DateTime(2023, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 2,
+                            CreatedComputerName = "Computer8",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(98),
+                            CreatedIpAddress = "192.168.1.87",
+                            StudentId = new Guid("c1a02c1a-7f16-4262-a795-3d866a399a36"),
+                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
+                        },
+                        new
+                        {
+                            Id = new Guid("1eab1b52-07df-43b8-8b41-634b3dc4624a"),
+                            AttendanceDate = new DateTime(2023, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             AttendanceStatus = 1,
-                            CreatedComputerName = "Computer18",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4259),
-                            CreatedIpAddress = "192.168.1.82",
+                            CreatedComputerName = "Computer9",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(106),
+                            CreatedIpAddress = "192.168.1.93",
+                            StudentId = new Guid("84e959f6-d8b7-45e7-972b-f943292667e6"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("a54d4468-7c15-4fcc-9a1e-98e2f4da99ab"),
+                            AttendanceDate = new DateTime(2023, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 3,
+                            CreatedComputerName = "Computer10",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(121),
+                            CreatedIpAddress = "192.168.1.66",
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
+                        },
+                        new
+                        {
+                            Id = new Guid("670abe11-9aaf-40e3-b0bf-ed6c33af1ac3"),
+                            AttendanceDate = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 1,
+                            CreatedComputerName = "Computer11",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(128),
+                            CreatedIpAddress = "192.168.1.10",
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
+                        },
+                        new
+                        {
+                            Id = new Guid("ba9a6200-e555-4eb2-82c6-ac13bd4c86b4"),
+                            AttendanceDate = new DateTime(2023, 8, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 1,
+                            CreatedComputerName = "Computer12",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(133),
+                            CreatedIpAddress = "192.168.1.35",
+                            StudentId = new Guid("96e2572b-819d-4094-83f9-e9e06fd9fca1"),
+                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
+                        },
+                        new
+                        {
+                            Id = new Guid("45f1658c-f2fa-49ab-a632-4fde951294f6"),
+                            AttendanceDate = new DateTime(2023, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 3,
+                            CreatedComputerName = "Computer13",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(139),
+                            CreatedIpAddress = "192.168.1.31",
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
+                        },
+                        new
+                        {
+                            Id = new Guid("71d1af01-38bf-4ee0-bdb5-9751bfcad054"),
+                            AttendanceDate = new DateTime(2023, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 2,
+                            CreatedComputerName = "Computer14",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(146),
+                            CreatedIpAddress = "192.168.1.90",
                             StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
                             SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("045ad8fe-b93f-46a1-b9b1-f556914d059c"),
-                            AttendanceDate = new DateTime(2023, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 1,
-                            CreatedComputerName = "Computer19",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4265),
-                            CreatedIpAddress = "192.168.1.23",
+                            Id = new Guid("90b07073-08bb-4820-80e5-6b7b48ded03f"),
+                            AttendanceDate = new DateTime(2023, 5, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 2,
+                            CreatedComputerName = "Computer15",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(152),
+                            CreatedIpAddress = "192.168.1.27",
                             StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
                         },
                         new
                         {
-                            Id = new Guid("979a8c8d-0f9a-46af-9afe-d281547548f9"),
-                            AttendanceDate = new DateTime(2023, 8, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = new Guid("8bccdb05-92a5-451e-a5ee-d6ea3ec52413"),
+                            AttendanceDate = new DateTime(2023, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             AttendanceStatus = 0,
+                            CreatedComputerName = "Computer16",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(157),
+                            CreatedIpAddress = "192.168.1.40",
+                            StudentId = new Guid("15b6a548-4045-4892-904a-aeeba517960d"),
+                            SubCourseId = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1")
+                        },
+                        new
+                        {
+                            Id = new Guid("d4f5df98-02e9-46b7-8060-941ef0537320"),
+                            AttendanceDate = new DateTime(2023, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 0,
+                            CreatedComputerName = "Computer17",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(165),
+                            CreatedIpAddress = "192.168.1.35",
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
+                        },
+                        new
+                        {
+                            Id = new Guid("e8b7c3c6-a784-477f-95d6-39783deba822"),
+                            AttendanceDate = new DateTime(2023, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 0,
+                            CreatedComputerName = "Computer18",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(171),
+                            CreatedIpAddress = "192.168.1.4",
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("51ffcec4-dc3c-4476-b401-34995c3c1719"),
+                            AttendanceDate = new DateTime(2023, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 2,
+                            CreatedComputerName = "Computer19",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(181),
+                            CreatedIpAddress = "192.168.1.67",
+                            StudentId = new Guid("4b90e195-c72c-400a-a19c-0828ce7d12e1"),
+                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
+                        },
+                        new
+                        {
+                            Id = new Guid("02a44490-f50f-4dad-ab12-059f9c6869a6"),
+                            AttendanceDate = new DateTime(2023, 5, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 1,
                             CreatedComputerName = "Computer20",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4275),
-                            CreatedIpAddress = "192.168.1.47",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(187),
+                            CreatedIpAddress = "192.168.1.52",
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
                             SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
                         },
                         new
                         {
-                            Id = new Guid("264f66b2-99ff-4096-bd21-1a5f4517639b"),
-                            AttendanceDate = new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 3,
+                            Id = new Guid("8ce75a89-00fa-4f60-9731-983b5d08d13c"),
+                            AttendanceDate = new DateTime(2023, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 2,
                             CreatedComputerName = "Computer21",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4280),
-                            CreatedIpAddress = "192.168.1.12",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(193),
+                            CreatedIpAddress = "192.168.1.87",
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("c0340c3c-9153-4951-969d-1b0136758af7")
+                            SubCourseId = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab")
                         },
                         new
                         {
-                            Id = new Guid("74e8371f-b1c9-4daf-88e8-0e67fdf3ff21"),
-                            AttendanceDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = new Guid("ceed9874-c691-4431-85f0-525e505c371f"),
+                            AttendanceDate = new DateTime(2023, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             AttendanceStatus = 0,
                             CreatedComputerName = "Computer22",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4285),
-                            CreatedIpAddress = "192.168.1.14",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(200),
+                            CreatedIpAddress = "192.168.1.86",
                             StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
-                            SubCourseId = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a")
-                        },
-                        new
-                        {
-                            Id = new Guid("c3cfa326-698f-47a9-b79b-36c45c0b4c60"),
-                            AttendanceDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 3,
-                            CreatedComputerName = "Computer23",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4291),
-                            CreatedIpAddress = "192.168.1.92",
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
-                        },
-                        new
-                        {
-                            Id = new Guid("30cc8698-dd29-47d4-9362-07dc039eeaf4"),
-                            AttendanceDate = new DateTime(2023, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 0,
-                            CreatedComputerName = "Computer24",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4297),
-                            CreatedIpAddress = "192.168.1.73",
-                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
-                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
-                        },
-                        new
-                        {
-                            Id = new Guid("42b2688d-da4d-47b2-a54e-995f9cd2a030"),
-                            AttendanceDate = new DateTime(2023, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 0,
-                            CreatedComputerName = "Computer25",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4302),
-                            CreatedIpAddress = "192.168.1.89",
-                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
-                            SubCourseId = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54")
-                        },
-                        new
-                        {
-                            Id = new Guid("1378b262-6a0c-48a1-a32e-c0b2a69bd660"),
-                            AttendanceDate = new DateTime(2023, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 0,
-                            CreatedComputerName = "Computer26",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4307),
-                            CreatedIpAddress = "192.168.1.5",
-                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
-                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
-                        },
-                        new
-                        {
-                            Id = new Guid("7a4a4867-8ff0-4b9e-959d-609be361d467"),
-                            AttendanceDate = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer27",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4314),
-                            CreatedIpAddress = "192.168.1.95",
-                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
-                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
-                        },
-                        new
-                        {
-                            Id = new Guid("f8dfede6-e9d2-496c-9e80-183e81e0350d"),
-                            AttendanceDate = new DateTime(2023, 8, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 1,
-                            CreatedComputerName = "Computer28",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4318),
-                            CreatedIpAddress = "192.168.1.55",
-                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
-                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
-                        },
-                        new
-                        {
-                            Id = new Guid("279fd634-b052-4a9c-bb29-6426977e9cd7"),
-                            AttendanceDate = new DateTime(2023, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 2,
-                            CreatedComputerName = "Computer29",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4325),
-                            CreatedIpAddress = "192.168.1.45",
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b")
-                        },
-                        new
-                        {
-                            Id = new Guid("f1207ead-98d8-4854-bcde-354d3c0bbc25"),
-                            AttendanceDate = new DateTime(2023, 11, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 3,
-                            CreatedComputerName = "Computer30",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4330),
-                            CreatedIpAddress = "192.168.1.1",
-                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
-                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
-                        },
-                        new
-                        {
-                            Id = new Guid("450227a0-606a-44ca-ba1a-c5d880d7b228"),
-                            AttendanceDate = new DateTime(2023, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 0,
-                            CreatedComputerName = "Computer31",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4336),
-                            CreatedIpAddress = "192.168.1.12",
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
                             SubCourseId = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c")
                         },
                         new
                         {
-                            Id = new Guid("84e1a3db-547d-4bca-bf87-86fae6815602"),
-                            AttendanceDate = new DateTime(2023, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            AttendanceStatus = 0,
-                            CreatedComputerName = "Computer32",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4342),
-                            CreatedIpAddress = "192.168.1.93",
-                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73")
+                            Id = new Guid("25bdd841-ad32-44a2-819e-35b6952b2c3c"),
+                            AttendanceDate = new DateTime(2023, 5, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 1,
+                            CreatedComputerName = "Computer23",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(206),
+                            CreatedIpAddress = "192.168.1.71",
+                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
+                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
                         },
                         new
                         {
-                            Id = new Guid("8097bb79-4385-4449-b8fe-074cdc650792"),
-                            AttendanceDate = new DateTime(2023, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = new Guid("d12efe01-c52a-4f1a-869d-ace9864371b5"),
+                            AttendanceDate = new DateTime(2023, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             AttendanceStatus = 3,
-                            CreatedComputerName = "Computer33",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(4347),
-                            CreatedIpAddress = "192.168.1.44",
+                            CreatedComputerName = "Computer24",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(211),
+                            CreatedIpAddress = "192.168.1.17",
+                            StudentId = new Guid("798f421b-3bb6-4d77-bfa4-292a0f11b46a"),
+                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
+                        },
+                        new
+                        {
+                            Id = new Guid("6a3210bc-02c6-4ce3-b52f-8d0e53a7c0d6"),
+                            AttendanceDate = new DateTime(2023, 9, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 1,
+                            CreatedComputerName = "Computer25",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(218),
+                            CreatedIpAddress = "192.168.1.88",
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1")
+                        },
+                        new
+                        {
+                            Id = new Guid("8a60e68f-be9e-47bf-b853-df419b748d3e"),
+                            AttendanceDate = new DateTime(2023, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 1,
+                            CreatedComputerName = "Computer26",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(224),
+                            CreatedIpAddress = "192.168.1.68",
+                            StudentId = new Guid("d9d28310-a5a6-4c31-87f2-7849f926d9fa"),
+                            SubCourseId = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56")
+                        },
+                        new
+                        {
+                            Id = new Guid("d10474ca-c942-436c-b675-ed99aba01ab4"),
+                            AttendanceDate = new DateTime(2023, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 1,
+                            CreatedComputerName = "Computer27",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(230),
+                            CreatedIpAddress = "192.168.1.80",
+                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
+                            SubCourseId = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2")
+                        },
+                        new
+                        {
+                            Id = new Guid("c6a3a69f-977f-45ef-bbf9-1f2c33441671"),
+                            AttendanceDate = new DateTime(2023, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 0,
+                            CreatedComputerName = "Computer28",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(235),
+                            CreatedIpAddress = "192.168.1.27",
+                            StudentId = new Guid("7e5ae383-0067-4af0-94f3-43d725bef5d1"),
+                            SubCourseId = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e")
+                        },
+                        new
+                        {
+                            Id = new Guid("ad82a2e1-8923-481c-b492-822d96ac9a07"),
+                            AttendanceDate = new DateTime(2023, 5, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 3,
+                            CreatedComputerName = "Computer29",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(245),
+                            CreatedIpAddress = "192.168.1.8",
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("bd914d22-1482-497d-a552-6926b915f669")
+                        },
+                        new
+                        {
+                            Id = new Guid("c088d4af-4358-4432-bd1c-c0c1534bf833"),
+                            AttendanceDate = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 1,
+                            CreatedComputerName = "Computer30",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(252),
+                            CreatedIpAddress = "192.168.1.73",
+                            StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2"),
+                            SubCourseId = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df")
+                        },
+                        new
+                        {
+                            Id = new Guid("485801b3-2067-4c1c-9732-75baa8a28866"),
+                            AttendanceDate = new DateTime(2023, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 1,
+                            CreatedComputerName = "Computer31",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(260),
+                            CreatedIpAddress = "192.168.1.65",
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
-                            SubCourseId = new Guid("fb221081-45cd-42be-abd4-45976e996233")
+                            SubCourseId = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9")
+                        },
+                        new
+                        {
+                            Id = new Guid("00a56ca4-9ef2-4ded-9dd1-f243221ae5bf"),
+                            AttendanceDate = new DateTime(2023, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AttendanceStatus = 3,
+                            CreatedComputerName = "Computer32",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(267),
+                            CreatedIpAddress = "192.168.1.96",
+                            StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c"),
+                            SubCourseId = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797")
                         });
                 });
 
@@ -1865,7 +1854,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("666917cb-ccff-46e2-81be-1dc06b74ddcb"),
                             Capacity = (byte)25,
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(5192),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(1399),
                             CreatedIpAddress = "192.168.1.1",
                             Name = "9-A"
                         },
@@ -1874,7 +1863,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("22d118a6-a81b-435f-a4c7-ffed69e37f12"),
                             Capacity = (byte)25,
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(5195),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(1402),
                             CreatedIpAddress = "192.168.1.2",
                             Name = "9-B"
                         },
@@ -1883,7 +1872,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("05c0da3b-87a7-4b85-b3e6-aa133dbab5f0"),
                             Capacity = (byte)25,
                             CreatedComputerName = "Computer3",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(5197),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(1404),
                             CreatedIpAddress = "192.168.1.3",
                             Name = "10-A"
                         },
@@ -1892,7 +1881,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("7a3741e2-d501-4710-b0c9-a0a53142ad79"),
                             Capacity = (byte)25,
                             CreatedComputerName = "Computer4",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(5199),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(1406),
                             CreatedIpAddress = "192.168.1.4",
                             Name = "10-B"
                         });
@@ -1948,18 +1937,18 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("05796208-807a-48fb-aa7c-183f4164950f"),
+                            Id = new Guid("6ce8f4ca-b4aa-4d2b-9cf8-3715cebe0bf2"),
                             CreatedComputerName = "Computer0",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(8042),
-                            CreatedIpAddress = "192.168.1.40",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 159, DateTimeKind.Utc).AddTicks(3403),
+                            CreatedIpAddress = "192.168.1.34",
                             StudentId = new Guid("70ee831b-0e8e-4324-b7e8-cc26f32ac84c")
                         },
                         new
                         {
-                            Id = new Guid("98ced7de-e66a-462a-9a12-6bf2b020cf84"),
+                            Id = new Guid("7938194a-3a93-4dbb-a319-6693d950e17a"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(8069),
-                            CreatedIpAddress = "192.168.1.49",
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 159, DateTimeKind.Utc).AddTicks(3442),
+                            CreatedIpAddress = "192.168.1.44",
                             StudentId = new Guid("0fe058ba-160a-43e8-9bdd-7c35124dd6d2")
                         });
                 });
@@ -2138,7 +2127,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("11111111-1111-1111-1111-111111111111"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(6884),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(3475),
                             CreatedIpAddress = "192.168.1.1",
                             Name = "Matematik"
                         },
@@ -2146,7 +2135,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("22222222-2222-2222-2222-222222222222"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(6887),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(3479),
                             CreatedIpAddress = "192.168.1.2",
                             Name = "Türkçe"
                         },
@@ -2154,7 +2143,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("33333333-3333-3333-3333-333333333333"),
                             CreatedComputerName = "Computer3",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(6889),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(3480),
                             CreatedIpAddress = "192.168.1.3",
                             Name = "Biyoloji"
                         },
@@ -2162,7 +2151,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("44444444-4444-4444-4444-444444444444"),
                             CreatedComputerName = "Computer4",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(6891),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(3482),
                             CreatedIpAddress = "192.168.1.4",
                             Name = "Fizik"
                         },
@@ -2170,7 +2159,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("55555555-5555-5555-5555-555555555555"),
                             CreatedComputerName = "Computer5",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(6892),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(3484),
                             CreatedIpAddress = "192.168.1.5",
                             Name = "Kimya"
                         },
@@ -2178,7 +2167,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("66666666-6666-6666-6666-666666666666"),
                             CreatedComputerName = "Computer6",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(6895),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(3487),
                             CreatedIpAddress = "192.168.1.6",
                             Name = "Tarih"
                         },
@@ -2186,7 +2175,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("77777777-7777-7777-7777-777777777777"),
                             CreatedComputerName = "Computer7",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(6896),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(3488),
                             CreatedIpAddress = "192.168.1.7",
                             Name = "Coğrafya"
                         },
@@ -2194,7 +2183,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("88888888-8888-8888-8888-888888888888"),
                             CreatedComputerName = "Computer8",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(6898),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(3490),
                             CreatedIpAddress = "192.168.1.8",
                             Name = "İngilizce"
                         },
@@ -2202,7 +2191,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("99999999-9999-9999-9999-999999999999"),
                             CreatedComputerName = "Computer9",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(6900),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(3492),
                             CreatedIpAddress = "192.168.1.9",
                             Name = "Müzik"
                         },
@@ -2210,7 +2199,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
                             CreatedComputerName = "Computer10",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(6902),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(3494),
                             CreatedIpAddress = "192.168.1.10",
                             Name = "Görsel Sanatlar"
                         });
@@ -2362,7 +2351,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Address = "Örnek Mahallesi, Örnek Sokak No: 1",
                             City = "Örnek Şehir",
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(7911),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(4852),
                             CreatedIpAddress = "192.168.1.1",
                             District = "Örnek İlçe",
                             FirstName = "Ali",
@@ -2376,7 +2365,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Address = "Deneme Mahallesi, Deneme Sokak No: 2",
                             City = "Deneme Şehir",
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(7916),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(4857),
                             CreatedIpAddress = "192.168.1.2",
                             District = "Deneme İlçe",
                             FirstName = "Ayşe",
@@ -2390,7 +2379,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Address = "Test Mahallesi, Test Sokak No: 3",
                             City = "Test Şehir",
                             CreatedComputerName = "Computer3",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(7918),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(4860),
                             CreatedIpAddress = "192.168.1.3",
                             District = "Test İlçe",
                             FirstName = "Mehmet",
@@ -2403,7 +2392,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Address = "Örnek Mahallesi, Örnek Sokak No: 4",
                             City = "Örnek Şehir",
                             CreatedComputerName = "Computer4",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(7920),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(4862),
                             CreatedIpAddress = "192.168.1.4",
                             District = "Örnek İlçe",
                             FirstName = "Fatma",
@@ -2417,7 +2406,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Address = "Deneme Mahallesi, Deneme Sokak No: 5",
                             City = "Deneme Şehir",
                             CreatedComputerName = "Computer5",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(7922),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(4866),
                             CreatedIpAddress = "192.168.1.5",
                             District = "Deneme İlçe",
                             FirstName = "Mustafa",
@@ -2430,7 +2419,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Address = "Test Mahallesi, Test Sokak No: 6",
                             City = "Test Şehir",
                             CreatedComputerName = "Computer6",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(7925),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(4871),
                             CreatedIpAddress = "192.168.1.6",
                             District = "Test İlçe",
                             FirstName = "Zeynep",
@@ -2444,7 +2433,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Address = "Örnek Mahallesi, Örnek Sokak No: 7",
                             City = "Örnek Şehir",
                             CreatedComputerName = "Computer7",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(7927),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(4874),
                             CreatedIpAddress = "192.168.1.7",
                             District = "Örnek İlçe",
                             FirstName = "Emine",
@@ -2457,7 +2446,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Address = "Deneme Mahallesi, Deneme Sokak No: 8",
                             City = "Deneme Şehir",
                             CreatedComputerName = "Computer8",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(7929),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(4877),
                             CreatedIpAddress = "192.168.1.8",
                             District = "Deneme İlçe",
                             FirstName = "Ahmet",
@@ -2471,7 +2460,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Address = "Test Mahallesi, Test Sokak No: 9",
                             City = "Test Şehir",
                             CreatedComputerName = "Computer9",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(7931),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(4879),
                             CreatedIpAddress = "192.168.1.9",
                             District = "Test İlçe",
                             FirstName = "Fatma",
@@ -2484,7 +2473,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Address = "Örnek Mahallesi, Örnek Sokak No: 10",
                             City = "Örnek Şehir",
                             CreatedComputerName = "Computer10",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(7934),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(4882),
                             CreatedIpAddress = "192.168.1.10",
                             District = "Örnek İlçe",
                             FirstName = "Mehmet",
@@ -2550,7 +2539,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("afdfe876-3b49-4d60-9e1b-ddf2961bce56"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(8868),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(5855),
                             CreatedIpAddress = "192.168.1.1",
                             EndDate = new DateTime(2022, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "2022-2023 Spring Season",
@@ -2560,7 +2549,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("ac317057-dc54-44bc-a43c-e85c8f414044"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(8871),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(5858),
                             CreatedIpAddress = "192.168.1.2",
                             EndDate = new DateTime(2022, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "2022-2023 Fall Season",
@@ -2570,7 +2559,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("bd6dfea8-ef24-438e-90df-aaeb10bb24f2"),
                             CreatedComputerName = "Computer3",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(8873),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(5860),
                             CreatedIpAddress = "192.168.1.3",
                             EndDate = new DateTime(2023, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "2023-2024 Spring Season",
@@ -2580,7 +2569,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("8929bfa5-e201-447a-a013-808a1672bbd5"),
                             CreatedComputerName = "Computer4",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(8875),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(5862),
                             CreatedIpAddress = "192.168.1.4",
                             EndDate = new DateTime(2023, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "2023-2024 Fall Season",
@@ -2590,7 +2579,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("851ed332-2317-4dd5-9076-63a9a46172c6"),
                             CreatedComputerName = "Computer5",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 455, DateTimeKind.Utc).AddTicks(8877),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(5864),
                             CreatedIpAddress = "192.168.1.5",
                             EndDate = new DateTime(2024, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "2024-2025 Spring Season",
@@ -2698,7 +2687,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             ClassroomId = new Guid("666917cb-ccff-46e2-81be-1dc06b74ddcb"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(13),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(7405),
                             CreatedIpAddress = "192.168.1.1",
                             FirstName = "Fatma",
                             GPA = 88.200000000000003,
@@ -2714,7 +2703,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             ClassroomId = new Guid("666917cb-ccff-46e2-81be-1dc06b74ddcb"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(17),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(7409),
                             CreatedIpAddress = "192.168.1.2",
                             FirstName = "Mustafa",
                             GPA = 95.0,
@@ -2730,7 +2719,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             ClassroomId = new Guid("666917cb-ccff-46e2-81be-1dc06b74ddcb"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer3",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(20),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(7413),
                             CreatedIpAddress = "192.168.1.3",
                             FirstName = "Zeynep",
                             GPA = 82.700000000000003,
@@ -2746,7 +2735,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             ClassroomId = new Guid("666917cb-ccff-46e2-81be-1dc06b74ddcb"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer4",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(23),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(7415),
                             CreatedIpAddress = "192.168.1.4",
                             FirstName = "Ayşe",
                             GPA = 91.5,
@@ -2762,7 +2751,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             ClassroomId = new Guid("22d118a6-a81b-435f-a4c7-ffed69e37f12"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer5",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(25),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(7418),
                             CreatedIpAddress = "192.168.1.5",
                             FirstName = "Ahmet",
                             GPA = 79.799999999999997,
@@ -2778,7 +2767,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             ClassroomId = new Guid("22d118a6-a81b-435f-a4c7-ffed69e37f12"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer6",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(35),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(7428),
                             CreatedIpAddress = "192.168.1.6",
                             FirstName = "Emine",
                             GPA = 87.299999999999997,
@@ -2794,7 +2783,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             ClassroomId = new Guid("22d118a6-a81b-435f-a4c7-ffed69e37f12"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer7",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(38),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(7432),
                             CreatedIpAddress = "192.168.1.7",
                             FirstName = "Mehmet",
                             GPA = 83.599999999999994,
@@ -2810,7 +2799,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             ClassroomId = new Guid("05c0da3b-87a7-4b85-b3e6-aa133dbab5f0"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer8",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(41),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(7435),
                             CreatedIpAddress = "192.168.1.8",
                             FirstName = "Fatih",
                             GPA = 94.200000000000003,
@@ -2826,7 +2815,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             ClassroomId = new Guid("05c0da3b-87a7-4b85-b3e6-aa133dbab5f0"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer9",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(44),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(7437),
                             CreatedIpAddress = "192.168.1.9",
                             FirstName = "Elif",
                             GPA = 78.900000000000006,
@@ -2842,7 +2831,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             ClassroomId = new Guid("05c0da3b-87a7-4b85-b3e6-aa133dbab5f0"),
                             ContinuationStatus = 1,
                             CreatedComputerName = "Computer10",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(47),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(7441),
                             CreatedIpAddress = "192.168.1.10",
                             FirstName = "Ali",
                             GPA = 88.700000000000003,
@@ -2858,7 +2847,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             ClassroomId = new Guid("7a3741e2-d501-4710-b0c9-a0a53142ad79"),
                             ContinuationStatus = 2,
                             CreatedComputerName = "Computer11",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(49),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(7444),
                             CreatedIpAddress = "192.168.1.11",
                             FirstName = "Sema",
                             GPA = 85.400000000000006,
@@ -2874,7 +2863,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             ClassroomId = new Guid("7a3741e2-d501-4710-b0c9-a0a53142ad79"),
                             ContinuationStatus = 3,
                             CreatedComputerName = "Computer12",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(52),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(7447),
                             CreatedIpAddress = "192.168.1.12",
                             FirstName = "Can",
                             GPA = 92.099999999999994,
@@ -2949,7 +2938,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("c3caf58e-75b9-4e07-bac9-fe809da8ac54"),
                             Code = "MAT101",
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(912),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(8611),
                             CreatedIpAddress = "192.168.1.1",
                             MainCourseId = new Guid("11111111-1111-1111-1111-111111111111"),
                             Position = 1,
@@ -2960,7 +2949,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("1e3845ac-b77e-42ab-b5bf-e12b03e8b9d2"),
                             Code = "MAT102",
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(915),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(8615),
                             CreatedIpAddress = "192.168.1.2",
                             MainCourseId = new Guid("11111111-1111-1111-1111-111111111111"),
                             Position = 2,
@@ -2971,7 +2960,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("5cd9fdcc-b62b-4481-b63c-b5681d48d31e"),
                             Code = "TUR101",
                             CreatedComputerName = "Computer3",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(917),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(8618),
                             CreatedIpAddress = "192.168.1.3",
                             MainCourseId = new Guid("22222222-2222-2222-2222-222222222222"),
                             Position = 1,
@@ -2982,7 +2971,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("b1760af3-a642-4c3d-9c29-7364f4607a48"),
                             Code = "TUR102",
                             CreatedComputerName = "Computer4",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(920),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(8620),
                             CreatedIpAddress = "192.168.1.4",
                             MainCourseId = new Guid("22222222-2222-2222-2222-222222222222"),
                             Position = 2,
@@ -2993,7 +2982,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("a5f980a8-71c0-45a1-a360-8caff5e174ab"),
                             Code = "BIO101",
                             CreatedComputerName = "Computer5",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(922),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(8623),
                             CreatedIpAddress = "192.168.1.5",
                             MainCourseId = new Guid("33333333-3333-3333-3333-333333333333"),
                             Position = 1,
@@ -3004,7 +2993,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("c0340c3c-9153-4951-969d-1b0136758af7"),
                             Code = "BIO102",
                             CreatedComputerName = "Computer6",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(925),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(8626),
                             CreatedIpAddress = "192.168.1.6",
                             MainCourseId = new Guid("33333333-3333-3333-3333-333333333333"),
                             Position = 2,
@@ -3015,7 +3004,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("4ee32722-4aca-42f9-9fd6-060b9a3066c1"),
                             Code = "PHY101",
                             CreatedComputerName = "Computer7",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(927),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(8629),
                             CreatedIpAddress = "192.168.1.7",
                             MainCourseId = new Guid("44444444-4444-4444-4444-444444444444"),
                             Position = 1,
@@ -3026,7 +3015,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("e02cceb0-48bf-41c3-98e3-73c9c0c69b1c"),
                             Code = "PHY102",
                             CreatedComputerName = "Computer8",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(930),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(8631),
                             CreatedIpAddress = "192.168.1.8",
                             MainCourseId = new Guid("44444444-4444-4444-4444-444444444444"),
                             Position = 2,
@@ -3037,7 +3026,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("9aceddeb-6886-4535-9f45-989fee247cb9"),
                             Code = "CHEM101",
                             CreatedComputerName = "Computer9",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(932),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(8633),
                             CreatedIpAddress = "192.168.1.9",
                             MainCourseId = new Guid("55555555-5555-5555-5555-555555555555"),
                             Position = 1,
@@ -3048,7 +3037,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("6b36a63c-a7c0-495c-9247-082ab342d65a"),
                             Code = "CHEM102",
                             CreatedComputerName = "Computer10",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(935),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(8636),
                             CreatedIpAddress = "192.168.1.10",
                             MainCourseId = new Guid("55555555-5555-5555-5555-555555555555"),
                             Position = 2,
@@ -3059,7 +3048,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("bd914d22-1482-497d-a552-6926b915f669"),
                             Code = "HIS101",
                             CreatedComputerName = "Computer11",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(937),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(8639),
                             CreatedIpAddress = "192.168.1.11",
                             MainCourseId = new Guid("66666666-6666-6666-6666-666666666666"),
                             Position = 1,
@@ -3070,7 +3059,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("8eeda5b3-20f9-4d98-8b94-8e42e49f6b0b"),
                             Code = "HIS102",
                             CreatedComputerName = "Computer12",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(939),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(8641),
                             CreatedIpAddress = "192.168.1.12",
                             MainCourseId = new Guid("66666666-6666-6666-6666-666666666666"),
                             Position = 2,
@@ -3081,7 +3070,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("02bfcbb1-4f1a-487f-ab48-cd9322e7b4df"),
                             Code = "GEO101",
                             CreatedComputerName = "Computer13",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(942),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(8643),
                             CreatedIpAddress = "192.168.1.13",
                             MainCourseId = new Guid("77777777-7777-7777-7777-777777777777"),
                             Position = 1,
@@ -3092,7 +3081,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("4e8f036d-6181-4c1f-a349-4ffcc3447ba7"),
                             Code = "GEO102",
                             CreatedComputerName = "Computer14",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(950),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(8646),
                             CreatedIpAddress = "192.168.1.14",
                             MainCourseId = new Guid("77777777-7777-7777-7777-777777777777"),
                             Position = 2,
@@ -3103,7 +3092,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("b8be083e-1748-47cc-aab8-754f8a7434f1"),
                             Code = "ENG101",
                             CreatedComputerName = "Computer15",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(952),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(8648),
                             CreatedIpAddress = "192.168.1.15",
                             MainCourseId = new Guid("88888888-8888-8888-8888-888888888888"),
                             Position = 1,
@@ -3114,7 +3103,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("36400de0-3b8c-4c08-ab07-628e17b9fc56"),
                             Code = "ENG102",
                             CreatedComputerName = "Computer16",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(954),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(8651),
                             CreatedIpAddress = "192.168.1.16",
                             MainCourseId = new Guid("88888888-8888-8888-8888-888888888888"),
                             Position = 2,
@@ -3125,7 +3114,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("722fa150-b091-4ef8-a2ea-c2b782f42c73"),
                             Code = "MUS101",
                             CreatedComputerName = "Computer17",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(956),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(8653),
                             CreatedIpAddress = "192.168.1.17",
                             MainCourseId = new Guid("99999999-9999-9999-9999-999999999999"),
                             Position = 1,
@@ -3136,7 +3125,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("9c7df23d-8358-45b5-94e1-fe907e573723"),
                             Code = "MUS102",
                             CreatedComputerName = "Computer18",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(960),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(8657),
                             CreatedIpAddress = "192.168.1.18",
                             MainCourseId = new Guid("99999999-9999-9999-9999-999999999999"),
                             Position = 2,
@@ -3147,7 +3136,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("8c9f4082-6b71-4b52-8e96-01b3933e5797"),
                             Code = "ART101",
                             CreatedComputerName = "Computer19",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(962),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(8659),
                             CreatedIpAddress = "192.168.1.19",
                             MainCourseId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
                             Position = 1,
@@ -3158,7 +3147,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                             Id = new Guid("fb221081-45cd-42be-abd4-45976e996233"),
                             Code = "ART102",
                             CreatedComputerName = "Computer20",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(964),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(8661),
                             CreatedIpAddress = "192.168.1.20",
                             MainCourseId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
                             Position = 2,
@@ -3237,7 +3226,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("b1cf8e9f-c6a9-4070-9304-b9602ce9ef76"),
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(5362),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(9796),
                             CreatedIpAddress = "192.168.1.1",
                             FirstName = "Ahmet",
                             LastName = "Yılmaz",
@@ -3248,7 +3237,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("4eca2d83-365e-4926-b42c-2415618b5e19"),
                             CreatedComputerName = "Computer2",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(5366),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(9800),
                             CreatedIpAddress = "192.168.1.2",
                             FirstName = "Ayşe",
                             LastName = "Demir",
@@ -3259,7 +3248,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("a82047bd-f57e-4c34-928c-8b8d2c3fa636"),
                             CreatedComputerName = "Computer3",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(5369),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(9803),
                             CreatedIpAddress = "192.168.1.3",
                             FirstName = "Mehmet",
                             LastName = "Kaya",
@@ -3270,7 +3259,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("a444db40-a494-4e3d-91d1-eea2779bf147"),
                             CreatedComputerName = "Computer4",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(5371),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(9806),
                             CreatedIpAddress = "192.168.1.4",
                             FirstName = "Fatma",
                             LastName = "Şahin",
@@ -3281,7 +3270,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("2e032c26-8554-4ab9-8e06-77cfd8f9652d"),
                             CreatedComputerName = "Computer5",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(5375),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(9808),
                             CreatedIpAddress = "192.168.1.5",
                             FirstName = "Ali",
                             LastName = "Demirci",
@@ -3292,7 +3281,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("fa70cb23-9c69-4548-8f15-77e93139ab41"),
                             CreatedComputerName = "Computer6",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(5380),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(9813),
                             CreatedIpAddress = "192.168.1.6",
                             FirstName = "Zeynep",
                             LastName = "Yıldız",
@@ -3303,7 +3292,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("35cced10-9fc1-4413-9e09-080b408b23c3"),
                             CreatedComputerName = "Computer10",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(5383),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(9816),
                             CreatedIpAddress = "192.168.1.10",
                             FirstName = "Mehmet",
                             LastName = "Kaya",
@@ -3314,7 +3303,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("3ca93105-bfff-4791-9cc4-82a7a97ad756"),
                             CreatedComputerName = "Computer11",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(5385),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(9818),
                             CreatedIpAddress = "192.168.1.11",
                             FirstName = "Ayşe",
                             LastName = "Yılmaz",
@@ -3325,7 +3314,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("f12dbbce-5d81-4f38-8eab-b267b2263556"),
                             CreatedComputerName = "Computer12",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(5387),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(9821),
                             CreatedIpAddress = "192.168.1.12",
                             FirstName = "Ahmet",
                             LastName = "Çelik",
@@ -3336,7 +3325,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("dd82ca7c-38ca-4a8c-989b-a47d44d9b132"),
                             CreatedComputerName = "Computer13",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(5390),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(9824),
                             CreatedIpAddress = "192.168.1.13",
                             FirstName = "Seda",
                             LastName = "Demir",
@@ -3347,7 +3336,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         {
                             Id = new Guid("f6563118-b1bf-4d43-ab6d-c427a9f13f7c"),
                             CreatedComputerName = "Computer14",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(5393),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 158, DateTimeKind.Utc).AddTicks(9827),
                             CreatedIpAddress = "192.168.1.14",
                             FirstName = "Burak",
                             LastName = "Korkmaz",
@@ -3418,10 +3407,10 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("2055f491-519d-4936-99ce-56a821dcfdf9"),
+                            Id = new Guid("6f1de646-0057-4f24-9bf1-fc4c7c52f0ba"),
                             Classroom = "1-A",
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(6574),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 159, DateTimeKind.Utc).AddTicks(1002),
                             CreatedIpAddress = "192.168.1.1",
                             DateTime = new DateTime(2024, 3, 5, 0, 0, 0, 0, DateTimeKind.Utc),
                             Day = 0,
@@ -3430,10 +3419,10 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7a37b1d5-15e2-48a2-9ad0-8b9fd028b2f7"),
+                            Id = new Guid("553819af-3074-43ef-847c-8c5c554013d2"),
                             Classroom = "1-A",
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(6588),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 159, DateTimeKind.Utc).AddTicks(1011),
                             CreatedIpAddress = "192.168.1.1",
                             DateTime = new DateTime(2024, 3, 5, 0, 0, 0, 0, DateTimeKind.Utc),
                             Day = 0,
@@ -3442,10 +3431,10 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b8f234e6-7b59-4b07-a6b7-e29a58ce43c8"),
+                            Id = new Guid("901e651b-e6a0-49b4-b998-e7dbd2a916c5"),
                             Classroom = "2-B",
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(6591),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 159, DateTimeKind.Utc).AddTicks(1014),
                             CreatedIpAddress = "192.168.1.1",
                             DateTime = new DateTime(2024, 3, 5, 0, 0, 0, 0, DateTimeKind.Utc),
                             Day = 0,
@@ -3454,10 +3443,10 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4f3706ed-116e-481d-b645-fdb13ac45ae9"),
+                            Id = new Guid("0b3eeaee-2b33-4d2a-bfb3-a601250163d1"),
                             Classroom = "2-B",
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(6594),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 159, DateTimeKind.Utc).AddTicks(1018),
                             CreatedIpAddress = "192.168.1.1",
                             DateTime = new DateTime(2024, 3, 5, 0, 0, 0, 0, DateTimeKind.Utc),
                             Day = 0,
@@ -3466,10 +3455,10 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("536e0b71-bb71-4e91-9c3c-3dc770c95931"),
+                            Id = new Guid("e380b4a4-9451-46db-965a-f89b525b9623"),
                             Classroom = "3-D",
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(6597),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 159, DateTimeKind.Utc).AddTicks(1021),
                             CreatedIpAddress = "192.168.1.1",
                             DateTime = new DateTime(2024, 3, 5, 0, 0, 0, 0, DateTimeKind.Utc),
                             Day = 0,
@@ -3478,10 +3467,10 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("da79cd95-e147-45d3-9e27-cd43359fe526"),
+                            Id = new Guid("acf33ee7-a193-41d2-9044-166bfddd9b82"),
                             Classroom = "3-D",
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(6601),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 159, DateTimeKind.Utc).AddTicks(1034),
                             CreatedIpAddress = "192.168.1.1",
                             DateTime = new DateTime(2024, 3, 5, 0, 0, 0, 0, DateTimeKind.Utc),
                             Day = 0,
@@ -3490,10 +3479,10 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("72f73264-5ef5-4e0f-a927-7ee324f9aca1"),
+                            Id = new Guid("95b52fb1-dbfd-4999-861a-ec8a2ab43541"),
                             Classroom = "",
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(6604),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 159, DateTimeKind.Utc).AddTicks(1037),
                             CreatedIpAddress = "192.168.1.1",
                             DateTime = new DateTime(2024, 3, 5, 0, 0, 0, 0, DateTimeKind.Utc),
                             Day = 0,
@@ -3502,10 +3491,10 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b9d1e878-f422-41bd-b482-61ff16d54cd2"),
+                            Id = new Guid("9f02feb0-e17d-4af2-ab72-8f83b17cdad1"),
                             Classroom = "",
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(6607),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 159, DateTimeKind.Utc).AddTicks(1040),
                             CreatedIpAddress = "192.168.1.1",
                             DateTime = new DateTime(2024, 3, 5, 0, 0, 0, 0, DateTimeKind.Utc),
                             Day = 0,
@@ -3514,10 +3503,10 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("11345c98-55dd-4dc9-9008-be3cf59c919b"),
+                            Id = new Guid("3e8ef9c6-615a-4ae5-b18b-f73aa669d367"),
                             Classroom = "1-A",
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(6610),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 159, DateTimeKind.Utc).AddTicks(1044),
                             CreatedIpAddress = "192.168.1.1",
                             DateTime = new DateTime(2023, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Day = 0,
@@ -3526,10 +3515,10 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("004e9469-dd8d-40ab-a495-7f36eed0a1ba"),
+                            Id = new Guid("3c57a195-6025-40d1-a871-b95a9e510c86"),
                             Classroom = "1-A",
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(6616),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 159, DateTimeKind.Utc).AddTicks(1047),
                             CreatedIpAddress = "192.168.1.1",
                             DateTime = new DateTime(2023, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Day = 0,
@@ -3538,10 +3527,10 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f67a2930-0067-4486-96c7-7183c971bae7"),
+                            Id = new Guid("4cbdf917-35bf-480d-8d29-2b3936f4234d"),
                             Classroom = "2-B",
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(6618),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 159, DateTimeKind.Utc).AddTicks(1050),
                             CreatedIpAddress = "192.168.1.1",
                             DateTime = new DateTime(2023, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Day = 0,
@@ -3550,10 +3539,10 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a87b5e2e-b22f-40be-8d4e-022af91ec157"),
+                            Id = new Guid("152c44a8-fb06-4f84-826b-aad662e4e13b"),
                             Classroom = "2-B",
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(6621),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 159, DateTimeKind.Utc).AddTicks(1053),
                             CreatedIpAddress = "192.168.1.1",
                             DateTime = new DateTime(2023, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Day = 0,
@@ -3562,10 +3551,10 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c744b6e5-85a1-45f7-baf4-43a9160c3b51"),
+                            Id = new Guid("d50f3f05-6a13-4a21-b12a-f0a2c59afd6b"),
                             Classroom = "",
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(6623),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 159, DateTimeKind.Utc).AddTicks(1056),
                             CreatedIpAddress = "192.168.1.1",
                             DateTime = new DateTime(2023, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Day = 0,
@@ -3574,10 +3563,10 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4707befe-6aef-4a2b-bf74-4bfc66994227"),
+                            Id = new Guid("22c20997-993b-4ab1-bdfc-947b80ecf9e4"),
                             Classroom = "",
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(6625),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 159, DateTimeKind.Utc).AddTicks(1060),
                             CreatedIpAddress = "192.168.1.1",
                             DateTime = new DateTime(2023, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Day = 0,
@@ -3586,10 +3575,10 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a9d6a0e8-59e4-48f6-a9a1-caf2f2968161"),
+                            Id = new Guid("29cf3e81-8beb-448b-948a-ba09a37d4ab0"),
                             Classroom = "4-C",
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(6628),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 159, DateTimeKind.Utc).AddTicks(1063),
                             CreatedIpAddress = "192.168.1.1",
                             DateTime = new DateTime(2023, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Day = 0,
@@ -3598,10 +3587,10 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1cbb6853-dc9f-4134-8e82-a684d2d5729e"),
+                            Id = new Guid("f0188721-472a-4198-89db-dd79bacac6de"),
                             Classroom = "4-C",
                             CreatedComputerName = "Computer1",
-                            CreatedDate = new DateTime(2024, 3, 5, 17, 23, 25, 456, DateTimeKind.Utc).AddTicks(6631),
+                            CreatedDate = new DateTime(2024, 3, 5, 20, 48, 58, 159, DateTimeKind.Utc).AddTicks(1066),
                             CreatedIpAddress = "192.168.1.1",
                             DateTime = new DateTime(2023, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Day = 0,
@@ -3862,17 +3851,11 @@ namespace SchoolAutomationProject.Persistence.Migrations
 
             modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.CustomTables.Announcement", b =>
                 {
-                    b.HasOne("SchoolAutomationProject.Domain.Entities.CustomTables.Administrator", "Admin")
+                    b.HasOne("SchoolAutomationProject.Domain.Entities.IdentityTables.AppUser", "Sender")
                         .WithMany("Announcements")
-                        .HasForeignKey("CreatorId");
+                        .HasForeignKey("SenderId");
 
-                    b.HasOne("SchoolAutomationProject.Domain.Entities.CustomTables.Teacher", "Teacher")
-                        .WithMany("Announcements")
-                        .HasForeignKey("CreatorId");
-
-                    b.Navigation("Admin");
-
-                    b.Navigation("Teacher");
+                    b.Navigation("Sender");
                 });
 
             modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.CustomTables.Attendance", b =>
@@ -4013,11 +3996,6 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     b.Navigation("Teacher");
                 });
 
-            modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.CustomTables.Administrator", b =>
-                {
-                    b.Navigation("Announcements");
-                });
-
             modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.CustomTables.Announcement", b =>
                 {
                     b.Navigation("AnnouncementRoles");
@@ -4074,8 +4052,6 @@ namespace SchoolAutomationProject.Persistence.Migrations
 
             modelBuilder.Entity("SchoolAutomationProject.Domain.Entities.CustomTables.Teacher", b =>
                 {
-                    b.Navigation("Announcements");
-
                     b.Navigation("ClassroomTeachers");
 
                     b.Navigation("TeacherSchedules");
@@ -4085,6 +4061,8 @@ namespace SchoolAutomationProject.Persistence.Migrations
                 {
                     b.Navigation("Administrator")
                         .IsRequired();
+
+                    b.Navigation("Announcements");
 
                     b.Navigation("Parent")
                         .IsRequired();

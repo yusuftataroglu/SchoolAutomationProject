@@ -15,5 +15,7 @@ namespace SchoolAutomationProject.Domain.Entities.IdentityTables
 
         // Kullanıcının aldığı mesajlar için navigation property
         public virtual ICollection<Message> ReceivedMessages { get; set; }
+        public virtual ICollection<Announcement> Announcements { get; set; }
+
     }
 }

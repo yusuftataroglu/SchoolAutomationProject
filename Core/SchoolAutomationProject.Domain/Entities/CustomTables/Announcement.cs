@@ -1,5 +1,6 @@
 ﻿using SchoolAutomationProject.Domain.Entities.CommonTables;
 using SchoolAutomationProject.Domain.Entities.CrossTables;
+using SchoolAutomationProject.Domain.Entities.IdentityTables;
 
 namespace SchoolAutomationProject.Domain.Entities.CustomTables
 {
@@ -7,9 +8,9 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
     {
         public string Title { get; set; }
         public string Content { get; set; }
-        public Guid CreatorId { get; set; }
-        public virtual Administrator? Admin { get; set; }
-        public virtual Teacher? Teacher { get; set; }
+        public virtual AppUser Sender { get; set; }
+        public string? SenderId { get; set; }
+
         public virtual ICollection<AnnouncementRole> AnnouncementRoles{ get; set; }
     }
 }
