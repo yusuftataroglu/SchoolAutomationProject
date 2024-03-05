@@ -16,6 +16,9 @@ namespace SchoolAutomationProject.Infrastructure.Helpers.Profiles
             CreateMap<Application.ViewModels.TeacherAreaViewModels.GradeViewModels.ReadGradeViewModel, Grade>();
             CreateMap<Grade, Application.ViewModels.TeacherAreaViewModels.GradeViewModels.WriteGradeViewModel>();
             CreateMap<Application.ViewModels.TeacherAreaViewModels.GradeViewModels.WriteGradeViewModel, Grade>();
+
+            CreateMap<Grade, Application.ViewModels.StudentAreaViewModels.GradeViewModels.ReadGradeViewModel>();
+            CreateMap<Application.ViewModels.StudentAreaViewModels.GradeViewModels.ReadGradeViewModel, Grade>();
         }
     }
 }

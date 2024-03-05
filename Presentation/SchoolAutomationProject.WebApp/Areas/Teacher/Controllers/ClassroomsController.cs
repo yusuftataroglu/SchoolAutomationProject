@@ -40,6 +40,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
             var classroomList = _classroomReadRepository.GetAll()
             .Where(c => c.ClassroomTeachers.Any(ct => ct.Teacher.UserId == userId))
             .ToList();
+
             List<ReadClassroomViewModel> readViewModelList = _mapper.Map<List<ReadClassroomViewModel>>(classroomList);
             return View(readViewModelList);
         }

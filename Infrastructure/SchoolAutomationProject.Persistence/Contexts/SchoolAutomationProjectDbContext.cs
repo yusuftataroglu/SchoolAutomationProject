@@ -30,9 +30,15 @@ namespace SchoolAutomationProject.Persistence.Contexts
         public DbSet<Grade> Grades { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
         public DbSet<DiscontinuedStudent> DiscontinuedStudents { get; set; }
+        public DbSet<Administrator> Administrators { get; set; }
+        public DbSet<Announcement> Announcements { get; set; }
+        public DbSet<Homework> Homeworks { get; set; }
+        public DbSet<Message> Messages { get; set; }
         public DbSet<TeacherSchedule> TeacherSchedules { get; set; }
         public DbSet<ClassroomMainCourse> ClassroomMainCourses { get; set; }
         public DbSet<ClassroomTeacher> ClassroomTeachers { get; set; }
+        public DbSet<AnnouncementRole> AnnouncementRoles { get; set; }
+
 
         public SchoolAutomationProjectDbContext()
         {
@@ -90,7 +96,7 @@ namespace SchoolAutomationProject.Persistence.Contexts
                             Student student = (Student)item.Entity;
                             student.IsPreRegistered = true;
                             var lastRegistrationNumber = Students.OrderByDescending(x => x.RegistrationNumber).FirstOrDefault()?.RegistrationNumber;
-                            if (lastRegistrationNumber == null) 
+                            if (lastRegistrationNumber == null)
                             {
                                 student.RegistrationNumber = $"100-{DateTime.Now.Year.ToString().Substring(2)}";
                             }
@@ -121,8 +127,6 @@ namespace SchoolAutomationProject.Persistence.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.ApplyConfiguration(new ClassroomMainCourseConfiguration());
-            modelBuilder.ApplyConfiguration(new ClassroomTeacherConfiguration());
             modelBuilder.ApplyConfiguration(new AchievementConfiguration());
             modelBuilder.ApplyConfiguration(new AttendanceConfiguration());
             modelBuilder.ApplyConfiguration(new ClassroomConfiguration());
@@ -137,7 +141,13 @@ namespace SchoolAutomationProject.Persistence.Contexts
             modelBuilder.ApplyConfiguration(new DiscontinuedStudentConfiguration());
             modelBuilder.ApplyConfiguration(new AppUserConfiguration());
             modelBuilder.ApplyConfiguration(new AppUserRoleConfiguration());
-            modelBuilder.ApplyConfiguration(new IdentityUserRoleConfiguration());
+            modelBuilder.ApplyConfiguration(new MessageConfiguration());
+            modelBuilder.ApplyConfiguration(new AnnouncementConfiguration());
+            modelBuilder.ApplyConfiguration(new AdministratorConfiguration());
+            modelBuilder.ApplyConfiguration(new HomeworkConfiguration());
+            modelBuilder.ApplyConfiguration(new ClassroomMainCourseConfiguration());
+            modelBuilder.ApplyConfiguration(new ClassroomTeacherConfiguration());
+            modelBuilder.ApplyConfiguration(new AnnouncementRoleConfiguration());
         }
 
 

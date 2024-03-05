@@ -41,5 +41,8 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
         //Student-Attendance ilişkisi
         public virtual ICollection<Attendance> Attendances { get; set; }
 
+        //Student-Homework ilişkisi
+        public virtual ICollection<Homework> Homeworks { get; set; }
+
     }
 }

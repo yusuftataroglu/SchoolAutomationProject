@@ -23,5 +23,8 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
         //Teacher-AppUser ilişkisi
         public virtual AppUser User { get; set; }
         public string? UserId { get; set; }
+
+        //Teacher-Announcement ilişkisi
+        public virtual ICollection<Announcement> Announcements { get; set; }
     }
 }

@@ -11,9 +11,6 @@ namespace SchoolAutomationProject.Infrastructure.Helpers.Profiles
             CreateMap<Application.ViewModels.AdminAreaViewModels.StudentViewModels.ReadStudentViewModel, Student>();
             CreateMap<Student, Application.ViewModels.AdminAreaViewModels.StudentViewModels.WriteStudentViewModel>();
             CreateMap<Application.ViewModels.AdminAreaViewModels.StudentViewModels.WriteStudentViewModel, Student>();
-
-            CreateMap<Student, Application.ViewModels.TeacherAreaViewModels.StudentViewModels.ReadStudentViewModel>();
-            CreateMap<Application.ViewModels.TeacherAreaViewModels.StudentViewModels.ReadStudentViewModel, Student>();
         }
     }
 }

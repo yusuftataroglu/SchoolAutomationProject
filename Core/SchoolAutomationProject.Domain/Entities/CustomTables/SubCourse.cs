@@ -16,5 +16,7 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
         //SubCourse - Grade ilişkisi
         public virtual ICollection<Grade> Grades { get; set; }
 
+        //SubCourse-Homework ilişkisi
+        public virtual ICollection<Homework> Homeworks { get; set; }
     }
 }
