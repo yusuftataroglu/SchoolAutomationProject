@@ -4,6 +4,7 @@ using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.CommonRepositories;
 using SchoolAutomationProject.Application.ViewModels.BaseViewModels;
 using SchoolAutomationProject.Domain.Entities.CommonTables;
+using SchoolAutomationProject.Infrastructure.Helpers.FileUploadHelpers;
 
 namespace SchoolAutomationProject.WebApp.Controllers
 {
@@ -85,6 +86,32 @@ namespace SchoolAutomationProject.WebApp.Controllers
             }
         }
 
+        [HttpPost("{Area}/{Controller}/{Action}/{userName}")]
+        public virtual async Task<IActionResult> Add(string userName, TWriteViewModel modelVM, IFormFile file)
+        {
+            if (ModelState.IsValid)
+            {
+                T entity = _mapper.Map<T>(modelVM);
+                await _fillEntityRelationshipsService.FillEntityRelationships(entity, modelVM, nameof(Add));
+                var result = await _writeRepository.AddAsync(entity);
+                if (result)
+                {
+                    await _writeRepository.SaveChangesAsync();
+                    TempData["Success"] = "Ekleme İşlemi Başarıyla Tamamlandı";
+                    return RedirectToAction(nameof(Add));
+                }
+                else
+                {
+                    TempData["Error"] = "Bir Hata Meydana Geldi!";
+                    return View(modelVM);
+                }
+            }
+            else
+            {
+                TempData["Error"] = "Bir hata meydana geldi!";
+                return View(modelVM);
+            }
+        }
 
         [HttpGet]
         public virtual async Task<IActionResult> Update(string id)

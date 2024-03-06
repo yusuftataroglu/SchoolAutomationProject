@@ -65,6 +65,17 @@
                                 <a class="nav-link" asp-area="Student" asp-controller="Grades" asp-action="Get" asp-route-userName="@User.Identity.Name">Not Listesi</a>
                             </nav>
                         </div>
+                        <!--Ödev İşlemleri-->
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#homeworkCollapse" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Ödev İşlemleri
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="homeworkCollapse" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" asp-area="Student" asp-controller="Homeworks" asp-action="Add">Ödev Yükle</a>
+                            </nav>
+                        </div>
 
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>

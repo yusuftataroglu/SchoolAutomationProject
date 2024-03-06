@@ -12,12 +12,12 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
 
         public async Task FillHomeworkRelationshipsForStudent(Homework homework, Application.ViewModels.StudentAreaViewModels.HomeworkViewModels.WriteHomeworkViewModel modelVM, string requestType)
         {
-            throw new NotImplementedException();
+
         }
 
         public async Task FillHomeworkRelationshipsForTeacher(Homework homework, Application.ViewModels.TeacherAreaViewModels.HomeworkViewModels.WriteHomeworkViewModel modelVM, string requestType)
         {
-            throw new NotImplementedException();
+
         }
     }
 }
