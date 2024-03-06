@@ -4,14 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.ParentRepositories;
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.ParentViewModels;
-using SchoolAutomationProject.Domain.Entities.CustomTables;
 using SchoolAutomationProject.WebApp.Controllers;
 
 namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Authorize(Roles = "Admin")]
-    public class ParentsController : GenericController<Parent, ReadParentViewModel, WriteParentViewModel>
+    public class ParentsController : GenericController<Domain.Entities.CustomTables.Parent, ReadParentViewModel, WriteParentViewModel>
     {
 
         public ParentsController(

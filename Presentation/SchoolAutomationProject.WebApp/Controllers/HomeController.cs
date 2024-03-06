@@ -55,7 +55,7 @@ namespace SchoolAutomationProject.WebApp.Controllers
 
                 if (registerResult.Succeeded)
                 {
-                    var roleResult = await _userManager.AddToRoleAsync(user, "Student");
+                    var roleResult = await _userManager.AddToRoleAsync(user, "Parent");
                     if (roleResult.Succeeded)
                     {
                         TempData["Success"] = "Kullanıcı başarılı bir şekilde oluşturuldu!";

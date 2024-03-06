@@ -66,7 +66,7 @@
                                     }
                                     else if (User.IsInRole("Parent"))
                                     {
-                                        <li><a asp-area="Parent" asp-action="Get" asp-controller="Attendances" class="dropdown-item">Veli Paneli</a></li>
+                                        <li><a asp-area="Parent" asp-action="Get" asp-controller="Students" asp-route-userName="@User.Identity.Name" class="dropdown-item">Veli Paneli</a></li>
 
                                     }
                                     @* <li><a asp-action="Index" asp-controller="Member" class="dropdown-item">Profile</a></li>

@@ -1,0 +1,44 @@
+﻿@model List<ReadStudentViewModel>
+
+@{
+    ViewData["Title"] = "Get";
+}
+
+<div class="card mb-4">
+    <div class="card-header d-flex align-items-center">
+        <i class="fas fa-table me-1 me-2"></i>
+        <h3>@ViewData["TableTitle"]</h3>
+    </div>
+
+    <div class="card-body">
+        <table class="table table-hover table-bordered">
+
+            <thead>
+                <tr>
+                    @foreach (var columnTitle in ViewData["CustomColumnTitles"] as List<string>)
+                    {
+                        <th>@columnTitle</th>
+                    }
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        @foreach (var customProperty in ViewData["CustomProperties"] as List<string>)
+                        {
+                            <td>@item.GetType().GetProperty(customProperty).GetValue(item)</td>
+                        }
+                        <!-- Devamsızlık Detayları -->
+                        <td class="d-flex">
+                            <a class="btn btn-warning" asp-area="Parent" asp-controller="Attendances" asp-action="GetById" asp-route-id="@item.Id">Devamsızlık Detayları</a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+    </div>
+</div>

@@ -19,6 +19,9 @@ namespace SchoolAutomationProject.Infrastructure.Helpers.Profiles
 
             CreateMap<Attendance, Application.ViewModels.StudentAreaViewModels.AttendanceViewModels.ReadAttendanceViewModel>();
             CreateMap<Application.ViewModels.StudentAreaViewModels.AttendanceViewModels.ReadAttendanceViewModel, Attendance>();
+
+            CreateMap<Attendance, Application.ViewModels.ParentAreaViewModels.AttendanceViewModels.ReadAttendanceViewModel>();
+            CreateMap<Application.ViewModels.ParentAreaViewModels.AttendanceViewModels.ReadAttendanceViewModel, Attendance>();
         }
     }
 }

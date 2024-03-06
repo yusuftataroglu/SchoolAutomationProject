@@ -35,6 +35,13 @@ namespace SchoolAutomationProject.WebApp.Controllers
             return View(readViewModelList);
         }
 
+        [HttpGet("{Area}/{Controller}/{Action}/{id}")]
+        public virtual async Task<IActionResult> GetById(string id, List<T>? entities)
+        {
+            List<TReadViewModel> readViewModelList = _mapper.Map<List<TReadViewModel>>(entities);
+            return View(readViewModelList);
+        }
+
         [HttpGet("{Area}/{Controller}/{Action}/{userName}")]
         public virtual async Task<IActionResult> Get(string userName, List<T>? entities)
         {
