@@ -32,7 +32,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
             return base.Get();
         }
 
-        public async Task<IActionResult> AddWithStudentInfos(string id)
+        public async Task<IActionResult> AddWithStudentInfos(Guid id)
         {
             var gradeVM = new WriteGradeViewModel
             {
@@ -51,7 +51,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
             return await base.Add(modelVM);
         }
 
-        public override async Task<IActionResult> Update(string id)
+        public override async Task<IActionResult> Update(Guid id)
         {
             return await base.Update(id);
         }
@@ -62,7 +62,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
             return await base.Update(modelVM);
         }
 
-        public override async Task<IActionResult> Delete(string id)
+        public override async Task<IActionResult> Delete(Guid id)
         {
             return await base.Delete(id);
         }

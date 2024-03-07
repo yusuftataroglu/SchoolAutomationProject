@@ -14,10 +14,10 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Ach
 
         // Öğrenci - Belge ilişkisi
         [Required(ErrorMessage = "Öğrenci Boş Geçilemez!")]
-        public string StudentId { get; set; }
+        public Guid? StudentId { get; set; }
 
         //Achievement - Semester ilişkisi
         [Required(ErrorMessage = "Dönem Boş Geçilemez!")]
-        public string SemesterId { get; set; }
+        public Guid? SemesterId { get; set; }
     }
 }

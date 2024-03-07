@@ -34,7 +34,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
 
             return base.Get();
         }
-        public override async Task<IActionResult> Details(string id)
+        public override async Task<IActionResult> Details(Guid id)
         {
             //ViewData dictionary'sine ortak verileri atama
             ViewData["TableTitle"] = "Not Detayı";
@@ -53,7 +53,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
             return await base.Add(modelVM);
         }
 
-        public override async Task<IActionResult> Update(string id)
+        public override async Task<IActionResult> Update(Guid id)
         {
             return await base.Update(id);
         }
@@ -64,7 +64,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
             return await base.Update(modelVM);
         }
 
-        public override async Task<IActionResult> Delete(string id)
+        public override async Task<IActionResult> Delete(Guid id)
         {
             return await base.Delete(id);
         }

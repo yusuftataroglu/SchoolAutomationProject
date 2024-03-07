@@ -38,7 +38,7 @@
                                     }
                                     @foreach (var item in _mainCourseReadRepository.GetAll().ToList())
                                     {
-                                        var isSelected = item.Id.ToString() == selectedValue;
+                                        var isSelected = item.Id == selectedValue;
                                         <option value="@item.Id" selected="@isSelected">@item.Name</option>
                                     }
                                 </select>

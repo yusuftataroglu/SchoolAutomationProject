@@ -10,7 +10,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Authorize(Roles = "Admin")]
-    public class TeachersController : GenericController<SchoolAutomationProject.Domain.Entities.CustomTables.Teacher, ReadTeacherViewModel, WriteTeacherViewModel>
+    public class TeachersController : GenericController<Domain.Entities.CustomTables.Teacher, ReadTeacherViewModel, WriteTeacherViewModel>
     {
 
         public TeachersController(
@@ -32,7 +32,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
             ViewData["ControllerName"] = "Teachers";
             return base.Get();
         }
-        public override async Task<IActionResult> Details(string id)
+        public override async Task<IActionResult> Details(Guid id)
         {
             //ViewData dictionary'sine ortak verileri atama
             ViewData["TableTitle"] = "Öğretmen Detayı";
@@ -51,7 +51,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
             return await base.Add(modelVM);
         }
 
-        public override async Task<IActionResult> Update(string id)
+        public override async Task<IActionResult> Update(Guid id)
         {
             return await base.Update(id);
         }
@@ -62,7 +62,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
             return await base.Update(modelVM);
         }
 
-        public override async Task<IActionResult> Delete(string id)
+        public override async Task<IActionResult> Delete(Guid id)
         {
             return await base.Delete(id);
         }

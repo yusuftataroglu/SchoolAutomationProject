@@ -9,6 +9,6 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Dis
         public Guid Id { get; set; }
 
         [Required(ErrorMessage = "Öğrenci Boş Geçilemez!")]
-        public string StudentId { get; set; }
+        public Guid? StudentId { get; set; }
     }
 }

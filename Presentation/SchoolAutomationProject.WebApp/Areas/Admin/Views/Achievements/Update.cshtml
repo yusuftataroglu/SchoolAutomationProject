@@ -27,7 +27,7 @@
                             <select class="form-select" asp-for="@Model.StudentId">
                                 @foreach (var item in _studentReadRepository.GetAll().ToList())
                                 {
-                                    var isSelected = Model.StudentId == item.Id.ToString();
+                                    var isSelected = Model.StudentId == item.Id;
                                     <option value="@item.Id" selected="@isSelected">@item.FirstName @item.LastName</option>
                                 }
                             </select>
@@ -40,7 +40,7 @@
                             <select class="form-select" asp-for="@Model.SemesterId">
                                 @foreach (var item in _semesterReadRepository.GetAll().ToList())
                                 {
-                                    var isSelected = Model.SemesterId == item.Id.ToString();
+                                    var isSelected = Model.SemesterId == item.Id;
                                     <option value="@item.Id" selected="@isSelected">@item.Name</option>
                                 }
                             </select>

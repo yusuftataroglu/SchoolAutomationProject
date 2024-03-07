@@ -21,6 +21,6 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Tea
 
         //TeacherSchedule - Teacher ilişkisi
         [Required(ErrorMessage = "Öğretmen Boş Geçilemez!")]
-        public string TeacherId { get; set; }
+        public Guid? TeacherId { get; set; }
     }
 }

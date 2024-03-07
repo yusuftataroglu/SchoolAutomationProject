@@ -37,14 +37,15 @@ namespace SchoolAutomationProject.Persistence.Repositories.CommonRepositories
             return entityEntry.State == EntityState.Deleted;
         }
 
-        public async Task<bool> RemoveByIdAsync(string id)
+        public async Task<bool> RemoveByIdAsync(Guid id)
         {
-            T data = await Table.FindAsync(Guid.Parse(id));
+            T data = await Table.FindAsync(id);
             return Remove(data);
         }
 
-        public bool Update(T entity)
+        public bool Update<TWriteViewModel>(T entity, TWriteViewModel modelVM)
         {
+            _context.Entry(entity).CurrentValues.SetValues(modelVM);
             EntityEntry<T> entityEntry = Table.Update(entity);
             return entityEntry.State == EntityState.Modified;
         }

@@ -33,7 +33,7 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Par
 
         [Required(ErrorMessage = "Şehir Boş Geçilemez!")]
         public string City { get; set; } // İl
-        public List<string>? StudentIds { get; set; }
+        public List<Guid>? StudentIds { get; set; }
         public List<Student>? Students { get; set; }
     }
 }

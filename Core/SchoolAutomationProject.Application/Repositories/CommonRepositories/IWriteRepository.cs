@@ -7,8 +7,8 @@ namespace SchoolAutomationProject.Application.Repositories.CommonRepositories
         Task<bool> AddAsync(T entity);
         Task AddRangeAsync(List<T> entities);
         bool Remove(T entity);
-        Task<bool> RemoveByIdAsync(string id);
-        bool Update(T entity);
+        Task<bool> RemoveByIdAsync(Guid id);
+        bool Update<TWriteViewModel>(T entity, TWriteViewModel modelVM);
         Task SaveChangesAsync();
     }
 }

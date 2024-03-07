@@ -15,12 +15,10 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Att
         [Required(ErrorMessage = "Devamsızlık Durumu Boş Geçilemez!")]
         public AttendanceStatus AttendanceStatus { get; set; }
 
-        // Devamsızlık - Öğrenci ilişkisi
         [Required(ErrorMessage = "Öğrenci Boş Geçilemez!")]
-        public string StudentId { get; set; } // Öğrenci ID'si
+        public Guid? StudentId { get; set; } // Öğrenci ID'si
 
-        // Devamsızlık - Ders ilişkisi
         [Required(ErrorMessage = "Alt Ders Boş Geçilemez!")]
-        public string SubCourseId { get; set; } // Ders ID'si
+        public Guid? SubCourseId { get; set; } // Ders ID'si
     }
 }

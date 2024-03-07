@@ -34,7 +34,7 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
                     var classroomMainCourse = new ClassroomMainCourse()
                     {
                         MainCourseId = mainCourse.Id,
-                        ClassroomId = Guid.Parse(modelVMClassroomId)
+                        ClassroomId = modelVMClassroomId
                     };
                     mainCourse.ClassroomMainCourses.Add(classroomMainCourse);
                 }

@@ -55,17 +55,17 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Stu
         public ContinuationStatus? ContinuationStatus { get; set; }
 
         //Student-Classroom ilişkisi
-        public string? ClassroomId { get; set; } //Ön kayıt aşamasında girilmesine gerek yok.
+        public Guid? ClassroomId { get; set; } //Ön kayıt aşamasında girilmesine gerek yok.
 
         //Student-Parent ilişkisi
-        public string? ParentId { get; set; }
+        public Guid? ParentId { get; set; }
 
         //Student-Grade ilişkisi
-        public List<string>? GradeIds { get; set; }
+        public List<Guid>? GradeIds { get; set; }
         public List<Grade>? Grades { get; set; }
 
         //Student-Achievement ilişkisi
-        public List<string>? AchievementIds { get; set; }
+        public List<Guid>? AchievementIds { get; set; }
         public List<Achievement>? Achievements { get; set; }
     }
 }

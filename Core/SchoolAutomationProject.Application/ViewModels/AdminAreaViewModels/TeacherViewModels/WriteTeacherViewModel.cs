@@ -20,8 +20,8 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Tea
         public string? Title { get; set; }
 
         [Required(ErrorMessage = "Ders seçimi boş geçilemez!")]
-        public string MainCourseId { get; set; }
-        public List<string>? ClassroomTeachersClassroomIds { get; set; }
+        public Guid? MainCourseId { get; set; }
+        public List<Guid>? ClassroomTeachersClassroomIds { get; set; }
         public List<ClassroomTeacher>? ClassroomTeachers { get; set; }
 
     }

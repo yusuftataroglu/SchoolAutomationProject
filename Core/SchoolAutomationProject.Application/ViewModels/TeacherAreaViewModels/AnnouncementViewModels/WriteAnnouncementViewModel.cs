@@ -20,7 +20,7 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.A
         public string Content { get; set; }
         public AppUser Sender { get; set; }
         public string SenderId { get; set; } //todo otomatik olarak atanabilir.
-        public virtual ICollection<AnnouncementRole> AnnouncementRoles { get; set; }
-        public List<string> AnnouncementRolesRoleId { get; set; }
+        public ICollection<AnnouncementRole> AnnouncementRoles { get; set; }
+        public List<Guid> AnnouncementRolesRoleId { get; set; }
     }
 }

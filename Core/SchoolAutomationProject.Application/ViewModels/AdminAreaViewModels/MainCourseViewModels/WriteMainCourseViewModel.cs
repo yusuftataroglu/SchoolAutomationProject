@@ -16,7 +16,7 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Mai
         public string Name { get; set; }
 
         public List<ClassroomMainCourse>? ClassroomMainCourses { get; set; }
-        public List<string>? ClassroomMainCoursesClassroomIds { get; set; }
+        public List<Guid>? ClassroomMainCoursesClassroomIds { get; set; }
 
     }
 }

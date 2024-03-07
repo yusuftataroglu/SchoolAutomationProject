@@ -15,10 +15,10 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.G
 
         // Not - Öğrenci ilişkisi
         [Required(ErrorMessage = "Öğrenci Boş Geçilemez!")]
-        public string StudentId { get; set; } // Öğrenci ID'si
+        public Guid? StudentId { get; set; } // Öğrenci ID'si
 
         // Not - Alt Ders ilişkisi
         [Required(ErrorMessage = "Alt Ders Boş Geçilemez!")]
-        public string SubCourseId { get; set; } // Ana Ders ID'si
+        public Guid? SubCourseId { get; set; } // Ana Ders ID'si
     }
 }

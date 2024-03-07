@@ -4,7 +4,6 @@ using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.CommonRepositories;
 using SchoolAutomationProject.Application.ViewModels.BaseViewModels;
 using SchoolAutomationProject.Domain.Entities.CommonTables;
-using SchoolAutomationProject.Infrastructure.Helpers.FileUploadHelpers;
 
 namespace SchoolAutomationProject.WebApp.Controllers
 {
@@ -50,7 +49,7 @@ namespace SchoolAutomationProject.WebApp.Controllers
         }
 
         [HttpGet]
-        public virtual async Task<IActionResult> Details(string id)
+        public virtual async Task<IActionResult> Details(Guid id)
         {
             ViewData["CommonColumnTitles"] = new List<string> { "Oluşturma Zamanı", "Oluşturulan Bilgisayar Adı", "Oluşturulan IP Adresi", "Güncelleme Zamanı", "Güncellenilen Bilgisayar Adı", "Güncellenilen IP Adresi" };
             ViewData["CommonProperties"] = new List<string> { "CreatedDate", "CreatedComputerName", "CreatedIpAddress", "UpdatedDate", "UpdatedComputerName", "UpdatedIpAddress" };
@@ -121,7 +120,7 @@ namespace SchoolAutomationProject.WebApp.Controllers
         }
 
         [HttpGet]
-        public virtual async Task<IActionResult> Update(string id)
+        public virtual async Task<IActionResult> Update(Guid id)
         {
             var entity = await _readRepository.GetByIdAsync(id);
             if (entity != null)
@@ -142,13 +141,34 @@ namespace SchoolAutomationProject.WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                T entity = await _readRepository.GetByIdAsync(modelVM.Id.ToString());
+                T entity = await _readRepository.GetByIdAsync(modelVM.Id);
                 if (entity != null)
                 {
-                    await _fillEntityRelationshipsService.FillEntityRelationships(entity, modelVM, $"{nameof(Update)}Post");
-                    var resultUpdate = _writeRepository.Update(entity);
+                    DateTime createdDate = entity.CreatedDate;
+                    string createdComputerName = entity.CreatedComputerName;
+                    string createdIpAddress = entity.CreatedIpAddress;
+                    string? createdUser = entity.CreatedUser;
+                    DateTime? updatedDate = entity.UpdatedDate;
+                    string? updatedComputerName = entity.UpdatedComputerName;
+                    string? updatedIpAddress = entity.UpdatedIpAddress;
+                    string? updatedUser = entity.UpdatedUser;
+
+
+
+                    var resultUpdate = _writeRepository.Update(entity, modelVM);
                     if (resultUpdate)
                     {
+                        entity.Id = modelVM.Id;
+                        entity.CreatedDate = createdDate;
+                        entity.CreatedComputerName = createdComputerName;
+                        entity.CreatedIpAddress = createdIpAddress;
+                        entity.CreatedUser = createdUser;
+                        entity.UpdatedDate = updatedDate;
+                        entity.UpdatedComputerName = updatedComputerName;
+                        entity.UpdatedIpAddress = updatedIpAddress;
+                        entity.UpdatedUser = updatedUser;
+                        await _fillEntityRelationshipsService.FillEntityRelationships(entity, modelVM, $"{nameof(Update)}Post");
+
                         await _writeRepository.SaveChangesAsync();
                         TempData["Success"] = "Güncelleme İşlemi Başarıyla Tamamlandı";
                         return RedirectToAction(nameof(Get));
@@ -174,7 +194,7 @@ namespace SchoolAutomationProject.WebApp.Controllers
 
 
         [HttpGet]
-        public virtual async Task<IActionResult> Delete(string id)
+        public virtual async Task<IActionResult> Delete(Guid id)
         {
             var resultDelete = await _writeRepository.RemoveByIdAsync(id);
             if (!resultDelete)

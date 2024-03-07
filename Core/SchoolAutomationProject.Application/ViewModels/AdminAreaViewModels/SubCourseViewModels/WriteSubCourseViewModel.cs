@@ -18,6 +18,6 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Sub
 
         //SubCourse - MainCourse ilişkisi
         [Required(ErrorMessage = "Ana Ders Seçimi Boş Geçilemez!")]
-        public string MainCourseId { get; set; }
+        public Guid? MainCourseId { get; set; }
     }
 }

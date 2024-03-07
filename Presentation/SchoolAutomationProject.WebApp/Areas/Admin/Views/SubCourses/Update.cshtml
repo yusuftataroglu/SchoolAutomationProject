@@ -37,7 +37,7 @@
                         <select asp-for="MainCourseId" class="form-control">
                             @foreach (var mainCourse in _mainCourseReadRepository.GetAll())
                             {
-                                var isSelected = mainCourse.Id.ToString() == Model.MainCourseId;
+                                var isSelected = mainCourse.Id == Model.MainCourseId;
                                 <option value="@mainCourse.Id" selected="@isSelected">@mainCourse.Name</option>
                             }
                         </select>

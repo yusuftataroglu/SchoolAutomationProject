@@ -27,7 +27,7 @@
                         <select asp-for="StudentId" class="form-control">
                             @foreach (var item in _studentReadRepository.GetAll().ToList())
                             {
-                                if (item.Id.ToString() == Model.StudentId)
+                                if (item.Id == Model.StudentId)
                                 {
                                     <option value="@item.Id">@item.FirstName @item.LastName</option>
                                 }

@@ -68,7 +68,7 @@
                             <option value="">Sınıf Seçiniz</option>
                             @foreach (var item in _classroomReadRepository.GetAll().ToList())
                             {
-                                var isSelected = Model.ClassroomId == item.Id.ToString();
+                                var isSelected = Model.ClassroomId == item.Id;
                                 <option value="@item.Id" selected="@isSelected">@item.Name</option>
                             }
                         </select>
