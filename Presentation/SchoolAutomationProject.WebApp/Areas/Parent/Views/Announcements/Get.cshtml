@@ -1,0 +1,62 @@
+﻿@model List<ReadAnnouncementViewModel>
+
+@{
+    ViewData["Title"] = "Get";
+}
+
+<div class="card mb-4">
+    <div class="card-header d-flex align-items-center">
+        <i class="fas fa-table me-1 me-2"></i>
+        <h3>@ViewData["TableTitle"]</h3>
+    </div>
+
+    <div class="card-body">
+        <table class="table table-hover table-bordered">
+
+            <thead>
+                <tr>
+                    @foreach (var columnTitle in ViewData["CustomColumnTitles"] as List<string>)
+                    {
+                        <th>@columnTitle</th>
+                    }
+                    <!-- Ekleme butonu -->
+                    <th>
+                        <a class="btn btn-success" asp-area="Parent" asp-controller="@ViewData["ControllerName"]" asp-action="Add">+</a>
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    if (item.AnnouncementRoles.Select(x => x.Role.Name).Contains("Parent"))
+                    {
+                        <tr>
+                            @foreach (var customProperty in ViewData["CustomProperties"] as List<string>)
+                            {
+                                <td>
+                                    @if (customProperty == "AnnouncementRoles")
+                                    {
+                                        foreach (var announcementRole in item.AnnouncementRoles)
+                                        {
+                                            <badge class="badge bg-info">@announcementRole.Role.Name</badge>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <span>@item.GetType().GetProperty(customProperty).GetValue(item)</span>
+                                    }
+                                </td>
+                            }
+
+                            <td class="d-flex">
+                                <a class="btn btn-warning" asp-area="Parent" asp-controller="@ViewData["ControllerName"]" asp-action="Details" asp-route-id="@item.Id">Detaylar</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>

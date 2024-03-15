@@ -21,7 +21,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
             builder.Property(x => x.WeeklyHour).IsRequired();
             builder.Property(x => x.Position).IsRequired();
 
-            builder.HasData(GetSampleSubCourses());
+            //builder.HasData(GetSampleSubCourses());
         }
 
         public List<SubCourse> GetSampleSubCourses()

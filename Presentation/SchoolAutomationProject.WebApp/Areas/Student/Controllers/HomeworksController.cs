@@ -46,7 +46,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Student.Controllers
         {
             return base.Add();
         }
-        public override async Task<IActionResult> Add(string userName, WriteHomeworkViewModel modelVM, IFormFile file)
+        public override async Task<IActionResult> AddWithFile(string userName, WriteHomeworkViewModel modelVM, IFormFile file)
         {
             if (ModelState.IsValid)
             {
@@ -74,7 +74,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Student.Controllers
                             await file.CopyToAsync(stream);
                         };
                         modelVM.FileUrl = path;
-                        return await base.Add(userName, modelVM, file);
+                        return await base.AddWithFile(userName, modelVM, file);
                     }
 
                     else

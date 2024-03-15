@@ -23,7 +23,7 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
                 teacher.ClassroomTeachers.Clear();
                 foreach (var classroomId in modelVM.ClassroomTeachersClassroomIds)
                 {
-                    teacher.ClassroomTeachers.Add(new ClassroomTeacher { ClassroomId = classroomId });
+                    teacher.ClassroomTeachers.Add(new ClassroomTeacher { ClassroomId = classroomId }); //todo diğerleri için de gerçekleştirilecek
                 }
             }
         }

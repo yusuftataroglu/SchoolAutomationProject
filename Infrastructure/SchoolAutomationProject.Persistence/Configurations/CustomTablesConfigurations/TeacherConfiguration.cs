@@ -21,7 +21,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
             builder.Property(x => x.LastName).HasMaxLength(50).IsRequired();
             builder.Property(x => x.Title).HasMaxLength(50);
 
-            builder.HasData(GetSampleTeachers());
+            //builder.HasData(GetSampleTeachers());
         }
 
         public List<Teacher> GetSampleTeachers()

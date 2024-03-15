@@ -89,6 +89,7 @@ namespace SchoolAutomationProject.Persistence.Contexts
                         item.Entity.CreatedComputerName = Environment.MachineName;
                         item.Entity.CreatedIpAddress = await IpAddressHelper.GetIpAddress();
                         item.Entity.CreatedUser = new HttpContextAccessor().HttpContext.User.Identity.Name;
+                        item.Entity.IsActive = true;
 
                         if (item.Entity is Student)
                         {

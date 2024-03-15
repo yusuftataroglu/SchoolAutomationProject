@@ -18,7 +18,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
 
             //Bu tabloya ait propertylerin özelleştirmeleri
             builder.Property(x => x.Name).HasMaxLength(255).IsRequired();
-            builder.HasData(GetSampleMainCourses());
+            //builder.HasData(GetSampleMainCourses());
         }
 
         public List<MainCourse> GetSampleMainCourses()

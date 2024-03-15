@@ -19,7 +19,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
             //Bu tabloya ait propertylerin özelleştirmeleri
             builder.Property(x => x.StudentId).IsRequired();
 
-            builder.HasData(GetSampleDiscontinuedStudents());
+            //builder.HasData(GetSampleDiscontinuedStudents());
         }
 
         public List<DiscontinuedStudent> GetSampleDiscontinuedStudents()

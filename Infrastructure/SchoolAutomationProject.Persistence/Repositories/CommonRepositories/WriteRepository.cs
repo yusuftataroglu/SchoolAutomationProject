@@ -31,16 +31,17 @@ namespace SchoolAutomationProject.Persistence.Repositories.CommonRepositories
             }
         }
 
-        public bool Remove(T entity)
+        public void Remove(T entity)
         {
-            EntityEntry<T> entityEntry = Table.Remove(entity);
-            return entityEntry.State == EntityState.Deleted;
+            //EntityEntry<T> entityEntry = Table.Remove(entity);
+            //return entityEntry.State == EntityState.Deleted;
+            entity.IsActive = false;
         }
 
-        public async Task<bool> RemoveByIdAsync(Guid id)
+        public async Task RemoveByIdAsync(Guid id)
         {
             T data = await Table.FindAsync(id);
-            return Remove(data);
+            data.IsActive = false;
         }
 
         public bool Update<TWriteViewModel>(T entity, TWriteViewModel modelVM)

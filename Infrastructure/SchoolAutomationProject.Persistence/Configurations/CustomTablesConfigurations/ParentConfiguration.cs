@@ -25,7 +25,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
             builder.Property(x => x.District).HasMaxLength(50).IsRequired();
             builder.Property(x => x.City).HasMaxLength(50).IsRequired();
 
-            builder.HasData(GetSampleParents());
+            //builder.HasData(GetSampleParents());
 
         }
 

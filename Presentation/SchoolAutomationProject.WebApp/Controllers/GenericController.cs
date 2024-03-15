@@ -42,7 +42,7 @@ namespace SchoolAutomationProject.WebApp.Controllers
         }
 
         [HttpGet("{Area}/{Controller}/{Action}/{userName}")]
-        public virtual async Task<IActionResult> Get(string userName, List<T>? entities)
+        public virtual async Task<IActionResult> GetByUsername(string userName, List<T>? entities)
         {
             List<TReadViewModel> readViewModelList = _mapper.Map<List<TReadViewModel>>(entities);
             return View(readViewModelList);
@@ -92,8 +92,9 @@ namespace SchoolAutomationProject.WebApp.Controllers
             }
         }
 
-        [HttpPost("{Area}/{Controller}/{Action}/{userName}")]
-        public virtual async Task<IActionResult> Add(string userName, TWriteViewModel modelVM, IFormFile file)
+
+        [HttpPost]
+        public virtual async Task<IActionResult> AddByUsername(string userName, TWriteViewModel modelVM)
         {
             if (ModelState.IsValid)
             {
@@ -109,13 +110,40 @@ namespace SchoolAutomationProject.WebApp.Controllers
                 else
                 {
                     TempData["Error"] = "Bir Hata Meydana Geldi!";
-                    return View(modelVM);
+                    return RedirectToAction(nameof(Add), modelVM);
                 }
             }
             else
             {
                 TempData["Error"] = "Bir hata meydana geldi!";
-                return View(modelVM);
+                return RedirectToAction(nameof(Add), modelVM);
+            }
+        }
+
+        [HttpPost]
+        public virtual async Task<IActionResult> AddWithFile(string userName, TWriteViewModel modelVM, IFormFile file)
+        {
+            if (ModelState.IsValid)
+            {
+                T entity = _mapper.Map<T>(modelVM);
+                await _fillEntityRelationshipsService.FillEntityRelationships(entity, modelVM, nameof(Add));
+                var result = await _writeRepository.AddAsync(entity);
+                if (result)
+                {
+                    await _writeRepository.SaveChangesAsync();
+                    TempData["Success"] = "Ekleme İşlemi Başarıyla Tamamlandı";
+                    return RedirectToAction(nameof(Add));
+                }
+                else
+                {
+                    TempData["Error"] = "Bir Hata Meydana Geldi!";
+                    return RedirectToAction(nameof(Add),modelVM);
+                }
+            }
+            else
+            {
+                TempData["Error"] = "Bir hata meydana geldi!";
+                return RedirectToAction(nameof(Add), modelVM);
             }
         }
 
@@ -126,7 +154,6 @@ namespace SchoolAutomationProject.WebApp.Controllers
             if (entity != null)
             {
                 TWriteViewModel modelVM = _mapper.Map<TWriteViewModel>(entity);
-                //await _fillEntityRelationshipsService.FillEntityRelationships(entity, modelVM, $"{nameof(Update)}Get");
                 return View(modelVM);
             }
             else
@@ -144,31 +171,10 @@ namespace SchoolAutomationProject.WebApp.Controllers
                 T entity = await _readRepository.GetByIdAsync(modelVM.Id);
                 if (entity != null)
                 {
-                    DateTime createdDate = entity.CreatedDate;
-                    string createdComputerName = entity.CreatedComputerName;
-                    string createdIpAddress = entity.CreatedIpAddress;
-                    string? createdUser = entity.CreatedUser;
-                    DateTime? updatedDate = entity.UpdatedDate;
-                    string? updatedComputerName = entity.UpdatedComputerName;
-                    string? updatedIpAddress = entity.UpdatedIpAddress;
-                    string? updatedUser = entity.UpdatedUser;
-
-
-
                     var resultUpdate = _writeRepository.Update(entity, modelVM);
                     if (resultUpdate)
                     {
-                        entity.Id = modelVM.Id;
-                        entity.CreatedDate = createdDate;
-                        entity.CreatedComputerName = createdComputerName;
-                        entity.CreatedIpAddress = createdIpAddress;
-                        entity.CreatedUser = createdUser;
-                        entity.UpdatedDate = updatedDate;
-                        entity.UpdatedComputerName = updatedComputerName;
-                        entity.UpdatedIpAddress = updatedIpAddress;
-                        entity.UpdatedUser = updatedUser;
                         await _fillEntityRelationshipsService.FillEntityRelationships(entity, modelVM, $"{nameof(Update)}Post");
-
                         await _writeRepository.SaveChangesAsync();
                         TempData["Success"] = "Güncelleme İşlemi Başarıyla Tamamlandı";
                         return RedirectToAction(nameof(Get));
@@ -196,12 +202,7 @@ namespace SchoolAutomationProject.WebApp.Controllers
         [HttpGet]
         public virtual async Task<IActionResult> Delete(Guid id)
         {
-            var resultDelete = await _writeRepository.RemoveByIdAsync(id);
-            if (!resultDelete)
-            {
-                TempData["Error"] = "Silme İşleminde Bir Hata Meydana Geldi";
-                return View(nameof(Get));
-            }
+            await _writeRepository.RemoveByIdAsync(id);
             await _writeRepository.SaveChangesAsync();
             TempData["Success"] = "Silme İşlemi Başarıyla Tamamlandı";
             return RedirectToAction(nameof(Get));

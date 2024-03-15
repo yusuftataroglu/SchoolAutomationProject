@@ -36,7 +36,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Student.Controllers
             _studentReadRepository = studentReadRepository;
         }
 
-        public override async Task<IActionResult> Get(string userName, List<Attendance>? attendanceViewModels)
+        public override async Task<IActionResult> GetByUsername(string userName, List<Attendance>? attendanceViewModels)
         {
             // ViewData dictionary'sine özel verileri atama
             ViewData["TableTitle"] = "Devamsızlık Listesi";
@@ -47,7 +47,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Student.Controllers
             AppUser user = await _userManager.FindByNameAsync(userName);
             var student = _studentReadRepository.GetWhere(x => x.UserId == user.Id).FirstOrDefault();
             List<Attendance> attendanceList = _attendanceReadRepository.GetWhere(x => x.StudentId == student.Id).OrderByDescending(x=> x.AttendanceDate).ToList();
-            return await base.Get(userName, attendanceList);
+            return await base.GetByUsername(userName, attendanceList);
 
         }
     }

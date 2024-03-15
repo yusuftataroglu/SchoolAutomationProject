@@ -9,7 +9,7 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.A
     {
         public WriteAnnouncementViewModel()
         {
-            AnnouncementRolesRoleId = new();
+            AnnouncementRolesRoleIds = new();
         }
         public Guid Id { get; set; }
 
@@ -18,9 +18,9 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.A
 
         [Required(ErrorMessage = "Duyuru İçeriği Boş Geçilemez!")]
         public string Content { get; set; }
-        public AppUser Sender { get; set; }
-        public string SenderId { get; set; } //todo otomatik olarak atanabilir.
-        public ICollection<AnnouncementRole> AnnouncementRoles { get; set; }
-        public List<Guid> AnnouncementRolesRoleId { get; set; }
+        public AppUser? Sender { get; set; }
+        public string? SenderId { get; set; } //todo otomatik olarak atanabilir.
+        public ICollection<AnnouncementRole>? AnnouncementRoles { get; set; }
+        public List<string>? AnnouncementRolesRoleIds { get; set; }
     }
 }

@@ -36,7 +36,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Student.Controllers
         }
 
 
-        public override async Task<IActionResult> Get(string userName, List<Grade>? entities)
+        public override async Task<IActionResult> GetByUsername(string userName, List<Grade>? entities)
         {
             var user = await _userManager.FindByNameAsync(userName);
             var student = _studentReadRepository.GetWhere(x => x.UserId == user.Id).FirstOrDefault();
@@ -47,7 +47,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Student.Controllers
             ViewData["CustomColumnTitles"] = new List<string> { "Alt Ders", "Sınav Numarası", "Not" };
             ViewData["CustomProperties"] = new List<string> { "SubCourseCode", "ExamNumber", "Score" };
             ViewData["ControllerName"] = "Grades";
-            return await base.Get(userName, gradeList);
+            return await base.GetByUsername(userName, gradeList);
         }
 
         //public override async Task<IActionResult> Add(WriteGradeViewModel modelVM)

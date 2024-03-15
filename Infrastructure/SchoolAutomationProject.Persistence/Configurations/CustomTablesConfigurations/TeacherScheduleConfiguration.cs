@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
-using SchoolAutomationProject.Domain.Entities.Enums;
-using System.Globalization;
 
 namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigurations
 {
@@ -22,7 +20,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
             builder.Property(x => x.Day).IsRequired();
             builder.Property(x => x.Classroom).HasMaxLength(9).IsRequired();
 
-            builder.HasData(GetSampleTeacherSchedule());
+            //builder.HasData(GetSampleTeacherSchedule());
 
         }
 

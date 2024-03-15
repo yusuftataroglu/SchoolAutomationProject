@@ -40,7 +40,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Parent.Controllers
             _parentReadRepository = parentReadRepository;
         }
 
-        public override async Task<IActionResult> Get(string userName, List<Attendance>? entities)
+        public override async Task<IActionResult> GetByUsername(string userName, List<Attendance>? entities)
         {
             // ViewData dictionary'sine özel verileri atama
             ViewData["TableTitle"] = "Devamsızlık Listesi";
@@ -55,7 +55,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Parent.Controllers
             .OrderByDescending(x => x.Student.FirstName)
             .ThenByDescending(x => x.AttendanceDate)
             .ToList();
-            return await base.Get(userName, attendanceList);
+            return await base.GetByUsername(userName, attendanceList);
         }
         public override async Task<IActionResult> GetById(string id, List<Attendance>? attendances)
         {

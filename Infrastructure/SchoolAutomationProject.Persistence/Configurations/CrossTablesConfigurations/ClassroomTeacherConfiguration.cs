@@ -14,7 +14,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.CrossTablesConfigur
             builder.HasOne(x => x.Classroom).WithMany(x => x.ClassroomTeachers).HasForeignKey(x => x.ClassroomId).IsRequired();
             builder.HasOne(x => x.Teacher).WithMany(x => x.ClassroomTeachers).HasForeignKey(x => x.TeacherId).IsRequired();
 
-            builder.HasData(GetSampleClassroomTeachers());
+            //builder.HasData(GetSampleClassroomTeachers());
         }
 
         private List<ClassroomTeacher> GetSampleClassroomTeachers()

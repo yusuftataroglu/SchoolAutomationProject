@@ -21,7 +21,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
             builder.Property(x => x.AttendanceDate).IsRequired();
             builder.Property(x => x.AttendanceStatus).IsRequired();
 
-            builder.HasData(GetSampleAttendaces());
+            //builder.HasData(GetSampleAttendaces());
         }
 
         public List<Attendance> GetSampleAttendaces()

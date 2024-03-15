@@ -21,7 +21,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
             builder.Property(x => x.Type).IsRequired();
             builder.Property(x => x.Description).HasMaxLength(255);
 
-            builder.HasData(GetSampleAchievements());
+            //builder.HasData(GetSampleAchievements());
         }
 
         public List<Achievement> GetSampleAchievements()

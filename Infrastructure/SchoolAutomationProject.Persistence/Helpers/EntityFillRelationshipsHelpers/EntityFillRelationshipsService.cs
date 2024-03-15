@@ -149,21 +149,21 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
                     await _announcementFillRelationshipsService.FillAnnouncementRelationshipsForTeacher(entity as Announcement, modelVM as Application.ViewModels.TeacherAreaViewModels.AnnouncementViewModels.WriteAnnouncementViewModel, requestType);
                 }
             }
-            else if (typeof(T) == typeof(Message))
-            {
-                if (typeof(TWriteViewModel).FullName == "SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.MessageViewModels.WriteMessageViewModel")
-                {
-                    await _messageFillRelationshipsService.FillMessageRelationshipsForAdmin(entity as Message, modelVM as Application.ViewModels.AdminAreaViewModels.MessageViewModels.WriteMessageViewModel, requestType);
-                }
-                else if (typeof(TWriteViewModel).FullName == "SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.MessageViewModels.WriteMessageViewModel")
-                {
-                    await _messageFillRelationshipsService.FillMessageRelationshipsForTeacher(entity as Message, modelVM as Application.ViewModels.TeacherAreaViewModels.MessageViewModels.WriteMessageViewModel, requestType);
-                }
-                else
-                {
-                    await _messageFillRelationshipsService.FillMessageRelationshipsForParent(entity as Message, modelVM as Application.ViewModels.ParentAreaViewModels.MessageViewModels.WriteMessageViewModel, requestType);
-                }
-            }
+            //else if (typeof(T) == typeof(Message))
+            //{
+            //    if (typeof(TWriteViewModel).FullName == "SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.MessageViewModels.WriteMessageViewModel")
+            //    {
+            //        await _messageFillRelationshipsService.FillMessageRelationshipsForAdmin(entity as Message, modelVM as Application.ViewModels.AdminAreaViewModels.MessageViewModels.WriteMessageViewModel, requestType);
+            //    }
+            //    else if (typeof(TWriteViewModel).FullName == "SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.MessageViewModels.WriteMessageViewModel")
+            //    {
+            //        await _messageFillRelationshipsService.FillMessageRelationshipsForTeacher(entity as Message, modelVM as Application.ViewModels.TeacherAreaViewModels.MessageViewModels.WriteMessageViewModel, requestType);
+            //    }
+            //    else
+            //    {
+            //        await _messageFillRelationshipsService.FillMessageRelationshipsForParent(entity as Message, modelVM as Application.ViewModels.ParentAreaViewModels.MessageViewModels.WriteMessageViewModel, requestType);
+            //    }
+            //}
             else if (typeof(T) == typeof(Homework))
             {
                 if (typeof(TWriteViewModel).FullName == "SchoolAutomationProject.Application.ViewModels.StudentAreaViewModels.HomeworkViewModels.WriteHomeworkViewModel")

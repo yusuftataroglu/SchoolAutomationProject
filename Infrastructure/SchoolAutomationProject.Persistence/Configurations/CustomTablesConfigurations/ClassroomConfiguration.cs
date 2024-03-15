@@ -21,7 +21,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
             builder.Property(x => x.Name).HasMaxLength(9).IsRequired();
             builder.Property(x => x.Capacity).IsRequired();
 
-            builder.HasData(GetSampleClassrooms());
+            //builder.HasData(GetSampleClassrooms());
         }
 
         public List<Classroom> GetSampleClassrooms()

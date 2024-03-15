@@ -3,6 +3,7 @@
     public abstract class BaseClass
     {
         public Guid Id { get; set; }
+        public bool IsActive { get; set; }
         public DateTime CreatedDate { get; set; }
         public string CreatedComputerName { get; set; }
         public string CreatedIpAddress { get; set; }

@@ -11,6 +11,13 @@
 @using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.SubCourseViewModels;
 @using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.TeacherViewModels;
 @using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.TeacherScheduleViewModels;
+@using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.AnnouncementViewModels;
+@using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.MessageViewModels;
+@using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.AdministratorViewModels;
+
+@using Microsoft.AspNetCore.Identity;
+
+@using SchoolAutomationProject.Domain.Entities.IdentityTables;
 
 @using SchoolAutomationProject.Domain.Entities.Enums;
 
@@ -26,5 +33,8 @@
 @using SchoolAutomationProject.Application.Repositories.ParentRepositories;
 @using SchoolAutomationProject.Application.Repositories.SemesterRepositories;
 @using SchoolAutomationProject.Application.Repositories.TeacherScheduleRepositories;
+@using SchoolAutomationProject.Application.Repositories.AnnouncementRepositories;
+@using SchoolAutomationProject.Application.Repositories.MessageRepositories;
+@using SchoolAutomationProject.Application.Repositories.AdministratorRepositories;
 
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers

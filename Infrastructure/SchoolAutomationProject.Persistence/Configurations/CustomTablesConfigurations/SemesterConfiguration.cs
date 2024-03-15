@@ -22,7 +22,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
             builder.Property(x => x.StartDate).IsRequired();
             builder.Property(x => x.EndDate).IsRequired();
 
-            builder.HasData(GetSampleSemesters());
+            //builder.HasData(GetSampleSemesters());
         }
 
         public List<Semester> GetSampleSemesters()
