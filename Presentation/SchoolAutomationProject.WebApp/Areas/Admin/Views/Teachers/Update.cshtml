@@ -36,7 +36,7 @@
                                     @{
                                         var selectedValue = Model.MainCourseId;
                                     }
-                                    @foreach (var item in _mainCourseReadRepository.GetAll().ToList())
+                                    @foreach (var item in _mainCourseReadRepository.GetAllActives().ToList())
                                     {
                                         var isSelected = item.Id == selectedValue;
                                         <option value="@item.Id" selected="@isSelected">@item.Name</option>
@@ -50,7 +50,7 @@
                         <div class="col-md-auto">
                             <label>Ders Verilen Sınıflar</label>
                             <div class="form-group">
-                                @foreach (var classroom in _classroomReadRepository.GetAll().ToList())
+                                @foreach (var classroom in _classroomReadRepository.GetAllActives().ToList())
                                 {
                                     <input id="@classroom.Id" type="checkbox" name="ClassroomTeachersClassroomIds" class="form-check-input" value="@classroom.Id" checked="@Model.ClassroomTeachers.Select(x=> x.ClassroomId).Contains(classroom.Id)" />
                                     <label for="@classroom.Id">@classroom.Name</label>

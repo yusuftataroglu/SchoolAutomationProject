@@ -13,7 +13,7 @@
                 <div class="card-header">Belge Ekle</div>
 
                 <div class="card-body">
-                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div asp-validation-summary="All"></div>
 
                     <label for="type">Türü</label>
                     <select id="type" class="form-control" asp-for="Type" asp-items="@Html.GetEnumSelectList<AchievementType>()">

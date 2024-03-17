@@ -29,7 +29,7 @@ namespace SchoolAutomationProject.WebApp.Controllers
         [HttpGet]
         public virtual IActionResult Get()
         {
-            var entities = _readRepository.GetAll().ToList();
+            var entities = _readRepository.GetAllActives().ToList();
             List<TReadViewModel> readViewModelList = _mapper.Map<List<TReadViewModel>>(entities);
             return View(readViewModelList);
         }
@@ -54,7 +54,7 @@ namespace SchoolAutomationProject.WebApp.Controllers
             ViewData["CommonColumnTitles"] = new List<string> { "Oluşturma Zamanı", "Oluşturulan Bilgisayar Adı", "Oluşturulan IP Adresi", "Güncelleme Zamanı", "Güncellenilen Bilgisayar Adı", "Güncellenilen IP Adresi" };
             ViewData["CommonProperties"] = new List<string> { "CreatedDate", "CreatedComputerName", "CreatedIpAddress", "UpdatedDate", "UpdatedComputerName", "UpdatedIpAddress" };
 
-            var entity = await _readRepository.GetByIdAsync(id);
+            var entity = await _readRepository.GetAllActivesByIdAsync(id);
             TReadViewModel readViewModel = _mapper.Map<TReadViewModel>(entity);
             return View(readViewModel);
         }
@@ -91,10 +91,40 @@ namespace SchoolAutomationProject.WebApp.Controllers
                 return View(modelVM);
             }
         }
-
-
+        [HttpGet]
+        public virtual IActionResult AddByUsername()
+        {
+            return View();
+        }
         [HttpPost]
         public virtual async Task<IActionResult> AddByUsername(string userName, TWriteViewModel modelVM)
+        {
+            if (ModelState.IsValid)
+            {
+                T entity = _mapper.Map<T>(modelVM);
+                await _fillEntityRelationshipsService.FillEntityRelationships(entity, modelVM, nameof(Add));
+                var result = await _writeRepository.AddAsync(entity);
+                if (result)
+                {
+                    await _writeRepository.SaveChangesAsync();
+                    TempData["Success"] = "Ekleme İşlemi Başarıyla Tamamlandı";
+                    return RedirectToAction(nameof(Get));
+                }
+                else
+                {
+                    TempData["Error"] = "Bir Hata Meydana Geldi!";
+                    return View(modelVM);
+                }
+            }
+            else
+            {
+                TempData["Error"] = "Bir hata meydana geldi!";
+                return View(modelVM);
+            }
+        }
+
+        [HttpPost]
+        public virtual async Task<IActionResult> AddWithFile(string userName, TWriteViewModel modelVM, IFormFile file)
         {
             if (ModelState.IsValid)
             {
@@ -120,37 +150,26 @@ namespace SchoolAutomationProject.WebApp.Controllers
             }
         }
 
-        [HttpPost]
-        public virtual async Task<IActionResult> AddWithFile(string userName, TWriteViewModel modelVM, IFormFile file)
+        [HttpGet]
+        public virtual async Task<IActionResult> Update(Guid id)
         {
-            if (ModelState.IsValid)
+            var entity = await _readRepository.GetAllActivesByIdAsync(id);
+            if (entity != null)
             {
-                T entity = _mapper.Map<T>(modelVM);
-                await _fillEntityRelationshipsService.FillEntityRelationships(entity, modelVM, nameof(Add));
-                var result = await _writeRepository.AddAsync(entity);
-                if (result)
-                {
-                    await _writeRepository.SaveChangesAsync();
-                    TempData["Success"] = "Ekleme İşlemi Başarıyla Tamamlandı";
-                    return RedirectToAction(nameof(Add));
-                }
-                else
-                {
-                    TempData["Error"] = "Bir Hata Meydana Geldi!";
-                    return RedirectToAction(nameof(Add),modelVM);
-                }
+                TWriteViewModel modelVM = _mapper.Map<TWriteViewModel>(entity);
+                return View(modelVM);
             }
             else
             {
-                TempData["Error"] = "Bir hata meydana geldi!";
-                return RedirectToAction(nameof(Add), modelVM);
+                TempData["Error"] = "Bu Veri Silinmiş!";
+                return View(nameof(Get));
             }
         }
 
         [HttpGet]
-        public virtual async Task<IActionResult> Update(Guid id)
+        public virtual async Task<IActionResult> UpdateByUsername(Guid id)
         {
-            var entity = await _readRepository.GetByIdAsync(id);
+            var entity = await _readRepository.GetAllActivesByIdAsync(id);
             if (entity != null)
             {
                 TWriteViewModel modelVM = _mapper.Map<TWriteViewModel>(entity);
@@ -168,7 +187,41 @@ namespace SchoolAutomationProject.WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                T entity = await _readRepository.GetByIdAsync(modelVM.Id);
+                T entity = await _readRepository.GetAllActivesByIdAsync(modelVM.Id);
+                if (entity != null)
+                {
+                    var resultUpdate = _writeRepository.Update(entity, modelVM);
+                    if (resultUpdate)
+                    {
+                        await _fillEntityRelationshipsService.FillEntityRelationships(entity, modelVM, $"{nameof(Update)}Post");
+                        await _writeRepository.SaveChangesAsync();
+                        TempData["Success"] = "Güncelleme İşlemi Başarıyla Tamamlandı";
+                        return RedirectToAction(nameof(Get));
+                    }
+                    else
+                    {
+                        TempData["Error"] = "Bir Hata Meydana Geldi!";
+                        return View(modelVM);
+                    }
+                }
+                else
+                {
+                    TempData["Error"] = "Bu Veri Silinmiş!";
+                    return View(nameof(Get));
+                }
+            }
+            else
+            {
+                TempData["Error"] = "Bir hata meydana geldi!";
+                return View(modelVM);
+            }
+        }
+        [HttpPost]
+        public virtual async Task<IActionResult> UpdateByUsername(string userName, TWriteViewModel modelVM)
+        {
+            if (ModelState.IsValid)
+            {
+                T entity = await _readRepository.GetAllActivesByIdAsync(modelVM.Id);
                 if (entity != null)
                 {
                     var resultUpdate = _writeRepository.Update(entity, modelVM);

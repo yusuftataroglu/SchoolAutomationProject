@@ -27,7 +27,7 @@
                         <label asp-for="SubCourseId">Ders</label>
                         <select asp-for="SubCourseId" class="form-control">
                             <option value="" selected disabled>Bir alt ders seçiniz</option>
-                            @foreach (var subCourse in _subCourseReadRepository.GetAll())
+                            @foreach (var subCourse in _subCourseReadRepository.GetAllActives())
                             {
                                 <option value="@subCourse.Id">@subCourse.Code</option>
                             }

@@ -28,8 +28,8 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         {
             // ViewData dictionary'sine özel verileri atama
             ViewData["TableTitle"] = "Öğretmen Ders Programı Listesi";
-            ViewData["CustomColumnTitles"] = new List<string> { "Tarih ve Saat", "Gün", "Zaman Aralığı", "Sınıf", "Öğretmen" };
-            ViewData["CustomProperties"] = new List<string> { "DateTime", "Day", "TimeSlot", "Classroom", "TeacherFullName" };
+            ViewData["CustomColumnTitles"] = new List<string> { "Tarih ve Saat", "Gün", "Saat", "Sınıf", "Öğretmen" };
+            ViewData["CustomProperties"] = new List<string> { "DateTimeShort", "Day", "TimeSlot", "Classroom", "TeacherFullName" };
             ViewData["ControllerName"] = "TeacherSchedules";
             return base.Get();
         }
@@ -37,8 +37,8 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         {
             //ViewData dictionary'sine ortak verileri atama
             ViewData["TableTitle"] = "Öğretmen Ders Programı Detayı";
-            ViewData["CustomColumnTitles"] = new List<string> { "Tarih ve Saat", "Gün", "Zaman Aralığı", "Sınıf", "Öğretmen" };
-            ViewData["CustomProperties"] = new List<string> { "DateTime", "Day", "TimeSlot", "Classroom", "TeacherFullName" };
+            ViewData["CustomColumnTitles"] = new List<string> { "Tarih ve Saat", "Gün", "Saat", "Sınıf", "Öğretmen" };
+            ViewData["CustomProperties"] = new List<string> { "DateTimeShort", "Day", "TimeSlot", "Classroom", "TeacherFullName" };
             return await base.Details(id);
         }
 

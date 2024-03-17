@@ -37,7 +37,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
             ViewData["CustomProperties"] = new List<string> { "Name", "Capacity", "Students", "ClassroomTeachers" };
             ViewData["ControllerName"] = "Classrooms";
 
-            var classroomList = _classroomReadRepository.GetAll()
+            var classroomList = _classroomReadRepository.GetAllActives()
             .Where(c => c.ClassroomTeachers.Any(ct => ct.Teacher.UserId == userId))
             .ToList();
 

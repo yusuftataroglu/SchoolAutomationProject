@@ -15,7 +15,6 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
     [Authorize(Roles = "Admin")]
     public class AnnouncementsController : GenericController<Announcement, ReadAnnouncementViewModel, WriteAnnouncementViewModel>
     {
-        private readonly RoleManager<AppUserRole> _roleManager;
         private readonly UserManager<AppUser> _userManager;
 
         public AnnouncementsController(
@@ -23,11 +22,9 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
             IAnnouncementWriteRepository announcementWriteRepository,
             IMapper mapper,
             IFillEntityRelationshipsService fillEntityRelationshipsService,
-            RoleManager<AppUserRole> roleManager,
             UserManager<AppUser> userManager)
             : base(announcementReadRepository, announcementWriteRepository, mapper, fillEntityRelationshipsService)
         {
-            _roleManager = roleManager;
             _userManager = userManager;
         }
 
@@ -50,10 +47,9 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
             ViewData["CustomProperties"] = new List<string> { "Content" };
             return await base.Details(id);
         }
-
-        public override IActionResult Add()
+        public override IActionResult AddByUsername()
         {
-            return base.Add();
+            return base.AddByUsername();
         }
 
         public override async Task<IActionResult> AddByUsername(string userName, WriteAnnouncementViewModel modelVM)
@@ -64,14 +60,16 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         }
 
 
-        public override Task<IActionResult> Update(Guid id)
+        public override Task<IActionResult> UpdateByUsername(Guid id)
         {
-            return base.Update(id);
+            return base.UpdateByUsername(id);
         }
 
-        public override Task<IActionResult> Update(WriteAnnouncementViewModel modelVM)
+        public override async Task<IActionResult> UpdateByUsername(string userName, WriteAnnouncementViewModel modelVM)
         {
-            return base.Update(modelVM);
+            AppUser user = await _userManager.FindByNameAsync(userName);
+            modelVM.SenderId = user.Id;
+            return await base.UpdateByUsername(userName, modelVM);
         }
 
         public override Task<IActionResult> Delete(Guid id)

@@ -19,7 +19,6 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
             //Bu tabloya ait propertylerin özelleştirmeleri
             builder.Property(x => x.Code).HasMaxLength(9).IsRequired();
             builder.Property(x => x.WeeklyHour).IsRequired();
-            builder.Property(x => x.Position).IsRequired();
 
             //builder.HasData(GetSampleSubCourses());
         }

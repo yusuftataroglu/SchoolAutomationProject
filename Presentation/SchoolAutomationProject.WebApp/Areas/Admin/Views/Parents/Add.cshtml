@@ -48,7 +48,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="d-block mb-2">Öğrenciler</label>
-                        @foreach (var student in _studentReadRepository.GetAll().OrderBy(x => x.FirstName).ToList())
+                        @foreach (var student in _studentReadRepository.GetAllActives().OrderBy(x => x.FirstName).ToList())
                         {
                             <input type="checkbox" class="btn-check" id="@student.Id" name="StudentIds" value="@student.Id">
                             <label class="btn btn-outline-primary" for="@student.Id">@student.FirstName @student.LastName</label>

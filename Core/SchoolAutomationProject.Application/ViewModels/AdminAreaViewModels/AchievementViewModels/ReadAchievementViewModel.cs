@@ -16,8 +16,8 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Ach
         //Achievement - Semester ilişkisi
         public Semester Semester { get; set; }
 
-        public string StudentFullName => $"{Student.FirstName} {Student.LastName}";
-        public string SemesterName => Semester.Name;
+        public string StudentFullName => Student.IsActive ? $"{Student.FirstName} {Student.LastName}":"Silinmiş Öğrenci";
+        public string SemesterName => Semester.IsActive ? Semester.Name:"Silinmiş Dönem";
 
     }
 }

@@ -8,13 +8,13 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Tea
         public Guid Id { get; set; }
 
         [Required(ErrorMessage = "Tarih Boş Geçilemez!")]
-        public DateTime DateTime { get; set; }
+        public DateTime? DateTime { get; set; }
 
         [Required(ErrorMessage = "Gün Boş Geçilemez!")]
-        public DayOfWeek Day { get; set; } //js ile DateTime verisi alınarak otomatik doldurulabilir.
+        public DayOfWeek? Day { get; set; } //todo js ile DateTime verisi alınarak otomatik doldurulabilir.
 
-        [Required(ErrorMessage = "Zaman Aralığı Boş Geçilemez!")]
-        public byte TimeSlot { get; set; }
+        [Required(ErrorMessage = "Saat Boş Geçilemez!")]
+        public byte? TimeSlot { get; set; }
 
         [Required(ErrorMessage = "Sınıf Boş Geçilemez!")]
         public string Classroom { get; set; }

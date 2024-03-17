@@ -14,5 +14,7 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Tea
         //TeacherSchedule - Teacher ilişkisi
         public Teacher Teacher { get; set; }
         public string TeacherFullName => $"{Teacher.FirstName} {Teacher.LastName}";
+        public string DateTimeShort => DateTime.ToShortDateString();
+
     }
 }

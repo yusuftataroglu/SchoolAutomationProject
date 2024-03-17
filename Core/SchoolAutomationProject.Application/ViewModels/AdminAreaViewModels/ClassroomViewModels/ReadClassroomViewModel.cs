@@ -7,14 +7,10 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Cla
 {
     public class ReadClassroomViewModel : BaseClass, IReadViewModel
     {
-        public string Name { get; set; } // Sınıf
-        public byte Capacity { get; set; } // Kapasite
-        // Derslik - Ders ilişkisi
+        public string Name { get; set; }
+        public byte Capacity { get; set; }
         public ICollection<ClassroomMainCourse> ClassroomMainCourses { get; set; }
-        // Sınıf - Öğrenci ilişkisi
         public ICollection<Student> Students { get; set; }
-
-        //Classroom-Teacher ilişkisi
         public ICollection<ClassroomTeacher> ClassroomTeachers { get; set; }
     }
 }

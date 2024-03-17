@@ -26,14 +26,14 @@
                     <label>Verilen Ders</label>
                     <select class="form-select" asp-for="@Model.MainCourseId">
                         <option value="" selected disabled>Bir ders seçiniz</option>
-                        @foreach (var item in _mainCourseReadRepository.GetAll().ToList())
+                        @foreach (var item in _mainCourseReadRepository.GetAllActives().ToList())
                         {
                             <option value=@item.Id>@item.Name</option>
                         }
                     </select>
 
                     <label>Ders Verilen Sınıflar</label>
-                    @foreach (var classroom in _classroomReadRepository.GetAll().OrderBy(x => x.Name).ToList())
+                    @foreach (var classroom in _classroomReadRepository.GetAllActives().OrderBy(x => x.Name).ToList())
                     {
                         <input type="checkbox" class="btn-check" id="@classroom.Id" name="ClassroomTeachersClassroomIds" value="@classroom.Id">
                         <label class="btn btn-outline-primary" for="@classroom.Id">@classroom.Name</label>

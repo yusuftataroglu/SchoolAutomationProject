@@ -48,7 +48,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="parentStudentsStudentIds" class="form-label">Öğrenciler</label>
-                        @foreach (var student in _studentReadRepository.GetAll().ToList())
+                        @foreach (var student in _studentReadRepository.GetAllActives().ToList())
                         {
                             <input class="btn-check" type="checkbox" id="@student.Id" name="StudentIds" value="@student.Id" checked="@Model.Students.Select(x=> x.Id).Contains(student.Id)" />
                             <label class="btn btn-outline-primary" for="@student.Id">@student.FirstName @student.LastName</label>

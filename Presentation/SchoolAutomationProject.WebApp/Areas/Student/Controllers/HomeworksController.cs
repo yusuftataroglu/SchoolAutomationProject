@@ -52,7 +52,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Student.Controllers
             {
                 var user = await _userManager.FindByNameAsync(userName);
                 modelVM.StudentId = _studentReadRepository.GetWhere(x => x.UserId == user.Id).FirstOrDefault()?.Id;
-                var student = await _studentReadRepository.GetByIdAsync(modelVM.StudentId);
+                var student = await _studentReadRepository.GetAllActivesByIdAsync(modelVM.StudentId);
                 var subCourse = _subCourseReadRepository.GetWhere(x => x.Id == modelVM.SubCourseId).FirstOrDefault()?.Code;
                 string path = "";
 

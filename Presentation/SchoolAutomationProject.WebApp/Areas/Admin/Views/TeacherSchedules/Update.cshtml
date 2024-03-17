@@ -1,8 +1,63 @@
-﻿
+﻿@model WriteTeacherScheduleViewModel
+@inject ITeacherReadRepository _teacherReadRepository
+@inject IClassroomReadRepository _classroomReadRepository
+
 @{
-    ViewData["Title"] = "Update";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Öğretmen Ders Programı Güncelle";
 }
 
-<h1>Update</h1>
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <form method="post" asp-area="Admin" asp-controller="TeacherSchedules" asp-action="Update">
+            <div class="card">
+                <div class="card-header">Öğretmen Ders Programı Güncelle</div>
+                <div class="card-body">
 
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                    <div class="mb-3">
+                        <label for="dateTime" class="form-label">Tarih</label>
+                        <input id="dateTime" class="form-control" type="date" asp-for="DateTime" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="day" class="form-label">Gün</label>
+                        <select id="day" class="form-control" asp-for="Day" asp-items="@Html.GetEnumSelectList<DayOfWeek>()">
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="timeSlot" class="form-label">Saat</label>
+                        <input id="timeSlot" class="form-control" type="number" min="0" asp-for="TimeSlot" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="classroom" class="form-label">Sınıf</label>
+                        <select id="classroom" class="form-control" asp-for="Classroom">
+                            <option value="" selected disabled>Bir Sınıf Seçiniz</option>
+                            @foreach (var classroom in _classroomReadRepository.GetAllActives())
+                            {
+                                <option value="@classroom.Name">@classroom.Name</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="teacherId" class="form-label">Öğretmen</label>
+                        <select id="teacherId" class="form-control" asp-for="TeacherId">
+                            <option value="" selected disabled>Bir Öğretmen Seçiniz</option>
+                            @foreach (var teacher in _teacherReadRepository.GetAllActives())
+                            {
+                                var isSelected = Model.TeacherId == teacher.Id;
+                                <option value="@teacher.Id" selected="@isSelected">@teacher.FirstName @teacher.LastName</option>
+                            }
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Ekle</button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

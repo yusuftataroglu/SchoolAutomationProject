@@ -11,7 +11,6 @@
     <div class="card-body">
         <form method="post" asp-area="Admin" asp-controller="Achievements" asp-action="Update">
             <div class="row">
-                <div asp-validation-summary="All" class="text-danger"></div>
                 <div class="col-md-6">
                     <label for="type">Türü</label>
                     <select id="type" class="form-control" asp-for="Type" asp-items="@Html.GetEnumSelectList<AchievementType>()">
@@ -47,7 +46,7 @@
                             </select>
                         </div>
                     </div>
-                    <button class="btn btn-primary mt-2" type="submit">Güncelle</button>
+                    <button class="btn btn-primary" type="submit">Güncelle</button>
                 </div>
             </div>
         </form>

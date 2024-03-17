@@ -49,7 +49,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Parent.Controllers
 
         public async Task<IActionResult> Details(string id)
         {
-            var entity = await _announcementReadRepository.GetByIdAsync(Guid.Parse(id));
+            var entity = await _announcementReadRepository.GetAllActivesByIdAsync(Guid.Parse(id));
             ReadAnnouncementViewModel readViewModel = _mapper.Map<ReadAnnouncementViewModel>(entity);
             return View(readViewModel);
         }

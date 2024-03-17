@@ -38,24 +38,12 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
                     City = modelVM.ParentCity
                 };
 
-                await _parentWriteRepository.AddAsync(parent);
-                student.Parent = parent;
+                await _parentWriteRepository.AddAsync(parent); //todo user oluşturulacak
+                student.ParentId = parent.Id; 
 
             }
             else if (requestType == "UpdatePost")
             {
-                student.FirstName = modelVM.FirstName;
-                student.LastName = modelVM.LastName;
-                student.Gender = modelVM.Gender;
-                student.GraduatedSchool = modelVM.GraduatedSchool;
-                student.GPA = modelVM.GPA;
-                student.IsPreRegistered = modelVM.IsPreRegistered;
-
-                var parent = await _parentReadRepository.GetByIdAsync(modelVM.ParentId);
-                if (parent != null)
-                {
-                    student.Parent = parent;
-                }
             }
         }
     }

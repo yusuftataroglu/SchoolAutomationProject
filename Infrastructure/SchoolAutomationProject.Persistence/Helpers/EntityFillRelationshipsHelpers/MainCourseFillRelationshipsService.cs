@@ -26,17 +26,10 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
 
             if (requestType == "Add" || requestType == "UpdatePost")
             {
-                mainCourse.Name = modelVM.Name;
-
                 mainCourse.ClassroomMainCourses.Clear();
-                foreach (var modelVMClassroomId in modelVM.ClassroomMainCoursesClassroomIds)
+                foreach (var classroomId in modelVM.ClassroomMainCoursesClassroomIds)
                 {
-                    var classroomMainCourse = new ClassroomMainCourse()
-                    {
-                        MainCourseId = mainCourse.Id,
-                        ClassroomId = modelVMClassroomId
-                    };
-                    mainCourse.ClassroomMainCourses.Add(classroomMainCourse);
+                    mainCourse.ClassroomMainCourses.Add(new ClassroomMainCourse { ClassroomId = classroomId });
                 }
             }
         }

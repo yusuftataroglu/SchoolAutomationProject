@@ -11,12 +11,10 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Sub
         public string Code { get; set; }
 
         [Required(ErrorMessage = "Haftalık Ders Saati Boş Geçilemez!")]
-        public int WeeklyHour { get; set; }
+        public int? WeeklyHour { get; set; }
 
         public int? Position { get; set; }
 
-
-        //SubCourse - MainCourse ilişkisi
         [Required(ErrorMessage = "Ana Ders Seçimi Boş Geçilemez!")]
         public Guid? MainCourseId { get; set; }
     }

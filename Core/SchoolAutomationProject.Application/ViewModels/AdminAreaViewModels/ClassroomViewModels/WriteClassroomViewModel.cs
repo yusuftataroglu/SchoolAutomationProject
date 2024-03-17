@@ -13,6 +13,6 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Cla
 
         [Required(ErrorMessage = "Kapasite boş geçilemez")]
         [DefaultValue(25)]
-        public byte Capacity { get; set; }
+        public byte? Capacity { get; set; }
     }
 }

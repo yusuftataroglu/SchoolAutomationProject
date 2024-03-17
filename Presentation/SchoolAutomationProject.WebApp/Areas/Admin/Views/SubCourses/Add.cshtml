@@ -12,31 +12,28 @@
                 <div class="card-header">Alt Kurs Ekle</div>
                 <div class="card-body">
 
-                    <div asp-validation-summary="All"></div>
+                    <div asp-validation-summary="All" class="text-danger"></div>
 
                     <div class="mb-3">
                         <label for="code" class="form-label">Kod</label>
                         <input id="code" class="form-control" type="text" asp-for="Code" />
-                        <span asp-validation-for="Code" class="text-danger"></span>
                     </div>
 
                     <div class="mb-3">
                         <label for="weeklyHour" class="form-label">Haftalık Ders Saati</label>
-                        <input id="weeklyHour" class="form-control" type="number" asp-for="WeeklyHour" />
-                        <span asp-validation-for="WeeklyHour" class="text-danger"></span>
+                        <input id="weeklyHour" class="form-control" type="number" min="1" asp-for="WeeklyHour" />
                     </div>
 
                     <div class="mb-3">
                         <label for="position" class="form-label">Pozisyon</label>
-                        <input id="position" class="form-control" type="number" asp-for="Position" />
-                        <span asp-validation-for="Position" class="text-danger"></span>
+                        <input id="position" class="form-control" type="number" min="0" asp-for="Position" />
                     </div>
 
                     <div class="mb-3">
                         <label asp-for="MainCourseId">Ders</label>
                         <select asp-for="MainCourseId" class="form-control">
                             <option value="" selected disabled>Bir ana ders seçiniz</option>
-                            @foreach (var mainCourse in _mainCourseReadRepository.GetAll())
+                            @foreach (var mainCourse in _mainCourseReadRepository.GetAllActives())
                             {
                                 <option value="@mainCourse.Id">@mainCourse.Name</option>
                             }

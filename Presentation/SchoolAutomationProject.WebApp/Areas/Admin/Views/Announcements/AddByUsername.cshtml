@@ -1,0 +1,38 @@
+﻿@model WriteAnnouncementViewModel
+@inject RoleManager<AppUserRole> roleManager
+@{
+    ViewData["Title"] = "AddAnnouncement";
+}
+
+<div class="row">
+    <div class="col-md-6 mx-auto mt-3">
+        <form method="post" asp-area="Admin" asp-controller="Announcements" asp-action="AddByUsername" asp-route-userName="@User.Identity.Name">
+            <div class="card">
+                <div class="card-header">Belge Ekle</div>
+
+                <div class="card-body">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                    <label for="title">Duyuru Başlığı</label>
+                    <input id="title" class="form-control" type="text" asp-for="Title" />
+
+                    <label for="content">Duyuru İçeriği</label>
+                    <textarea id="content" class="form-control" style="height: 300px" asp-for="Content"></textarea>
+
+
+                    <label class="mt-2 d-flex">Duyurunun Gönderileceği Kişiler</label>
+                    @foreach (var role in roleManager.Roles.ToList())
+                    {
+                        <input id="@role.Id" type="checkbox" class="btn-check" name="AnnouncementRolesRoleIds" value="@role.Id">
+                        <label for="@role.Id" class="btn btn-outline-primary">@role.Name</label>
+                    }
+
+                    <div>
+                        <button class="btn btn-primary mt-2" type="submit">Ekle</button>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

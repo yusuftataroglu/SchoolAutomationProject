@@ -5,8 +5,8 @@ namespace SchoolAutomationProject.Application.Repositories.CommonRepositories
 {
     public interface IReadRepository<T> : IRepository<T> where T : BaseClass
     {
-        IQueryable<T> GetAll();
+        IQueryable<T> GetAllActives();
         IQueryable<T> GetWhere(Expression<Func<T,bool>> predicate);//todo expression kaldırılıp denenecek.
-        Task<T> GetByIdAsync(Guid? id);
+        Task<T> GetAllActivesByIdAsync(Guid? id);
     }
 }

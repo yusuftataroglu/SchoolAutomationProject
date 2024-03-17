@@ -10,8 +10,8 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Adm
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string? Title { get; set; }
-        public virtual AppUser User { get; set; }
+        public  AppUser User { get; set; }
+        public string UserName => User.UserName;
         public string? UserId { get; set; }
-        public virtual ICollection<Announcement>? Announcements { get; set; }
     }
 }

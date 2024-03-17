@@ -16,10 +16,10 @@ namespace SchoolAutomationProject.Persistence.Repositories.CommonRepositories
         }
         public DbSet<T> Table => _context.Set<T>();
 
-        public IQueryable<T> GetAll()
+        public IQueryable<T> GetAllActives()
             => Table.Where(x=> x.IsActive); //DbSet IQueryable'ı implement ediyor. O yüzden DbSet döndürebiliyoruz.
 
-        public async Task<T> GetByIdAsync(Guid? id)
+        public async Task<T> GetAllActivesByIdAsync(Guid? id)
             => await Table.FindAsync(id);
 
         public IQueryable<T> GetWhere(Expression<Func<T, bool>> predicate)

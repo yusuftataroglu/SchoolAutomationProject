@@ -1,5 +1,4 @@
 ﻿using SchoolAutomationProject.Application.ViewModels.BaseViewModels;
-using SchoolAutomationProject.Domain.Entities.CustomTables;
 using System.ComponentModel.DataAnnotations;
 
 namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.SemesterViewModels
@@ -12,9 +11,9 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Sem
         public string Name { get; set; } // Örneğin "2022-2023 Spring Season"
 
         [Required(ErrorMessage = "Dönem Başlangıç Tarihi Boş Geçilemez!")]
-        public DateTime StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
 
         [Required(ErrorMessage = "Dönem Bitiş Tarihi Boş Geçilemez!")]
-        public DateTime EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
     }
 }

@@ -2,32 +2,33 @@
 @inject IClassroomReadRepository _classroomReadRepository
 @{
     ViewData["Title"] = "UpdateMainCourse";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <div class="row">
-    <div class="col-auto">
-        <div class="card">
-            <form method="post" asp-area="Admin" asp-controller="MainCourses" asp-action="Update">
+    <div class="col-md-6 mx-auto">
+        <form method="post" asp-area="Admin" asp-controller="MainCourses" asp-action="Update">
+            <div class="card">
                 <div class="card-header">Ana Ders Güncelle</div>
-                <div asp-validation-summary="All"></div>
+                <div asp-validation-summary="All" class="text-danger"></div>
                 <div class="card-body">
 
                     <label for="@Model.Name">Sınıf Adı</label>
                     <input id="@Model.Name" class="form-control" type="text" asp-for="Name" />
 
-                    @foreach (var classroom in _classroomReadRepository.GetAll().ToList())
-                    {
-                        <input id="@classroom.Id" type="checkbox" name="ClassroomMainCoursesClassroomIds" class="form-check-input" value="@classroom.Id" checked="@Model.ClassroomMainCourses.Select(x=> x.ClassroomId).Contains(classroom.Id)" />
-                        <label for="@classroom.Id">@classroom.Name</label>
-                    }
-
-                    <div class="card-footer">
-                        <button class="btn btn-primary" type="submit">Güncelle</button>
+                    <div class="form-group">
+                        <label class="d-flex">Bu Dersin Verileceği Sınıflar</label>
+                        @foreach (var classroom in _classroomReadRepository.GetAllActives().OrderBy(x => x.Name).ToList())
+                        {
+                            <input id="@classroom.Id" type="checkbox" class="btn-check" name="ClassroomMainCoursesClassroomIds" value="@classroom.Id" checked="@Model.ClassroomMainCourses.Select(x=> x.ClassroomId).Contains(classroom.Id)">
+                            <label class="btn btn-outline-primary" for="@classroom.Id">@classroom.Name</label>
+                        }
+                    </div>
+                    <div>
+                        <button class="btn btn-primary mt-2" type="submit">Güncelle</button>
                     </div>
 
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 </div>

@@ -63,7 +63,7 @@
                         <label for="classroomId" class="form-label">Sınıf</label>
                         <select class="form-select" id="classroomId" asp-for="ClassroomId">
                             <option value="">Sınıf Seçiniz</option>
-                            @foreach (var item in _classroomReadRepository.GetAll().ToList())
+                            @foreach (var item in _classroomReadRepository.GetAllActives().ToList())
                             {
                                 var isSelected = Model.ClassroomId == item.Id;
                                 <option value="@item.Id" selected="@isSelected">@item.Name</option>

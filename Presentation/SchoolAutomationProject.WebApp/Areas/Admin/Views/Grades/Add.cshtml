@@ -12,38 +12,34 @@
             <div class="card">
                 <div class="card-header">Not Ekle</div>
                 <div class="card-body">
-                    <div asp-validation-summary="All"></div>
+                    <div asp-validation-summary="All" class="text-danger"></div>
                     <div class="form-group">
                         <label asp-for="Score">Not</label>
-                        <input asp-for="Score" class="form-control" />
-                        <span asp-validation-for="Score" class="text-danger"></span>
+                        <input asp-for="Score" class="form-control" type="number" min="0" />
                     </div>
                     <div class="form-group">
                         <label asp-for="ExamNumber">Sınav Numarası</label>
-                        <input asp-for="ExamNumber" class="form-control" />
-                        <span asp-validation-for="ExamNumber" class="text-danger"></span>
+                        <input asp-for="ExamNumber" class="form-control" type="number" min="1" />
                     </div>
                     <div class="form-group">
                         <label asp-for="StudentId">Öğrenci</label>
                         <select asp-for="StudentId" class="form-control">
                             <option value="" selected disabled>Bir öğrenci seçiniz</option>
-                            @foreach (var student in _studentReadRepository.GetAll())
+                            @foreach (var student in _studentReadRepository.GetAllActives())
                             {
                                 <option value="@student.Id">@student.FirstName @student.LastName</option>
                             }
                         </select>
-                        <span asp-validation-for="StudentId" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="SubCourseId">Ders</label>
                         <select asp-for="SubCourseId" class="form-control">
                             <option value="" selected disabled>Bir alt ders seçiniz</option>
-                            @foreach (var subCourse in _subCourseReadRepository.GetAll())
+                            @foreach (var subCourse in _subCourseReadRepository.GetAllActives())
                             {
                                 <option value="@subCourse.Id">@subCourse.Code</option>
                             }
                         </select>
-                        <span asp-validation-for="SubCourseId" class="text-danger"></span>
                     </div>
                     <button type="submit" class="btn btn-primary">Add</button>
                 </div>

@@ -15,8 +15,8 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Gra
         // Not - Alt Ders ilişkisi
         public SubCourse SubCourse { get; set; }
 
-        public string StudentFullName => $"{Student.FirstName} {Student.LastName}";
-        public string SubCourseCode => SubCourse.Code;
+        public string StudentFullName => Student.IsActive ? $"{Student.FirstName} {Student.LastName}" : "Silinmiş Öğrenci";
+        public string SubCourseCode => SubCourse.IsActive ? SubCourse.Code : "Silinmiş Alt Ders";
 
     }
 }

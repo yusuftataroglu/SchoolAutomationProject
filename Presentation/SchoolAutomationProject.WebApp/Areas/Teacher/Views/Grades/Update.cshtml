@@ -26,7 +26,7 @@
                         <label asp-for="StudentId">Öğrenci</label>
                         <select asp-for="StudentId" class="form-control">
                             <option value="" selected disabled>Select a student</option>
-                            @foreach (var student in _studentReadRepository.GetAll())
+                            @foreach (var student in _studentReadRepository.GetAllActives())
                             {
                                 <option value="@student.Id">@student.FirstName @student.LastName</option>
                             }
@@ -37,7 +37,7 @@
                         <label asp-for="SubCourseId">Ders</label>
                         <select asp-for="SubCourseId" class="form-control">
                             <option value="" selected disabled>Select a sub course</option>
-                            @foreach (var subCourse in _subCourseReadRepository.GetAll())
+                            @foreach (var subCourse in _subCourseReadRepository.GetAllActives())
                             {
                                 <option value="@subCourse.Id">@subCourse.Code</option>
                             }

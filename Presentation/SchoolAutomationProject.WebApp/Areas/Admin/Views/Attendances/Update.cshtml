@@ -11,6 +11,7 @@
     <div class="card-body">
         <form method="post" asp-area="Admin" asp-controller="Attendances" asp-action="Update">
             <div class="row">
+                <div asp-validation-summary="All" class="text-danger"></div>
                 <div class="col-md-6">
                     <label for="attendanceDate">Tarih</label>
                     <input id="attendanceDate" class="form-control" type="date" asp-for="AttendanceDate" />
@@ -24,7 +25,7 @@
                         <div class="col-md-auto">
                             <label>Öğrenci</label>
                             <select class="form-select" asp-for="@Model.StudentId">
-                                @foreach (var item in _studentReadRepository.GetAll().ToList())
+                                @foreach (var item in _studentReadRepository.GetAllActives().ToList())
                                 {
                                     var isSelected = Model.StudentId == item.Id;
                                     <option value="@item.Id" selected="@isSelected">@item.FirstName @item.LastName</option>
@@ -37,7 +38,7 @@
                         <div class="col-md-auto">
                             <label>Ders</label>
                             <select class="form-select" asp-for="@Model.SubCourseId">
-                                @foreach (var item in _subCourseReadRepository.GetAll().ToList())
+                                @foreach (var item in _subCourseReadRepository.GetAllActives().ToList())
                                 {
                                     var isSelected = Model.SubCourseId == item.Id;
                                     <option value="@item.Id" selected="@isSelected">@item.Code</option>

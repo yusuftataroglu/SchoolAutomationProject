@@ -6,19 +6,8 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
 {
     public class AdministratorFillRelationshipsService : IAdministratorFillRelationshipsService
     {
-
-        public AdministratorFillRelationshipsService()
-        {
-        }
-
         public async Task FillAdministratorRelationships(Administrator admin, WriteAdministratorViewModel modelVM, string requestType)
         {
-
-            if (requestType == "Add" || requestType == "UpdatePost")
-            {
-
-            }
-
         }
     }
 }

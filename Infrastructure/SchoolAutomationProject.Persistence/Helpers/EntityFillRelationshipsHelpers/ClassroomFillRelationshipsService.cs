@@ -8,19 +8,8 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
 {
     public class ClassroomFillRelationshipsService : IClassroomFillRelationshipsService
     {
-        private readonly IStudentReadRepository _studentReadRepository;
-
-        public ClassroomFillRelationshipsService(IStudentReadRepository studentReadRepository)
-        {
-            _studentReadRepository = studentReadRepository;
-        }
         public async Task FillClassroomRelationships(Classroom classroom, WriteClassroomViewModel modelVM, string requestType)
         {
-            if (requestType == "Add" || requestType == "UpdatePost")
-            {
-                classroom.Name = modelVM.Name;
-                classroom.Capacity = modelVM.Capacity;
-            }
         }
     }
 }

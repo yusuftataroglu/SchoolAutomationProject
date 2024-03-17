@@ -16,12 +16,12 @@
                 <div class="card-body">
 
 
-                    <div asp-validation-summary="All"></div>
+                    <div asp-validation-summary="All" class="text-danger"></div>
                     <label for="name">Sınıf Adı</label>
                     <input id="name" class="form-control" type="text" asp-for="Name" />
 
                     <label for="capacity">Kapasite</label>
-                    <input id="capacity" class="form-control" type="number" value="25" asp-for="Capacity" />
+                    <input id="capacity" class="form-control" type="number" min="0" value="25" asp-for="Capacity" />
 
                     <div>
                         <button class="btn btn-primary mt-2" type="submit">Ekle</button>
