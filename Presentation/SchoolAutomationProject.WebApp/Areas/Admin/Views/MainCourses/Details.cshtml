@@ -36,7 +36,14 @@
                             {
                                 foreach (var subCourse in Model.SubCourses)
                                 {
-                                    <badge class="badge bg-info">@subCourse.Code</badge>
+                                    if (subCourse.IsActive)
+                                    {
+                                        <badge class="badge bg-info">@subCourse.Code</badge>
+                                    }
+                                    else
+                                    {
+                                        <badge class="badge bg-info">Silinmiş Alt Ders</badge>
+                                    }
                                 }
                             }
 
@@ -44,7 +51,14 @@
                             {
                                 foreach (var teacher in Model.Teachers)
                                 {
-                                    <badge class="badge bg-warning">@teacher.FirstName @teacher.LastName</badge>
+                                    if (teacher.IsActive)
+                                    {
+                                        <badge class="badge bg-warning">@teacher.FirstName @teacher.LastName</badge>
+                                    }
+                                    else
+                                    {
+                                        <badge class="badge bg-warning">Silinmiş Öğretmen</badge>
+                                    }
                                 }
                             }
 
@@ -52,7 +66,14 @@
                             {
                                 foreach (var classroomMainCourse in Model.ClassroomMainCourses)
                                 {
-                                    <badge class="badge bg-success">@classroomMainCourse.Classroom.Name</badge>
+                                    if (classroomMainCourse.Classroom.IsActive)
+                                    {
+                                        <badge class="badge bg-success">@classroomMainCourse.Classroom.Name</badge>
+                                    }
+                                    else
+                                    {
+                                        <badge class="badge bg-success">Silinmiş Sınıf</badge>
+                                    }
                                 }
                             }
                             else

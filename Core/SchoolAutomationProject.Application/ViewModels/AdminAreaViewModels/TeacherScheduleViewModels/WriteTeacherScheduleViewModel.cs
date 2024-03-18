@@ -9,9 +9,7 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Tea
 
         [Required(ErrorMessage = "Tarih Boş Geçilemez!")]
         public DateTime? DateTime { get; set; }
-
-        [Required(ErrorMessage = "Gün Boş Geçilemez!")]
-        public DayOfWeek? Day { get; set; } //todo js ile DateTime verisi alınarak otomatik doldurulabilir.
+        public DayOfWeek? Day { get; set; }
 
         [Required(ErrorMessage = "Saat Boş Geçilemez!")]
         public byte? TimeSlot { get; set; }

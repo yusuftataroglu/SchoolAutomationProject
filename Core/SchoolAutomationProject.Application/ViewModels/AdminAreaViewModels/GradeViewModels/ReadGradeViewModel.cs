@@ -6,13 +6,11 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Gra
 {
     public class ReadGradeViewModel : BaseClass, IReadViewModel
     {
-        public double Score { get; set; } // Öğrencinin aldığı not
-        public byte ExamNumber { get; set; } // O dersin kaçıncı sınavı
+        public double Score { get; set; } 
+        public byte ExamNumber { get; set; } 
 
-        // Not - Öğrenci ilişkisi
         public Student Student { get; set; }
 
-        // Not - Alt Ders ilişkisi
         public SubCourse SubCourse { get; set; }
 
         public string StudentFullName => Student.IsActive ? $"{Student.FirstName} {Student.LastName}" : "Silinmiş Öğrenci";

@@ -11,21 +11,18 @@
             <div class="card">
                 <div class="card-header">Veli Güncelle</div>
                 <div class="card-body">
-                    <div asp-validation-summary="All"></div>
+                    <div asp-validation-summary="All" class="text-danger"></div>
                     <div class="mb-3">
                         <label for="firstName" class="form-label">Adı</label>
                         <input id="firstName" class="form-control" type="text" asp-for="FirstName" />
-                        <span asp-validation-for="FirstName" class="text-danger"></span>
                     </div>
                     <div class="mb-3">
                         <label for="lastName" class="form-label">Soyadı</label>
                         <input id="lastName" class="form-control" type="text" asp-for="LastName" />
-                        <span asp-validation-for="LastName" class="text-danger"></span>
                     </div>
                     <div class="mb-3">
                         <label for="mobilePhone" class="form-label">Cep Telefonu</label>
                         <input id="mobilePhone" class="form-control" type="tel" asp-for="MobilePhone" />
-                        <span asp-validation-for="MobilePhone" class="text-danger"></span>
                     </div>
                     <div class="mb-3">
                         <label for="workPhone" class="form-label">İş Telefonu</label>
@@ -34,17 +31,14 @@
                     <div class="mb-3">
                         <label for="address" class="form-label">Adres</label>
                         <input id="address" class="form-control" type="text" asp-for="Address" />
-                        <span asp-validation-for="Address" class="text-danger"></span>
                     </div>
                     <div class="mb-3">
                         <label for="district" class="form-label">İlçe</label>
                         <input id="district" class="form-control" type="text" asp-for="District" />
-                        <span asp-validation-for="District" class="text-danger"></span>
                     </div>
                     <div class="mb-3">
                         <label for="city" class="form-label">İl</label>
                         <input id="city" class="form-control" type="text" asp-for="City" />
-                        <span asp-validation-for="City" class="text-danger"></span>
                     </div>
                     <div class="mb-3">
                         <label for="parentStudentsStudentIds" class="form-label">Öğrenciler</label>
@@ -53,7 +47,6 @@
                             <input class="btn-check" type="checkbox" id="@student.Id" name="StudentIds" value="@student.Id" checked="@Model.Students.Select(x=> x.Id).Contains(student.Id)" />
                             <label class="btn btn-outline-primary" for="@student.Id">@student.FirstName @student.LastName</label>
                         }
-                        <span asp-validation-for="StudentIds" class="text-danger"></span>
                     </div>
                     <button type="submit" class="btn btn-primary">Güncelle</button>
                 </div>

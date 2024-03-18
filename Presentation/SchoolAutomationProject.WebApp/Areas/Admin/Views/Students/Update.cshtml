@@ -2,9 +2,7 @@
 @inject IClassroomReadRepository _classroomReadRepository
 @{
     ViewData["Title"] = "Öğrenci Güncelle";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
 <div class="row">
     <div class="col-md-6 mx-auto">
         <form method="post" asp-area="Admin" asp-controller="Students" asp-action="Update">
@@ -12,51 +10,75 @@
                 <div class="card-header">Öğrenci Güncelle</div>
                 <div class="card-body">
 
-                    <div asp-validation-summary="All"></div>
-
-                    <input type="hidden" asp-for="Id" />
+                    <div asp-validation-summary="All" class="text-danger"></div>
 
                     <div class="mb-3">
-                        <label for="firstName" class="form-label">Ad</label>
+                        <label for="firstName" class="form-label">İsim</label>
                         <input type="text" class="form-control" id="firstName" asp-for="FirstName">
-                        <span asp-validation-for="FirstName" class="text-danger"></span>
                     </div>
 
                     <div class="mb-3">
-                        <label for="lastName" class="form-label">Soyad</label>
+                        <label for="lastName" class="form-label">Soyisim</label>
                         <input type="text" class="form-control" id="lastName" asp-for="LastName">
-                        <span asp-validation-for="LastName" class="text-danger"></span>
                     </div>
 
                     <div class="mb-3">
                         <label for="gender" class="form-label">Cinsiyet</label>
                         <select class="form-select" id="gender" asp-for="Gender" asp-items="@Html.GetEnumSelectList<Gender>()">
+                            <option value="">Cinsiyet Seçiniz</option>
                         </select>
-                        <span asp-validation-for="Gender" class="text-danger"></span>
                     </div>
 
                     <div class="mb-3">
                         <label for="graduatedSchool" class="form-label">Mezun Olduğu Okul</label>
                         <input type="text" class="form-control" id="graduatedSchool" asp-for="GraduatedSchool">
-                        <span asp-validation-for="GraduatedSchool" class="text-danger"></span>
                     </div>
 
                     <div class="mb-3">
                         <label for="gpa" class="form-label">Not Ortalaması</label>
                         <input type="number" class="form-control" id="gpa" asp-for="GPA">
-                        <span asp-validation-for="GPA" class="text-danger"></span>
                     </div>
 
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="isPreRegistered" asp-for="IsPreRegistered">
-                        <label class="form-check-label" for="isPreRegistered">Ön Kayıtlı mı?</label>
+                    <div class="mb-3">
+                        <label for="parentFirstName" class="form-label">Veli İsim</label>
+                        <input type="text" class="form-control" id="parentFirstName" asp-for="ParentFirstName">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="parentLastName" class="form-label">Veli Soyisim</label>
+                        <input type="text" class="form-control" id="parentLastName" asp-for="ParentLastName">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="parentMobilePhone" class="form-label">Veli Cep Telefonu</label>
+                        <input type="text" class="form-control" id="parentMobilePhone" asp-for="ParentMobilePhone">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="parentWorkPhone" class="form-label">Veli İş Telefonu</label>
+                        <input type="text" class="form-control" id="parentWorkPhone" asp-for="ParentWorkPhone">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="parentAddress" class="form-label">Veli Adresi</label>
+                        <input type="text" class="form-control" id="parentAddress" asp-for="ParentAddress">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="parentDistrict" class="form-label">İlçe</label>
+                        <input type="text" class="form-control" id="parentDistrict" asp-for="ParentDistrict">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="parentCity" class="form-label">İl</label>
+                        <input type="text" class="form-control" id="parentCity" asp-for="ParentCity">
                     </div>
 
                     <div class="mb-3">
                         <label for="continuationStatus" class="form-label">Devam Etme Durumu</label>
                         <select class="form-select" id="continuationStatus" asp-for="ContinuationStatus" asp-items="@Html.GetEnumSelectList<ContinuationStatus>()">
+                            <option value="">Devam Etme Durumu Seçiniz</option>
                         </select>
-                        <span asp-validation-for="ContinuationStatus" class="text-danger"></span>
                     </div>
 
                     <div class="mb-3">
@@ -69,12 +91,25 @@
                                 <option value="@item.Id" selected="@isSelected">@item.Name</option>
                             }
                         </select>
-                        <span asp-validation-for="ClassroomId" class="text-danger"></span>
-                    </div>
 
+                        <div class="mb-3">
+                            <label for="isPreRegistered" class="form-label">Ön Kayıtlı mı?</label>
+                            <input type="checkbox" class="form-check-input" id="isPreRegistered" asp-for="IsPreRegistered">
+                        </div>
+
+
+                        <input type="hidden" class="form-control" asp-for="ParentId">
+                    </div>
                     <button type="submit" class="btn btn-primary">Güncelle</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
+
+
+
+
+
+
+

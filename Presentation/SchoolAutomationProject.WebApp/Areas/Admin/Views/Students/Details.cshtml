@@ -1,4 +1,5 @@
 ﻿@model ReadStudentViewModel
+@inject IAttendanceReadRepository attendanceReadRepository
 
 @{
     ViewData["Title"] = "Details";
@@ -32,24 +33,49 @@
                     @foreach (var customProperty in ViewData["CustomProperties"] as List<string>)
                     {
                         <td>
-                            @if (customProperty == "Classroom")
+                            @if (customProperty == "Classroom" && Model.Classroom != null)
                             {
-                                    <badge class="badge bg-info">@Model.Classroom.Name</badge>
-                            }
-
-                            else if (customProperty == "Parent")
-                            {
-                                    <badge class="badge bg-success">@Model.Parent.FirstName @Model.Parent.LastName</badge>
-                            }
-
-                            else if (customProperty == "Achievements")
-                            {
-                                foreach (var achievement in Model.Achievements)
+                                if (Model.Classroom.IsActive)
                                 {
-                                    <badge class="badge bg-success">@achievement.Type</badge>
+                                <badge class="badge bg-info">@Model.Classroom.Name</badge>
+                                }
+                                else
+                                {
+                                    <badge class="badge bg-info">Silinmiş Sınıf</badge>
                                 }
                             }
 
+                            else if (customProperty == "Parent" && Model.Parent != null)
+                            {
+                               if (Model.Parent.IsActive)
+                                {
+                                <badge class="badge bg-success">@Model.Parent.FirstName @Model.Parent.LastName</badge>
+                                }
+                                else
+                                {
+                                    <badge class="badge bg-success">Silinmiş Veli</badge>
+                                }
+                            }
+
+                            else if (customProperty == "Achievements" && Model.Achievements != null)
+                            {
+                                foreach (var achievement in Model.Achievements)
+                                {
+                                    if (achievement.IsActive)
+                                    {
+                                    <badge class="badge bg-success">@achievement.Type</badge>
+                                    }
+                                    else
+                                    {
+                                        <badge class="badge bg-success">Silinmiş Belge</badge>
+                                    }
+                                }
+                            }
+                            else if (customProperty == "TotalAbsenceCount")
+                            {
+                            Model.TotalAbsenceCount = Convert.ToInt16(attendanceReadRepository.GetWhere(x => x.StudentId == Model.Id && x.AttendanceStatus == AttendanceStatus.Yok).Count());
+                                @Model.TotalAbsenceCount
+                        }
                             else
                             {
                                 <span>@Model.GetType().GetProperty(customProperty).GetValue(Model)</span>

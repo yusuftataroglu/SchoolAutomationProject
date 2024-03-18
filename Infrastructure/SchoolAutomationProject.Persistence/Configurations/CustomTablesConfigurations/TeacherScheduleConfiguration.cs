@@ -17,7 +17,7 @@ namespace SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigu
             builder.Property(x => x.UpdatedIpAddress).HasMaxLength(255);
 
             //Bu tabloya ait propertylerin özelleştirmeleri
-            builder.Property(x => x.Day).IsRequired();
+            builder.Property(x => x.Day);
             builder.Property(x => x.Classroom).HasMaxLength(9).IsRequired();
 
             //builder.HasData(GetSampleTeacherSchedule());

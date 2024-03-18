@@ -2,20 +2,19 @@
 @inject UserManager<AppUser> userManager
 @{
     ViewData["Title"] = "Mesaj Oluştur";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <div class="row">
     <div class="col-md-6 mx-auto">
-        <form method="post" asp-area="Admin" asp-controller="Messages" asp-action="AddByUsername" asp-route-userName="@User.Identity.Name">
+        <form method="post" asp-area="Admin" asp-controller="Messages" asp-action="UpdateByUsername" asp-route-userName="@User.Identity.Name">
             <div class="card">
                 <div class="card-header">Öğrenci Ekle</div>
                 <div class="card-body">
+                    <div asp-validation-summary="All" class="text-danger"></div>
 
                     <div class="mb-3">
                         <label for="content" class="form-label">İçerik</label>
                         <input type="text" class="form-control" id="content" asp-for="Content">
-                        <span asp-validation-for="Content" class="text-danger"></span>
                     </div>
 
                     <div class="mb-3">
@@ -27,7 +26,6 @@
                                 <option value="@user.Id">@user.UserName</option>
                             }
                         </select>
-                        <span asp-validation-for="ReceiverId" class="text-danger"></span>
                     </div>
                     <button type="submit" class="btn btn-primary">Ekle</button>
                 </div>

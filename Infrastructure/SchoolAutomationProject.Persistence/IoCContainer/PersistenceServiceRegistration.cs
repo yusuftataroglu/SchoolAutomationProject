@@ -48,7 +48,14 @@ namespace SchoolAutomationProject.Persistence.IoCContainer
             //Burada katmandan gelen configuration üzerinden appsetting.json dosyasına ulaşıyoruz.
             services.AddDbContext<SchoolAutomationProjectDbContext>(x => x.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             //Identity
-            services.AddIdentity<AppUser, AppUserRole>().AddEntityFrameworkStores<SchoolAutomationProjectDbContext>().AddDefaultTokenProviders();
+            services.AddIdentity<AppUser, AppUserRole>(options =>
+            {
+                options.Password.RequireDigit = false; // Sayı gerekli değil
+                options.Password.RequiredLength = 4; // Minimum 4 karakter
+                options.Password.RequireLowercase = false; // Küçük harf gerekli değil
+                options.Password.RequireUppercase = false; // Büyük harf gerekli değil
+                options.Password.RequireNonAlphanumeric = false; // Alfanümerik olmayan karakter gerekli değil
+            }).AddEntityFrameworkStores<SchoolAutomationProjectDbContext>().AddDefaultTokenProviders();
 
             services.AddHttpContextAccessor();
 

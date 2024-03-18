@@ -19,7 +19,7 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Ann
         [Required(ErrorMessage ="Duyuru İçeriği Boş Geçilemez!")]
         public string Content { get; set; }
         public AppUser? Sender { get; set; } 
-        public string? SenderId { get; set; } //todo otomatik olarak atanabilir.
+        public string? SenderId { get; set; }
         public ICollection<AnnouncementRole>? AnnouncementRoles { get; set; }
         public List<string>? AnnouncementRolesRoleIds { get; set; }
     }

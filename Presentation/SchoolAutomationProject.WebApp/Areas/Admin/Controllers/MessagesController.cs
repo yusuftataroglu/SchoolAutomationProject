@@ -46,11 +46,10 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
             return await base.Details(id);
         }
 
-        public override IActionResult Add()
+        public override IActionResult AddByUsername()
         {
-            return base.Add();
+            return base.AddByUsername();
         }
-
         public override async Task<IActionResult> AddByUsername(string userName, WriteMessageViewModel modelVM)
         {
             AppUser user = await _userManager.FindByNameAsync(userName);
@@ -58,17 +57,17 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
             return await base.AddByUsername(userName, modelVM);
         }
 
-        public override async Task<IActionResult> Update(Guid id)
+        public override Task<IActionResult> UpdateByUsername(Guid id)
         {
-            return await base.Update(id);
+            return base.UpdateByUsername(id);
         }
 
-
-        public override async Task<IActionResult> Update(WriteMessageViewModel modelVM)
+        public override async Task<IActionResult> UpdateByUsername(string userName, WriteMessageViewModel modelVM)
         {
-            return await base.Update(modelVM);
+            AppUser user = await _userManager.FindByNameAsync(userName);
+            modelVM.SenderId = user.Id;
+            return await base.UpdateByUsername(userName, modelVM);
         }
-
         public override async Task<IActionResult> Delete(Guid id)
         {
             return await base.Delete(id);

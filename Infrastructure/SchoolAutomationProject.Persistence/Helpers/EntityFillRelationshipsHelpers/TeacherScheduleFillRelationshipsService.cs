@@ -8,6 +8,7 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
     {
         public async Task FillTeacherScheduleRelationships(TeacherSchedule teacherSchedule, WriteTeacherScheduleViewModel modelVM, string requestType)
         {
+            teacherSchedule.Day = teacherSchedule.DateTime.DayOfWeek;
         }
     }
 }

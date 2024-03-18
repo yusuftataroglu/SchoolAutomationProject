@@ -36,26 +36,43 @@
                             {
                                 foreach (var classroomMainCourse in Model.ClassroomMainCourses)
                                 {
-                                    <badge class="badge bg-info">@classroomMainCourse.MainCourse.Name</badge>
+                                    if (classroomMainCourse.MainCourse.IsActive)
+                                    {
+                                        <badge class="badge bg-info">@classroomMainCourse.MainCourse.Name</badge>
+                                    }
+                                    else
+                                    {
+                                        <badge class="badge bg-info">Silinmiş Ders</badge>
+                                    }
                                 }
                             }
                             else if (customProperty == "Students")
                             {
                                 foreach (var student in Model.Students)
                                 {
-                                    <badge class="badge bg-warning">@student.FirstName @student.LastName</badge>
+                                    if (student.IsActive)
+                                    {
+                                        <badge class="badge bg-warning">@student.FirstName @student.LastName</badge>
+                                    }
+                                    else
+                                    {
+                                        <badge class="badge bg-warning">Silinmiş Öğrenci</badge>
+                                    }
                                 }
                             }
                             else if (customProperty == "ClassroomTeachers")
                             {
                                 foreach (var classroomTeacher in Model.ClassroomTeachers)
                                 {
-                                    <badge class="badge bg-success">@classroomTeacher.Teacher.FirstName @classroomTeacher.Teacher.LastName</badge>
+                                    if (classroomTeacher.Teacher.IsActive)
+                                    {
+                                        <badge class="badge bg-success">@classroomTeacher.Teacher.FirstName @classroomTeacher.Teacher.LastName</badge>
+                                    }
+                                    else
+                                    {
+                                        <badge class="badge bg-success">Silinmiş Öğretmen</badge>
+                                    }
                                 }
-                            }
-                            else
-                            {
-                                <span>@Model.GetType().GetProperty(customProperty).GetValue(Model)</span>
                             }
                         </td>
                     }

@@ -1,4 +1,4 @@
-﻿@model ReadParentViewModel
+﻿@model ReadDiscontinuedStudentViewModel
 
 @{
     ViewData["Title"] = "Details";
@@ -31,27 +31,7 @@
                 <tr>
                     @foreach (var customProperty in ViewData["CustomProperties"] as List<string>)
                     {
-                        <td>
-                            @if (customProperty == "Students")
-                            {
-                                foreach (var student in Model.Students)
-                                {
-                                    if (student.IsActive)
-                                    {
-                                        <badge class="badge bg-warning">@student.FirstName @student.LastName</badge>
-                                    }
-                                    else
-                                    {
-                                        <badge class="badge bg-warning">Silinmiş Öğrenci</badge>
-                                    }
-                                }
-                            }
-                            
-                            else
-                            {
-                                <span>@Model.GetType().GetProperty(customProperty).GetValue(Model)</span>
-                            }
-                        </td>
+                        <td>@Model.GetType().GetProperty(customProperty).GetValue(Model)</td>
                     }
 
                     @foreach (var commonProperty in ViewData["CommonProperties"] as List<string>)

@@ -22,12 +22,6 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="day" class="form-label">Gün</label>
-                        <select id="day" class="form-control" asp-for="Day" asp-items="@Html.GetEnumSelectList<DayOfWeek>()">
-                        </select>
-                    </div>
-
-                    <div class="mb-3">
                         <label for="timeSlot" class="form-label">Saat</label>
                         <input id="timeSlot" class="form-control" type="number" min="0" asp-for="TimeSlot" />
                     </div>

@@ -7,7 +7,7 @@ namespace SchoolAutomationProject.Domain.Entities.CustomTables
     public class TeacherSchedule : BaseClass
     {
         public DateTime DateTime { get; set; }
-        public DayOfWeek Day { get; set; }
+        public DayOfWeek? Day { get; set; }
         public byte TimeSlot { get; set; }
         public string? Classroom { get; set; }
 

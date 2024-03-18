@@ -34,16 +34,30 @@
                         @foreach (var customProperty in ViewData["CustomProperties"] as List<string>)
                         {
                             <td>
-                                @if (customProperty == "MainCourse")
+                                @if (customProperty == "MainCourse" && item.MainCourse!=null)
                                 {
+                                    if (item.MainCourse.IsActive)
+                                    {
                                         <badge class="badge bg-info">@item.MainCourse.Name</badge>
+                                    }
+                                    else
+                                    {
+                                        <badge class="badge bg-info">Silinmiş Ders</badge>
+                                    }
                                 }
 
                                 else if (customProperty == "ClassroomTeachers")
                                 {
                                     foreach (var classroomTeacher in item.ClassroomTeachers)
                                     {
+                                        if (classroomTeacher.Classroom.IsActive)
+                                        {
                                         <badge class="badge bg-warning">@classroomTeacher.Classroom.Name</badge>
+                                        }
+                                        else
+                                        {
+                                            <badge class="badge bg-warning">Silinmiş Sınıf</badge>
+                                        }
                                     }
                                 }
 
@@ -51,7 +65,10 @@
                                 {
                                     foreach (var teacherSchedule in item.TeacherSchedules)
                                     {
+                                        if (teacherSchedule.DateTime==DateTime.Today && teacherSchedule.IsActive)
+                                        {
                                         <badge class="badge bg-success">@teacherSchedule.Classroom</badge>
+                                        }
                                     }
                                 }
                                 else

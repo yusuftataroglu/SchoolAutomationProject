@@ -3,6 +3,7 @@ using SchoolAutomationProject.Domain.Entities.CommonTables;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 using SchoolAutomationProject.Domain.Entities.Enums;
 using SchoolAutomationProject.Domain.Entities.IdentityTables;
+using System.ComponentModel.DataAnnotations;
 
 namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.StudentViewModels
 {
@@ -17,6 +18,18 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Stu
         public bool IsPreRegistered { get; set; } // Ön kayıt durumu
         public short? TotalAbsenceCount { get; set; } // Devamsızlık sayısı
         public ContinuationStatus? ContinuationStatus { get; set; } //Devam etme durumu
+        public string ParentFirstName { get; set; }
+
+        public string ParentLastName { get; set; }
+
+        public string ParentMobilePhone { get; set; }
+        public string? ParentWorkPhone { get; set; }
+
+        public string ParentAddress { get; set; }
+
+        public string ParentDistrict { get; set; }
+
+        public string ParentCity { get; set; }
 
         //Student-Classroom ilişkisi
         public Classroom Classroom { get; set; }

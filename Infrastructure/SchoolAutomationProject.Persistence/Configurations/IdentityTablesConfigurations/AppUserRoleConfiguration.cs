@@ -14,7 +14,6 @@ namespace SchoolAutomationProject.Persistence.Configurations.IdentityTablesConfi
             new AppUserRole { Id = "bd6a6979-cbb1-4c4a-93f0-19a73a3cdcfc", Name = "Teacher", NormalizedName = "TEACHER" },
             new AppUserRole { Id = "5836daf9-1a03-4190-872a-4fdc42cf4a50", Name = "Admin", NormalizedName = "ADMIN" }
         );
-            //todo WebApp aracılığıyla eklenebilir.
         }
     }
 }

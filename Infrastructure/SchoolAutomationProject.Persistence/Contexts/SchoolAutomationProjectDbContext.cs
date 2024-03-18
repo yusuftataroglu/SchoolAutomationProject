@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.VisualBasic;
 using SchoolAutomationProject.Domain.Entities.CommonTables;
 using SchoolAutomationProject.Domain.Entities.CrossTables;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
@@ -66,7 +67,7 @@ namespace SchoolAutomationProject.Persistence.Contexts
                         item.Entity.UpdatedDate = DateTime.UtcNow;
                         item.Entity.UpdatedComputerName = Environment.MachineName;
                         item.Entity.UpdatedIpAddress = await IpAddressHelper.GetIpAddress();
-                        item.Entity.UpdatedUser = new HttpContextAccessor().HttpContext.User.Identity.Name; //todo değiştirilebilir.
+                        item.Entity.UpdatedUser = new HttpContextAccessor().HttpContext.User.Identity.Name;
 
                         if (item.Entity is Student)
                         {
@@ -75,10 +76,16 @@ namespace SchoolAutomationProject.Persistence.Contexts
                             var currentValue = item.CurrentValues["ContinuationStatus"]?.ToString();
                             if (originalValue != currentValue)
                             {
-                                //todo denenecek.
-                                if (currentValue == ContinuationStatus.Mezun.ToString() || currentValue == ContinuationStatus.Sevk.ToString())
+                                if (originalValue == ContinuationStatus.Devam.ToString() && (currentValue == ContinuationStatus.Mezun.ToString() || currentValue == ContinuationStatus.Sevk.ToString()))
                                 {
-                                    await DiscontinuedStudents.AddAsync(new DiscontinuedStudent { StudentId = student.Id, CreatedComputerName = "yusuf-pc", CreatedDate = DateTime.UtcNow, CreatedIpAddress = "123.1.3.1" }); //todo otomatik atanacak.
+                                    student.IsActive = false;
+                                    await DiscontinuedStudents.AddAsync(new DiscontinuedStudent { StudentId = student.Id, CreatedComputerName = Environment.MachineName, CreatedDate = DateTime.UtcNow, CreatedIpAddress = await IpAddressHelper.GetIpAddress() });
+                                }
+                                else if ((originalValue == ContinuationStatus.Mezun.ToString() || currentValue == ContinuationStatus.Sevk.ToString()) && currentValue == ContinuationStatus.Devam.ToString())
+                                {
+                                    student.IsActive = true;
+                                    DiscontinuedStudent discontinuedStudent = await DiscontinuedStudents.Where(x=> x.StudentId == student.Id).FirstOrDefaultAsync();
+                                    DiscontinuedStudents.Remove(discontinuedStudent);
                                 }
                             }
 

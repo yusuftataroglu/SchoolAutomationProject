@@ -38,7 +38,14 @@
                                 {
                                     foreach (var student in item.Students)
                                     {
-                                        <badge class="badge bg-info">@student.FirstName @student.LastName</badge>
+                                        if (student.IsActive)
+                                        {
+                                            <badge class="badge bg-warning">@student.FirstName @student.LastName</badge>
+                                        }
+                                        else
+                                        {
+                                            <badge class="badge bg-warning">Silinmiş Öğrenci</badge>
+                                        }
                                     }
                                 }
 

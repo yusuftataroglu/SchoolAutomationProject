@@ -1,4 +1,5 @@
-﻿using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
+﻿using Microsoft.EntityFrameworkCore;
+using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.StudentRepositories;
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.ParentViewModels;
 using SchoolAutomationProject.Domain.Entities.CrossTables;
@@ -21,7 +22,8 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
                 parent.Students.Clear();
                 foreach (var studentId in modelVM.StudentIds)
                 {
-                    parent.Students.Add(new Student { Id = studentId});
+                    Student student = await _studentReadRepository.GetWhere(x => x.Id == studentId).FirstOrDefaultAsync();
+                    parent.Students.Add(student);
                 }
             }
         }

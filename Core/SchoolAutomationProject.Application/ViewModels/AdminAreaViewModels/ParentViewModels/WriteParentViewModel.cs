@@ -8,7 +8,7 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Par
     {
         public WriteParentViewModel()
         {
-            StudentIds = new(); //todo kaldrılıp required eklenebilir. view tarafında null sorgusu yapılabilir.
+            StudentIds = new();
         }
         public Guid Id { get; set; }
 

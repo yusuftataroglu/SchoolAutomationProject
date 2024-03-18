@@ -33,6 +33,13 @@ namespace SchoolAutomationProject.WebApp.Controllers
             List<TReadViewModel> readViewModelList = _mapper.Map<List<TReadViewModel>>(entities);
             return View(readViewModelList);
         }
+        [HttpGet]
+        public virtual IActionResult GetPassives()
+        {
+            var entities = _readRepository.GetAllPassives().ToList();
+            List<TReadViewModel> readViewModelList = _mapper.Map<List<TReadViewModel>>(entities);
+            return View(readViewModelList);
+        }
 
         [HttpGet("{Area}/{Controller}/{Action}/{id}")]
         public virtual async Task<IActionResult> GetById(string id, List<T>? entities)
@@ -166,22 +173,6 @@ namespace SchoolAutomationProject.WebApp.Controllers
             }
         }
 
-        [HttpGet]
-        public virtual async Task<IActionResult> UpdateByUsername(Guid id)
-        {
-            var entity = await _readRepository.GetAllActivesByIdAsync(id);
-            if (entity != null)
-            {
-                TWriteViewModel modelVM = _mapper.Map<TWriteViewModel>(entity);
-                return View(modelVM);
-            }
-            else
-            {
-                TempData["Error"] = "Bu Veri Silinmiş!";
-                return View(nameof(Get));
-            }
-        }
-
         [HttpPost]
         public virtual async Task<IActionResult> Update(TWriteViewModel modelVM)
         {
@@ -216,6 +207,23 @@ namespace SchoolAutomationProject.WebApp.Controllers
                 return View(modelVM);
             }
         }
+
+        [HttpGet]
+        public virtual async Task<IActionResult> UpdateByUsername(Guid id)
+        {
+            var entity = await _readRepository.GetAllActivesByIdAsync(id);
+            if (entity != null)
+            {
+                TWriteViewModel modelVM = _mapper.Map<TWriteViewModel>(entity);
+                return View(modelVM);
+            }
+            else
+            {
+                TempData["Error"] = "Bu Veri Silinmiş!";
+                return View(nameof(Get));
+            }
+        }
+
         [HttpPost]
         public virtual async Task<IActionResult> UpdateByUsername(string userName, TWriteViewModel modelVM)
         {

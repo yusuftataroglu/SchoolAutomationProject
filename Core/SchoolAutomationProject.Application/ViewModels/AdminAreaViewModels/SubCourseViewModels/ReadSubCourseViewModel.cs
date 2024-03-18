@@ -7,11 +7,11 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Sub
     public class ReadSubCourseViewModel : BaseClass, IReadViewModel
     {
         public string Code { get; set; }
-        public int WeeklyHour { get; set; }//todo Bu property'ler MainCourse'da olabilir emin değilim.
+        public int WeeklyHour { get; set; }
         public int Position { get; set; }
 
         //SubCourse - MainCourse ilişkisi
         public MainCourse MainCourse { get; set; }
-        public string MainCourseName => MainCourse.Name;
+        public string MainCourseName => MainCourse.IsActive? MainCourse.Name:"Silinmiş Ders";
     }
 }
