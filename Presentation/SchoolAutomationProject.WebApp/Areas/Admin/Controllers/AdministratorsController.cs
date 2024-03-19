@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.AdministratorRepositories;
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.AdministratorViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
+using SchoolAutomationProject.Domain.Entities.IdentityTables;
 using SchoolAutomationProject.WebApp.Controllers;
 
 namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
@@ -13,14 +15,18 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
     [Authorize(Roles = "Admin")]
     public class AdministratorsController : GenericController<Administrator, ReadAdministratorViewModel, WriteAdministratorViewModel>
     {
+        private readonly UserManager<AppUser> _userManager;
+
         public AdministratorsController(
             IAdministratorReadRepository achievementReadRepository,
             IAdministratorWriteRepository achievementWriteRepository,
             IFillEntityRelationshipsService fillEntityRelationshipsService,
-            IMapper mapper)
+            IMapper mapper,
+            UserManager<AppUser> userManager)
             : base(achievementReadRepository, achievementWriteRepository, mapper, fillEntityRelationshipsService)
 
         {
+            _userManager = userManager;
         }
 
         public override IActionResult Get()
@@ -56,9 +62,11 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
             return await base.Update(id);
         }
 
-
         public override async Task<IActionResult> Update(WriteAdministratorViewModel modelVM)
         {
+            var user = await _userManager.FindByIdAsync(modelVM.UserId);
+            modelVM.User = user;
+
             return await base.Update(modelVM);
         }
 

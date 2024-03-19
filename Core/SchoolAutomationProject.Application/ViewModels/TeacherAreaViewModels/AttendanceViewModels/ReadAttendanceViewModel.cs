@@ -9,7 +9,7 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.A
     {
         public Guid Id { get; set; }
         public string CreatedUser { get; set; }
-        public DateTime AttendanceDate { get; set; } // Devamsızlık tarihi
+        public DateTime AttendanceDate { get; set; } 
         public AttendanceStatus AttendanceStatus { get; set; }
 
         // Devamsızlık - Öğrenci ilişkisi
@@ -18,8 +18,8 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.A
         // Devamsızlık - Ders ilişkisi
         public SubCourse SubCourse { get; set; }
 
-        public string StudentFullName => $"{Student.FirstName} {Student.LastName}";
-        public string SubCourseCode => SubCourse.Code;
+        public string StudentFullName => Student.IsActive ? $"{Student.FirstName} {Student.LastName}" : "Silinmiş Öğrenci";
+        public string SubCourseCode => SubCourse.IsActive ? SubCourse.Code : "Silinmiş Alt Ders";
 
         public string AttendanceDateShort => AttendanceDate.ToShortDateString();
     }

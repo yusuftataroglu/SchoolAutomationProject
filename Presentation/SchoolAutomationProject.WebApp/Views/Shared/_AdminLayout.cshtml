@@ -189,6 +189,18 @@
                                 <a class="nav-link" asp-area="Admin" asp-controller="Messages" asp-action="Get">Mesaj Listesi</a>
                             </nav>
                         </div>
+
+                        <!--Yönetici İşlemleri-->
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#administratorCollapse" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Yönetici İşlemleri
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="administratorCollapse" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" asp-area="Admin" asp-controller="Administrators" asp-action="Get">Yönetici Listesi</a>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </nav>

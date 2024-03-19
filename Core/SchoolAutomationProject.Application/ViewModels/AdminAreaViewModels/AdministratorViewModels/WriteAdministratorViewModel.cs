@@ -13,8 +13,15 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Adm
 
         [Required(ErrorMessage = "Soyisim Boş Geçilemez!")]
         public string LastName { get; set; }
+
+        [Required(ErrorMessage = "Şifre Boş Geçilemez!")]
+        public string Password { get; set; }
+
+        [Required(ErrorMessage = "Şifre Tekrarı Boş Geçilemez!")]
+        [Compare("Password",ErrorMessage ="Şifreler Uyuşmuyor!")]
+        public string ConfirmPassword { get; set; }
         public string? Title { get; set; }
-        public  AppUser User { get; set; }
+        public  AppUser? User { get; set; }
         public string? UserId { get; set; }
     }
 }

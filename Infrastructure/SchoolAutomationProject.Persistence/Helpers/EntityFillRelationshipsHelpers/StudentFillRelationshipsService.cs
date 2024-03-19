@@ -50,17 +50,19 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
                 AppUser studentUser = new AppUser
                 {
                     Id = Guid.NewGuid().ToString(),
-                    UserName = $"{student.FirstName}{student.LastName}",
+                    UserName = $"{student.FirstName.ToLower()}{student.LastName.ToLower()}",
+                    NormalizedUserName = $"{student.FirstName.ToUpper()}{student.LastName.ToUpper()}",
                     Email = ""
                 };
                 AppUser parentUser = new AppUser
                 {
                     Id = Guid.NewGuid().ToString(),
-                    UserName = $"{parent.FirstName}{parent.LastName}",
+                    UserName = $"{parent.FirstName.ToLower()}{parent.LastName.ToLower()}",
+                    NormalizedUserName = $"{parent.FirstName.ToUpper()}{parent.LastName.ToUpper()}",
                     Email = ""
                 };
-                var createParentUserResult = await _userManager.CreateAsync(parentUser,$"{parent.FirstName}{parent.LastName}");
-                var createStudentUserResult = await _userManager.CreateAsync(studentUser,$"{student.FirstName}{student.LastName}");
+                var createParentUserResult = await _userManager.CreateAsync(parentUser,$"{parent.FirstName.ToLower()}{parent.LastName.ToLower()}");
+                var createStudentUserResult = await _userManager.CreateAsync(studentUser,$"{student.FirstName.ToLower()}{student.LastName.ToLower()}");
                 if (createParentUserResult.Succeeded && createStudentUserResult.Succeeded)
                 {
                     parent.User = parentUser;

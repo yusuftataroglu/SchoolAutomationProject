@@ -1,52 +1,41 @@
-﻿@model WriteAchievementViewModel
-@inject IStudentReadRepository _studentReadRepository
-@inject ISemesterReadRepository _semesterReadRepository
+﻿@model WriteAdministratorViewModel
 @{
-    ViewData["Title"] = "UpdateAchievement";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "UpdateAdministrator";
 }
 
-<div class="card">
-    <div class="card-header">Güncelle</div>
-    <div class="card-body">
-        <form method="post" asp-area="Admin" asp-controller="Achievements" asp-action="Update">
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="type">Türü</label>
-                    <select id="type" class="form-control" asp-for="Type" asp-items="@Html.GetEnumSelectList<AchievementType>()">
-                    </select>
-                    <div class="form-group">
-                        <label asp-for="Description">Açıklama</label>
-                        <input asp-for="Description" type="text" class="form-control" />
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <form method="post" asp-area="Admin" asp-controller="Administrators" asp-action="Update">
+            <div class="card">
+                <div class="card-header">Yönetici Güncelle</div>
+
+                <div class="card-body">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <input asp-for="UserId" type="hidden" value="@Model.UserId" />
+
+                    <div>
+                        <label asp-for="FirstName">İsim</label>
+                        <input asp-for="FirstName" type="text" class="form-control" />
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-auto">
-                            <label>Öğrenci</label>
-                            <select class="form-select" asp-for="@Model.StudentId">
-                                @foreach (var item in _studentReadRepository.GetAllActives().ToList())
-                                {
-                                    var isSelected = Model.StudentId == item.Id;
-                                    <option value="@item.Id" selected="@isSelected">@item.FirstName @item.LastName</option>
-                                }
-                            </select>
-                        </div>
+                    <div>
+                        <label asp-for="LastName">Soyisim</label>
+                        <input asp-for="LastName" type="text" class="form-control" />
+                    </div>
+                    <div>
+                        <label asp-for="Password">Yeni Şifre</label>
+                        <input asp-for="Password" type="text" class="form-control" />
+                    </div>
+                    <div>
+                        <label asp-for="ConfirmPassword">Şifreyi Doğrula</label>
+                        <input asp-for="ConfirmPassword" type="text" class="form-control" />
+                    </div>
+                    <div>
+                        <label asp-for="Title">Ünvan</label>
+                        <input asp-for="Title" type="text" class="form-control" />
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-auto">
-                            <label>Dönem</label>
-                            <select class="form-select" asp-for="@Model.SemesterId">
-                                @foreach (var item in _semesterReadRepository.GetAllActives().ToList())
-                                {
-                                    var isSelected = Model.SemesterId == item.Id;
-                                    <option value="@item.Id" selected="@isSelected">@item.Name</option>
-                                }
-                            </select>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary" type="submit">Güncelle</button>
+                    <button type="submit" class="btn btn-primary mt-2">Güncelle</button>
+
                 </div>
             </div>
         </form>
