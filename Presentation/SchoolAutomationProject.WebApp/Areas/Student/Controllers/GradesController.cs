@@ -39,8 +39,8 @@ namespace SchoolAutomationProject.WebApp.Areas.Student.Controllers
         public override async Task<IActionResult> GetByUsername(string userName, List<Grade>? entities)
         {
             var user = await _userManager.FindByNameAsync(userName);
-            var student = _studentReadRepository.GetWhere(x => x.UserId == user.Id).FirstOrDefault();
-            var gradeList = _gradeReadRepository.GetWhere(x => x.StudentId == student.Id).ToList();
+            var student = _studentReadRepository.GetWhere(x => x.UserId == user.Id && x.IsActive).FirstOrDefault();
+            var gradeList = _gradeReadRepository.GetWhere(x => x.StudentId == student.Id && x.IsActive).ToList();
 
             // ViewData dictionary'sine özel verileri atama
             ViewData["TableTitle"] = "Not Listesi";

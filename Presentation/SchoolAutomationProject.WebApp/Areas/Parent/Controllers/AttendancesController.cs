@@ -51,7 +51,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Parent.Controllers
             var user = await _userManager.FindByNameAsync(userName);
             var parent = await _parentReadRepository.GetWhere(x => x.UserId == user.Id).FirstOrDefaultAsync();
             var attendanceList = _attendanceReadRepository
-            .GetWhere(x => x.Student.ParentId == parent.Id)
+            .GetWhere(x => x.Student.ParentId == parent.Id && x.IsActive)
             .OrderByDescending(x => x.Student.FirstName)
             .ThenByDescending(x => x.AttendanceDate)
             .ToList();
@@ -65,7 +65,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Parent.Controllers
             ViewData["CustomProperties"] = new List<string> { "StudentFullName", "AttendanceStatus", "AttendanceDateShort", "SubCourseCode" };
             ViewData["ControllerName"] = "Attendances";
 
-            var attendanceList = _attendanceReadRepository.GetWhere(x => x.Student.Id.ToString() == id).OrderByDescending(x => x.AttendanceDate).ToList();
+            var attendanceList = _attendanceReadRepository.GetWhere(x => x.Student.Id.ToString() == id && x.IsActive).OrderByDescending(x => x.AttendanceDate).ToList();
             return await base.GetById(id, attendanceList);
 
         }

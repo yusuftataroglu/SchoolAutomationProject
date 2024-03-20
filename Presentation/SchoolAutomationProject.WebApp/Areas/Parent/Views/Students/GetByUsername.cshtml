@@ -1,0 +1,80 @@
+﻿@model List<ReadStudentViewModel>
+@inject IAttendanceReadRepository attendanceReadRepository;
+@{
+    ViewData["Title"] = "Get";
+}
+
+<div class="card mb-4">
+    <div class="card-header d-flex align-items-center">
+        <i class="fas fa-table me-1 me-2"></i>
+        <h3>@ViewData["TableTitle"]</h3>
+    </div>
+
+    <div class="card-body">
+        <table class="table table-hover table-bordered">
+
+            <thead>
+                <tr>
+                    @foreach (var columnTitle in ViewData["CustomColumnTitles"] as List<string>)
+                    {
+                        <th>@columnTitle</th>
+                    }
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        @foreach (var customProperty in ViewData["CustomProperties"] as List<string>)
+                        {
+                            <td>
+                                @if (customProperty == "Classroom" && item.Classroom != null)
+                                {
+                                    if (item.Classroom.IsActive)
+                                    {
+                                        <badge class="badge bg-info">@item.Classroom.Name</badge>
+                                    }
+                                    else
+                                    {
+                                        <badge class="badge bg-info">Silinmiş Sınıf</badge>
+                                    }
+                                }
+
+                                else if (customProperty == "Achievements" && item.Achievements != null)
+                                {
+                                    foreach (var achievement in item.Achievements)
+                                    {
+                                        if (achievement.IsActive)
+                                        {
+                                            <badge class="badge bg-success">@achievement.Type</badge>
+                                        }
+                                        else
+                                        {
+                                            <badge class="badge bg-success">Silinmiş Belge</badge>
+                                        }
+                                    }
+                                }
+                                else if (customProperty == "TotalAbsenceCount")
+                                {
+                                    item.TotalAbsenceCount = Convert.ToInt16(attendanceReadRepository.GetWhere(x => x.StudentId == item.Id && x.AttendanceStatus == AttendanceStatus.Yok && x.IsActive).Count());
+                                    @item.TotalAbsenceCount
+                                }
+                                else
+                                {
+                                    <span>@item.GetType().GetProperty(customProperty).GetValue(item)</span>
+                                }
+                            </td>
+                        }
+                        <!-- Devamsızlık Detayları -->
+                        <td class="d-flex">
+                            <a class="btn btn-warning" asp-area="Parent" asp-controller="Attendances" asp-action="GetById" asp-route-id="@item.Id">Devamsızlık Detayları</a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+    </div>
+</div>

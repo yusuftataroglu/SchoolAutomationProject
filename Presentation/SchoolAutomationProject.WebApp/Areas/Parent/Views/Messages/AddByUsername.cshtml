@@ -6,9 +6,9 @@
 
 <div class="row">
     <div class="col-md-6 mx-auto">
-        <form method="post" asp-area="Admin" asp-controller="Messages" asp-action="UpdateByUsername" asp-route-userName="@User.Identity.Name">
+        <form method="post" asp-area="Parent" asp-controller="Messages" asp-action="AddByUsername" asp-route-userName="@User.Identity.Name">
             <div class="card">
-                <div class="card-header">Mesaj Güncelle</div>
+                <div class="card-header">Mesaj Gönder</div>
                 <div class="card-body">
                     <div asp-validation-summary="All" class="text-danger"></div>
 
@@ -27,7 +27,7 @@
                             }
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Güncelle</button>
+                    <button type="submit" class="btn btn-primary">Ekle</button>
                 </div>
             </div>
         </form>

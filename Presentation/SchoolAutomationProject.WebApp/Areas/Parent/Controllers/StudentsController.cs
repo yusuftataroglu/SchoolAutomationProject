@@ -35,8 +35,8 @@ namespace SchoolAutomationProject.WebApp.Areas.Parent.Controllers
             var user = await _userManager.FindByNameAsync(userName);
             var studentList = _studentReadRepository.GetWhere(x => x.Parent.UserId == user.Id).ToList();
             ViewData["TableTitle"] = "Öğrenci Listesi";
-            ViewData["CustomColumnTitles"] = new List<string> { "Okul No", "Ad", "Soyad", "Cinsiyet", "Bitirdiği Okul", "Bitirdiği Okuldaki Not Ortalaması", "Ön Kayıt Durumu", "Devamsızlık Sayısı", "Devam Etme Durumu" };
-            ViewData["CustomProperties"] = new List<string> { "RegistrationNumber", "FirstName", "LastName", "Gender", "GraduatedSchool", "GPA", "IsPreRegistered", "TotalAbsenceCount", "ContinuationStatus" };
+            ViewData["CustomColumnTitles"] = new List<string> { "Okul No", "Ad", "Soyad", "Cinsiyet", "Bitirdiği Okul", "Bitirdiği Okuldaki Not Ortalaması", "Ön Kayıt Durumu", "Devamsızlık Sayısı", "Devam Etme Durumu", "Sınıf", "Belgeler" };
+            ViewData["CustomProperties"] = new List<string> { "RegistrationNumber", "FirstName", "LastName", "Gender", "GraduatedSchool", "GPA", "IsPreRegistered", "TotalAbsenceCount", "ContinuationStatus", "Classroom", "Achievements" };
             ViewData["ControllerName"] = "Students";
             return await base.GetByUsername(userName, studentList);
         }

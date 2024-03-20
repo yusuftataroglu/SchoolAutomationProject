@@ -1,7 +1,8 @@
 ﻿using SchoolAutomationProject.Application.ViewModels.BaseViewModels;
+using SchoolAutomationProject.Domain.Entities.CommonTables;
 using SchoolAutomationProject.Domain.Entities.IdentityTables;
 
-namespace SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.MessageViewModels
+namespace SchoolAutomationProject.Application.ViewModels.StudentAreaViewModels.MessageViewModels
 {
     public class ReadMessageViewModel:IReadViewModel
     {

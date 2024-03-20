@@ -7,15 +7,15 @@ namespace SchoolAutomationProject.Application.ViewModels.ParentAreaViewModels.At
 {
     public class ReadAttendanceViewModel : IReadViewModel
     {
+        public Guid Id { get; set; }
         public AttendanceStatus AttendanceStatus { get; set; }
         public DateTime AttendanceDate { get; set; } 
-        public string AttendanceDateShort => AttendanceDate.ToShortDateString();
         public Student Student { get; set; }
-        public string StudentFullName => $"{Student.FirstName} {Student.LastName}";
-
         public SubCourse SubCourse { get; set; }
+        public string StudentFullName => Student.IsActive ? $"{Student.FirstName} {Student.LastName}" : "Silinmiş Öğrenci";
+        public string SubCourseCode => SubCourse.IsActive ? SubCourse.Code : "Silinmiş Alt Ders";
+        public string AttendanceDateShort => AttendanceDate.ToShortDateString();
 
-        public string SubCourseCode => SubCourse.Code;
 
     }
 }

@@ -2,7 +2,6 @@
 {
     public enum AttendanceStatus
     {
-        Mevcut,
         Yok,
         İzinli,
         Görevli

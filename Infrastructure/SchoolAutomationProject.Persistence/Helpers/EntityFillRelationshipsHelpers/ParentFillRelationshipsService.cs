@@ -34,7 +34,7 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
                 var result = await _userManager.CreateAsync(user, $"{parent.FirstName.ToLower()}{parent.LastName.ToLower()}");
                 if (result.Succeeded)
                 {
-                    await _userManager.AddToRoleAsync(user, "Parent");
+                    var addRoleResult = await _userManager.AddToRoleAsync(user, "Parent");
                 }
                 parent.User = user;
 

@@ -94,7 +94,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
                 Id=Guid.NewGuid(),
                 StudentId = id,
                 AttendanceDate = DateTime.Today,
-                AttendanceStatus = Domain.Entities.Enums.AttendanceStatus.Mevcut,
+                AttendanceStatus = Domain.Entities.Enums.AttendanceStatus.Yok
             };
             return View(attendanceVM);
         }

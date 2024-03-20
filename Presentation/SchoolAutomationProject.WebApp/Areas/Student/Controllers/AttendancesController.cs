@@ -46,7 +46,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Student.Controllers
 
             AppUser user = await _userManager.FindByNameAsync(userName);
             var student = _studentReadRepository.GetWhere(x => x.UserId == user.Id).FirstOrDefault();
-            List<Attendance> attendanceList = _attendanceReadRepository.GetWhere(x => x.StudentId == student.Id).OrderByDescending(x=> x.AttendanceDate).ToList();
+            List<Attendance> attendanceList = _attendanceReadRepository.GetWhere(x => x.StudentId == student.Id && x.IsActive).OrderByDescending(x=> x.AttendanceDate).ToList();
             return await base.GetByUsername(userName, attendanceList);
 
         }

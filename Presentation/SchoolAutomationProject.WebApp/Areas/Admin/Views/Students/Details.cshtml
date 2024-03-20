@@ -73,7 +73,7 @@
                             }
                             else if (customProperty == "TotalAbsenceCount")
                             {
-                            Model.TotalAbsenceCount = Convert.ToInt16(attendanceReadRepository.GetWhere(x => x.StudentId == Model.Id && x.AttendanceStatus == AttendanceStatus.Yok).Count());
+                            Model.TotalAbsenceCount = Convert.ToInt16(attendanceReadRepository.GetWhere(x => x.StudentId == Model.Id && x.AttendanceStatus == AttendanceStatus.Yok && x.IsActive).Count());
                                 @Model.TotalAbsenceCount
                         }
                             else

@@ -21,6 +21,11 @@ namespace SchoolAutomationProject.Infrastructure.Helpers.Profiles
             CreateMap<Application.ViewModels.ParentAreaViewModels.MessageViewModels.ReadMessageViewModel, Message>();
             CreateMap<Message, Application.ViewModels.ParentAreaViewModels.MessageViewModels.WriteMessageViewModel>();
             CreateMap<Application.ViewModels.ParentAreaViewModels.MessageViewModels.WriteMessageViewModel, Message>();
+
+            CreateMap<Message, Application.ViewModels.StudentAreaViewModels.MessageViewModels.ReadMessageViewModel>();
+            CreateMap<Application.ViewModels.StudentAreaViewModels.MessageViewModels.ReadMessageViewModel, Message>();
+            CreateMap<Message, Application.ViewModels.StudentAreaViewModels.MessageViewModels.WriteMessageViewModel>();
+            CreateMap<Application.ViewModels.StudentAreaViewModels.MessageViewModels.WriteMessageViewModel, Message>();
         }
     }
 }

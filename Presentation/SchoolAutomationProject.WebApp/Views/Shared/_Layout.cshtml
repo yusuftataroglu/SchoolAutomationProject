@@ -52,7 +52,7 @@
                                 <ul class="dropdown-menu dropdown-menu-dark">
                                     @if (User.IsInRole("Admin"))
                                     {
-                                        <li><a asp-area="Admin" asp-action="Index" asp-controller="Home" class="dropdown-item">Yönetim Paneli</a></li>
+                                        <li><a asp-area="Admin" asp-action="Index" asp-controller="Home" class="dropdown-item">Yönetim Paneli</a></li> //todo değiştirilecek(HomeX)
                                     }
                                     else if(User.IsInRole("Teacher"))
                                     {
@@ -66,7 +66,7 @@
                                     }
                                     else if (User.IsInRole("Parent"))
                                     {
-                                        <li><a asp-area="Parent" asp-action="Get" asp-controller="Students" asp-route-userName="@User.Identity.Name" class="dropdown-item">Veli Paneli</a></li>
+                                        <li><a asp-area="Parent" asp-action="GetByUsername" asp-controller="Students" asp-route-userName="@User.Identity.Name" class="dropdown-item">Veli Paneli</a></li>
 
                                     }
                                     @* <li><a asp-action="Index" asp-controller="Member" class="dropdown-item">Profile</a></li>

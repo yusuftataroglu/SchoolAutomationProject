@@ -19,9 +19,7 @@
                     {
                         <th>@columnTitle</th>
                     }
-                    <!-- Ekleme butonu -->
                     <th>
-                        <a class="btn btn-success" asp-area="Parent" asp-controller="@ViewData["ControllerName"]" asp-action="Add">+</a>
                     </th>
                 </tr>
             </thead>
@@ -48,6 +46,7 @@
                                     }
                                 </td>
                             }
+
 
                             <td class="d-flex">
                                 <a class="btn btn-warning" asp-area="Parent" asp-controller="@ViewData["ControllerName"]" asp-action="Details" asp-route-id="@item.Id">Detaylar</a>

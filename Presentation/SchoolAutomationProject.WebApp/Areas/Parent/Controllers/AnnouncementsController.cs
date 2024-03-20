@@ -47,11 +47,9 @@ namespace SchoolAutomationProject.WebApp.Areas.Parent.Controllers
             return base.Get();
         }
 
-        public async Task<IActionResult> Details(string id)
+        public override Task<IActionResult> Details(Guid id)
         {
-            var entity = await _announcementReadRepository.GetAllActivesByIdAsync(Guid.Parse(id));
-            ReadAnnouncementViewModel readViewModel = _mapper.Map<ReadAnnouncementViewModel>(entity);
-            return View(readViewModel);
+            return base.Details(id);
         }
     }
 }

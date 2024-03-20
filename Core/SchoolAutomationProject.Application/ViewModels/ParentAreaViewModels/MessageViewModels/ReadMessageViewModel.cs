@@ -5,8 +5,12 @@ namespace SchoolAutomationProject.Application.ViewModels.ParentAreaViewModels.Me
 {
     public class ReadMessageViewModel:IReadViewModel
     {
+        public Guid Id { get; set; }
         public string Content { get; set; }
         public virtual AppUser Sender { get; set; }
+        public string SenderFullName => Sender.UserName;
         public virtual AppUser Receiver { get; set; }
+        public string ReceiverFullName => Receiver.UserName;
+
     }
 }

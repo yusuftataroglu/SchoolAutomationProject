@@ -16,6 +16,9 @@ namespace SchoolAutomationProject.Infrastructure.Helpers.Profiles
             CreateMap<Application.ViewModels.TeacherAreaViewModels.AnnouncementViewModels.ReadAnnouncementViewModel, Announcement>();
             CreateMap<Announcement, Application.ViewModels.TeacherAreaViewModels.AnnouncementViewModels.WriteAnnouncementViewModel>();
             CreateMap<Application.ViewModels.TeacherAreaViewModels.AnnouncementViewModels.WriteAnnouncementViewModel, Announcement>();
+
+            CreateMap<Announcement, Application.ViewModels.ParentAreaViewModels.AnnouncementViewModels.ReadAnnouncementViewModel>();
+            CreateMap<Application.ViewModels.ParentAreaViewModels.AnnouncementViewModels.ReadAnnouncementViewModel, Announcement>();
         }
     }
 }

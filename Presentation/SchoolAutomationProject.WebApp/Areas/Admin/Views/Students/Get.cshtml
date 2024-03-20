@@ -35,7 +35,7 @@
                         {
                             if (customProperty == "TotalAbsenceCount")
                             {
-                                item.TotalAbsenceCount = Convert.ToInt16(attendanceReadRepository.GetWhere(x => x.StudentId == item.Id && x.AttendanceStatus == AttendanceStatus.Yok).Count());
+                                item.TotalAbsenceCount = Convert.ToInt16(attendanceReadRepository.GetWhere(x => x.StudentId == item.Id && x.AttendanceStatus == AttendanceStatus.Yok && x.IsActive).Count());
                                 <td>
                                     @item.TotalAbsenceCount
                                 </td>
