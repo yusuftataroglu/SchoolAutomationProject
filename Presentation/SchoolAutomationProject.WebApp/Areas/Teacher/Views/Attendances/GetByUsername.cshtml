@@ -1,5 +1,5 @@
-﻿@model List<ReadGradeViewModel>
-@inject ITeacherReadRepository _teacherReadRepository;
+﻿@model List<ReadAttendanceViewModel>
+
 @{
     ViewData["Title"] = "Get";
 }
@@ -21,31 +21,32 @@
                     }
                     <!-- Ekleme butonu -->
                     <th>
-                        <a class="btn btn-success" asp-area="Teacher" asp-controller="@ViewData["ControllerName"]" asp-action="Add">+</a>
+                        <a class="btn btn-success" asp-area="Teacher" asp-controller="@ViewData["ControllerName"]" asp-action="AddAttendance">+</a>
                     </th>
                 </tr>
             </thead>
 
             <tbody>
-                @foreach (var item in Model)
+                @foreach (var item in Model.OrderByDescending(x => x.AttendanceDate))
                 {
                     <tr>
-
                         @foreach (var customProperty in ViewData["CustomProperties"] as List<string>)
                         {
-                            <td> @item.GetType().GetProperty(customProperty).GetValue(item)</td>
+
+                            <td>@item.GetType().GetProperty(customProperty).GetValue(item)</td>
                         }
+
                         <!-- Detaylar ve Sil butonları -->
                         @{
                             bool isDisabled = User.Identity.Name != item.CreatedUser;
                         }
                         <td class="d-flex">
-                            <form method="get" asp-area="Teacher" asp-controller="@ViewData["ControllerName"]" asp-action="Update" asp-route-id="@item.Id">
+                            <form method="get" asp-area="Teacher" asp-controller="@ViewData["ControllerName"]" asp-action="UpdateAttendance" asp-route-id="@item.Id">
                                 <button class="btn btn-primary" type="submit" disabled="@isDisabled">Güncelle</button>
                             </form>
 
                             <form method="get" asp-area="Teacher" asp-controller="@ViewData["ControllerName"]" asp-action="Delete" asp-route-id="@item.Id">
-                                <button class="btn btn-danger" type="submit" disabled="@isDisabled">Sil</button>
+                            <button class="btn btn-danger" type="submit" disabled="@isDisabled">Sil</button>
                             </form>
                         </td>
                     </tr>

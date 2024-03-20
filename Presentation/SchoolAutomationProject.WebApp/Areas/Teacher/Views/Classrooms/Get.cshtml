@@ -32,15 +32,28 @@
                                 {
                                     foreach (var student in item.Students)
                                     {
+                                        if (student.IsActive)
+                                        {
                                         <a href="#"><badge onclick="OpenStudentPopup('@student.Id','@student.FirstName', '@student.LastName')" class="badge bg-success">@student.FirstName @student.LastName</badge></a>
+                                        }
+                                        else
+                                        {
+                                            <badge class="badge bg-warning">Silinmiş Öğrenci</badge>
+                                        }
                                     }
                                 }
                                 else if (customProperty == "ClassroomTeachers")
                                 {
                                     foreach (var classroomTeacher in item.ClassroomTeachers)
                                     {
-                                        <badge class="badge bg-danger">@classroomTeacher.Teacher.FirstName @classroomTeacher.Teacher.LastName</badge>
-
+                                        if (classroomTeacher.Teacher.IsActive)
+                                        {
+                                            <badge class="badge bg-success">@classroomTeacher.Teacher.FirstName @classroomTeacher.Teacher.LastName</badge>
+                                        }
+                                        else
+                                        {
+                                            <badge class="badge bg-success">Silinmiş Öğretmen</badge>
+                                        }
                                     }
                                 }
                                 else

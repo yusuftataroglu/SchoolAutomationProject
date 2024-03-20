@@ -7,11 +7,14 @@
 
 <div class="row">
     <div class="col-md-6 mx-auto">
-        <form method="post" asp-area="Teacher" asp-controller="Attendances" asp-action="Add">
+        <form method="post" asp-area="Teacher" asp-controller="Attendances" asp-action="AddWithStudentInfos">
             <div class="card">
                 <div class="card-header">Devamsızlık Ekle</div>
                 <div class="card-body">
-                    <div asp-validation-summary="All"></div>
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                    <input asp-for="Id" type="hidden" value="@Model.Id"/>
+
                     <label for="attendanceDate">Tarih</label>
                     <input id="attendanceDate" class="form-control" type="date" asp-for="AttendanceDate" placeholder="@Model.AttendanceDate" />
 
@@ -21,7 +24,7 @@
 
                     <label>Öğrenci</label>
                     <select class="form-select" asp-for="@Model.StudentId">
-                        @foreach (var item in _studentReadRepository.GetAllActives().ToList())
+                        @foreach (var item in ViewData["StudentList"] as List<Student>)
                         {
                             if (item.Id == Model.StudentId)
                             {
@@ -34,9 +37,9 @@
                     <label>Ders</label>
                     <select class="form-select" asp-for="@Model.SubCourseId">
                         <option value="" selected disabled>Bir ders seçiniz</option>
-                        @foreach (var item in _subCourseReadRepository.GetAllActives().ToList())
+                        @foreach (var subCourse in ViewData["SubCourseList"] as List<SubCourse>)
                         {
-                            <option value="@item.Id">@item.Code</option>
+                            <option value="@subCourse.Id">@subCourse.Code</option>
                         }
                     </select>
 

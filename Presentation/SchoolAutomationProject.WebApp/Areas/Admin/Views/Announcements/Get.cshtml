@@ -29,7 +29,7 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                    if (item.AnnouncementRoles.Select(x => x.Role.Name).Contains("Admin"))
+                    if (item.AnnouncementRoles.Select(x => x.Role.Name).Contains("Admin") || item.CreatedUser == User.Identity.Name)
                     {
                         <tr>
                             @foreach (var customProperty in ViewData["CustomProperties"] as List<string>)

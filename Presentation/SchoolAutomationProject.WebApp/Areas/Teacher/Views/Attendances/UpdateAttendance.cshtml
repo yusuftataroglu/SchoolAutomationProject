@@ -8,7 +8,7 @@
 <div class="card">
     <div class="card-header">Güncelle</div>
     <div class="card-body">
-        <form method="post" asp-area="Teacher" asp-controller="Attendances" asp-action="Update">
+        <form method="post" asp-area="Teacher" asp-controller="Attendances" asp-action="UpdateAttendance">
             <div class="row">
                 <div class="col-md-6">
                     <label for="attendanceDate">Tarih</label>
@@ -23,7 +23,7 @@
                         <div class="col-md-auto">
                             <label>Öğrenci</label>
                             <select class="form-select" asp-for="@Model.StudentId">
-                                @foreach (var item in _studentReadRepository.GetAllActives().ToList())
+                                @foreach (var item in ViewData["StudentList"] as List<Student>)
                                 {
                                     var isSelected = Model.StudentId == item.Id;
                                     <option value="@item.Id" selected="@isSelected">@item.FirstName @item.LastName</option>
@@ -36,7 +36,7 @@
                         <div class="col-md-auto">
                             <label>Ders</label>
                             <select class="form-select" asp-for="@Model.SubCourseId">
-                                @foreach (var item in _subCourseReadRepository.GetAllActives().ToList())
+                                @foreach (var item in ViewData["SubCourseList"] as List<SubCourse>)
                                 {
                                     var isSelected = Model.SubCourseId == item.Id;
                                     <option value="@item.Id" selected="@isSelected">@item.Code</option>

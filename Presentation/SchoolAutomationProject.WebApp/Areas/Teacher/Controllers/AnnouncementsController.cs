@@ -47,18 +47,16 @@ namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
             return base.Get();
         }
 
-        public async Task<IActionResult> Details(string id)
+        public override Task<IActionResult> Details(Guid id)
         {
-            var entity = await _announcementReadRepository.GetAllActivesByIdAsync(Guid.Parse(id));
-            ReadAnnouncementViewModel readViewModel = _mapper.Map<ReadAnnouncementViewModel>(entity);
-            return View(readViewModel);
+            return base.Details(id);
         }
 
-        public override IActionResult Add()
+        public override IActionResult AddByUsername()
         {
-            return base.Add();
+            return base.AddByUsername();
         }
-
+        
         public override async Task<IActionResult> AddByUsername(string userName, WriteAnnouncementViewModel modelVM)
         {
             AppUser user = await _userManager.FindByNameAsync(userName);
@@ -66,15 +64,16 @@ namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
             return await base.AddByUsername(userName, modelVM);
         }
 
-
-        public override Task<IActionResult> Update(Guid id)
+        public override Task<IActionResult> UpdateByUsername(Guid id)
         {
-            return base.Update(id);
+            return base.UpdateByUsername(id);
         }
 
-        public override Task<IActionResult> Update(WriteAnnouncementViewModel modelVM)
+        public override async Task<IActionResult> UpdateByUsername(string userName, WriteAnnouncementViewModel modelVM)
         {
-            return base.Update(modelVM);
+            AppUser user = await _userManager.FindByNameAsync(userName);
+            modelVM.SenderId = user.Id;
+            return await base.UpdateByUsername(userName, modelVM);
         }
 
         public override Task<IActionResult> Delete(Guid id)

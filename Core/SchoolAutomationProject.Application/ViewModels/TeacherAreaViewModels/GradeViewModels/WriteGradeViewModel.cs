@@ -8,10 +8,10 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.G
         public Guid Id { get; set; }
 
         [Required(ErrorMessage = "Not Boş Geçilemez!")]
-        public double Score { get; set; } // Öğrencinin aldığı not
+        public double? Score { get; set; } // Öğrencinin aldığı not
 
         [Required(ErrorMessage = "Sınav Numarası Boş Geçilemez!")]
-        public byte ExamNumber { get; set; } // O dersin kaçıncı sınavı
+        public byte? ExamNumber { get; set; } // O dersin kaçıncı sınavı
 
         // Not - Öğrenci ilişkisi
         [Required(ErrorMessage = "Öğrenci Boş Geçilemez!")]

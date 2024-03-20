@@ -9,16 +9,14 @@ namespace SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.A
         public Guid Id { get; set; }
 
         [Required(ErrorMessage = "Tarih Boş Geçilemez!")]
-        public DateTime AttendanceDate { get; set; }
+        public DateTime? AttendanceDate { get; set; }
 
         [Required(ErrorMessage = "Devamsızlık Durumu Boş Geçilemez!")]
         public AttendanceStatus AttendanceStatus { get; set; }
 
-        // Devamsızlık - Öğrenci ilişkisi
         [Required(ErrorMessage = "Öğrenci Boş Geçilemez!")]
         public Guid? StudentId { get; set; } 
 
-        // Devamsızlık - Ders ilişkisi
         [Required(ErrorMessage = "Alt Ders Boş Geçilemez!")]
         public Guid? SubCourseId { get; set; } 
     }
