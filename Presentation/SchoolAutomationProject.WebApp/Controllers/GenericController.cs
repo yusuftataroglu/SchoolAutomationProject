@@ -130,6 +130,13 @@ namespace SchoolAutomationProject.WebApp.Controllers
             }
         }
 
+
+        [HttpGet]
+        public virtual IActionResult AddWithFile()
+        {
+            return View();
+        }
+
         [HttpPost]
         public virtual async Task<IActionResult> AddWithFile(string userName, TWriteViewModel modelVM, IFormFile file)
         {
@@ -142,18 +149,18 @@ namespace SchoolAutomationProject.WebApp.Controllers
                 {
                     await _writeRepository.SaveChangesAsync();
                     TempData["Success"] = "Ekleme İşlemi Başarıyla Tamamlandı";
-                    return RedirectToAction(nameof(Add));
+                    return RedirectToAction(nameof(AddWithFile));
                 }
                 else
                 {
                     TempData["Error"] = "Bir Hata Meydana Geldi!";
-                    return RedirectToAction(nameof(Add), modelVM);
+                    return RedirectToAction(nameof(AddWithFile), modelVM);
                 }
             }
             else
             {
                 TempData["Error"] = "Bir hata meydana geldi!";
-                return RedirectToAction(nameof(Add), modelVM);
+                return RedirectToAction(nameof(AddWithFile), modelVM);
             }
         }
 

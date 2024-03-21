@@ -12,6 +12,7 @@ using SchoolAutomationProject.Domain.Entities.CustomTables;
 using SchoolAutomationProject.Domain.Entities.IdentityTables;
 using SchoolAutomationProject.Infrastructure.Helpers.FileUploadHelpers;
 using SchoolAutomationProject.WebApp.Controllers;
+using System.Drawing.Drawing2D;
 
 namespace SchoolAutomationProject.WebApp.Areas.Student.Controllers
 {
@@ -42,7 +43,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Student.Controllers
             _userManager = userManager;
         }
 
-        public IActionResult AddWithFile()
+        public override IActionResult AddWithFile()
         {
             return View();
         }
@@ -63,13 +64,13 @@ namespace SchoolAutomationProject.WebApp.Areas.Student.Controllers
                     {
                         //path = Path.Combine("C:\\Users\\yusuf\\Desktop\\Files", $"Homeworks\\{subCourse}\\Students\\{student.FirstName} {student.LastName}", fileUploadResult);
 
-                        path = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot\\Files\\Homeworks\\{subCourse}\\Students\\{student.FirstName} {student.LastName}", fileUploadResult);
+                        path = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot\\Files\\Homeworks\\{subCourse}\\Students\\{student.FirstName} {student.LastName}");
 
                         if (!Directory.Exists(path))
                         {
                             Directory.CreateDirectory(path);
                         }
-                        using (var stream = new FileStream(path, FileMode.Create))
+                        using (var stream = new FileStream($"{path}\\{fileUploadResult}", FileMode.Create))
                         {
                             await file.CopyToAsync(stream);
                         };
