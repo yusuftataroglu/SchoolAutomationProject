@@ -50,9 +50,5 @@ namespace SchoolAutomationProject.WebApp.Areas.Student.Controllers
             return await base.GetByUsername(userName, gradeList);
         }
 
-        //public override async Task<IActionResult> Add(WriteGradeViewModel modelVM)
-        //{
-        //    return await base.Add(modelVM);
-        //}
     }
 }

@@ -8,7 +8,7 @@ namespace SchoolAutomationProject.Application.ViewModels.StudentAreaViewModels.G
         public double Score { get; set; }
         public byte ExamNumber { get; set; }
         public SubCourse SubCourse { get; set; }
-        public string SubCourseCode => SubCourse.Code;
+        public string SubCourseCode => SubCourse.IsActive ? SubCourse.Code : "Silinmiş Alt Ders";
 
     }
 }

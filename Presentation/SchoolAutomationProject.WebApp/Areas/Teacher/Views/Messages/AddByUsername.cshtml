@@ -1,0 +1,35 @@
+﻿@model WriteMessageViewModel
+@inject UserManager<AppUser> userManager
+@{
+    ViewData["Title"] = "Mesaj Oluştur";
+}
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <form method="post" asp-area="Teacher" asp-controller="Messages" asp-action="AddByUsername" asp-route-userName="@User.Identity.Name">
+            <div class="card">
+                <div class="card-header">Mesaj Gönder</div>
+                <div class="card-body">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                    <div class="mb-3">
+                        <label for="content" class="form-label">İçerik</label>
+                        <input type="text" class="form-control" id="content" asp-for="Content">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="gender" class="form-label">Alıcı</label>
+                        <select class="form-select" id="gender" asp-for="ReceiverId">
+                            <option value="" disabled="true">Alıcı Seçiniz</option>
+                            @foreach (var user in userManager.Users.ToList())
+                            {
+                                <option value="@user.Id">@user.UserName</option>
+                            }
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ekle</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

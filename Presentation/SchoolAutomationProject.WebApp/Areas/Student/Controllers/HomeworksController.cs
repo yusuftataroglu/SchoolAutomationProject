@@ -42,9 +42,9 @@ namespace SchoolAutomationProject.WebApp.Areas.Student.Controllers
             _userManager = userManager;
         }
 
-        public override IActionResult Add()
+        public IActionResult AddWithFile()
         {
-            return base.Add();
+            return View();
         }
         public override async Task<IActionResult> AddWithFile(string userName, WriteHomeworkViewModel modelVM, IFormFile file)
         {
@@ -65,10 +65,10 @@ namespace SchoolAutomationProject.WebApp.Areas.Student.Controllers
 
                         path = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot\\Files\\Homeworks\\{subCourse}\\Students\\{student.FirstName} {student.LastName}", fileUploadResult);
 
-                        //if (!Directory.Exists(path))
-                        //{
-                        //    Directory.CreateDirectory(path);
-                        //}
+                        if (!Directory.Exists(path))
+                        {
+                            Directory.CreateDirectory(path);
+                        }
                         using (var stream = new FileStream(path, FileMode.Create))
                         {
                             await file.CopyToAsync(stream);

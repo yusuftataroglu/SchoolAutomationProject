@@ -77,7 +77,17 @@
                                 <a class="nav-link" asp-area="Teacher" asp-controller="Announcements" asp-action="Get">Duyuru Listesi</a>
                             </nav>
                         </div>
-
+                        <!--Mesaj İşlemleri-->
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#messageScheduleCollapse" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Mesaj İşlemleri
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="messageScheduleCollapse" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" asp-area="Teacher" asp-controller="Messages" asp-action="Get">Mesaj Listesi</a>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -119,5 +129,6 @@
     <script src="~/lib/management-panel/assets/demo/chart-area-demo.js"></script>
     <script src="~/lib/management-panel/assets/demo/chart-bar-demo.js"></script>
     <script src="~/lib/management-panel/js/datatables-simple-demo.js"></script>
+    <script src="~/js/studentPopup.js"></script>
 </body>
 </html>

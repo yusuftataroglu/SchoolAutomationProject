@@ -9,6 +9,7 @@ using SchoolAutomationProject.Domain.Entities.CrossTables;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 using SchoolAutomationProject.Domain.Entities.IdentityTables;
 using System.Formats.Tar;
+using System.Text.Unicode;
 
 namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHelpers
 {
@@ -47,6 +48,9 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
                 };
 
                 await _parentWriteRepository.AddAsync(parent);
+                student.Parent = parent;
+
+
                 AppUser studentUser = new AppUser
                 {
                     Id = Guid.NewGuid().ToString(),
@@ -61,17 +65,23 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
                     NormalizedUserName = $"{parent.FirstName.ToUpper()}{parent.LastName.ToUpper()}",
                     Email = ""
                 };
-                var createParentUserResult = await _userManager.CreateAsync(parentUser,$"{parent.FirstName.ToLower()}{parent.LastName.ToLower()}");
-                var createStudentUserResult = await _userManager.CreateAsync(studentUser,$"{student.FirstName.ToLower()}{student.LastName.ToLower()}");
-                if (createParentUserResult.Succeeded && createStudentUserResult.Succeeded)
+
+                var createParentUserResult = await _userManager.CreateAsync(parentUser, $"{parent.FirstName.ToLower()}{parent.LastName.ToLower()}");
+                if (createParentUserResult.Succeeded)
                 {
+                    var addRoleResult = await _userManager.AddToRoleAsync(parentUser, "Parent");
                     parent.User = parentUser;
-                    student.User = studentUser;
-                    await _userManager.AddToRoleAsync(parentUser, "Parent");
-                    await _userManager.AddToRoleAsync(studentUser, "Student");
                 }
 
-                student.Parent = parent;
+
+                var createStudentUserResult = await _userManager.CreateAsync(studentUser, $"{student.FirstName.ToLower()}{student.LastName.ToLower()}");
+
+                if (createStudentUserResult.Succeeded)
+                {
+                    var addRoleResult = await _userManager.AddToRoleAsync(studentUser, "Student");
+                    student.User = studentUser;
+                }
+
 
             }
             else if (requestType == "UpdatePost")

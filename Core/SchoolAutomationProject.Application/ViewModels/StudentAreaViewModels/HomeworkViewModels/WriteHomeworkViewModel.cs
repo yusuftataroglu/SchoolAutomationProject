@@ -10,8 +10,10 @@ namespace SchoolAutomationProject.Application.ViewModels.StudentAreaViewModels.H
         [Required(ErrorMessage ="Ödev Başlığı Boş Geçilemez!")]
         public string Title { get; set; }
         public string? Description { get; set; }
-        public string? FileUrl { get; set; } 
-        public Guid? StudentId { get; set; }
+        public string? FileUrl { get; set; }
+
+        [Required(ErrorMessage = "Ders Boş Geçilemez!")]
         public Guid? SubCourseId { get; set; }
+        public Guid? StudentId { get; set; }
     }
 }

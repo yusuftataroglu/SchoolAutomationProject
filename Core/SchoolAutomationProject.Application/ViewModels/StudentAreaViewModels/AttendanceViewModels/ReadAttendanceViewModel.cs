@@ -11,6 +11,7 @@ namespace SchoolAutomationProject.Application.ViewModels.StudentAreaViewModels.A
         public string AttendanceDateShort => AttendanceDate.ToShortDateString();
         public AttendanceStatus AttendanceStatus { get; set; }
         public SubCourse SubCourse { get; set; }
-        public string SubCourseCode => SubCourse.Code;
+        public string SubCourseCode => SubCourse.IsActive ? SubCourse.Code : "Silinmiş Alt Ders";
+
     }
 }
