@@ -62,8 +62,6 @@ namespace SchoolAutomationProject.WebApp.Areas.Student.Controllers
                     var fileUploadResult = FileUploader.Upload(file.FileName);
                     if (fileUploadResult != "0")
                     {
-                        //path = Path.Combine("C:\\Users\\yusuf\\Desktop\\Files", $"Homeworks\\{subCourse}\\Students\\{student.FirstName} {student.LastName}", fileUploadResult);
-
                         path = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot\\Files\\Homeworks\\{subCourse}\\Students\\{student.FirstName} {student.LastName}");
 
                         if (!Directory.Exists(path))
@@ -74,7 +72,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Student.Controllers
                         {
                             await file.CopyToAsync(stream);
                         };
-                        modelVM.FileUrl = path;
+                        modelVM.FileUrl = $"{path}\\{fileUploadResult}";
                         return await base.AddWithFile(userName, modelVM, file);
                     }
 

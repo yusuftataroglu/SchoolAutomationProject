@@ -1,0 +1,92 @@
+﻿@using SchoolAutomationProject.Domain.Entities.CustomTables;
+@model Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Example</title>
+    <style>
+        body {
+            background-color: #ece9d8;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="tesekkurBelgesiCanvas" width="546" height="381"></canvas>
+    <script>
+        function replaceTurkishCharacters(input) {
+            return input
+                .replace(/ı/g, 'i')
+                .replace(/ş/g, 's')
+                .replace(/ğ/g, 'g')
+                .replace(/ü/g, 'u')
+                .replace(/ö/g, 'o')
+                .replace(/ç/g, 'c')
+                .replace(/İ/g, 'I')
+                .replace(/Ş/g, 'S')
+                .replace(/Ğ/g, 'G')
+                .replace(/Ü/g, 'U')
+                .replace(/Ö/g, 'O')
+                .replace(/Ç/g, 'C');
+        }
+
+        var firstName = "@Model.FirstName";
+        var lastName = "@Model.LastName";
+        var year = "@TempData["Year"]";
+        var semesterNo = "@TempData["SemesterNo"]";
+        var date = "@TempData["Date"]";
+        var correctedFirstName = replaceTurkishCharacters(firstName);
+        var correctedLastName = replaceTurkishCharacters(lastName);
+
+        var canvas = document.getElementById("tesekkurBelgesiCanvas");
+        var ctx = canvas.getContext("2d");
+        canvas.addEventListener("mousemove", function (event) {
+            var rect = canvas.getBoundingClientRect(); // Canvas elementinin sınırlarını al
+            var x = event.clientX - rect.left; // Fare imlecini Canvas'in sol üst köşesine göre konumlandır
+            var y = event.clientY - rect.top; // Fare imlecini Canvas'in sol üst köşesine göre konumlandır
+            console.log("X: " + x + ", Y: " + y); // Koordinatları konsola yazdır
+        });
+
+        var img = new Image();
+        img.onload = function () {
+            ctx.drawImage(img, 0, 0);
+            drawTextWithBackground("   ", 227, 116, 15, "black", "white");
+            drawTextWithBackground("                ", 340, 116, 15, "black", "white");
+            drawTextWithBackground("            ", 74, 135, 15, "black", "white");
+            drawTextWithBackground(" ", 242, 135, 15, "black", "white");
+            drawTextWithBackground("             ", 378, 202, 15, "black", "white");
+            drawTextWithBackground("@Model.RegistrationNumber.Split('-')[0]", 220, 114, 12, "black", "white");
+            drawTextWithBackground(correctedFirstName + " " + correctedLastName, 340, 114, 12, "black", "white");
+            drawTextWithBackground(year, 74, 135, 12, "black", "white");
+            drawTextWithBackground(semesterNo, 242, 135, 12, "black", "white");
+            drawTextWithBackground(date, 378, 202, 12, "black", "white");
+
+            
+        };
+
+        img.src = "/images/tesekkur_belgesi.jpg";
+
+        function drawTextWithBackground(text, x, y, fontSize, textColor, bgColor) {
+            // Metnin boyutunu alın
+            var textWidth = ctx.measureText(text).width + 20;
+            // Arka planı çizin
+            ctx.fillStyle = bgColor;
+            ctx.fillRect(x, y - fontSize, textWidth, fontSize); // Arka planın yüksekliğini ve genişliğini buradan ayarlayabilirsiniz
+
+            // Metni çizin
+            ctx.font = fontSize + "px Arial";
+            ctx.fillStyle = textColor;
+            ctx.fillText(text, x, y);
+        }
+
+        window.onload = function () {
+            window.print();
+        }
+    </script>
+</body>
+</html>

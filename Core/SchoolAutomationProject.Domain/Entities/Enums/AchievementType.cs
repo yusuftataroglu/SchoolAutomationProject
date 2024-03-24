@@ -3,7 +3,6 @@
     public enum AchievementType
     {
         Teşekkür,
-        Takdir,
-        Onur
+        Takdir
     }
 }

@@ -1,0 +1,18 @@
+ADMIN
+---------------------
+achievement +
+attendances +
+classrooms +
+grades +
+maincourses +
+semesters +
+subcourses +
+teacherSchedule +
+announcements +
+messages +
+discontinuedStudent +
+student +
+teacher +
+parent +
+administrator -
+
