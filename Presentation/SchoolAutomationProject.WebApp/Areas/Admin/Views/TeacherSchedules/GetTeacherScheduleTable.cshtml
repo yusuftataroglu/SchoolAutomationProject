@@ -1,0 +1,72 @@
+﻿@using SchoolAutomationProject.Domain.Entities.CustomTables;
+@model List<TeacherSchedule>
+
+@{
+    Layout = null;
+    var teacherSchedulesList = Model.OrderBy(x => x.TimeSlot).ToList();
+}
+
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ders Programı</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <style>
+        body {
+            background-color: lightgrey
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-12 mx-auto">
+                <table class="table table-bordered table-striped table-light">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th colspan="5" class="text-center">Haftalık Ders Programı (@ViewBag.FirstDayOfWeek - @ViewBag.LastDayOfWeek )</th>
+                        </tr>
+                        <tr>
+                            <th>Saatler</th>
+                            <th>Pts</th>
+                            <th>Salı</th>
+                            <th>Çrş</th>
+                            <th>Prş</th>
+                            <th>Cuma</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var timeSlot in teacherSchedulesList.Select(x => x.TimeSlot).Distinct())
+                        {
+                            <tr>
+                                <th>@timeSlot</th> <!-- Saat başlığı -->
+                                @foreach (var dayOfWeek in Enum.GetValues(typeof(DayOfWeek)).Cast<DayOfWeek>().Where(d => d >= DayOfWeek.Monday && d <= DayOfWeek.Friday))
+                                {
+                                    var teacherSchedule = teacherSchedulesList.FirstOrDefault(x => x.Day == dayOfWeek && x.TimeSlot == timeSlot);
+                                    <td>
+                                        @if (teacherSchedule != null)
+                                        {
+                                            <span class="text-primary">@teacherSchedule.Classroom</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">-</span>
+                                        }
+                                    </td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

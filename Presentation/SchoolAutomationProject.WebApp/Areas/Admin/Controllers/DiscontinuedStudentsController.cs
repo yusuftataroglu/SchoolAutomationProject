@@ -49,7 +49,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
             ViewData["CustomProperties"] = new List<string> { "StudentFullName", "ContinuationStatus" };
             ViewData["CommonColumnTitles"] = new List<string> { "Oluşturma Zamanı", "Oluşturulan Bilgisayar Adı", "Oluşturulan IP Adresi", "Güncelleme Zamanı", "Güncellenilen Bilgisayar Adı", "Güncellenilen IP Adresi" };
             ViewData["CommonProperties"] = new List<string> { "CreatedDate", "CreatedComputerName", "CreatedIpAddress", "UpdatedDate", "UpdatedComputerName", "UpdatedIpAddress" };
-            var entity = await _readRepository.GetAllPassivesByIdAsync(id);
+            var entity = await _readRepository.GetPassiveByIdAsync(id);
             ReadDiscontinuedStudentViewModel readViewModel = _mapper.Map<ReadDiscontinuedStudentViewModel>(entity);
             return View(readViewModel);
         }

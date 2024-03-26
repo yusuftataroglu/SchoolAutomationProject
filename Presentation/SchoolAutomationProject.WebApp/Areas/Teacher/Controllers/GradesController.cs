@@ -188,7 +188,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
                 .ToList();
             ViewData["StudentList"] = studentList;
             ViewData["SubCourseList"] = teacher.MainCourse.SubCourses.ToList();
-            Grade entity = await _gradeReadRepository.GetAllActivesByIdAsync(id);
+            Grade entity = await _gradeReadRepository.GetActiveByIdAsync(id);
             if (entity != null)
             {
                 WriteGradeViewModel modelVM = _mapper.Map<WriteGradeViewModel>(entity);
@@ -215,7 +215,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
             ViewData["SubCourseList"] = teacher.MainCourse.SubCourses.ToList();
             if (ModelState.IsValid)
             {
-                Grade entity = await _gradeReadRepository.GetAllActivesByIdAsync(modelVM.Id);
+                Grade entity = await _gradeReadRepository.GetActiveByIdAsync(modelVM.Id);
                 if (entity != null)
                 {
                     var resultUpdate = _gradeWriteRepository.Update(entity, modelVM);

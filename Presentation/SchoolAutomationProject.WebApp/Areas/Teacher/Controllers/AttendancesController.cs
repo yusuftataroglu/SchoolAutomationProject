@@ -199,7 +199,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
             ViewData["StudentList"] = studentList;
             ViewData["SubCourseList"] = teacher.MainCourse.SubCourses.ToList();
 
-            Attendance entity = await _attendanceReadRepository.GetAllActivesByIdAsync(id);
+            Attendance entity = await _attendanceReadRepository.GetActiveByIdAsync(id);
             if (entity != null)
             {
                 WriteAttendanceViewModel modelVM = _mapper.Map<WriteAttendanceViewModel>(entity);
@@ -227,7 +227,7 @@ namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
 
             if (ModelState.IsValid)
             {
-                Attendance entity = await _attendanceReadRepository.GetAllActivesByIdAsync(modelVM.Id);
+                Attendance entity = await _attendanceReadRepository.GetActiveByIdAsync(modelVM.Id);
                 if (entity != null)
                 {
                     var resultUpdate = _attendanceWriteRepository.Update(entity, modelVM);

@@ -8,8 +8,8 @@ namespace SchoolAutomationProject.Application.Repositories.CommonRepositories
         IQueryable<T> GetAllActives();
         IQueryable<T> GetAllPassives();
         IQueryable<T> GetWhere(Expression<Func<T,bool>> predicate);//todo expression kaldırılıp denenecek.
-        Task<T> GetAllActivesByIdAsync(Guid? id);
-        Task<T> GetAllPassivesByIdAsync(Guid? id);
+        Task<T> GetActiveByIdAsync(Guid? id);
+        Task<T> GetPassiveByIdAsync(Guid? id);
 
     }
 }

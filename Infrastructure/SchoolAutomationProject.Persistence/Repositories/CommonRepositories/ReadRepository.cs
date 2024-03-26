@@ -21,10 +21,10 @@ namespace SchoolAutomationProject.Persistence.Repositories.CommonRepositories
         public IQueryable<T> GetAllPassives()
             => Table.Where(x => x.IsActive == false);
 
-        public async Task<T> GetAllActivesByIdAsync(Guid? id)
+        public async Task<T> GetActiveByIdAsync(Guid? id)
             => await Table.Where(x => x.Id == id && x.IsActive == true).FirstOrDefaultAsync();
 
-        public async Task<T> GetAllPassivesByIdAsync(Guid? id)
+        public async Task<T> GetPassiveByIdAsync(Guid? id)
             => await Table.Where(x => x.Id == id && x.IsActive == false).FirstOrDefaultAsync();
 
 

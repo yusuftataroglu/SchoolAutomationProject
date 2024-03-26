@@ -61,7 +61,7 @@ namespace SchoolAutomationProject.WebApp.Controllers
             ViewData["CommonColumnTitles"] = new List<string> { "Oluşturma Zamanı", "Oluşturulan Bilgisayar Adı", "Oluşturulan IP Adresi", "Güncelleme Zamanı", "Güncellenilen Bilgisayar Adı", "Güncellenilen IP Adresi" };
             ViewData["CommonProperties"] = new List<string> { "CreatedDate", "CreatedComputerName", "CreatedIpAddress", "UpdatedDate", "UpdatedComputerName", "UpdatedIpAddress" };
 
-            var entity = await _readRepository.GetAllActivesByIdAsync(id);
+            var entity = await _readRepository.GetActiveByIdAsync(id);
             TReadViewModel readViewModel = _mapper.Map<TReadViewModel>(entity);
             return View(readViewModel);
         }
@@ -167,7 +167,7 @@ namespace SchoolAutomationProject.WebApp.Controllers
         [HttpGet]
         public virtual async Task<IActionResult> Update(Guid id)
         {
-            var entity = await _readRepository.GetAllActivesByIdAsync(id);
+            var entity = await _readRepository.GetActiveByIdAsync(id);
             if (entity != null)
             {
                 TWriteViewModel modelVM = _mapper.Map<TWriteViewModel>(entity);
@@ -185,7 +185,7 @@ namespace SchoolAutomationProject.WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                T entity = await _readRepository.GetAllActivesByIdAsync(modelVM.Id);
+                T entity = await _readRepository.GetActiveByIdAsync(modelVM.Id);
                 if (entity != null)
                 {
                     var resultUpdate = _writeRepository.Update(entity, modelVM);
@@ -218,7 +218,7 @@ namespace SchoolAutomationProject.WebApp.Controllers
         [HttpGet]
         public virtual async Task<IActionResult> UpdateByUsername(Guid id)
         {
-            var entity = await _readRepository.GetAllActivesByIdAsync(id);
+            var entity = await _readRepository.GetActiveByIdAsync(id);
             if (entity != null)
             {
                 TWriteViewModel modelVM = _mapper.Map<TWriteViewModel>(entity);
@@ -236,7 +236,7 @@ namespace SchoolAutomationProject.WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                T entity = await _readRepository.GetAllActivesByIdAsync(modelVM.Id);
+                T entity = await _readRepository.GetActiveByIdAsync(modelVM.Id);
                 if (entity != null)
                 {
                     var resultUpdate = _writeRepository.Update(entity, modelVM);

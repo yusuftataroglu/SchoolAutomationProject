@@ -34,7 +34,7 @@
                         @foreach (var customProperty in ViewData["CustomProperties"] as List<string>)
                         {
                             <td>
-                                @if (customProperty == "MainCourse" && item.MainCourse!=null)
+                                @if (customProperty == "MainCourse" && item.MainCourse != null)
                                 {
                                     if (item.MainCourse.IsActive)
                                     {
@@ -52,7 +52,7 @@
                                     {
                                         if (classroomTeacher.Classroom.IsActive)
                                         {
-                                        <badge class="badge bg-warning">@classroomTeacher.Classroom.Name</badge>
+                                            <badge class="badge bg-warning">@classroomTeacher.Classroom.Name</badge>
                                         }
                                         else
                                         {
@@ -63,13 +63,10 @@
 
                                 else if (customProperty == "TeacherSchedules")
                                 {
-                                    foreach (var teacherSchedule in item.TeacherSchedules)
-                                    {
-                                        if (teacherSchedule.DateTime==DateTime.Today && teacherSchedule.IsActive)
-                                        {
-                                        <badge class="badge bg-success">@teacherSchedule.Classroom</badge>
-                                        }
-                                    }
+                                    <form method="post" asp-area="Admin" asp-controller="TeacherSchedules" asp-action="GetTeacherScheduleTable">
+                                        <input type="hidden" name="id" value="@item.Id" />
+                                        <button class="btn btn-outline-dark">Ders Programını Göster</button>
+                                    </form>
                                 }
                                 else
                                 {

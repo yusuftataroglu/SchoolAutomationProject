@@ -1,0 +1,108 @@
+﻿@using SchoolAutomationProject.Domain.Entities.CustomTables;
+@model Student
+@{
+    Layout = null;
+    var mainCourseNames = ViewData["MainCourseNames"] as List<string>;
+
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Example</title>
+    <style>
+        body {
+            background-color: lightgrey;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="karneCanvas" width="824" height="608"></canvas>
+
+    <script>
+        function replaceTurkishCharacters(input) {
+            return input
+                .replace(/ı/g, 'i')
+                .replace(/ş/g, 's')
+                .replace(/ğ/g, 'g')
+                .replace(/ü/g, 'u')
+                .replace(/ö/g, 'o')
+                .replace(/ç/g, 'c')
+                .replace(/İ/g, 'I')
+                .replace(/Ş/g, 'S')
+                .replace(/Ğ/g, 'G')
+                .replace(/Ü/g, 'U')
+                .replace(/Ö/g, 'O')
+                .replace(/Ç/g, 'C');
+        }
+
+        var firstName = "@Model.FirstName";
+        var lastName = "@Model.LastName";
+        var no = "@Model.RegistrationNumber.Split('-')[0]";
+        var classroomName = "@ViewData["ClassroomName"]";
+        var grades = "@ViewData["Grades"]";
+        var excusedAbsenceCount = "@ViewData["ExcusedAbsenceCount"]";
+        var unexcusedAbsenceCount = "@ViewData["UnexcusedAbsenceCount"]";
+        var parentFullName = "@ViewData["ParentFullName"]";
+        var season = "@ViewData["Season"]";
+        var courseNames = @Html.Raw(Json.Serialize(mainCourseNames));
+        var correctedFirstName = replaceTurkishCharacters(firstName);
+        var correctedLastName = replaceTurkishCharacters(lastName);
+        var color1 = "#ece9d6";
+        var color2 = "#ffffff";
+        var canvas = document.getElementById("karneCanvas");
+        var ctx = canvas.getContext("2d");
+        canvas.addEventListener("mousemove", function (event) {
+            var rect = canvas.getBoundingClientRect();
+            var x = event.clientX - rect.left;
+            var y = event.clientY - rect.top;
+            console.log("X: " + x + ", Y: " + y);
+        });
+
+        var img = new Image();
+        img.onload = function () {
+            ctx.drawImage(img, 0, 0);
+            drawTextWithBackground(firstName + " " + lastName, 96, 37, 11, "black", color1);
+            drawTextWithBackground("Bilge Koleji", 96, 58, 11, "black", color1);
+            drawTextWithBackground(no, 96, 77, 11, "black", color1);
+            drawTextWithBackground(classroomName, 96, 95, 11, "black", color1);
+            drawTextWithBackground(season, 123, 113, 11, "black", color1);
+            drawTextWithBackground(parentFullName, 537, 576, 10, "black", color2);
+            drawTextWithBackground(parentFullName, 685, 576, 10, "black", color2);
+
+            var y = 175;
+            var k = 0;
+            for (var i = 0; i < courseNames.length; i++) {
+                var courseName = courseNames[i];
+                drawTextWithBackground(courseName, 21, y, 12, "black", color2);
+                k++;
+                if (k % 4 == 0) {
+                    y += 20;
+                }
+                else {
+                    y += 16;
+                }
+            }
+        }
+        img.src = "/images/karne.png";
+
+        function drawTextWithBackground(text, x, y, fontSize, textColor, bgColor) {
+            // Metnin boyutu
+            var textWidth = ctx.measureText(text).width;
+            // Arka plan
+            ctx.fillStyle = bgColor;
+            ctx.fillRect(x, y - fontSize, textWidth, fontSize);
+            // Metin
+            ctx.font = fontSize + "px Arial";
+            ctx.fillStyle = textColor;
+            ctx.fillText(text, x, y);
+        }
+
+        window.onload = function () {
+            // window.print(); //todo kaldırılacak
+        }
+    </script>
+</body>
+</html>
