@@ -8,18 +8,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddPersistenceServices(builder.Configuration);
 builder.Services.AddInfrastructureServices(builder.Configuration);
 
-//Cookie
-builder.Services.ConfigureApplicationCookie(x =>
-{
-    x.Cookie = new CookieBuilder
-    {
-        Name = "SchoolAutomationCookie"
-    };
-    x.LoginPath = new PathString("/Home/Login");
-    x.AccessDeniedPath = new PathString("/Home/DeniedPage");
-    x.SlidingExpiration = true;
-    x.ExpireTimeSpan = TimeSpan.FromMinutes(60);
-});
+
 
 var app = builder.Build();
 

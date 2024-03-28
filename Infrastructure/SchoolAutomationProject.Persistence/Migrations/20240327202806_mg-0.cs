@@ -378,7 +378,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Code = table.Column<string>(type: "nvarchar(9)", maxLength: 9, nullable: false),
                     WeeklyHour = table.Column<int>(type: "int", nullable: false),
-                    Position = table.Column<int>(type: "int", nullable: false),
+                    Position = table.Column<int>(type: "int", nullable: true),
                     MainCourseId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -536,7 +536,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     DateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Day = table.Column<int>(type: "int", nullable: false),
+                    Day = table.Column<int>(type: "int", nullable: true),
                     TimeSlot = table.Column<byte>(type: "tinyint", nullable: false),
                     Classroom = table.Column<string>(type: "nvarchar(9)", maxLength: 9, nullable: false),
                     TeacherId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),

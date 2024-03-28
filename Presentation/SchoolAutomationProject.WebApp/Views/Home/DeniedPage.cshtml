@@ -1,7 +1,27 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    Layout = null;
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Access Denied</title>
+    <style>
+        body {
+            height: 100vh; /* Ekran yüksekliği kadar div'i genişletmek için */
+            display: flex;
+            justify-content: center; /* Yatayda ortalama */
+            align-items: center; /* Dikeyde ortalama */
+        }
 
-<h1>Acces Denied</h1>
+        /* İçeriği ortalamak için gerekli stil */
+        .content {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Yetkisiz Giriş!</h1>
+    </div>
+</body>
+</html>

@@ -42,7 +42,7 @@
                     </ul>
 
 
-                    @if (User.Identity.IsAuthenticated)
+                    @if (User.Identity!=null && User.Identity.IsAuthenticated)
                     {
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
@@ -52,7 +52,7 @@
                                 <ul class="dropdown-menu dropdown-menu-dark">
                                     @if (User.IsInRole("Admin"))
                                     {
-                                        <li><a asp-area="Admin" asp-action="Index" asp-controller="Home" class="dropdown-item">Yönetim Paneli</a></li> //todo değiştirilecek(HomeX)
+                                        <li><a asp-area="Admin" asp-action="Get" asp-controller="Students" class="dropdown-item">Yönetim Paneli</a></li>
                                     }
                                     else if(User.IsInRole("Teacher"))
                                     {
@@ -69,8 +69,7 @@
                                         <li><a asp-area="Parent" asp-action="GetByUsername" asp-controller="Students" asp-route-userName="@User.Identity.Name" class="dropdown-item">Veli Paneli</a></li>
 
                                     }
-                                    @* <li><a asp-action="Index" asp-controller="Member" class="dropdown-item">Profile</a></li>
-                                    <li><a asp-action="Signout" asp-controller="Account" class="dropdown-item">SignOut</a></li> *@
+                                    <li><a asp-area="" asp-controller="Home" asp-action="SignOut" class="dropdown-item">Çıkış Yap</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -80,9 +79,6 @@
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-action="Login" asp-controller="Home">Giriş Yap</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-action="Register" asp-controller="Home">Üye Ol</a>
                             </li>
                         </ul>
                     }

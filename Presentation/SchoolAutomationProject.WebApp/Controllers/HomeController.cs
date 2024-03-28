@@ -28,55 +28,20 @@ namespace SchoolAutomationProject.WebApp.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
-        }
-
-        [HttpGet]
-        public IActionResult Register()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Register(RegisterUserViewModel model)
-        {
-            if (ModelState.IsValid)
+            var user = await _userManager.FindByNameAsync("yusuftataroglu");
+            if (user==null)
             {
-                AppUser user = new AppUser
+                AppUser newUser = new AppUser
                 {
                     Id = Guid.NewGuid().ToString(),
-                    Email = model.Email,
-                    UserName = model.UserName
+                    UserName = "yusuftataroglu",
                 };
-
-                var registerResult = await _userManager.CreateAsync(user, model.Password);
-
-                if (registerResult.Succeeded)
-                {
-                    var roleResult = await _userManager.AddToRoleAsync(user, "Admin");
-                    if (roleResult.Succeeded)
-                    {
-                        TempData["Success"] = "Kullanıcı başarılı bir şekilde oluşturuldu!";
-                        return RedirectToAction("Index", "Home");
-                    }
-                    else
-                    {
-                        TempData["Error"] = "Rol atanırken bir hata meydana geldi!";
-                        return View(model);
-                    }
-                }
-                else
-                {
-                    TempData["Error"] = "Kayıt aşamasında bir hata meydana geldi!";
-                    return View(model);
-                }
+                await _userManager.CreateAsync(newUser,"yusufttr");
+                await _userManager.AddToRoleAsync(newUser,"Admin");
             }
-            else
-            {
-                return View(model);
-            }
+            return View();
         }
 
 

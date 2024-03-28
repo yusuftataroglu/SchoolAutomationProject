@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -56,6 +57,19 @@ namespace SchoolAutomationProject.Persistence.IoCContainer
                 options.Password.RequireUppercase = false; // Büyük harf gerekli değil
                 options.Password.RequireNonAlphanumeric = false; // Alfanümerik olmayan karakter gerekli değil
             }).AddEntityFrameworkStores<SchoolAutomationProjectDbContext>().AddDefaultTokenProviders();
+
+            //Cookie
+            services.ConfigureApplicationCookie(x =>
+            {
+                x.Cookie = new CookieBuilder
+                {
+                    Name = "SchoolAutomationCookie"
+                };
+                x.LoginPath = new PathString("/Home/Login");
+                x.AccessDeniedPath = new PathString("/Home/DeniedPage");
+                x.SlidingExpiration = true;
+                x.ExpireTimeSpan = TimeSpan.FromMinutes(120);
+            });
 
             services.AddHttpContextAccessor();
 

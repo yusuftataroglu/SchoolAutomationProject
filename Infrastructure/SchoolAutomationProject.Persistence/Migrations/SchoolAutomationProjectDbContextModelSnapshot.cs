@@ -1035,7 +1035,6 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int?>("Position")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("UpdatedComputerName")
@@ -1162,7 +1161,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     b.Property<DateTime>("DateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Day")
+                    b.Property<int?>("Day")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsActive")

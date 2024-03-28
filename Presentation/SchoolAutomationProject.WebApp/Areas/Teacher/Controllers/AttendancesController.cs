@@ -3,22 +3,14 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using NuGet.DependencyResolver;
 using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.AttendanceRepositories;
-using SchoolAutomationProject.Application.Repositories.CommonRepositories;
 using SchoolAutomationProject.Application.Repositories.StudentRepositories;
 using SchoolAutomationProject.Application.Repositories.TeacherRepositories;
-using SchoolAutomationProject.Application.ViewModels.BaseViewModels;
 using SchoolAutomationProject.Application.ViewModels.TeacherAreaViewModels.AttendanceViewModels;
 using SchoolAutomationProject.Domain.Entities.CustomTables;
 using SchoolAutomationProject.Domain.Entities.IdentityTables;
-using SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHelpers;
-using SchoolAutomationProject.Persistence.Repositories.AttendanceRepositories;
-using SchoolAutomationProject.Persistence.Repositories.CommonRepositories;
-using SchoolAutomationProject.Persistence.Repositories.StudentRepositories;
 using SchoolAutomationProject.WebApp.Controllers;
-using System.Linq;
 
 namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
 {

@@ -28,7 +28,7 @@
             </thead>
 
             <tbody>
-                @foreach (var item in Model)
+                @foreach (var item in Model.OrderByDescending(x=>x.RegistrationNumber).ToList())
                 {
                     <tr>
                         @foreach (var customProperty in ViewData["CustomProperties"] as List<string>)

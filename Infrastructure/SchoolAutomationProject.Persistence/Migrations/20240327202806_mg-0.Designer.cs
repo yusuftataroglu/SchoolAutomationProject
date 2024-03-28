@@ -12,7 +12,7 @@ using SchoolAutomationProject.Persistence.Contexts;
 namespace SchoolAutomationProject.Persistence.Migrations
 {
     [DbContext(typeof(SchoolAutomationProjectDbContext))]
-    [Migration("20240315232601_mg-0")]
+    [Migration("20240327202806_mg-0")]
     partial class mg0
     {
         /// <inheritdoc />
@@ -1038,7 +1038,6 @@ namespace SchoolAutomationProject.Persistence.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int?>("Position")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("UpdatedComputerName")
@@ -1165,7 +1164,7 @@ namespace SchoolAutomationProject.Persistence.Migrations
                     b.Property<DateTime>("DateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Day")
+                    b.Property<int?>("Day")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsActive")

@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SchoolAutomationProject.Application.Helpers.EntityRelationshipsHelpers;
 using SchoolAutomationProject.Application.Repositories.ParentRepositories;
 using SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.ParentViewModels;
+using SchoolAutomationProject.Domain.Entities.IdentityTables;
 using SchoolAutomationProject.WebApp.Controllers;
 
 namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
