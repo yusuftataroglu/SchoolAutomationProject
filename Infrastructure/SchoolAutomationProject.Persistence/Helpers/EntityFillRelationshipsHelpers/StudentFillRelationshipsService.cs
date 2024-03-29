@@ -54,19 +54,19 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
                 AppUser studentUser = new AppUser
                 {
                     Id = Guid.NewGuid().ToString(),
-                    UserName = $"{student.FirstName.ToLower()}{student.LastName.ToLower()}",
-                    NormalizedUserName = $"{student.FirstName.ToUpper()}{student.LastName.ToUpper()}",
+                    UserName = $"{student.FirstName.ToLower().Trim().Replace(" ", "")}{student.LastName.ToLower()}",
+                    NormalizedUserName = $"{student.FirstName.ToUpper().Trim().Replace(" ", "")}{student.LastName.ToUpper()}",
                     Email = ""
                 };
                 AppUser parentUser = new AppUser
                 {
                     Id = Guid.NewGuid().ToString(),
-                    UserName = $"{parent.FirstName.ToLower()}{parent.LastName.ToLower()}",
-                    NormalizedUserName = $"{parent.FirstName.ToUpper()}{parent.LastName.ToUpper()}",
+                    UserName = $"{parent.FirstName.ToLower().Trim().Replace(" ", "")}{parent.LastName.ToLower()}",
+                    NormalizedUserName = $"{parent.FirstName.ToUpper().Trim().Replace(" ", "")}{parent.LastName.ToUpper()}",
                     Email = ""
                 };
 
-                var createParentUserResult = await _userManager.CreateAsync(parentUser, $"{parent.FirstName.ToLower()}{parent.LastName.ToLower()}");
+                var createParentUserResult = await _userManager.CreateAsync(parentUser, $"{parent.FirstName.ToLower().Trim().Replace(" ", "")}{parent.LastName.ToLower()}");
                 if (createParentUserResult.Succeeded)
                 {
                     var addRoleResult = await _userManager.AddToRoleAsync(parentUser, "Parent");
@@ -74,7 +74,7 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
                 }
 
 
-                var createStudentUserResult = await _userManager.CreateAsync(studentUser, $"{student.FirstName.ToLower()}{student.LastName.ToLower()}");
+                var createStudentUserResult = await _userManager.CreateAsync(studentUser, $"{student.FirstName.ToLower().Trim().Replace(" ", "")}{student.LastName.ToLower()}");
 
                 if (createStudentUserResult.Succeeded)
                 {

@@ -22,8 +22,8 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
                 AppUser user = new AppUser
                 {
                     Id = Guid.NewGuid().ToString(),
-                    UserName = $"{admin.FirstName.ToLower()}{admin.LastName.ToLower()}",
-                    NormalizedUserName= $"{admin.FirstName.ToUpper()}{admin.LastName.ToUpper()}",
+                    UserName = $"{admin.FirstName.ToLower().Trim().Replace(" ", "")}{admin.LastName.ToLower()}",
+                    NormalizedUserName= $"{admin.FirstName.ToUpper().Trim().Replace(" ", "")}{admin.LastName.ToUpper()}",
                     Email = ""
                 };
 
@@ -34,7 +34,7 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
             }
             else if (requestType == "UpdatePost")
             {
-                admin.User.UserName = $"{modelVM.FirstName.ToLower()}{modelVM.LastName.ToLower()}";
+                admin.User.UserName = $"{modelVM.FirstName.ToLower().Trim().Replace(" ", "")}{modelVM.LastName.ToLower()}";
                 admin.User.NormalizedUserName = $"{modelVM.FirstName.ToUpper()}{modelVM.LastName.ToUpper()}";
                 await _userManager.RemovePasswordAsync(modelVM.User);
                 await _userManager.AddPasswordAsync(admin.User, modelVM.Password);

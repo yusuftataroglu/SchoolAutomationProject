@@ -76,7 +76,7 @@
             var textWidth = ctx.measureText(text).width;
             // Arka planı çizin
             ctx.fillStyle = bgColor;
-            ctx.fillRect(x, y - fontSize, textWidth, fontSize); // Arka planın yüksekliğini ve genişliğini buradan ayarlayabilirsiniz
+            ctx.fillRect(x, y - fontSize, textWidth, fontSize); 
 
             // Metni çizin
             ctx.font = fontSize + "px Arial";
@@ -85,7 +85,7 @@
         }
 
         window.onload = function () {
-            // Burada bir şey yapmanıza gerek yok çünkü window.onload içindeki işlemler zaten çalışacak
+            window.print();
         }
     </script>
 </body>

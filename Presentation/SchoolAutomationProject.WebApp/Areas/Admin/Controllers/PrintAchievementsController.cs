@@ -45,15 +45,16 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         {
             Achievement achievement = await _achievementReadRepository.GetActiveByIdAsync(id);
             TempData["Date"] = DateTime.Now.ToShortDateString();
-            TempData["Year"] = $"{achievement.Semester.StartDate.Year}/{achievement.Semester.EndDate.Year}";
 
             if (achievement.Semester.Name.Contains("Güz", StringComparison.OrdinalIgnoreCase))
             {
                 TempData["SemesterNo"] = "1.";
+                TempData["Year"] = $"{achievement.Semester.StartDate.Year}/{achievement.Semester.EndDate.Year}";
             }
             else if (achievement.Semester.Name.Contains("Bahar", StringComparison.OrdinalIgnoreCase))
             {
                 TempData["SemesterNo"] = "2.";
+                TempData["Year"] = $"{achievement.Semester.StartDate.Year - 1}/{achievement.Semester.EndDate.Year}";
             }
             return View(achievement.Student);
         }
@@ -64,15 +65,16 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
             Achievement achievement = await _achievementReadRepository.GetActiveByIdAsync(id);
 
             TempData["Date"] = DateTime.Now.ToShortDateString();
-            TempData["Year"] = $"{achievement.Semester.StartDate.Year}/{achievement.Semester.EndDate.Year}";
 
             if (achievement.Semester.Name.Contains("Güz", StringComparison.OrdinalIgnoreCase))
             {
                 TempData["SemesterNo"] = "1.";
+                TempData["Year"] = $"{achievement.Semester.StartDate.Year}/{achievement.Semester.EndDate.Year}";
             }
             else if (achievement.Semester.Name.Contains("Bahar", StringComparison.OrdinalIgnoreCase))
             {
                 TempData["SemesterNo"] = "2.";
+                TempData["Year"] = $"{achievement.Semester.StartDate.Year-1}/{achievement.Semester.EndDate.Year}";
             }
             return View(achievement.Student);
         }

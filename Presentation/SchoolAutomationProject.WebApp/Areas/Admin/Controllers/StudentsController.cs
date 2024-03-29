@@ -27,8 +27,8 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
         {
             // ViewData dictionary'sine özel verileri atama
             ViewData["TableTitle"] = "Öğrenci Listesi";
-            ViewData["CustomColumnTitles"] = new List<string> { "Okul No", "Ad", "Soyad", "Cinsiyet", "Bitirdiği Okul", "Bitirdiği Okuldaki Not Ortalaması", "Ön Kayıt Durumu", "Devamsızlık Sayısı", "Devam Etme Durumu" };
-            ViewData["CustomProperties"] = new List<string> { "RegistrationNumber", "FirstName", "LastName", "Gender", "GraduatedSchool", "GPA", "IsPreRegistered", "TotalAbsenceCount", "ContinuationStatus" };
+            ViewData["CustomColumnTitles"] = new List<string> { "Okul No", "Sınıf", "Ad", "Soyad", "Cinsiyet", "Bitirdiği Okul", "Bitirdiği Okuldaki Not Ortalaması", "Ön Kayıt Durumu", "Devamsızlık Sayısı", "Devam Etme Durumu" };
+            ViewData["CustomProperties"] = new List<string> { "RegistrationNumber", "Classroom", "FirstName", "LastName", "Gender", "GraduatedSchool", "GPA", "IsPreRegistered", "TotalAbsenceCount", "ContinuationStatus" };
             ViewData["ControllerName"] = "Students";
             return base.Get();
         }

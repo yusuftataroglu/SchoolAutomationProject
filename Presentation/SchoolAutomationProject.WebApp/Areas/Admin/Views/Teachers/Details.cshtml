@@ -47,10 +47,10 @@
 
                             else if (customProperty == "TeacherSchedules")
                             {
-                                foreach (var teacherSchedule in Model.TeacherSchedules)
-                                {
-                                    <badge class="badge bg-success">@teacherSchedule.Classroom</badge>
-                                }
+                                <form method="post" asp-area="Admin" asp-controller="TeacherSchedules" asp-action="GetTeacherScheduleTable">
+                                    <input type="hidden" name="id" value="@Model.Id" />
+                                    <button class="btn btn-outline-dark">Ders Programını Göster</button>
+                                </form>
                             }
                             else
                             {

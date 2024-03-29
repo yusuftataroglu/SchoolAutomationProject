@@ -54,7 +54,6 @@ namespace SchoolAutomationProject.WebApp.Areas.Admin.Controllers
 
             if (teacher != null)
             {
-                // Şu anki tarihin haftanın pazartesi günü olduğunu varsayalım
                 DateTime dateTime = DateTime.Today;
                 DateTime firstDayOfWeek = GetFirstDayOfWeek(dateTime);
                 ViewBag.FirstDayOfWeek = firstDayOfWeek.ToShortDateString();

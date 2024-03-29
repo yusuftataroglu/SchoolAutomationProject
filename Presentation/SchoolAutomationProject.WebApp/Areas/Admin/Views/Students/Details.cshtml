@@ -33,15 +33,22 @@
                     @foreach (var customProperty in ViewData["CustomProperties"] as List<string>)
                     {
                         <td>
-                            @if (customProperty == "Classroom" && Model.Classroom != null)
+                            @if (customProperty == "Classroom")
                             {
-                                if (Model.Classroom.IsActive)
+                                if (Model.Classroom != null)
                                 {
-                                <badge class="badge bg-info">@Model.Classroom.Name</badge>
+                                    if (Model.Classroom.IsActive)
+                                    {
+                                    <badge class="badge bg-info">@Model.Classroom.Name</badge>
+                                    }
+                                    else
+                                    {
+                                    <badge class="badge bg-danger">Silinmiş Sınıf</badge>
+                                    }
                                 }
                                 else
                                 {
-                                    <badge class="badge bg-info">Silinmiş Sınıf</badge>
+                                <badge class="badge bg-warning">Atanmamış</badge>
                                 }
                             }
 

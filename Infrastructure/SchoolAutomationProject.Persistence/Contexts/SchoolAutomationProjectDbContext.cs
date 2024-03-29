@@ -84,8 +84,11 @@ namespace SchoolAutomationProject.Persistence.Contexts
                                 else if ((originalValue == ContinuationStatus.Mezun.ToString() || currentValue == ContinuationStatus.Sevk.ToString()) && currentValue == ContinuationStatus.Devam.ToString())
                                 {
                                     student.IsActive = true;
-                                    DiscontinuedStudent discontinuedStudent = await DiscontinuedStudents.Where(x=> x.StudentId == student.Id).FirstOrDefaultAsync();
-                                    DiscontinuedStudents.Remove(discontinuedStudent);
+                                    DiscontinuedStudent discontinuedStudent = await DiscontinuedStudents.Where(x => x.StudentId == student.Id).FirstOrDefaultAsync();
+                                    if (discontinuedStudent != null)
+                                    {
+                                        DiscontinuedStudents.Remove(discontinuedStudent);
+                                    }
                                 }
                             }
 

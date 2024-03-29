@@ -38,7 +38,10 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Stu
         public string ParentLastName { get; set; }
 
         [Required(ErrorMessage = "Veli Cep Telefon Numarası Boş Geçilemez!")]
+        [MaxLength(11)]
         public string ParentMobilePhone { get; set; }
+
+        [MaxLength(11)]
         public string? ParentWorkPhone { get; set; }
 
         [Required(ErrorMessage = "Adres Boş Geçilemez!")]

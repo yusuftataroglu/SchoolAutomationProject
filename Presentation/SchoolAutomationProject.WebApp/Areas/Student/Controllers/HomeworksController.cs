@@ -45,54 +45,64 @@ namespace SchoolAutomationProject.WebApp.Areas.Student.Controllers
 
         public override IActionResult AddWithFile()
         {
-            return View();
+                return base.AddWithFile();
         }
+
         public override async Task<IActionResult> AddWithFile(string userName, WriteHomeworkViewModel modelVM, IFormFile file)
         {
-            if (ModelState.IsValid)
+            try
             {
-                var user = await _userManager.FindByNameAsync(userName);
-                modelVM.StudentId = _studentReadRepository.GetWhere(x => x.UserId == user.Id).FirstOrDefault()?.Id;
-                var student = await _studentReadRepository.GetActiveByIdAsync(modelVM.StudentId);
-                var subCourse = _subCourseReadRepository.GetWhere(x => x.Id == modelVM.SubCourseId).FirstOrDefault()?.Code;
-                string path = "";
-
-                if (file != null)
+                if (ModelState.IsValid)
                 {
-                    var fileUploadResult = FileUploader.Upload(file.FileName);
-                    if (fileUploadResult != "0")
+                    var user = await _userManager.FindByNameAsync(userName);
+                    modelVM.StudentId = _studentReadRepository.GetWhere(x => x.UserId == user.Id).FirstOrDefault()?.Id;
+                    var student = await _studentReadRepository.GetActiveByIdAsync(modelVM.StudentId);
+                    var subCourse = _subCourseReadRepository.GetWhere(x => x.Id == modelVM.SubCourseId).FirstOrDefault()?.Code;
+                    string path = "";
+
+                    if (file != null)
                     {
-                        path = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot\\Files\\Homeworks\\{subCourse}\\Students\\{student.FirstName} {student.LastName}");
-
-                        if (!Directory.Exists(path))
+                        var fileUploadResult = FileUploader.Upload(file.FileName);
+                        if (fileUploadResult != "0")
                         {
-                            Directory.CreateDirectory(path);
+                            path = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot\\Files\\Homeworks\\{subCourse}\\Students\\{student.FirstName} {student.LastName}");
+
+                            if (!Directory.Exists(path))
+                            {
+                                Directory.CreateDirectory(path);
+                            }
+                            using (var stream = new FileStream($"{path}\\{fileUploadResult}", FileMode.Create))
+                            {
+                                await file.CopyToAsync(stream);
+                            };
+                            modelVM.FileUrl = $"{path}\\{fileUploadResult}";
+                            return await base.AddWithFile(userName, modelVM, file);
                         }
-                        using (var stream = new FileStream($"{path}\\{fileUploadResult}", FileMode.Create))
-                        {
-                            await file.CopyToAsync(stream);
-                        };
-                        modelVM.FileUrl = $"{path}\\{fileUploadResult}";
-                        return await base.AddWithFile(userName, modelVM, file);
-                    }
 
+                        else
+                        {
+                            TempData["Error"] = "Uygun Türde Dosya Yükleyiniz";
+                            return View(modelVM);
+                        }
+                    }
                     else
                     {
-                        TempData["Error"] = "Uygun Türde Dosya Yükleyiniz";
+                        TempData["Error"] = "Bir Dosya Seçiniz";
                         return View(modelVM);
                     }
                 }
                 else
                 {
-                    TempData["Error"] = "Bir Dosya Seçiniz";
+                    TempData["Error"] = "Bir hata meydana geldi!";
                     return View(modelVM);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                TempData["Error"] = "Bir hata meydana geldi!";
-                return View(modelVM);
+                TempData["Error"] = "Beklenmeyen bir hata oluştu: " + ex.Message;
+                return RedirectToAction("GetByUsername", "Grades", userName);
             }
+
 
         }
     }

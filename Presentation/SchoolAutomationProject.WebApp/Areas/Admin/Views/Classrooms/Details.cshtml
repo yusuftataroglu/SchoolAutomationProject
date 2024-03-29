@@ -74,6 +74,10 @@
                                     }
                                 }
                             }
+                            else
+                            {
+                                <span>@Model.GetType().GetProperty(customProperty).GetValue(Model)</span>
+                            }
                         </td>
                     }
 

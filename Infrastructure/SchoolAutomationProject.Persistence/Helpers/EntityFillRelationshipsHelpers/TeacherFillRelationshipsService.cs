@@ -23,12 +23,12 @@ namespace SchoolAutomationProject.Persistence.Helpers.EntityFillRelationshipsHel
                 AppUser user = new AppUser
                 {
                     Id = Guid.NewGuid().ToString(),
-                    UserName = $"{teacher.FirstName.ToLower()}{teacher.LastName.ToLower()}",
-                    NormalizedUserName = $"{teacher.FirstName.ToUpper()}{teacher.LastName.ToUpper()}",
+                    UserName = $"{teacher.FirstName.ToLower().Trim().Replace(" ","")}{teacher.LastName.ToLower()}",
+                    NormalizedUserName = $"{teacher.FirstName.ToUpper().Trim().Replace(" ", "")}{teacher.LastName.ToUpper()}",
                     Email = ""
                 };
 
-                await _userManager.CreateAsync(user, $"{teacher.FirstName.ToLower()}{teacher.LastName.ToLower()}");
+                await _userManager.CreateAsync(user, $"{teacher.FirstName.ToLower().Trim().Replace(" ", "")}{teacher.LastName.ToLower()}");
                 await _userManager.AddToRoleAsync(user, "Teacher");
 
                 teacher.User = user;

@@ -28,21 +28,30 @@ namespace SchoolAutomationProject.WebApp.Areas.Teacher.Controllers
 
         public async Task<IActionResult> Get(string userName)
         {
-            AppUser user = await _userManager.FindByNameAsync(userName);
-            string userId = user.Id;
+            try
+            {
+                AppUser user = await _userManager.FindByNameAsync(userName);
+                string userId = user.Id;
 
-            // ViewData dictionary'sine özel verileri atama
-            ViewData["TableTitle"] = "Sınıf Listesi";
-            ViewData["CustomColumnTitles"] = new List<string> { "Sınıf", "Kapasite", "Öğrenciler", "Öğretmenler" };
-            ViewData["CustomProperties"] = new List<string> { "Name", "Capacity", "Students", "ClassroomTeachers" };
-            ViewData["ControllerName"] = "Classrooms";
+                // ViewData dictionary'sine özel verileri atama
+                ViewData["TableTitle"] = "Sınıf Listesi";
+                ViewData["CustomColumnTitles"] = new List<string> { "Sınıf", "Kapasite", "Öğrenciler", "Öğretmenler" };
+                ViewData["CustomProperties"] = new List<string> { "Name", "Capacity", "Students", "ClassroomTeachers" };
+                ViewData["ControllerName"] = "Classrooms";
 
-            var classroomList = _classroomReadRepository.GetAllActives()
-            .Where(c => c.ClassroomTeachers.Any(ct => ct.Teacher.UserId == userId))
-            .ToList();
+                var classroomList = _classroomReadRepository.GetAllActives()
+                .Where(c => c.ClassroomTeachers.Any(ct => ct.Teacher.UserId == userId))
+                .ToList();
 
-            List<ReadClassroomViewModel> readViewModelList = _mapper.Map<List<ReadClassroomViewModel>>(classroomList);
-            return View(readViewModelList);
+                List<ReadClassroomViewModel> readViewModelList = _mapper.Map<List<ReadClassroomViewModel>>(classroomList);
+                return View(readViewModelList);
+            }
+            
+            catch (Exception ex)
+            {
+                TempData["Error"] = "Beklenmeyen bir hata oluştu: " + ex.Message;
+                return View();
+            }
         }
     }
 }

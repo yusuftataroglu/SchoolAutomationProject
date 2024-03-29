@@ -26,7 +26,7 @@
                         <div class="col-md-auto">
                             <label>Öğrenci</label>
                             <select class="form-select" asp-for="@Model.StudentId">
-                                @foreach (var item in _studentReadRepository.GetAllActives().ToList())
+                                @foreach (var item in _studentReadRepository.GetWhere(x => x.Classroom != null && x.IsActive).ToList())
                                 {
                                     var isSelected = Model.StudentId == item.Id;
                                     <option value="@item.Id" selected="@isSelected">@item.FirstName @item.LastName</option>

@@ -32,7 +32,7 @@
                         }
                     </select>
 
-                    <label>Ders Verilen Sınıflar</label>
+                    <label class="d-flex">Ders Verilen Sınıflar</label>
                     @foreach (var classroom in _classroomReadRepository.GetAllActives().OrderBy(x => x.Name).ToList())
                     {
                         <input type="checkbox" class="btn-check" id="@classroom.Id" name="ClassroomTeachersClassroomIds" value="@classroom.Id">

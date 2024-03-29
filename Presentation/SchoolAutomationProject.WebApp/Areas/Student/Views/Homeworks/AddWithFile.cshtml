@@ -1,4 +1,5 @@
-﻿@model WriteHomeworkViewModel
+﻿@using SchoolAutomationProject.Domain.Entities.CustomTables;
+@model WriteHomeworkViewModel
 @inject ISubCourseReadRepository _subCourseReadRepository;
 @{
     ViewData["Title"] = "Add Homework";
@@ -27,7 +28,7 @@
                         <label asp-for="SubCourseId">Ders</label>
                         <select asp-for="SubCourseId" class="form-control">
                             <option value="" selected disabled>Bir alt ders seçiniz</option>
-                            @foreach (var subCourse in _subCourseReadRepository.GetAllActives())
+                            @foreach (var subCourse in _subCourseReadRepository.GetAllActives().ToList())
                             {
                                 <option value="@subCourse.Id">@subCourse.Code</option>
                             }

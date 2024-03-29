@@ -25,7 +25,7 @@
                         <label asp-for="StudentId">Öğrenci</label>
                         <select asp-for="StudentId" class="form-control">
                             <option value="" selected disabled>Bir Öğrenci Seçiniz</option>
-                            @foreach (var student in _studentReadRepository.GetAllActives())
+                            @foreach (var student in _studentReadRepository.GetWhere(x => x.Classroom != null && x.IsActive).ToList())
                             {
                                 <option value="@student.Id">@student.FirstName @student.LastName</option>
                             }
