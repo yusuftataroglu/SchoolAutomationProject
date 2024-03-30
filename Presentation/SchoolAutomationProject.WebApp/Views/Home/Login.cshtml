@@ -5,17 +5,26 @@
 }
 
 <div class="col-md-6 mx-auto">
-    <div asp-validation-summary="All">
+    <div asp-validation-summary="All" class="text-danger">
     </div>
     <form method="post" asp-controller="Home" asp-action="Login">
-        <div>
-            <label asp-for="UserName">Kullanıcı Adı</label>
-            <input asp-for="UserName" type="text" class="form-control" />
+        <div class="card">
+            <div class="card-header bg-light">Kullanıcı Girişi</div>
+            <div class="card-body">
+                <div>
+                    <label asp-for="UserName">Kullanıcı Adı</label>
+                    <input asp-for="UserName" type="text" class="form-control" />
+                </div>
+                <div>
+                    <label asp-for="Password">Şifre</label>
+                    <input asp-for="Password" type="password" class="form-control" />
+                </div>
+            </div>
+            <div class="card-footer">
+                
+                <button type="submit" class="btn btn-success">Giriş Yap</button>
+
+            </div>
         </div>
-        <div>
-            <label asp-for="Password">Şifre</label>
-            <input asp-for="Password" type="text" class="form-control" />
-        </div>
-        <button type="submit" class="btn btn-primary">Login</button>
     </form>
 </div>
