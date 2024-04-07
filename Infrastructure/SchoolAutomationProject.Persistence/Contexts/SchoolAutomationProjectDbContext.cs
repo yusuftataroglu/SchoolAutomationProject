@@ -14,6 +14,7 @@ using SchoolAutomationProject.Persistence.Configurations.CustomTablesConfigurati
 using SchoolAutomationProject.Persistence.Configurations.IdentityTablesConfigurations;
 using SchoolAutomationProject.Persistence.Helpers.ConnectionStringHelpers;
 using SchoolAutomationProject.Persistence.Helpers.IpAddressHelpers;
+using System.Diagnostics;
 
 namespace SchoolAutomationProject.Persistence.Contexts
 {
@@ -80,15 +81,12 @@ namespace SchoolAutomationProject.Persistence.Contexts
                                 {
                                     student.IsActive = false;
                                     await DiscontinuedStudents.AddAsync(new DiscontinuedStudent { StudentId = student.Id, CreatedComputerName = Environment.MachineName, CreatedDate = DateTime.UtcNow, CreatedIpAddress = await IpAddressHelper.GetIpAddress() });
+                                    Stopwatch stopwatch = Stopwatch.StartNew();
+                                    
                                 }
-                                else if ((originalValue == ContinuationStatus.Mezun.ToString() || currentValue == ContinuationStatus.Sevk.ToString()) && currentValue == ContinuationStatus.Devam.ToString())
+                                else if (originalValue==null && currentValue == ContinuationStatus.Devam.ToString())
                                 {
-                                    student.IsActive = true;
-                                    DiscontinuedStudent discontinuedStudent = await DiscontinuedStudents.Where(x => x.StudentId == student.Id).FirstOrDefaultAsync();
-                                    if (discontinuedStudent != null)
-                                    {
-                                        DiscontinuedStudents.Remove(discontinuedStudent);
-                                    }
+                                    student.IsPreRegistered = false;
                                 }
                             }
 

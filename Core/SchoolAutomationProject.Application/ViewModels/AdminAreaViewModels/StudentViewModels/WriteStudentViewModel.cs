@@ -52,8 +52,7 @@ namespace SchoolAutomationProject.Application.ViewModels.AdminAreaViewModels.Stu
 
         [Required(ErrorMessage = "Şehir Boş Geçilemez!")]
         public string ParentCity { get; set; }
-
-        public bool IsPreRegistered { get; set; }
+        public bool? IsPreRegistered { get; set; }
 
         public ContinuationStatus? ContinuationStatus { get; set; }
 

@@ -76,9 +76,22 @@
 
                     <div class="mb-3">
                         <label for="continuationStatus" class="form-label">Devam Etme Durumu</label>
-                        <select class="form-select" id="continuationStatus" asp-for="ContinuationStatus" asp-items="@Html.GetEnumSelectList<ContinuationStatus>()">
-                            <option value="">Devam Etme Durumu Seçiniz</option>
-                        </select>
+                        @{
+                            if (Model.IsPreRegistered.Value)
+                            {
+                                // IsPreRegistered true ise sadece Devam enum değeri gösterilecek
+                                <select class="form-select" id="continuationStatus" asp-for="ContinuationStatus">
+                                    <option value="" selected>Devam Etme Durumu Seçiniz</option>
+                                    <option value="Devam">Devam</option>
+                                </select>
+                            }
+                            else
+                            {
+                                // IsPreRegistered false ise tüm enum değerleri gösterilecek
+                                <select class="form-select" id="continuationStatus" asp-for="ContinuationStatus" asp-items="@Html.GetEnumSelectList<ContinuationStatus>()">
+                                </select>
+                            }
+                        }
                     </div>
 
                     <div class="mb-3">
@@ -92,12 +105,9 @@
                             }
                         </select>
 
-                        <div class="mb-3">
-                            <label for="isPreRegistered" class="form-label">Ön Kayıtlı mı?</label>
-                            <input type="checkbox" class="form-check-input" id="isPreRegistered" asp-for="IsPreRegistered">
-                        </div>
 
 
+                        <input type="hidden" id="isPreRegistered" asp-for="IsPreRegistered">
                         <input type="hidden" class="form-control" asp-for="ParentId">
                     </div>
                     <button type="submit" class="btn btn-primary">Güncelle</button>
