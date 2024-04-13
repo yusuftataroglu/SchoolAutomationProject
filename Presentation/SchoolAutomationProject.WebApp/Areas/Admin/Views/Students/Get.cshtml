@@ -59,6 +59,13 @@
                                     @item.TotalAbsenceCount
                                 </td>
                             }
+                            else if (customProperty == "IsPreRegistered")
+                            {
+                                string isPreRegistered = item.IsPreRegistered ? "Evet" : "Hayır";
+                                <td>
+                                    @isPreRegistered
+                                </td>
+                            }
                             else
                             {
                                 <td>@item.GetType().GetProperty(customProperty).GetValue(item)</td>
